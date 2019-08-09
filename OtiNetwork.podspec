@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
     
     s.ios.deployment_target = '9.0'
     
-    s.source_files = 'OtiNetwork/Classes/**/*'
+    s.source_files = 'OtiNetwork/**/*'
     
     # s.resource_bundles = {
     #   'OtiNetwork' => ['OtiNetwork/Assets/*.png']

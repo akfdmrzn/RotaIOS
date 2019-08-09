@@ -1,0 +1,41 @@
+PODS:
+  - Alamofire (4.8.2)
+  - AlamofireObjectMapper (5.2.0):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
+  - Nimble (7.3.4)
+  - ObjectMapper (3.5.1)
+  - OtiNetwork (0.1.0):
+    - Alamofire (~> 4.7)
+    - AlamofireObjectMapper
+    - ObjectMapper
+  - Quick (1.2.0)
+
+DEPENDENCIES:
+  - Nimble (~> 7.0)
+  - OtiNetwork (from `../`)
+  - Quick (~> 1.2.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireObjectMapper
+    - Nimble
+    - ObjectMapper
+    - Quick
+
+EXTERNAL SOURCES:
+  OtiNetwork:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  OtiNetwork: 11259064b21d18f0ca3bae7d6d98d4e848e1a988
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+
+PODFILE CHECKSUM: 9d2872ce0d039b9f37fef1d2bddb6a4edbf03df3
+
+COCOAPODS: 1.7.5

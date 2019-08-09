@@ -1,0 +1,6 @@
+framework module Pods_OtiNetwork_Tests {
+  umbrella header "Pods-OtiNetwork_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

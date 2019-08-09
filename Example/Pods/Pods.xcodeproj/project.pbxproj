@@ -522,7 +522,7 @@
 		BF027EE522FDA0B500B11752 /* GetCustomerForgotPasswordRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetCustomerForgotPasswordRequestModel.swift; path = Request/GetCustomerForgotPasswordRequestModel.swift; sourceTree = SOURCE_ROOT; };
 		BF027EE622FDA0B500B11752 /* CustomerControlActivateCodeRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerControlActivateCodeRequestModel.swift; path = Request/CustomerControlActivateCodeRequestModel.swift; sourceTree = SOURCE_ROOT; };
 		BF027EE722FDA0B500B11752 /* CreateInsuranceDocumentRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateInsuranceDocumentRequestModel.swift; path = Request/CreateInsuranceDocumentRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EE822FDA0B600B11752 /* ExtensionUIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionUIDevice.swift; path = Request/ExtensionUIDevice.swift; sourceTree = SOURCE_ROOT; };
+		BF027EE822FDA0B600B11752 /* ExtensionUIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionUIDevice.swift; path = ../../Extension/ExtensionUIDevice.swift; sourceTree = SOURCE_ROOT; };
 		BF027EE922FDA0B600B11752 /* GetWeatherRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetWeatherRequestModel.swift; path = Request/GetWeatherRequestModel.swift; sourceTree = SOURCE_ROOT; };
 		BF027EEA22FDA0B600B11752 /* CustomerChangePasswordRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerChangePasswordRequestModel.swift; path = Request/CustomerChangePasswordRequestModel.swift; sourceTree = SOURCE_ROOT; };
 		BF027EEB22FDA0B600B11752 /* GetGuideInfoOfTouristRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetGuideInfoOfTouristRequestModel.swift; path = Request/GetGuideInfoOfTouristRequestModel.swift; sourceTree = SOURCE_ROOT; };
@@ -938,7 +938,6 @@
 				BF027EF022FDA0B600B11752 /* CustomerCreateRequestModel.swift */,
 				BF027EDE22FDA0B500B11752 /* CustomerDetailByIdRequestModel.swift */,
 				BF027EEC22FDA0B600B11752 /* CustomerSendActiveCodeRequestModel.swift */,
-				BF027EE822FDA0B600B11752 /* ExtensionUIDevice.swift */,
 				BF027EF122FDA0B600B11752 /* GetActualTripRequestModel.swift */,
 				BF027EE522FDA0B500B11752 /* GetCustomerForgotPasswordRequestModel.swift */,
 				BF027EE422FDA0B500B11752 /* GetExcursionDetailByIdRequestModel.swift */,
@@ -1008,6 +1007,7 @@
 				BF027EC622FDA05C00B11752 /* Defaults.swift */,
 				BF027ECB22FDA05C00B11752 /* ExtensionUIApplication.swift */,
 				BF027ECC22FDA05C00B11752 /* ExtensionUIViewController.swift */,
+				BF027EE822FDA0B600B11752 /* ExtensionUIDevice.swift */,
 				BF027ECD22FDA05C00B11752 /* NetworkManager.swift */,
 				BF027EC522FDA05C00B11752 /* ServiceEndPoint.swift */,
 			);

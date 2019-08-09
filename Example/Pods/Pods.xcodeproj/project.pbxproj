@@ -157,7 +157,6 @@
 		BF027F0422FDA0B600B11752 /* GetCustomerForgotPasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EE522FDA0B500B11752 /* GetCustomerForgotPasswordRequestModel.swift */; };
 		BF027F0522FDA0B600B11752 /* CustomerControlActivateCodeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EE622FDA0B500B11752 /* CustomerControlActivateCodeRequestModel.swift */; };
 		BF027F0622FDA0B600B11752 /* CreateInsuranceDocumentRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EE722FDA0B500B11752 /* CreateInsuranceDocumentRequestModel.swift */; };
-		BF027F0722FDA0B600B11752 /* ExtensionUIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EE822FDA0B600B11752 /* ExtensionUIDevice.swift */; };
 		BF027F0822FDA0B600B11752 /* GetWeatherRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EE922FDA0B600B11752 /* GetWeatherRequestModel.swift */; };
 		BF027F0922FDA0B600B11752 /* CustomerChangePasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EEA22FDA0B600B11752 /* CustomerChangePasswordRequestModel.swift */; };
 		BF027F0A22FDA0B600B11752 /* GetGuideInfoOfTouristRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EEB22FDA0B600B11752 /* GetGuideInfoOfTouristRequestModel.swift */; };
@@ -173,7 +172,6 @@
 		BF027F1422FDA0B600B11752 /* GetTransferRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EF522FDA0B600B11752 /* GetTransferRequestModel.swift */; };
 		BF027F1522FDA0B600B11752 /* GetSaledExcursionInfoRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EF622FDA0B600B11752 /* GetSaledExcursionInfoRequestModel.swift */; };
 		BF027F1622FDA0B600B11752 /* GetTourDefinationComboListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EF722FDA0B600B11752 /* GetTourDefinationComboListRequestModel.swift */; };
-		BF027F3322FDA0CB00B11752 /* BaseMessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F1722FDA0C900B11752 /* BaseMessageItem.swift */; };
 		BF027F3422FDA0CB00B11752 /* CustomerChangePasswordResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F1822FDA0C900B11752 /* CustomerChangePasswordResponseModel.swift */; };
 		BF027F3522FDA0CB00B11752 /* GetListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F1922FDA0C900B11752 /* GetListResponseModel.swift */; };
 		BF027F3622FDA0CB00B11752 /* GetTransferResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F1A22FDA0C900B11752 /* GetTransferResponseModel.swift */; };
@@ -201,6 +199,8 @@
 		BF027F4C22FDA0CB00B11752 /* CustomerControlActivateCodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F3022FDA0CB00B11752 /* CustomerControlActivateCodeResponseModel.swift */; };
 		BF027F4D22FDA0CB00B11752 /* SendRatedResultResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F3122FDA0CB00B11752 /* SendRatedResultResponseModel.swift */; };
 		BF027F4E22FDA0CB00B11752 /* GetSaledExcursionInfoDetailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F3222FDA0CB00B11752 /* GetSaledExcursionInfoDetailResponseModel.swift */; };
+		BF027F5122FDA4E700B11752 /* ExtensionUIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F4F22FDA4E700B11752 /* ExtensionUIDevice.swift */; };
+		BF027F5222FDA4E700B11752 /* BaseMessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F5022FDA4E700B11752 /* BaseMessageItem.swift */; };
 		BF162FE488440AC9824E22EF6BD760FC /* DSL+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F812F05576FA8B6EF5EB05BFBCA159 /* DSL+Wait.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		C098C153F2988A344EAD8EE4C0CDF882 /* PostNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD02B89A8D848CC5686C0A791F63C75 /* PostNotification.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		C0B393B80CD971349123D9F02DFDD554 /* ImmutableMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC90C5EFB883771F7204A13515A321 /* ImmutableMappable.swift */; };
@@ -522,7 +522,6 @@
 		BF027EE522FDA0B500B11752 /* GetCustomerForgotPasswordRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetCustomerForgotPasswordRequestModel.swift; path = Request/GetCustomerForgotPasswordRequestModel.swift; sourceTree = SOURCE_ROOT; };
 		BF027EE622FDA0B500B11752 /* CustomerControlActivateCodeRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerControlActivateCodeRequestModel.swift; path = Request/CustomerControlActivateCodeRequestModel.swift; sourceTree = SOURCE_ROOT; };
 		BF027EE722FDA0B500B11752 /* CreateInsuranceDocumentRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateInsuranceDocumentRequestModel.swift; path = Request/CreateInsuranceDocumentRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EE822FDA0B600B11752 /* ExtensionUIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionUIDevice.swift; path = ../../Extension/ExtensionUIDevice.swift; sourceTree = SOURCE_ROOT; };
 		BF027EE922FDA0B600B11752 /* GetWeatherRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetWeatherRequestModel.swift; path = Request/GetWeatherRequestModel.swift; sourceTree = SOURCE_ROOT; };
 		BF027EEA22FDA0B600B11752 /* CustomerChangePasswordRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerChangePasswordRequestModel.swift; path = Request/CustomerChangePasswordRequestModel.swift; sourceTree = SOURCE_ROOT; };
 		BF027EEB22FDA0B600B11752 /* GetGuideInfoOfTouristRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetGuideInfoOfTouristRequestModel.swift; path = Request/GetGuideInfoOfTouristRequestModel.swift; sourceTree = SOURCE_ROOT; };
@@ -538,7 +537,6 @@
 		BF027EF522FDA0B600B11752 /* GetTransferRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTransferRequestModel.swift; path = Request/GetTransferRequestModel.swift; sourceTree = SOURCE_ROOT; };
 		BF027EF622FDA0B600B11752 /* GetSaledExcursionInfoRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetSaledExcursionInfoRequestModel.swift; path = Request/GetSaledExcursionInfoRequestModel.swift; sourceTree = SOURCE_ROOT; };
 		BF027EF722FDA0B600B11752 /* GetTourDefinationComboListRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTourDefinationComboListRequestModel.swift; path = Request/GetTourDefinationComboListRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F1722FDA0C900B11752 /* BaseMessageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseMessageItem.swift; path = Response/BaseMessageItem.swift; sourceTree = SOURCE_ROOT; };
 		BF027F1822FDA0C900B11752 /* CustomerChangePasswordResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerChangePasswordResponseModel.swift; path = Response/CustomerChangePasswordResponseModel.swift; sourceTree = SOURCE_ROOT; };
 		BF027F1922FDA0C900B11752 /* GetListResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetListResponseModel.swift; path = Response/GetListResponseModel.swift; sourceTree = SOURCE_ROOT; };
 		BF027F1A22FDA0C900B11752 /* GetTransferResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTransferResponseModel.swift; path = Response/GetTransferResponseModel.swift; sourceTree = SOURCE_ROOT; };
@@ -566,6 +564,8 @@
 		BF027F3022FDA0CB00B11752 /* CustomerControlActivateCodeResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerControlActivateCodeResponseModel.swift; path = Response/CustomerControlActivateCodeResponseModel.swift; sourceTree = SOURCE_ROOT; };
 		BF027F3122FDA0CB00B11752 /* SendRatedResultResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendRatedResultResponseModel.swift; path = Response/SendRatedResultResponseModel.swift; sourceTree = SOURCE_ROOT; };
 		BF027F3222FDA0CB00B11752 /* GetSaledExcursionInfoDetailResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetSaledExcursionInfoDetailResponseModel.swift; path = Response/GetSaledExcursionInfoDetailResponseModel.swift; sourceTree = SOURCE_ROOT; };
+		BF027F4F22FDA4E700B11752 /* ExtensionUIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionUIDevice.swift; path = ../OtiNetwork/Extension/ExtensionUIDevice.swift; sourceTree = "<group>"; };
+		BF027F5022FDA4E700B11752 /* BaseMessageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseMessageItem.swift; path = ../OtiNetwork/Extension/BaseMessageItem.swift; sourceTree = "<group>"; };
 		BFCCC230B9A2CFCA70CA3E9DC4E1CB4D /* AssertionDispatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionDispatcher.swift; path = Sources/Nimble/Adapters/AssertionDispatcher.swift; sourceTree = "<group>"; };
 		C0597E7ABB137646DD796B1B1CA1DF94 /* MatcherFunc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherFunc.swift; path = Sources/Nimble/Matchers/MatcherFunc.swift; sourceTree = "<group>"; };
 		C08077BD069C563D717050D5A533DE0F /* BeNil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeNil.swift; path = Sources/Nimble/Matchers/BeNil.swift; sourceTree = "<group>"; };
@@ -966,7 +966,6 @@
 		BF027EB322FD9F7A00B11752 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				BF027F1722FDA0C900B11752 /* BaseMessageItem.swift */,
 				BF027F1E22FDA0CA00B11752 /* CheckMyTripResponseModel.swift */,
 				BF027F2522FDA0CA00B11752 /* CreateFlightTicketResponseModel.swift */,
 				BF027F2422FDA0CA00B11752 /* CreateInsuranceDocumentResponseModel.swift */,
@@ -1001,13 +1000,14 @@
 		BF027EC422FDA04000B11752 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BF027F5022FDA4E700B11752 /* BaseMessageItem.swift */,
+				BF027F4F22FDA4E700B11752 /* ExtensionUIDevice.swift */,
 				BF027ECA22FDA05C00B11752 /* BaseApiRequestBody.swift */,
 				BF027EC822FDA05C00B11752 /* BaseData.swift */,
 				BF027EC922FDA05C00B11752 /* BaseResponse.swift */,
 				BF027EC622FDA05C00B11752 /* Defaults.swift */,
 				BF027ECB22FDA05C00B11752 /* ExtensionUIApplication.swift */,
 				BF027ECC22FDA05C00B11752 /* ExtensionUIViewController.swift */,
-				BF027EE822FDA0B600B11752 /* ExtensionUIDevice.swift */,
 				BF027ECD22FDA05C00B11752 /* NetworkManager.swift */,
 				BF027EC522FDA05C00B11752 /* ServiceEndPoint.swift */,
 			);
@@ -1647,7 +1647,6 @@
 				BF027ED722FDA05C00B11752 /* NetworkManager.swift in Sources */,
 				BF027F4922FDA0CB00B11752 /* GetFavoritesResponseModel.swift in Sources */,
 				BF027F1222FDA0B600B11752 /* GetTourDefinationListRequestModel.swift in Sources */,
-				BF027F3322FDA0CB00B11752 /* BaseMessageItem.swift in Sources */,
 				BF027F0E22FDA0B600B11752 /* GetExcursionPrintDataRequestModel.swift in Sources */,
 				BF027EF922FDA0B600B11752 /* GetFavoritesRequestModel.swift in Sources */,
 				BF027F3722FDA0CB00B11752 /* GetExcursionDetailByIdResponseModel.swift in Sources */,
@@ -1660,7 +1659,6 @@
 				BF027EFC22FDA0B600B11752 /* SaveFavoriteRequestModel.swift in Sources */,
 				BF027F3A22FDA0CB00B11752 /* CheckMyTripResponseModel.swift in Sources */,
 				BF027ED322FDA05C00B11752 /* BaseResponse.swift in Sources */,
-				BF027F0722FDA0B600B11752 /* ExtensionUIDevice.swift in Sources */,
 				BF027F1322FDA0B600B11752 /* GetTripDetailByIdRequestModel.swift in Sources */,
 				BF027ED022FDA05C00B11752 /* Defaults.swift in Sources */,
 				BF027F0322FDA0B600B11752 /* GetExcursionDetailByIdRequestModel.swift in Sources */,
@@ -1685,6 +1683,7 @@
 				BF027F3E22FDA0CB00B11752 /* GetNotificationSearchResponseModel.swift in Sources */,
 				BF027F4122FDA0CB00B11752 /* CreateFlightTicketResponseModel.swift in Sources */,
 				BF027F1522FDA0B600B11752 /* GetSaledExcursionInfoRequestModel.swift in Sources */,
+				BF027F5222FDA4E700B11752 /* BaseMessageItem.swift in Sources */,
 				BF027F3422FDA0CB00B11752 /* CustomerChangePasswordResponseModel.swift in Sources */,
 				BF027F1022FDA0B600B11752 /* GetActualTripRequestModel.swift in Sources */,
 				BF027ED622FDA05C00B11752 /* ExtensionUIViewController.swift in Sources */,
@@ -1700,6 +1699,7 @@
 				BF027F3F22FDA0CB00B11752 /* CustomerDetailByIdResponseModel.swift in Sources */,
 				BF027F4A22FDA0CB00B11752 /* LoginResponse.swift in Sources */,
 				BF027EFB22FDA0B600B11752 /* CreateFlightTicketRequestModel.swift in Sources */,
+				BF027F5122FDA4E700B11752 /* ExtensionUIDevice.swift in Sources */,
 				BF027F4622FDA0CB00B11752 /* GetActualTripResponseModel.swift in Sources */,
 				BF027EFA22FDA0B600B11752 /* GetNotificationReadRequestModel.swift in Sources */,
 				BF027F0422FDA0B600B11752 /* GetCustomerForgotPasswordRequestModel.swift in Sources */,

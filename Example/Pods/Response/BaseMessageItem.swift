@@ -8,7 +8,7 @@
 
 import ObjectMapper
 
-class BaseMessageItem:Mappable{
+public class BaseMessageItem:Mappable{
     
     public var type = ""
     public var code = 0 {  // Başka bir yolu yoktu. Akif & Cüneyt
@@ -31,11 +31,11 @@ class BaseMessageItem:Mappable{
     public var stackTrace = ""
     
     
-    required init?(map: Map) {
+   public required init?(map: Map) {
         
     }
     
-    func mapping(map: Map) {
+   public func mapping(map: Map) {
         type <- map["Type"]
         code <- map["Code"]
         message <- map["Message"]

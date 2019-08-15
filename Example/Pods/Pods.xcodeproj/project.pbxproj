@@ -142,65 +142,65 @@
 		BF027ED522FDA05C00B11752 /* ExtensionUIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027ECB22FDA05C00B11752 /* ExtensionUIApplication.swift */; };
 		BF027ED622FDA05C00B11752 /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027ECC22FDA05C00B11752 /* ExtensionUIViewController.swift */; };
 		BF027ED722FDA05C00B11752 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027ECD22FDA05C00B11752 /* NetworkManager.swift */; };
-		BF027EF822FDA0B600B11752 /* CreateVoucherDocumentRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027ED922FDA0B500B11752 /* CreateVoucherDocumentRequestModel.swift */; };
-		BF027EF922FDA0B600B11752 /* GetFavoritesRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EDA22FDA0B500B11752 /* GetFavoritesRequestModel.swift */; };
-		BF027EFA22FDA0B600B11752 /* GetNotificationReadRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EDB22FDA0B500B11752 /* GetNotificationReadRequestModel.swift */; };
-		BF027EFB22FDA0B600B11752 /* CreateFlightTicketRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EDC22FDA0B500B11752 /* CreateFlightTicketRequestModel.swift */; };
-		BF027EFC22FDA0B600B11752 /* SaveFavoriteRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EDD22FDA0B500B11752 /* SaveFavoriteRequestModel.swift */; };
-		BF027EFD22FDA0B600B11752 /* CustomerDetailByIdRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EDE22FDA0B500B11752 /* CustomerDetailByIdRequestModel.swift */; };
-		BF027EFE22FDA0B600B11752 /* GetSaledExcursionInfoDetailRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EDF22FDA0B500B11752 /* GetSaledExcursionInfoDetailRequestModel.swift */; };
-		BF027EFF22FDA0B600B11752 /* SendRatedTourList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EE022FDA0B500B11752 /* SendRatedTourList.swift */; };
-		BF027F0022FDA0B600B11752 /* GetListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EE122FDA0B500B11752 /* GetListRequestModel.swift */; };
-		BF027F0122FDA0B600B11752 /* CheckMyTripRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EE222FDA0B500B11752 /* CheckMyTripRequestModel.swift */; };
-		BF027F0222FDA0B600B11752 /* GetPhoneNumberListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EE322FDA0B500B11752 /* GetPhoneNumberListRequestModel.swift */; };
-		BF027F0322FDA0B600B11752 /* GetExcursionDetailByIdRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EE422FDA0B500B11752 /* GetExcursionDetailByIdRequestModel.swift */; };
-		BF027F0422FDA0B600B11752 /* GetCustomerForgotPasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EE522FDA0B500B11752 /* GetCustomerForgotPasswordRequestModel.swift */; };
-		BF027F0522FDA0B600B11752 /* CustomerControlActivateCodeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EE622FDA0B500B11752 /* CustomerControlActivateCodeRequestModel.swift */; };
-		BF027F0622FDA0B600B11752 /* CreateInsuranceDocumentRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EE722FDA0B500B11752 /* CreateInsuranceDocumentRequestModel.swift */; };
-		BF027F0822FDA0B600B11752 /* GetWeatherRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EE922FDA0B600B11752 /* GetWeatherRequestModel.swift */; };
-		BF027F0922FDA0B600B11752 /* CustomerChangePasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EEA22FDA0B600B11752 /* CustomerChangePasswordRequestModel.swift */; };
-		BF027F0A22FDA0B600B11752 /* GetGuideInfoOfTouristRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EEB22FDA0B600B11752 /* GetGuideInfoOfTouristRequestModel.swift */; };
-		BF027F0B22FDA0B600B11752 /* CustomerSendActiveCodeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EEC22FDA0B600B11752 /* CustomerSendActiveCodeRequestModel.swift */; };
-		BF027F0C22FDA0B600B11752 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EED22FDA0B600B11752 /* LoginRequest.swift */; };
-		BF027F0D22FDA0B600B11752 /* LoginShortRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EEE22FDA0B600B11752 /* LoginShortRequest.swift */; };
-		BF027F0E22FDA0B600B11752 /* GetExcursionPrintDataRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EEF22FDA0B600B11752 /* GetExcursionPrintDataRequestModel.swift */; };
-		BF027F0F22FDA0B600B11752 /* CustomerCreateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EF022FDA0B600B11752 /* CustomerCreateRequestModel.swift */; };
-		BF027F1022FDA0B600B11752 /* GetActualTripRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EF122FDA0B600B11752 /* GetActualTripRequestModel.swift */; };
-		BF027F1122FDA0B600B11752 /* GetNotificationSearchRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EF222FDA0B600B11752 /* GetNotificationSearchRequestModel.swift */; };
-		BF027F1222FDA0B600B11752 /* GetTourDefinationListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EF322FDA0B600B11752 /* GetTourDefinationListRequestModel.swift */; };
-		BF027F1322FDA0B600B11752 /* GetTripDetailByIdRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EF422FDA0B600B11752 /* GetTripDetailByIdRequestModel.swift */; };
-		BF027F1422FDA0B600B11752 /* GetTransferRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EF522FDA0B600B11752 /* GetTransferRequestModel.swift */; };
-		BF027F1522FDA0B600B11752 /* GetSaledExcursionInfoRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EF622FDA0B600B11752 /* GetSaledExcursionInfoRequestModel.swift */; };
-		BF027F1622FDA0B600B11752 /* GetTourDefinationComboListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EF722FDA0B600B11752 /* GetTourDefinationComboListRequestModel.swift */; };
-		BF027F3422FDA0CB00B11752 /* CustomerChangePasswordResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F1822FDA0C900B11752 /* CustomerChangePasswordResponseModel.swift */; };
-		BF027F3522FDA0CB00B11752 /* GetListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F1922FDA0C900B11752 /* GetListResponseModel.swift */; };
-		BF027F3622FDA0CB00B11752 /* GetTransferResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F1A22FDA0C900B11752 /* GetTransferResponseModel.swift */; };
-		BF027F3722FDA0CB00B11752 /* GetExcursionDetailByIdResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F1B22FDA0C900B11752 /* GetExcursionDetailByIdResponseModel.swift */; };
-		BF027F3822FDA0CB00B11752 /* GetNotificationReadResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F1C22FDA0CA00B11752 /* GetNotificationReadResponseModel.swift */; };
-		BF027F3922FDA0CB00B11752 /* GetTourDefinationComboListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F1D22FDA0CA00B11752 /* GetTourDefinationComboListResponseModel.swift */; };
-		BF027F3A22FDA0CB00B11752 /* CheckMyTripResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F1E22FDA0CA00B11752 /* CheckMyTripResponseModel.swift */; };
-		BF027F3B22FDA0CB00B11752 /* CustomerCreateResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F1F22FDA0CA00B11752 /* CustomerCreateResponseModel.swift */; };
-		BF027F3C22FDA0CB00B11752 /* GetPhoneNumberListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F2022FDA0CA00B11752 /* GetPhoneNumberListResponseModel.swift */; };
-		BF027F3D22FDA0CB00B11752 /* GetSaledExcursionInfoResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F2122FDA0CA00B11752 /* GetSaledExcursionInfoResponseModel.swift */; };
-		BF027F3E22FDA0CB00B11752 /* GetNotificationSearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F2222FDA0CA00B11752 /* GetNotificationSearchResponseModel.swift */; };
-		BF027F3F22FDA0CB00B11752 /* CustomerDetailByIdResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F2322FDA0CA00B11752 /* CustomerDetailByIdResponseModel.swift */; };
-		BF027F4022FDA0CB00B11752 /* CreateInsuranceDocumentResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F2422FDA0CA00B11752 /* CreateInsuranceDocumentResponseModel.swift */; };
-		BF027F4122FDA0CB00B11752 /* CreateFlightTicketResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F2522FDA0CA00B11752 /* CreateFlightTicketResponseModel.swift */; };
-		BF027F4222FDA0CB00B11752 /* GetWeatherResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F2622FDA0CA00B11752 /* GetWeatherResponseModel.swift */; };
-		BF027F4322FDA0CB00B11752 /* GetExcursionPrintDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F2722FDA0CA00B11752 /* GetExcursionPrintDataResponseModel.swift */; };
-		BF027F4422FDA0CB00B11752 /* CreateVoucherDocumentResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F2822FDA0CA00B11752 /* CreateVoucherDocumentResponseModel.swift */; };
-		BF027F4522FDA0CB00B11752 /* GetGuideInfoOfTouristResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F2922FDA0CA00B11752 /* GetGuideInfoOfTouristResponseModel.swift */; };
-		BF027F4622FDA0CB00B11752 /* GetActualTripResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F2A22FDA0CA00B11752 /* GetActualTripResponseModel.swift */; };
-		BF027F4722FDA0CB00B11752 /* CustomerSendActiveCodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F2B22FDA0CA00B11752 /* CustomerSendActiveCodeResponseModel.swift */; };
-		BF027F4822FDA0CB00B11752 /* SaveFavoriteResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F2C22FDA0CA00B11752 /* SaveFavoriteResponseModel.swift */; };
-		BF027F4922FDA0CB00B11752 /* GetFavoritesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F2D22FDA0CA00B11752 /* GetFavoritesResponseModel.swift */; };
-		BF027F4A22FDA0CB00B11752 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F2E22FDA0CB00B11752 /* LoginResponse.swift */; };
-		BF027F4B22FDA0CB00B11752 /* GetTourDefinationListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F2F22FDA0CB00B11752 /* GetTourDefinationListResponseModel.swift */; };
-		BF027F4C22FDA0CB00B11752 /* CustomerControlActivateCodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F3022FDA0CB00B11752 /* CustomerControlActivateCodeResponseModel.swift */; };
-		BF027F4D22FDA0CB00B11752 /* SendRatedResultResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F3122FDA0CB00B11752 /* SendRatedResultResponseModel.swift */; };
-		BF027F4E22FDA0CB00B11752 /* GetSaledExcursionInfoDetailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F3222FDA0CB00B11752 /* GetSaledExcursionInfoDetailResponseModel.swift */; };
 		BF027F5122FDA4E700B11752 /* ExtensionUIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F4F22FDA4E700B11752 /* ExtensionUIDevice.swift */; };
 		BF027F5222FDA4E700B11752 /* BaseMessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F5022FDA4E700B11752 /* BaseMessageItem.swift */; };
+		BF027F6E2305296100B11752 /* GetWeatherResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F532305295E00B11752 /* GetWeatherResponseModel.swift */; };
+		BF027F6F2305296100B11752 /* CustomerChangePasswordResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F542305295E00B11752 /* CustomerChangePasswordResponseModel.swift */; };
+		BF027F702305296100B11752 /* GetNotificationReadResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F552305295E00B11752 /* GetNotificationReadResponseModel.swift */; };
+		BF027F712305296100B11752 /* GetListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F562305295E00B11752 /* GetListResponseModel.swift */; };
+		BF027F722305296100B11752 /* GetTourDefinationListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F572305295E00B11752 /* GetTourDefinationListResponseModel.swift */; };
+		BF027F732305296100B11752 /* CustomerControlActivateCodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F582305295E00B11752 /* CustomerControlActivateCodeResponseModel.swift */; };
+		BF027F742305296100B11752 /* GetTourDefinationComboListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F592305295E00B11752 /* GetTourDefinationComboListResponseModel.swift */; };
+		BF027F752305296100B11752 /* GetPhoneNumberListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F5A2305295E00B11752 /* GetPhoneNumberListResponseModel.swift */; };
+		BF027F762305296100B11752 /* GetFavoritesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F5B2305295E00B11752 /* GetFavoritesResponseModel.swift */; };
+		BF027F772305296100B11752 /* CustomerDetailByIdResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F5C2305295F00B11752 /* CustomerDetailByIdResponseModel.swift */; };
+		BF027F782305296100B11752 /* CreateVoucherDocumentResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F5D2305295F00B11752 /* CreateVoucherDocumentResponseModel.swift */; };
+		BF027F792305296100B11752 /* CreateInsuranceDocumentResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F5E2305295F00B11752 /* CreateInsuranceDocumentResponseModel.swift */; };
+		BF027F7A2305296100B11752 /* GetActualTripResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F5F2305295F00B11752 /* GetActualTripResponseModel.swift */; };
+		BF027F7B2305296100B11752 /* CustomerSendActiveCodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F602305295F00B11752 /* CustomerSendActiveCodeResponseModel.swift */; };
+		BF027F7C2305296100B11752 /* GetGuideInfoOfTouristResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F612305295F00B11752 /* GetGuideInfoOfTouristResponseModel.swift */; };
+		BF027F7D2305296100B11752 /* GetNotificationSearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F622305295F00B11752 /* GetNotificationSearchResponseModel.swift */; };
+		BF027F7E2305296100B11752 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F632305295F00B11752 /* LoginResponse.swift */; };
+		BF027F7F2305296100B11752 /* CheckMyTripResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F642305295F00B11752 /* CheckMyTripResponseModel.swift */; };
+		BF027F802305296100B11752 /* GetTransferResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F652305295F00B11752 /* GetTransferResponseModel.swift */; };
+		BF027F812305296100B11752 /* CustomerCreateResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F662305296000B11752 /* CustomerCreateResponseModel.swift */; };
+		BF027F822305296100B11752 /* GetExcursionPrintDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F672305296000B11752 /* GetExcursionPrintDataResponseModel.swift */; };
+		BF027F832305296100B11752 /* SaveFavoriteResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F682305296000B11752 /* SaveFavoriteResponseModel.swift */; };
+		BF027F842305296100B11752 /* GetSaledExcursionInfoResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F692305296000B11752 /* GetSaledExcursionInfoResponseModel.swift */; };
+		BF027F852305296100B11752 /* SendRatedResultResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F6A2305296000B11752 /* SendRatedResultResponseModel.swift */; };
+		BF027F862305296100B11752 /* GetExcursionDetailByIdResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F6B2305296000B11752 /* GetExcursionDetailByIdResponseModel.swift */; };
+		BF027F872305296100B11752 /* GetSaledExcursionInfoDetailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F6C2305296000B11752 /* GetSaledExcursionInfoDetailResponseModel.swift */; };
+		BF027F882305296100B11752 /* CreateFlightTicketResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F6D2305296100B11752 /* CreateFlightTicketResponseModel.swift */; };
+		BF027FA72305298600B11752 /* CustomerChangePasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F892305298500B11752 /* CustomerChangePasswordRequestModel.swift */; };
+		BF027FA82305298600B11752 /* GetWeatherRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F8A2305298500B11752 /* GetWeatherRequestModel.swift */; };
+		BF027FA92305298600B11752 /* GetExcursionPrintDataRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F8B2305298500B11752 /* GetExcursionPrintDataRequestModel.swift */; };
+		BF027FAA2305298600B11752 /* GetTourDefinationListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F8C2305298500B11752 /* GetTourDefinationListRequestModel.swift */; };
+		BF027FAB2305298600B11752 /* CustomerSendActiveCodeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F8D2305298500B11752 /* CustomerSendActiveCodeRequestModel.swift */; };
+		BF027FAC2305298600B11752 /* GetNotificationReadRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F8E2305298500B11752 /* GetNotificationReadRequestModel.swift */; };
+		BF027FAD2305298600B11752 /* GetCustomerForgotPasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F8F2305298500B11752 /* GetCustomerForgotPasswordRequestModel.swift */; };
+		BF027FAE2305298600B11752 /* GetTransferRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F902305298500B11752 /* GetTransferRequestModel.swift */; };
+		BF027FAF2305298600B11752 /* GetSaledExcursionInfoDetailRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F912305298500B11752 /* GetSaledExcursionInfoDetailRequestModel.swift */; };
+		BF027FB02305298600B11752 /* GetListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F922305298500B11752 /* GetListRequestModel.swift */; };
+		BF027FB12305298600B11752 /* CustomerDetailByIdRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F932305298500B11752 /* CustomerDetailByIdRequestModel.swift */; };
+		BF027FB22305298600B11752 /* CustomerControlActivateCodeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F942305298600B11752 /* CustomerControlActivateCodeRequestModel.swift */; };
+		BF027FB32305298600B11752 /* GetTourDefinationComboListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F952305298600B11752 /* GetTourDefinationComboListRequestModel.swift */; };
+		BF027FB42305298600B11752 /* GetTripDetailByIdRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F962305298600B11752 /* GetTripDetailByIdRequestModel.swift */; };
+		BF027FB52305298600B11752 /* GetPhoneNumberListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F972305298600B11752 /* GetPhoneNumberListRequestModel.swift */; };
+		BF027FB62305298600B11752 /* SaveFavoriteRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F982305298600B11752 /* SaveFavoriteRequestModel.swift */; };
+		BF027FB72305298600B11752 /* GetFavoritesRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F992305298600B11752 /* GetFavoritesRequestModel.swift */; };
+		BF027FB82305298600B11752 /* CreateVoucherDocumentRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F9A2305298600B11752 /* CreateVoucherDocumentRequestModel.swift */; };
+		BF027FB92305298600B11752 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F9B2305298600B11752 /* LoginRequest.swift */; };
+		BF027FBA2305298600B11752 /* SendRatedTourList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F9C2305298600B11752 /* SendRatedTourList.swift */; };
+		BF027FBB2305298600B11752 /* CreateFlightTicketRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F9D2305298600B11752 /* CreateFlightTicketRequestModel.swift */; };
+		BF027FBC2305298600B11752 /* GetGuideInfoOfTouristRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F9E2305298600B11752 /* GetGuideInfoOfTouristRequestModel.swift */; };
+		BF027FBD2305298600B11752 /* GetActualTripRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F9F2305298600B11752 /* GetActualTripRequestModel.swift */; };
+		BF027FBE2305298600B11752 /* CustomerCreateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027FA02305298600B11752 /* CustomerCreateRequestModel.swift */; };
+		BF027FBF2305298600B11752 /* GetSaledExcursionInfoRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027FA12305298600B11752 /* GetSaledExcursionInfoRequestModel.swift */; };
+		BF027FC02305298600B11752 /* CheckMyTripRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027FA22305298600B11752 /* CheckMyTripRequestModel.swift */; };
+		BF027FC12305298600B11752 /* LoginShortRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027FA32305298600B11752 /* LoginShortRequest.swift */; };
+		BF027FC22305298600B11752 /* GetExcursionDetailByIdRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027FA42305298600B11752 /* GetExcursionDetailByIdRequestModel.swift */; };
+		BF027FC32305298600B11752 /* GetNotificationSearchRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027FA52305298600B11752 /* GetNotificationSearchRequestModel.swift */; };
+		BF027FC42305298600B11752 /* CreateInsuranceDocumentRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027FA62305298600B11752 /* CreateInsuranceDocumentRequestModel.swift */; };
 		BF162FE488440AC9824E22EF6BD760FC /* DSL+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F812F05576FA8B6EF5EB05BFBCA159 /* DSL+Wait.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		C098C153F2988A344EAD8EE4C0CDF882 /* PostNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD02B89A8D848CC5686C0A791F63C75 /* PostNotification.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		C0B393B80CD971349123D9F02DFDD554 /* ImmutableMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC90C5EFB883771F7204A13515A321 /* ImmutableMappable.swift */; };
@@ -507,65 +507,65 @@
 		BF027ECB22FDA05C00B11752 /* ExtensionUIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionUIApplication.swift; path = ../OtiNetwork/Model/ExtensionUIApplication.swift; sourceTree = "<group>"; };
 		BF027ECC22FDA05C00B11752 /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionUIViewController.swift; path = ../OtiNetwork/Model/ExtensionUIViewController.swift; sourceTree = "<group>"; };
 		BF027ECD22FDA05C00B11752 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkManager.swift; path = ../OtiNetwork/Model/NetworkManager.swift; sourceTree = "<group>"; };
-		BF027ED922FDA0B500B11752 /* CreateVoucherDocumentRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateVoucherDocumentRequestModel.swift; path = Request/CreateVoucherDocumentRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EDA22FDA0B500B11752 /* GetFavoritesRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetFavoritesRequestModel.swift; path = Request/GetFavoritesRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EDB22FDA0B500B11752 /* GetNotificationReadRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetNotificationReadRequestModel.swift; path = Request/GetNotificationReadRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EDC22FDA0B500B11752 /* CreateFlightTicketRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateFlightTicketRequestModel.swift; path = Request/CreateFlightTicketRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EDD22FDA0B500B11752 /* SaveFavoriteRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveFavoriteRequestModel.swift; path = Request/SaveFavoriteRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EDE22FDA0B500B11752 /* CustomerDetailByIdRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerDetailByIdRequestModel.swift; path = Request/CustomerDetailByIdRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EDF22FDA0B500B11752 /* GetSaledExcursionInfoDetailRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetSaledExcursionInfoDetailRequestModel.swift; path = Request/GetSaledExcursionInfoDetailRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EE022FDA0B500B11752 /* SendRatedTourList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendRatedTourList.swift; path = Request/SendRatedTourList.swift; sourceTree = SOURCE_ROOT; };
-		BF027EE122FDA0B500B11752 /* GetListRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetListRequestModel.swift; path = Request/GetListRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EE222FDA0B500B11752 /* CheckMyTripRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckMyTripRequestModel.swift; path = Request/CheckMyTripRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EE322FDA0B500B11752 /* GetPhoneNumberListRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetPhoneNumberListRequestModel.swift; path = Request/GetPhoneNumberListRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EE422FDA0B500B11752 /* GetExcursionDetailByIdRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetExcursionDetailByIdRequestModel.swift; path = Request/GetExcursionDetailByIdRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EE522FDA0B500B11752 /* GetCustomerForgotPasswordRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetCustomerForgotPasswordRequestModel.swift; path = Request/GetCustomerForgotPasswordRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EE622FDA0B500B11752 /* CustomerControlActivateCodeRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerControlActivateCodeRequestModel.swift; path = Request/CustomerControlActivateCodeRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EE722FDA0B500B11752 /* CreateInsuranceDocumentRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateInsuranceDocumentRequestModel.swift; path = Request/CreateInsuranceDocumentRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EE922FDA0B600B11752 /* GetWeatherRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetWeatherRequestModel.swift; path = Request/GetWeatherRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EEA22FDA0B600B11752 /* CustomerChangePasswordRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerChangePasswordRequestModel.swift; path = Request/CustomerChangePasswordRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EEB22FDA0B600B11752 /* GetGuideInfoOfTouristRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetGuideInfoOfTouristRequestModel.swift; path = Request/GetGuideInfoOfTouristRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EEC22FDA0B600B11752 /* CustomerSendActiveCodeRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerSendActiveCodeRequestModel.swift; path = Request/CustomerSendActiveCodeRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EED22FDA0B600B11752 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginRequest.swift; path = Request/LoginRequest.swift; sourceTree = SOURCE_ROOT; };
-		BF027EEE22FDA0B600B11752 /* LoginShortRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginShortRequest.swift; path = Request/LoginShortRequest.swift; sourceTree = SOURCE_ROOT; };
-		BF027EEF22FDA0B600B11752 /* GetExcursionPrintDataRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetExcursionPrintDataRequestModel.swift; path = Request/GetExcursionPrintDataRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EF022FDA0B600B11752 /* CustomerCreateRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerCreateRequestModel.swift; path = Request/CustomerCreateRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EF122FDA0B600B11752 /* GetActualTripRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetActualTripRequestModel.swift; path = Request/GetActualTripRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EF222FDA0B600B11752 /* GetNotificationSearchRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetNotificationSearchRequestModel.swift; path = Request/GetNotificationSearchRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EF322FDA0B600B11752 /* GetTourDefinationListRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTourDefinationListRequestModel.swift; path = Request/GetTourDefinationListRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EF422FDA0B600B11752 /* GetTripDetailByIdRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTripDetailByIdRequestModel.swift; path = Request/GetTripDetailByIdRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EF522FDA0B600B11752 /* GetTransferRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTransferRequestModel.swift; path = Request/GetTransferRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EF622FDA0B600B11752 /* GetSaledExcursionInfoRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetSaledExcursionInfoRequestModel.swift; path = Request/GetSaledExcursionInfoRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027EF722FDA0B600B11752 /* GetTourDefinationComboListRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTourDefinationComboListRequestModel.swift; path = Request/GetTourDefinationComboListRequestModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F1822FDA0C900B11752 /* CustomerChangePasswordResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerChangePasswordResponseModel.swift; path = Response/CustomerChangePasswordResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F1922FDA0C900B11752 /* GetListResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetListResponseModel.swift; path = Response/GetListResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F1A22FDA0C900B11752 /* GetTransferResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTransferResponseModel.swift; path = Response/GetTransferResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F1B22FDA0C900B11752 /* GetExcursionDetailByIdResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetExcursionDetailByIdResponseModel.swift; path = Response/GetExcursionDetailByIdResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F1C22FDA0CA00B11752 /* GetNotificationReadResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetNotificationReadResponseModel.swift; path = Response/GetNotificationReadResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F1D22FDA0CA00B11752 /* GetTourDefinationComboListResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTourDefinationComboListResponseModel.swift; path = Response/GetTourDefinationComboListResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F1E22FDA0CA00B11752 /* CheckMyTripResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckMyTripResponseModel.swift; path = Response/CheckMyTripResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F1F22FDA0CA00B11752 /* CustomerCreateResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerCreateResponseModel.swift; path = Response/CustomerCreateResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F2022FDA0CA00B11752 /* GetPhoneNumberListResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetPhoneNumberListResponseModel.swift; path = Response/GetPhoneNumberListResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F2122FDA0CA00B11752 /* GetSaledExcursionInfoResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetSaledExcursionInfoResponseModel.swift; path = Response/GetSaledExcursionInfoResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F2222FDA0CA00B11752 /* GetNotificationSearchResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetNotificationSearchResponseModel.swift; path = Response/GetNotificationSearchResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F2322FDA0CA00B11752 /* CustomerDetailByIdResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerDetailByIdResponseModel.swift; path = Response/CustomerDetailByIdResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F2422FDA0CA00B11752 /* CreateInsuranceDocumentResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateInsuranceDocumentResponseModel.swift; path = Response/CreateInsuranceDocumentResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F2522FDA0CA00B11752 /* CreateFlightTicketResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateFlightTicketResponseModel.swift; path = Response/CreateFlightTicketResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F2622FDA0CA00B11752 /* GetWeatherResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetWeatherResponseModel.swift; path = Response/GetWeatherResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F2722FDA0CA00B11752 /* GetExcursionPrintDataResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetExcursionPrintDataResponseModel.swift; path = Response/GetExcursionPrintDataResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F2822FDA0CA00B11752 /* CreateVoucherDocumentResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateVoucherDocumentResponseModel.swift; path = Response/CreateVoucherDocumentResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F2922FDA0CA00B11752 /* GetGuideInfoOfTouristResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetGuideInfoOfTouristResponseModel.swift; path = Response/GetGuideInfoOfTouristResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F2A22FDA0CA00B11752 /* GetActualTripResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetActualTripResponseModel.swift; path = Response/GetActualTripResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F2B22FDA0CA00B11752 /* CustomerSendActiveCodeResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerSendActiveCodeResponseModel.swift; path = Response/CustomerSendActiveCodeResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F2C22FDA0CA00B11752 /* SaveFavoriteResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveFavoriteResponseModel.swift; path = Response/SaveFavoriteResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F2D22FDA0CA00B11752 /* GetFavoritesResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetFavoritesResponseModel.swift; path = Response/GetFavoritesResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F2E22FDA0CB00B11752 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginResponse.swift; path = Response/LoginResponse.swift; sourceTree = SOURCE_ROOT; };
-		BF027F2F22FDA0CB00B11752 /* GetTourDefinationListResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTourDefinationListResponseModel.swift; path = Response/GetTourDefinationListResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F3022FDA0CB00B11752 /* CustomerControlActivateCodeResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerControlActivateCodeResponseModel.swift; path = Response/CustomerControlActivateCodeResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F3122FDA0CB00B11752 /* SendRatedResultResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendRatedResultResponseModel.swift; path = Response/SendRatedResultResponseModel.swift; sourceTree = SOURCE_ROOT; };
-		BF027F3222FDA0CB00B11752 /* GetSaledExcursionInfoDetailResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetSaledExcursionInfoDetailResponseModel.swift; path = Response/GetSaledExcursionInfoDetailResponseModel.swift; sourceTree = SOURCE_ROOT; };
 		BF027F4F22FDA4E700B11752 /* ExtensionUIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionUIDevice.swift; path = ../OtiNetwork/Extension/ExtensionUIDevice.swift; sourceTree = "<group>"; };
 		BF027F5022FDA4E700B11752 /* BaseMessageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseMessageItem.swift; path = ../OtiNetwork/Extension/BaseMessageItem.swift; sourceTree = "<group>"; };
+		BF027F532305295E00B11752 /* GetWeatherResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetWeatherResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetWeatherResponseModel.swift; sourceTree = "<group>"; };
+		BF027F542305295E00B11752 /* CustomerChangePasswordResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerChangePasswordResponseModel.swift; path = ../../OtiNetwork/Model/Response/CustomerChangePasswordResponseModel.swift; sourceTree = "<group>"; };
+		BF027F552305295E00B11752 /* GetNotificationReadResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetNotificationReadResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetNotificationReadResponseModel.swift; sourceTree = "<group>"; };
+		BF027F562305295E00B11752 /* GetListResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetListResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetListResponseModel.swift; sourceTree = "<group>"; };
+		BF027F572305295E00B11752 /* GetTourDefinationListResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTourDefinationListResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetTourDefinationListResponseModel.swift; sourceTree = "<group>"; };
+		BF027F582305295E00B11752 /* CustomerControlActivateCodeResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerControlActivateCodeResponseModel.swift; path = ../../OtiNetwork/Model/Response/CustomerControlActivateCodeResponseModel.swift; sourceTree = "<group>"; };
+		BF027F592305295E00B11752 /* GetTourDefinationComboListResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTourDefinationComboListResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetTourDefinationComboListResponseModel.swift; sourceTree = "<group>"; };
+		BF027F5A2305295E00B11752 /* GetPhoneNumberListResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetPhoneNumberListResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetPhoneNumberListResponseModel.swift; sourceTree = "<group>"; };
+		BF027F5B2305295E00B11752 /* GetFavoritesResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetFavoritesResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetFavoritesResponseModel.swift; sourceTree = "<group>"; };
+		BF027F5C2305295F00B11752 /* CustomerDetailByIdResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerDetailByIdResponseModel.swift; path = ../../OtiNetwork/Model/Response/CustomerDetailByIdResponseModel.swift; sourceTree = "<group>"; };
+		BF027F5D2305295F00B11752 /* CreateVoucherDocumentResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateVoucherDocumentResponseModel.swift; path = ../../OtiNetwork/Model/Response/CreateVoucherDocumentResponseModel.swift; sourceTree = "<group>"; };
+		BF027F5E2305295F00B11752 /* CreateInsuranceDocumentResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateInsuranceDocumentResponseModel.swift; path = ../../OtiNetwork/Model/Response/CreateInsuranceDocumentResponseModel.swift; sourceTree = "<group>"; };
+		BF027F5F2305295F00B11752 /* GetActualTripResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetActualTripResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetActualTripResponseModel.swift; sourceTree = "<group>"; };
+		BF027F602305295F00B11752 /* CustomerSendActiveCodeResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerSendActiveCodeResponseModel.swift; path = ../../OtiNetwork/Model/Response/CustomerSendActiveCodeResponseModel.swift; sourceTree = "<group>"; };
+		BF027F612305295F00B11752 /* GetGuideInfoOfTouristResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetGuideInfoOfTouristResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetGuideInfoOfTouristResponseModel.swift; sourceTree = "<group>"; };
+		BF027F622305295F00B11752 /* GetNotificationSearchResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetNotificationSearchResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetNotificationSearchResponseModel.swift; sourceTree = "<group>"; };
+		BF027F632305295F00B11752 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginResponse.swift; path = ../../OtiNetwork/Model/Response/LoginResponse.swift; sourceTree = "<group>"; };
+		BF027F642305295F00B11752 /* CheckMyTripResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckMyTripResponseModel.swift; path = ../../OtiNetwork/Model/Response/CheckMyTripResponseModel.swift; sourceTree = "<group>"; };
+		BF027F652305295F00B11752 /* GetTransferResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTransferResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetTransferResponseModel.swift; sourceTree = "<group>"; };
+		BF027F662305296000B11752 /* CustomerCreateResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerCreateResponseModel.swift; path = ../../OtiNetwork/Model/Response/CustomerCreateResponseModel.swift; sourceTree = "<group>"; };
+		BF027F672305296000B11752 /* GetExcursionPrintDataResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetExcursionPrintDataResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetExcursionPrintDataResponseModel.swift; sourceTree = "<group>"; };
+		BF027F682305296000B11752 /* SaveFavoriteResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveFavoriteResponseModel.swift; path = ../../OtiNetwork/Model/Response/SaveFavoriteResponseModel.swift; sourceTree = "<group>"; };
+		BF027F692305296000B11752 /* GetSaledExcursionInfoResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetSaledExcursionInfoResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetSaledExcursionInfoResponseModel.swift; sourceTree = "<group>"; };
+		BF027F6A2305296000B11752 /* SendRatedResultResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendRatedResultResponseModel.swift; path = ../../OtiNetwork/Model/Response/SendRatedResultResponseModel.swift; sourceTree = "<group>"; };
+		BF027F6B2305296000B11752 /* GetExcursionDetailByIdResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetExcursionDetailByIdResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetExcursionDetailByIdResponseModel.swift; sourceTree = "<group>"; };
+		BF027F6C2305296000B11752 /* GetSaledExcursionInfoDetailResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetSaledExcursionInfoDetailResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetSaledExcursionInfoDetailResponseModel.swift; sourceTree = "<group>"; };
+		BF027F6D2305296100B11752 /* CreateFlightTicketResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateFlightTicketResponseModel.swift; path = ../../OtiNetwork/Model/Response/CreateFlightTicketResponseModel.swift; sourceTree = "<group>"; };
+		BF027F892305298500B11752 /* CustomerChangePasswordRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerChangePasswordRequestModel.swift; path = ../../OtiNetwork/Model/Request/CustomerChangePasswordRequestModel.swift; sourceTree = "<group>"; };
+		BF027F8A2305298500B11752 /* GetWeatherRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetWeatherRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetWeatherRequestModel.swift; sourceTree = "<group>"; };
+		BF027F8B2305298500B11752 /* GetExcursionPrintDataRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetExcursionPrintDataRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetExcursionPrintDataRequestModel.swift; sourceTree = "<group>"; };
+		BF027F8C2305298500B11752 /* GetTourDefinationListRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTourDefinationListRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetTourDefinationListRequestModel.swift; sourceTree = "<group>"; };
+		BF027F8D2305298500B11752 /* CustomerSendActiveCodeRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerSendActiveCodeRequestModel.swift; path = ../../OtiNetwork/Model/Request/CustomerSendActiveCodeRequestModel.swift; sourceTree = "<group>"; };
+		BF027F8E2305298500B11752 /* GetNotificationReadRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetNotificationReadRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetNotificationReadRequestModel.swift; sourceTree = "<group>"; };
+		BF027F8F2305298500B11752 /* GetCustomerForgotPasswordRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetCustomerForgotPasswordRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetCustomerForgotPasswordRequestModel.swift; sourceTree = "<group>"; };
+		BF027F902305298500B11752 /* GetTransferRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTransferRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetTransferRequestModel.swift; sourceTree = "<group>"; };
+		BF027F912305298500B11752 /* GetSaledExcursionInfoDetailRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetSaledExcursionInfoDetailRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetSaledExcursionInfoDetailRequestModel.swift; sourceTree = "<group>"; };
+		BF027F922305298500B11752 /* GetListRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetListRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetListRequestModel.swift; sourceTree = "<group>"; };
+		BF027F932305298500B11752 /* CustomerDetailByIdRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerDetailByIdRequestModel.swift; path = ../../OtiNetwork/Model/Request/CustomerDetailByIdRequestModel.swift; sourceTree = "<group>"; };
+		BF027F942305298600B11752 /* CustomerControlActivateCodeRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerControlActivateCodeRequestModel.swift; path = ../../OtiNetwork/Model/Request/CustomerControlActivateCodeRequestModel.swift; sourceTree = "<group>"; };
+		BF027F952305298600B11752 /* GetTourDefinationComboListRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTourDefinationComboListRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetTourDefinationComboListRequestModel.swift; sourceTree = "<group>"; };
+		BF027F962305298600B11752 /* GetTripDetailByIdRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTripDetailByIdRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetTripDetailByIdRequestModel.swift; sourceTree = "<group>"; };
+		BF027F972305298600B11752 /* GetPhoneNumberListRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetPhoneNumberListRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetPhoneNumberListRequestModel.swift; sourceTree = "<group>"; };
+		BF027F982305298600B11752 /* SaveFavoriteRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveFavoriteRequestModel.swift; path = ../../OtiNetwork/Model/Request/SaveFavoriteRequestModel.swift; sourceTree = "<group>"; };
+		BF027F992305298600B11752 /* GetFavoritesRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetFavoritesRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetFavoritesRequestModel.swift; sourceTree = "<group>"; };
+		BF027F9A2305298600B11752 /* CreateVoucherDocumentRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateVoucherDocumentRequestModel.swift; path = ../../OtiNetwork/Model/Request/CreateVoucherDocumentRequestModel.swift; sourceTree = "<group>"; };
+		BF027F9B2305298600B11752 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginRequest.swift; path = ../../OtiNetwork/Model/Request/LoginRequest.swift; sourceTree = "<group>"; };
+		BF027F9C2305298600B11752 /* SendRatedTourList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendRatedTourList.swift; path = ../../OtiNetwork/Model/Request/SendRatedTourList.swift; sourceTree = "<group>"; };
+		BF027F9D2305298600B11752 /* CreateFlightTicketRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateFlightTicketRequestModel.swift; path = ../../OtiNetwork/Model/Request/CreateFlightTicketRequestModel.swift; sourceTree = "<group>"; };
+		BF027F9E2305298600B11752 /* GetGuideInfoOfTouristRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetGuideInfoOfTouristRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetGuideInfoOfTouristRequestModel.swift; sourceTree = "<group>"; };
+		BF027F9F2305298600B11752 /* GetActualTripRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetActualTripRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetActualTripRequestModel.swift; sourceTree = "<group>"; };
+		BF027FA02305298600B11752 /* CustomerCreateRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerCreateRequestModel.swift; path = ../../OtiNetwork/Model/Request/CustomerCreateRequestModel.swift; sourceTree = "<group>"; };
+		BF027FA12305298600B11752 /* GetSaledExcursionInfoRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetSaledExcursionInfoRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetSaledExcursionInfoRequestModel.swift; sourceTree = "<group>"; };
+		BF027FA22305298600B11752 /* CheckMyTripRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckMyTripRequestModel.swift; path = ../../OtiNetwork/Model/Request/CheckMyTripRequestModel.swift; sourceTree = "<group>"; };
+		BF027FA32305298600B11752 /* LoginShortRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginShortRequest.swift; path = ../../OtiNetwork/Model/Request/LoginShortRequest.swift; sourceTree = "<group>"; };
+		BF027FA42305298600B11752 /* GetExcursionDetailByIdRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetExcursionDetailByIdRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetExcursionDetailByIdRequestModel.swift; sourceTree = "<group>"; };
+		BF027FA52305298600B11752 /* GetNotificationSearchRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetNotificationSearchRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetNotificationSearchRequestModel.swift; sourceTree = "<group>"; };
+		BF027FA62305298600B11752 /* CreateInsuranceDocumentRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateInsuranceDocumentRequestModel.swift; path = ../../OtiNetwork/Model/Request/CreateInsuranceDocumentRequestModel.swift; sourceTree = "<group>"; };
 		BFCCC230B9A2CFCA70CA3E9DC4E1CB4D /* AssertionDispatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionDispatcher.swift; path = Sources/Nimble/Adapters/AssertionDispatcher.swift; sourceTree = "<group>"; };
 		C0597E7ABB137646DD796B1B1CA1DF94 /* MatcherFunc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherFunc.swift; path = Sources/Nimble/Matchers/MatcherFunc.swift; sourceTree = "<group>"; };
 		C08077BD069C563D717050D5A533DE0F /* BeNil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeNil.swift; path = Sources/Nimble/Matchers/BeNil.swift; sourceTree = "<group>"; };
@@ -929,36 +929,36 @@
 		BF027EB222FD9F7400B11752 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				BF027EE222FDA0B500B11752 /* CheckMyTripRequestModel.swift */,
-				BF027EDC22FDA0B500B11752 /* CreateFlightTicketRequestModel.swift */,
-				BF027EE722FDA0B500B11752 /* CreateInsuranceDocumentRequestModel.swift */,
-				BF027ED922FDA0B500B11752 /* CreateVoucherDocumentRequestModel.swift */,
-				BF027EEA22FDA0B600B11752 /* CustomerChangePasswordRequestModel.swift */,
-				BF027EE622FDA0B500B11752 /* CustomerControlActivateCodeRequestModel.swift */,
-				BF027EF022FDA0B600B11752 /* CustomerCreateRequestModel.swift */,
-				BF027EDE22FDA0B500B11752 /* CustomerDetailByIdRequestModel.swift */,
-				BF027EEC22FDA0B600B11752 /* CustomerSendActiveCodeRequestModel.swift */,
-				BF027EF122FDA0B600B11752 /* GetActualTripRequestModel.swift */,
-				BF027EE522FDA0B500B11752 /* GetCustomerForgotPasswordRequestModel.swift */,
-				BF027EE422FDA0B500B11752 /* GetExcursionDetailByIdRequestModel.swift */,
-				BF027EEF22FDA0B600B11752 /* GetExcursionPrintDataRequestModel.swift */,
-				BF027EDA22FDA0B500B11752 /* GetFavoritesRequestModel.swift */,
-				BF027EEB22FDA0B600B11752 /* GetGuideInfoOfTouristRequestModel.swift */,
-				BF027EE122FDA0B500B11752 /* GetListRequestModel.swift */,
-				BF027EDB22FDA0B500B11752 /* GetNotificationReadRequestModel.swift */,
-				BF027EF222FDA0B600B11752 /* GetNotificationSearchRequestModel.swift */,
-				BF027EE322FDA0B500B11752 /* GetPhoneNumberListRequestModel.swift */,
-				BF027EDF22FDA0B500B11752 /* GetSaledExcursionInfoDetailRequestModel.swift */,
-				BF027EF622FDA0B600B11752 /* GetSaledExcursionInfoRequestModel.swift */,
-				BF027EF722FDA0B600B11752 /* GetTourDefinationComboListRequestModel.swift */,
-				BF027EF322FDA0B600B11752 /* GetTourDefinationListRequestModel.swift */,
-				BF027EF522FDA0B600B11752 /* GetTransferRequestModel.swift */,
-				BF027EF422FDA0B600B11752 /* GetTripDetailByIdRequestModel.swift */,
-				BF027EE922FDA0B600B11752 /* GetWeatherRequestModel.swift */,
-				BF027EED22FDA0B600B11752 /* LoginRequest.swift */,
-				BF027EEE22FDA0B600B11752 /* LoginShortRequest.swift */,
-				BF027EDD22FDA0B500B11752 /* SaveFavoriteRequestModel.swift */,
-				BF027EE022FDA0B500B11752 /* SendRatedTourList.swift */,
+				BF027FA22305298600B11752 /* CheckMyTripRequestModel.swift */,
+				BF027F9D2305298600B11752 /* CreateFlightTicketRequestModel.swift */,
+				BF027FA62305298600B11752 /* CreateInsuranceDocumentRequestModel.swift */,
+				BF027F9A2305298600B11752 /* CreateVoucherDocumentRequestModel.swift */,
+				BF027F892305298500B11752 /* CustomerChangePasswordRequestModel.swift */,
+				BF027F942305298600B11752 /* CustomerControlActivateCodeRequestModel.swift */,
+				BF027FA02305298600B11752 /* CustomerCreateRequestModel.swift */,
+				BF027F932305298500B11752 /* CustomerDetailByIdRequestModel.swift */,
+				BF027F8D2305298500B11752 /* CustomerSendActiveCodeRequestModel.swift */,
+				BF027F9F2305298600B11752 /* GetActualTripRequestModel.swift */,
+				BF027F8F2305298500B11752 /* GetCustomerForgotPasswordRequestModel.swift */,
+				BF027FA42305298600B11752 /* GetExcursionDetailByIdRequestModel.swift */,
+				BF027F8B2305298500B11752 /* GetExcursionPrintDataRequestModel.swift */,
+				BF027F992305298600B11752 /* GetFavoritesRequestModel.swift */,
+				BF027F9E2305298600B11752 /* GetGuideInfoOfTouristRequestModel.swift */,
+				BF027F922305298500B11752 /* GetListRequestModel.swift */,
+				BF027F8E2305298500B11752 /* GetNotificationReadRequestModel.swift */,
+				BF027FA52305298600B11752 /* GetNotificationSearchRequestModel.swift */,
+				BF027F972305298600B11752 /* GetPhoneNumberListRequestModel.swift */,
+				BF027F912305298500B11752 /* GetSaledExcursionInfoDetailRequestModel.swift */,
+				BF027FA12305298600B11752 /* GetSaledExcursionInfoRequestModel.swift */,
+				BF027F952305298600B11752 /* GetTourDefinationComboListRequestModel.swift */,
+				BF027F8C2305298500B11752 /* GetTourDefinationListRequestModel.swift */,
+				BF027F902305298500B11752 /* GetTransferRequestModel.swift */,
+				BF027F962305298600B11752 /* GetTripDetailByIdRequestModel.swift */,
+				BF027F8A2305298500B11752 /* GetWeatherRequestModel.swift */,
+				BF027F9B2305298600B11752 /* LoginRequest.swift */,
+				BF027FA32305298600B11752 /* LoginShortRequest.swift */,
+				BF027F982305298600B11752 /* SaveFavoriteRequestModel.swift */,
+				BF027F9C2305298600B11752 /* SendRatedTourList.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -966,33 +966,33 @@
 		BF027EB322FD9F7A00B11752 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				BF027F1E22FDA0CA00B11752 /* CheckMyTripResponseModel.swift */,
-				BF027F2522FDA0CA00B11752 /* CreateFlightTicketResponseModel.swift */,
-				BF027F2422FDA0CA00B11752 /* CreateInsuranceDocumentResponseModel.swift */,
-				BF027F2822FDA0CA00B11752 /* CreateVoucherDocumentResponseModel.swift */,
-				BF027F1822FDA0C900B11752 /* CustomerChangePasswordResponseModel.swift */,
-				BF027F3022FDA0CB00B11752 /* CustomerControlActivateCodeResponseModel.swift */,
-				BF027F1F22FDA0CA00B11752 /* CustomerCreateResponseModel.swift */,
-				BF027F2322FDA0CA00B11752 /* CustomerDetailByIdResponseModel.swift */,
-				BF027F2B22FDA0CA00B11752 /* CustomerSendActiveCodeResponseModel.swift */,
-				BF027F2A22FDA0CA00B11752 /* GetActualTripResponseModel.swift */,
-				BF027F1B22FDA0C900B11752 /* GetExcursionDetailByIdResponseModel.swift */,
-				BF027F2722FDA0CA00B11752 /* GetExcursionPrintDataResponseModel.swift */,
-				BF027F2D22FDA0CA00B11752 /* GetFavoritesResponseModel.swift */,
-				BF027F2922FDA0CA00B11752 /* GetGuideInfoOfTouristResponseModel.swift */,
-				BF027F1922FDA0C900B11752 /* GetListResponseModel.swift */,
-				BF027F1C22FDA0CA00B11752 /* GetNotificationReadResponseModel.swift */,
-				BF027F2222FDA0CA00B11752 /* GetNotificationSearchResponseModel.swift */,
-				BF027F2022FDA0CA00B11752 /* GetPhoneNumberListResponseModel.swift */,
-				BF027F3222FDA0CB00B11752 /* GetSaledExcursionInfoDetailResponseModel.swift */,
-				BF027F2122FDA0CA00B11752 /* GetSaledExcursionInfoResponseModel.swift */,
-				BF027F1D22FDA0CA00B11752 /* GetTourDefinationComboListResponseModel.swift */,
-				BF027F2F22FDA0CB00B11752 /* GetTourDefinationListResponseModel.swift */,
-				BF027F1A22FDA0C900B11752 /* GetTransferResponseModel.swift */,
-				BF027F2622FDA0CA00B11752 /* GetWeatherResponseModel.swift */,
-				BF027F2E22FDA0CB00B11752 /* LoginResponse.swift */,
-				BF027F2C22FDA0CA00B11752 /* SaveFavoriteResponseModel.swift */,
-				BF027F3122FDA0CB00B11752 /* SendRatedResultResponseModel.swift */,
+				BF027F642305295F00B11752 /* CheckMyTripResponseModel.swift */,
+				BF027F6D2305296100B11752 /* CreateFlightTicketResponseModel.swift */,
+				BF027F5E2305295F00B11752 /* CreateInsuranceDocumentResponseModel.swift */,
+				BF027F5D2305295F00B11752 /* CreateVoucherDocumentResponseModel.swift */,
+				BF027F542305295E00B11752 /* CustomerChangePasswordResponseModel.swift */,
+				BF027F582305295E00B11752 /* CustomerControlActivateCodeResponseModel.swift */,
+				BF027F662305296000B11752 /* CustomerCreateResponseModel.swift */,
+				BF027F5C2305295F00B11752 /* CustomerDetailByIdResponseModel.swift */,
+				BF027F602305295F00B11752 /* CustomerSendActiveCodeResponseModel.swift */,
+				BF027F5F2305295F00B11752 /* GetActualTripResponseModel.swift */,
+				BF027F6B2305296000B11752 /* GetExcursionDetailByIdResponseModel.swift */,
+				BF027F672305296000B11752 /* GetExcursionPrintDataResponseModel.swift */,
+				BF027F5B2305295E00B11752 /* GetFavoritesResponseModel.swift */,
+				BF027F612305295F00B11752 /* GetGuideInfoOfTouristResponseModel.swift */,
+				BF027F562305295E00B11752 /* GetListResponseModel.swift */,
+				BF027F552305295E00B11752 /* GetNotificationReadResponseModel.swift */,
+				BF027F622305295F00B11752 /* GetNotificationSearchResponseModel.swift */,
+				BF027F5A2305295E00B11752 /* GetPhoneNumberListResponseModel.swift */,
+				BF027F6C2305296000B11752 /* GetSaledExcursionInfoDetailResponseModel.swift */,
+				BF027F692305296000B11752 /* GetSaledExcursionInfoResponseModel.swift */,
+				BF027F592305295E00B11752 /* GetTourDefinationComboListResponseModel.swift */,
+				BF027F572305295E00B11752 /* GetTourDefinationListResponseModel.swift */,
+				BF027F652305295F00B11752 /* GetTransferResponseModel.swift */,
+				BF027F532305295E00B11752 /* GetWeatherResponseModel.swift */,
+				BF027F632305295F00B11752 /* LoginResponse.swift */,
+				BF027F682305296000B11752 /* SaveFavoriteResponseModel.swift */,
+				BF027F6A2305296000B11752 /* SendRatedResultResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1640,74 +1640,74 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF027F1622FDA0B600B11752 /* GetTourDefinationComboListRequestModel.swift in Sources */,
-				BF027F0D22FDA0B600B11752 /* LoginShortRequest.swift in Sources */,
-				BF027F4B22FDA0CB00B11752 /* GetTourDefinationListResponseModel.swift in Sources */,
-				BF027F0522FDA0B600B11752 /* CustomerControlActivateCodeRequestModel.swift in Sources */,
+				BF027F7B2305296100B11752 /* CustomerSendActiveCodeResponseModel.swift in Sources */,
+				BF027FB72305298600B11752 /* GetFavoritesRequestModel.swift in Sources */,
+				BF027FC22305298600B11752 /* GetExcursionDetailByIdRequestModel.swift in Sources */,
+				BF027F882305296100B11752 /* CreateFlightTicketResponseModel.swift in Sources */,
+				BF027FB62305298600B11752 /* SaveFavoriteRequestModel.swift in Sources */,
+				BF027FBE2305298600B11752 /* CustomerCreateRequestModel.swift in Sources */,
+				BF027FBD2305298600B11752 /* GetActualTripRequestModel.swift in Sources */,
+				BF027F7A2305296100B11752 /* GetActualTripResponseModel.swift in Sources */,
+				BF027FBF2305298600B11752 /* GetSaledExcursionInfoRequestModel.swift in Sources */,
+				BF027FBB2305298600B11752 /* CreateFlightTicketRequestModel.swift in Sources */,
+				BF027FAA2305298600B11752 /* GetTourDefinationListRequestModel.swift in Sources */,
 				BF027ED722FDA05C00B11752 /* NetworkManager.swift in Sources */,
-				BF027F4922FDA0CB00B11752 /* GetFavoritesResponseModel.swift in Sources */,
-				BF027F1222FDA0B600B11752 /* GetTourDefinationListRequestModel.swift in Sources */,
-				BF027F0E22FDA0B600B11752 /* GetExcursionPrintDataRequestModel.swift in Sources */,
-				BF027EF922FDA0B600B11752 /* GetFavoritesRequestModel.swift in Sources */,
-				BF027F3722FDA0CB00B11752 /* GetExcursionDetailByIdResponseModel.swift in Sources */,
-				BF027F0C22FDA0B600B11752 /* LoginRequest.swift in Sources */,
-				BF027F4522FDA0CB00B11752 /* GetGuideInfoOfTouristResponseModel.swift in Sources */,
-				BF027F3922FDA0CB00B11752 /* GetTourDefinationComboListResponseModel.swift in Sources */,
-				BF027F3C22FDA0CB00B11752 /* GetPhoneNumberListResponseModel.swift in Sources */,
-				BF027F4422FDA0CB00B11752 /* CreateVoucherDocumentResponseModel.swift in Sources */,
-				BF027F4022FDA0CB00B11752 /* CreateInsuranceDocumentResponseModel.swift in Sources */,
-				BF027EFC22FDA0B600B11752 /* SaveFavoriteRequestModel.swift in Sources */,
-				BF027F3A22FDA0CB00B11752 /* CheckMyTripResponseModel.swift in Sources */,
+				BF027FB22305298600B11752 /* CustomerControlActivateCodeRequestModel.swift in Sources */,
+				BF027FB32305298600B11752 /* GetTourDefinationComboListRequestModel.swift in Sources */,
+				BF027FB52305298600B11752 /* GetPhoneNumberListRequestModel.swift in Sources */,
+				BF027FAE2305298600B11752 /* GetTransferRequestModel.swift in Sources */,
+				BF027F852305296100B11752 /* SendRatedResultResponseModel.swift in Sources */,
+				BF027F742305296100B11752 /* GetTourDefinationComboListResponseModel.swift in Sources */,
+				BF027F822305296100B11752 /* GetExcursionPrintDataResponseModel.swift in Sources */,
+				BF027F702305296100B11752 /* GetNotificationReadResponseModel.swift in Sources */,
 				BF027ED322FDA05C00B11752 /* BaseResponse.swift in Sources */,
-				BF027F1322FDA0B600B11752 /* GetTripDetailByIdRequestModel.swift in Sources */,
 				BF027ED022FDA05C00B11752 /* Defaults.swift in Sources */,
-				BF027F0322FDA0B600B11752 /* GetExcursionDetailByIdRequestModel.swift in Sources */,
-				BF027F1422FDA0B600B11752 /* GetTransferRequestModel.swift in Sources */,
-				BF027F4D22FDA0CB00B11752 /* SendRatedResultResponseModel.swift in Sources */,
+				BF027FC02305298600B11752 /* CheckMyTripRequestModel.swift in Sources */,
+				BF027F722305296100B11752 /* GetTourDefinationListResponseModel.swift in Sources */,
 				BF027ECF22FDA05C00B11752 /* ServiceEndPoint.swift in Sources */,
-				BF027F4C22FDA0CB00B11752 /* CustomerControlActivateCodeResponseModel.swift in Sources */,
-				BF027F4322FDA0CB00B11752 /* GetExcursionPrintDataResponseModel.swift in Sources */,
-				BF027F3822FDA0CB00B11752 /* GetNotificationReadResponseModel.swift in Sources */,
-				BF027F3D22FDA0CB00B11752 /* GetSaledExcursionInfoResponseModel.swift in Sources */,
-				BF027F0022FDA0B600B11752 /* GetListRequestModel.swift in Sources */,
-				BF027F3B22FDA0CB00B11752 /* CustomerCreateResponseModel.swift in Sources */,
-				BF027F0622FDA0B600B11752 /* CreateInsuranceDocumentRequestModel.swift in Sources */,
-				BF027EFD22FDA0B600B11752 /* CustomerDetailByIdRequestModel.swift in Sources */,
-				BF027F0222FDA0B600B11752 /* GetPhoneNumberListRequestModel.swift in Sources */,
+				BF027F782305296100B11752 /* CreateVoucherDocumentResponseModel.swift in Sources */,
+				BF027F7F2305296100B11752 /* CheckMyTripResponseModel.swift in Sources */,
+				BF027FB92305298600B11752 /* LoginRequest.swift in Sources */,
+				BF027F792305296100B11752 /* CreateInsuranceDocumentResponseModel.swift in Sources */,
+				BF027FAD2305298600B11752 /* GetCustomerForgotPasswordRequestModel.swift in Sources */,
+				BF027FA92305298600B11752 /* GetExcursionPrintDataRequestModel.swift in Sources */,
+				BF027F832305296100B11752 /* SaveFavoriteResponseModel.swift in Sources */,
+				BF027FC12305298600B11752 /* LoginShortRequest.swift in Sources */,
 				BF027ED522FDA05C00B11752 /* ExtensionUIApplication.swift in Sources */,
-				BF027F3522FDA0CB00B11752 /* GetListResponseModel.swift in Sources */,
-				BF027EFF22FDA0B600B11752 /* SendRatedTourList.swift in Sources */,
-				BF027F4722FDA0CB00B11752 /* CustomerSendActiveCodeResponseModel.swift in Sources */,
-				BF027F0F22FDA0B600B11752 /* CustomerCreateRequestModel.swift in Sources */,
-				BF027F4822FDA0CB00B11752 /* SaveFavoriteResponseModel.swift in Sources */,
-				BF027F3E22FDA0CB00B11752 /* GetNotificationSearchResponseModel.swift in Sources */,
-				BF027F4122FDA0CB00B11752 /* CreateFlightTicketResponseModel.swift in Sources */,
-				BF027F1522FDA0B600B11752 /* GetSaledExcursionInfoRequestModel.swift in Sources */,
+				BF027F772305296100B11752 /* CustomerDetailByIdResponseModel.swift in Sources */,
+				BF027FBC2305298600B11752 /* GetGuideInfoOfTouristRequestModel.swift in Sources */,
+				BF027FB82305298600B11752 /* CreateVoucherDocumentRequestModel.swift in Sources */,
+				BF027FC42305298600B11752 /* CreateInsuranceDocumentRequestModel.swift in Sources */,
+				BF027F7E2305296100B11752 /* LoginResponse.swift in Sources */,
+				BF027FA72305298600B11752 /* CustomerChangePasswordRequestModel.swift in Sources */,
 				BF027F5222FDA4E700B11752 /* BaseMessageItem.swift in Sources */,
-				BF027F3422FDA0CB00B11752 /* CustomerChangePasswordResponseModel.swift in Sources */,
-				BF027F1022FDA0B600B11752 /* GetActualTripRequestModel.swift in Sources */,
+				BF027F802305296100B11752 /* GetTransferResponseModel.swift in Sources */,
+				BF027FC32305298600B11752 /* GetNotificationSearchRequestModel.swift in Sources */,
+				BF027FAB2305298600B11752 /* CustomerSendActiveCodeRequestModel.swift in Sources */,
 				BF027ED622FDA05C00B11752 /* ExtensionUIViewController.swift in Sources */,
 				BF027ED222FDA05C00B11752 /* BaseData.swift in Sources */,
-				BF027F4222FDA0CB00B11752 /* GetWeatherResponseModel.swift in Sources */,
-				BF027F3622FDA0CB00B11752 /* GetTransferResponseModel.swift in Sources */,
-				BF027F0B22FDA0B600B11752 /* CustomerSendActiveCodeRequestModel.swift in Sources */,
-				BF027F1122FDA0B600B11752 /* GetNotificationSearchRequestModel.swift in Sources */,
-				BF027F4E22FDA0CB00B11752 /* GetSaledExcursionInfoDetailResponseModel.swift in Sources */,
-				BF027F0822FDA0B600B11752 /* GetWeatherRequestModel.swift in Sources */,
-				BF027EFE22FDA0B600B11752 /* GetSaledExcursionInfoDetailRequestModel.swift in Sources */,
+				BF027F7D2305296100B11752 /* GetNotificationSearchResponseModel.swift in Sources */,
+				BF027F712305296100B11752 /* GetListResponseModel.swift in Sources */,
+				BF027FAC2305298600B11752 /* GetNotificationReadRequestModel.swift in Sources */,
+				BF027F812305296100B11752 /* CustomerCreateResponseModel.swift in Sources */,
+				BF027FBA2305298600B11752 /* SendRatedTourList.swift in Sources */,
+				BF027F842305296100B11752 /* GetSaledExcursionInfoResponseModel.swift in Sources */,
+				BF027F872305296100B11752 /* GetSaledExcursionInfoDetailResponseModel.swift in Sources */,
+				BF027F6F2305296100B11752 /* CustomerChangePasswordResponseModel.swift in Sources */,
 				7C6EBD5DE96F8820B58229707B324918 /* OtiNetwork-dummy.m in Sources */,
-				BF027F3F22FDA0CB00B11752 /* CustomerDetailByIdResponseModel.swift in Sources */,
-				BF027F4A22FDA0CB00B11752 /* LoginResponse.swift in Sources */,
-				BF027EFB22FDA0B600B11752 /* CreateFlightTicketRequestModel.swift in Sources */,
+				BF027F862305296100B11752 /* GetExcursionDetailByIdResponseModel.swift in Sources */,
 				BF027F5122FDA4E700B11752 /* ExtensionUIDevice.swift in Sources */,
-				BF027F4622FDA0CB00B11752 /* GetActualTripResponseModel.swift in Sources */,
-				BF027EFA22FDA0B600B11752 /* GetNotificationReadRequestModel.swift in Sources */,
-				BF027F0422FDA0B600B11752 /* GetCustomerForgotPasswordRequestModel.swift in Sources */,
-				BF027F0122FDA0B600B11752 /* CheckMyTripRequestModel.swift in Sources */,
+				BF027FA82305298600B11752 /* GetWeatherRequestModel.swift in Sources */,
+				BF027F762305296100B11752 /* GetFavoritesResponseModel.swift in Sources */,
+				BF027F7C2305296100B11752 /* GetGuideInfoOfTouristResponseModel.swift in Sources */,
+				BF027FB02305298600B11752 /* GetListRequestModel.swift in Sources */,
+				BF027F752305296100B11752 /* GetPhoneNumberListResponseModel.swift in Sources */,
+				BF027FB42305298600B11752 /* GetTripDetailByIdRequestModel.swift in Sources */,
+				BF027FB12305298600B11752 /* CustomerDetailByIdRequestModel.swift in Sources */,
+				BF027FAF2305298600B11752 /* GetSaledExcursionInfoDetailRequestModel.swift in Sources */,
+				BF027F732305296100B11752 /* CustomerControlActivateCodeResponseModel.swift in Sources */,
+				BF027F6E2305296100B11752 /* GetWeatherResponseModel.swift in Sources */,
 				BF027ED422FDA05C00B11752 /* BaseApiRequestBody.swift in Sources */,
-				BF027F0A22FDA0B600B11752 /* GetGuideInfoOfTouristRequestModel.swift in Sources */,
-				BF027F0922FDA0B600B11752 /* CustomerChangePasswordRequestModel.swift in Sources */,
-				BF027EF822FDA0B600B11752 /* CreateVoucherDocumentRequestModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

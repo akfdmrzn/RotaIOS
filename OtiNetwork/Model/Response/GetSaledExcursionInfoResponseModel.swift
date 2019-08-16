@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class GetSaledExcursionInfoResponseModel: Mappable {
+public class GetSaledExcursionInfoResponseModel: Mappable {
     
     public var voucherNo: String?
     public var tourName: String?

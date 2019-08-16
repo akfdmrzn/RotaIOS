@@ -6,7 +6,8 @@
 //  Copyright © 2019 OtiHolding. All rights reserved.
 //
 import ObjectMapper
-class BaseResponse<T:Mappable >:Mappable{
+
+public class BaseResponse<T:Mappable >:Mappable{
     
     public var token :String?
     public var isSuccess :Bool?
@@ -19,7 +20,7 @@ class BaseResponse<T:Mappable >:Mappable{
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         token <- map["Token"]
         isSuccess <- map["IsSuccess"]
         threadGuid <- map["ThreadGuid"]

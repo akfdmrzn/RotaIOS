@@ -11,7 +11,7 @@ import ObjectMapper
 
 public class CustomerDetailByIdRequestModel:Mappable{
     
-    var customerId:Int!
+    public var customerId:Int!
     
     public required init?(map: Map) {
         

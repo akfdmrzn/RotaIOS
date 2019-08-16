@@ -11,8 +11,8 @@ import ObjectMapper
 
 public class GetGuideInfoOfTouristRequestModel:Mappable{
     
-    var coralTouristId:Int!
-    var incomingId:Int!
+    public var coralTouristId:Int!
+    public var incomingId:Int!
     
     public required init?(map: Map) {
         

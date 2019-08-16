@@ -11,16 +11,16 @@ import ObjectMapper
 
 class GetSaledExcursionInfoResponseModel: Mappable {
     
-    var voucherNo: String?
-    var tourName: String?
-    var totalPax: Int?
-    var pickupTime: String?
-    var pickupPointId: Int?
-    var pickupPointName: String?
-    var tourSaleId: Int?
-    var tourDate: String?
-    var tourDateString: String?
-    var imageUrl: String = ""
+    public var voucherNo: String?
+    public var tourName: String?
+    public var totalPax: Int?
+    public var pickupTime: String?
+    public var pickupPointId: Int?
+    public var pickupPointName: String?
+    public var tourSaleId: Int?
+    public var tourDate: String?
+    public var tourDateString: String?
+    public var imageUrl: String = ""
     
     required init?(map: Map) {
         

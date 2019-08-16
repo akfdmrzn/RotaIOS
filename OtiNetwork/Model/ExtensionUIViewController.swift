@@ -9,18 +9,18 @@
 import UIKit
 import ObjectMapper
 
-var tagHash : [String:UIView]  = [String:UIView]()
-var tagAlertHash : [String:UIAlertController]  = [String:UIAlertController]()
+public var tagHash : [String:UIView]  = [String:UIView]()
+public var tagAlertHash : [String:UIAlertController]  = [String:UIAlertController]()
 
 
-let baseData:BaseData =  BaseData.shared
+var baseData:BaseData =  BaseData.shared
 
-let userDefaultsData:Defaults = Defaults()
+public var userDefaultsData:Defaults = Defaults()
 
 
 extension UIViewController {
     
-    func showIndicator(tag: String) {
+    public func showIndicator(tag: String) {
         
         if tagHash[tag] != nil {
             return
@@ -39,18 +39,18 @@ extension UIViewController {
         tagHash[tag] = spinnerView
     }
     
-    func hideIndicator(tag: String) {
+    public func hideIndicator(tag: String) {
         DispatchQueue.main.async {
             tagHash[tag]?.removeFromSuperview()
             tagHash[tag] = nil
         }
     }
     
-    func errorPopup(title:String,message:String,cancelButtonTitle:String){
+    public func errorPopup(title:String,message:String,cancelButtonTitle:String){
         errorPopup(title: title, message: message, cancelButtonTitle: cancelButtonTitle, okButtonTitle: "")
     }
     
-    func errorPopup(title:String,message:String,cancelButtonTitle:String,okButtonTitle:String){
+    public func errorPopup(title:String,message:String,cancelButtonTitle:String,okButtonTitle:String){
         
         let alert = UIAlertController(title: title, message:message, preferredStyle: .alert)
         
@@ -64,7 +64,7 @@ extension UIViewController {
     }
     
     
-    func showAlertMsg(msg : String, finished: @escaping () -> Void){
+    public func showAlertMsg(msg : String, finished: @escaping () -> Void){
         let alert = UIAlertController(title: "Message", message : msg, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             switch action.style{
@@ -81,7 +81,7 @@ extension UIViewController {
     }
     
     
-    func getBaseRequestData<T:Mappable> (data:T)-> BaseApiRequestBody<T>{
+    public func getBaseRequestData<T:Mappable> (data:T)-> BaseApiRequestBody<T>{
         let systemVersion = UIDevice.current.systemVersion
         let deviceModel = UIDevice.current.modelName
         
@@ -89,7 +89,7 @@ extension UIViewController {
         return BaseApiRequestBody.init(token: baseData.getTokenResponse.token!, languageId: userDefaultsData.getLanguageId(), mobilInformation: "\(userDefaultsData.getDeviceId() ?? "");\(deviceModel);iOS;\(systemVersion); Wifi;",data: data)
     }
     
-    func getBaseRequestArrayData<T:Mappable> (dataArray:[T])-> BaseApiRequestBody<T>{
+    public func getBaseRequestArrayData<T:Mappable> (dataArray:[T])-> BaseApiRequestBody<T>{
         let systemVersion = UIDevice.current.systemVersion
         let deviceModel = UIDevice.current.modelName
         let baseApiRequestBodyModel = BaseApiRequestBody.init(token: baseData.getTokenResponse.token!, languageId: userDefaultsData.getLanguageId(), mobilInformation: "\(deviceModel);iOS;\(systemVersion); Wifi;", dataArray: dataArray)

@@ -11,8 +11,8 @@ import ObjectMapper
 
 public class CreateInsuranceDocumentRequestModel: Mappable {
     
-    var voucherNumber: Int?
-    var voucherInsuranceDetailNumber: Int?
+    public var voucherNumber: Int?
+    public var voucherInsuranceDetailNumber: Int?
     
     public required init?(map: Map) {
         

@@ -11,8 +11,8 @@ import ObjectMapper
 
 public class LoginRequest:Mappable{
     
-    var email:String!
-    var password:String!
+    public var email:String!
+    public var password:String!
     
     public required init?(map: Map) {
         

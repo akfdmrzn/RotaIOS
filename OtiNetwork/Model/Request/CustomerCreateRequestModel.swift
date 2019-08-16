@@ -13,13 +13,13 @@ import ObjectMapper
 
 public class CustomerCreateRequestModel:Mappable{
     
-    var email:String!
-    var mobilePhone:String!
-    var name:String!
-    var password:String!
-    var surname:String!
-    var companyId:Int!
-    var activeCode:String!
+    public var email:String!
+    public var mobilePhone:String!
+    public var name:String!
+    public var password:String!
+    public var surname:String!
+    public var companyId:Int!
+    public var activeCode:String!
     
     public required init?(map: Map) {
         

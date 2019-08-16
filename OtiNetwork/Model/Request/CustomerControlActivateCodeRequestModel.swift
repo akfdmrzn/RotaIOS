@@ -11,9 +11,9 @@ import ObjectMapper
 
 public class CustomerControlActivateCodeRequestModel: Mappable {
     
-    var mobilePhone:String!
-    var activeCode:String!
-    var email:String!
+    public var mobilePhone:String!
+    public var activeCode:String!
+    public var email:String!
     
     public required init?(map: Map) {
         

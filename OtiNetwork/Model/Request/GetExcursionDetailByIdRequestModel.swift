@@ -11,9 +11,9 @@ import ObjectMapper
 
 public class GetExcursionDetailByIdRequestModel: Mappable {
     
-    var incomingId: Int?
-    var excursionId: Int?
-    var customerId: Int?
+    public var incomingId: Int?
+    public var excursionId: Int?
+    public var customerId: Int?
     
     public required init?(map: Map) {
         

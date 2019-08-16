@@ -11,7 +11,7 @@ import ObjectMapper
 
 public class GetActualTripRequestModel:Mappable{
     
-    var customer:String!
+    public var customer:String!
     
     public required init?(map: Map) {
         

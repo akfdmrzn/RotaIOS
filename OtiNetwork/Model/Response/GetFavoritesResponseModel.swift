@@ -11,9 +11,9 @@ import ObjectMapper
 
 public class GetFavoritesResponseModel: Mappable {
     
-    var destinationId = 0
-    var customerId = 0
-    var excursionId = 0
+    public var destinationId = 0
+    public var customerId = 0
+    public var excursionId = 0
     
     public required init?(map: Map) {
         

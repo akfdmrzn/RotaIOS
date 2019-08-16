@@ -11,7 +11,7 @@ import ObjectMapper
 
 public class LoginShortRequest:Mappable{
     
-    var userEncrypted:String!
+    public var userEncrypted:String!
     
     public required init?(map: Map) {
         

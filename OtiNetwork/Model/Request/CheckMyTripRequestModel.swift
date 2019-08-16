@@ -11,8 +11,8 @@ import ObjectMapper
 
 public class CheckMyTripRequestModel:Mappable{
     
-    var voucherNumber:Int!
-    var passportNumber:String!
+    public var voucherNumber:Int!
+    public var passportNumber:String!
     
     public required init?(map: Map) {
         

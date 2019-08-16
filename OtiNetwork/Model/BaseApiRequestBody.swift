@@ -8,11 +8,11 @@
 import ObjectMapper
 public class BaseApiRequestBody<T:Mappable >:Mappable{
  
-    var token:String!
-    var languageId:Int!
-    var mobilInformation:String!
-    var data:T!
-    var dataArray:[T]!
+    public var token:String!
+    public var languageId:Int!
+    public var mobilInformation:String!
+    public var data:T!
+    public var dataArray:[T]!
     
     
     public required init?(map: Map) {

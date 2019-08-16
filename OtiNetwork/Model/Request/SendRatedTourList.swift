@@ -11,11 +11,11 @@ import ObjectMapper
 
 public class SendRatedTourList: Mappable {
     
-    var customerId:Int!
-    var tourId:String!
-    var partnerNumber:Int!
-    var value:Int!
-    var valueString:String!
+    public var customerId:Int!
+    public var tourId:String!
+    public var partnerNumber:Int!
+    public var value:Int!
+    public var valueString:String!
     
     public required init?(map: Map) {
         

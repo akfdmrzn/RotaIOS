@@ -11,13 +11,13 @@ import ObjectMapper
 
 public class GetNotificationSearchResponseModel: Mappable {
     
-    var Id:Int!
-    var name:String!
-    var createDate:String!
-    var notificationType:Int!
-    var createDateString:String!
-    var reservationId:Int!
-    var transferId:Int!
+    public var Id:Int!
+    public var name:String!
+    public var createDate:String!
+    public var notificationType:Int!
+    public var createDateString:String!
+    public var reservationId:Int!
+    public var transferId:Int!
     
     public required init?(map: Map) {
         

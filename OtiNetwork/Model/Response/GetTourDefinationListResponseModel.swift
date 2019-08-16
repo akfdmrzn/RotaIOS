@@ -11,15 +11,15 @@ import ObjectMapper
 
 public class GetTourDefinationListResponseModel : Mappable {
     
-    var name: String?
-    var typeName: String?
-    var typeId: Int?
-    var concept: String?
-    var duration: String = "0"
-    var allotment: String?
-    var incomingId: Int?
-    var excursionId: Int?
-    var imageUrl: String = ""
+    public var name: String?
+    public var typeName: String?
+    public var typeId: Int?
+    public var concept: String?
+    public var duration: String = "0"
+    public var allotment: String?
+    public var incomingId: Int?
+    public var excursionId: Int?
+    public var imageUrl: String = ""
     
     public required init?(map: Map) {
         

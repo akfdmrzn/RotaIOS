@@ -10,10 +10,10 @@ import Foundation
 import ObjectMapper
 
 public class GetTourDefinationListRequestModel : Mappable {
-    var excursionNameLike : String?
-    var excursionType : Int?
-    var incomingId : Int?
-    var coralTouristId : Int?
+    public var excursionNameLike : String?
+    public var excursionType : Int?
+    public var incomingId : Int?
+    public var coralTouristId : Int?
     
     
     public required init?(map: Map) {

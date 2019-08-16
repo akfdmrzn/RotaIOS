@@ -10,30 +10,30 @@ import Foundation
 import ObjectMapper
 
 public class GetSaledExcursionInfoDetailResponseModel: Mappable {
-    var voucherNo: String?
-    var tourName: String?
-    var totalPax: Int?
-    var pickupTime: String?
-    var pickupPointId: Int?
-    var pickupPointName: String?
-    var tourSaleId: Int?
-    var tourDate: String?
-    var tourDateString: String?
-    var imageUrl: String?
-    var paidBy: String?
-    var paymentAmount: Int?
-    var paymentCurrency: String?
-    var discountAmount: Int?
-    var promotionId: Int?
-    var promotionName: String?
-    var guideName: String?
-    var guidePhoneNumber: String?
-    var vehicleName: String?
-    var vehiclePlate: String?
-    var extraServiceDetailType: Int?
-    var extraServiceDetailName: String?
-    var tourists: [Tourist]?
-    var refundCondition: String?
+    public var voucherNo: String?
+    public var tourName: String?
+    public var totalPax: Int?
+    public var pickupTime: String?
+    public var pickupPointId: Int?
+    public var pickupPointName: String?
+    public var tourSaleId: Int?
+    public var tourDate: String?
+    public var tourDateString: String?
+    public var imageUrl: String?
+    public var paidBy: String?
+    public var paymentAmount: Int?
+    public var paymentCurrency: String?
+    public var discountAmount: Int?
+    public var promotionId: Int?
+    public var promotionName: String?
+    public var guideName: String?
+    public var guidePhoneNumber: String?
+    public var vehicleName: String?
+    public var vehiclePlate: String?
+    public var extraServiceDetailType: Int?
+    public var extraServiceDetailName: String?
+    public var tourists: [Tourist]?
+    public var refundCondition: String?
     
     public required init?(map: Map) {
         
@@ -70,8 +70,8 @@ public class GetSaledExcursionInfoDetailResponseModel: Mappable {
 }
 
 public class Tourist: Mappable {
-    var id: String?
-    var fullName: String?
+    public var id: String?
+    public var fullName: String?
     
     public required init?(map: Map) {
         

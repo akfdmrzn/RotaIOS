@@ -11,9 +11,9 @@ import ObjectMapper
 
 public class GetPhoneNumberListResponseModel: Mappable {
     
-    var  name = ""
-    var  phoneNumber = ""
-    var  type = 0
+    public var  name = ""
+    public var  phoneNumber = ""
+    public var  type = 0
     
     public required init?(map: Map){
         

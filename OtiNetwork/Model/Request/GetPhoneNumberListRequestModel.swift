@@ -11,10 +11,10 @@ import ObjectMapper
 
 public class GetPhoneNumberListRequestModel:Mappable{
     
-    var companyId:Int!
-    var languageId:Int!
-    var incomingId:Int!
-    var coralTouristId:Int!
+    public var companyId:Int!
+    public var languageId:Int!
+    public var incomingId:Int!
+    public var coralTouristId:Int!
     
     public required init?(map: Map) {
         

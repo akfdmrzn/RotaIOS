@@ -11,9 +11,9 @@ import ObjectMapper
 
 public class CustomerChangePasswordRequestModel:Mappable{
     
-    var customerId:Int!
-    var oldPassword:String!
-    var newPassword:String!
+    public var customerId:Int!
+    public var oldPassword:String!
+    public var newPassword:String!
 
     public required init?(map: Map) {
         

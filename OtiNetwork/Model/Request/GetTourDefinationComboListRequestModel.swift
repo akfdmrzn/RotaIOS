@@ -11,7 +11,7 @@ import ObjectMapper
 
 public class GetTourDefinationComboListRequestModel : Mappable {
     
-    var incomingId : Int?
+    public var incomingId : Int?
     
     public required init?(map: Map) {
         

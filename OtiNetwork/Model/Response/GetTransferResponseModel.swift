@@ -10,27 +10,27 @@ import Foundation
 import ObjectMapper
 
 public class GetTransferResponseModel : Mappable {
-    var id : Int?
-    var transferDate : String?
-    var transferDateString : String?
-    var arrivalTransferDate : String?
-    var arrivalTransferDateString : String?
-    var transferType : String?
-    var transferDirection : String?
-    var fromPointName : String?
-    var toPointName : String?
-    var transferTime : String?
-    var route : String?
-    var departurePoint : String?
-    var cancelStatus : String?
-    var arrivalTransferTime : String?
-    var departureTransferTime : String?
-    var pickupTime : String?
-    var pickupPoint : String?
-    var vehiclePoint : String?
-    var vehiclePlate : String?
-    var guideName : String?
-    var guidePhoneNumber : String?
+    public var id : Int?
+    public var transferDate : String?
+    public var transferDateString : String?
+    public var arrivalTransferDate : String?
+    public var arrivalTransferDateString : String?
+    public var transferType : String?
+    public var transferDirection : String?
+    public var fromPointName : String?
+    public var toPointName : String?
+    public var transferTime : String?
+    public var route : String?
+    public var departurePoint : String?
+    public var cancelStatus : String?
+    public var arrivalTransferTime : String?
+    public var departureTransferTime : String?
+    public var pickupTime : String?
+    public var pickupPoint : String?
+    public var vehiclePoint : String?
+    public var vehiclePlate : String?
+    public var guideName : String?
+    public var guidePhoneNumber : String?
     
     public required init?(map: Map) {
         

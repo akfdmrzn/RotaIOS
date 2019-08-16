@@ -11,8 +11,8 @@ import ObjectMapper
 
 public class GetListRequestModel:Mappable{
     
-    var customerId:Int!
-    var tourId:String!
+    public var customerId:Int!
+    public var tourId:String!
     
     public required init?(map: Map) {
         

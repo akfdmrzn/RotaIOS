@@ -11,8 +11,8 @@ import ObjectMapper
 
 public class CreateFlightTicketResponseModel: Mappable {
     
-    var voucherFlightDetailNumber: Int?
-    var url: String?
+    public var voucherFlightDetailNumber: Int?
+    public var url: String?
     
     public required init?(map: Map) {
         

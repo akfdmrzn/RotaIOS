@@ -10,8 +10,8 @@ import Foundation
 import ObjectMapper
 
 public class GetTransferRequestModel : Mappable {
-    var customerId : Int?
-    var directionType : Int?
+    public var customerId : Int?
+    public var directionType : Int?
     
     public required init?(map: Map) {
         

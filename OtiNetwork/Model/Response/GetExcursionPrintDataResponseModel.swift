@@ -11,7 +11,7 @@ import ObjectMapper
 
 public class GetExcursionPrintDataResponseModel: Mappable {
     
-    var data: String?
+    public var data: String?
     
     public required init?(map: Map) {
         

@@ -11,39 +11,39 @@ import ObjectMapper
 
 public class CheckMyTripResponseModel: Mappable {
     
-    var iD = 0
-    var birthDate = ""
-    var birthDateStringFormat = ""
-    var passportGivenDate = ""
-    var passportGivenDateString = ""
-    var passportValidThru = ""
-    var passportValidThruString = ""
-    var fullName = ""
-    var gender = ""
-    var name = ""
-    var surName = ""
-    var passportNumber = ""
-    var citizenShip = ""
-    var phoneNumber = ""
-    var phone2 = ""
-    var fullTaken = false
-    var preparedForEmbassy = false
-    var givenIntoTheEmbassy = false
-    var receivedFromEmbassy = false
-    var visaStatus = false
-    var visaInfo = ""
-    var bringYourDocument = false
-    var visaStatusName: Any?
-    var givenDateIntoTheEmbassy = ""
-    var givenDateIntoTheEmbassyString = ""
-    var recordDate = ""
-    var recordDateString = ""
-    var hotels: [Hotels] = []
-    var flights: [Flights] = []
-    var extras: [Extras] = []
-    var transfers: [Transfers] = []
-    var insurances: [Insurances] = []
-    var agency: Agency?
+    public var iD = 0
+    public var birthDate = ""
+    public var birthDateStringFormat = ""
+    public var passportGivenDate = ""
+    public var passportGivenDateString = ""
+    public var passportValidThru = ""
+    public var passportValidThruString = ""
+    public var fullName = ""
+    public var gender = ""
+    public var name = ""
+    public var surName = ""
+    public var passportNumber = ""
+    public var citizenShip = ""
+    public var phoneNumber = ""
+    public var phone2 = ""
+    public var fullTaken = false
+    public var preparedForEmbassy = false
+    public var givenIntoTheEmbassy = false
+    public var receivedFromEmbassy = false
+    public var visaStatus = false
+    public var visaInfo = ""
+    public var bringYourDocument = false
+    public var visaStatusName: Any?
+    public var givenDateIntoTheEmbassy = ""
+    public var givenDateIntoTheEmbassyString = ""
+    public var recordDate = ""
+    public var recordDateString = ""
+    public var hotels: [Hotels] = []
+    public var flights: [Flights] = []
+    public var extras: [Extras] = []
+    public var transfers: [Transfers] = []
+    public var insurances: [Insurances] = []
+    public var agency: Agency?
     
     public required init?(map: Map){
         
@@ -88,11 +88,11 @@ public class CheckMyTripResponseModel: Mappable {
 
 public class Agency: Mappable {
     
-    var iD = 0
-    var name : String = ""
-    var address : String = ""
-    var email: String = ""
-    var phone: String = ""
+    public var iD = 0
+    public var name : String = ""
+    public var address : String = ""
+    public var email: String = ""
+    public var phone: String = ""
     
     public required init?(map: Map){
     }
@@ -108,19 +108,19 @@ public class Agency: Mappable {
 
 public class Insurances: Mappable {
     
-    var iD = 0
-    var beginDate = ""
-    var beginDateString = ""
-    var endDate = ""
-    var endDateString = ""
-    var insuranceName = ""
-    var company = ""
-    var zone = ""
-    var salePrice = 0
-    var saleCurrencyName = ""
-    var franchiseAmount = 0
-    var franchiseCurrency = ""
-    var cancelStatus = ""
+    public var iD = 0
+    public var beginDate = ""
+    public var beginDateString = ""
+    public var endDate = ""
+    public var endDateString = ""
+    public var insuranceName = ""
+    public var company = ""
+    public var zone = ""
+    public var salePrice = 0
+    public var saleCurrencyName = ""
+    public var franchiseAmount = 0
+    public var franchiseCurrency = ""
+    public var cancelStatus = ""
     
     
     public required init?(map: Map){
@@ -145,28 +145,28 @@ public class Insurances: Mappable {
 
 public class Transfers: Mappable {
     
-    var iD = 0
-    var transferDate = ""
-    var transferDateString = ""
-    var arrivalTransferDate = ""
-    var arrivalTransferDateString = ""
-    var transferType = ""
-    var transferDirection = ""
-    var fromPointName = ""
-    var toPointName = ""
-    var transferTime: String = ""
-    var route = ""
-    var departurePoint = ""
-    var cancelStatus = ""
-    var arrivalTransferTime = ""
-    var departureTransferTime = ""
-    var pickupTime: String = ""
-    var pickupPoint: String = ""
-    var vehiclePoint: String = ""
-    var vehiclePlate: String = ""
-    var guideName: String = ""
-    var guidePhoneNumber: String = ""
-    var isArrival : Bool = false
+    public var iD = 0
+    public var transferDate = ""
+    public var transferDateString = ""
+    public var arrivalTransferDate = ""
+    public var arrivalTransferDateString = ""
+    public var transferType = ""
+    public var transferDirection = ""
+    public var fromPointName = ""
+    public var toPointName = ""
+    public var transferTime: String = ""
+    public var route = ""
+    public var departurePoint = ""
+    public var cancelStatus = ""
+    public var arrivalTransferTime = ""
+    public var departureTransferTime = ""
+    public var pickupTime: String = ""
+    public var pickupPoint: String = ""
+    public var vehiclePoint: String = ""
+    public var vehiclePlate: String = ""
+    public var guideName: String = ""
+    public var guidePhoneNumber: String = ""
+    public var isArrival : Bool = false
     
     public required init?(map: Map){
     }
@@ -208,33 +208,33 @@ public class Extras: Mappable {
 
 public class Flights: Mappable {
     
-    var iD = 0
-    var saleDate = ""
-    var saleDateString = ""
-    var departureDate = ""
-    var departureDateString = ""
-    var arrivalDate = ""
-    var arrivalDateString = ""
-    var departureTime = ""
-    var arrivalTime = ""
-    var flightDuration = ""
-    var departureArea = ""
-    var arrivalArea = ""
-    var departureAirportName = ""
-    var departureAirportTerminal = ""
-    var departureAirportCode = ""
-    var arrivalAirportName = ""
-    var arrivalAirportTerminal = ""
-    var arrivalAirportCode = ""
-    var airlineName = ""
-    var flightCode = ""
-    var flightClass = ""
-    var baggageAllowance = 0
-    var planeType = ""
-    var cancelStatus = ""
-    var direction = 0
-    var directionName = ""
-    var isConnectedFlight = false
+    public var iD = 0
+    public var saleDate = ""
+    public var saleDateString = ""
+    public var departureDate = ""
+    public var departureDateString = ""
+    public var arrivalDate = ""
+    public var arrivalDateString = ""
+    public var departureTime = ""
+    public var arrivalTime = ""
+    public var flightDuration = ""
+    public var departureArea = ""
+    public var arrivalArea = ""
+    public var departureAirportName = ""
+    public var departureAirportTerminal = ""
+    public var departureAirportCode = ""
+    public var arrivalAirportName = ""
+    public var arrivalAirportTerminal = ""
+    public var arrivalAirportCode = ""
+    public var airlineName = ""
+    public var flightCode = ""
+    public var flightClass = ""
+    public var baggageAllowance = 0
+    public var planeType = ""
+    public var cancelStatus = ""
+    public var direction = 0
+    public var directionName = ""
+    public var isConnectedFlight = false
     
     public required init?(map: Map){
     }
@@ -271,24 +271,24 @@ public class Flights: Mappable {
 
 public class Hotels: Mappable {
     
-    var iD = 0
-    var hotelID = 0
-    var checkInDate = ""
-    var checkInDateString = ""
-    var checkOutDate = ""
-    var checkOutDateString = ""
-    var checkInAndOutDate = ""
-    var hotelName = ""
-    var roomName = ""
-    var mealName = ""
-    var accName = ""
-    var hotelCategory = ""
-    var cancelStatus = ""
-    var hotelArea = ""
-    var hotelRegion = ""
-    var hotelPlace = ""
-    var countryName = ""
-    var imageUrl = ""
+    public var iD = 0
+    public var hotelID = 0
+    public var checkInDate = ""
+    public var checkInDateString = ""
+    public var checkOutDate = ""
+    public var checkOutDateString = ""
+    public var checkInAndOutDate = ""
+    public var hotelName = ""
+    public var roomName = ""
+    public var mealName = ""
+    public var accName = ""
+    public var hotelCategory = ""
+    public var cancelStatus = ""
+    public var hotelArea = ""
+    public var hotelRegion = ""
+    public var hotelPlace = ""
+    public var countryName = ""
+    public var imageUrl = ""
     
     public required init?(map: Map){
     }

@@ -11,11 +11,11 @@ import ObjectMapper
 
 public class GetWeatherRequestModel: Mappable {
    
-    var weatherDateStart:String!
-    var weatherDateEnd:String!
-    var city:String!
-    var country:String!
-    var languageId:String!
+    public var weatherDateStart:String!
+    public var weatherDateEnd:String!
+    public var city:String!
+    public var country:String!
+    public var languageId:String!
     
     public required init?(map: Map) {
         

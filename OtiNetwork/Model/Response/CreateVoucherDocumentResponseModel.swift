@@ -11,8 +11,8 @@ import ObjectMapper
 
 public class CreateVoucherDocumentResponseModel: Mappable {
     
-    var voucherNumber: Int?
-    var url: String?
+    public var voucherNumber: Int?
+    public var url: String?
     
     public required init?(map: Map) {
         

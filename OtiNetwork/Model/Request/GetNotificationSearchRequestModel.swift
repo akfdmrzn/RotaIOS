@@ -11,7 +11,7 @@ import ObjectMapper
 
 public class GetNotificationSearchRequestModel: Mappable {
     
-    var customerId:Int!
+    public var customerId:Int!
     
     public required init?(map: Map) {
         

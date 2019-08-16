@@ -11,38 +11,38 @@ import ObjectMapper
 
 public class CustomerDetailByIdResponseModel: Mappable {
     
-    var  id  = 0
-    var  name  = ""
-    var  email  = ""
-    var  passportSerial  = ""
-    var  passportNumber  = ""
-    var  dateOfIssue  = ""
-    var  dateOfIssueString  = ""
-    var  issuedBy  = ""
-    var  divisionCode  = ""
-    var  mobilePhone  = ""
-    var  address  = ""
-    var  password  = ""
-    var  isActive : Bool!
-    var  activationDate  = ""
-    var  activationDateString  = ""
-    var  activationCode  = ""
-    var  createDate  = ""
-    var  createDateString  = ""
-    var  birthday  = ""
-    var  birthdayString  = ""
-    var  phone2  = ""
-    var  surname  = ""
-    var  agency  = ""
-    var  gender = 0
-    var  allowCampaignMail = false
-    var  companyID = 0
-    var  allowCampaignSMS = false
-    var  identityNumber  = ""
-    var  isCookiePermission  = ""
-    var  authorizationCompleted = false
-    var  validationError = false
-    var  validationErrorMessage  = ""
+    public var  id  = 0
+    public var  name  = ""
+    public var  email  = ""
+    public var  passportSerial  = ""
+    public var  passportNumber  = ""
+    public var  dateOfIssue  = ""
+    public var  dateOfIssueString  = ""
+    public var  issuedBy  = ""
+    public var  divisionCode  = ""
+    public var  mobilePhone  = ""
+    public var  address  = ""
+    public var  password  = ""
+    public var  isActive : Bool!
+    public var  activationDate  = ""
+    public var  activationDateString  = ""
+    public var  activationCode  = ""
+    public var  createDate  = ""
+    public var  createDateString  = ""
+    public var  birthday  = ""
+    public var  birthdayString  = ""
+    public var  phone2  = ""
+    public var  surname  = ""
+    public var  agency  = ""
+    public var  gender = 0
+    public var  allowCampaignMail = false
+    public var  companyID = 0
+    public var  allowCampaignSMS = false
+    public var  identityNumber  = ""
+    public var  isCookiePermission  = ""
+    public var  authorizationCompleted = false
+    public var  validationError = false
+    public var  validationErrorMessage  = ""
     
     
     

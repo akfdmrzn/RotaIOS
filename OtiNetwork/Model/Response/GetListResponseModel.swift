@@ -11,13 +11,13 @@ import ObjectMapper
 
 public class GetListResponseModel: Mappable {
     
-    var id = 0
-    var partnerNumber = 0
-    var name = ""
-    var value = ""
-    var type = ""
-    var subItemState = false
-    var subItems: [SubItem] = []
+    public var id = 0
+    public var partnerNumber = 0
+    public var name = ""
+    public var value = ""
+    public var type = ""
+    public var subItemState = false
+    public var subItems: [SubItem] = []
     
     public required init?(map: Map){
     }
@@ -34,11 +34,11 @@ public class GetListResponseModel: Mappable {
 }
 
 public class SubItem: Mappable {
-    var id = 0
-    var partnerNumber = 0
-    var name = ""
-    var type = ""
-    var value = false
+    public var id = 0
+    public var partnerNumber = 0
+    public var name = ""
+    public var type = ""
+    public var value = false
     
     public init() {
         id = 0

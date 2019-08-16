@@ -11,9 +11,9 @@ import ObjectMapper
 
 public class SaveFavoriteResponseModel: Mappable {
     
-    var value = false
-    var message = ""
-    var operationStatus = false
+    public var value = false
+    public var message = ""
+    public var operationStatus = false
     
     public required init?(map: Map) {
         

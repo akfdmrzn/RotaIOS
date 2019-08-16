@@ -9,11 +9,11 @@ import UIKit
 
 extension UIApplication {
     
-    var statusBarView: UIView? {
+    public var statusBarView: UIView? {
         return value(forKey: "statusBar") as? UIView
     }
     
-    class func getTopViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+    public class func getTopViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
         
         if let nav = base as? UINavigationController {
             return getTopViewController(base: nav.visibleViewController)

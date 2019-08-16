@@ -11,8 +11,8 @@ import ObjectMapper
 
 public class GetTourDefinationComboListResponseModel : Mappable {
     
-    var value: Int?
-    var text: String = ""
+    public var value: Int?
+    public var text: String = ""
     
     public required init?(map: Map) {
         

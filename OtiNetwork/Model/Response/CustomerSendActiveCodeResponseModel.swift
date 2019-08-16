@@ -11,14 +11,14 @@ import ObjectMapper
 
 public class CustomerSendActiveCodeResponseModel: Mappable {
     
-    var id = 0
-    var name = ""
-    var email = ""
-    var mobilePhone = ""
-    var userEncrypted = ""
-    var surname = ""
-    var companyId  = 0
-    var activeCode  = ""
+    public var id = 0
+    public var name = ""
+    public var email = ""
+    public var mobilePhone = ""
+    public var userEncrypted = ""
+    public var surname = ""
+    public var companyId  = 0
+    public var activeCode  = ""
     
     public required init?(map: Map) {
         

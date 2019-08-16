@@ -11,15 +11,15 @@ import ObjectMapper
 
 public class GetExcursionDetailByIdResponseModel: Mappable {
     
-    var excursionId: Int?
-    var incomingId: Int?
-    var mainInfo: MainInfo?
-    var tourAges: TourAges?
-    var tourPlans: [TourPlan]?
-    var extraInfos: [ExtraInfo]?
-    var cancellationAndRefundPolicy: CancellationAndRefundPolicy?
-    var files: [File]?
-    var videos: [String]?
+    public var excursionId: Int?
+    public var incomingId: Int?
+    public var mainInfo: MainInfo?
+    public var tourAges: TourAges?
+    public var tourPlans: [TourPlan]?
+    public var extraInfos: [ExtraInfo]?
+    public var cancellationAndRefundPolicy: CancellationAndRefundPolicy?
+    public var files: [File]?
+    public var videos: [String]?
     
     public required init?(map: Map) {
         
@@ -39,12 +39,12 @@ public class GetExcursionDetailByIdResponseModel: Mappable {
 }
 
 public class MainInfo : Mappable {
-    var name: String?
-    var typeName: String?
-    var concept: String?
-    var duration: String?
-    var allotment: String?
-    var isFavorite: Bool?
+    public var name: String?
+    public var typeName: String?
+    public var concept: String?
+    public var duration: String?
+    public var allotment: String?
+    public var isFavorite: Bool?
     
     public required init?(map: Map) {
         
@@ -62,11 +62,11 @@ public class MainInfo : Mappable {
 }
 
 public class TourAges: Mappable {
-    var childRange: String?
-    var toddleRange: String?
-    var infantRange: String?
-    var insuranceIncluded: String?
-    var transferIncluded: String?
+    public var childRange: String?
+    public var toddleRange: String?
+    public var infantRange: String?
+    public var insuranceIncluded: String?
+    public var transferIncluded: String?
     
     public required init?(map: Map) {
         
@@ -83,10 +83,10 @@ public class TourAges: Mappable {
 }
 
 public class TourPlan : Mappable {
-    var description: String?
-    var name: String?
-    var time: String?
-    var planText: String?
+    public var description: String?
+    public var name: String?
+    public var time: String?
+    public var planText: String?
     
     public required init?(map: Map) {
         
@@ -109,8 +109,8 @@ public class TourPlan : Mappable {
 }
 
 public class ExtraInfo : Mappable {
-    var name: String?
-    var information: String?
+    public var name: String?
+    public var information: String?
     
     public required init?(map: Map) {
         
@@ -124,8 +124,8 @@ public class ExtraInfo : Mappable {
 }
 
 public class CancellationAndRefundPolicy : Mappable {
-    var voucherDescription: String?
-    var rule: String?
+    public var voucherDescription: String?
+    public var rule: String?
     
     public required init?(map: Map) {
         
@@ -139,9 +139,9 @@ public class CancellationAndRefundPolicy : Mappable {
 }
 
 public class File: Mappable {
-    var mediaType: String?
-    var fileExtension: String?
-    var url: String?
+    public var mediaType: String?
+    public var fileExtension: String?
+    public var url: String?
     
     public required init?(map: Map) {
         

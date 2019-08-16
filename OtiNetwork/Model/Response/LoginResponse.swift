@@ -10,13 +10,13 @@ import Foundation
 import ObjectMapper
 
 public class LoginResponse:Mappable{
-    var id = 0
-    var name = ""
-    var surname = ""
-    var mail  = ""
-    var mobilePhone = ""
-    var userEncrypted = ""
-    var companyId = 0
+    public var id = 0
+    public var name = ""
+    public var surname = ""
+    public var mail  = ""
+    public var mobilePhone = ""
+    public var userEncrypted = ""
+    public var companyId = 0
     
     
     public required init?(map: Map) {

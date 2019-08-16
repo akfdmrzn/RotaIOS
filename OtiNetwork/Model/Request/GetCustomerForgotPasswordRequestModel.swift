@@ -12,8 +12,8 @@ import ObjectMapper
 
 public class GetCustomerForgotPasswordRequestModel: Mappable {
     
-    var email: String?
-    var companyId: Int?
+    public var email: String?
+    public var companyId: Int?
     
     public required init?(map: Map) {
         

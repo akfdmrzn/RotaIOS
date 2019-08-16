@@ -13,13 +13,13 @@ import ObjectMapper
     
     
     
-     var id = 0
-     var name = ""
-     var email = ""
-     var mobilePhone = ""
-     var userEncrypted = ""
-     var surname = ""
-     var companyId  = 0
+     public var id = 0
+     public var name = ""
+     public var email = ""
+     public var mobilePhone = ""
+     public var userEncrypted = ""
+     public var surname = ""
+     public var companyId  = 0
     
     public  required init?(map: Map) {
         

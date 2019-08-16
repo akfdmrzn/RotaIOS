@@ -10,19 +10,19 @@ import Foundation
 import ObjectMapper
 
 public class GetWeatherResponseModel : Mappable {
-    var weatherDate : String = ""
-    var country : String = ""
-    var city : String = ""
-    var maxForecast : String = ""
-    var minForecast : Int = 0
-    var status : String = ""
-    var wind : String = ""
-    var feelsLike : Int = 0
-    var visibility : String = ""
-    var humidity : Int = 0
-    var dewPoint : Int = 0
-    var isFuture : Bool = false
-    var imageLink : String = ""
+    public var weatherDate : String = ""
+    public var country : String = ""
+    public var city : String = ""
+    public var maxForecast : String = ""
+    public var minForecast : Int = 0
+    public var status : String = ""
+    public var wind : String = ""
+    public var feelsLike : Int = 0
+    public var visibility : String = ""
+    public var humidity : Int = 0
+    public var dewPoint : Int = 0
+    public var isFuture : Bool = false
+    public var imageLink : String = ""
     
     public required init?(map: Map) {
         

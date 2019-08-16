@@ -11,8 +11,8 @@ import ObjectMapper
 
 public class GetExcursionPrintDataRequestModel: Mappable {
     
-    var incomingId: Int?
-    var tourSaleId: Int?
+    public var incomingId: Int?
+    public var tourSaleId: Int?
     
     public required init?(map: Map) {
         

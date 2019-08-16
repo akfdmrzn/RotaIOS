@@ -11,9 +11,9 @@ import ObjectMapper
 
 public class SaveFavoriteRequestModel: Mappable {
     
-    var destinationId: Int!
-    var customerId: Int!
-    var excursionId: Int!
+    public var destinationId: Int!
+    public var customerId: Int!
+    public var excursionId: Int!
     
     public required init?(map: Map) {
         

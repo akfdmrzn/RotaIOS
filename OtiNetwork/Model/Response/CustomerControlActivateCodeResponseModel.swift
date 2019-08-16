@@ -11,8 +11,8 @@ import ObjectMapper
 
 public class CustomerControlActivateCodeResponseModel: Mappable {
     
-    var status = ""
-    var message = ""
+    public var status = ""
+    public var message = ""
     
     public required init?(map: Map) {
         

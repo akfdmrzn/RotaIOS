@@ -11,9 +11,9 @@ import ObjectMapper
 
 public class CreateFlightTicketRequestModel: Mappable {
     
-    var voucherNumber: Int?
-    var touristNumber: Int?
-    var voucherFlightDetailNumber: Int?
+    public var voucherNumber: Int?
+    public var touristNumber: Int?
+    public var voucherFlightDetailNumber: Int?
     
     public required init?(map: Map) {
         

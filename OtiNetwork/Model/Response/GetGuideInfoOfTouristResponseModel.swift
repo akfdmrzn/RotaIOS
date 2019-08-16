@@ -10,18 +10,18 @@ import Foundation
 import ObjectMapper
 
 public class GetGuideInfoOfTouristResponseModel : Mappable {
-    var rotaTouristId : Int = 0
-    var coralTouristId : Int = 0
-    var incomingId : Int = 0
-    var informationDate : String = ""
-    var informationDateString : String = ""
-    var informationTime : String = ""
-    var hotelId : Int = 0
-    var hotelName : String = ""
-    var guideId : Int = 0
-    var guideName : String = ""
-    var guidePhone : String = ""
-    var guideImageLink : String = ""
+    public var rotaTouristId : Int = 0
+    public var coralTouristId : Int = 0
+    public var incomingId : Int = 0
+    public var informationDate : String = ""
+    public var informationDateString : String = ""
+    public var informationTime : String = ""
+    public var hotelId : Int = 0
+    public var hotelName : String = ""
+    public var guideId : Int = 0
+    public var guideName : String = ""
+    public var guidePhone : String = ""
+    public var guideImageLink : String = ""
     
     public required init?(map: Map) {
         

@@ -11,7 +11,7 @@ import ObjectMapper
 
 public class GetTripDetailByIdRequestModel:Mappable{
     
-    var id:String!
+    public var id:String!
     
     public required init?(map: Map) {
         

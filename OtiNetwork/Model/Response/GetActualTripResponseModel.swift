@@ -11,24 +11,24 @@ import ObjectMapper
 
 public class GetActualTripResponseModel: Mappable {
     
-    var iD: String = ""
-    var surveyStatus = false
-    var voucher = 0
-    var tourBeginDate = ""
-    var tourBeginDateString = ""
-    var tourEnDate = ""
-    var tourEnDateString = ""
-    var reservationDate = ""
-    var reservationDateString = ""
-    var reservationType = ""
-    var countryName = ""
-    var toArea = ""
-    var tourName = ""
-    var hotelName = ""
-    var rate = 0
-    var hotelImageUrl = ""
-    var touristId = 0
-    var incomingId = 0
+    public var iD: String = ""
+    public var surveyStatus = false
+    public var voucher = 0
+    public var tourBeginDate = ""
+    public var tourBeginDateString = ""
+    public var tourEnDate = ""
+    public var tourEnDateString = ""
+    public var reservationDate = ""
+    public var reservationDateString = ""
+    public var reservationType = ""
+    public var countryName = ""
+    public var toArea = ""
+    public var tourName = ""
+    public var hotelName = ""
+    public var rate = 0
+    public var hotelImageUrl = ""
+    public var touristId = 0
+    public var incomingId = 0
     
     public required init?(map: Map){
     }

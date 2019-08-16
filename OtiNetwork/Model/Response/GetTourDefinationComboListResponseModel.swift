@@ -9,16 +9,16 @@
 import Foundation
 import ObjectMapper
 
-class GetTourDefinationComboListResponseModel : Mappable {
+public class GetTourDefinationComboListResponseModel : Mappable {
     
     var value: Int?
     var text: String = ""
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         value <- map["Value"]
         text <- map["Text"]
     }

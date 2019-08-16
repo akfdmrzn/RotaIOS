@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class GetGuideInfoOfTouristResponseModel : Mappable {
+public class GetGuideInfoOfTouristResponseModel : Mappable {
     var rotaTouristId : Int = 0
     var coralTouristId : Int = 0
     var incomingId : Int = 0
@@ -23,11 +23,11 @@ class GetGuideInfoOfTouristResponseModel : Mappable {
     var guidePhone : String = ""
     var guideImageLink : String = ""
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         
         rotaTouristId <- map["RotaTouristId"]
         coralTouristId <- map["CoralTouristId"]

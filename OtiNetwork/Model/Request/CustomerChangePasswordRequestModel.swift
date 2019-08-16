@@ -9,23 +9,23 @@
 import UIKit
 import ObjectMapper
 
-class CustomerChangePasswordRequestModel:Mappable{
+public class CustomerChangePasswordRequestModel:Mappable{
     
     var customerId:Int!
     var oldPassword:String!
     var newPassword:String!
 
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    init(customerId:Int,address : String,oldPassword : String, newPassword : String) {
+    public init(customerId:Int,address : String,oldPassword : String, newPassword : String) {
         self.customerId = customerId
         self.oldPassword = oldPassword
         self.newPassword = newPassword
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         customerId <- map["CustomerId"]
         oldPassword <- map["OldPassword"]
         newPassword <- map["NewPassword"]

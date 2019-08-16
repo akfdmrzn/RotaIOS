@@ -9,16 +9,16 @@
 import UIKit
 import ObjectMapper
 
-class CustomerChangePasswordResponseModel: Mappable {
+public class CustomerChangePasswordResponseModel: Mappable {
     
     var status = ""
     var message = ""
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         status <- map["Status"]
         message <- map["Message"]
     }

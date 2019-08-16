@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class GetTourDefinationListResponseModel : Mappable {
+public class GetTourDefinationListResponseModel : Mappable {
     
     var name: String?
     var typeName: String?
@@ -21,11 +21,11 @@ class GetTourDefinationListResponseModel : Mappable {
     var excursionId: Int?
     var imageUrl: String = ""
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         
         name <- map["Name"]
         typeName <- map["TypeName"]

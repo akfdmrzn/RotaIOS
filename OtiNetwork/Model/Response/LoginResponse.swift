@@ -8,7 +8,8 @@
 
 import Foundation
 import ObjectMapper
-class LoginResponse:Mappable{
+
+public class LoginResponse:Mappable{
     var id = 0
     var name = ""
     var surname = ""
@@ -18,11 +19,11 @@ class LoginResponse:Mappable{
     var companyId = 0
     
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         id <- map["ID"]
         name <- map["Name"]
         mail <- map["Email"]

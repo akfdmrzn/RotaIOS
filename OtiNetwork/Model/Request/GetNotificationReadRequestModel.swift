@@ -9,19 +9,19 @@
 import Foundation
 import ObjectMapper
 
-class GetNotificationReadRequestModel: Mappable {
+public class GetNotificationReadRequestModel: Mappable {
     
     var Id:Int!
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    init(Id:Int) {
+    public init(Id:Int) {
         self.Id = Id
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         Id <- map["Id"]
     }
     

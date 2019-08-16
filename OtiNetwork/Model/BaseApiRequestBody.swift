@@ -29,28 +29,28 @@ public class BaseApiRequestBody<T:Mappable >:Mappable{
     
 
     
-    init(token:String!,languageId:Int,mobilInformation:String){
+   public init(token:String!,languageId:Int,mobilInformation:String){
         self.token = token
         self.languageId = languageId
         self.mobilInformation = mobilInformation
     }
     
-    init(token:String!,languageId:Int,mobilInformation:String,data:T){
+   public init(token:String!,languageId:Int,mobilInformation:String,data:T){
         self.token = token
         self.languageId = languageId
         self.mobilInformation = mobilInformation
         self.data = data
     }
-    init(token:String!,languageId:Int,mobilInformation:String,dataArray:[T]){
+   public init(token:String!,languageId:Int,mobilInformation:String,dataArray:[T]){
         self.token = token
         self.languageId = languageId
         self.mobilInformation = mobilInformation
         self.dataArray = dataArray
     }
-    func setData(data:T){
+   public func setData(data:T){
         self.data = data
     }
-    func setDataArray(dataArray:[T]){
+   public func setDataArray(dataArray:[T]){
         self.dataArray = dataArray
     }
 

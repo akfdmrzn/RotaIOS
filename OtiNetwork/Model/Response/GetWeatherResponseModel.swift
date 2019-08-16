@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class GetWeatherResponseModel : Mappable {
+public class GetWeatherResponseModel : Mappable {
     var weatherDate : String = ""
     var country : String = ""
     var city : String = ""
@@ -24,11 +24,11 @@ class GetWeatherResponseModel : Mappable {
     var isFuture : Bool = false
     var imageLink : String = ""
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         
         weatherDate <- map["WeatherDate"]
         country <- map["Country"]

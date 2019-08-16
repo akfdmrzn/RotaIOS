@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-class GetListResponseModel: Mappable {
+public class GetListResponseModel: Mappable {
     
     var id = 0
     var partnerNumber = 0
@@ -19,10 +19,10 @@ class GetListResponseModel: Mappable {
     var subItemState = false
     var subItems: [SubItem] = []
     
-    required init?(map: Map){
+    public required init?(map: Map){
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         id <- map["Id"]
         partnerNumber <- map["PartnerNumber"]
         name <- map["Name"]
@@ -33,14 +33,14 @@ class GetListResponseModel: Mappable {
     }
 }
 
-class SubItem: Mappable {
+public class SubItem: Mappable {
     var id = 0
     var partnerNumber = 0
     var name = ""
     var type = ""
     var value = false
     
-    init() {
+    public init() {
         id = 0
         partnerNumber = 0
         name = "cnyt"
@@ -48,11 +48,11 @@ class SubItem: Mappable {
         value = true
     }
     
-    required init?(map: Map){
+    public required init?(map: Map){
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         id <- map["Id"]
         partnerNumber <- map["PartnerNumber"]
         name <- map["Name"]

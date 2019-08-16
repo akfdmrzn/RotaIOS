@@ -9,20 +9,20 @@
 import Foundation
 import ObjectMapper
 
-class LoginRequest:Mappable{
+public class LoginRequest:Mappable{
     
     var email:String!
     var password:String!
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
-    init(email:String,password:String) {
+    public init(email:String,password:String) {
         self.email = email
         self.password = password
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         email <- map["Email"]
         password <- map["Password"]
     }

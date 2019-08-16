@@ -9,25 +9,25 @@
 import Foundation
 import ObjectMapper
 
-class GetTourDefinationListRequestModel : Mappable {
+public class GetTourDefinationListRequestModel : Mappable {
     var excursionNameLike : String?
     var excursionType : Int?
     var incomingId : Int?
     var coralTouristId : Int?
     
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    init(excursionNameLike: String?, excursionType: Int?, incomingId: Int?, coralTouristId : Int?) {
+    public init(excursionNameLike: String?, excursionType: Int?, incomingId: Int?, coralTouristId : Int?) {
         self.excursionNameLike = excursionNameLike
         self.excursionType = excursionType
         self.incomingId = incomingId
         self.coralTouristId = coralTouristId
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         excursionNameLike <- map["ExcursionNameLike"]
         excursionType <- map["ExcursionType"]
         incomingId <- map["IncomingId"]

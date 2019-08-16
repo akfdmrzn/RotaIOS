@@ -9,18 +9,18 @@
 import UIKit
 import ObjectMapper
 
-class GetPhoneNumberListRequestModel:Mappable{
+public class GetPhoneNumberListRequestModel:Mappable{
     
     var companyId:Int!
     var languageId:Int!
     var incomingId:Int!
     var coralTouristId:Int!
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    init(companyId:Int,languageId :Int,incomingId : Int,coralTouristId : Int) {
+    public init(companyId:Int,languageId :Int,incomingId : Int,coralTouristId : Int) {
         self.companyId = companyId
         self.languageId = languageId
         self.incomingId = incomingId
@@ -28,7 +28,7 @@ class GetPhoneNumberListRequestModel:Mappable{
     }
     
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         companyId <- map["CompanyId"]
         languageId <- map["LanguageId"]
         coralTouristId <- map["CoralTouristId"]

@@ -9,17 +9,17 @@
 import Foundation
 import ObjectMapper
 
-class SaveFavoriteResponseModel: Mappable {
+public class SaveFavoriteResponseModel: Mappable {
     
     var value = false
     var message = ""
     var operationStatus = false
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         value <- map["Value"]
         message <- map["Message"]
         operationStatus <- map["OperationStatus"]

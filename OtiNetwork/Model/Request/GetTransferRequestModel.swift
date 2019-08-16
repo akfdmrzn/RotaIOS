@@ -9,20 +9,20 @@
 import Foundation
 import ObjectMapper
 
-class GetTransferRequestModel : Mappable {
+public class GetTransferRequestModel : Mappable {
     var customerId : Int?
     var directionType : Int?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    init(customerId: Int?, directionType: Int?) {
+    public init(customerId: Int?, directionType: Int?) {
         self.customerId = customerId
         self.directionType = directionType
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         customerId <- map["CustomerId"]
         directionType <- map["DirectionType"]
         

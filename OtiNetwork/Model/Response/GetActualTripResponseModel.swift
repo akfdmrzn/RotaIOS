@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-class GetActualTripResponseModel: Mappable {
+public class GetActualTripResponseModel: Mappable {
     
     var iD: String = ""
     var surveyStatus = false
@@ -30,10 +30,10 @@ class GetActualTripResponseModel: Mappable {
     var touristId = 0
     var incomingId = 0
     
-    required init?(map: Map){
+    public required init?(map: Map){
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         iD <- map["ID"]
         surveyStatus <- map["SurveyStatus"]
         voucher <- map["Voucher"]

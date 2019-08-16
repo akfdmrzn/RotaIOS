@@ -9,17 +9,17 @@
 import Foundation
 import ObjectMapper
 
-class GetFavoritesResponseModel: Mappable {
+public class GetFavoritesResponseModel: Mappable {
     
     var destinationId = 0
     var customerId = 0
     var excursionId = 0
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         customerId <- map["CustomerId"]
         destinationId <- map["DestinationId"]
         excursionId <- map["ExcursionId"]

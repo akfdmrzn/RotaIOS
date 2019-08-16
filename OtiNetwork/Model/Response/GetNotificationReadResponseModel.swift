@@ -12,15 +12,15 @@ import ObjectMapper
 class GetNotificationReadResponseModel: Mappable {
     
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    init() {
+    public init() {
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         
     }
     

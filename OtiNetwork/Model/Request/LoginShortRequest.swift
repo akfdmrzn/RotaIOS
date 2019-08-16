@@ -9,18 +9,18 @@
 import Foundation
 import ObjectMapper
 
-class LoginShortRequest:Mappable{
+public class LoginShortRequest:Mappable{
     
     var userEncrypted:String!
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
-    init(userEncrypted:String) {
+    public init(userEncrypted:String) {
         self.userEncrypted = userEncrypted
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         userEncrypted <- map["UserEncrypted"]
     }
     

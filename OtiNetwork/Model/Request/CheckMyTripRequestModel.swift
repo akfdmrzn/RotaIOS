@@ -9,22 +9,22 @@
 import UIKit
 import ObjectMapper
 
-class CheckMyTripRequestModel:Mappable{
+public class CheckMyTripRequestModel:Mappable{
     
     var voucherNumber:Int!
     var passportNumber:String!
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    init(voucherNumber:Int,passportNumber:String) {
+    public init(voucherNumber:Int,passportNumber:String) {
         self.voucherNumber = voucherNumber
         self.passportNumber = passportNumber
     }
     
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         voucherNumber <- map["VoucherNumber"]
         passportNumber <- map["PassportNumber"]
     }

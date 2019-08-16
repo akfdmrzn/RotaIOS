@@ -9,22 +9,22 @@
 import UIKit
 import ObjectMapper
 
-class GetGuideInfoOfTouristRequestModel:Mappable{
+public class GetGuideInfoOfTouristRequestModel:Mappable{
     
     var coralTouristId:Int!
     var incomingId:Int!
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    init(coralTouristId:Int, incomingId : Int) {
+    public init(coralTouristId:Int, incomingId : Int) {
         self.coralTouristId = coralTouristId
         self.incomingId = incomingId
     }
     
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         coralTouristId <- map["CoralTouristId"]
         incomingId <- map["IncomingId"]
     }

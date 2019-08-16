@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class SendRatedTourList: Mappable {
+public class SendRatedTourList: Mappable {
     
     var customerId:Int!
     var tourId:String!
@@ -17,25 +17,25 @@ class SendRatedTourList: Mappable {
     var value:Int!
     var valueString:String!
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    init(customerId:Int,tourId :String,partnerNumber : Int,value : Int) {
+    public init(customerId:Int,tourId :String,partnerNumber : Int,value : Int) {
         self.customerId = customerId
         self.tourId = tourId
         self.partnerNumber = partnerNumber
         self.value = value
     }
     
-    init(customerId:Int,tourId :String,partnerNumber : Int,valueString : String) {
+    public init(customerId:Int,tourId :String,partnerNumber : Int,valueString : String) {
         self.customerId = customerId
         self.tourId = tourId
         self.partnerNumber = partnerNumber
         self.valueString = valueString
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         customerId <- map["CustomerId"]
         tourId <- map["TourId"]
         partnerNumber <- map["PartnerNumber"]

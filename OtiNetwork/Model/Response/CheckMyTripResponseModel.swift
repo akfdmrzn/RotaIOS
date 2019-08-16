@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-class CheckMyTripResponseModel: Mappable {
+public class CheckMyTripResponseModel: Mappable {
     
     var iD = 0
     var birthDate = ""
@@ -45,11 +45,11 @@ class CheckMyTripResponseModel: Mappable {
     var insurances: [Insurances] = []
     var agency: Agency?
     
-    required init?(map: Map){
+    public required init?(map: Map){
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         iD <- map["ID"]
         birthDate <- map["BirthDate"]
         birthDateStringFormat <- map["BirthDateStringFormat"]
@@ -86,7 +86,7 @@ class CheckMyTripResponseModel: Mappable {
     }
 }
 
-class Agency: Mappable {
+public class Agency: Mappable {
     
     var iD = 0
     var name : String = ""
@@ -94,10 +94,10 @@ class Agency: Mappable {
     var email: String = ""
     var phone: String = ""
     
-    required init?(map: Map){
+    public required init?(map: Map){
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         iD <- map["ID"]
         name <- map["Name"]
         address <- map["Address"]
@@ -106,7 +106,7 @@ class Agency: Mappable {
     }
 }
 
-class Insurances: Mappable {
+public class Insurances: Mappable {
     
     var iD = 0
     var beginDate = ""
@@ -123,10 +123,10 @@ class Insurances: Mappable {
     var cancelStatus = ""
     
     
-    required init?(map: Map){
+    public required init?(map: Map){
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         iD <- map["ID"]
         beginDate <- map["BeginDate"]
         beginDateString <- map["BeginDateString"]
@@ -143,7 +143,7 @@ class Insurances: Mappable {
     }
 }
 
-class Transfers: Mappable {
+public class Transfers: Mappable {
     
     var iD = 0
     var transferDate = ""
@@ -168,10 +168,10 @@ class Transfers: Mappable {
     var guidePhoneNumber: String = ""
     var isArrival : Bool = false
     
-    required init?(map: Map){
+    public required init?(map: Map){
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         iD <- map["ID"]
         transferDate <- map["TransferDate"]
         transferDateString <- map["TransferDateString"]
@@ -196,17 +196,17 @@ class Transfers: Mappable {
     }
 }
 
-class Extras: Mappable {
+public class Extras: Mappable {
     
     
-    required init?(map: Map){
+    public required init?(map: Map){
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
     }
 }
 
-class Flights: Mappable {
+public class Flights: Mappable {
     
     var iD = 0
     var saleDate = ""
@@ -236,10 +236,10 @@ class Flights: Mappable {
     var directionName = ""
     var isConnectedFlight = false
     
-    required init?(map: Map){
+    public required init?(map: Map){
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         iD <- map["ID"]
         saleDate <- map["SaleDate"]
         saleDateString <- map["SaleDateString"]
@@ -269,7 +269,7 @@ class Flights: Mappable {
     }
 }
 
-class Hotels: Mappable {
+public class Hotels: Mappable {
     
     var iD = 0
     var hotelID = 0
@@ -290,10 +290,10 @@ class Hotels: Mappable {
     var countryName = ""
     var imageUrl = ""
     
-    required init?(map: Map){
+    public required init?(map: Map){
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         iD <- map["ID"]
         hotelID <- map["HotelID"]
         checkInDate <- map["CheckInDate"]

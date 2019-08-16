@@ -9,23 +9,23 @@
 import UIKit
 import ObjectMapper
 
-class CustomerControlActivateCodeRequestModel: Mappable {
+public class CustomerControlActivateCodeRequestModel: Mappable {
     
     var mobilePhone:String!
     var activeCode:String!
     var email:String!
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    init(mobilePhone:String,activeCode : String,email: String) {
+    public init(mobilePhone:String,activeCode : String,email: String) {
         self.mobilePhone = mobilePhone
         self.activeCode = activeCode
         self.email = email
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         mobilePhone <- map["MobilePhone"]
         activeCode <- map["ActiveCode"]
         email <- map["Email"]

@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-class CustomerDetailByIdResponseModel: Mappable {
+public class CustomerDetailByIdResponseModel: Mappable {
     
     var  id  = 0
     var  name  = ""
@@ -46,11 +46,11 @@ class CustomerDetailByIdResponseModel: Mappable {
     
     
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         id <- map["ID"]
         name <- map["Name"]
         email <- map["Email"]

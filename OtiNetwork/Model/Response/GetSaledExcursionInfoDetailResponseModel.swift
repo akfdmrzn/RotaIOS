@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class GetSaledExcursionInfoDetailResponseModel: Mappable {
+public class GetSaledExcursionInfoDetailResponseModel: Mappable {
     var voucherNo: String?
     var tourName: String?
     var totalPax: Int?
@@ -35,11 +35,11 @@ class GetSaledExcursionInfoDetailResponseModel: Mappable {
     var tourists: [Tourist]?
     var refundCondition: String?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         
         voucherNo <- map["VoucherNo"]
         tourName <- map["TourName"]
@@ -69,15 +69,15 @@ class GetSaledExcursionInfoDetailResponseModel: Mappable {
     
 }
 
-class Tourist: Mappable {
+public class Tourist: Mappable {
     var id: String?
     var fullName: String?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         
         id <- map["Id"]
         fullName <- map["FullName"]

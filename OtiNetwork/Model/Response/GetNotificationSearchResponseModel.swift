@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class GetNotificationSearchResponseModel: Mappable {
+public class GetNotificationSearchResponseModel: Mappable {
     
     var Id:Int!
     var name:String!
@@ -19,11 +19,11 @@ class GetNotificationSearchResponseModel: Mappable {
     var reservationId:Int!
     var transferId:Int!
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    init(Id:Int,name :String,createDate : String,notificationType : Int,createDateString : String,transferId : Int,reservationId : Int) {
+    public init(Id:Int,name :String,createDate : String,notificationType : Int,createDateString : String,transferId : Int,reservationId : Int) {
         self.Id = Id
         self.name = name
         self.createDate = createDate
@@ -33,7 +33,7 @@ class GetNotificationSearchResponseModel: Mappable {
         self.transferId = transferId
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         Id <- map["Id"]
         name <- map["Name"]
         createDate <- map["CreateDate"]

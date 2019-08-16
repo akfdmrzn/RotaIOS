@@ -9,10 +9,10 @@
 import Foundation
 class BaseData{
     
-    static let shared = BaseData()
+   public static let shared = BaseData()
     
     private init(){}
     
-    var getTokenResponse:BaseResponse<GetTokenResponse>!
+   public var getTokenResponse:BaseResponse<GetTokenResponse>!
     
 }

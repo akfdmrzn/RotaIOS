@@ -7,22 +7,21 @@
 //
 
 import Foundation
-
 import ObjectMapper
 
-class GetTourDefinationComboListRequestModel : Mappable {
+public class GetTourDefinationComboListRequestModel : Mappable {
     
     var incomingId : Int?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    init(incomingId: Int?) {
+    public init(incomingId: Int?) {
         self.incomingId = incomingId
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         incomingId <- map["IncomingId"]
     }
     

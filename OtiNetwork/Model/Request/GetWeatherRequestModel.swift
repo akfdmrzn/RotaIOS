@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-class GetWeatherRequestModel: Mappable {
+public class GetWeatherRequestModel: Mappable {
    
     var weatherDateStart:String!
     var weatherDateEnd:String!
@@ -17,20 +17,20 @@ class GetWeatherRequestModel: Mappable {
     var country:String!
     var languageId:String!
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
-    init(weatherDateStart:String,weatherDateEnd:String,city :String,country : String,languageId : String) {
+    public init(weatherDateStart:String,weatherDateEnd:String,city :String,country : String,languageId : String) {
         self.weatherDateStart = weatherDateStart
         self.weatherDateEnd = weatherDateEnd
         self.city = city
         self.country = country
         self.languageId = languageId
     }
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         
     }
-    func toParameterStringArray() ->[String] {
+    public func toParameterStringArray() ->[String] {
         var arrayString :[String] = []
         arrayString.append(self.weatherDateStart) 
         arrayString.append(self.weatherDateEnd)

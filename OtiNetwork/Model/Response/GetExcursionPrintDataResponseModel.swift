@@ -9,19 +9,19 @@
 import Foundation
 import ObjectMapper
 
-class GetExcursionPrintDataResponseModel: Mappable {
+public class GetExcursionPrintDataResponseModel: Mappable {
     
     var data: String?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    init(data: String?) {
+    public init(data: String?) {
         self.data = data
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         data <- map["Data"]
     }
     

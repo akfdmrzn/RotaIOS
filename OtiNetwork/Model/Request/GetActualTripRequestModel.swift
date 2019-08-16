@@ -9,20 +9,20 @@
 import UIKit
 import ObjectMapper
 
-class GetActualTripRequestModel:Mappable{
+public class GetActualTripRequestModel:Mappable{
     
     var customer:String!
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    init(customer:String) {
+    public init(customer:String) {
         self.customer = customer
     }
     
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         customer <- map["Customer"]
         
     }

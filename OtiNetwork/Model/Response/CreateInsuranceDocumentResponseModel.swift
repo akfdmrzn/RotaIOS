@@ -9,21 +9,21 @@
 import Foundation
 import ObjectMapper
 
-class CreateInsuranceDocumentResponseModel: Mappable {
+public class CreateInsuranceDocumentResponseModel: Mappable {
     
     var voucherInsuranceDetailIDs: Int?
     var url: String?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    init(voucherInsuranceDetailIDs: Int?, url: String?) {
+    public init(voucherInsuranceDetailIDs: Int?, url: String?) {
         self.voucherInsuranceDetailIDs = voucherInsuranceDetailIDs
         self.url = url
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         voucherInsuranceDetailIDs <- map["VoucherInsuranceDetailIDs"]
         url <- map["Url"]
     }

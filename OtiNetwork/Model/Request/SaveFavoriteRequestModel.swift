@@ -9,23 +9,23 @@
 import Foundation
 import ObjectMapper
 
-class SaveFavoriteRequestModel: Mappable {
+public class SaveFavoriteRequestModel: Mappable {
     
     var destinationId: Int!
     var customerId: Int!
     var excursionId: Int!
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    init(customerId: Int?, destinationId: Int?, excursionId: Int?) {
+    public init(customerId: Int?, destinationId: Int?, excursionId: Int?) {
         self.customerId = customerId
         self.destinationId = destinationId
         self.excursionId = excursionId
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         customerId <- map["CustomerId"]
         destinationId <- map["DestinationId"]
         excursionId <- map["ExcursionId"]

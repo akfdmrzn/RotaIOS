@@ -10,21 +10,21 @@
 import Foundation
 import ObjectMapper
 
-class GetCustomerForgotPasswordRequestModel: Mappable {
+public class GetCustomerForgotPasswordRequestModel: Mappable {
     
     var email: String?
     var companyId: Int?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    init(email: String?, companyId: Int?) {
+    public init(email: String?, companyId: Int?) {
         self.email = email
         self.companyId = companyId
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         email <- map["Email"]
         companyId <- map["CompanyId"]
     }

@@ -9,23 +9,23 @@
 import Foundation
 import ObjectMapper
 
-class CreateFlightTicketRequestModel: Mappable {
+public class CreateFlightTicketRequestModel: Mappable {
     
     var voucherNumber: Int?
     var touristNumber: Int?
     var voucherFlightDetailNumber: Int?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    init(voucherNumber: Int,touristNumber: Int,voucherFlightDetailNumber: Int) {
+    public init(voucherNumber: Int,touristNumber: Int,voucherFlightDetailNumber: Int) {
         self.voucherNumber = voucherNumber
         self.touristNumber = touristNumber
         self.voucherFlightDetailNumber = voucherFlightDetailNumber
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         voucherNumber <- map["VoucherNumber"]
         touristNumber <- map["TouristNumber"]
         voucherFlightDetailNumber <- map["VoucherFlightDetailNumber"]

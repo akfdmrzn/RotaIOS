@@ -12,10 +12,10 @@ class BaseResponse<T:Mappable >:Mappable{
     public var isSuccess :Bool?
     public var threadGuid :String?
     public var baseMessageList :BaseMessageItem?
-    var dataArray: [T]?
-    var dataObject: T?
+    public var dataArray: [T]?
+    public var dataObject: T?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
@@ -33,13 +33,13 @@ class BaseResponse<T:Mappable >:Mappable{
 }
 
 
-class GetTokenResponse:Mappable{
+public class GetTokenResponse:Mappable{
     
-    required init?(map: Map) {
+   public required init?(map: Map) {
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         
     }
 }

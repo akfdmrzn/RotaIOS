@@ -9,21 +9,21 @@
 import Foundation
 import ObjectMapper
 
-class GetSaledExcursionInfoDetailRequestModel: Mappable {
+public class GetSaledExcursionInfoDetailRequestModel: Mappable {
     
     var incomingId: Int?
     var tourSaleId: Int?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    init(incomingId: Int?, tourSaleId: Int?) {
+    public init(incomingId: Int?, tourSaleId: Int?) {
         self.incomingId = incomingId
         self.tourSaleId = tourSaleId
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         incomingId <- map["IncomingId"]
         tourSaleId <- map["TourSaleId"]
     }

@@ -9,20 +9,20 @@
 import UIKit
 import ObjectMapper
 
-class GetTripDetailByIdRequestModel:Mappable{
+public class GetTripDetailByIdRequestModel:Mappable{
     
     var id:String!
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    init(id:String) {
+    public init(id:String) {
         self.id = id
     }
     
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         id <- map["ID"]
         
     }

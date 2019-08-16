@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class GetTransferResponseModel : Mappable {
+public class GetTransferResponseModel : Mappable {
     var id : Int?
     var transferDate : String?
     var transferDateString : String?
@@ -32,11 +32,11 @@ class GetTransferResponseModel : Mappable {
     var guideName : String?
     var guidePhoneNumber : String?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         
         id <- map["ID"]
         transferDate <- map["TransferDate"]

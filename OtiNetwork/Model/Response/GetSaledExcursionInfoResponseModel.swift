@@ -22,11 +22,11 @@ public class GetSaledExcursionInfoResponseModel: Mappable {
     public var tourDateString: String?
     public var imageUrl: String = ""
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         voucherNo <- map["VoucherNo"]
         tourName <- map["TourName"]
         totalPax <- map["TotalPax"]

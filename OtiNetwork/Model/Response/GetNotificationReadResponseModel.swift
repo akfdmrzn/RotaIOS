@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class GetNotificationReadResponseModel: Mappable {
+public class GetNotificationReadResponseModel: Mappable {
     
     
     public required init?(map: Map) {

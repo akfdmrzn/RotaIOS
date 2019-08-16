@@ -9,8 +9,8 @@
 import Foundation
 import ObjectMapper
 
-class Defaults{
-     enum DefaultsType {
+public class Defaults{
+    public enum DefaultsType {
         case User
         case CompanyID
         case LanguageID
@@ -23,11 +23,11 @@ class Defaults{
         case LastEmail
     }
     
-    init(){}
+   public init(){}
     
     
     
-    func clearData(){
+   public func clearData(){
         
         let userDefaultsData:Defaults = Defaults()
         
@@ -58,14 +58,14 @@ class Defaults{
     }
     
     //CompanyID
-    func saveCompanyID(companyFlagId:Int = 0) -> Bool{ //Default olarak company ID hep 9 gönderiliyor bayrak seçimlerinden sonra ne yapılacağı belli değil
+    public func saveCompanyID(companyFlagId:Int = 0) -> Bool{ //Default olarak company ID hep 9 gönderiliyor bayrak seçimlerinden sonra ne yapılacağı belli değil
         let preferences = UserDefaults.standard
         let currentCompanyKey = getIdentifier(type: .CompanyID)
         preferences.set(9, forKey: currentCompanyKey)
         let didSave = preferences.synchronize()
         return didSave
     }
-    func getCompanyID() -> Int{
+    public func getCompanyID() -> Int{
         let preferences = UserDefaults.standard
         let currentCompanyKey = getIdentifier(type: .CompanyID)
         
@@ -77,14 +77,14 @@ class Defaults{
     }
     
     //LanguageID
-    func saveLanguageId(languageId:Int){
+    public func saveLanguageId(languageId:Int){
         let preferences = UserDefaults.standard
         let currentLanguageKey = getIdentifier(type: .LanguageID)
         preferences.set(languageId, forKey: currentLanguageKey)
         preferences.synchronize()
     }
     
-    func getLanguageId() -> Int{
+    public func getLanguageId() -> Int{
         let preferences = UserDefaults.standard
         let currentLanguageKey = getIdentifier(type: .LanguageID)
         if preferences.object(forKey: currentLanguageKey) == nil {
@@ -95,14 +95,14 @@ class Defaults{
     }
     
     //CustomerID
-    func saveCustomerID(customerId:Int){
+    public func saveCustomerID(customerId:Int){
         let preferences = UserDefaults.standard
         let currentCsutomerKey = getIdentifier(type: .CustomerID)
         preferences.set(customerId, forKey: currentCsutomerKey)
         preferences.synchronize()
     }
     
-    func getCustomerID() -> Int{
+    public func getCustomerID() -> Int{
         let preferences = UserDefaults.standard
         let currentCsutomerKey = getIdentifier(type: .CustomerID)
         if preferences.object(forKey: currentCsutomerKey) == nil {
@@ -129,14 +129,14 @@ class Defaults{
     }
     
     //FlagID
-    func saveFlagID(flagId:Int){
+    public func saveFlagID(flagId:Int){
         let preferences = UserDefaults.standard
         let currentFlagKey = getIdentifier(type: .FlagID)
         preferences.set(flagId, forKey: currentFlagKey)
         preferences.synchronize()
     }
     
-    func getFlagID() -> Int{
+    public func getFlagID() -> Int{
         let preferences = UserDefaults.standard
         let currentFlagKey = getIdentifier(type: .FlagID)
         if preferences.object(forKey: currentFlagKey) == nil {
@@ -146,14 +146,14 @@ class Defaults{
         }
     }
     //FlagChoosed
-    func saveFlagChoosed(flagId:Bool){
+    public func saveFlagChoosed(flagId:Bool){
         let preferences = UserDefaults.standard
         let currentFlagKey = getIdentifier(type: .FlagChoosed)
         preferences.set(flagId, forKey: currentFlagKey)
         preferences.synchronize()
     }
     
-    func getFlagChoosed() -> Bool{
+    public func getFlagChoosed() -> Bool{
         let preferences = UserDefaults.standard
         let currentFlagKey = getIdentifier(type: .FlagChoosed)
         if preferences.object(forKey: currentFlagKey) == nil {
@@ -163,14 +163,14 @@ class Defaults{
         }
     }
     
-    func saveIncomingID(incomingID:Int){
+    public func saveIncomingID(incomingID:Int){
         let preferences = UserDefaults.standard
         let currentFlagKey = getIdentifier(type: .IncomingID)
         preferences.set(incomingID, forKey: currentFlagKey)
         preferences.synchronize()
     }
     
-    func getIncomingID() -> Int{
+    public func getIncomingID() -> Int{
         let preferences = UserDefaults.standard
         let currentFlagKey = getIdentifier(type: .IncomingID)
         if preferences.object(forKey: currentFlagKey) == nil {
@@ -180,14 +180,14 @@ class Defaults{
         }
     }
     
-    func saveTouristID(incomingID:Int){
+    public func saveTouristID(incomingID:Int){
         let preferences = UserDefaults.standard
         let currentFlagKey = getIdentifier(type: .TouristID)
         preferences.set(incomingID, forKey: currentFlagKey)
         preferences.synchronize()
     }
     
-    func getTouristID() -> Int{
+    public func getTouristID() -> Int{
         let preferences = UserDefaults.standard
         let currentFlagKey = getIdentifier(type: .TouristID)
         if preferences.object(forKey: currentFlagKey) == nil {
@@ -197,14 +197,14 @@ class Defaults{
         }
     }
     
-    func saveLastEmail(lastEmail:String){
+    public func saveLastEmail(lastEmail:String){
         let preferences = UserDefaults.standard
         let currentFlagKey = getIdentifier(type: .LastEmail)
         preferences.set(lastEmail, forKey: currentFlagKey)
         preferences.synchronize()
     }
     
-    func getLastEmail() -> String{
+    public func getLastEmail() -> String{
         let preferences = UserDefaults.standard
         let currentFlagKey = getIdentifier(type: .LastEmail)
         if preferences.object(forKey: currentFlagKey) == nil {

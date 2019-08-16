@@ -29,24 +29,15 @@ class Defaults{
     
     func clearData(){
         
-//        let userDefaultsData:Defaults = Defaults()
-//        let tempLanguageId = userDefaultsData.getLanguageId()
-//        let tempMail = userDefaultsData.getLastEmail()
-//        
-//        if let appDomain = Bundle.main.bundleIdentifier {
-//            UserDefaults.standard.removePersistentDomain(forName: appDomain)
-//        }
-//        
-//        _ = userDefaultsData.saveFlagChoosed(flagId: true)
-//        userDefaultsData.saveLanguageId(languageId: tempLanguageId)
-//        if (tempLanguageId == 2) {
-//            LocalizationManager.setCurrentLanguage("en")
-//        }
-//        else if (tempLanguageId == 3) {
-//            LocalizationManager.setCurrentLanguage("ru")
-//        }
-//        userDefaultsData.saveLastEmail(lastEmail: tempMail)
-//        HomeViewController.firstTripModel = nil
+        let userDefaultsData:Defaults = Defaults()
+        
+        let tempMail = userDefaultsData.getLastEmail()
+        
+        if let appDomain = Bundle.main.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: appDomain)
+        }
+        _ = userDefaultsData.saveFlagChoosed(flagId: true)
+        userDefaultsData.saveLastEmail(lastEmail: tempMail)
         
     }
     

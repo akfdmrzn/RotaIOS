@@ -2,7 +2,7 @@
 //  BaseMessageItem.swift
 //  BaseProject
 //
-//  Created by Bekir's Mac on 19.02.2019.
+//  Created by Akif Mac on 19.02.2019.
 //  Copyright © 2019 OtiHolding. All rights reserved.
 //
 
@@ -40,8 +40,6 @@ public class BaseMessageItem:Mappable{
         code <- map["Code"]
         message <- map["Message"]
         stackTrace <- map["StackTrace"]
-        
-        
     }
 }
 

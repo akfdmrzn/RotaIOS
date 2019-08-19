@@ -14,7 +14,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let userDefaultsData:Defaults = Defaults()
+        
+        
+        let loginData = LoginShortRequest.init(userEncrypted: "sad")
+        
+        NetworkManager.sendRequest(url : "sds",endPoint: .ShortLogin, requestModel: getBaseRequestData(data: loginData)) { (response: BaseResponse<LoginResponse>) in
+            if(response.isSuccess!) {
+                
+            }
+            else {
+                
+            }
+        }
         
     }
 

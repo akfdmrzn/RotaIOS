@@ -7,16 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011262BB96A50E5F2CDC634B425F1064 /* GetSaledExcursionInfoResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE044A2563B2F6FB7D72BBCF83A51F8A /* GetSaledExcursionInfoResponseModel.swift */; };
 		01904B0245AC2031E9ADD586BE7224C0 /* EndWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCA5C1294A81033E0B249535901FE2 /* EndWith.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		01DAA6DD1809A39129FF7C72DDF93054 /* mach_excServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 66850092AA5DE45F3D1BAA3B4FE506B2 /* mach_excServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		03A04CBEEA5D707FF75F1BDCAED9AC3E /* BaseApiRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBEE5822334570A0F5BF33D87C1E935 /* BaseApiRequestBody.swift */; };
+		05C85987CD0344CD3403E4179A530A79 /* GetExcursionDetailByIdRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E3E92CEC9C79DAAB8CBDC09CD615C4 /* GetExcursionDetailByIdRequestModel.swift */; };
 		0683FC9DDCAB80660BD11E7159607DB6 /* World+DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = E7CFB000296CA0596F7C7C6D5FAFBB9E /* World+DSL.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		069F0ED65687AD620C4BAE94016255D9 /* GetNotificationSearchRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E82BB53E1C8C3F0A3660A599729A5C3 /* GetNotificationSearchRequestModel.swift */; };
+		069FF209EEBE1F8B44AB8BF812EF3AA6 /* GetGuideInfoOfTouristRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1157FA711278EACA3B614FD0366B1495 /* GetGuideInfoOfTouristRequestModel.swift */; };
 		0725A6F6AF5A97F9D46B3188E135D5B2 /* NMBExceptionCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 41EDC77F81A94B6B667C2DE9195111DF /* NMBExceptionCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0834E167066BF3659E39621F58F440A6 /* BeVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2242BB723AC5911D25DF8DAEBBF6CD /* BeVoid.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		08DC8A46FE26DFF192FCAC752A66E620 /* CwlMachBadInstructionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1699DDF29B7F0F8008BF4E4E4578E7BC /* CwlMachBadInstructionHandler.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		09E57AA31D90A93CCD5ECF9D5819F072 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA906A2BB947B1798CE8EC75C58A0B1 /* AlamofireObjectMapper.framework */; };
+		0B00AEDFE2E84032F0923220A56E893F /* CustomerControlActivateCodeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5CAE1C48D263DA0848A06E3B059E72 /* CustomerControlActivateCodeRequestModel.swift */; };
 		0BC8351182276985B9C97446E9101EF2 /* NMBExceptionCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 06840EA7EAABAC1C629566EB70DAD37A /* NMBExceptionCapture.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		0C02ABEC760BF80131B37D63C73BE26B /* ObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 557F082D27C8D041B62768EE7CD2231B /* ObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C5E11DE24DAA737704B355F5F2F3426 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768562B4E8BF8F1FB15862DE3E3CAD38 /* ParameterEncoding.swift */; };
 		0FF082D1672DD06F291EEDE3FEB518CB /* XCTestObservationCenter+Register.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E75A990CB1EE8F377BC90E4C075FF0 /* XCTestObservationCenter+Register.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		10238E06D7EF3CE4EAAFB180F4506DEF /* CustomerCreateResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA951438C90CFB1737D233253BF77D7 /* CustomerCreateResponseModel.swift */; };
 		11EDFDE1BC5494E14D6F81320FE3925F /* QuickConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 475EA356AFC21FF6B1F8B577E541DAF6 /* QuickConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1251ABF8613A45A93CF7198E944EFA1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83ECF03345520B27181BF4FD0FCFD3A /* Foundation.framework */; };
 		1270F4E601423EF36FE824207169002A /* CodableTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC9542B19438CB366FDB83BFBDECC65 /* CodableTransform.swift */; };
@@ -27,48 +35,71 @@
 		1986B50C74F1697EA43F68335C93CEB3 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB83D030C9E310136C59A6C65604D63 /* MultipartFormData.swift */; };
 		19A14163D1B85BA2674C47C08DD42F3B /* EnumOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6291BAB1CBBE4B08C22F251FA597022 /* EnumOperators.swift */; };
 		1A6FB23F6D6908396FB5FE61D9A76FB5 /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF7514DA0594C15CEFFABBA0CE83FDD /* URLTransform.swift */; };
+		1C2F24E9B0EA482509DB016E0C23A276 /* GetListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3DE85BF8B6E4FF56F19F66D732B204 /* GetListRequestModel.swift */; };
 		1C4E35F55A6329617D438B149650AD87 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A939E4019E19561EAF64BC6270E1A978 /* Mappable.swift */; };
 		1EA797B70F587D59DD66A07503CD95D7 /* CwlCatchException.m in Sources */ = {isa = PBXBuildFile; fileRef = FD060C768C28B62D66E359C25B0917B8 /* CwlCatchException.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		230ADF7155EF2C01A7CBD7CAC6F156EE /* CustomerChangePasswordResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CBF2806EE775543A2A0A2F9C89EF81 /* CustomerChangePasswordResponseModel.swift */; };
 		25B8696FF6F4BC3F90101C2B4A0BFFBE /* CwlDarwinDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADB3DA4B9B7DE7DB8E8101AA304942 /* CwlDarwinDefinitions.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		26F81E6AB00BC5E82096E5C9588FB4F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83ECF03345520B27181BF4FD0FCFD3A /* Foundation.framework */; };
 		28FB7D2AE173D7A32B3866FC2CBF587B /* AlamofireObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 60262275A09209299CA5AFF283D85061 /* AlamofireObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A94FACEA07096DDE05ACF58491DD963 /* World+DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA03A9F2F073CCB80361C9B45D3C72 /* World+DSL.swift */; };
 		2A95AD48CE160CCC59957E4F91EEC9B9 /* XCTestSuite+QuickTestSuiteBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = D68195E923BBED8BB566A2ED6318C8B4 /* XCTestSuite+QuickTestSuiteBuilder.m */; };
 		2ADD7D3E0B94EF044CF3FFD2F8EA2C67 /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8655DF43C110CA61853BFD1B377ED078 /* DSL.swift */; };
-		2C12F0257AD2F1BA2325B30D81D5C99E /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA906A2BB947B1798CE8EC75C58A0B1 /* AlamofireObjectMapper.framework */; };
+		2BD28C9DEA7391C697FE28DD14D14E2C /* GetExcursionPrintDataRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF8FE49400A50C7BC3FDE56FCEBC53 /* GetExcursionPrintDataRequestModel.swift */; };
 		2C61B040BA6A9A7AE66C4D9BA26D5520 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF6A4F7C5A93F214509337A4E210F10 /* SessionDelegate.swift */; };
 		2D57849BBE4DB509C70D6DC48E6E21B3 /* ToSucceed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1B84382324A18881C85C438B444F6 /* ToSucceed.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		2EA6B2E10F38275D4CEB37B7ADDAE0E0 /* QuickConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EDE25E486E72582047DB53A102B591 /* QuickConfiguration.m */; };
+		30E3162427B2BCAE12E68AE6A19F3FE5 /* CustomerSendActiveCodeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4DC0433E2B2DB63C7514099A614F00 /* CustomerSendActiveCodeRequestModel.swift */; };
+		3239768147A183EB8EFD42750E1D12B4 /* CustomerSendActiveCodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0617D0B5930FF19E9117D276CD9E5 /* CustomerSendActiveCodeResponseModel.swift */; };
+		346A7407FC800197346C75E0490468F9 /* GetTourDefinationComboListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B3D71B9C1A1182AB24AEF103E112DD /* GetTourDefinationComboListResponseModel.swift */; };
+		356474A41CA417C9CDCDAC1C52F510D6 /* CheckMyTripResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E367DCFEF22D61114B4CDC516EED5 /* CheckMyTripResponseModel.swift */; };
 		3571F958A3907B3A806E62D50C2550D4 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3810A09690DF5EE553CB5A58E24DCC93 /* NetworkReachabilityManager.swift */; };
 		3722B93E1E8BF31C11CDF45AA815A767 /* QuickTestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED55FD754C9D08D3B348EED9A11A9B7 /* QuickTestSuite.swift */; };
+		3870E77424BA2D60B1E551825F3B2872 /* CreateFlightTicketRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76741CDDEFFE7A250118996CB81AD32B /* CreateFlightTicketRequestModel.swift */; };
 		38B72051F26368B657ACE1CDEA474D88 /* mach_excServer.c in Sources */ = {isa = PBXBuildFile; fileRef = 537A3E459CA03FF68C0D519C7FB6582F /* mach_excServer.c */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		38BF4EEFE885A6E3BA892C96F24F8723 /* IntegerOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B91A0FB9F4C08BC52CD60A13B8E5FD /* IntegerOperators.swift */; };
+		39DB6B814AF5C14CF1E3B230EF1E170C /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992ECA97358FFFABED51C805BBBEBFC8 /* Defaults.swift */; };
 		3B324746542B5868C6AA793F2EF93FEB /* Await.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60488056395195613BA307FADB4D75BC /* Await.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		3CFD5091F02F30ADE4EEC622C7F487C8 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536BA9098323B73D1D0D354AC04769C5 /* Async.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		3D317145F0CA3D74E737AB0B919AB6E9 /* QuickSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C0B97183AF4D9E5640BBEE42A0A62FF /* QuickSpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DE31CFEA809B9A33254D82093A722E9 /* SendRatedResultResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB5998E1B536AE22119825EE125835D /* SendRatedResultResponseModel.swift */; };
+		3EE72702C84E2411E3D3378F0156B2AD /* CreateInsuranceDocumentResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4E4D34EAB3A81EF75D6703957E9161 /* CreateInsuranceDocumentResponseModel.swift */; };
 		405AB644E5E32AB19AE8697B4C0CE124 /* CwlMachBadInstructionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EEB5C958907DC9E571F6D32776FFC02 /* CwlMachBadInstructionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		408F2A89A247A965631C4272639D3CFC /* GetSaledExcursionInfoDetailRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F8D36E02CCBC1684CE0952A8EB6DA3 /* GetSaledExcursionInfoDetailRequestModel.swift */; };
+		40CD064898EA6EFDD09D6490374B8D59 /* OtiNetwork-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 07AB90A38BF873712599E5A1B03F56DE /* OtiNetwork-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		432275A9740FBB9697AB762445DE0B37 /* SaveFavoriteRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39508143FE854E2CDED127BF13A534 /* SaveFavoriteRequestModel.swift */; };
 		43BF42159F430B01CB7F94DFDA66F510 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850161C791A44CB024AE1AFE3F2B1AA5 /* XCTest.framework */; };
 		43D2607D4FC1D4991DB364E719510F1D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A663172E4DFE8753EA4BE72AE708CC0 /* Alamofire.framework */; };
+		4438EBFE25ECCB375BFAA69DDA751712 /* CustomerDetailByIdResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AD505B71AA39879AC11BC9CC66D802 /* CustomerDetailByIdResponseModel.swift */; };
+		445FB8F2FC8BCDB1DBFC0F28C89A1799 /* GetNotificationSearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87D5795A6276124F74F9C3031C2B18 /* GetNotificationSearchResponseModel.swift */; };
+		44C1FC33FB268D6AEE80CCA9BCC54B04 /* SendRatedTourList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB2B6376647652AA6B2D5C7CB14D25 /* SendRatedTourList.swift */; };
 		4660867D6E616474D6B62FAF476CCAAD /* BeginWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A17AFCBA411FD35422FC0E8377334 /* BeginWith.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		46D348882C620DDC75800CDFF0A49F0C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83ECF03345520B27181BF4FD0FCFD3A /* Foundation.framework */; };
 		48F15AE2F06B8500AD60C39BB45280A3 /* NSBundle+CurrentTestBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E49CB800A9B3FDE8039318402C885F3 /* NSBundle+CurrentTestBundle.swift */; };
+		49DC822A0CD8C547F8821F2EA32F608E /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB355529AB1DAC5EBD1C98DAA2BF90C7 /* LoginRequest.swift */; };
 		4A1B85AEDC3DB75FC35A3F5438B0AD81 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8319D80EE9F94F28E92EEA6184CF404D /* BeLessThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		4B97BD308458A93E1F03EF7A7D5D4DCE /* RaisesException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700D975F7B286CE58AAD75E9EFFF528D /* RaisesException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		4C6D5D1CC894D8853ACBF2FB5FE40EC5 /* EnumTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834F174285B0526F7B66745D1705AFED /* EnumTransform.swift */; };
 		4CBB32046E3B8844FFA021ACFC57702F /* ExpectationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679347D3684885E536C1B45783D87937 /* ExpectationMessage.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		4E5EE3187B48F60A0FBA4EB9ACB7FD76 /* NSString+C99ExtendedIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A8CF22B9E77EFB7C356F5EF7B8F0A4 /* NSString+C99ExtendedIdentifier.swift */; };
+		5078D27EBDD9C4AE6997A4E09A7414FB /* ExtensionUIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC50AE3B4E055DFDBFABDA95ECC030A /* ExtensionUIApplication.swift */; };
 		5221433E6847800B0533CAADF9BABA04 /* BeCloseTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D6A4C815504142804D29ED7813232 /* BeCloseTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		53640FAE66919178C2239EFD47A8DDC6 /* GetCustomerForgotPasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA2609D74155E562CD1B274D52F778 /* GetCustomerForgotPasswordRequestModel.swift */; };
 		536AE5E0C47A0C546EF96C64C2BC819A /* AlamofireObjectMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E019261B8A8B01A7DCC59007A8E9F781 /* AlamofireObjectMapper-dummy.m */; };
 		53791F5E5F07400F92CFDFC89A432305 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150ECFF3B0505EB9799D3F15951052A4 /* Validation.swift */; };
 		53B30596B1EA5F0845A886843FB9E859 /* CwlCatchException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E81CB365B70132DD25564F49D9A6 /* CwlCatchException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		543967CB633CDE86DFD53581EAE1A35D /* BeEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0B82F9E09141A73804969F69070B6 /* BeEmpty.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		54A61062B9FB72C6BA0054B2A685ED0E /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2F777B09CEA5E603D3519137660812 /* Equal.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		5562B56DCB1EE4FA43850B37FB52BD1F /* GetExcursionDetailByIdResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A539CA22E9983D6F98F7E5E37176DF71 /* GetExcursionDetailByIdResponseModel.swift */; };
+		58D46C751DF2ACEB05A61CD31F200297 /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB0B250EE62C5EA9068645C674286 /* ExtensionUIViewController.swift */; };
 		5A49B2C87AABFAED124DE8DDCC2FEAA1 /* World.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DBDA424CDDDB1A8AC7C6B214919DD94 /* World.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5B8DC6716BDD04AF78AC8048F5BACF38 /* SatisfyAllOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56E19B4BA14DD8BD84B84126C21BA15 /* SatisfyAllOf.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		5CE5E8EA75E0B3DC5BE140B61DF37EFD /* Nimble-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DCCC5C3905915FD8923EF580E08DE65F /* Nimble-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		61CFA5456E6B3B612AFBE85C6C9D4D10 /* HexColorTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1092EFEBF19677EDD3682CA4F1141E1D /* HexColorTransform.swift */; };
+		62B33F4228768A4511601D97878792B0 /* CreateInsuranceDocumentRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32332FD8F41E78D907399F5E852113A /* CreateInsuranceDocumentRequestModel.swift */; };
 		62DFF94A7A777939C861EDA13627999B /* Nimble.h in Headers */ = {isa = PBXBuildFile; fileRef = F3081FB45000927E6495B91367AB650D /* Nimble.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63B6EE789529A220E576A10E3356FBEE /* NimbleEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CDA0EA5B5FC7028F94B20784E274B /* NimbleEnvironment.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		64744C911253C3E01461FAD7C935C8D7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991A7264925DD31D760627CD0DF851C /* Result.swift */; };
+		6500128ACFCD64197E6C2B7BC3DC69DE /* GetTransferResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2C12171DE2446D9189D1C5434B67F3 /* GetTransferResponseModel.swift */; };
 		65C7F5A043925A30B66024D146D70C0E /* SuiteHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CF968BC97120DD70168EE4CC37050 /* SuiteHooks.swift */; };
 		663333C5E1449EB8487518A5FEAEF8AD /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283B2F19C4F3F71A6D85EDD37AEDE12F /* Configuration.swift */; };
 		67365D8C7D4AB95553BB274368DBCF1E /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = C887C69CF94955886A541BC43763E69B /* Example.swift */; };
@@ -76,23 +107,38 @@
 		683798C6164A47491876EF6076F27CB9 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C10A7D7815F90FC55C1E7C7AEE746 /* Functional.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		6BEA7B617028CECFCCF7E73DE1EFBC00 /* BeIdenticalTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5564D6DFD4A9A876E054FA6D841D4182 /* BeIdenticalTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		6CF8C877AF611E2E0C67EDD06618E63C /* NimbleXCTestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E33C935BB6734BBBE3288835358BF9 /* NimbleXCTestHandler.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		6E285D0EABA2EFC520A6DD3BF09D9569 /* CustomerChangePasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3857C5602999E55C72EB0E1AC27C2941 /* CustomerChangePasswordRequestModel.swift */; };
 		72E902B0D6D593657CC38405EE1118A1 /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA483F7979EB131D3A8823BEB8ACACF /* TransformOf.swift */; };
+		741BC11C5EE2B364070BDBACDA44E5BE /* CheckMyTripRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA4A4C4CF55799164061D26DBB757D9 /* CheckMyTripRequestModel.swift */; };
 		7460C7CD0497AAE90DA55B895F47DEC4 /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6AADC1524C715938EAF49472D6F86D /* DSL.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		7567599E670B7C05E3B35D931F434710 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0615A9CD14EA9D306C05108DEF6ABD /* BaseResponse.swift */; };
 		76049DE81EB1E2B6C436086630F77CA0 /* NMBStringify.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C54EBB42F20565832A3BA1629CFDE3 /* NMBStringify.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		7664FD4F59A0C00866CBAE60B0A3AD64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83ECF03345520B27181BF4FD0FCFD3A /* Foundation.framework */; };
+		79E043F5A0265F7D975BF31450EE1D5A /* GetFavoritesRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC83A9D0C8308EC757A560B8632F15AE /* GetFavoritesRequestModel.swift */; };
 		7A5B1CC9274B3E4E10EE1561F3AFD58E /* Callsite.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBA69A153CCB128114A3571408E1A44 /* Callsite.swift */; };
 		7A66539DD738BE28A057CA37AAF8F829 /* ExampleHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F760D20059B1555613065B747C0C620 /* ExampleHooks.swift */; };
 		7AA1A5A48A4182B11CFA792714C82631 /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3875472873B92261EB564C49D4D39A3 /* TransformType.swift */; };
 		7ACF7943A939837532BB53A73F01CE63 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02D89BA2EEA8254BDC562B5544E8A32 /* Match.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		7C6EBD5DE96F8820B58229707B324918 /* OtiNetwork-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FB80DF0A75E88F3ACFBA6350F528544C /* OtiNetwork-dummy.m */; };
+		7B59A3404FB6072AC67C7DEDE44C43D0 /* CustomerDetailByIdRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31069D374B76569D245D587C754AF3F1 /* CustomerDetailByIdRequestModel.swift */; };
+		7ECE22F88A3BC37908F9FBDDDEACC0C3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4974802EE4A9AD2A2005322445CD2A6B /* NetworkManager.swift */; };
+		7F0020144271C556EE6AA69D4706BE85 /* CustomerCreateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4F017812EF10799E61FA96BE373BA1 /* CustomerCreateRequestModel.swift */; };
+		7FB14A827CD16997F007F74B01D60E9C /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12686F8502F60B59D75C03F905BC2778 /* LoginResponse.swift */; };
 		7FBF6626FC5EFF4FBDE27F192BD0FE1C /* AlamofireObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81EF62CA650EC5C2B27C0476F8F2D00 /* AlamofireObjectMapper.swift */; };
+		82070565984C9DCF468DD0B5B8D7EFB9 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FACB2E58CCEEC4209D8A8C137B706F /* ObjectMapper.framework */; };
 		83956E20859CDBBE7BC38ABADE0170FB /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769E544B74E1EC36CF3568CD8632889C /* AFError.swift */; };
+		85B1D239F9A45192F899BAE4F508C7CE /* GetTourDefinationListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B100145CDD014FA2A5E2A27D385E564 /* GetTourDefinationListResponseModel.swift */; };
+		85BB9CDEE8A7EAC04E619C0E8E07EE02 /* GetTransferRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32AE0CA938111DE5965F9E9C055D750 /* GetTransferRequestModel.swift */; };
+		86B26E6107F0710474B060CD269B7306 /* GetListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CE5AC2C244637492A220C2E3CC8F5 /* GetListResponseModel.swift */; };
+		87EBCB9139780C6167B13044E9026C0A /* GetActualTripRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F0756E942E0870CDE2C118AB000393 /* GetActualTripRequestModel.swift */; };
 		8B32C823A5263884ACC364067EFADA22 /* MatchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8FC51964EEDDB3602A20DA2D67130E /* MatchError.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		8B729C7257E0E5C7F86E3597D460E212 /* BeGreaterThanOrEqualTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41B55495B97EE2FE196767E3077F45 /* BeGreaterThanOrEqualTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		8C3F5E7FF0571B63D4DAA2825C9705D1 /* QuickSelectedTestSuiteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568C6556237C910A4D019430C91261B /* QuickSelectedTestSuiteBuilder.swift */; };
 		8CB9325284A6E8E782D34AF833480CA3 /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53799BD0A76E57225C474E831CE123F1 /* BeGreaterThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		8CD159BB91877082BE426014C7B52C90 /* GetGuideInfoOfTouristResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B02A3B6F67B17F0DBECE6D0ED6F01 /* GetGuideInfoOfTouristResponseModel.swift */; };
 		8D16EAB20CD849E7DC1B1EDCEF61067D /* QCKDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = B32B07B016DBB7F6E9FC39B044684C39 /* QCKDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8EE1682892C701CA67D79C8C75164BD7 /* CustomerControlActivateCodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3873C949B3A6656D0ACB4F3470BA95 /* CustomerControlActivateCodeResponseModel.swift */; };
 		8FB20329AD7BA4819F459D7C35D84119 /* Pods-OtiNetwork_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A51F46CE845ED28D3DB1D5F906ACDFBB /* Pods-OtiNetwork_Example-dummy.m */; };
+		9020D6FD28480F6FEF728319A57BECA3 /* GetNotificationReadResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027DC47ECF21B583BFAE3DFD8125D83E /* GetNotificationReadResponseModel.swift */; };
 		90B33A2703AA145C599E3A65957951E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83ECF03345520B27181BF4FD0FCFD3A /* Foundation.framework */; };
 		9143E20A63CFBC740AECDCFE909F5A33 /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C121D2E04D5935D56D7B223B51438367 /* FromJSON.swift */; };
 		91BA956F3C83DD73EDC9E6842FAFA5C1 /* NSDecimalNumberTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CB98C04BD0FCF5AD12FD078FEA4287 /* NSDecimalNumberTransform.swift */; };
@@ -100,10 +146,15 @@
 		933FDA5970AA525D6CB92BFEBA2BAB4A /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A25A90B1ED74AC845BD499EE797511C /* Timeline.swift */; };
 		937FC411CB6833D68407CFC5F97CE68D /* TransformOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56EFE162CBA1516E64413A2E6F3FA11 /* TransformOperators.swift */; };
 		96C4F7349BB0B624490075CB4F37F2B4 /* CwlCatchBadInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC39F7ED71CA242A587B268F9CB1249 /* CwlCatchBadInstruction.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		96F8A81B2F45D8F9F32EDB7BFB4544E4 /* GetTripDetailByIdRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52EA7542FD907A7CD5DD16EDAFBCB16 /* GetTripDetailByIdRequestModel.swift */; };
 		981D9FBF09890E4E20DF889B2AD514F0 /* BeLessThanOrEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5337D03508210B601E8B28A526AC0B9B /* BeLessThanOrEqual.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		98A929C8E9012AB167672714FFD2113C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FABCB45996B307A4C486097CEC36BD /* Request.swift */; };
 		99B2BFD67568B9953B86113CF7D1290C /* ThrowAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1144F1BA2074A61CC52D554C64956 /* ThrowAssertion.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		9A037CE105D5FFEDF6BE66792B142693 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A663172E4DFE8753EA4BE72AE708CC0 /* Alamofire.framework */; };
 		9BA4E7F68AE9967DE324C686E6DDF1A9 /* Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8DFFB38436FD00C3D403E34B9276E6 /* Predicate.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		9BD9442901B6906FFBDC15C4CAC551B7 /* GetTourDefinationListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C77558AECA2EE9B58C035A3242D0B46 /* GetTourDefinationListRequestModel.swift */; };
+		9C347080A42B5466D41A5A40BCC6EE60 /* GetPhoneNumberListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771D0D60ACAC27A468B622A672C346A0 /* GetPhoneNumberListResponseModel.swift */; };
+		9D4B8E73DACC0DF557BA218E466E0A23 /* GetSaledExcursionInfoRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1DBBAB1B7F2B138C34D349EE79309 /* GetSaledExcursionInfoRequestModel.swift */; };
 		9DB13659CA8F9BF54942DEDAE9F5E858 /* QuickSpecBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A736B47A302DAE8B9D2F98B02AFC687 /* QuickSpecBase.m */; };
 		9E82E59647C2E9653D2E5BAA5D15CF3D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83ECF03345520B27181BF4FD0FCFD3A /* Foundation.framework */; };
 		A02F4AB85BBBEBA608F33B3EA07C0CF9 /* BeNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08077BD069C563D717050D5A533DE0F /* BeNil.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -115,6 +166,7 @@
 		A787308C5CA0BCA2B3A706F44CD5F7B4 /* ErrorUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2A78A9ECBDF143AACC14AFD18DBD3 /* ErrorUtility.swift */; };
 		AB2F79D3BF6F4CB33383BDBA189AA12B /* AssertionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCCC230B9A2CFCA70CA3E9DC4E1CB4D /* AssertionDispatcher.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		AB8E2E1B150FD7C2D1336F2DD8B48853 /* DateFormatterTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C01556B0F34661A593DA786DCBF8BA /* DateFormatterTransform.swift */; };
+		AD104C7F1987FC950073EEA117722193 /* BaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278FF507EE49F4804841A34A325E9E22 /* BaseData.swift */; };
 		AD1ABD5ADD73F47E6DF31F91EA4A0FF8 /* NMBObjCMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C18473D7D719B32F45079159561934 /* NMBObjCMatcher.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		AE99DE37027335451FFD42AD0017BF12 /* SatisfyAnyOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F1BFF60AA07A66811290A81D03088 /* SatisfyAnyOf.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		AF033931B7B31CD30DCE80A6E492AF16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83ECF03345520B27181BF4FD0FCFD3A /* Foundation.framework */; };
@@ -122,85 +174,20 @@
 		B17CEF5ECE9BA91DC07E7208AECB567F /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BDE0D2C52FEBB5796AFA6E7D9AFB8E /* Filter.swift */; };
 		B28A92AA7D5CE9A97C4AABBFADA59EDD /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFE050F0C338D4B8DED9E98D657B79 /* DateTransform.swift */; };
 		B36C3C91044796689432A86346A6D169 /* Pods-OtiNetwork_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B2C618719C5CAC55DE4A3409423D0988 /* Pods-OtiNetwork_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3BA585EF13D2EA44F596EE510F1A44A /* ExtensionUIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BA437E5F527A6F875FA4AA2E76037E /* ExtensionUIDevice.swift */; };
 		B4762756F64C661592645D32D87ECA8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83ECF03345520B27181BF4FD0FCFD3A /* Foundation.framework */; };
 		B5491A88571862A1B914E6BE3CFCA5BD /* QuickSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 806C093CE8D039B6C3DE6676F2167DFE /* QuickSpec.m */; };
+		B5DC1950D9E4812761B4514082C71222 /* GetSaledExcursionInfoDetailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F174FF9773FE4E899F107B0E3E126BF /* GetSaledExcursionInfoDetailResponseModel.swift */; };
 		B662FB934B08450530A1A521489732B3 /* FailureMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F683292365E18D6A4230F442B2BBE4 /* FailureMessage.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		B7A0119D88C1DF43AFD25FB3A0B6E842 /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D85BC06BFA70E5101443B450F4ED7 /* Expectation.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		B9CD4E20A4FEB946C9E1F05343FA6831 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A663172E4DFE8753EA4BE72AE708CC0 /* Alamofire.framework */; };
 		BAEAB2ADD34955EE77CBA4B43994B6F7 /* NMBExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1EB9547B9E939A05932A0DE1C83B0 /* NMBExpectation.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		BB1619BCE35A078A932C56B2519CCB6C /* BeLogical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DFDFE989CF52A3A306AAED012E73A8 /* BeLogical.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		BB79E691522FA45447F0D7C4902A5AE0 /* CreateVoucherDocumentRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC28E55CDDF9A417240F860F93C5AAD /* CreateVoucherDocumentRequestModel.swift */; };
 		BBBA99B493A2244FACEDAF8CDCF13AF5 /* Pods-OtiNetwork_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6AC6FF44F6F8FC040344DA837E9AFA /* Pods-OtiNetwork_Tests-dummy.m */; };
 		BD8AB3699C483B11671A85C72CE92B50 /* ExampleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1879E7F7F9A41D872D59F864E92513 /* ExampleGroup.swift */; };
 		BE2E0A9AC5E2019BFD31452E96ED83D9 /* AssertionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D69E961B9A00DDC431ADF683261094 /* AssertionRecorder.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		BEDC36DEA21352A0F346A2513EE0540E /* QuickSpecBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 11F03BD21A0910500AA1E51779B1B848 /* QuickSpecBase.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BEE6B677416CA71C981D1D3F60B18C96 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D905573267B310FBD8AD986160B89E3 /* Alamofire.swift */; };
-		BF027ECF22FDA05C00B11752 /* ServiceEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EC522FDA05C00B11752 /* ServiceEndPoint.swift */; };
-		BF027ED022FDA05C00B11752 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EC622FDA05C00B11752 /* Defaults.swift */; };
-		BF027ED222FDA05C00B11752 /* BaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EC822FDA05C00B11752 /* BaseData.swift */; };
-		BF027ED322FDA05C00B11752 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027EC922FDA05C00B11752 /* BaseResponse.swift */; };
-		BF027ED422FDA05C00B11752 /* BaseApiRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027ECA22FDA05C00B11752 /* BaseApiRequestBody.swift */; };
-		BF027ED522FDA05C00B11752 /* ExtensionUIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027ECB22FDA05C00B11752 /* ExtensionUIApplication.swift */; };
-		BF027ED622FDA05C00B11752 /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027ECC22FDA05C00B11752 /* ExtensionUIViewController.swift */; };
-		BF027ED722FDA05C00B11752 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027ECD22FDA05C00B11752 /* NetworkManager.swift */; };
-		BF027F5122FDA4E700B11752 /* ExtensionUIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F4F22FDA4E700B11752 /* ExtensionUIDevice.swift */; };
-		BF027F5222FDA4E700B11752 /* BaseMessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F5022FDA4E700B11752 /* BaseMessageItem.swift */; };
-		BF027F6E2305296100B11752 /* GetWeatherResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F532305295E00B11752 /* GetWeatherResponseModel.swift */; };
-		BF027F6F2305296100B11752 /* CustomerChangePasswordResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F542305295E00B11752 /* CustomerChangePasswordResponseModel.swift */; };
-		BF027F702305296100B11752 /* GetNotificationReadResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F552305295E00B11752 /* GetNotificationReadResponseModel.swift */; };
-		BF027F712305296100B11752 /* GetListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F562305295E00B11752 /* GetListResponseModel.swift */; };
-		BF027F722305296100B11752 /* GetTourDefinationListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F572305295E00B11752 /* GetTourDefinationListResponseModel.swift */; };
-		BF027F732305296100B11752 /* CustomerControlActivateCodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F582305295E00B11752 /* CustomerControlActivateCodeResponseModel.swift */; };
-		BF027F742305296100B11752 /* GetTourDefinationComboListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F592305295E00B11752 /* GetTourDefinationComboListResponseModel.swift */; };
-		BF027F752305296100B11752 /* GetPhoneNumberListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F5A2305295E00B11752 /* GetPhoneNumberListResponseModel.swift */; };
-		BF027F762305296100B11752 /* GetFavoritesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F5B2305295E00B11752 /* GetFavoritesResponseModel.swift */; };
-		BF027F772305296100B11752 /* CustomerDetailByIdResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F5C2305295F00B11752 /* CustomerDetailByIdResponseModel.swift */; };
-		BF027F782305296100B11752 /* CreateVoucherDocumentResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F5D2305295F00B11752 /* CreateVoucherDocumentResponseModel.swift */; };
-		BF027F792305296100B11752 /* CreateInsuranceDocumentResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F5E2305295F00B11752 /* CreateInsuranceDocumentResponseModel.swift */; };
-		BF027F7A2305296100B11752 /* GetActualTripResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F5F2305295F00B11752 /* GetActualTripResponseModel.swift */; };
-		BF027F7B2305296100B11752 /* CustomerSendActiveCodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F602305295F00B11752 /* CustomerSendActiveCodeResponseModel.swift */; };
-		BF027F7C2305296100B11752 /* GetGuideInfoOfTouristResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F612305295F00B11752 /* GetGuideInfoOfTouristResponseModel.swift */; };
-		BF027F7D2305296100B11752 /* GetNotificationSearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F622305295F00B11752 /* GetNotificationSearchResponseModel.swift */; };
-		BF027F7E2305296100B11752 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F632305295F00B11752 /* LoginResponse.swift */; };
-		BF027F7F2305296100B11752 /* CheckMyTripResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F642305295F00B11752 /* CheckMyTripResponseModel.swift */; };
-		BF027F802305296100B11752 /* GetTransferResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F652305295F00B11752 /* GetTransferResponseModel.swift */; };
-		BF027F812305296100B11752 /* CustomerCreateResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F662305296000B11752 /* CustomerCreateResponseModel.swift */; };
-		BF027F822305296100B11752 /* GetExcursionPrintDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F672305296000B11752 /* GetExcursionPrintDataResponseModel.swift */; };
-		BF027F832305296100B11752 /* SaveFavoriteResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F682305296000B11752 /* SaveFavoriteResponseModel.swift */; };
-		BF027F842305296100B11752 /* GetSaledExcursionInfoResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F692305296000B11752 /* GetSaledExcursionInfoResponseModel.swift */; };
-		BF027F852305296100B11752 /* SendRatedResultResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F6A2305296000B11752 /* SendRatedResultResponseModel.swift */; };
-		BF027F862305296100B11752 /* GetExcursionDetailByIdResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F6B2305296000B11752 /* GetExcursionDetailByIdResponseModel.swift */; };
-		BF027F872305296100B11752 /* GetSaledExcursionInfoDetailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F6C2305296000B11752 /* GetSaledExcursionInfoDetailResponseModel.swift */; };
-		BF027F882305296100B11752 /* CreateFlightTicketResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F6D2305296100B11752 /* CreateFlightTicketResponseModel.swift */; };
-		BF027FA72305298600B11752 /* CustomerChangePasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F892305298500B11752 /* CustomerChangePasswordRequestModel.swift */; };
-		BF027FA82305298600B11752 /* GetWeatherRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F8A2305298500B11752 /* GetWeatherRequestModel.swift */; };
-		BF027FA92305298600B11752 /* GetExcursionPrintDataRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F8B2305298500B11752 /* GetExcursionPrintDataRequestModel.swift */; };
-		BF027FAA2305298600B11752 /* GetTourDefinationListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F8C2305298500B11752 /* GetTourDefinationListRequestModel.swift */; };
-		BF027FAB2305298600B11752 /* CustomerSendActiveCodeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F8D2305298500B11752 /* CustomerSendActiveCodeRequestModel.swift */; };
-		BF027FAC2305298600B11752 /* GetNotificationReadRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F8E2305298500B11752 /* GetNotificationReadRequestModel.swift */; };
-		BF027FAD2305298600B11752 /* GetCustomerForgotPasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F8F2305298500B11752 /* GetCustomerForgotPasswordRequestModel.swift */; };
-		BF027FAE2305298600B11752 /* GetTransferRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F902305298500B11752 /* GetTransferRequestModel.swift */; };
-		BF027FAF2305298600B11752 /* GetSaledExcursionInfoDetailRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F912305298500B11752 /* GetSaledExcursionInfoDetailRequestModel.swift */; };
-		BF027FB02305298600B11752 /* GetListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F922305298500B11752 /* GetListRequestModel.swift */; };
-		BF027FB12305298600B11752 /* CustomerDetailByIdRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F932305298500B11752 /* CustomerDetailByIdRequestModel.swift */; };
-		BF027FB22305298600B11752 /* CustomerControlActivateCodeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F942305298600B11752 /* CustomerControlActivateCodeRequestModel.swift */; };
-		BF027FB32305298600B11752 /* GetTourDefinationComboListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F952305298600B11752 /* GetTourDefinationComboListRequestModel.swift */; };
-		BF027FB42305298600B11752 /* GetTripDetailByIdRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F962305298600B11752 /* GetTripDetailByIdRequestModel.swift */; };
-		BF027FB52305298600B11752 /* GetPhoneNumberListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F972305298600B11752 /* GetPhoneNumberListRequestModel.swift */; };
-		BF027FB62305298600B11752 /* SaveFavoriteRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F982305298600B11752 /* SaveFavoriteRequestModel.swift */; };
-		BF027FB72305298600B11752 /* GetFavoritesRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F992305298600B11752 /* GetFavoritesRequestModel.swift */; };
-		BF027FB82305298600B11752 /* CreateVoucherDocumentRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F9A2305298600B11752 /* CreateVoucherDocumentRequestModel.swift */; };
-		BF027FB92305298600B11752 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F9B2305298600B11752 /* LoginRequest.swift */; };
-		BF027FBA2305298600B11752 /* SendRatedTourList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F9C2305298600B11752 /* SendRatedTourList.swift */; };
-		BF027FBB2305298600B11752 /* CreateFlightTicketRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F9D2305298600B11752 /* CreateFlightTicketRequestModel.swift */; };
-		BF027FBC2305298600B11752 /* GetGuideInfoOfTouristRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F9E2305298600B11752 /* GetGuideInfoOfTouristRequestModel.swift */; };
-		BF027FBD2305298600B11752 /* GetActualTripRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027F9F2305298600B11752 /* GetActualTripRequestModel.swift */; };
-		BF027FBE2305298600B11752 /* CustomerCreateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027FA02305298600B11752 /* CustomerCreateRequestModel.swift */; };
-		BF027FBF2305298600B11752 /* GetSaledExcursionInfoRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027FA12305298600B11752 /* GetSaledExcursionInfoRequestModel.swift */; };
-		BF027FC02305298600B11752 /* CheckMyTripRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027FA22305298600B11752 /* CheckMyTripRequestModel.swift */; };
-		BF027FC12305298600B11752 /* LoginShortRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027FA32305298600B11752 /* LoginShortRequest.swift */; };
-		BF027FC22305298600B11752 /* GetExcursionDetailByIdRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027FA42305298600B11752 /* GetExcursionDetailByIdRequestModel.swift */; };
-		BF027FC32305298600B11752 /* GetNotificationSearchRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027FA52305298600B11752 /* GetNotificationSearchRequestModel.swift */; };
-		BF027FC42305298600B11752 /* CreateInsuranceDocumentRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF027FA62305298600B11752 /* CreateInsuranceDocumentRequestModel.swift */; };
 		BF162FE488440AC9824E22EF6BD760FC /* DSL+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F812F05576FA8B6EF5EB05BFBCA159 /* DSL+Wait.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		C098C153F2988A344EAD8EE4C0CDF882 /* PostNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD02B89A8D848CC5686C0A791F63C75 /* PostNotification.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		C0B393B80CD971349123D9F02DFDD554 /* ImmutableMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC90C5EFB883771F7204A13515A321 /* ImmutableMappable.swift */; };
@@ -208,54 +195,67 @@
 		C971A8D42C7C043DC4970A69B81546A7 /* DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = 1513BB5183B60C4AA67351AD9D8BC019 /* DSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA9A2D74A41B640925B521CEC8BBEACE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83ECF03345520B27181BF4FD0FCFD3A /* Foundation.framework */; };
 		CCA41EC992E6CFEC5367FE79E843240D /* AllPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E475351411CA10CB654F0BD9E8F5C0 /* AllPass.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		CCD13DF8F4E7DC45AC556C869F664866 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FACB2E58CCEEC4209D8A8C137B706F /* ObjectMapper.framework */; };
 		CD7E9B96B8B49215D4E1F99DE1F2821C /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C4CE0D8D5105ECE52E050033D7A539 /* Map.swift */; };
 		CEB0B57C65304E1E2A8C70B2A3FC7A6B /* Quick-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C29675856E292845199D8791204A94DB /* Quick-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CF53C6889F139913F7FF954298FEB41E /* OtiNetwork-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D0414330033D7E990F7EAD397B66EDD /* OtiNetwork-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CFD70C4512BE496D2CFA66C1F07D0743 /* ObjectMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C012FDDCF550CA97B6AC13607FF02C2 /* ObjectMapper-dummy.m */; };
 		D01B8CB271F18C9B70586679F0C2E747 /* Nimble-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D82910055D7FD7D0FCB6AA6244A3F57 /* Nimble-dummy.m */; };
 		D21313F2B8BF3443B4CF02864578C13E /* DSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2A803B52D96A9329C68ED014433A74 /* DSL.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		D27AEB89F831AA33B67D644E0D62E5A0 /* GetFavoritesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F069BF7E3D091E07888852A73BE65 /* GetFavoritesResponseModel.swift */; };
 		D298E3A34E428388DEF4B1708F23BE55 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E467782D53AD0C9E47A4C76926741C8 /* Operators.swift */; };
 		D2BE111AE3950E47C5603F7EE3456107 /* Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7456BBB02EC852E95501757D26ACF5F9 /* Behavior.swift */; };
 		D3D8C379C6E4FB487E5ABD6800AD7B7E /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9F5EBE9FD6E6709573D483FCD13B6A /* DispatchQueue+Alamofire.swift */; };
 		D65C254F5ABF2CB5ECEE50FE8F8E1A80 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF03FECD801FAA7FD07381029D28F859 /* Response.swift */; };
 		D77545145A5D9E4053D6A121CED76362 /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0445D4FF30416CF7ACF9D3E4148AA6 /* ToJSON.swift */; };
+		D95B3A0D0445AA00D8553EC9AEE2AA32 /* GetActualTripResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A8500E8A337D68548F131E38380B33 /* GetActualTripResponseModel.swift */; };
 		DA0DA6C2D7C6235862E9A6929144EBA5 /* SourceLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E37F2B19E9B3F15394854F8E5804034 /* SourceLocation.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		DA2B26699095986E652A3163BFC59301 /* GetWeatherRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F902FF53F823EE93CC7F6723F8EBA58C /* GetWeatherRequestModel.swift */; };
+		DB07E8E82943F51B8D67A1E0919A26F8 /* BaseMessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC3B50F9CD72234128A1E064BDA919B /* BaseMessageItem.swift */; };
 		DC5219DBE9A6FFCC45A5A78F09E63A22 /* URL+FileName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949A4A0AF76271D0894CFD688AADB32 /* URL+FileName.swift */; };
+		DCA34003004859FB50CE8EC8A0DCA8DD /* OtiNetwork-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 175D493D7E468C5A590038EBAA9D6F3E /* OtiNetwork-dummy.m */; };
 		DCC243D2AEC18F6FD827742DCBCC4D1E /* ContainElementSatisfying.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB60AE497B18D82E5FE77C8FBEE9DC1D /* ContainElementSatisfying.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		DD98B74DA34219394E8EA9086B28FE6E /* GetNotificationReadRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D759A58DE438375A892FFC57482457AA /* GetNotificationReadRequestModel.swift */; };
 		DEF6305C7FCCD86B037E3811551D16E6 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06126373A02AC6B119CDB76B1F0C28B5 /* Errors.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		E0C1244422C284ED4A6CA575318EE275 /* ISO8601DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0287A520F8CC39C4E6E15D79635C96 /* ISO8601DateTransform.swift */; };
 		E1216911C249E3FC383CE5EE1E1066F3 /* Contain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431F93EFD98722BF7EE623435F8577F /* Contain.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		E2A3FF8FBAC2E21C91E8C5EE009E0FCD /* QCKDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FE11DBAD47586A34E937B9FFD1A120 /* QCKDSL.m */; };
 		E3747EC31FCCA97D75A81FC700CF7E24 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656F99D7CFBC9F93AFC580432474361A /* ResponseSerialization.swift */; };
+		E544A23D4C7D9920F1E3EF8C51603515 /* SaveFavoriteResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F07E5D936C939094B984BFFE25F87 /* SaveFavoriteResponseModel.swift */; };
 		E594306BF52C899BCE23A4BA56CD0DD0 /* CwlPreconditionTesting.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E160B8A80C00E1BF1EF7C456AF9D0BF /* CwlPreconditionTesting.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6C11C009FC4EEB972E5175E3D2EDCA5 /* ThrowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4771CBDE871D54656D5124AA6CE0D7D /* ThrowError.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		E84A4ED0B63C48CC6E4571784BF070F9 /* HaveCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0B96FB8A3DC4231319790FA0EEE9E /* HaveCount.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		EB13561E71736E81399CB85419419570 /* AdapterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967DF2216D2CC2CC61B9531AF85A1F86 /* AdapterProtocols.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		EBAA631BE943BFA431F992B26A747C03 /* CreateVoucherDocumentResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78F1213A7B11A702182B29BA830BFA /* CreateVoucherDocumentResponseModel.swift */; };
+		ECDBC0C53706728116FD921F9F79B0D3 /* GetExcursionPrintDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8314C15B9BF5467E36331BA4A5FB9238 /* GetExcursionPrintDataResponseModel.swift */; };
 		EDD6F0CB0C4A0FBF470FF1FA37E28FCC /* BeAnInstanceOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285BF8BF0C0A6F3DD6FDB931EF8BA8E8 /* BeAnInstanceOf.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		EE97F345DCB9A549EF71232B8B19C421 /* DictionaryTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850539AB007788E3091C2709ADF9465C /* DictionaryTransform.swift */; };
 		EFC160CE0D8BD88499BACB45706186B4 /* Quick-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 666C0662F4A35949866E3A8CD32A4988 /* Quick-dummy.m */; };
 		F0EC1E8DF64700838C1BC79AFEC93A1C /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6106553D25AA961E0777F28E5A5EC64 /* World.swift */; };
 		F13F2AA7F2E6D95A181CAB99B900D531 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0877B7478E7D0BF6EE5D7AFB7FA02 /* ServerTrustPolicy.swift */; };
 		F2879D2ED08204999EAB760DE2A2E200 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A86FCD47ACC85CC3777C958DB2BD07 /* Closures.swift */; };
+		F2C9CE05A072D5A4BB42285E4F21E221 /* GetTourDefinationComboListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7368E0375C9326CCDEFA877FD6A33C4F /* GetTourDefinationComboListRequestModel.swift */; };
 		F2D4806385A7E84C6FFCFEB93C089B0F /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C80F49EE930C9AA04DB4502F3C1536 /* Mapper.swift */; };
 		F3C822A5B0B643213C171930EF0FD33C /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FACB2E58CCEEC4209D8A8C137B706F /* ObjectMapper.framework */; };
+		F4E21E5058357E022C30016AD294E4DF /* GetWeatherResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448AB77B7CF0F12C1B7F48860C0AC323 /* GetWeatherResponseModel.swift */; };
 		F630B376ABE2B76BD06716E25EC25606 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF8F51C4D238D2EA73F2DBA689F028D /* Expression.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		F7B74645E07C39771156A1FA413B98D4 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DEFB943675B28A7E610F38CC99616BBA /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8EA3B6B23173D51461F920F77B3C6BE /* Stringers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DA9E10B5F0A4D9BE829DD94F9220F /* Stringers.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		F93310609CA1D35157D85EFAB3808763 /* Quick.h in Headers */ = {isa = PBXBuildFile; fileRef = 59D8221B77D83C9CD9E9BBB7836D3095 /* Quick.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA5A1BA48BC7F11F18E7EB2C61FB2054 /* CwlBadInstructionException.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8484707E0ADB4838D4AE97BC711796 /* CwlBadInstructionException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		FAB210037DEE6DDF3679C07D48D9E8DD /* ExampleMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57F25800F67F019D2D1ABA908CD8946 /* ExampleMetadata.swift */; };
+		FB9DEA6D7C01B3CFFE6A40BF7155391B /* ServiceEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC4E408DBA6036C37B7F9AB3A330A1 /* ServiceEndPoint.swift */; };
+		FBCA687435B1D15A1AA893F41C3FA8AC /* LoginShortRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8E578A6479C4BBF34F67C468BBBDA9 /* LoginShortRequest.swift */; };
+		FEAC18257916A525907D7D3795AA89BF /* CreateFlightTicketResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F890B6E718D86C770EF762C6AF7916 /* CreateFlightTicketResponseModel.swift */; };
 		FEF6EF602ABE314C97B5F61000ADFCD6 /* Pods-OtiNetwork_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A7BEDB6CA0E378C584B5FEC6DF818D2 /* Pods-OtiNetwork_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FF63A6A0C28D603DFBFD159E161A5258 /* GetPhoneNumberListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE53D168C2BF1A26A7114F12EBDF7F /* GetPhoneNumberListRequestModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2CD950BD0C8E9605007DD217D669EDBE /* PBXContainerItemProxy */ = {
+		05749132B5C092F271919F65D1816175 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3F64080413BB03C0B16BFEB621E6E0F2;
-			remoteInfo = AlamofireObjectMapper;
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
 		};
 		35F3E12B6C1E10C863CE592BE2FA4744 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -265,6 +265,13 @@
 			remoteInfo = Alamofire;
 		};
 		44220F8B17754555F424E753BCCE2F80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F64080413BB03C0B16BFEB621E6E0F2;
+			remoteInfo = AlamofireObjectMapper;
+		};
+		4AC86F2B3978FE7690D1C005E3E5F54E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -299,7 +306,7 @@
 			remoteGlobalIDString = 162E649F50FEC62B61BDD87D1BD422B4;
 			remoteInfo = ObjectMapper;
 		};
-		B6DA480207CAE990E8A78EA87867BC7F /* PBXContainerItemProxy */ = {
+		B4449B680588630BBD7406593906CC12 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -327,42 +334,42 @@
 			remoteGlobalIDString = 162E649F50FEC62B61BDD87D1BD422B4;
 			remoteInfo = ObjectMapper;
 		};
-		FBF1DBA289ED7E1BBFC253D7E949EEB1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
-			remoteInfo = Alamofire;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		016CE5AC2C244637492A220C2E3CC8F5 /* GetListResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetListResponseModel.swift; sourceTree = "<group>"; };
+		027DC47ECF21B583BFAE3DFD8125D83E /* GetNotificationReadResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetNotificationReadResponseModel.swift; sourceTree = "<group>"; };
 		02D69E961B9A00DDC431ADF683261094 /* AssertionRecorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionRecorder.swift; path = Sources/Nimble/Adapters/AssertionRecorder.swift; sourceTree = "<group>"; };
 		06126373A02AC6B119CDB76B1F0C28B5 /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = Sources/Nimble/Utils/Errors.swift; sourceTree = "<group>"; };
 		06840EA7EAABAC1C629566EB70DAD37A /* NMBExceptionCapture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMBExceptionCapture.m; path = Sources/NimbleObjectiveC/NMBExceptionCapture.m; sourceTree = "<group>"; };
+		07AB90A38BF873712599E5A1B03F56DE /* OtiNetwork-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OtiNetwork-umbrella.h"; sourceTree = "<group>"; };
 		07F444AC9FE6AB5AB4E41C978A1EF5A1 /* Pods-OtiNetwork_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OtiNetwork_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		08C0B96FB8A3DC4231319790FA0EEE9E /* HaveCount.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HaveCount.swift; path = Sources/Nimble/Matchers/HaveCount.swift; sourceTree = "<group>"; };
 		08FE11DBAD47586A34E937B9FFD1A120 /* QCKDSL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QCKDSL.m; path = Sources/QuickObjectiveC/DSL/QCKDSL.m; sourceTree = "<group>"; };
 		0AFFE050F0C338D4B8DED9E98D657B79 /* DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTransform.swift; path = Sources/DateTransform.swift; sourceTree = "<group>"; };
-		0D631E9908483F9525A6B3F36F16CC61 /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B4E4D34EAB3A81EF75D6703957E9161 /* CreateInsuranceDocumentResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateInsuranceDocumentResponseModel.swift; sourceTree = "<group>"; };
+		0D631E9908483F9525A6B3F36F16CC61 /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Quick.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E467782D53AD0C9E47A4C76926741C8 /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/Operators.swift; sourceTree = "<group>"; };
+		0EA4A4C4CF55799164061D26DBB757D9 /* CheckMyTripRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CheckMyTripRequestModel.swift; sourceTree = "<group>"; };
 		0ED55FD754C9D08D3B348EED9A11A9B7 /* QuickTestSuite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuickTestSuite.swift; path = Sources/Quick/QuickTestSuite.swift; sourceTree = "<group>"; };
 		0FB0101902AC468EBB5368A2E0C05EC6 /* Quick-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Quick-Info.plist"; sourceTree = "<group>"; };
 		0FF6A4F7C5A93F214509337A4E210F10 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		1092EFEBF19677EDD3682CA4F1141E1D /* HexColorTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HexColorTransform.swift; path = Sources/HexColorTransform.swift; sourceTree = "<group>"; };
 		113E44D854A388C6B30C8905A0AAA29B /* Pods-OtiNetwork_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OtiNetwork_Example.release.xcconfig"; sourceTree = "<group>"; };
+		1157FA711278EACA3B614FD0366B1495 /* GetGuideInfoOfTouristRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetGuideInfoOfTouristRequestModel.swift; sourceTree = "<group>"; };
 		11F03BD21A0910500AA1E51779B1B848 /* QuickSpecBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpecBase.h; path = Sources/QuickSpecBase/include/QuickSpecBase.h; sourceTree = "<group>"; };
 		124E635708EE4C34928924089969371D /* ObjectMapper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ObjectMapper-Info.plist"; sourceTree = "<group>"; };
+		12686F8502F60B59D75C03F905BC2778 /* LoginResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		150ECFF3B0505EB9799D3F15951052A4 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		1513BB5183B60C4AA67351AD9D8BC019 /* DSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSL.h; path = Sources/NimbleObjectiveC/DSL.h; sourceTree = "<group>"; };
 		1699DDF29B7F0F8008BF4E4E4578E7BC /* CwlMachBadInstructionHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CwlMachBadInstructionHandler.m; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/CwlMachBadInstructionHandler.m; sourceTree = "<group>"; };
 		16DFDFE989CF52A3A306AAED012E73A8 /* BeLogical.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLogical.swift; path = Sources/Nimble/Matchers/BeLogical.swift; sourceTree = "<group>"; };
+		175D493D7E468C5A590038EBAA9D6F3E /* OtiNetwork-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OtiNetwork-dummy.m"; sourceTree = "<group>"; };
 		1938B323EB905EAAB6839F05BF44246B /* MatcherProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherProtocols.swift; path = Sources/Nimble/Matchers/MatcherProtocols.swift; sourceTree = "<group>"; };
 		1949A4A0AF76271D0894CFD688AADB32 /* URL+FileName.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL+FileName.swift"; path = "Sources/Quick/URL+FileName.swift"; sourceTree = "<group>"; };
 		19B91A0FB9F4C08BC52CD60A13B8E5FD /* IntegerOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntegerOperators.swift; path = Sources/IntegerOperators.swift; sourceTree = "<group>"; };
 		1A736B47A302DAE8B9D2F98B02AFC687 /* QuickSpecBase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuickSpecBase.m; path = Sources/QuickSpecBase/QuickSpecBase.m; sourceTree = "<group>"; };
 		1B6503AFC254887F580499B28F75D828 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
-		1BFEE410A2A8B976D9165A0810A921D6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1CAC90C5EFB883771F7204A13515A321 /* ImmutableMappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImmutableMappable.swift; path = Sources/ImmutableMappable.swift; sourceTree = "<group>"; };
 		1CEA6850041F58C4E7972B28110BFCC2 /* Quick.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Quick.xcconfig; sourceTree = "<group>"; };
 		1D0853F492723C9630F7273F18E29E90 /* ObjectMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-prefix.pch"; sourceTree = "<group>"; };
@@ -370,34 +377,51 @@
 		1F760D20059B1555613065B747C0C620 /* ExampleHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleHooks.swift; path = Sources/Quick/Hooks/ExampleHooks.swift; sourceTree = "<group>"; };
 		20C80F49EE930C9AA04DB4502F3C1536 /* Mapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mapper.swift; path = Sources/Mapper.swift; sourceTree = "<group>"; };
 		233DE2402F35EA563BC76FC165B65A86 /* Nimble-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Nimble-Info.plist"; sourceTree = "<group>"; };
-		239B645D73C42A9195F1057262E5A94D /* OtiNetwork-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "OtiNetwork-Info.plist"; sourceTree = "<group>"; };
 		23F683292365E18D6A4230F442B2BBE4 /* FailureMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FailureMessage.swift; path = Sources/Nimble/FailureMessage.swift; sourceTree = "<group>"; };
+		278FF507EE49F4804841A34A325E9E22 /* BaseData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseData.swift; sourceTree = "<group>"; };
+		283869C38FE8539D0B5A15CA7D418E1E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		283B2F19C4F3F71A6D85EDD37AEDE12F /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Sources/Quick/Configuration/Configuration.swift; sourceTree = "<group>"; };
 		283F4BA84F57D3E89F8BA928BEFB9555 /* AlamofireObjectMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AlamofireObjectMapper.modulemap; sourceTree = "<group>"; };
 		285BF8BF0C0A6F3DD6FDB931EF8BA8E8 /* BeAnInstanceOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAnInstanceOf.swift; path = Sources/Nimble/Matchers/BeAnInstanceOf.swift; sourceTree = "<group>"; };
+		28EA2609D74155E562CD1B274D52F778 /* GetCustomerForgotPasswordRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetCustomerForgotPasswordRequestModel.swift; sourceTree = "<group>"; };
 		2AA483F7979EB131D3A8823BEB8ACACF /* TransformOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOf.swift; path = Sources/TransformOf.swift; sourceTree = "<group>"; };
+		2B100145CDD014FA2A5E2A27D385E564 /* GetTourDefinationListResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetTourDefinationListResponseModel.swift; sourceTree = "<group>"; };
+		2B2C12171DE2446D9189D1C5434B67F3 /* GetTransferResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetTransferResponseModel.swift; sourceTree = "<group>"; };
 		2C0445D4FF30416CF7ACF9D3E4148AA6 /* ToJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToJSON.swift; path = Sources/ToJSON.swift; sourceTree = "<group>"; };
 		2C0B97183AF4D9E5640BBEE42A0A62FF /* QuickSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpec.h; path = Sources/QuickObjectiveC/QuickSpec.h; sourceTree = "<group>"; };
 		2C1879E7F7F9A41D872D59F864E92513 /* ExampleGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleGroup.swift; path = Sources/Quick/ExampleGroup.swift; sourceTree = "<group>"; };
+		2C1DB0B250EE62C5EA9068645C674286 /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ExtensionUIViewController.swift; sourceTree = "<group>"; };
 		2D2F777B09CEA5E603D3519137660812 /* Equal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Equal.swift; path = Sources/Nimble/Matchers/Equal.swift; sourceTree = "<group>"; };
 		30BC6610C3B3503F6FFD5EDDC574EC5C /* MapError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapError.swift; path = Sources/MapError.swift; sourceTree = "<group>"; };
+		31069D374B76569D245D587C754AF3F1 /* CustomerDetailByIdRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomerDetailByIdRequestModel.swift; sourceTree = "<group>"; };
 		31F812F05576FA8B6EF5EB05BFBCA159 /* DSL+Wait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DSL+Wait.swift"; path = "Sources/Nimble/DSL+Wait.swift"; sourceTree = "<group>"; };
+		32DF8FE49400A50C7BC3FDE56FCEBC53 /* GetExcursionPrintDataRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetExcursionPrintDataRequestModel.swift; sourceTree = "<group>"; };
 		338F1BFF60AA07A66811290A81D03088 /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAnyOf.swift; path = Sources/Nimble/Matchers/SatisfyAnyOf.swift; sourceTree = "<group>"; };
 		3431F93EFD98722BF7EE623435F8577F /* Contain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Contain.swift; path = Sources/Nimble/Matchers/Contain.swift; sourceTree = "<group>"; };
 		3810A09690DF5EE553CB5A58E24DCC93 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		382A17AFCBA411FD35422FC0E8377334 /* BeginWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeginWith.swift; path = Sources/Nimble/Matchers/BeginWith.swift; sourceTree = "<group>"; };
+		3857C5602999E55C72EB0E1AC27C2941 /* CustomerChangePasswordRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomerChangePasswordRequestModel.swift; sourceTree = "<group>"; };
 		3874CF94091D6412018C0665BC8CE248 /* DataTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataTransform.swift; path = Sources/DataTransform.swift; sourceTree = "<group>"; };
 		3A2242BB723AC5911D25DF8DAEBBF6CD /* BeVoid.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeVoid.swift; path = Sources/Nimble/Matchers/BeVoid.swift; sourceTree = "<group>"; };
 		3A25A90B1ED74AC845BD499EE797511C /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
 		3A2AE2A7D730CBD0B92EC90A49E7C856 /* Nimble.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Nimble.modulemap; sourceTree = "<group>"; };
+		3A39508143FE854E2CDED127BF13A534 /* SaveFavoriteRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SaveFavoriteRequestModel.swift; sourceTree = "<group>"; };
+		3A3DE85BF8B6E4FF56F19F66D732B204 /* GetListRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetListRequestModel.swift; sourceTree = "<group>"; };
+		3A9E491D5AD9C0D338298861544BEFAC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		3AB1EB9547B9E939A05932A0DE1C83B0 /* NMBExpectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NMBExpectation.swift; path = Sources/Nimble/Adapters/NMBExpectation.swift; sourceTree = "<group>"; };
 		3C12B4977922F4682818A174A1C7FECF /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		3E5CAE1C48D263DA0848A06E3B059E72 /* CustomerControlActivateCodeRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomerControlActivateCodeRequestModel.swift; sourceTree = "<group>"; };
+		3F174FF9773FE4E899F107B0E3E126BF /* GetSaledExcursionInfoDetailResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetSaledExcursionInfoDetailResponseModel.swift; sourceTree = "<group>"; };
+		3FD1DBBAB1B7F2B138C34D349EE79309 /* GetSaledExcursionInfoRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetSaledExcursionInfoRequestModel.swift; sourceTree = "<group>"; };
 		41EDC77F81A94B6B667C2DE9195111DF /* NMBExceptionCapture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBExceptionCapture.h; path = Sources/NimbleObjectiveC/NMBExceptionCapture.h; sourceTree = "<group>"; };
 		4216C03C4F75649D0D307942595E3E44 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
+		4396DA9DB81B928896DC2DA005E024A3 /* OtiNetwork-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OtiNetwork-prefix.pch"; sourceTree = "<group>"; };
+		448AB77B7CF0F12C1B7F48860C0AC323 /* GetWeatherResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetWeatherResponseModel.swift; sourceTree = "<group>"; };
 		45A8CF22B9E77EFB7C356F5EF7B8F0A4 /* NSString+C99ExtendedIdentifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSString+C99ExtendedIdentifier.swift"; path = "Sources/Quick/NSString+C99ExtendedIdentifier.swift"; sourceTree = "<group>"; };
 		45FACB2E58CCEEC4209D8A8C137B706F /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		474F07E5D936C939094B984BFFE25F87 /* SaveFavoriteResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SaveFavoriteResponseModel.swift; sourceTree = "<group>"; };
 		475EA356AFC21FF6B1F8B577E541DAF6 /* QuickConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickConfiguration.h; path = Sources/QuickObjectiveC/Configuration/QuickConfiguration.h; sourceTree = "<group>"; };
-		476E173D5AFB11FA005E64C8972AB229 /* OtiNetwork.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OtiNetwork.xcconfig; sourceTree = "<group>"; };
+		4974802EE4A9AD2A2005322445CD2A6B /* NetworkManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4B0287A520F8CC39C4E6E15D79635C96 /* ISO8601DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISO8601DateTransform.swift; path = Sources/ISO8601DateTransform.swift; sourceTree = "<group>"; };
 		4CA906A2BB947B1798CE8EC75C58A0B1 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlamofireObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0DA9E10B5F0A4D9BE829DD94F9220F /* Stringers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stringers.swift; path = Sources/Nimble/Utils/Stringers.swift; sourceTree = "<group>"; };
@@ -407,64 +431,87 @@
 		5337D03508210B601E8B28A526AC0B9B /* BeLessThanOrEqual.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLessThanOrEqual.swift; path = Sources/Nimble/Matchers/BeLessThanOrEqual.swift; sourceTree = "<group>"; };
 		536BA9098323B73D1D0D354AC04769C5 /* Async.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Async.swift; path = Sources/Nimble/Matchers/Async.swift; sourceTree = "<group>"; };
 		53799BD0A76E57225C474E831CE123F1 /* BeGreaterThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeGreaterThan.swift; path = Sources/Nimble/Matchers/BeGreaterThan.swift; sourceTree = "<group>"; };
-		537A3E459CA03FF68C0D519C7FB6582F /* mach_excServer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mach_excServer.c; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/mach_excServer.c; sourceTree = "<group>"; };
+		537A3E459CA03FF68C0D519C7FB6582F /* mach_excServer.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mach_excServer.c; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/mach_excServer.c; sourceTree = "<group>"; };
 		53E475351411CA10CB654F0BD9E8F5C0 /* AllPass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AllPass.swift; path = Sources/Nimble/Matchers/AllPass.swift; sourceTree = "<group>"; };
 		5564D6DFD4A9A876E054FA6D841D4182 /* BeIdenticalTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeIdenticalTo.swift; path = Sources/Nimble/Matchers/BeIdenticalTo.swift; sourceTree = "<group>"; };
 		5568C6556237C910A4D019430C91261B /* QuickSelectedTestSuiteBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuickSelectedTestSuiteBuilder.swift; path = Sources/Quick/QuickSelectedTestSuiteBuilder.swift; sourceTree = "<group>"; };
 		557F082D27C8D041B62768EE7CD2231B /* ObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-umbrella.h"; sourceTree = "<group>"; };
+		56B3D71B9C1A1182AB24AEF103E112DD /* GetTourDefinationComboListResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetTourDefinationComboListResponseModel.swift; sourceTree = "<group>"; };
 		570E57D6C522DD1116A923FCB497B138 /* ObjectMapper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ObjectMapper.xcconfig; sourceTree = "<group>"; };
 		59D8221B77D83C9CD9E9BBB7836D3095 /* Quick.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Quick.h; path = Sources/QuickObjectiveC/Quick.h; sourceTree = "<group>"; };
 		59E75A990CB1EE8F377BC90E4C075FF0 /* XCTestObservationCenter+Register.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestObservationCenter+Register.m"; path = "Sources/NimbleObjectiveC/XCTestObservationCenter+Register.m"; sourceTree = "<group>"; };
 		5A6AC6FF44F6F8FC040344DA837E9AFA /* Pods-OtiNetwork_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OtiNetwork_Tests-dummy.m"; sourceTree = "<group>"; };
 		5B1D6A4C815504142804D29ED7813232 /* BeCloseTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeCloseTo.swift; path = Sources/Nimble/Matchers/BeCloseTo.swift; sourceTree = "<group>"; };
-		5B5C79D3572C8D060790C1C1695ECBB3 /* Pods_OtiNetwork_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OtiNetwork_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B5C79D3572C8D060790C1C1695ECBB3 /* Pods_OtiNetwork_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_OtiNetwork_Example.framework; path = "Pods-OtiNetwork_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BBC4E408DBA6036C37B7F9AB3A330A1 /* ServiceEndPoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceEndPoint.swift; sourceTree = "<group>"; };
+		5C8E578A6479C4BBF34F67C468BBBDA9 /* LoginShortRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginShortRequest.swift; sourceTree = "<group>"; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBCA5C1294A81033E0B249535901FE2 /* EndWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EndWith.swift; path = Sources/Nimble/Matchers/EndWith.swift; sourceTree = "<group>"; };
 		5E5544C46EFEBC5942DF3D99E98C4087 /* Nimble-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-prefix.pch"; sourceTree = "<group>"; };
 		60262275A09209299CA5AFF283D85061 /* AlamofireObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlamofireObjectMapper-umbrella.h"; sourceTree = "<group>"; };
 		60488056395195613BA307FADB4D75BC /* Await.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Await.swift; path = Sources/Nimble/Utils/Await.swift; sourceTree = "<group>"; };
 		612BAC469CEEE8AF84023028AC0C7DB3 /* Pods-OtiNetwork_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OtiNetwork_Example.modulemap"; sourceTree = "<group>"; };
+		624388C7D2F9CF28F073737A1A4AEBA6 /* OtiNetwork.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = OtiNetwork.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		634B02A3B6F67B17F0DBECE6D0ED6F01 /* GetGuideInfoOfTouristResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetGuideInfoOfTouristResponseModel.swift; sourceTree = "<group>"; };
 		656F99D7CFBC9F93AFC580432474361A /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		666C0662F4A35949866E3A8CD32A4988 /* Quick-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Quick-dummy.m"; sourceTree = "<group>"; };
 		66850092AA5DE45F3D1BAA3B4FE506B2 /* mach_excServer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mach_excServer.h; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/mach_excServer.h; sourceTree = "<group>"; };
+		66CBF2806EE775543A2A0A2F9C89EF81 /* CustomerChangePasswordResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomerChangePasswordResponseModel.swift; sourceTree = "<group>"; };
 		6718C6D175E3C328009B816D17A69AF2 /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomDateFormatTransform.swift; path = Sources/CustomDateFormatTransform.swift; sourceTree = "<group>"; };
 		679347D3684885E536C1B45783D87937 /* ExpectationMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpectationMessage.swift; path = Sources/Nimble/ExpectationMessage.swift; sourceTree = "<group>"; };
 		6A663172E4DFE8753EA4BE72AE708CC0 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CFC1ADFED5D6F9CCB958DF7C83B2207 /* Pods-OtiNetwork_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OtiNetwork_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6D82910055D7FD7D0FCB6AA6244A3F57 /* Nimble-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nimble-dummy.m"; sourceTree = "<group>"; };
 		6E963EA2234EB5B0582FBB982931F585 /* Quick.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Quick.modulemap; sourceTree = "<group>"; };
+		6EC28E55CDDF9A417240F860F93C5AAD /* CreateVoucherDocumentRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateVoucherDocumentRequestModel.swift; sourceTree = "<group>"; };
 		700D975F7B286CE58AAD75E9EFFF528D /* RaisesException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RaisesException.swift; path = Sources/Nimble/Matchers/RaisesException.swift; sourceTree = "<group>"; };
 		70DFC27C69B8007E2851C08D49544759 /* Nimble.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Nimble.xcconfig; sourceTree = "<group>"; };
 		72C5E81CB365B70132DD25564F49D9A6 /* CwlCatchException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlCatchException.swift; path = Carthage/Checkouts/CwlCatchException/Sources/CwlCatchException/CwlCatchException.swift; sourceTree = "<group>"; };
+		72E3E92CEC9C79DAAB8CBDC09CD615C4 /* GetExcursionDetailByIdRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetExcursionDetailByIdRequestModel.swift; sourceTree = "<group>"; };
+		7368E0375C9326CCDEFA877FD6A33C4F /* GetTourDefinationComboListRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetTourDefinationComboListRequestModel.swift; sourceTree = "<group>"; };
 		7456BBB02EC852E95501757D26ACF5F9 /* Behavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Behavior.swift; path = Sources/Quick/Behavior.swift; sourceTree = "<group>"; };
+		74CAD2064BE36A5937F61108E5E37A65 /* OtiNetwork.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OtiNetwork.modulemap; sourceTree = "<group>"; };
+		76741CDDEFFE7A250118996CB81AD32B /* CreateFlightTicketRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateFlightTicketRequestModel.swift; sourceTree = "<group>"; };
 		768562B4E8BF8F1FB15862DE3E3CAD38 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		769E544B74E1EC36CF3568CD8632889C /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
 		76C54EBB42F20565832A3BA1629CFDE3 /* NMBStringify.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMBStringify.m; path = Sources/NimbleObjectiveC/NMBStringify.m; sourceTree = "<group>"; };
+		771D0D60ACAC27A468B622A672C346A0 /* GetPhoneNumberListResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetPhoneNumberListResponseModel.swift; sourceTree = "<group>"; };
+		77F890B6E718D86C770EF762C6AF7916 /* CreateFlightTicketResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateFlightTicketResponseModel.swift; sourceTree = "<group>"; };
 		7A851649A4388EAC4FA164481275F383 /* Pods-OtiNetwork_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OtiNetwork_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		7AC3B50F9CD72234128A1E064BDA919B /* BaseMessageItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseMessageItem.swift; sourceTree = "<group>"; };
 		7AD8B0E1B74E05FE524DEA4CC565BF6F /* AlamofireObjectMapper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlamofireObjectMapper.xcconfig; sourceTree = "<group>"; };
-		7D51EC5E79C0BB345950C3372456275A /* OtiNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OtiNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D51EC5E79C0BB345950C3372456275A /* OtiNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = OtiNetwork.framework; path = OtiNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D8A51333ED6F43DB28C299C792E0047 /* AlamofireObjectMapper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AlamofireObjectMapper-Info.plist"; sourceTree = "<group>"; };
+		7E82BB53E1C8C3F0A3660A599729A5C3 /* GetNotificationSearchRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetNotificationSearchRequestModel.swift; sourceTree = "<group>"; };
 		806C093CE8D039B6C3DE6676F2167DFE /* QuickSpec.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuickSpec.m; path = Sources/QuickObjectiveC/QuickSpec.m; sourceTree = "<group>"; };
+		8314C15B9BF5467E36331BA4A5FB9238 /* GetExcursionPrintDataResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetExcursionPrintDataResponseModel.swift; sourceTree = "<group>"; };
 		8319D80EE9F94F28E92EEA6184CF404D /* BeLessThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLessThan.swift; path = Sources/Nimble/Matchers/BeLessThan.swift; sourceTree = "<group>"; };
 		833CDA0EA5B5FC7028F94B20784E274B /* NimbleEnvironment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleEnvironment.swift; path = Sources/Nimble/Adapters/NimbleEnvironment.swift; sourceTree = "<group>"; };
 		834F174285B0526F7B66745D1705AFED /* EnumTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumTransform.swift; path = Sources/EnumTransform.swift; sourceTree = "<group>"; };
 		850161C791A44CB024AE1AFE3F2B1AA5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		850539AB007788E3091C2709ADF9465C /* DictionaryTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DictionaryTransform.swift; path = Sources/DictionaryTransform.swift; sourceTree = "<group>"; };
+		85AD505B71AA39879AC11BC9CC66D802 /* CustomerDetailByIdResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomerDetailByIdResponseModel.swift; sourceTree = "<group>"; };
 		8655DF43C110CA61853BFD1B377ED078 /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Sources/Quick/DSL/DSL.swift; sourceTree = "<group>"; };
-		86822384CD379FCE373C2F755839B8DE /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlamofireObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		874268B194B34EBF55AEB8764CB973CF /* OtiNetwork.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = OtiNetwork.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		86822384CD379FCE373C2F755839B8DE /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AlamofireObjectMapper.framework; path = AlamofireObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A0B350CB34D3E27FF76808455CB72AC /* OtiNetwork.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OtiNetwork.xcconfig; sourceTree = "<group>"; };
 		8A7BEDB6CA0E378C584B5FEC6DF818D2 /* Pods-OtiNetwork_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OtiNetwork_Tests-umbrella.h"; sourceTree = "<group>"; };
+		8BBEE5822334570A0F5BF33D87C1E935 /* BaseApiRequestBody.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseApiRequestBody.swift; sourceTree = "<group>"; };
 		8BE96330CDA60D50F673EF8A07849A6F /* Pods-OtiNetwork_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OtiNetwork_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8C012FDDCF550CA97B6AC13607FF02C2 /* ObjectMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ObjectMapper-dummy.m"; sourceTree = "<group>"; };
-		8D0414330033D7E990F7EAD397B66EDD /* OtiNetwork-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OtiNetwork-umbrella.h"; sourceTree = "<group>"; };
+		8D87D5795A6276124F74F9C3031C2B18 /* GetNotificationSearchResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetNotificationSearchResponseModel.swift; sourceTree = "<group>"; };
 		8DC9542B19438CB366FDB83BFBDECC65 /* CodableTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CodableTransform.swift; path = Sources/CodableTransform.swift; sourceTree = "<group>"; };
 		8E160B8A80C00E1BF1EF7C456AF9D0BF /* CwlPreconditionTesting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CwlPreconditionTesting.h; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/Mach/CwlPreconditionTesting.h; sourceTree = "<group>"; };
 		8EEB5C958907DC9E571F6D32776FFC02 /* CwlMachBadInstructionHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CwlMachBadInstructionHandler.h; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/include/CwlMachBadInstructionHandler.h; sourceTree = "<group>"; };
 		90C4CE0D8D5105ECE52E050033D7A539 /* Map.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Map.swift; path = Sources/Map.swift; sourceTree = "<group>"; };
 		91F0B82F9E09141A73804969F69070B6 /* BeEmpty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeEmpty.swift; path = Sources/Nimble/Matchers/BeEmpty.swift; sourceTree = "<group>"; };
+		94A8500E8A337D68548F131E38380B33 /* GetActualTripResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetActualTripResponseModel.swift; sourceTree = "<group>"; };
 		967DF2216D2CC2CC61B9531AF85A1F86 /* AdapterProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdapterProtocols.swift; path = Sources/Nimble/Adapters/AdapterProtocols.swift; sourceTree = "<group>"; };
+		967F069BF7E3D091E07888852A73BE65 /* GetFavoritesResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetFavoritesResponseModel.swift; sourceTree = "<group>"; };
 		96ADB3DA4B9B7DE7DB8E8101AA304942 /* CwlDarwinDefinitions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlDarwinDefinitions.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlDarwinDefinitions.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		992ECA97358FFFABED51C805BBBEBFC8 /* Defaults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		9C77558AECA2EE9B58C035A3242D0B46 /* GetTourDefinationListRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetTourDefinationListRequestModel.swift; sourceTree = "<group>"; };
+		9CAB2B6376647652AA6B2D5C7CB14D25 /* SendRatedTourList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SendRatedTourList.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D9FA358A196EFD8DDDAFF2F2818F70B /* Pods-OtiNetwork_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OtiNetwork_Example-Info.plist"; sourceTree = "<group>"; };
 		9DBDA424CDDDB1A8AC7C6B214919DD94 /* World.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = World.h; path = Sources/QuickObjectiveC/World.h; sourceTree = "<group>"; };
 		9DCA03A9F2F073CCB80361C9B45D3C72 /* World+DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "World+DSL.swift"; path = "Sources/Quick/DSL/World+DSL.swift"; sourceTree = "<group>"; };
@@ -473,9 +520,11 @@
 		9E8FC51964EEDDB3602A20DA2D67130E /* MatchError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatchError.swift; path = Sources/Nimble/Matchers/MatchError.swift; sourceTree = "<group>"; };
 		9EBF3C5FCE2024946F2005129F04223A /* Pods-OtiNetwork_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OtiNetwork_Tests-Info.plist"; sourceTree = "<group>"; };
 		9F5B4A5271D005698F3EDF3CDE70B0FF /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
-		A29F5D24A08C0A326CDB3DA7472EC76E /* OtiNetwork-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OtiNetwork-prefix.pch"; sourceTree = "<group>"; };
+		A0EE53D168C2BF1A26A7114F12EBDF7F /* GetPhoneNumberListRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetPhoneNumberListRequestModel.swift; sourceTree = "<group>"; };
 		A3875472873B92261EB564C49D4D39A3 /* TransformType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformType.swift; path = Sources/TransformType.swift; sourceTree = "<group>"; };
 		A51F46CE845ED28D3DB1D5F906ACDFBB /* Pods-OtiNetwork_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OtiNetwork_Example-dummy.m"; sourceTree = "<group>"; };
+		A52EA7542FD907A7CD5DD16EDAFBCB16 /* GetTripDetailByIdRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetTripDetailByIdRequestModel.swift; sourceTree = "<group>"; };
+		A539CA22E9983D6F98F7E5E37176DF71 /* GetExcursionDetailByIdResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetExcursionDetailByIdResponseModel.swift; sourceTree = "<group>"; };
 		A56EFE162CBA1516E64413A2E6F3FA11 /* TransformOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOperators.swift; path = Sources/TransformOperators.swift; sourceTree = "<group>"; };
 		A5E33C935BB6734BBBE3288835358BF9 /* NimbleXCTestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleXCTestHandler.swift; path = Sources/Nimble/Adapters/NimbleXCTestHandler.swift; sourceTree = "<group>"; };
 		A855B84706ABBC8CB8B3EDBF4B1884D6 /* CwlCatchException.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CwlCatchException.h; path = Carthage/Checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchException.h; sourceTree = "<group>"; };
@@ -492,114 +541,59 @@
 		B2C618719C5CAC55DE4A3409423D0988 /* Pods-OtiNetwork_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OtiNetwork_Example-umbrella.h"; sourceTree = "<group>"; };
 		B32B07B016DBB7F6E9FC39B044684C39 /* QCKDSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QCKDSL.h; path = Sources/QuickObjectiveC/DSL/QCKDSL.h; sourceTree = "<group>"; };
 		B4581AB4B2834E7F541FFCBBE9C9D634 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
-		B9084FE779702931E8DF1D00A2D725FB /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4EE2F156AC8E250F31219FEA4244E29 /* OtiNetwork-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "OtiNetwork-Info.plist"; sourceTree = "<group>"; };
+		B9084FE779702931E8DF1D00A2D725FB /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ObjectMapper.framework; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9279DF41AE16ABF8AB713265EE46B2A /* Pods-OtiNetwork_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OtiNetwork_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		BA41B55495B97EE2FE196767E3077F45 /* BeGreaterThanOrEqualTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeGreaterThanOrEqualTo.swift; path = Sources/Nimble/Matchers/BeGreaterThanOrEqualTo.swift; sourceTree = "<group>"; };
-		BAE263041362D074978BB3B577DF0A05 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAE263041362D074978BB3B577DF0A05 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Nimble.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF1130AB72A33E7077A4DB2BFBC7279 /* BeAKindOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAKindOf.swift; path = Sources/Nimble/Matchers/BeAKindOf.swift; sourceTree = "<group>"; };
 		BEBA69A153CCB128114A3571408E1A44 /* Callsite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Callsite.swift; path = Sources/Quick/Callsite.swift; sourceTree = "<group>"; };
 		BEE7734680D99A3FCCEAE7C40936B151 /* Pods-OtiNetwork_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OtiNetwork_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		BF027EC522FDA05C00B11752 /* ServiceEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceEndPoint.swift; path = ../OtiNetwork/Model/ServiceEndPoint.swift; sourceTree = "<group>"; };
-		BF027EC622FDA05C00B11752 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Defaults.swift; path = ../OtiNetwork/Model/Defaults.swift; sourceTree = "<group>"; };
-		BF027EC822FDA05C00B11752 /* BaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseData.swift; path = ../OtiNetwork/Model/BaseData.swift; sourceTree = "<group>"; };
-		BF027EC922FDA05C00B11752 /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseResponse.swift; path = ../OtiNetwork/Model/BaseResponse.swift; sourceTree = "<group>"; };
-		BF027ECA22FDA05C00B11752 /* BaseApiRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseApiRequestBody.swift; path = ../OtiNetwork/Model/BaseApiRequestBody.swift; sourceTree = "<group>"; };
-		BF027ECB22FDA05C00B11752 /* ExtensionUIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionUIApplication.swift; path = ../OtiNetwork/Model/ExtensionUIApplication.swift; sourceTree = "<group>"; };
-		BF027ECC22FDA05C00B11752 /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionUIViewController.swift; path = ../OtiNetwork/Model/ExtensionUIViewController.swift; sourceTree = "<group>"; };
-		BF027ECD22FDA05C00B11752 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkManager.swift; path = ../OtiNetwork/Model/NetworkManager.swift; sourceTree = "<group>"; };
-		BF027F4F22FDA4E700B11752 /* ExtensionUIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionUIDevice.swift; path = ../OtiNetwork/Extension/ExtensionUIDevice.swift; sourceTree = "<group>"; };
-		BF027F5022FDA4E700B11752 /* BaseMessageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseMessageItem.swift; path = ../OtiNetwork/Extension/BaseMessageItem.swift; sourceTree = "<group>"; };
-		BF027F532305295E00B11752 /* GetWeatherResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetWeatherResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetWeatherResponseModel.swift; sourceTree = "<group>"; };
-		BF027F542305295E00B11752 /* CustomerChangePasswordResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerChangePasswordResponseModel.swift; path = ../../OtiNetwork/Model/Response/CustomerChangePasswordResponseModel.swift; sourceTree = "<group>"; };
-		BF027F552305295E00B11752 /* GetNotificationReadResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetNotificationReadResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetNotificationReadResponseModel.swift; sourceTree = "<group>"; };
-		BF027F562305295E00B11752 /* GetListResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetListResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetListResponseModel.swift; sourceTree = "<group>"; };
-		BF027F572305295E00B11752 /* GetTourDefinationListResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTourDefinationListResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetTourDefinationListResponseModel.swift; sourceTree = "<group>"; };
-		BF027F582305295E00B11752 /* CustomerControlActivateCodeResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerControlActivateCodeResponseModel.swift; path = ../../OtiNetwork/Model/Response/CustomerControlActivateCodeResponseModel.swift; sourceTree = "<group>"; };
-		BF027F592305295E00B11752 /* GetTourDefinationComboListResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTourDefinationComboListResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetTourDefinationComboListResponseModel.swift; sourceTree = "<group>"; };
-		BF027F5A2305295E00B11752 /* GetPhoneNumberListResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetPhoneNumberListResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetPhoneNumberListResponseModel.swift; sourceTree = "<group>"; };
-		BF027F5B2305295E00B11752 /* GetFavoritesResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetFavoritesResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetFavoritesResponseModel.swift; sourceTree = "<group>"; };
-		BF027F5C2305295F00B11752 /* CustomerDetailByIdResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerDetailByIdResponseModel.swift; path = ../../OtiNetwork/Model/Response/CustomerDetailByIdResponseModel.swift; sourceTree = "<group>"; };
-		BF027F5D2305295F00B11752 /* CreateVoucherDocumentResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateVoucherDocumentResponseModel.swift; path = ../../OtiNetwork/Model/Response/CreateVoucherDocumentResponseModel.swift; sourceTree = "<group>"; };
-		BF027F5E2305295F00B11752 /* CreateInsuranceDocumentResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateInsuranceDocumentResponseModel.swift; path = ../../OtiNetwork/Model/Response/CreateInsuranceDocumentResponseModel.swift; sourceTree = "<group>"; };
-		BF027F5F2305295F00B11752 /* GetActualTripResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetActualTripResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetActualTripResponseModel.swift; sourceTree = "<group>"; };
-		BF027F602305295F00B11752 /* CustomerSendActiveCodeResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerSendActiveCodeResponseModel.swift; path = ../../OtiNetwork/Model/Response/CustomerSendActiveCodeResponseModel.swift; sourceTree = "<group>"; };
-		BF027F612305295F00B11752 /* GetGuideInfoOfTouristResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetGuideInfoOfTouristResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetGuideInfoOfTouristResponseModel.swift; sourceTree = "<group>"; };
-		BF027F622305295F00B11752 /* GetNotificationSearchResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetNotificationSearchResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetNotificationSearchResponseModel.swift; sourceTree = "<group>"; };
-		BF027F632305295F00B11752 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginResponse.swift; path = ../../OtiNetwork/Model/Response/LoginResponse.swift; sourceTree = "<group>"; };
-		BF027F642305295F00B11752 /* CheckMyTripResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckMyTripResponseModel.swift; path = ../../OtiNetwork/Model/Response/CheckMyTripResponseModel.swift; sourceTree = "<group>"; };
-		BF027F652305295F00B11752 /* GetTransferResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTransferResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetTransferResponseModel.swift; sourceTree = "<group>"; };
-		BF027F662305296000B11752 /* CustomerCreateResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerCreateResponseModel.swift; path = ../../OtiNetwork/Model/Response/CustomerCreateResponseModel.swift; sourceTree = "<group>"; };
-		BF027F672305296000B11752 /* GetExcursionPrintDataResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetExcursionPrintDataResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetExcursionPrintDataResponseModel.swift; sourceTree = "<group>"; };
-		BF027F682305296000B11752 /* SaveFavoriteResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveFavoriteResponseModel.swift; path = ../../OtiNetwork/Model/Response/SaveFavoriteResponseModel.swift; sourceTree = "<group>"; };
-		BF027F692305296000B11752 /* GetSaledExcursionInfoResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetSaledExcursionInfoResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetSaledExcursionInfoResponseModel.swift; sourceTree = "<group>"; };
-		BF027F6A2305296000B11752 /* SendRatedResultResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendRatedResultResponseModel.swift; path = ../../OtiNetwork/Model/Response/SendRatedResultResponseModel.swift; sourceTree = "<group>"; };
-		BF027F6B2305296000B11752 /* GetExcursionDetailByIdResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetExcursionDetailByIdResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetExcursionDetailByIdResponseModel.swift; sourceTree = "<group>"; };
-		BF027F6C2305296000B11752 /* GetSaledExcursionInfoDetailResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetSaledExcursionInfoDetailResponseModel.swift; path = ../../OtiNetwork/Model/Response/GetSaledExcursionInfoDetailResponseModel.swift; sourceTree = "<group>"; };
-		BF027F6D2305296100B11752 /* CreateFlightTicketResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateFlightTicketResponseModel.swift; path = ../../OtiNetwork/Model/Response/CreateFlightTicketResponseModel.swift; sourceTree = "<group>"; };
-		BF027F892305298500B11752 /* CustomerChangePasswordRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerChangePasswordRequestModel.swift; path = ../../OtiNetwork/Model/Request/CustomerChangePasswordRequestModel.swift; sourceTree = "<group>"; };
-		BF027F8A2305298500B11752 /* GetWeatherRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetWeatherRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetWeatherRequestModel.swift; sourceTree = "<group>"; };
-		BF027F8B2305298500B11752 /* GetExcursionPrintDataRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetExcursionPrintDataRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetExcursionPrintDataRequestModel.swift; sourceTree = "<group>"; };
-		BF027F8C2305298500B11752 /* GetTourDefinationListRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTourDefinationListRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetTourDefinationListRequestModel.swift; sourceTree = "<group>"; };
-		BF027F8D2305298500B11752 /* CustomerSendActiveCodeRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerSendActiveCodeRequestModel.swift; path = ../../OtiNetwork/Model/Request/CustomerSendActiveCodeRequestModel.swift; sourceTree = "<group>"; };
-		BF027F8E2305298500B11752 /* GetNotificationReadRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetNotificationReadRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetNotificationReadRequestModel.swift; sourceTree = "<group>"; };
-		BF027F8F2305298500B11752 /* GetCustomerForgotPasswordRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetCustomerForgotPasswordRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetCustomerForgotPasswordRequestModel.swift; sourceTree = "<group>"; };
-		BF027F902305298500B11752 /* GetTransferRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTransferRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetTransferRequestModel.swift; sourceTree = "<group>"; };
-		BF027F912305298500B11752 /* GetSaledExcursionInfoDetailRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetSaledExcursionInfoDetailRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetSaledExcursionInfoDetailRequestModel.swift; sourceTree = "<group>"; };
-		BF027F922305298500B11752 /* GetListRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetListRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetListRequestModel.swift; sourceTree = "<group>"; };
-		BF027F932305298500B11752 /* CustomerDetailByIdRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerDetailByIdRequestModel.swift; path = ../../OtiNetwork/Model/Request/CustomerDetailByIdRequestModel.swift; sourceTree = "<group>"; };
-		BF027F942305298600B11752 /* CustomerControlActivateCodeRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerControlActivateCodeRequestModel.swift; path = ../../OtiNetwork/Model/Request/CustomerControlActivateCodeRequestModel.swift; sourceTree = "<group>"; };
-		BF027F952305298600B11752 /* GetTourDefinationComboListRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTourDefinationComboListRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetTourDefinationComboListRequestModel.swift; sourceTree = "<group>"; };
-		BF027F962305298600B11752 /* GetTripDetailByIdRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTripDetailByIdRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetTripDetailByIdRequestModel.swift; sourceTree = "<group>"; };
-		BF027F972305298600B11752 /* GetPhoneNumberListRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetPhoneNumberListRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetPhoneNumberListRequestModel.swift; sourceTree = "<group>"; };
-		BF027F982305298600B11752 /* SaveFavoriteRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveFavoriteRequestModel.swift; path = ../../OtiNetwork/Model/Request/SaveFavoriteRequestModel.swift; sourceTree = "<group>"; };
-		BF027F992305298600B11752 /* GetFavoritesRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetFavoritesRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetFavoritesRequestModel.swift; sourceTree = "<group>"; };
-		BF027F9A2305298600B11752 /* CreateVoucherDocumentRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateVoucherDocumentRequestModel.swift; path = ../../OtiNetwork/Model/Request/CreateVoucherDocumentRequestModel.swift; sourceTree = "<group>"; };
-		BF027F9B2305298600B11752 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginRequest.swift; path = ../../OtiNetwork/Model/Request/LoginRequest.swift; sourceTree = "<group>"; };
-		BF027F9C2305298600B11752 /* SendRatedTourList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendRatedTourList.swift; path = ../../OtiNetwork/Model/Request/SendRatedTourList.swift; sourceTree = "<group>"; };
-		BF027F9D2305298600B11752 /* CreateFlightTicketRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateFlightTicketRequestModel.swift; path = ../../OtiNetwork/Model/Request/CreateFlightTicketRequestModel.swift; sourceTree = "<group>"; };
-		BF027F9E2305298600B11752 /* GetGuideInfoOfTouristRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetGuideInfoOfTouristRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetGuideInfoOfTouristRequestModel.swift; sourceTree = "<group>"; };
-		BF027F9F2305298600B11752 /* GetActualTripRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetActualTripRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetActualTripRequestModel.swift; sourceTree = "<group>"; };
-		BF027FA02305298600B11752 /* CustomerCreateRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerCreateRequestModel.swift; path = ../../OtiNetwork/Model/Request/CustomerCreateRequestModel.swift; sourceTree = "<group>"; };
-		BF027FA12305298600B11752 /* GetSaledExcursionInfoRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetSaledExcursionInfoRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetSaledExcursionInfoRequestModel.swift; sourceTree = "<group>"; };
-		BF027FA22305298600B11752 /* CheckMyTripRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckMyTripRequestModel.swift; path = ../../OtiNetwork/Model/Request/CheckMyTripRequestModel.swift; sourceTree = "<group>"; };
-		BF027FA32305298600B11752 /* LoginShortRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginShortRequest.swift; path = ../../OtiNetwork/Model/Request/LoginShortRequest.swift; sourceTree = "<group>"; };
-		BF027FA42305298600B11752 /* GetExcursionDetailByIdRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetExcursionDetailByIdRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetExcursionDetailByIdRequestModel.swift; sourceTree = "<group>"; };
-		BF027FA52305298600B11752 /* GetNotificationSearchRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetNotificationSearchRequestModel.swift; path = ../../OtiNetwork/Model/Request/GetNotificationSearchRequestModel.swift; sourceTree = "<group>"; };
-		BF027FA62305298600B11752 /* CreateInsuranceDocumentRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateInsuranceDocumentRequestModel.swift; path = ../../OtiNetwork/Model/Request/CreateInsuranceDocumentRequestModel.swift; sourceTree = "<group>"; };
 		BFCCC230B9A2CFCA70CA3E9DC4E1CB4D /* AssertionDispatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionDispatcher.swift; path = Sources/Nimble/Adapters/AssertionDispatcher.swift; sourceTree = "<group>"; };
 		C0597E7ABB137646DD796B1B1CA1DF94 /* MatcherFunc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherFunc.swift; path = Sources/Nimble/Matchers/MatcherFunc.swift; sourceTree = "<group>"; };
 		C08077BD069C563D717050D5A533DE0F /* BeNil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeNil.swift; path = Sources/Nimble/Matchers/BeNil.swift; sourceTree = "<group>"; };
 		C0D1B84382324A18881C85C438B444F6 /* ToSucceed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToSucceed.swift; path = Sources/Nimble/Matchers/ToSucceed.swift; sourceTree = "<group>"; };
 		C121D2E04D5935D56D7B223B51438367 /* FromJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FromJSON.swift; path = Sources/FromJSON.swift; sourceTree = "<group>"; };
 		C29675856E292845199D8791204A94DB /* Quick-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Quick-umbrella.h"; sourceTree = "<group>"; };
+		C32AE0CA938111DE5965F9E9C055D750 /* GetTransferRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetTransferRequestModel.swift; sourceTree = "<group>"; };
 		C5B0877B7478E7D0BF6EE5D7AFB7FA02 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		C81EF62CA650EC5C2B27C0476F8F2D00 /* AlamofireObjectMapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireObjectMapper.swift; path = AlamofireObjectMapper/AlamofireObjectMapper.swift; sourceTree = "<group>"; };
 		C83ECF03345520B27181BF4FD0FCFD3A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		C87C10A7D7815F90FC55C1E7C7AEE746 /* Functional.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Functional.swift; path = Sources/Nimble/Utils/Functional.swift; sourceTree = "<group>"; };
 		C887C69CF94955886A541BC43763E69B /* Example.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Example.swift; path = Sources/Quick/Example.swift; sourceTree = "<group>"; };
+		CC4F017812EF10799E61FA96BE373BA1 /* CustomerCreateRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomerCreateRequestModel.swift; sourceTree = "<group>"; };
+		CC83A9D0C8308EC757A560B8632F15AE /* GetFavoritesRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetFavoritesRequestModel.swift; sourceTree = "<group>"; };
 		CC9F5EBE9FD6E6709573D483FCD13B6A /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		CCA951438C90CFB1737D233253BF77D7 /* CustomerCreateResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomerCreateResponseModel.swift; sourceTree = "<group>"; };
+		CE044A2563B2F6FB7D72BBCF83A51F8A /* GetSaledExcursionInfoResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetSaledExcursionInfoResponseModel.swift; sourceTree = "<group>"; };
 		CF03FECD801FAA7FD07381029D28F859 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		CF8484707E0ADB4838D4AE97BC711796 /* CwlBadInstructionException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlBadInstructionException.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlBadInstructionException.swift; sourceTree = "<group>"; };
 		D0BDE0D2C52FEBB5796AFA6E7D9AFB8E /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Quick/Filter.swift; sourceTree = "<group>"; };
 		D2F4F9EA94E1A4E1F3465B86605245AC /* Pods-OtiNetwork_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OtiNetwork_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D5F8D36E02CCBC1684CE0952A8EB6DA3 /* GetSaledExcursionInfoDetailRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetSaledExcursionInfoDetailRequestModel.swift; sourceTree = "<group>"; };
 		D6291BAB1CBBE4B08C22F251FA597022 /* EnumOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumOperators.swift; path = Sources/EnumOperators.swift; sourceTree = "<group>"; };
 		D68195E923BBED8BB566A2ED6318C8B4 /* XCTestSuite+QuickTestSuiteBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestSuite+QuickTestSuiteBuilder.m"; path = "Sources/QuickObjectiveC/XCTestSuite+QuickTestSuiteBuilder.m"; sourceTree = "<group>"; };
+		D759A58DE438375A892FFC57482457AA /* GetNotificationReadRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetNotificationReadRequestModel.swift; sourceTree = "<group>"; };
 		D8064FDB4DB7095CBB1B5F881FA19B3B /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		D8AA822B85070F54F43A35B1949E62F8 /* Pods-OtiNetwork_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OtiNetwork_Tests.modulemap"; sourceTree = "<group>"; };
 		D919E5AC9E7D9953306675CD07C6D629 /* ObjectMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ObjectMapper.modulemap; sourceTree = "<group>"; };
 		D991A7264925DD31D760627CD0DF851C /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
+		DAC50AE3B4E055DFDBFABDA95ECC030A /* ExtensionUIApplication.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ExtensionUIApplication.swift; sourceTree = "<group>"; };
+		DB355529AB1DAC5EBD1C98DAA2BF90C7 /* LoginRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		DBF8F51C4D238D2EA73F2DBA689F028D /* Expression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Sources/Nimble/Expression.swift; sourceTree = "<group>"; };
 		DCCC5C3905915FD8923EF580E08DE65F /* Nimble-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-umbrella.h"; sourceTree = "<group>"; };
 		DEFB943675B28A7E610F38CC99616BBA /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		DF33587D01A1544431E0CD1F3BC52B03 /* OtiNetwork.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OtiNetwork.modulemap; sourceTree = "<group>"; };
+		DF3873C949B3A6656D0ACB4F3470BA95 /* CustomerControlActivateCodeResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomerControlActivateCodeResponseModel.swift; sourceTree = "<group>"; };
 		E019261B8A8B01A7DCC59007A8E9F781 /* AlamofireObjectMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AlamofireObjectMapper-dummy.m"; sourceTree = "<group>"; };
 		E14A302369059B756A9CE78C14168F2A /* NMBStringify.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBStringify.h; path = Sources/NimbleObjectiveC/NMBStringify.h; sourceTree = "<group>"; };
+		E32332FD8F41E78D907399F5E852113A /* CreateInsuranceDocumentRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateInsuranceDocumentRequestModel.swift; sourceTree = "<group>"; };
 		E4771CBDE871D54656D5124AA6CE0D7D /* ThrowError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThrowError.swift; path = Sources/Nimble/Matchers/ThrowError.swift; sourceTree = "<group>"; };
 		E6A86FCD47ACC85CC3777C958DB2BD07 /* Closures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Closures.swift; path = Sources/Quick/Hooks/Closures.swift; sourceTree = "<group>"; };
-		E757C728BF8B796ABB177DEBD4224FA2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E7C0617D0B5930FF19E9117D276CD9E5 /* CustomerSendActiveCodeResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomerSendActiveCodeResponseModel.swift; sourceTree = "<group>"; };
 		E7CB98C04BD0FCF5AD12FD078FEA4287 /* NSDecimalNumberTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSDecimalNumberTransform.swift; path = Sources/NSDecimalNumberTransform.swift; sourceTree = "<group>"; };
 		E7CFB000296CA0596F7C7C6D5FAFBB9E /* World+DSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "World+DSL.h"; path = "Sources/QuickObjectiveC/DSL/World+DSL.h"; sourceTree = "<group>"; };
 		E83B33556AD87BFC74FCF094E736E0FD /* Pods-OtiNetwork_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OtiNetwork_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		E8F0756E942E0870CDE2C118AB000393 /* GetActualTripRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetActualTripRequestModel.swift; sourceTree = "<group>"; };
 		E958054BDCDB8E7629C0426356A695BD /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
 		E9B1144F1BA2074A61CC52D554C64956 /* ThrowAssertion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThrowAssertion.swift; path = Sources/Nimble/Matchers/ThrowAssertion.swift; sourceTree = "<group>"; };
 		F02D89BA2EEA8254BDC562B5544E8A32 /* Match.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Match.swift; path = Sources/Nimble/Matchers/Match.swift; sourceTree = "<group>"; };
@@ -609,14 +603,20 @@
 		F48CF968BC97120DD70168EE4CC37050 /* SuiteHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SuiteHooks.swift; path = Sources/Quick/Hooks/SuiteHooks.swift; sourceTree = "<group>"; };
 		F56E19B4BA14DD8BD84B84126C21BA15 /* SatisfyAllOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAllOf.swift; path = Sources/Nimble/Matchers/SatisfyAllOf.swift; sourceTree = "<group>"; };
 		F57F25800F67F019D2D1ABA908CD8946 /* ExampleMetadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleMetadata.swift; path = Sources/Quick/ExampleMetadata.swift; sourceTree = "<group>"; };
+		F5BA437E5F527A6F875FA4AA2E76037E /* ExtensionUIDevice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ExtensionUIDevice.swift; sourceTree = "<group>"; };
 		F5EDE25E486E72582047DB53A102B591 /* QuickConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuickConfiguration.m; path = Sources/QuickObjectiveC/Configuration/QuickConfiguration.m; sourceTree = "<group>"; };
 		F6106553D25AA961E0777F28E5A5EC64 /* World.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = World.swift; path = Sources/Quick/World.swift; sourceTree = "<group>"; };
-		F66EB5FA5B40BEBF31C056CECFEFB1DB /* Pods_OtiNetwork_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OtiNetwork_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F66EB5FA5B40BEBF31C056CECFEFB1DB /* Pods_OtiNetwork_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_OtiNetwork_Tests.framework; path = "Pods-OtiNetwork_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F902FF53F823EE93CC7F6723F8EBA58C /* GetWeatherRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetWeatherRequestModel.swift; sourceTree = "<group>"; };
+		FA4DC0433E2B2DB63C7514099A614F00 /* CustomerSendActiveCodeRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomerSendActiveCodeRequestModel.swift; sourceTree = "<group>"; };
 		FA6AADC1524C715938EAF49472D6F86D /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Sources/Nimble/DSL.swift; sourceTree = "<group>"; };
 		FB60AE497B18D82E5FE77C8FBEE9DC1D /* ContainElementSatisfying.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContainElementSatisfying.swift; path = Sources/Nimble/Matchers/ContainElementSatisfying.swift; sourceTree = "<group>"; };
-		FB80DF0A75E88F3ACFBA6350F528544C /* OtiNetwork-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OtiNetwork-dummy.m"; sourceTree = "<group>"; };
+		FB6E367DCFEF22D61114B4CDC516EED5 /* CheckMyTripResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CheckMyTripResponseModel.swift; sourceTree = "<group>"; };
+		FC78F1213A7B11A702182B29BA830BFA /* CreateVoucherDocumentResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateVoucherDocumentResponseModel.swift; sourceTree = "<group>"; };
+		FCB5998E1B536AE22119825EE125835D /* SendRatedResultResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SendRatedResultResponseModel.swift; sourceTree = "<group>"; };
 		FCDB4CC0E0CAA08C518804B4C597246C /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
 		FD060C768C28B62D66E359C25B0917B8 /* CwlCatchException.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CwlCatchException.m; path = Carthage/Checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/CwlCatchException.m; sourceTree = "<group>"; };
+		FD0615A9CD14EA9D306C05108DEF6ABD /* BaseResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		FFF7514DA0594C15CEFFABBA0CE83FDD /* URLTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLTransform.swift; path = Sources/URLTransform.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -626,17 +626,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7664FD4F59A0C00866CBAE60B0A3AD64 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		091614B7EFBA84294E1ADC5CFA5A0EEC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B9CD4E20A4FEB946C9E1F05343FA6831 /* Alamofire.framework in Frameworks */,
-				2C12F0257AD2F1BA2325B30D81D5C99E /* AlamofireObjectMapper.framework in Frameworks */,
-				46D348882C620DDC75800CDFF0A49F0C /* Foundation.framework in Frameworks */,
-				CCD13DF8F4E7DC45AC556C869F664866 /* ObjectMapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,6 +680,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA0E38D636089D0F0F0D57A3FDFC04E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A037CE105D5FFEDF6BE66792B142693 /* Alamofire.framework in Frameworks */,
+				09E57AA31D90A93CCD5ECF9D5819F072 /* AlamofireObjectMapper.framework in Frameworks */,
+				26F81E6AB00BC5E82096E5C9588FB4F6 /* Foundation.framework in Frameworks */,
+				82070565984C9DCF468DD0B5B8D7EFB9 /* ObjectMapper.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -716,6 +716,7 @@
 				150ECFF3B0505EB9799D3F15951052A4 /* Validation.swift */,
 				848959BF984947B5813070F66ADDB9BF /* Support Files */,
 			);
+			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -731,18 +732,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/AlamofireObjectMapper";
-			sourceTree = "<group>";
-		};
-		134707B2CD2F3F33D5D31B635DED71F4 /* OtiNetwork */ = {
-			isa = PBXGroup;
-			children = (
-				BF027EC422FDA04000B11752 /* Extension */,
-				BF027EB122FD9F6F00B11752 /* Model */,
-				F3B384BE55A26622DAE814E8A819979C /* Pod */,
-				E0997D96F6907676D573559391C943D3 /* Support Files */,
-			);
-			name = OtiNetwork;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		1E6FD28DB7AB6441C164B14B9D553CFF /* iOS */ = {
@@ -802,7 +791,64 @@
 				D68195E923BBED8BB566A2ED6318C8B4 /* XCTestSuite+QuickTestSuiteBuilder.m */,
 				CA386A8FD02F23BF9F6B5BA3D7DA2606 /* Support Files */,
 			);
+			name = Quick;
 			path = Quick;
+			sourceTree = "<group>";
+		};
+		30806DECF2D89693965EF841CAA79AA2 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				0EA4A4C4CF55799164061D26DBB757D9 /* CheckMyTripRequestModel.swift */,
+				76741CDDEFFE7A250118996CB81AD32B /* CreateFlightTicketRequestModel.swift */,
+				E32332FD8F41E78D907399F5E852113A /* CreateInsuranceDocumentRequestModel.swift */,
+				6EC28E55CDDF9A417240F860F93C5AAD /* CreateVoucherDocumentRequestModel.swift */,
+				3857C5602999E55C72EB0E1AC27C2941 /* CustomerChangePasswordRequestModel.swift */,
+				3E5CAE1C48D263DA0848A06E3B059E72 /* CustomerControlActivateCodeRequestModel.swift */,
+				CC4F017812EF10799E61FA96BE373BA1 /* CustomerCreateRequestModel.swift */,
+				31069D374B76569D245D587C754AF3F1 /* CustomerDetailByIdRequestModel.swift */,
+				FA4DC0433E2B2DB63C7514099A614F00 /* CustomerSendActiveCodeRequestModel.swift */,
+				E8F0756E942E0870CDE2C118AB000393 /* GetActualTripRequestModel.swift */,
+				28EA2609D74155E562CD1B274D52F778 /* GetCustomerForgotPasswordRequestModel.swift */,
+				72E3E92CEC9C79DAAB8CBDC09CD615C4 /* GetExcursionDetailByIdRequestModel.swift */,
+				32DF8FE49400A50C7BC3FDE56FCEBC53 /* GetExcursionPrintDataRequestModel.swift */,
+				CC83A9D0C8308EC757A560B8632F15AE /* GetFavoritesRequestModel.swift */,
+				1157FA711278EACA3B614FD0366B1495 /* GetGuideInfoOfTouristRequestModel.swift */,
+				3A3DE85BF8B6E4FF56F19F66D732B204 /* GetListRequestModel.swift */,
+				D759A58DE438375A892FFC57482457AA /* GetNotificationReadRequestModel.swift */,
+				7E82BB53E1C8C3F0A3660A599729A5C3 /* GetNotificationSearchRequestModel.swift */,
+				A0EE53D168C2BF1A26A7114F12EBDF7F /* GetPhoneNumberListRequestModel.swift */,
+				D5F8D36E02CCBC1684CE0952A8EB6DA3 /* GetSaledExcursionInfoDetailRequestModel.swift */,
+				3FD1DBBAB1B7F2B138C34D349EE79309 /* GetSaledExcursionInfoRequestModel.swift */,
+				7368E0375C9326CCDEFA877FD6A33C4F /* GetTourDefinationComboListRequestModel.swift */,
+				9C77558AECA2EE9B58C035A3242D0B46 /* GetTourDefinationListRequestModel.swift */,
+				C32AE0CA938111DE5965F9E9C055D750 /* GetTransferRequestModel.swift */,
+				A52EA7542FD907A7CD5DD16EDAFBCB16 /* GetTripDetailByIdRequestModel.swift */,
+				F902FF53F823EE93CC7F6723F8EBA58C /* GetWeatherRequestModel.swift */,
+				DB355529AB1DAC5EBD1C98DAA2BF90C7 /* LoginRequest.swift */,
+				5C8E578A6479C4BBF34F67C468BBBDA9 /* LoginShortRequest.swift */,
+				3A39508143FE854E2CDED127BF13A534 /* SaveFavoriteRequestModel.swift */,
+				9CAB2B6376647652AA6B2D5C7CB14D25 /* SendRatedTourList.swift */,
+			);
+			name = Request;
+			path = Request;
+			sourceTree = "<group>";
+		};
+		3D677565A267473FC92F85627C12B344 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8BBEE5822334570A0F5BF33D87C1E935 /* BaseApiRequestBody.swift */,
+				278FF507EE49F4804841A34A325E9E22 /* BaseData.swift */,
+				FD0615A9CD14EA9D306C05108DEF6ABD /* BaseResponse.swift */,
+				992ECA97358FFFABED51C805BBBEBFC8 /* Defaults.swift */,
+				DAC50AE3B4E055DFDBFABDA95ECC030A /* ExtensionUIApplication.swift */,
+				2C1DB0B250EE62C5EA9068645C674286 /* ExtensionUIViewController.swift */,
+				4974802EE4A9AD2A2005322445CD2A6B /* NetworkManager.swift */,
+				5BBC4E408DBA6036C37B7F9AB3A330A1 /* ServiceEndPoint.swift */,
+				30806DECF2D89693965EF841CAA79AA2 /* Request */,
+				AF803EAE4A19FD4F0C4F954AE6A90386 /* Response */,
+			);
+			name = Model;
+			path = OtiNetwork/Model;
 			sourceTree = "<group>";
 		};
 		3E04A4D9438AA5D4B85098E576C0B84C /* Support Files */ = {
@@ -891,7 +937,36 @@
 				FFF7514DA0594C15CEFFABBA0CE83FDD /* URLTransform.swift */,
 				3E04A4D9438AA5D4B85098E576C0B84C /* Support Files */,
 			);
+			name = ObjectMapper;
 			path = ObjectMapper;
+			sourceTree = "<group>";
+		};
+		67F75F274DE6D4280C6EE3712D14DE8C /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1B08476E23F8FF4477F435073FC4F77 /* OtiNetwork */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		7511DCB3813159D3178AD86ADA04CAFE /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				283869C38FE8539D0B5A15CA7D418E1E /* LICENSE */,
+				624388C7D2F9CF28F073737A1A4AEBA6 /* OtiNetwork.podspec */,
+				3A9E491D5AD9C0D338298861544BEFAC /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		785C070D78BCD066B1FE0B4908A4E250 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7AC3B50F9CD72234128A1E064BDA919B /* BaseMessageItem.swift */,
+				F5BA437E5F527A6F875FA4AA2E76037E /* ExtensionUIDevice.swift */,
+			);
+			name = Extension;
+			path = OtiNetwork/Extension;
 			sourceTree = "<group>";
 		};
 		78B979EDE01B65D25D513E652DEC5B84 /* Targets Support Files */ = {
@@ -917,101 +992,39 @@
 			path = "../Target Support Files/Alamofire";
 			sourceTree = "<group>";
 		};
-		BF027EB122FD9F6F00B11752 /* Model */ = {
+		AF803EAE4A19FD4F0C4F954AE6A90386 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				BF027EB322FD9F7A00B11752 /* Response */,
-				BF027EB222FD9F7400B11752 /* Request */,
+				FB6E367DCFEF22D61114B4CDC516EED5 /* CheckMyTripResponseModel.swift */,
+				77F890B6E718D86C770EF762C6AF7916 /* CreateFlightTicketResponseModel.swift */,
+				0B4E4D34EAB3A81EF75D6703957E9161 /* CreateInsuranceDocumentResponseModel.swift */,
+				FC78F1213A7B11A702182B29BA830BFA /* CreateVoucherDocumentResponseModel.swift */,
+				66CBF2806EE775543A2A0A2F9C89EF81 /* CustomerChangePasswordResponseModel.swift */,
+				DF3873C949B3A6656D0ACB4F3470BA95 /* CustomerControlActivateCodeResponseModel.swift */,
+				CCA951438C90CFB1737D233253BF77D7 /* CustomerCreateResponseModel.swift */,
+				85AD505B71AA39879AC11BC9CC66D802 /* CustomerDetailByIdResponseModel.swift */,
+				E7C0617D0B5930FF19E9117D276CD9E5 /* CustomerSendActiveCodeResponseModel.swift */,
+				94A8500E8A337D68548F131E38380B33 /* GetActualTripResponseModel.swift */,
+				A539CA22E9983D6F98F7E5E37176DF71 /* GetExcursionDetailByIdResponseModel.swift */,
+				8314C15B9BF5467E36331BA4A5FB9238 /* GetExcursionPrintDataResponseModel.swift */,
+				967F069BF7E3D091E07888852A73BE65 /* GetFavoritesResponseModel.swift */,
+				634B02A3B6F67B17F0DBECE6D0ED6F01 /* GetGuideInfoOfTouristResponseModel.swift */,
+				016CE5AC2C244637492A220C2E3CC8F5 /* GetListResponseModel.swift */,
+				027DC47ECF21B583BFAE3DFD8125D83E /* GetNotificationReadResponseModel.swift */,
+				8D87D5795A6276124F74F9C3031C2B18 /* GetNotificationSearchResponseModel.swift */,
+				771D0D60ACAC27A468B622A672C346A0 /* GetPhoneNumberListResponseModel.swift */,
+				3F174FF9773FE4E899F107B0E3E126BF /* GetSaledExcursionInfoDetailResponseModel.swift */,
+				CE044A2563B2F6FB7D72BBCF83A51F8A /* GetSaledExcursionInfoResponseModel.swift */,
+				56B3D71B9C1A1182AB24AEF103E112DD /* GetTourDefinationComboListResponseModel.swift */,
+				2B100145CDD014FA2A5E2A27D385E564 /* GetTourDefinationListResponseModel.swift */,
+				2B2C12171DE2446D9189D1C5434B67F3 /* GetTransferResponseModel.swift */,
+				448AB77B7CF0F12C1B7F48860C0AC323 /* GetWeatherResponseModel.swift */,
+				12686F8502F60B59D75C03F905BC2778 /* LoginResponse.swift */,
+				474F07E5D936C939094B984BFFE25F87 /* SaveFavoriteResponseModel.swift */,
+				FCB5998E1B536AE22119825EE125835D /* SendRatedResultResponseModel.swift */,
 			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		BF027EB222FD9F7400B11752 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				BF027FA22305298600B11752 /* CheckMyTripRequestModel.swift */,
-				BF027F9D2305298600B11752 /* CreateFlightTicketRequestModel.swift */,
-				BF027FA62305298600B11752 /* CreateInsuranceDocumentRequestModel.swift */,
-				BF027F9A2305298600B11752 /* CreateVoucherDocumentRequestModel.swift */,
-				BF027F892305298500B11752 /* CustomerChangePasswordRequestModel.swift */,
-				BF027F942305298600B11752 /* CustomerControlActivateCodeRequestModel.swift */,
-				BF027FA02305298600B11752 /* CustomerCreateRequestModel.swift */,
-				BF027F932305298500B11752 /* CustomerDetailByIdRequestModel.swift */,
-				BF027F8D2305298500B11752 /* CustomerSendActiveCodeRequestModel.swift */,
-				BF027F9F2305298600B11752 /* GetActualTripRequestModel.swift */,
-				BF027F8F2305298500B11752 /* GetCustomerForgotPasswordRequestModel.swift */,
-				BF027FA42305298600B11752 /* GetExcursionDetailByIdRequestModel.swift */,
-				BF027F8B2305298500B11752 /* GetExcursionPrintDataRequestModel.swift */,
-				BF027F992305298600B11752 /* GetFavoritesRequestModel.swift */,
-				BF027F9E2305298600B11752 /* GetGuideInfoOfTouristRequestModel.swift */,
-				BF027F922305298500B11752 /* GetListRequestModel.swift */,
-				BF027F8E2305298500B11752 /* GetNotificationReadRequestModel.swift */,
-				BF027FA52305298600B11752 /* GetNotificationSearchRequestModel.swift */,
-				BF027F972305298600B11752 /* GetPhoneNumberListRequestModel.swift */,
-				BF027F912305298500B11752 /* GetSaledExcursionInfoDetailRequestModel.swift */,
-				BF027FA12305298600B11752 /* GetSaledExcursionInfoRequestModel.swift */,
-				BF027F952305298600B11752 /* GetTourDefinationComboListRequestModel.swift */,
-				BF027F8C2305298500B11752 /* GetTourDefinationListRequestModel.swift */,
-				BF027F902305298500B11752 /* GetTransferRequestModel.swift */,
-				BF027F962305298600B11752 /* GetTripDetailByIdRequestModel.swift */,
-				BF027F8A2305298500B11752 /* GetWeatherRequestModel.swift */,
-				BF027F9B2305298600B11752 /* LoginRequest.swift */,
-				BF027FA32305298600B11752 /* LoginShortRequest.swift */,
-				BF027F982305298600B11752 /* SaveFavoriteRequestModel.swift */,
-				BF027F9C2305298600B11752 /* SendRatedTourList.swift */,
-			);
-			path = Request;
-			sourceTree = "<group>";
-		};
-		BF027EB322FD9F7A00B11752 /* Response */ = {
-			isa = PBXGroup;
-			children = (
-				BF027F642305295F00B11752 /* CheckMyTripResponseModel.swift */,
-				BF027F6D2305296100B11752 /* CreateFlightTicketResponseModel.swift */,
-				BF027F5E2305295F00B11752 /* CreateInsuranceDocumentResponseModel.swift */,
-				BF027F5D2305295F00B11752 /* CreateVoucherDocumentResponseModel.swift */,
-				BF027F542305295E00B11752 /* CustomerChangePasswordResponseModel.swift */,
-				BF027F582305295E00B11752 /* CustomerControlActivateCodeResponseModel.swift */,
-				BF027F662305296000B11752 /* CustomerCreateResponseModel.swift */,
-				BF027F5C2305295F00B11752 /* CustomerDetailByIdResponseModel.swift */,
-				BF027F602305295F00B11752 /* CustomerSendActiveCodeResponseModel.swift */,
-				BF027F5F2305295F00B11752 /* GetActualTripResponseModel.swift */,
-				BF027F6B2305296000B11752 /* GetExcursionDetailByIdResponseModel.swift */,
-				BF027F672305296000B11752 /* GetExcursionPrintDataResponseModel.swift */,
-				BF027F5B2305295E00B11752 /* GetFavoritesResponseModel.swift */,
-				BF027F612305295F00B11752 /* GetGuideInfoOfTouristResponseModel.swift */,
-				BF027F562305295E00B11752 /* GetListResponseModel.swift */,
-				BF027F552305295E00B11752 /* GetNotificationReadResponseModel.swift */,
-				BF027F622305295F00B11752 /* GetNotificationSearchResponseModel.swift */,
-				BF027F5A2305295E00B11752 /* GetPhoneNumberListResponseModel.swift */,
-				BF027F6C2305296000B11752 /* GetSaledExcursionInfoDetailResponseModel.swift */,
-				BF027F692305296000B11752 /* GetSaledExcursionInfoResponseModel.swift */,
-				BF027F592305295E00B11752 /* GetTourDefinationComboListResponseModel.swift */,
-				BF027F572305295E00B11752 /* GetTourDefinationListResponseModel.swift */,
-				BF027F652305295F00B11752 /* GetTransferResponseModel.swift */,
-				BF027F532305295E00B11752 /* GetWeatherResponseModel.swift */,
-				BF027F632305295F00B11752 /* LoginResponse.swift */,
-				BF027F682305296000B11752 /* SaveFavoriteResponseModel.swift */,
-				BF027F6A2305296000B11752 /* SendRatedResultResponseModel.swift */,
-			);
+			name = Response;
 			path = Response;
-			sourceTree = "<group>";
-		};
-		BF027EC422FDA04000B11752 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				BF027F5022FDA4E700B11752 /* BaseMessageItem.swift */,
-				BF027F4F22FDA4E700B11752 /* ExtensionUIDevice.swift */,
-				BF027ECA22FDA05C00B11752 /* BaseApiRequestBody.swift */,
-				BF027EC822FDA05C00B11752 /* BaseData.swift */,
-				BF027EC922FDA05C00B11752 /* BaseResponse.swift */,
-				BF027EC622FDA05C00B11752 /* Defaults.swift */,
-				BF027ECB22FDA05C00B11752 /* ExtensionUIApplication.swift */,
-				BF027ECC22FDA05C00B11752 /* ExtensionUIViewController.swift */,
-				BF027ECD22FDA05C00B11752 /* NetworkManager.swift */,
-				BF027EC522FDA05C00B11752 /* ServiceEndPoint.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		C4AC286D1E76194A6F8CCEFA64D6B26A /* Products */ = {
@@ -1047,20 +1060,12 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				CFD8A507A38643D6CBC3548364B713D3 /* Development Pods */,
+				67F75F274DE6D4280C6EE3712D14DE8C /* Development Pods */,
 				24B711761BD3BBBBE0FEDCEDC1779FCA /* Frameworks */,
 				4C090F92418D4228ADFCF706A12B47AB /* Pods */,
 				C4AC286D1E76194A6F8CCEFA64D6B26A /* Products */,
 				78B979EDE01B65D25D513E652DEC5B84 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		CFD8A507A38643D6CBC3548364B713D3 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				134707B2CD2F3F33D5D31B635DED71F4 /* OtiNetwork */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		D1CCAF7205C41F14ED4196DD3485F4CB /* Nimble */ = {
@@ -1137,6 +1142,7 @@
 				59E75A990CB1EE8F377BC90E4C075FF0 /* XCTestObservationCenter+Register.m */,
 				3E927557FE05EF8ED9BCAE2AE8AEDDE0 /* Support Files */,
 			);
+			name = Nimble;
 			path = Nimble;
 			sourceTree = "<group>";
 		};
@@ -1146,18 +1152,19 @@
 				C81EF62CA650EC5C2B27C0476F8F2D00 /* AlamofireObjectMapper.swift */,
 				07817B9FF0C673E20A04441AB8D04FAB /* Support Files */,
 			);
+			name = AlamofireObjectMapper;
 			path = AlamofireObjectMapper;
 			sourceTree = "<group>";
 		};
-		E0997D96F6907676D573559391C943D3 /* Support Files */ = {
+		E4ACF6E57891B52421E2ED616684185E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				DF33587D01A1544431E0CD1F3BC52B03 /* OtiNetwork.modulemap */,
-				476E173D5AFB11FA005E64C8972AB229 /* OtiNetwork.xcconfig */,
-				FB80DF0A75E88F3ACFBA6350F528544C /* OtiNetwork-dummy.m */,
-				239B645D73C42A9195F1057262E5A94D /* OtiNetwork-Info.plist */,
-				A29F5D24A08C0A326CDB3DA7472EC76E /* OtiNetwork-prefix.pch */,
-				8D0414330033D7E990F7EAD397B66EDD /* OtiNetwork-umbrella.h */,
+				74CAD2064BE36A5937F61108E5E37A65 /* OtiNetwork.modulemap */,
+				8A0B350CB34D3E27FF76808455CB72AC /* OtiNetwork.xcconfig */,
+				175D493D7E468C5A590038EBAA9D6F3E /* OtiNetwork-dummy.m */,
+				B4EE2F156AC8E250F31219FEA4244E29 /* OtiNetwork-Info.plist */,
+				4396DA9DB81B928896DC2DA005E024A3 /* OtiNetwork-prefix.pch */,
+				07AB90A38BF873712599E5A1B03F56DE /* OtiNetwork-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/OtiNetwork";
@@ -1180,19 +1187,29 @@
 			path = "Target Support Files/Pods-OtiNetwork_Tests";
 			sourceTree = "<group>";
 		};
-		F3B384BE55A26622DAE814E8A819979C /* Pod */ = {
+		F1B08476E23F8FF4477F435073FC4F77 /* OtiNetwork */ = {
 			isa = PBXGroup;
 			children = (
-				1BFEE410A2A8B976D9165A0810A921D6 /* LICENSE */,
-				874268B194B34EBF55AEB8764CB973CF /* OtiNetwork.podspec */,
-				E757C728BF8B796ABB177DEBD4224FA2 /* README.md */,
+				785C070D78BCD066B1FE0B4908A4E250 /* Extension */,
+				3D677565A267473FC92F85627C12B344 /* Model */,
+				7511DCB3813159D3178AD86ADA04CAFE /* Pod */,
+				E4ACF6E57891B52421E2ED616684185E /* Support Files */,
 			);
-			name = Pod;
+			name = OtiNetwork;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		08F633D5D342F0A7891FB6E5CA2CA139 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40CD064898EA6EFDD09D6490374B8D59 /* OtiNetwork-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2582784E4FA6A1AC5D23FC53AC3F6EE2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1233,14 +1250,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		649C6273A7BFBABE2A32ACA2B8396424 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CF53C6889F139913F7FF954298FEB41E /* OtiNetwork-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		67B7E45EF26DA17E8A8B670023D6107A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1277,19 +1286,19 @@
 /* Begin PBXNativeTarget section */
 		0AC793A266D8198A217521D3635B9CDD /* OtiNetwork */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 38C63555C038592F8871603C0CD3D7B2 /* Build configuration list for PBXNativeTarget "OtiNetwork" */;
+			buildConfigurationList = C8CE5E4727E190BF59EDA316942B5252 /* Build configuration list for PBXNativeTarget "OtiNetwork" */;
 			buildPhases = (
-				649C6273A7BFBABE2A32ACA2B8396424 /* Headers */,
-				C75D094F41CDB2610CAFD1F98DDB5108 /* Sources */,
-				091614B7EFBA84294E1ADC5CFA5A0EEC /* Frameworks */,
-				9A976E1954B6AB356C6080D2F13B826A /* Resources */,
+				08F633D5D342F0A7891FB6E5CA2CA139 /* Headers */,
+				6561B0800F38E8EE29FE81165A4048DC /* Sources */,
+				FA0E38D636089D0F0F0D57A3FDFC04E0 /* Frameworks */,
+				94473B10569F78F5CD89049A4BE43694 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A200E9E5B4816416F2BB447866CC6456 /* PBXTargetDependency */,
-				6B307BD1C41FD23452906033CCE515DB /* PBXTargetDependency */,
-				FD230EF8E98E8CD7BAC3D75385B3E57C /* PBXTargetDependency */,
+				792715EA7DDD531677BC699C7855F472 /* PBXTargetDependency */,
+				252985B6C0829C7593651A080D22BD1A /* PBXTargetDependency */,
+				5FECC6743378DB0541EFB2AA21BC058E /* PBXTargetDependency */,
 			);
 			name = OtiNetwork;
 			productName = OtiNetwork;
@@ -1439,11 +1448,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
-				TargetAttributes = {
-					0AC793A266D8198A217521D3635B9CDD = {
-						LastSwiftMigration = 1020;
-					};
-				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1505,7 +1509,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9A976E1954B6AB356C6080D2F13B826A /* Resources */ = {
+		94473B10569F78F5CD89049A4BE43694 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1559,6 +1563,81 @@
 				AFC64B1097F7355FF423D6A73E9C7210 /* TaskDelegate.swift in Sources */,
 				933FDA5970AA525D6CB92BFEBA2BAB4A /* Timeline.swift in Sources */,
 				53791F5E5F07400F92CFDFC89A432305 /* Validation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6561B0800F38E8EE29FE81165A4048DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03A04CBEEA5D707FF75F1BDCAED9AC3E /* BaseApiRequestBody.swift in Sources */,
+				AD104C7F1987FC950073EEA117722193 /* BaseData.swift in Sources */,
+				DB07E8E82943F51B8D67A1E0919A26F8 /* BaseMessageItem.swift in Sources */,
+				7567599E670B7C05E3B35D931F434710 /* BaseResponse.swift in Sources */,
+				741BC11C5EE2B364070BDBACDA44E5BE /* CheckMyTripRequestModel.swift in Sources */,
+				356474A41CA417C9CDCDAC1C52F510D6 /* CheckMyTripResponseModel.swift in Sources */,
+				3870E77424BA2D60B1E551825F3B2872 /* CreateFlightTicketRequestModel.swift in Sources */,
+				FEAC18257916A525907D7D3795AA89BF /* CreateFlightTicketResponseModel.swift in Sources */,
+				62B33F4228768A4511601D97878792B0 /* CreateInsuranceDocumentRequestModel.swift in Sources */,
+				3EE72702C84E2411E3D3378F0156B2AD /* CreateInsuranceDocumentResponseModel.swift in Sources */,
+				BB79E691522FA45447F0D7C4902A5AE0 /* CreateVoucherDocumentRequestModel.swift in Sources */,
+				EBAA631BE943BFA431F992B26A747C03 /* CreateVoucherDocumentResponseModel.swift in Sources */,
+				6E285D0EABA2EFC520A6DD3BF09D9569 /* CustomerChangePasswordRequestModel.swift in Sources */,
+				230ADF7155EF2C01A7CBD7CAC6F156EE /* CustomerChangePasswordResponseModel.swift in Sources */,
+				0B00AEDFE2E84032F0923220A56E893F /* CustomerControlActivateCodeRequestModel.swift in Sources */,
+				8EE1682892C701CA67D79C8C75164BD7 /* CustomerControlActivateCodeResponseModel.swift in Sources */,
+				7F0020144271C556EE6AA69D4706BE85 /* CustomerCreateRequestModel.swift in Sources */,
+				10238E06D7EF3CE4EAAFB180F4506DEF /* CustomerCreateResponseModel.swift in Sources */,
+				7B59A3404FB6072AC67C7DEDE44C43D0 /* CustomerDetailByIdRequestModel.swift in Sources */,
+				4438EBFE25ECCB375BFAA69DDA751712 /* CustomerDetailByIdResponseModel.swift in Sources */,
+				30E3162427B2BCAE12E68AE6A19F3FE5 /* CustomerSendActiveCodeRequestModel.swift in Sources */,
+				3239768147A183EB8EFD42750E1D12B4 /* CustomerSendActiveCodeResponseModel.swift in Sources */,
+				39DB6B814AF5C14CF1E3B230EF1E170C /* Defaults.swift in Sources */,
+				5078D27EBDD9C4AE6997A4E09A7414FB /* ExtensionUIApplication.swift in Sources */,
+				B3BA585EF13D2EA44F596EE510F1A44A /* ExtensionUIDevice.swift in Sources */,
+				58D46C751DF2ACEB05A61CD31F200297 /* ExtensionUIViewController.swift in Sources */,
+				87EBCB9139780C6167B13044E9026C0A /* GetActualTripRequestModel.swift in Sources */,
+				D95B3A0D0445AA00D8553EC9AEE2AA32 /* GetActualTripResponseModel.swift in Sources */,
+				53640FAE66919178C2239EFD47A8DDC6 /* GetCustomerForgotPasswordRequestModel.swift in Sources */,
+				05C85987CD0344CD3403E4179A530A79 /* GetExcursionDetailByIdRequestModel.swift in Sources */,
+				5562B56DCB1EE4FA43850B37FB52BD1F /* GetExcursionDetailByIdResponseModel.swift in Sources */,
+				2BD28C9DEA7391C697FE28DD14D14E2C /* GetExcursionPrintDataRequestModel.swift in Sources */,
+				ECDBC0C53706728116FD921F9F79B0D3 /* GetExcursionPrintDataResponseModel.swift in Sources */,
+				79E043F5A0265F7D975BF31450EE1D5A /* GetFavoritesRequestModel.swift in Sources */,
+				D27AEB89F831AA33B67D644E0D62E5A0 /* GetFavoritesResponseModel.swift in Sources */,
+				069FF209EEBE1F8B44AB8BF812EF3AA6 /* GetGuideInfoOfTouristRequestModel.swift in Sources */,
+				8CD159BB91877082BE426014C7B52C90 /* GetGuideInfoOfTouristResponseModel.swift in Sources */,
+				1C2F24E9B0EA482509DB016E0C23A276 /* GetListRequestModel.swift in Sources */,
+				86B26E6107F0710474B060CD269B7306 /* GetListResponseModel.swift in Sources */,
+				DD98B74DA34219394E8EA9086B28FE6E /* GetNotificationReadRequestModel.swift in Sources */,
+				9020D6FD28480F6FEF728319A57BECA3 /* GetNotificationReadResponseModel.swift in Sources */,
+				069F0ED65687AD620C4BAE94016255D9 /* GetNotificationSearchRequestModel.swift in Sources */,
+				445FB8F2FC8BCDB1DBFC0F28C89A1799 /* GetNotificationSearchResponseModel.swift in Sources */,
+				FF63A6A0C28D603DFBFD159E161A5258 /* GetPhoneNumberListRequestModel.swift in Sources */,
+				9C347080A42B5466D41A5A40BCC6EE60 /* GetPhoneNumberListResponseModel.swift in Sources */,
+				408F2A89A247A965631C4272639D3CFC /* GetSaledExcursionInfoDetailRequestModel.swift in Sources */,
+				B5DC1950D9E4812761B4514082C71222 /* GetSaledExcursionInfoDetailResponseModel.swift in Sources */,
+				9D4B8E73DACC0DF557BA218E466E0A23 /* GetSaledExcursionInfoRequestModel.swift in Sources */,
+				011262BB96A50E5F2CDC634B425F1064 /* GetSaledExcursionInfoResponseModel.swift in Sources */,
+				F2C9CE05A072D5A4BB42285E4F21E221 /* GetTourDefinationComboListRequestModel.swift in Sources */,
+				346A7407FC800197346C75E0490468F9 /* GetTourDefinationComboListResponseModel.swift in Sources */,
+				9BD9442901B6906FFBDC15C4CAC551B7 /* GetTourDefinationListRequestModel.swift in Sources */,
+				85B1D239F9A45192F899BAE4F508C7CE /* GetTourDefinationListResponseModel.swift in Sources */,
+				85BB9CDEE8A7EAC04E619C0E8E07EE02 /* GetTransferRequestModel.swift in Sources */,
+				6500128ACFCD64197E6C2B7BC3DC69DE /* GetTransferResponseModel.swift in Sources */,
+				96F8A81B2F45D8F9F32EDB7BFB4544E4 /* GetTripDetailByIdRequestModel.swift in Sources */,
+				DA2B26699095986E652A3163BFC59301 /* GetWeatherRequestModel.swift in Sources */,
+				F4E21E5058357E022C30016AD294E4DF /* GetWeatherResponseModel.swift in Sources */,
+				49DC822A0CD8C547F8821F2EA32F608E /* LoginRequest.swift in Sources */,
+				7FB14A827CD16997F007F74B01D60E9C /* LoginResponse.swift in Sources */,
+				FBCA687435B1D15A1AA893F41C3FA8AC /* LoginShortRequest.swift in Sources */,
+				7ECE22F88A3BC37908F9FBDDDEACC0C3 /* NetworkManager.swift in Sources */,
+				DCA34003004859FB50CE8EC8A0DCA8DD /* OtiNetwork-dummy.m in Sources */,
+				432275A9740FBB9697AB762445DE0B37 /* SaveFavoriteRequestModel.swift in Sources */,
+				E544A23D4C7D9920F1E3EF8C51603515 /* SaveFavoriteResponseModel.swift in Sources */,
+				3DE31CFEA809B9A33254D82093A722E9 /* SendRatedResultResponseModel.swift in Sources */,
+				44C1FC33FB268D6AEE80CCA9BCC54B04 /* SendRatedTourList.swift in Sources */,
+				FB9DEA6D7C01B3CFFE6A40BF7155391B /* ServiceEndPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1633,81 +1712,6 @@
 				2A94FACEA07096DDE05ACF58491DD963 /* World+DSL.swift in Sources */,
 				F0EC1E8DF64700838C1BC79AFEC93A1C /* World.swift in Sources */,
 				2A95AD48CE160CCC59957E4F91EEC9B9 /* XCTestSuite+QuickTestSuiteBuilder.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C75D094F41CDB2610CAFD1F98DDB5108 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF027F7B2305296100B11752 /* CustomerSendActiveCodeResponseModel.swift in Sources */,
-				BF027FB72305298600B11752 /* GetFavoritesRequestModel.swift in Sources */,
-				BF027FC22305298600B11752 /* GetExcursionDetailByIdRequestModel.swift in Sources */,
-				BF027F882305296100B11752 /* CreateFlightTicketResponseModel.swift in Sources */,
-				BF027FB62305298600B11752 /* SaveFavoriteRequestModel.swift in Sources */,
-				BF027FBE2305298600B11752 /* CustomerCreateRequestModel.swift in Sources */,
-				BF027FBD2305298600B11752 /* GetActualTripRequestModel.swift in Sources */,
-				BF027F7A2305296100B11752 /* GetActualTripResponseModel.swift in Sources */,
-				BF027FBF2305298600B11752 /* GetSaledExcursionInfoRequestModel.swift in Sources */,
-				BF027FBB2305298600B11752 /* CreateFlightTicketRequestModel.swift in Sources */,
-				BF027FAA2305298600B11752 /* GetTourDefinationListRequestModel.swift in Sources */,
-				BF027ED722FDA05C00B11752 /* NetworkManager.swift in Sources */,
-				BF027FB22305298600B11752 /* CustomerControlActivateCodeRequestModel.swift in Sources */,
-				BF027FB32305298600B11752 /* GetTourDefinationComboListRequestModel.swift in Sources */,
-				BF027FB52305298600B11752 /* GetPhoneNumberListRequestModel.swift in Sources */,
-				BF027FAE2305298600B11752 /* GetTransferRequestModel.swift in Sources */,
-				BF027F852305296100B11752 /* SendRatedResultResponseModel.swift in Sources */,
-				BF027F742305296100B11752 /* GetTourDefinationComboListResponseModel.swift in Sources */,
-				BF027F822305296100B11752 /* GetExcursionPrintDataResponseModel.swift in Sources */,
-				BF027F702305296100B11752 /* GetNotificationReadResponseModel.swift in Sources */,
-				BF027ED322FDA05C00B11752 /* BaseResponse.swift in Sources */,
-				BF027ED022FDA05C00B11752 /* Defaults.swift in Sources */,
-				BF027FC02305298600B11752 /* CheckMyTripRequestModel.swift in Sources */,
-				BF027F722305296100B11752 /* GetTourDefinationListResponseModel.swift in Sources */,
-				BF027ECF22FDA05C00B11752 /* ServiceEndPoint.swift in Sources */,
-				BF027F782305296100B11752 /* CreateVoucherDocumentResponseModel.swift in Sources */,
-				BF027F7F2305296100B11752 /* CheckMyTripResponseModel.swift in Sources */,
-				BF027FB92305298600B11752 /* LoginRequest.swift in Sources */,
-				BF027F792305296100B11752 /* CreateInsuranceDocumentResponseModel.swift in Sources */,
-				BF027FAD2305298600B11752 /* GetCustomerForgotPasswordRequestModel.swift in Sources */,
-				BF027FA92305298600B11752 /* GetExcursionPrintDataRequestModel.swift in Sources */,
-				BF027F832305296100B11752 /* SaveFavoriteResponseModel.swift in Sources */,
-				BF027FC12305298600B11752 /* LoginShortRequest.swift in Sources */,
-				BF027ED522FDA05C00B11752 /* ExtensionUIApplication.swift in Sources */,
-				BF027F772305296100B11752 /* CustomerDetailByIdResponseModel.swift in Sources */,
-				BF027FBC2305298600B11752 /* GetGuideInfoOfTouristRequestModel.swift in Sources */,
-				BF027FB82305298600B11752 /* CreateVoucherDocumentRequestModel.swift in Sources */,
-				BF027FC42305298600B11752 /* CreateInsuranceDocumentRequestModel.swift in Sources */,
-				BF027F7E2305296100B11752 /* LoginResponse.swift in Sources */,
-				BF027FA72305298600B11752 /* CustomerChangePasswordRequestModel.swift in Sources */,
-				BF027F5222FDA4E700B11752 /* BaseMessageItem.swift in Sources */,
-				BF027F802305296100B11752 /* GetTransferResponseModel.swift in Sources */,
-				BF027FC32305298600B11752 /* GetNotificationSearchRequestModel.swift in Sources */,
-				BF027FAB2305298600B11752 /* CustomerSendActiveCodeRequestModel.swift in Sources */,
-				BF027ED622FDA05C00B11752 /* ExtensionUIViewController.swift in Sources */,
-				BF027ED222FDA05C00B11752 /* BaseData.swift in Sources */,
-				BF027F7D2305296100B11752 /* GetNotificationSearchResponseModel.swift in Sources */,
-				BF027F712305296100B11752 /* GetListResponseModel.swift in Sources */,
-				BF027FAC2305298600B11752 /* GetNotificationReadRequestModel.swift in Sources */,
-				BF027F812305296100B11752 /* CustomerCreateResponseModel.swift in Sources */,
-				BF027FBA2305298600B11752 /* SendRatedTourList.swift in Sources */,
-				BF027F842305296100B11752 /* GetSaledExcursionInfoResponseModel.swift in Sources */,
-				BF027F872305296100B11752 /* GetSaledExcursionInfoDetailResponseModel.swift in Sources */,
-				BF027F6F2305296100B11752 /* CustomerChangePasswordResponseModel.swift in Sources */,
-				7C6EBD5DE96F8820B58229707B324918 /* OtiNetwork-dummy.m in Sources */,
-				BF027F862305296100B11752 /* GetExcursionDetailByIdResponseModel.swift in Sources */,
-				BF027F5122FDA4E700B11752 /* ExtensionUIDevice.swift in Sources */,
-				BF027FA82305298600B11752 /* GetWeatherRequestModel.swift in Sources */,
-				BF027F762305296100B11752 /* GetFavoritesResponseModel.swift in Sources */,
-				BF027F7C2305296100B11752 /* GetGuideInfoOfTouristResponseModel.swift in Sources */,
-				BF027FB02305298600B11752 /* GetListRequestModel.swift in Sources */,
-				BF027F752305296100B11752 /* GetPhoneNumberListResponseModel.swift in Sources */,
-				BF027FB42305298600B11752 /* GetTripDetailByIdRequestModel.swift in Sources */,
-				BF027FB12305298600B11752 /* CustomerDetailByIdRequestModel.swift in Sources */,
-				BF027FAF2305298600B11752 /* GetSaledExcursionInfoDetailRequestModel.swift in Sources */,
-				BF027F732305296100B11752 /* CustomerControlActivateCodeResponseModel.swift in Sources */,
-				BF027F6E2305296100B11752 /* GetWeatherResponseModel.swift in Sources */,
-				BF027ED422FDA05C00B11752 /* BaseApiRequestBody.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1803,6 +1807,12 @@
 			target = 0AC793A266D8198A217521D3635B9CDD /* OtiNetwork */;
 			targetProxy = 62E09A829334FB53D6A3C3B6A0053B3D /* PBXContainerItemProxy */;
 		};
+		252985B6C0829C7593651A080D22BD1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AlamofireObjectMapper;
+			target = 3F64080413BB03C0B16BFEB621E6E0F2 /* AlamofireObjectMapper */;
+			targetProxy = 4AC86F2B3978FE7690D1C005E3E5F54E /* PBXContainerItemProxy */;
+		};
 		2CAC875DC840F129D6FCE3CDF63C2CDD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AlamofireObjectMapper;
@@ -1815,23 +1825,23 @@
 			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
 			targetProxy = 5ECF06DB1D5F0B0EB4082D2C0AE76ED0 /* PBXContainerItemProxy */;
 		};
+		5FECC6743378DB0541EFB2AA21BC058E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ObjectMapper;
+			target = 162E649F50FEC62B61BDD87D1BD422B4 /* ObjectMapper */;
+			targetProxy = B4449B680588630BBD7406593906CC12 /* PBXContainerItemProxy */;
+		};
 		66BE2D705FF88E9426456C42B066E467 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Quick;
 			target = C82891EAB7293DBEE916B21F57E8474D /* Quick */;
 			targetProxy = DE0504465501DED4B722E7C996325209 /* PBXContainerItemProxy */;
 		};
-		6B307BD1C41FD23452906033CCE515DB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AlamofireObjectMapper;
-			target = 3F64080413BB03C0B16BFEB621E6E0F2 /* AlamofireObjectMapper */;
-			targetProxy = 2CD950BD0C8E9605007DD217D669EDBE /* PBXContainerItemProxy */;
-		};
-		A200E9E5B4816416F2BB447866CC6456 /* PBXTargetDependency */ = {
+		792715EA7DDD531677BC699C7855F472 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
 			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
-			targetProxy = FBF1DBA289ED7E1BBFC253D7E949EEB1 /* PBXContainerItemProxy */;
+			targetProxy = 05749132B5C092F271919F65D1816175 /* PBXContainerItemProxy */;
 		};
 		AD369CC5BC0F2532F6D2FA99C4F085E8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1850,12 +1860,6 @@
 			name = ObjectMapper;
 			target = 162E649F50FEC62B61BDD87D1BD422B4 /* ObjectMapper */;
 			targetProxy = F39709105C89A2EC0D9704C112AF51B4 /* PBXContainerItemProxy */;
-		};
-		FD230EF8E98E8CD7BAC3D75385B3E57C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ObjectMapper;
-			target = 162E649F50FEC62B61BDD87D1BD422B4 /* ObjectMapper */;
-			targetProxy = B6DA480207CAE990E8A78EA87867BC7F /* PBXContainerItemProxy */;
 		};
 		FEAA4F7965BF9AA125560717BED5DF39 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1961,6 +1965,38 @@
 			};
 			name = Release;
 		};
+		397B8771D81FAD86EA5632F906232149 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A0B350CB34D3E27FF76808455CB72AC /* OtiNetwork.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/OtiNetwork/OtiNetwork-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OtiNetwork/OtiNetwork-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/OtiNetwork/OtiNetwork.modulemap";
+				PRODUCT_MODULE_NAME = OtiNetwork;
+				PRODUCT_NAME = OtiNetwork;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		3C25076F83BB1ED6083591606E001112 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6CFC1ADFED5D6F9CCB958DF7C83B2207 /* Pods-OtiNetwork_Tests.release.xcconfig */;
@@ -1988,39 +2024,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		3F50A0B07AB7B7C2559111342B617004 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 476E173D5AFB11FA005E64C8972AB229 /* OtiNetwork.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/OtiNetwork/OtiNetwork-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OtiNetwork/OtiNetwork-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/OtiNetwork/OtiNetwork.modulemap";
-				PRODUCT_MODULE_NAME = OtiNetwork;
-				PRODUCT_NAME = OtiNetwork;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2154,6 +2157,37 @@
 			};
 			name = Release;
 		};
+		872348EA85F3BE90E0837B716DDF6D2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A0B350CB34D3E27FF76808455CB72AC /* OtiNetwork.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/OtiNetwork/OtiNetwork-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OtiNetwork/OtiNetwork-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/OtiNetwork/OtiNetwork.modulemap";
+				PRODUCT_MODULE_NAME = OtiNetwork;
+				PRODUCT_NAME = OtiNetwork;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		87DDE1F2CB38175DE4E787CB26473369 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 113E44D854A388C6B30C8905A0AAA29B /* Pods-OtiNetwork_Example.release.xcconfig */;
@@ -2272,7 +2306,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -2405,39 +2440,6 @@
 			};
 			name = Debug;
 		};
-		E923250572A2871119010B738A87FE12 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 476E173D5AFB11FA005E64C8972AB229 /* OtiNetwork.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/OtiNetwork/OtiNetwork-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OtiNetwork/OtiNetwork-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/OtiNetwork/OtiNetwork.modulemap";
-				PRODUCT_MODULE_NAME = OtiNetwork;
-				PRODUCT_NAME = OtiNetwork;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		F7F7B456A59CE20546CBE809B2210719 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E83B33556AD87BFC74FCF094E736E0FD /* Pods-OtiNetwork_Tests.debug.xcconfig */;
@@ -2534,15 +2536,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		38C63555C038592F8871603C0CD3D7B2 /* Build configuration list for PBXNativeTarget "OtiNetwork" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E923250572A2871119010B738A87FE12 /* Debug */,
-				3F50A0B07AB7B7C2559111342B617004 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2566,6 +2559,15 @@
 			buildConfigurations = (
 				09AA15C0974378962734873DD9F38475 /* Debug */,
 				714AEEB13A75E240A3F81386C114D61E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C8CE5E4727E190BF59EDA316942B5252 /* Build configuration list for PBXNativeTarget "OtiNetwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				872348EA85F3BE90E0837B716DDF6D2D /* Debug */,
+				397B8771D81FAD86EA5632F906232149 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

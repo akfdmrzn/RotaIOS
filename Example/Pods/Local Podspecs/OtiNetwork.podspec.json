@@ -1,6 +1,6 @@
 {
   "name": "OtiNetwork",
-  "version": "0.1.0",
+  "version": "0.1.7",
   "summary": "OtiNetworking Manager includes configuration",
   "description": "This library provides networking process of our projects",
   "swift_versions": "4.0",
@@ -14,12 +14,12 @@
   },
   "source": {
     "git": "https://github.com/akfdmrzn/OtiNetwork.git",
-    "tag": "0.1.0"
+    "tag": "0.1.7"
   },
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "OtiNetwork/Classes/**/*",
+  "source_files": "OtiNetwork/**/*",
   "dependencies": {
     "ObjectMapper": [
 

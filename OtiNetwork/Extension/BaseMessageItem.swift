@@ -17,7 +17,7 @@ public class BaseMessageItem:Mappable{
                 DispatchQueue.main.async {
                     let userDefaultsData:Defaults = Defaults()
                     userDefaultsData.clearData()
-                    BaseData.shared.getTokenResponse = nil
+                    BaseData.getTokenResponse = nil
                     UIApplication.getTopViewController()?.showAlertMsg(msg: self.message, finished: {
                         UIApplication.getTopViewController()?.dismiss(animated: true, completion: {
                             UIApplication.getTopViewController()?.navigationController?.popViewController(animated: false)

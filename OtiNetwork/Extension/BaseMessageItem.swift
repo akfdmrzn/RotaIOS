@@ -2,7 +2,7 @@
 //  BaseMessageItem.swift
 //  BaseProject
 //
-//  Created by Akif Mac on 19.02.2019.
+//  Created by Akif's Mac on 19.02.2019.
 //  Copyright © 2019 OtiHolding. All rights reserved.
 //
 
@@ -17,7 +17,7 @@ public class BaseMessageItem:Mappable{
                 DispatchQueue.main.async {
                     let userDefaultsData:Defaults = Defaults()
                     userDefaultsData.clearData()
-                    BaseData.getTokenResponse = nil
+                    BaseData.shared.getTokenResponse = nil
                     UIApplication.getTopViewController()?.showAlertMsg(msg: self.message, finished: {
                         UIApplication.getTopViewController()?.dismiss(animated: true, completion: {
                             UIApplication.getTopViewController()?.navigationController?.popViewController(animated: false)

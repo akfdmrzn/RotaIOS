@@ -7,11 +7,12 @@
 //
 
 import Foundation
-
-public class BaseData{
+class BaseData{
     
-   private init(){}
+    static let shared = BaseData()
     
-   public static var getTokenResponse:BaseResponse<GetTokenResponse>!
+    private init(){}
+    
+    var getTokenResponse:BaseResponse<GetTokenResponse>!
     
 }

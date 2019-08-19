@@ -83,7 +83,7 @@ extension UIViewController {
     
     public func getBaseRequestData<T:Mappable> (data:T)-> BaseApiRequestBody<T>{
         let systemVersion = UIDevice.current.systemVersion
-        let deviceModel = UIDevice.current.modelName
+        let deviceModel = UIDevice.modelName
         
         //DeviceId; Phone Type (IOS, Android);Version; Operator Type (TT,Vodafone,Turkcell); Connection Type(Mobil,Wi-Fi)”
         return BaseApiRequestBody.init(token: baseData.getTokenResponse.token!, languageId: userDefaultsData.getLanguageId(), mobilInformation: "\(userDefaultsData.getDeviceId() ?? "");\(deviceModel);iOS;\(systemVersion); Wifi;",data: data)
@@ -91,7 +91,7 @@ extension UIViewController {
     
     public func getBaseRequestArrayData<T:Mappable> (dataArray:[T])-> BaseApiRequestBody<T>{
         let systemVersion = UIDevice.current.systemVersion
-        let deviceModel = UIDevice.current.modelName
+        let deviceModel = UIDevice.modelName
         let baseApiRequestBodyModel = BaseApiRequestBody.init(token: baseData.getTokenResponse.token!, languageId: userDefaultsData.getLanguageId(), mobilInformation: "\(deviceModel);iOS;\(systemVersion); Wifi;", dataArray: dataArray)
         baseApiRequestBodyModel.dataArray = dataArray
         return baseApiRequestBodyModel

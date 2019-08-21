@@ -11,9 +11,9 @@ import ObjectMapper
 
 public class GetExcursionPrintDataResponseModel: Mappable {
     
-    var extraList: [ExtraList]?
-    var transferList: [String]?
-    var voucher: Voucher?
+    public var extraList: [ExtraList]?
+    public var transferList: [String]?
+    public var voucher: Voucher?
     
     public required init?(map: Map) {
         
@@ -28,14 +28,14 @@ public class GetExcursionPrintDataResponseModel: Mappable {
 }
 
 public class ExtraList : Mappable {
-    var currency: String?
-    var info: String?
-    var amount: Double?
-    var name: String?
-    var currencyLocal: String?
-    var countryCode: String?
-    var amountStr: String?
-    var amountStr2: String?
+    public var currency: String?
+    public var info: String?
+    public var amount: Double?
+    public var name: String?
+    public var currencyLocal: String?
+    public var countryCode: String?
+    public var amountStr: String?
+    public var amountStr2: String?
     
     public required init?(map: Map) {
         
@@ -56,67 +56,67 @@ public class ExtraList : Mappable {
 
 
 public class Voucher : Mappable {
-    var currencyId: Int?
-    var marketId: Int?
-    var saleDate: String?
-    var saleDateString: String?
-    var tourId: Int?
-    var adultCount: Int?
-    var childCount: Int?
-    var printDate: String?
-    var printDateString: String?
-    var date: String?
-    var dateString: String?
-    var voucher: String?
-    var address: String?
-    var tour: String?
-    var concept: String?
-    var transfer: String?
-    var hotel: String?
-    var room: String?
-    var pickUp: String?
-    var meetingPoint: String?
-    var leaderName: String?
-    var operatr: String?
-    var resNo: String?
-    var grandTotal: Double?
-    var discount: String?
-    var tourPax: String?
-    var refundCondition: String?
-    var notes: String?
-    var currency: String?
-    var paymentType: String?
-    var ticketNumber: String?
-    var ticketCount: Int?
-    var paymentStr: String?
-    var tourAmount: Double?
-    var areaId: Int?
-    var grandTotalLocal: Double?
-    var currencyLocal: String?
-    var vat: Double?
-    var vatLocal: Double?
-    var discountLocal: Double?
-    var countryCode: String?
-    var vatStr: String?
-    var vatStr2: String?
-    var vatLocalStr: String?
-    var vatLocalStr2: String?
-    var grandTotalStr: String?
-    var grandTotalStr2: String?
-    var dubaiAmountStr: String?
-    var dubaiAmountStr2: String?
-    var dubaiAmountLocalStr: String?
-    var dubaiAmountLocalStr2: String?
-    var tourAmountStr: String?
-    var tourAmountStr2: String?
-    var discountStr: String?
-    var discountStr2: String?
-    var discountLocalStr: String?
-    var discountLocalStr2: String?
-    var grandTotalLocalStr: String?
-    var grandTotalLocalStr2: String?
-    var personalDataWarnig: String?
-    var personalDataWarnigLabel: String?
+    public var currencyId: Int?
+    public var marketId: Int?
+    public var saleDate: String?
+    public var saleDateString: String?
+    public var tourId: Int?
+    public var adultCount: Int?
+    public var childCount: Int?
+    public var printDate: String?
+    public var printDateString: String?
+    public var date: String?
+    public var dateString: String?
+    public var voucher: String?
+    public var address: String?
+    public var tour: String?
+    public var concept: String?
+    public var transfer: String?
+    public var hotel: String?
+    public var room: String?
+    public var pickUp: String?
+    public var meetingPoint: String?
+    public var leaderName: String?
+    public var operatr: String?
+    public var resNo: String?
+    public var grandTotal: Double?
+    public var discount: String?
+    public var tourPax: String?
+    public var refundCondition: String?
+    public var notes: String?
+    public var currency: String?
+    public var paymentType: String?
+    public var ticketNumber: String?
+    public var ticketCount: Int?
+    public var paymentStr: String?
+    public var tourAmount: Double?
+    public var areaId: Int?
+    public var grandTotalLocal: Double?
+    public var currencyLocal: String?
+    public var vat: Double?
+    public var vatLocal: Double?
+    public var discountLocal: Double?
+    public var countryCode: String?
+    public var vatStr: String?
+    public var vatStr2: String?
+    public var vatLocalStr: String?
+    public var vatLocalStr2: String?
+    public var grandTotalStr: String?
+    public var grandTotalStr2: String?
+    public var dubaiAmountStr: String?
+    public var dubaiAmountStr2: String?
+    public var dubaiAmountLocalStr: String?
+    public var dubaiAmountLocalStr2: String?
+    public var tourAmountStr: String?
+    public var tourAmountStr2: String?
+    public var discountStr: String?
+    public var discountStr2: String?
+    public var discountLocalStr: String?
+    public var discountLocalStr2: String?
+    public var grandTotalLocalStr: String?
+    public var grandTotalLocalStr2: String?
+    public var personalDataWarnig: String?
+    public var personalDataWarnigLabel: String?
     
     public required init?(map: Map) {
         

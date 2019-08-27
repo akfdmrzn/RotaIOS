@@ -41,5 +41,6 @@ public enum ServiceEndPoint: String {
     case CreateVoucherDocument = "/api/Integration/CreateVoucherDocumentAsync"
     case CreateFlightTicket = "/api/Integration/CreateFlightTicketAsync"
     case CreateInsuranceDocument = "/api/Integration/CreateInsuranceDocumentAsync"
+    case GetPDFData = "/api/Excursion/GetPdfAsync"
 
 }

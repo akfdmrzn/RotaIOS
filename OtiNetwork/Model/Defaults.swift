@@ -32,12 +32,13 @@ public class Defaults{
         let userDefaultsData:Defaults = Defaults()
         
         let tempMail = userDefaultsData.getLastEmail()
-        
+        let tempLanguageId = userDefaultsData.getLanguageId()
         if let appDomain = Bundle.main.bundleIdentifier {
             UserDefaults.standard.removePersistentDomain(forName: appDomain)
         }
         _ = userDefaultsData.saveFlagChoosed(flagId: true)
         userDefaultsData.saveLastEmail(lastEmail: tempMail)
+        userDefaultsData.saveLanguageId(languageId: tempLanguageId)
         
     }
     

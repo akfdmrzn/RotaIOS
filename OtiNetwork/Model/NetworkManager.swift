@@ -100,9 +100,11 @@ public class NetworkManager {
         
         var urlPath = url + endPoint.rawValue
         
-        for i in 0...parameters.count - 1{
+        for i in 0...parameters.count - 1 {
             urlPath = urlPath.replacingOccurrences(of: "%\(i)", with: parameters[i])
         }
+        
+        urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         
         var requestModel = URLRequest(url: URL(string: urlPath)!)
         requestModel.timeoutInterval = TIMEOUT_INTERVAL

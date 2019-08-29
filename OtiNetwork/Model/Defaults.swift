@@ -29,6 +29,7 @@ public class Defaults{
     
    public func clearData(){
         print("userDefaults Cleared Data")
+        print("userDefaults Cleared Data")
         let userDefaultsData:Defaults = Defaults()
         
         let tempMail = userDefaultsData.getLastEmail()

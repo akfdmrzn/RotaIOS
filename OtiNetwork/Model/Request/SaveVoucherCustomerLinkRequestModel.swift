@@ -1,17 +1,17 @@
 //
-//  CheckMyTripRequestModel.swift
-//  BaseProject
+//  SaveVoucherCustomerLinkRequestModel.swift
+//  Alamofire
 //
-//  Created by Akif Demirezen on 28.05.2019.
-//  Copyright © 2019 OtiHolding. All rights reserved.
+//  Created by Akif Demirezen on 16.09.2019.
 //
 
-import UIKit
+import Foundation
 import ObjectMapper
 
-public class CheckMyTripRequestModel:Mappable{
+public class SaveVoucherCustomerLinkRequestModel: Mappable {
     
     public var voucherNumber:Int!
+    public var customerId:Int!
     public var passportNumber:String!
     public var birthDate:String!
     
@@ -19,15 +19,16 @@ public class CheckMyTripRequestModel:Mappable{
         
     }
     
-    public init(voucherNumber:Int,passportNumber:String,birthDate : String) {
+    public init(voucherNumber:Int,customerId :Int,passportNumber : String, birthDate : String){
         self.voucherNumber = voucherNumber
+        self.customerId = customerId
         self.passportNumber = passportNumber
         self.birthDate = birthDate
     }
     
-    
     public func mapping(map: Map) {
         voucherNumber <- map["VoucherNumber"]
+        customerId <- map["CustomerId"]
         passportNumber <- map["PassportNumber"]
         birthDate <- map["BirthDate"]
     }

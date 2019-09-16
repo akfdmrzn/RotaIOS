@@ -188,6 +188,10 @@
 		BE2E0A9AC5E2019BFD31452E96ED83D9 /* AssertionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D69E961B9A00DDC431ADF683261094 /* AssertionRecorder.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		BEDC36DEA21352A0F346A2513EE0540E /* QuickSpecBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 11F03BD21A0910500AA1E51779B1B848 /* QuickSpecBase.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BEE6B677416CA71C981D1D3F60B18C96 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D905573267B310FBD8AD986160B89E3 /* Alamofire.swift */; };
+		BF0CD2C4232F4E59004A2E06 /* SaveVoucherCustomerLinkRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0CD2C2232F4E51004A2E06 /* SaveVoucherCustomerLinkRequestModel.swift */; };
+		BF0CD2C6232F4E7D004A2E06 /* SaveVoucherCustomerLinkResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0CD2C5232F4E7D004A2E06 /* SaveVoucherCustomerLinkResponseModel.swift */; };
+		BF0CD2C8232F523A004A2E06 /* DeleteVoucherCustomerLinkRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0CD2C7232F523A004A2E06 /* DeleteVoucherCustomerLinkRequestModel.swift */; };
+		BF0CD2CA232F535C004A2E06 /* DeleteVoucherCustomerLinkResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0CD2C9232F535C004A2E06 /* DeleteVoucherCustomerLinkResponseModel.swift */; };
 		BF1028A023151BEA002FFE1E /* GetPDFRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10289C23151B38002FFE1E /* GetPDFRequestModel.swift */; };
 		BF1028A123151BF0002FFE1E /* GetPDFResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10289E23151B49002FFE1E /* GetPDFResponseModel.swift */; };
 		BF162FE488440AC9824E22EF6BD760FC /* DSL+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F812F05576FA8B6EF5EB05BFBCA159 /* DSL+Wait.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -551,6 +555,10 @@
 		BCF1130AB72A33E7077A4DB2BFBC7279 /* BeAKindOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAKindOf.swift; path = Sources/Nimble/Matchers/BeAKindOf.swift; sourceTree = "<group>"; };
 		BEBA69A153CCB128114A3571408E1A44 /* Callsite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Callsite.swift; path = Sources/Quick/Callsite.swift; sourceTree = "<group>"; };
 		BEE7734680D99A3FCCEAE7C40936B151 /* Pods-OtiNetwork_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OtiNetwork_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		BF0CD2C2232F4E51004A2E06 /* SaveVoucherCustomerLinkRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveVoucherCustomerLinkRequestModel.swift; sourceTree = "<group>"; };
+		BF0CD2C5232F4E7D004A2E06 /* SaveVoucherCustomerLinkResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveVoucherCustomerLinkResponseModel.swift; sourceTree = "<group>"; };
+		BF0CD2C7232F523A004A2E06 /* DeleteVoucherCustomerLinkRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteVoucherCustomerLinkRequestModel.swift; sourceTree = "<group>"; };
+		BF0CD2C9232F535C004A2E06 /* DeleteVoucherCustomerLinkResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteVoucherCustomerLinkResponseModel.swift; sourceTree = "<group>"; };
 		BF10289C23151B38002FFE1E /* GetPDFRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPDFRequestModel.swift; sourceTree = "<group>"; };
 		BF10289E23151B49002FFE1E /* GetPDFResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPDFResponseModel.swift; sourceTree = "<group>"; };
 		BFCCC230B9A2CFCA70CA3E9DC4E1CB4D /* AssertionDispatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionDispatcher.swift; path = Sources/Nimble/Adapters/AssertionDispatcher.swift; sourceTree = "<group>"; };
@@ -831,6 +839,8 @@
 				3A39508143FE854E2CDED127BF13A534 /* SaveFavoriteRequestModel.swift */,
 				9CAB2B6376647652AA6B2D5C7CB14D25 /* SendRatedTourList.swift */,
 				BF10289C23151B38002FFE1E /* GetPDFRequestModel.swift */,
+				BF0CD2C2232F4E51004A2E06 /* SaveVoucherCustomerLinkRequestModel.swift */,
+				BF0CD2C7232F523A004A2E06 /* DeleteVoucherCustomerLinkRequestModel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1024,6 +1034,8 @@
 				474F07E5D936C939094B984BFFE25F87 /* SaveFavoriteResponseModel.swift */,
 				FCB5998E1B536AE22119825EE125835D /* SendRatedResultResponseModel.swift */,
 				BF10289E23151B49002FFE1E /* GetPDFResponseModel.swift */,
+				BF0CD2C5232F4E7D004A2E06 /* SaveVoucherCustomerLinkResponseModel.swift */,
+				BF0CD2C9232F535C004A2E06 /* DeleteVoucherCustomerLinkResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1597,10 +1609,13 @@
 				5078D27EBDD9C4AE6997A4E09A7414FB /* ExtensionUIApplication.swift in Sources */,
 				B3BA585EF13D2EA44F596EE510F1A44A /* ExtensionUIDevice.swift in Sources */,
 				58D46C751DF2ACEB05A61CD31F200297 /* ExtensionUIViewController.swift in Sources */,
+				BF0CD2CA232F535C004A2E06 /* DeleteVoucherCustomerLinkResponseModel.swift in Sources */,
 				87EBCB9139780C6167B13044E9026C0A /* GetActualTripRequestModel.swift in Sources */,
 				D95B3A0D0445AA00D8553EC9AEE2AA32 /* GetActualTripResponseModel.swift in Sources */,
 				53640FAE66919178C2239EFD47A8DDC6 /* GetCustomerForgotPasswordRequestModel.swift in Sources */,
 				05C85987CD0344CD3403E4179A530A79 /* GetExcursionDetailByIdRequestModel.swift in Sources */,
+				BF0CD2C8232F523A004A2E06 /* DeleteVoucherCustomerLinkRequestModel.swift in Sources */,
+				BF0CD2C4232F4E59004A2E06 /* SaveVoucherCustomerLinkRequestModel.swift in Sources */,
 				5562B56DCB1EE4FA43850B37FB52BD1F /* GetExcursionDetailByIdResponseModel.swift in Sources */,
 				2BD28C9DEA7391C697FE28DD14D14E2C /* GetExcursionPrintDataRequestModel.swift in Sources */,
 				ECDBC0C53706728116FD921F9F79B0D3 /* GetExcursionPrintDataResponseModel.swift in Sources */,
@@ -1624,6 +1639,7 @@
 				346A7407FC800197346C75E0490468F9 /* GetTourDefinationComboListResponseModel.swift in Sources */,
 				9BD9442901B6906FFBDC15C4CAC551B7 /* GetTourDefinationListRequestModel.swift in Sources */,
 				85B1D239F9A45192F899BAE4F508C7CE /* GetTourDefinationListResponseModel.swift in Sources */,
+				BF0CD2C6232F4E7D004A2E06 /* SaveVoucherCustomerLinkResponseModel.swift in Sources */,
 				85BB9CDEE8A7EAC04E619C0E8E07EE02 /* GetTransferRequestModel.swift in Sources */,
 				6500128ACFCD64197E6C2B7BC3DC69DE /* GetTransferResponseModel.swift in Sources */,
 				96F8A81B2F45D8F9F32EDB7BFB4544E4 /* GetTripDetailByIdRequestModel.swift in Sources */,

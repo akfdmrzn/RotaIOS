@@ -59,21 +59,32 @@ public class Defaults{
     
     //CompanyID
     public func saveCompanyID(companyFlagId:Int = 0) -> Bool{ //Default olarak company ID hep 9 gönderiliyor bayrak seçimlerinden sonra ne yapılacağı belli değil
-        let preferences = UserDefaults.standard
-        let currentCompanyKey = getIdentifier(type: .CompanyID)
-        preferences.set(9, forKey: currentCompanyKey)
-        let didSave = preferences.synchronize()
-        return didSave
+        return true
+//        let preferences = UserDefaults.standard
+//        let currentCompanyKey = getIdentifier(type: .CompanyID)
+//        preferences.set(9, forKey: currentCompanyKey)
+//        let didSave = preferences.synchronize()
+//        return didSave
     }
     public func getCompanyID() -> Int{
-        let preferences = UserDefaults.standard
-        let currentCompanyKey = getIdentifier(type: .CompanyID)
         
-        if preferences.object(forKey: currentCompanyKey) == nil {
-            return 9
-        } else {
-            return preferences.integer(forKey: currentCompanyKey)
+        if (Bundle.main.bundleIdentifier?.elementsEqual("com.oti.sunmar"))! {
+            return 13
         }
+        else if (Bundle.main.bundleIdentifier?.elementsEqual("com.oti.coraltravel"))! {
+            return 9
+        }
+        else{
+            return 9
+        }
+//        let preferences = UserDefaults.standard
+//        let currentCompanyKey = getIdentifier(type: .CompanyID)
+//
+//        if preferences.object(forKey: currentCompanyKey) == nil {
+//            return 9
+//        } else {
+//            return preferences.integer(forKey: currentCompanyKey)
+//        }
     }
     
     //LanguageID

@@ -13,20 +13,23 @@ public class GetTripDetailByIdRequestModel:Mappable{
     
     public var id:String!
     public var birthDate:String!
+    public var voucherNumber:String?
     
     public required init?(map: Map) {
         
     }
     
-    public init(id:String,birthDate : String) {
+    public init(id: String, birthDate: String, voucherNumber: String? = nil) {
         self.id = id
         self.birthDate = birthDate
+        self.voucherNumber = voucherNumber
     }
     
     
     public func mapping(map: Map) {
         id <- map["ID"]
         birthDate <- map["BirthDate"]
+        voucherNumber <- map["VoucherNumber"]
     }
 }
 

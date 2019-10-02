@@ -198,11 +198,20 @@ public class Transfers: Mappable {
 
 public class Extras: Mappable {
     
+    public var extraServiceName = ""
+    public var extraServiceDateString = ""
+    public var saleDateString = ""
+    public var cancelStatus = ""
+    
     
     public required init?(map: Map){
     }
     
     public func mapping(map: Map) {
+        extraServiceName <- map["ExtraServiceName"]
+        extraServiceDateString <- map["ExtraServiceDateString"]
+        saleDateString <- map["SaleDateString"]
+        cancelStatus <- map["CancelStatus"]
     }
 }
 

@@ -169,6 +169,13 @@ public class Transfers: Mappable {
     public var guideName: String = ""
     public var guidePhoneNumber: String = ""
     public var isArrival : Bool = false
+    public var transferDirectionType: Int = 0
+    public var arrivalGuideName: String = ""
+    public var arrivalGuidePhone: String = ""
+    public var arrivalVoucherNo: String = ""
+    public var departureGuideName: String = ""
+    public var departureGuidePhone: String = ""
+    public var departureVoucherNo: String = ""
     
     public required init?(map: Map){
     }
@@ -181,6 +188,7 @@ public class Transfers: Mappable {
         arrivalTransferDateString <- map["ArrivalTransferDateString"]
         transferType <- map["TransferType"]
         transferDirection <- map["TransferDirection"]
+        transferDirectionType <- map["TransferDirectionType"]
         fromPointName <- map["FromPointName"]
         toPointName <- map["ToPointName"]
         transferTime <- map["TransferTime"]
@@ -195,6 +203,13 @@ public class Transfers: Mappable {
         vehiclePlate <- map["VehiclePlate"]
         guideName <- map["GuideName"]
         guidePhoneNumber <- map["GuidePhoneNumber"]
+        arrivalGuideName <- map["ArrivalGuideName"]
+        arrivalGuidePhone <- map["ArrivalGuidePhone"]
+        arrivalVoucherNo <- map["ArrivalVoucherNo"]
+        departureGuideName <- map["DepartureGuideName"]
+        departureGuidePhone <- map["DepartureGuidePhone"]
+        departureVoucherNo <- map["DepartureVoucherNo"]
+        
     }
 }
 

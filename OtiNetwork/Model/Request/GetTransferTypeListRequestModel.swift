@@ -8,7 +8,7 @@
 import Foundation
 import ObjectMapper
 
-class GetTransferTypeListRequestModel: Mappable{
+public class GetTransferTypeListRequestModel: Mappable{
     
     public var customerId:Int!
     

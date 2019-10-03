@@ -44,5 +44,6 @@ public enum ServiceEndPoint: String {
     case GetPDFData = "/api/Excursion/GetPdfAsync"
     case SaveVoucherCustomerLink = "/api/Integration/SaveVoucherCustomerLinkAsync"
     case DeleteVoucherCustomerLink = "/api/Integration/DeleteVoucherCustomerLinkAsync"
+    case GetTransferTypeList = "/api/Integration/GetTransferTypeListAsync"
 
 }

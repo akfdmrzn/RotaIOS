@@ -17,15 +17,7 @@ class ViewController: UIViewController {
         
         
         let loginData = LoginShortRequest.init(userEncrypted: "sad")
-        
-        NetworkManager.sendRequest(url : "sds",endPoint: .ShortLogin, requestModel: getBaseRequestData(data: loginData)) { (response: BaseResponse<LoginResponse>) in
-            if(response.isSuccess!) {
-                
-            }
-            else {
-                
-            }
-        }
+        self.showIndicator(tag: "0")
         
     }
 

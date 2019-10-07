@@ -25,6 +25,8 @@
 		0C5E11DE24DAA737704B355F5F2F3426 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768562B4E8BF8F1FB15862DE3E3CAD38 /* ParameterEncoding.swift */; };
 		0FF082D1672DD06F291EEDE3FEB518CB /* XCTestObservationCenter+Register.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E75A990CB1EE8F377BC90E4C075FF0 /* XCTestObservationCenter+Register.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		10238E06D7EF3CE4EAAFB180F4506DEF /* CustomerCreateResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA951438C90CFB1737D233253BF77D7 /* CustomerCreateResponseModel.swift */; };
+		110F0D002345FCDB00066130 /* GetTransferTypeListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110F0CFF2345FCDA00066130 /* GetTransferTypeListRequestModel.swift */; };
+		110F0D022345FD5900066130 /* GetTransferTypeListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110F0D012345FD5900066130 /* GetTransferTypeListResponseModel.swift */; };
 		11EDFDE1BC5494E14D6F81320FE3925F /* QuickConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 475EA356AFC21FF6B1F8B577E541DAF6 /* QuickConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1251ABF8613A45A93CF7198E944EFA1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83ECF03345520B27181BF4FD0FCFD3A /* Foundation.framework */; };
 		1270F4E601423EF36FE824207169002A /* CodableTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC9542B19438CB366FDB83BFBDECC65 /* CodableTransform.swift */; };
@@ -361,6 +363,8 @@
 		0FB0101902AC468EBB5368A2E0C05EC6 /* Quick-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Quick-Info.plist"; sourceTree = "<group>"; };
 		0FF6A4F7C5A93F214509337A4E210F10 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		1092EFEBF19677EDD3682CA4F1141E1D /* HexColorTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HexColorTransform.swift; path = Sources/HexColorTransform.swift; sourceTree = "<group>"; };
+		110F0CFF2345FCDA00066130 /* GetTransferTypeListRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransferTypeListRequestModel.swift; sourceTree = "<group>"; };
+		110F0D012345FD5900066130 /* GetTransferTypeListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransferTypeListResponseModel.swift; sourceTree = "<group>"; };
 		113E44D854A388C6B30C8905A0AAA29B /* Pods-OtiNetwork_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OtiNetwork_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1157FA711278EACA3B614FD0366B1495 /* GetGuideInfoOfTouristRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetGuideInfoOfTouristRequestModel.swift; sourceTree = "<group>"; };
 		11F03BD21A0910500AA1E51779B1B848 /* QuickSpecBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpecBase.h; path = Sources/QuickSpecBase/include/QuickSpecBase.h; sourceTree = "<group>"; };
@@ -841,6 +845,7 @@
 				BF10289C23151B38002FFE1E /* GetPDFRequestModel.swift */,
 				BF0CD2C2232F4E51004A2E06 /* SaveVoucherCustomerLinkRequestModel.swift */,
 				BF0CD2C7232F523A004A2E06 /* DeleteVoucherCustomerLinkRequestModel.swift */,
+				110F0CFF2345FCDA00066130 /* GetTransferTypeListRequestModel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1036,6 +1041,7 @@
 				BF10289E23151B49002FFE1E /* GetPDFResponseModel.swift */,
 				BF0CD2C5232F4E7D004A2E06 /* SaveVoucherCustomerLinkResponseModel.swift */,
 				BF0CD2C9232F535C004A2E06 /* DeleteVoucherCustomerLinkResponseModel.swift */,
+				110F0D012345FD5900066130 /* GetTransferTypeListResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1589,6 +1595,7 @@
 				741BC11C5EE2B364070BDBACDA44E5BE /* CheckMyTripRequestModel.swift in Sources */,
 				356474A41CA417C9CDCDAC1C52F510D6 /* CheckMyTripResponseModel.swift in Sources */,
 				3870E77424BA2D60B1E551825F3B2872 /* CreateFlightTicketRequestModel.swift in Sources */,
+				110F0D022345FD5900066130 /* GetTransferTypeListResponseModel.swift in Sources */,
 				FEAC18257916A525907D7D3795AA89BF /* CreateFlightTicketResponseModel.swift in Sources */,
 				62B33F4228768A4511601D97878792B0 /* CreateInsuranceDocumentRequestModel.swift in Sources */,
 				3EE72702C84E2411E3D3378F0156B2AD /* CreateInsuranceDocumentResponseModel.swift in Sources */,
@@ -1645,6 +1652,7 @@
 				96F8A81B2F45D8F9F32EDB7BFB4544E4 /* GetTripDetailByIdRequestModel.swift in Sources */,
 				DA2B26699095986E652A3163BFC59301 /* GetWeatherRequestModel.swift in Sources */,
 				F4E21E5058357E022C30016AD294E4DF /* GetWeatherResponseModel.swift in Sources */,
+				110F0D002345FCDB00066130 /* GetTransferTypeListRequestModel.swift in Sources */,
 				49DC822A0CD8C547F8821F2EA32F608E /* LoginRequest.swift in Sources */,
 				7FB14A827CD16997F007F74B01D60E9C /* LoginResponse.swift in Sources */,
 				FBCA687435B1D15A1AA893F41C3FA8AC /* LoginShortRequest.swift in Sources */,

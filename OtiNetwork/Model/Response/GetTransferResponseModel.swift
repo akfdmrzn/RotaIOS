@@ -10,6 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class GetTransferResponseModel : Mappable {
+    
     public var id : Int?
     public var transferDate : String?
     public var transferDateString : String?
@@ -19,18 +20,20 @@ public class GetTransferResponseModel : Mappable {
     public var transferDirection : String?
     public var fromPointName : String?
     public var toPointName : String?
-    public var transferTime : String?
     public var route : String?
-    public var departurePoint : String?
     public var cancelStatus : String?
+    public var departurePoint : String?
     public var arrivalTransferTime : String?
     public var departureTransferTime : String?
-    public var pickupTime : String?
-    public var pickupPoint : String?
-    public var vehiclePoint : String?
     public var vehiclePlate : String?
     public var guideName : String?
     public var guidePhoneNumber : String?
+    public var arrivalGuideName: String?
+    public var arrivalGuidePhone: String?
+    public var arrivalVoucherNo: String?
+    public var departureGuideName: String?
+    public var departureGuidePhone: String?
+    public var departureVoucherNo: String?
     
     public required init?(map: Map) {
         
@@ -47,18 +50,20 @@ public class GetTransferResponseModel : Mappable {
         transferDirection <- map["TransferDirection"]
         fromPointName <- map["FromPointName"]
         toPointName <- map["ToPointName"]
-        transferTime <- map["TransferTime"]
         route <- map["Route"]
-        departurePoint <- map["DeparturePoint"]
         cancelStatus <- map["CancelStatus"]
+        departurePoint <- map["DeparturePoint"]
         arrivalTransferTime <- map["ArrivalTransferTime"]
         departureTransferTime <- map["DepartureTransferTime"]
-        pickupTime <- map["PickupTime"]
-        pickupPoint <- map["PickupPoint"]
-        vehiclePoint <- map["VehiclePoint"]
         vehiclePlate <- map["VehiclePlate"]
         guideName <- map["GuideName"]
         guidePhoneNumber <- map["GuidePhoneNumber"]
+        arrivalGuideName <- map["ArrivalGuideName"]
+        arrivalGuidePhone <- map["ArrivalGuidePhone"]
+        arrivalVoucherNo <- map["ArrivalVoucherNo"]
+        departureGuideName <- map["DepartureGuideName"]
+        departureGuidePhone <- map["DepartureGuidePhone"]
+        departureVoucherNo <- map["DepartureVoucherNo"]
     }
     
 }

@@ -38,8 +38,6 @@ public class CheckMyTripResponseModel: Mappable {
     public var givenDateIntoTheEmbassyString = ""
     public var recordDate = ""
     public var previewHotelStatus = false
-    public var previewFlightStatus = false
-    public var previewInsuranceStatus = false
     public var recordDateString = ""
     public var hotels: [Hotels] = []
     public var flights: [Flights] = []
@@ -88,8 +86,6 @@ public class CheckMyTripResponseModel: Mappable {
         insurances <- map["Insurances"]
         agency <- map["Agency"]
         previewHotelStatus <- map["PreviewHotelStatus"]
-        previewFlightStatus <- map["PreviewFlightStatus"]
-        previewInsuranceStatus <- map["PreviewInsuranceStatus"]
         agencyStuff <- map["AgencyStaff"]
     }
 }
@@ -129,6 +125,7 @@ public class Insurances: Mappable {
     public var franchiseAmount = 0
     public var franchiseCurrency = ""
     public var cancelStatus = ""
+    public var previewInsuranceStatus = false
     
     
     public required init?(map: Map){
@@ -148,6 +145,7 @@ public class Insurances: Mappable {
         franchiseAmount <- map["FranchiseAmount"]
         franchiseCurrency <- map["FranchiseCurrency"]
         cancelStatus <- map["CancelStatus"]
+        previewInsuranceStatus <- map["PreviewInsuranceStatus"]
     }
 }
 
@@ -279,6 +277,7 @@ public class Flights: Mappable {
     public var direction = 0
     public var directionName = ""
     public var isConnectedFlight = false
+    public var previewFlightStatus = false
     
     public required init?(map: Map){
     }
@@ -310,6 +309,7 @@ public class Flights: Mappable {
         cancelStatus <- map["CancelStatus"]
         direction <- map["Direction"]
         directionName <- map["DirectionName"]
+        previewFlightStatus <- map["PreviewFlightStatus"]
     }
 }
 

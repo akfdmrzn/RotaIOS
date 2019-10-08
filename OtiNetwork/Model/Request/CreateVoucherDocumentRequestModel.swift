@@ -12,17 +12,20 @@ import ObjectMapper
 public class CreateVoucherDocumentRequestModel: Mappable {
     
     public var voucherNumber: Int?
-    
+    public var agencyStaff: Int?
+
     public required init?(map: Map) {
         
     }
     
-    public init(voucherNumber: Int?) {
+    public init(voucherNumber: Int?,agencyStaff : Int?) {
         self.voucherNumber = voucherNumber
+        self.agencyStaff = agencyStaff
     }
     
     public func mapping(map: Map) {
         voucherNumber <- map["VoucherNumber"]
+        agencyStaff <- map["AgencyStaff"]
     }
     
 }

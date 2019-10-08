@@ -47,6 +47,7 @@ public class CheckMyTripResponseModel: Mappable {
     public var transfers: [Transfers] = []
     public var insurances: [Insurances] = []
     public var agency: Agency?
+    public var agencyStuff: Int = 0
     
     public required init?(map: Map){
         
@@ -89,6 +90,7 @@ public class CheckMyTripResponseModel: Mappable {
         previewHotelStatus <- map["PreviewHotelStatus"]
         previewFlightStatus <- map["PreviewFlightStatus"]
         previewInsuranceStatus <- map["PreviewInsuranceStatus"]
+        agencyStuff <- map["AgencyStaff"]
     }
 }
 

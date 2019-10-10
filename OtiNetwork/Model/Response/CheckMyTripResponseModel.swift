@@ -176,10 +176,10 @@ public class Transfers: Mappable {
     public var transferDirectionType: Int = 0
     public var arrivalGuideName: String = ""
     public var arrivalGuidePhone: String = ""
-    public var arrivalVoucherNo: String = ""
+    public var arrivalVehiclePlate: String = ""
     public var departureGuideName: String = ""
     public var departureGuidePhone: String = ""
-    public var departureVoucherNo: String = ""
+    public var departureVehiclePlate: String = ""
     
     public required init?(map: Map){
     }
@@ -209,10 +209,10 @@ public class Transfers: Mappable {
         guidePhoneNumber <- map["GuidePhoneNumber"]
         arrivalGuideName <- map["ArrivalGuideName"]
         arrivalGuidePhone <- map["ArrivalGuidePhone"]
-        arrivalVoucherNo <- map["ArrivalVoucherNo"]
+        arrivalVehiclePlate <- map["ArrivalVehiclePlate"]
         departureGuideName <- map["DepartureGuideName"]
         departureGuidePhone <- map["DepartureGuidePhone"]
-        departureVoucherNo <- map["DepartureVoucherNo"]
+        departureVehiclePlate <- map["DepartureVehiclePlate"]
         
     }
 }

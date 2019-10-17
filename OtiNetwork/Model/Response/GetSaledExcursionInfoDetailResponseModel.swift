@@ -27,6 +27,7 @@ public class GetSaledExcursionInfoDetailResponseModel: Mappable {
     public var promotionId: Int?
     public var promotionName: String?
     public var guideName: String?
+    public var secondGuideName: String?
     public var guidePhoneNumber: String?
     public var vehicleName: String?
     public var vehiclePlate: String?
@@ -58,6 +59,7 @@ public class GetSaledExcursionInfoDetailResponseModel: Mappable {
         promotionId <- map["PromotionId"]
         promotionName <- map["PromotionName"]
         guideName <- map["GuideName"]
+        secondGuideName <- map["SecondGuideName"]
         guidePhoneNumber <- map["GuidePhoneNumber"]
         vehicleName <- map["VehicleName"]
         vehiclePlate <- map["VehiclePlate"]

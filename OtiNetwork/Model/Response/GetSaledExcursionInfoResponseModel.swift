@@ -21,6 +21,7 @@ public class GetSaledExcursionInfoResponseModel: Mappable {
     public var tourDate: String?
     public var tourDateString: String?
     public var imageUrl: String = ""
+    public var rate: Int?
     
     public required init?(map: Map) {
         
@@ -37,6 +38,7 @@ public class GetSaledExcursionInfoResponseModel: Mappable {
         tourDate <- map["TourDate"]
         tourDateString <- map["TourDateString"]
         imageUrl <- map["ImageUrl"]
+        rate <- map["Rate"]
     }
     
 }

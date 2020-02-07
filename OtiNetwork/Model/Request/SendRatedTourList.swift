@@ -16,23 +16,26 @@ public class SendRatedTourList: Mappable {
     public var partnerNumber:Int!
     public var value:Int!
     public var valueString:String!
+    public var type: Int?
     
     public required init?(map: Map) {
         
     }
     
-    public init(customerId:Int,tourId :String,partnerNumber : Int,value : Int) {
+    public init(customerId: Int, tourId: String, partnerNumber: Int, value: Int, type: Int? = nil) {
         self.customerId = customerId
         self.tourId = tourId
         self.partnerNumber = partnerNumber
         self.value = value
+        self.type = type
     }
     
-    public init(customerId:Int,tourId :String,partnerNumber : Int,valueString : String) {
+    public init(customerId: Int, tourId: String, partnerNumber: Int, valueString: String, type: Int? = nil) {
         self.customerId = customerId
         self.tourId = tourId
         self.partnerNumber = partnerNumber
         self.valueString = valueString
+        self.type = type
     }
     
     public func mapping(map: Map) {
@@ -41,6 +44,7 @@ public class SendRatedTourList: Mappable {
         partnerNumber <- map["PartnerNumber"]
         value <- map["Value"]
         valueString <- map["Value"]
+        type <- map["Type"]
     }
     
 }

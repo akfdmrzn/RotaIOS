@@ -12,6 +12,8 @@ import ObjectMapper
 public class SendRatedTourList: Mappable {
     
     public var customerId:Int!
+    public var touristId:Int!
+    public var incomingId:Int!
     public var tourId:String!
     public var partnerNumber:Int!
     public var value:Int!
@@ -22,16 +24,20 @@ public class SendRatedTourList: Mappable {
         
     }
     
-    public init(customerId: Int, tourId: String, partnerNumber: Int, value: Int, type: Int? = nil) {
+    public init(customerId: Int, touristId: Int, incomingId: Int, tourId: String, partnerNumber: Int, value: Int, type: Int? = nil) {
         self.customerId = customerId
+        self.touristId = touristId
+        self.incomingId = incomingId
         self.tourId = tourId
         self.partnerNumber = partnerNumber
         self.value = value
         self.type = type
     }
     
-    public init(customerId: Int, tourId: String, partnerNumber: Int, valueString: String, type: Int? = nil) {
+    public init(customerId: Int, touristId: Int, incomingId: Int, tourId: String, partnerNumber: Int, valueString: String, type: Int? = nil) {
         self.customerId = customerId
+        self.touristId = touristId
+        self.incomingId = incomingId
         self.tourId = tourId
         self.partnerNumber = partnerNumber
         self.valueString = valueString
@@ -45,6 +51,8 @@ public class SendRatedTourList: Mappable {
         value <- map["Value"]
         valueString <- map["Value"]
         type <- map["Type"]
+        touristId <- map["TouristId"]
+        incomingId <- map["IncomingId"]
     }
     
 }

@@ -44,6 +44,24 @@ public class SendRatedTourList: Mappable {
         self.type = type
     }
     
+    // Bu fonksiyon rate your excursion eklendikten sonra gereksiz hale gelecek, eski versiyonu desteklemek amaçlı eklendi.
+    public init(customerId: Int, tourId: String, partnerNumber: Int, value: Int, type: Int? = nil) {
+        self.customerId = customerId
+        self.tourId = tourId
+        self.partnerNumber = partnerNumber
+        self.value = value
+        self.type = type
+    }
+    
+    // Bu fonksiyon rate your excursion eklendikten sonra gereksiz hale gelecek, eski versiyonu desteklemek amaçlı eklendi.
+    public init(customerId: Int, tourId: String, partnerNumber: Int, valueString: String, type: Int? = nil) {
+        self.customerId = customerId
+        self.tourId = tourId
+        self.partnerNumber = partnerNumber
+        self.valueString = valueString
+        self.type = type
+    }
+    
     public func mapping(map: Map) {
         customerId <- map["CustomerId"]
         tourId <- map["TourId"]

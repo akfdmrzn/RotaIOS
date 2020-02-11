@@ -25,6 +25,11 @@ public class GetSaledExcursionInfoRequestModel: Mappable {
         self.customerId = customerId
     }
     
+    // Bu fonksiyon rate your excursion eklendikten sonra gereksiz hale gelecek, eski versiyonu desteklemek amaçlı eklendi.
+    public init(incomingId: Int?) {
+        self.incomingId = incomingId
+    }
+    
     public func mapping(map: Map) {
         incomingId <- map["IncomingId"]
         touristId <- map["TouristId"]

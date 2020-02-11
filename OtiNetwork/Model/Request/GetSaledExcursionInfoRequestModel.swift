@@ -26,8 +26,9 @@ public class GetSaledExcursionInfoRequestModel: Mappable {
     }
     
     // Bu fonksiyon rate your excursion eklendikten sonra gereksiz hale gelecek, eski versiyonu desteklemek amaçlı eklendi.
-    public init(incomingId: Int?) {
+    public init(incomingId: Int?, touristId: Int?) {
         self.incomingId = incomingId
+        self.touristId = touristId
     }
     
     public func mapping(map: Map) {

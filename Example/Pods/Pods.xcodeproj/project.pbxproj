@@ -27,7 +27,6 @@
 		10238E06D7EF3CE4EAAFB180F4506DEF /* CustomerCreateResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA951438C90CFB1737D233253BF77D7 /* CustomerCreateResponseModel.swift */; };
 		110F0D002345FCDB00066130 /* GetTransferTypeListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110F0CFF2345FCDA00066130 /* GetTransferTypeListRequestModel.swift */; };
 		110F0D022345FD5900066130 /* GetTransferTypeListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110F0D012345FD5900066130 /* GetTransferTypeListResponseModel.swift */; };
-		1167FBD723F2854E0079AA3E /* ExtensionBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1167FBD623F2854E0079AA3E /* ExtensionBundle.swift */; };
 		11EDFDE1BC5494E14D6F81320FE3925F /* QuickConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 475EA356AFC21FF6B1F8B577E541DAF6 /* QuickConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1251ABF8613A45A93CF7198E944EFA1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83ECF03345520B27181BF4FD0FCFD3A /* Foundation.framework */; };
 		1270F4E601423EF36FE824207169002A /* CodableTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC9542B19438CB366FDB83BFBDECC65 /* CodableTransform.swift */; };
@@ -368,7 +367,6 @@
 		110F0D012345FD5900066130 /* GetTransferTypeListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransferTypeListResponseModel.swift; sourceTree = "<group>"; };
 		113E44D854A388C6B30C8905A0AAA29B /* Pods-OtiNetwork_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OtiNetwork_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1157FA711278EACA3B614FD0366B1495 /* GetGuideInfoOfTouristRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GetGuideInfoOfTouristRequestModel.swift; sourceTree = "<group>"; };
-		1167FBD623F2854E0079AA3E /* ExtensionBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionBundle.swift; sourceTree = "<group>"; };
 		11F03BD21A0910500AA1E51779B1B848 /* QuickSpecBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpecBase.h; path = Sources/QuickSpecBase/include/QuickSpecBase.h; sourceTree = "<group>"; };
 		124E635708EE4C34928924089969371D /* ObjectMapper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ObjectMapper-Info.plist"; sourceTree = "<group>"; };
 		12686F8502F60B59D75C03F905BC2778 /* LoginResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -982,7 +980,6 @@
 			children = (
 				7AC3B50F9CD72234128A1E064BDA919B /* BaseMessageItem.swift */,
 				F5BA437E5F527A6F875FA4AA2E76037E /* ExtensionUIDevice.swift */,
-				1167FBD623F2854E0079AA3E /* ExtensionBundle.swift */,
 			);
 			name = Extension;
 			path = OtiNetwork/Extension;
@@ -1581,7 +1578,6 @@
 				2C61B040BA6A9A7AE66C4D9BA26D5520 /* SessionDelegate.swift in Sources */,
 				931BBB8230A25161D5C37528A8F9FECF /* SessionManager.swift in Sources */,
 				AFC64B1097F7355FF423D6A73E9C7210 /* TaskDelegate.swift in Sources */,
-				1167FBD723F2854E0079AA3E /* ExtensionBundle.swift in Sources */,
 				933FDA5970AA525D6CB92BFEBA2BAB4A /* Timeline.swift in Sources */,
 				53791F5E5F07400F92CFDFC89A432305 /* Validation.swift in Sources */,
 			);

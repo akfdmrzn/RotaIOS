@@ -85,13 +85,13 @@ extension UIViewController {
         let systemVersion = UIDevice.current.systemVersion
         let deviceModel = UIDevice.current.modelName
         //DeviceId; Phone Type (IOS, Android);Version; Operator Type (TT,Vodafone,Turkcell); Connection Type(Mobil,Wi-Fi)”
-        return BaseApiRequestBody.init(token: baseData.getTokenResponse.token!, languageId: userDefaultsData.getLanguageId(), mobilInformation: "\(userDefaultsData.getDeviceId() ?? "");\(deviceModel);iOS;\(systemVersion); Wifi;",data: data)
+        return BaseApiRequestBody.init(token: baseData.getTokenResponse.token!, languageId: userDefaultsData.getLanguageId(), mobilInformation: "\(userDefaultsData.getDeviceId() ?? "");\(deviceModel);iOS;\(systemVersion); Wifi; \(Bundle.main.versionNumber)",data: data)
     }
     
     public func getBaseRequestArrayData<T:Mappable> (dataArray:[T])-> BaseApiRequestBody<T>{
         let systemVersion = UIDevice.current.systemVersion
         let deviceModel = UIDevice.current.modelName
-        let baseApiRequestBodyModel = BaseApiRequestBody.init(token: baseData.getTokenResponse.token!, languageId: userDefaultsData.getLanguageId(), mobilInformation: "\(deviceModel);iOS;\(systemVersion); Wifi;", dataArray: dataArray)
+        let baseApiRequestBodyModel = BaseApiRequestBody.init(token: baseData.getTokenResponse.token!, languageId: userDefaultsData.getLanguageId(), mobilInformation: "\(deviceModel);iOS;\(systemVersion); Wifi; \(Bundle.main.versionNumber)", dataArray: dataArray)
         baseApiRequestBodyModel.dataArray = dataArray
         return baseApiRequestBodyModel
     }

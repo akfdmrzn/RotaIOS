@@ -17,7 +17,6 @@ public class SendRatedTourList: Mappable {
     public var tourId:String!
     public var partnerNumber:Int!
     public var value:Int!
-    public var valueString:String!
     public var type: Int?
     
     public required init?(map: Map) {
@@ -34,13 +33,12 @@ public class SendRatedTourList: Mappable {
         self.type = type
     }
     
-    public init(customerId: Int, touristId: Int, incomingId: Int, tourId: String, partnerNumber: Int, valueString: String, type: Int? = nil) {
+    public init(customerId: Int, touristId: Int, incomingId: Int, tourId: String, partnerNumber: Int, type: Int? = nil) {
         self.customerId = customerId
         self.touristId = touristId
         self.incomingId = incomingId
         self.tourId = tourId
         self.partnerNumber = partnerNumber
-        self.valueString = valueString
         self.type = type
     }
     
@@ -54,11 +52,10 @@ public class SendRatedTourList: Mappable {
     }
     
     // Bu fonksiyon rate your excursion eklendikten sonra gereksiz hale gelecek, eski versiyonu desteklemek amaçlı eklendi.
-    public init(customerId: Int, tourId: String, partnerNumber: Int, valueString: String, type: Int? = nil) {
+    public init(customerId: Int, tourId: String, partnerNumber: Int, type: Int? = nil) {
         self.customerId = customerId
         self.tourId = tourId
         self.partnerNumber = partnerNumber
-        self.valueString = valueString
         self.type = type
     }
     
@@ -67,7 +64,6 @@ public class SendRatedTourList: Mappable {
         tourId <- map["TourId"]
         partnerNumber <- map["PartnerNumber"]
         value <- map["Value"]
-        valueString <- map["Value"]
         type <- map["Type"]
         touristId <- map["TouristId"]
         incomingId <- map["IncomingId"]

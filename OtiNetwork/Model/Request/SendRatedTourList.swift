@@ -16,14 +16,14 @@ public class SendRatedTourList: Mappable {
     public var incomingId:Int!
     public var tourId:String!
     public var partnerNumber:Int!
-    public var value:Int!
+    public var value:String?
     public var type: Int?
     
     public required init?(map: Map) {
         
     }
     
-    public init(customerId: Int, touristId: Int, incomingId: Int, tourId: String, partnerNumber: Int, value: Int, type: Int? = nil) {
+    public init(customerId: Int, touristId: Int, incomingId: Int, tourId: String, partnerNumber: Int, value: String?, type: Int? = nil) {
         self.customerId = customerId
         self.touristId = touristId
         self.incomingId = incomingId
@@ -33,29 +33,12 @@ public class SendRatedTourList: Mappable {
         self.type = type
     }
     
-    public init(customerId: Int, touristId: Int, incomingId: Int, tourId: String, partnerNumber: Int, type: Int? = nil) {
-        self.customerId = customerId
-        self.touristId = touristId
-        self.incomingId = incomingId
-        self.tourId = tourId
-        self.partnerNumber = partnerNumber
-        self.type = type
-    }
-    
     // Bu fonksiyon rate your excursion eklendikten sonra gereksiz hale gelecek, eski versiyonu desteklemek amaçlı eklendi.
-    public init(customerId: Int, tourId: String, partnerNumber: Int, value: Int, type: Int? = nil) {
+    public init(customerId: Int, tourId: String, partnerNumber: Int, value: String?, type: Int? = nil) {
         self.customerId = customerId
         self.tourId = tourId
         self.partnerNumber = partnerNumber
         self.value = value
-        self.type = type
-    }
-    
-    // Bu fonksiyon rate your excursion eklendikten sonra gereksiz hale gelecek, eski versiyonu desteklemek amaçlı eklendi.
-    public init(customerId: Int, tourId: String, partnerNumber: Int, type: Int? = nil) {
-        self.customerId = customerId
-        self.tourId = tourId
-        self.partnerNumber = partnerNumber
         self.type = type
     }
     

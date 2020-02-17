@@ -164,7 +164,6 @@ public class Transfers: Mappable {
     public var route = ""
     public var departurePoint = ""
     public var cancelStatus = ""
-    public var arrivalTransferTime = ""
     public var departureTransferTime = ""
     public var pickupTime: String = ""
     public var pickupPoint: String = ""
@@ -199,7 +198,6 @@ public class Transfers: Mappable {
         route <- map["Route"]
         departurePoint <- map["DeparturePoint"]
         cancelStatus <- map["CancelStatus"]
-        arrivalTransferTime <- map["ArrivalTransferTime"]
         departureTransferTime <- map["DepartureTransferTime"]
         pickupTime <- map["PickupTime"]
         pickupPoint <- map["PickupPoint"]

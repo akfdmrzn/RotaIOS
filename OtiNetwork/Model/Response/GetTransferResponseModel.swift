@@ -23,7 +23,6 @@ public class GetTransferResponseModel : Mappable {
     public var route : String?
     public var cancelStatus : String?
     public var departurePoint : String?
-    public var arrivalTransferTime : String?
     public var departureTransferTime : String?
     public var vehiclePlate : String?
     public var guideName : String?
@@ -53,7 +52,6 @@ public class GetTransferResponseModel : Mappable {
         route <- map["Route"]
         cancelStatus <- map["CancelStatus"]
         departurePoint <- map["DeparturePoint"]
-        arrivalTransferTime <- map["ArrivalTransferTime"]
         departureTransferTime <- map["DepartureTransferTime"]
         vehiclePlate <- map["VehiclePlate"]
         guideName <- map["GuideName"]

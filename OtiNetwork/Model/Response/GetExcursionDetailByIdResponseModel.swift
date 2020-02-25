@@ -125,6 +125,7 @@ public class ExtraInfo : Mappable {
 
 public class CancellationAndRefundPolicy : Mappable {
     public var voucherDescription: String?
+    public var tourDescription: String?
     public var rule: String?
     
     public required init?(map: Map) {
@@ -133,6 +134,7 @@ public class CancellationAndRefundPolicy : Mappable {
     
     public func mapping(map: Map) {
         voucherDescription <- map["VoucherDescription"]
+        tourDescription <- map["TourDescription"]
         rule <- map["Rule"]
     }
     

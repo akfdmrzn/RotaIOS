@@ -19,6 +19,7 @@ public class CustomerSendActiveCodeResponseModel: Mappable {
     public var surname = ""
     public var companyId  = 0
     public var activeCode  = ""
+    public var resultDescription  = ""
     
     public required init?(map: Map) {
         
@@ -33,6 +34,7 @@ public class CustomerSendActiveCodeResponseModel: Mappable {
         userEncrypted <- map["customer.UserEncrypted"]
         companyId <- map["customer.CompanyId"]
         activeCode <- map["ActiveCode"]
+        resultDescription <- map["Description"]
     }
 }
 

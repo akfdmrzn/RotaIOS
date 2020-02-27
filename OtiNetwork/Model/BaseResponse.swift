@@ -12,7 +12,6 @@ public class BaseResponse<T:Mappable >:Mappable{
     public var token :String?
     public var isSuccess :Bool?
     public var threadGuid :String?
-    public var responseDescription :String?
     public var baseMessageList :BaseMessageItem?
     public var dataArray: [T]?
     public var dataObject: T?
@@ -28,7 +27,6 @@ public class BaseResponse<T:Mappable >:Mappable{
         baseMessageList <- map["BaseMessage"]
         dataObject <- map["Data"]
         dataArray <- map["Data"]
-        responseDescription <- map["Description"]
         
     }
     

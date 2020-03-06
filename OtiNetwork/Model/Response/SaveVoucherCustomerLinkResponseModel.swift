@@ -13,6 +13,7 @@ public class SaveVoucherCustomerLinkResponseModel : Mappable {
     public var voucher : Int = 0
     public var customer : Int = 0
     public var touristId : Int = 0
+    public var message : String = ""
     
     public required init?(map: Map) {
         
@@ -24,6 +25,7 @@ public class SaveVoucherCustomerLinkResponseModel : Mappable {
         customer <- map["Customer"]
         voucher <- map["ID"]
         touristId <- map["TouristID"]
+        message <- map["Message"]
     }
     
 }

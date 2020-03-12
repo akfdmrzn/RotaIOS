@@ -14,20 +14,23 @@ public class CreateInsuranceDocumentRequestModel: Mappable {
     public var voucherNumber: Int?
     public var voucherInsuranceDetailNumber: Int?
     public var agencyStaff: Int?
+    public var touristNumber: Int?
     
     public required init?(map: Map) {
         
     }
     
-    public init(voucherNumber: Int,voucherInsuranceDetailNumber: Int,agencyStaff : Int) {
+    public init(voucherNumber: Int,voucherInsuranceDetailNumber: Int,agencyStaff : Int,touristNumber : Int) {
         self.voucherNumber = voucherNumber
         self.voucherInsuranceDetailNumber = voucherInsuranceDetailNumber
         self.agencyStaff = agencyStaff
+        self.touristNumber = touristNumber
     }
     
     public func mapping(map: Map) {
         voucherNumber <- map["VoucherNumber"]
         voucherInsuranceDetailNumber <- map["VoucherInsuranceDetailIDs"]
         agencyStaff <- map["AgencyStaff"]
+        touristNumber <- map["TouristNumber"]
     }
 }

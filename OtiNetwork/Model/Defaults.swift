@@ -73,8 +73,14 @@ public class Defaults{
         if (Bundle.main.bundleIdentifier?.elementsEqual("com.oti.sunmar"))! {
             return 13
         }
-        else if (Bundle.main.bundleIdentifier?.elementsEqual("com.oti.coraltravel"))! {
+        else if (Bundle.main.bundleIdentifier?.elementsEqual("com.oti.coral.ru"))! {
             return 9
+        }
+        else if (Bundle.main.bundleIdentifier?.elementsEqual("com.oti.coral.poland"))! {
+            return 3
+        }
+        else if (Bundle.main.bundleIdentifier?.elementsEqual("com.oti.coral.ua"))! {
+            return 10
         }
         else{
             return 9

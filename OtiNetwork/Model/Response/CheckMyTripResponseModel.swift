@@ -263,6 +263,7 @@ public class BaggageExtra: Mappable {
     public var salePrice = 0
     public var saleCurrencyName = ""
     public var cancel = false
+    public var baggageType = 0
     
     public required init(){
         
@@ -287,6 +288,7 @@ public class BaggageExtra: Mappable {
         salePrice <- map["SalePrice"]
         saleCurrencyName <- map["SaleCurrencyName"]
         cancel <- map["Cancel"]
+        baggageType <- map["BaggageType"]
     }
 }
 

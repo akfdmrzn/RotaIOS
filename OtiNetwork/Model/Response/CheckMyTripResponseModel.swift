@@ -264,6 +264,10 @@ public class BaggageExtra: Mappable {
     public var saleCurrencyName = ""
     public var cancel = false
     
+    public required init(){
+        
+    }
+    
     public required init?(map: Map){
     }
     

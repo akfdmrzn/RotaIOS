@@ -246,6 +246,46 @@ public class Extras: Mappable {
     }
 }
 
+public class BaggageExtra: Mappable {
+    
+    public var baggageTypeName = ""
+    public var baggageAmount = 0
+    public var baggageUnitName = ""
+    public var id = 0
+    public var saleDate = ""
+    public var extraServiceDate = ""
+    public var saleDateString = ""
+    public var extraServiceDateString = ""
+    public var extraServiceTime = ""
+    public var extraServiceName = ""
+    public var extraServiceDetail = ""
+    public var cancelStatus = ""
+    public var salePrice = 0
+    public var saleCurrencyName = ""
+    public var cancel = false
+    
+    public required init?(map: Map){
+    }
+    
+    public func mapping(map: Map) {
+        baggageTypeName <- map["BaggageTypeName"]
+        baggageAmount <- map["BaggageAmount"]
+        baggageUnitName <- map["BaggageUnitName"]
+        id <- map["ID"]
+        saleDate <- map["SaleDate"]
+        extraServiceDate <- map["ExtraServiceDate"]
+        saleDateString  <- map["SaleDateString"]
+        extraServiceDateString <- map["ExtraServiceDateString"]
+        extraServiceTime <- map["ExtraServiceTime"]
+        extraServiceName <- map["ExtraServiceName"]
+        extraServiceDetail <- map["ExtraServiceDetail"]
+        cancelStatus <- map["CancelStatus"]
+        salePrice <- map["SalePrice"]
+        saleCurrencyName <- map["SaleCurrencyName"]
+        cancel <- map["Cancel"]
+    }
+}
+
 public class Flights: Mappable {
     
     public var iD = 0
@@ -276,6 +316,11 @@ public class Flights: Mappable {
     public var directionName = ""
     public var isConnectedFlight = false
     public var previewFlightStatus = false
+    public var baggageAllowanceFree = ""
+    public var baggageIncludedFree = ""
+    public var cabinBaggageAllowanceFree = ""
+    public var cabinBaggageIncludedFree = ""
+    public var baggageExtraList : [BaggageExtra] = []
     
     public required init?(map: Map){
     }
@@ -308,6 +353,11 @@ public class Flights: Mappable {
         direction <- map["Direction"]
         directionName <- map["DirectionName"]
         previewFlightStatus <- map["PreviewFlightStatus"]
+        baggageAllowanceFree <- map["BaggageAllowanceFree"]
+        baggageIncludedFree <- map["BaggageIncludedFree"]
+        cabinBaggageAllowanceFree <- map["CabinBaggageAllowanceFree"]
+        cabinBaggageIncludedFree <- map["CabinBaggageIncludedFree"]
+        baggageExtraList <- map["BaggageExtraList"]
     }
 }
 

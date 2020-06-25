@@ -12,10 +12,15 @@ import ObjectMapper
 
 public class NetworkManager {
     
+    static var networkConnectionEnabled = true
     private static let TIMEOUT_INTERVAL: TimeInterval = 300
     
     public static func sendRequest<T: Mappable>(url: String,endPoint: ServiceEndPoint, method: HTTPMethod = .post, requestModel: Mappable, indicatorEnabled: Bool = true,
                                          completion: @escaping(T) -> ()) {
+        
+        if !networkConnectionEnabled {
+            return
+        }
         
         guard let request = prepareRequest(url : url,endPoint: endPoint, method: method, requestModel: requestModel),
             let viewController = UIApplication.getTopViewController()
@@ -43,6 +48,10 @@ public class NetworkManager {
     
     public static func sendRequest<T: Mappable>(url : String,endPoint: ServiceEndPoint, method: HTTPMethod = .post, parameters: Parameters? = nil, indicatorEnabled: Bool = true,
                                          completion: @escaping(T) -> ()) {
+        
+        if !networkConnectionEnabled {
+            return
+        }
         
         guard let request = prepareRequest(url : url,endPoint: endPoint, method: method, parameters: parameters),
             let viewController = UIApplication.getTopViewController()
@@ -97,6 +106,10 @@ public class NetworkManager {
     
     public static func sendGetRequest<T: Mappable>(url:String,endPoint: ServiceEndPoint, method: HTTPMethod, parameters: [String], indicatorEnabled: Bool = true,
                                             completion: @escaping(T) -> ()) {
+        
+        if !networkConnectionEnabled {
+            return
+        }
         
         var urlPath = url + endPoint.rawValue
         

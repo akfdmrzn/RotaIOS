@@ -12,7 +12,7 @@ import ObjectMapper
 
 public class NetworkManager {
     
-    static var networkConnectionEnabled = true
+    private static var networkConnectionEnabled = true
     private static let TIMEOUT_INTERVAL: TimeInterval = 300
     
     public static func sendRequest<T: Mappable>(url: String,endPoint: ServiceEndPoint, method: HTTPMethod = .post, requestModel: Mappable, indicatorEnabled: Bool = true,

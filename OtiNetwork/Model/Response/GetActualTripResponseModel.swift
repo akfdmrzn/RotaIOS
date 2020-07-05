@@ -29,6 +29,7 @@ public class GetActualTripResponseModel: Mappable {
     public var hotelImageUrl = ""
     public var touristId = 0
     public var incomingId = 0
+    public var excursionActivedStatus = false
     
     public required init?(map: Map){
     }
@@ -52,6 +53,7 @@ public class GetActualTripResponseModel: Mappable {
         hotelImageUrl <- map["ImageUrl"]
         touristId <- map["TouristId"]
         incomingId <- map["IncomingId"]
+        excursionActivedStatus <- map["ExcursionActivedStatus"]
     }
 }
 

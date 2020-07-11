@@ -15,6 +15,7 @@ public class GetTransferResponseModel : Mappable {
     public var transferDate : String?
     public var transferDateString : String?
     public var arrivalTransferDate : String?
+    public var arrivalTransferTime : String?
     public var arrivalTransferDateString : String?
     public var transferType : String?
     public var transferDirection : String?
@@ -45,6 +46,7 @@ public class GetTransferResponseModel : Mappable {
         transferDateString <- map["TransferDateString"]
         arrivalTransferDate <- map["ArrivalTransferDate"]
         arrivalTransferDateString <- map["ArrivalTransferDateString"]
+        arrivalTransferTime <- map["ArrivalTransferTime"]
         transferType <- map["TransferType"]
         transferDirection <- map["TransferDirection"]
         fromPointName <- map["FromPointName"]

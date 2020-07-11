@@ -156,6 +156,7 @@ public class Transfers: Mappable {
     public var transferDateString = ""
     public var arrivalTransferDate = ""
     public var arrivalTransferDateString = ""
+    public var arrivalTransferTime = ""
     public var transferType = ""
     public var transferDirection = ""
     public var fromPointName = ""
@@ -189,6 +190,7 @@ public class Transfers: Mappable {
         transferDateString <- map["TransferDateString"]
         arrivalTransferDate <- map["ArrivalTransferDate"]
         arrivalTransferDateString <- map["ArrivalTransferDateString"]
+        arrivalTransferTime <- map["ArrivalTransferTime"]
         transferType <- map["TransferType"]
         transferDirection <- map["TransferDirection"]
         transferDirectionType <- map["TransferDirectionType"]

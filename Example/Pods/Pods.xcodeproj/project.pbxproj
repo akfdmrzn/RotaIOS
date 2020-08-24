@@ -197,6 +197,8 @@
 		BF1028A023151BEA002FFE1E /* GetPDFRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10289C23151B38002FFE1E /* GetPDFRequestModel.swift */; };
 		BF1028A123151BF0002FFE1E /* GetPDFResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10289E23151B49002FFE1E /* GetPDFResponseModel.swift */; };
 		BF162FE488440AC9824E22EF6BD760FC /* DSL+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F812F05576FA8B6EF5EB05BFBCA159 /* DSL+Wait.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		BFA424BF24F3B7B7001628ED /* GetBarcodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA424BD24F3B761001628ED /* GetBarcodeResponseModel.swift */; };
+		BFA424C024F3B919001628ED /* GetBarcodeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA424BB24F3B373001628ED /* GetBarcodeRequestModel.swift */; };
 		C098C153F2988A344EAD8EE4C0CDF882 /* PostNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD02B89A8D848CC5686C0A791F63C75 /* PostNotification.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		C0B393B80CD971349123D9F02DFDD554 /* ImmutableMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC90C5EFB883771F7204A13515A321 /* ImmutableMappable.swift */; };
 		C42E25AEAE4758760D9239D25E88FEAF /* CwlCatchException.h in Headers */ = {isa = PBXBuildFile; fileRef = A855B84706ABBC8CB8B3EDBF4B1884D6 /* CwlCatchException.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -565,6 +567,8 @@
 		BF0CD2C9232F535C004A2E06 /* DeleteVoucherCustomerLinkResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteVoucherCustomerLinkResponseModel.swift; sourceTree = "<group>"; };
 		BF10289C23151B38002FFE1E /* GetPDFRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPDFRequestModel.swift; sourceTree = "<group>"; };
 		BF10289E23151B49002FFE1E /* GetPDFResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPDFResponseModel.swift; sourceTree = "<group>"; };
+		BFA424BB24F3B373001628ED /* GetBarcodeRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBarcodeRequestModel.swift; sourceTree = "<group>"; };
+		BFA424BD24F3B761001628ED /* GetBarcodeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBarcodeResponseModel.swift; sourceTree = "<group>"; };
 		BFCCC230B9A2CFCA70CA3E9DC4E1CB4D /* AssertionDispatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionDispatcher.swift; path = Sources/Nimble/Adapters/AssertionDispatcher.swift; sourceTree = "<group>"; };
 		C0597E7ABB137646DD796B1B1CA1DF94 /* MatcherFunc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherFunc.swift; path = Sources/Nimble/Matchers/MatcherFunc.swift; sourceTree = "<group>"; };
 		C08077BD069C563D717050D5A533DE0F /* BeNil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeNil.swift; path = Sources/Nimble/Matchers/BeNil.swift; sourceTree = "<group>"; };
@@ -846,6 +850,7 @@
 				BF0CD2C2232F4E51004A2E06 /* SaveVoucherCustomerLinkRequestModel.swift */,
 				BF0CD2C7232F523A004A2E06 /* DeleteVoucherCustomerLinkRequestModel.swift */,
 				110F0CFF2345FCDA00066130 /* GetTransferTypeListRequestModel.swift */,
+				BFA424BB24F3B373001628ED /* GetBarcodeRequestModel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1042,6 +1047,7 @@
 				BF0CD2C5232F4E7D004A2E06 /* SaveVoucherCustomerLinkResponseModel.swift */,
 				BF0CD2C9232F535C004A2E06 /* DeleteVoucherCustomerLinkResponseModel.swift */,
 				110F0D012345FD5900066130 /* GetTransferTypeListResponseModel.swift */,
+				BFA424BD24F3B761001628ED /* GetBarcodeResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1642,6 +1648,7 @@
 				B5DC1950D9E4812761B4514082C71222 /* GetSaledExcursionInfoDetailResponseModel.swift in Sources */,
 				9D4B8E73DACC0DF557BA218E466E0A23 /* GetSaledExcursionInfoRequestModel.swift in Sources */,
 				011262BB96A50E5F2CDC634B425F1064 /* GetSaledExcursionInfoResponseModel.swift in Sources */,
+				BFA424BF24F3B7B7001628ED /* GetBarcodeResponseModel.swift in Sources */,
 				F2C9CE05A072D5A4BB42285E4F21E221 /* GetTourDefinationComboListRequestModel.swift in Sources */,
 				346A7407FC800197346C75E0490468F9 /* GetTourDefinationComboListResponseModel.swift in Sources */,
 				9BD9442901B6906FFBDC15C4CAC551B7 /* GetTourDefinationListRequestModel.swift in Sources */,
@@ -1655,6 +1662,7 @@
 				110F0D002345FCDB00066130 /* GetTransferTypeListRequestModel.swift in Sources */,
 				49DC822A0CD8C547F8821F2EA32F608E /* LoginRequest.swift in Sources */,
 				7FB14A827CD16997F007F74B01D60E9C /* LoginResponse.swift in Sources */,
+				BFA424C024F3B919001628ED /* GetBarcodeRequestModel.swift in Sources */,
 				FBCA687435B1D15A1AA893F41C3FA8AC /* LoginShortRequest.swift in Sources */,
 				7ECE22F88A3BC37908F9FBDDDEACC0C3 /* NetworkManager.swift in Sources */,
 				DCA34003004859FB50CE8EC8A0DCA8DD /* OtiNetwork-dummy.m in Sources */,

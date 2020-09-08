@@ -180,6 +180,7 @@ public class Transfers: Mappable {
     public var departureGuideName: String = ""
     public var departureGuidePhone: String = ""
     public var departureVehiclePlate: String = ""
+    public var pickupPlace: String?
     
     public required init?(map: Map){
     }
@@ -213,6 +214,7 @@ public class Transfers: Mappable {
         departureGuideName <- map["DepartureGuideName"]
         departureGuidePhone <- map["DepartureGuidePhone"]
         departureVehiclePlate <- map["DepartureVehiclePlate"]
+        pickupPlace <- map["PickUpPlace"]
         
     }
 }

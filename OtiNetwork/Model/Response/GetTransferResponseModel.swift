@@ -34,6 +34,7 @@ public class GetTransferResponseModel : Mappable {
     public var departureGuideName: String?
     public var departureGuidePhone: String?
     public var departureVehiclePlate: String?
+    public var pickupPlace: String?
     
     public required init?(map: Map) {
         
@@ -64,6 +65,7 @@ public class GetTransferResponseModel : Mappable {
         departureGuideName <- map["DepartureGuideName"]
         departureGuidePhone <- map["DepartureGuidePhone"]
         departureVehiclePlate <- map["DepartureVehiclePlate"]
+        pickupPlace <- map["PickUpPlace"]
     }
     
 }

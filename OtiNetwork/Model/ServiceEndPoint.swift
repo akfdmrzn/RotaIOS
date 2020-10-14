@@ -46,5 +46,6 @@ public enum ServiceEndPoint: String {
     case DeleteVoucherCustomerLink = "/api/Integration/DeleteVoucherCustomerLinkAsync"
     case GetTransferTypeList = "/api/Integration/GetTransferTypeListAsync"
     case GetBarcode = "/api/Integration/GetBarcode"
+    case GetBonusLoyalty = "/api/Bonus/SaveAsync"
 
 }

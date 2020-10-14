@@ -197,6 +197,8 @@
 		BF1028A023151BEA002FFE1E /* GetPDFRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10289C23151B38002FFE1E /* GetPDFRequestModel.swift */; };
 		BF1028A123151BF0002FFE1E /* GetPDFResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10289E23151B49002FFE1E /* GetPDFResponseModel.swift */; };
 		BF162FE488440AC9824E22EF6BD760FC /* DSL+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F812F05576FA8B6EF5EB05BFBCA159 /* DSL+Wait.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		BF5EF2BD2536D42400EF1AFA /* GetBonusLoyaltyRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF2BC2536D42400EF1AFA /* GetBonusLoyaltyRequestModel.swift */; };
+		BF5EF2C72536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF2C62536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift */; };
 		BFA424BF24F3B7B7001628ED /* GetBarcodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA424BD24F3B761001628ED /* GetBarcodeResponseModel.swift */; };
 		BFA424C024F3B919001628ED /* GetBarcodeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA424BB24F3B373001628ED /* GetBarcodeRequestModel.swift */; };
 		C098C153F2988A344EAD8EE4C0CDF882 /* PostNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD02B89A8D848CC5686C0A791F63C75 /* PostNotification.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -567,6 +569,8 @@
 		BF0CD2C9232F535C004A2E06 /* DeleteVoucherCustomerLinkResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteVoucherCustomerLinkResponseModel.swift; sourceTree = "<group>"; };
 		BF10289C23151B38002FFE1E /* GetPDFRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPDFRequestModel.swift; sourceTree = "<group>"; };
 		BF10289E23151B49002FFE1E /* GetPDFResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPDFResponseModel.swift; sourceTree = "<group>"; };
+		BF5EF2BC2536D42400EF1AFA /* GetBonusLoyaltyRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBonusLoyaltyRequestModel.swift; sourceTree = "<group>"; };
+		BF5EF2C62536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBonusLoyaltyResponseModel.swift; sourceTree = "<group>"; };
 		BFA424BB24F3B373001628ED /* GetBarcodeRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBarcodeRequestModel.swift; sourceTree = "<group>"; };
 		BFA424BD24F3B761001628ED /* GetBarcodeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBarcodeResponseModel.swift; sourceTree = "<group>"; };
 		BFCCC230B9A2CFCA70CA3E9DC4E1CB4D /* AssertionDispatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionDispatcher.swift; path = Sources/Nimble/Adapters/AssertionDispatcher.swift; sourceTree = "<group>"; };
@@ -851,6 +855,7 @@
 				BF0CD2C7232F523A004A2E06 /* DeleteVoucherCustomerLinkRequestModel.swift */,
 				110F0CFF2345FCDA00066130 /* GetTransferTypeListRequestModel.swift */,
 				BFA424BB24F3B373001628ED /* GetBarcodeRequestModel.swift */,
+				BF5EF2BC2536D42400EF1AFA /* GetBonusLoyaltyRequestModel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1048,6 +1053,7 @@
 				BF0CD2C9232F535C004A2E06 /* DeleteVoucherCustomerLinkResponseModel.swift */,
 				110F0D012345FD5900066130 /* GetTransferTypeListResponseModel.swift */,
 				BFA424BD24F3B761001628ED /* GetBarcodeResponseModel.swift */,
+				BF5EF2C62536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1655,6 +1661,7 @@
 				85B1D239F9A45192F899BAE4F508C7CE /* GetTourDefinationListResponseModel.swift in Sources */,
 				BF0CD2C6232F4E7D004A2E06 /* SaveVoucherCustomerLinkResponseModel.swift in Sources */,
 				85BB9CDEE8A7EAC04E619C0E8E07EE02 /* GetTransferRequestModel.swift in Sources */,
+				BF5EF2BD2536D42400EF1AFA /* GetBonusLoyaltyRequestModel.swift in Sources */,
 				6500128ACFCD64197E6C2B7BC3DC69DE /* GetTransferResponseModel.swift in Sources */,
 				96F8A81B2F45D8F9F32EDB7BFB4544E4 /* GetTripDetailByIdRequestModel.swift in Sources */,
 				DA2B26699095986E652A3163BFC59301 /* GetWeatherRequestModel.swift in Sources */,
@@ -1666,6 +1673,7 @@
 				FBCA687435B1D15A1AA893F41C3FA8AC /* LoginShortRequest.swift in Sources */,
 				7ECE22F88A3BC37908F9FBDDDEACC0C3 /* NetworkManager.swift in Sources */,
 				DCA34003004859FB50CE8EC8A0DCA8DD /* OtiNetwork-dummy.m in Sources */,
+				BF5EF2C72536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift in Sources */,
 				432275A9740FBB9697AB762445DE0B37 /* SaveFavoriteRequestModel.swift in Sources */,
 				E544A23D4C7D9920F1E3EF8C51603515 /* SaveFavoriteResponseModel.swift in Sources */,
 				3DE31CFEA809B9A33254D82093A722E9 /* SendRatedResultResponseModel.swift in Sources */,

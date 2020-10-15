@@ -11,7 +11,7 @@ import ObjectMapper
 public class GetBonusLoyaltyRequestModel: Mappable{
     
     public var customerId:String!
-    public var gender:Int!
+    public var gender:Any!
     public var name:String!
     public var surname:String!
     public var patronymic:String!
@@ -26,7 +26,7 @@ public class GetBonusLoyaltyRequestModel: Mappable{
         
     }
     
-    public init(customerId: String,gender : Int,name : String,surname:String,patronymic : String,dateofbirth : String,mobilePhone : String,city :String,email :String,rulesStatus : Bool,termsAndConditionStatus : Bool) {
+    public init(customerId: String,gender : Any,name : String,surname:String,patronymic : String,dateofbirth : String,mobilePhone : String,city :String,email :String,rulesStatus : Bool,termsAndConditionStatus : Bool) {
         self.customerId = customerId
         self.gender = gender
         self.name = name

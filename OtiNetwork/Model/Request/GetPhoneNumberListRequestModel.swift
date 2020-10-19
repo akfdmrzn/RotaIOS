@@ -15,12 +15,15 @@ public class GetPhoneNumberListRequestModel:Mappable{
     public var languageId:Int!
     public var incomingId:Int!
     public var coralTouristId:Int!
+    public var areaName:String!
+    public var flightStartDate:String!
+    public var flightEndDate:String!
     
     public required init?(map: Map) {
         
     }
     
-    public init(companyId:Int,languageId :Int,incomingId : Int,coralTouristId : Int) {
+    public init(companyId:Int,languageId :Int,incomingId : Int,coralTouristId : Int,areaName : String,flightStartDate : String,flightEndDate : String) {
         self.companyId = companyId
         self.languageId = languageId
         self.incomingId = incomingId
@@ -33,6 +36,9 @@ public class GetPhoneNumberListRequestModel:Mappable{
         languageId <- map["LanguageId"]
         coralTouristId <- map["CoralTouristId"]
         incomingId <- map["IncomingId"]
+        areaName <- map["AreaName"]
+        flightStartDate <- map["FlightStartDate"]
+        flightEndDate <- map["FlightEndDate"]
         
     }
 }

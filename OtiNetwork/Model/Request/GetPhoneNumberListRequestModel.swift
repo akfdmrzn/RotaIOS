@@ -28,6 +28,9 @@ public class GetPhoneNumberListRequestModel:Mappable{
         self.languageId = languageId
         self.incomingId = incomingId
         self.coralTouristId = coralTouristId
+        self.areaName = areaName
+        self.flightStartDate = flightStartDate
+        self.flightEndDate = flightEndDate
     }
     
     

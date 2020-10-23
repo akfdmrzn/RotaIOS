@@ -22,6 +22,7 @@ public class GetGuideInfoOfTouristResponseModel : Mappable {
     public var guideName : String = ""
     public var guidePhone : String = ""
     public var guideImageLink : String = ""
+    public var speakTimeList : [SpeakTime] = []
     
     public required init?(map: Map) {
         
@@ -41,6 +42,35 @@ public class GetGuideInfoOfTouristResponseModel : Mappable {
         guideName <- map["GuideName"]
         guidePhone <- map["GuidePhone"]
         guideImageLink <- map["GuideImageLink"]
+        speakTimeList <- map["SpeakTime"]
+    }
+}
+public class SpeakTime: Mappable {
+    public var guideID = 0
+    public var guideName = ""
+    public var speakDate = ""
+    public var speakDateString = ""
+    public var startTime = ""
+    public var endTime = ""
+    public var hotelId = 0
+    public var hotelName = ""
+    
+    
+    
+    public required init?(map: Map) {
+        
     }
     
+    public func mapping(map: Map) {
+        
+        guideID <- map["GuideId"]
+        guideName <- map["GuideName"]
+        speakDate <- map["SpeakDate"]
+        speakDateString <- map["SpeakDateString"]
+        startTime <- map["StartTime"]
+        endTime <- map["EndTime"]
+        hotelId <- map["HotelId"]
+        hotelName <- map["HotelName"]
+        
+    }
 }

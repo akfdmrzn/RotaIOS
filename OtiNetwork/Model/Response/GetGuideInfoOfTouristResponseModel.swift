@@ -23,6 +23,9 @@ public class GetGuideInfoOfTouristResponseModel : Mappable {
     public var guidePhone : String = ""
     public var guideImageLink : String = ""
     public var speakTimeList : [SpeakTime] = []
+    public var firstTextDescription : String = ""
+    public var lastTextDescription : String = ""
+    public var emptyPageMessage : String = ""
     
     public required init?(map: Map) {
         
@@ -43,6 +46,10 @@ public class GetGuideInfoOfTouristResponseModel : Mappable {
         guidePhone <- map["GuidePhone"]
         guideImageLink <- map["GuideImageLink"]
         speakTimeList <- map["SpeakTime"]
+        firstTextDescription <- map["FirstTextDescription"]
+        lastTextDescription <- map["LastTextDescription"]
+        emptyPageMessage <- map["EmptyPageMessage"]
+        
     }
 }
 public class SpeakTime: Mappable {

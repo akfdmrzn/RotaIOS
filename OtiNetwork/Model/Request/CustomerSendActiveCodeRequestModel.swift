@@ -18,12 +18,12 @@ public class CustomerSendActiveCodeRequestModel:Mappable{
     public var surname:String!
     public var companyId:Int!
     public var isResend:Bool!
-    public var gender:Int!
+    public var gender:Any!
     
     public required init?(map: Map) {
         
     }
-    public init(email:String,mobilePhone:String,name : String,password : String,surname : String,companyId : Int,isResend : Bool,gender : Int) {
+    public init(email:String,mobilePhone:String,name : String,password : String,surname : String,companyId : Int,isResend : Bool,gender : Any) {
         self.email = email
         self.mobilePhone = mobilePhone
         self.name = name

@@ -31,7 +31,7 @@ public enum ServiceEndPoint: String {
     case GetTourDefinationComboList = "/api/Excursion/GetTourDefinationComboListAsync"
     case GetExcursionDetailById = "/api/Excursion/GetDetailByIdAsync"
     case GetTransfer = "/api/Integration/GetTransferAsync"
-    case GetWeather = "/api/Weather/GetAsync?WeatherDateStart=%0&WeatherDateEnd=%1&City=%2&Country=%3&LanguageId=%4"
+    case GetWeather = "/api/Weather/GetWeaterDetailAsync"
     case GetNotificationSearch = "/api/Notification/SearchAsync"
     case GetNotificationRead = "/api/Notification/ReadAsync"
     case GetSaledExcursionInfo = "/api/Excursion/GetSaledExcursionInfoAsync"

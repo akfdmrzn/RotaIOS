@@ -57,16 +57,29 @@ public class Weather : Mappable {
     public var temperatureMin : Int = 0
     public var validTimeLocal : String = ""
     public var validTimeUtc : Int = 0
-    public var cloudCover : String = ""
+    public var cloudCover : Int = 0
     public var dayOrNight : String = ""
     public var daypartName : String = ""
     public var iconCode : String = ""
-    public var iconCodeExtend : String = ""
+    public var iconCodeExtend : Int = 0
     public var daypartnarrative : String = ""
-    public var precipChance : String = ""
+    public var precipChance : Int = 0
     public var precipType : String = ""
-    public var daypartqpf : String = ""
-    public var daypartqpfSnow : String = ""
+    public var daypartqpf : Double = 0.0
+    public var daypartqpfSnow : Double = 0.0
+    public var relativeHumidity : Int = 0
+    public var snowRange : String = ""
+    public var temperature : Int = 0
+    public var temperatureHeatIndex : Int = 0
+    public var temperatureWindChill : Int = 0
+    public var thunderIndex : Int = 0
+    public var uvDescription : String = ""
+    public var uvIndex : Int = 0
+    public var windDirection : Int = 0
+    public var windDirectionCardinal : String = ""
+    public var windPhrase : String = ""
+    public var windSpeed : Int = 0
+    public var wxPhraseLong : String = ""
     public var imageUrl : String = ""
     
     public required init?(map: Map) {
@@ -105,6 +118,19 @@ public class Weather : Mappable {
         precipType <- map["precipType"]
         daypartqpf <- map["daypartqpf"]
         daypartqpfSnow <- map["daypartqpfSnow"]
+        relativeHumidity <- map["daypartqpfSnow"]
+        snowRange <- map["snowRange"]
+        temperature <- map["temperature"]
+        temperatureHeatIndex <- map["temperatureHeatIndex"]
+        temperatureWindChill <- map["temperatureWindChill"]
+        thunderIndex <- map["thunderIndex"]
+        uvDescription <- map["uvDescription"]
+        uvIndex <- map["uvIndex"]
+        windDirection <- map["windDirection"]
+        windDirectionCardinal <- map["windDirectionCardinal"]
+        windPhrase <- map["windPhrase"]
+        windSpeed <- map["windSpeed"]
+        wxPhraseLong <- map["wxPhraseLong"]
         imageUrl <- map["ImageUrl"]
         
     }

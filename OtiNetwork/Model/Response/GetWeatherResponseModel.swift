@@ -28,6 +28,7 @@ public class GetWeatherResponseModel : Mappable {
         weatherDate <- map["weaterDate"]
         country <- map["Country"]
         city <- map["City"]
+        weatherList <- map["Weater"]
        
         
     }

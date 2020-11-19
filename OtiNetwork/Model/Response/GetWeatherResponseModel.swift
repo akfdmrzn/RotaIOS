@@ -23,14 +23,11 @@ public class GetWeatherResponseModel : Mappable {
     
     public func mapping(map: Map) {
         
-        
-        
         weatherDate <- map["weaterDate"]
         country <- map["Country"]
         city <- map["City"]
         weatherList <- map["Weater"]
        
-        
     }
     
 }
@@ -70,6 +67,7 @@ public class Weather : Mappable {
     public var precipType : String = ""
     public var daypartqpf : String = ""
     public var daypartqpfSnow : String = ""
+    public var imageUrl : String = ""
     
     public required init?(map: Map) {
         
@@ -107,7 +105,7 @@ public class Weather : Mappable {
         precipType <- map["precipType"]
         daypartqpf <- map["daypartqpf"]
         daypartqpfSnow <- map["daypartqpfSnow"]
-
+        imageUrl <- map["ImageUrl"]
         
     }
     

@@ -118,7 +118,7 @@ public class Weather : Mappable {
         precipType <- map["precipType"]
         daypartqpf <- map["daypartqpf"]
         daypartqpfSnow <- map["daypartqpfSnow"]
-        relativeHumidity <- map["daypartqpfSnow"]
+        relativeHumidity <- map["relativeHumidity"]
         snowRange <- map["snowRange"]
         temperature <- map["temperature"]
         temperatureHeatIndex <- map["temperatureHeatIndex"]

@@ -47,5 +47,6 @@ public enum ServiceEndPoint: String {
     case GetTransferTypeList = "/api/Integration/GetTransferTypeListAsync"
     case GetBarcode = "/api/Integration/GetBarcode"
     case GetBonusLoyalty = "/api/Bonus/SaveAsync"
+    case GetExcursionIncomingId = "/api/Excursion/GetExcursionIncomingListAsync"
 
 }

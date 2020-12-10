@@ -34,6 +34,8 @@ public class CustomerSendActiveCodeRequestModel:Mappable{
         self.companyId = companyId
         self.isResend = isResend
         self.gender = gender
+        self.emailPermission = emailPermission
+        self.smsPermission = smsPermission
     }
     
     public func mapping(map: Map) {

@@ -19,11 +19,13 @@ public class CustomerSendActiveCodeRequestModel:Mappable{
     public var companyId:Int!
     public var isResend:Bool!
     public var gender:Any!
+    public var emailPermission: Bool!
+    public var smsPermission: Bool!
     
     public required init?(map: Map) {
         
     }
-    public init(email:String,mobilePhone:String,name : String,password : String,surname : String,companyId : Int,isResend : Bool,gender : Any) {
+    public init(email:String,mobilePhone:String,name : String,password : String,surname : String,companyId : Int,isResend : Bool,gender : Any, emailPermission: Bool, smsPermission: Bool) {
         self.email = email
         self.mobilePhone = mobilePhone
         self.name = name
@@ -43,6 +45,8 @@ public class CustomerSendActiveCodeRequestModel:Mappable{
         companyId <- map["CompanyId"]
         isResend <- map["IsResend"]
         gender <- map["Gender"]
+        emailPermission <- map["EmailPermission"]
+        smsPermission <- map["SmsPermission"]
     }
     
 }

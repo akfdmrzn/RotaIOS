@@ -22,7 +22,7 @@ public class CustomerControlActivateCodeRequestModel: Mappable {
         
     }
     
-    public init(mobilePhone:String,activeCode : String,email: String, pushNotificationPermission: Bool = true, emailPermission: Bool, smsPermission: Bool) {
+    public init(mobilePhone:String,activeCode : String,email: String, pushNotificationPermission: Bool = true, emailPermission: Bool = true, smsPermission: Bool = true) {
         self.mobilePhone = mobilePhone
         self.activeCode = activeCode
         self.email = email

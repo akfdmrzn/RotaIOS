@@ -25,7 +25,7 @@ public class CustomerSendActiveCodeRequestModel:Mappable{
     public required init?(map: Map) {
         
     }
-    public init(email:String,mobilePhone:String,name : String,password : String,surname : String,companyId : Int,isResend : Bool,gender : Any, emailPermission: Bool, smsPermission: Bool) {
+    public init(email:String,mobilePhone:String,name : String,password : String,surname : String,companyId : Int,isResend : Bool,gender : Any, emailPermission: Bool = true, smsPermission: Bool = true) {
         self.email = email
         self.mobilePhone = mobilePhone
         self.name = name

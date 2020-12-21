@@ -53,3 +53,7 @@ public class Parameter : Mappable {
     
 }
 
+public enum PermissionType {
+    case allowMail
+    case allowSms
+}

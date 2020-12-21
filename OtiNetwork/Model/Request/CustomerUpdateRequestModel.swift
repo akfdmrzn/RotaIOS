@@ -46,11 +46,6 @@ public class Parameter : Mappable {
         self.value = value
     }
     
-    public init(allowSmsName : String = "AllowCampaignSms", value : Bool) {
-        self.name = allowSmsName
-        self.value = value
-    }
-    
     public func mapping(map: Map) {
         name <- map["Name"]
         value <- map["Value"]

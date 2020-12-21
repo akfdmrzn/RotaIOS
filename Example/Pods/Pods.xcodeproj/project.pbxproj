@@ -201,6 +201,8 @@
 		BF5EF2C72536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF2C62536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift */; };
 		BF6209E9257632480032E80B /* GetExcursionIncomingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6209E8257632480032E80B /* GetExcursionIncomingListModel.swift */; };
 		BF6209F3257636550032E80B /* GetExcursionIncomingListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6209F2257636550032E80B /* GetExcursionIncomingListResponseModel.swift */; };
+		BF9A45D92590E63500ADE49B /* CustomerUpdateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A45D82590E63500ADE49B /* CustomerUpdateRequestModel.swift */; };
+		BF9A46022590EBAB00ADE49B /* CustomerUpdateResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A46012590EBAA00ADE49B /* CustomerUpdateResponseModel.swift */; };
 		BFA424BF24F3B7B7001628ED /* GetBarcodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA424BD24F3B761001628ED /* GetBarcodeResponseModel.swift */; };
 		BFA424C024F3B919001628ED /* GetBarcodeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA424BB24F3B373001628ED /* GetBarcodeRequestModel.swift */; };
 		C098C153F2988A344EAD8EE4C0CDF882 /* PostNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD02B89A8D848CC5686C0A791F63C75 /* PostNotification.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -575,6 +577,8 @@
 		BF5EF2C62536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBonusLoyaltyResponseModel.swift; sourceTree = "<group>"; };
 		BF6209E8257632480032E80B /* GetExcursionIncomingListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetExcursionIncomingListModel.swift; sourceTree = "<group>"; };
 		BF6209F2257636550032E80B /* GetExcursionIncomingListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetExcursionIncomingListResponseModel.swift; sourceTree = "<group>"; };
+		BF9A45D82590E63500ADE49B /* CustomerUpdateRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerUpdateRequestModel.swift; sourceTree = "<group>"; };
+		BF9A46012590EBAA00ADE49B /* CustomerUpdateResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerUpdateResponseModel.swift; sourceTree = "<group>"; };
 		BFA424BB24F3B373001628ED /* GetBarcodeRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBarcodeRequestModel.swift; sourceTree = "<group>"; };
 		BFA424BD24F3B761001628ED /* GetBarcodeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBarcodeResponseModel.swift; sourceTree = "<group>"; };
 		BFCCC230B9A2CFCA70CA3E9DC4E1CB4D /* AssertionDispatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionDispatcher.swift; path = Sources/Nimble/Adapters/AssertionDispatcher.swift; sourceTree = "<group>"; };
@@ -861,6 +865,7 @@
 				BFA424BB24F3B373001628ED /* GetBarcodeRequestModel.swift */,
 				BF5EF2BC2536D42400EF1AFA /* GetBonusLoyaltyRequestModel.swift */,
 				BF6209E8257632480032E80B /* GetExcursionIncomingListModel.swift */,
+				BF9A45D82590E63500ADE49B /* CustomerUpdateRequestModel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1060,6 +1065,7 @@
 				BFA424BD24F3B761001628ED /* GetBarcodeResponseModel.swift */,
 				BF5EF2C62536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift */,
 				BF6209F2257636550032E80B /* GetExcursionIncomingListResponseModel.swift */,
+				BF9A46012590EBAA00ADE49B /* CustomerUpdateResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1619,6 +1625,7 @@
 				3EE72702C84E2411E3D3378F0156B2AD /* CreateInsuranceDocumentResponseModel.swift in Sources */,
 				BB79E691522FA45447F0D7C4902A5AE0 /* CreateVoucherDocumentRequestModel.swift in Sources */,
 				EBAA631BE943BFA431F992B26A747C03 /* CreateVoucherDocumentResponseModel.swift in Sources */,
+				BF9A45D92590E63500ADE49B /* CustomerUpdateRequestModel.swift in Sources */,
 				6E285D0EABA2EFC520A6DD3BF09D9569 /* CustomerChangePasswordRequestModel.swift in Sources */,
 				BF1028A123151BF0002FFE1E /* GetPDFResponseModel.swift in Sources */,
 				230ADF7155EF2C01A7CBD7CAC6F156EE /* CustomerChangePasswordResponseModel.swift in Sources */,
@@ -1631,6 +1638,7 @@
 				30E3162427B2BCAE12E68AE6A19F3FE5 /* CustomerSendActiveCodeRequestModel.swift in Sources */,
 				3239768147A183EB8EFD42750E1D12B4 /* CustomerSendActiveCodeResponseModel.swift in Sources */,
 				39DB6B814AF5C14CF1E3B230EF1E170C /* Defaults.swift in Sources */,
+				BF9A46022590EBAB00ADE49B /* CustomerUpdateResponseModel.swift in Sources */,
 				5078D27EBDD9C4AE6997A4E09A7414FB /* ExtensionUIApplication.swift in Sources */,
 				B3BA585EF13D2EA44F596EE510F1A44A /* ExtensionUIDevice.swift in Sources */,
 				58D46C751DF2ACEB05A61CD31F200297 /* ExtensionUIViewController.swift in Sources */,

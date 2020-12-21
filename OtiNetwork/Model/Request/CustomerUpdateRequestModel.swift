@@ -36,8 +36,13 @@ public class Parameter : Mappable {
         
     }
     
-    public init(allowMailName : String = "AllowCampaignMail", value : Bool) {
-        self.name = allowMailName
+    public init(name : PermissionType, value : Bool) {
+        if name == .allowMail {
+            self.name = "AllowCampaignMail"
+        }
+        else{
+            self.name = "AllowCampaignSms"
+        }
         self.value = value
     }
     

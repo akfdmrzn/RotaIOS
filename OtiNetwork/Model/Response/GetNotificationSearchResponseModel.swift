@@ -18,12 +18,13 @@ public class GetNotificationSearchResponseModel: Mappable {
     public var createDateString:String!
     public var reservationId:Int!
     public var transferId:Int!
+    public var tourSaleId:Int!
     
     public required init?(map: Map) {
         
     }
     
-    public init(Id:Int,name :String,createDate : String,notificationType : Int,createDateString : String,transferId : Int,reservationId : Int) {
+    public init(Id:Int,name :String,createDate : String,notificationType : Int,createDateString : String,transferId : Int,reservationId : Int,tourSaleId : Int) {
         self.Id = Id
         self.name = name
         self.createDate = createDate
@@ -31,6 +32,7 @@ public class GetNotificationSearchResponseModel: Mappable {
         self.createDateString = createDateString
         self.reservationId = reservationId
         self.transferId = transferId
+        self.tourSaleId = tourSaleId
     }
     
     public func mapping(map: Map) {
@@ -41,6 +43,7 @@ public class GetNotificationSearchResponseModel: Mappable {
         createDateString <- map["CreateDateString"]
         reservationId <- map["ReservationId"]
         transferId <- map["TransferId"]
+        tourSaleId <- map["TourSaleId"]
     }
     
 }

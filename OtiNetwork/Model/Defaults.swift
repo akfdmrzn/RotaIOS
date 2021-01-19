@@ -21,6 +21,12 @@ public class Defaults{
         case IncomingID
         case TouristID
         case LastEmail
+        case ActualTrip
+        case PurschasedExcursions
+        case SurveyListTrip
+        case SurveyListExcursions
+        case SendRateTourListTrip
+        case SendRateTourListExcursion
     }
     
    public init(){}
@@ -85,14 +91,6 @@ public class Defaults{
         else{
             return 9
         }
-//        let preferences = UserDefaults.standard
-//        let currentCompanyKey = getIdentifier(type: .CompanyID)
-//
-//        if preferences.object(forKey: currentCompanyKey) == nil {
-//            return 9
-//        } else {
-//            return preferences.integer(forKey: currentCompanyKey)
-//        }
     }
     
     //LanguageID
@@ -233,6 +231,129 @@ public class Defaults{
         }
     }
     
+    public func saveActualTrip(myTrip:[GetActualTripResponseModel]){
+        let preferences = UserDefaults.standard
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(myTrip) {
+            preferences.set(encoded, forKey: getIdentifier(type: .ActualTrip))
+            preferences.synchronize()
+        }
+    }
+    
+    public func getActualTrip() -> [GetActualTripResponseModel]{
+        let preferences = UserDefaults.standard
+        let decoder = JSONDecoder()
+        if let savedPerson = preferences.object(forKey: getIdentifier(type: .ActualTrip)) as? Data {
+            if let loadedPerson = try? decoder.decode([GetActualTripResponseModel].self, from: savedPerson) {
+                return loadedPerson
+            }
+        }
+        return []
+    }
+    
+    public func savePurschasedExcursions(myTrip:[GetSaledExcursionInfoResponseModel]){
+        let preferences = UserDefaults.standard
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(myTrip) {
+            preferences.set(encoded, forKey: getIdentifier(type: .PurschasedExcursions))
+            preferences.synchronize()
+        }
+    }
+    
+    public func getPurschasedExcursions() -> [GetSaledExcursionInfoResponseModel]{
+        let preferences = UserDefaults.standard
+        let decoder = JSONDecoder()
+        if let savedPerson = preferences.object(forKey: getIdentifier(type: .PurschasedExcursions)) as? Data {
+            if let loadedPerson = try? decoder.decode([GetSaledExcursionInfoResponseModel].self, from: savedPerson) {
+                return loadedPerson
+            }
+        }
+        return []
+    }
+    
+    public func saveSurveyListTrip(myTrip:[GetListResponseModel]){
+        let preferences = UserDefaults.standard
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(myTrip) {
+            preferences.set(encoded, forKey: getIdentifier(type: .SurveyListTrip))
+            preferences.synchronize()
+        }
+    }
+    
+    public func getSurveyListTrip() -> [GetListResponseModel]{
+        let preferences = UserDefaults.standard
+        let decoder = JSONDecoder()
+        if let savedPerson = preferences.object(forKey: getIdentifier(type: .SurveyListTrip)) as? Data {
+            if let loadedPerson = try? decoder.decode([GetListResponseModel].self, from: savedPerson) {
+                return loadedPerson
+            }
+        }
+        return []
+    }
+    
+    
+    public func saveSurveyListExcursions(myTrip:[GetListResponseModel]){
+        let preferences = UserDefaults.standard
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(myTrip) {
+            preferences.set(encoded, forKey: getIdentifier(type: .SurveyListExcursions))
+            preferences.synchronize()
+        }
+    }
+    
+    public func getSurveyListExcursions() -> [GetListResponseModel]{
+        let preferences = UserDefaults.standard
+        let decoder = JSONDecoder()
+        if let savedPerson = preferences.object(forKey: getIdentifier(type: .SurveyListExcursions)) as? Data {
+            if let loadedPerson = try? decoder.decode([GetListResponseModel].self, from: savedPerson) {
+                return loadedPerson
+            }
+        }
+        return []
+    }
+    
+    public func saveRateModelTripList(myTrip:[SendRatedTourList]){
+        let preferences = UserDefaults.standard
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(myTrip) {
+            preferences.set(encoded, forKey: getIdentifier(type: .SendRateTourListTrip))
+            preferences.synchronize()
+        }
+    }
+    
+    public func getRateModelTripList() -> [SendRatedTourList]{
+        let preferences = UserDefaults.standard
+        let decoder = JSONDecoder()
+        if let savedPerson = preferences.object(forKey: getIdentifier(type: .SendRateTourListTrip)) as? Data {
+            if let loadedPerson = try? decoder.decode([SendRatedTourList].self, from: savedPerson) {
+                return loadedPerson
+            }
+        }
+        return []
+    }
+    
+    public func saveRateModelExcursionList(myTrip:[SendRatedTourList]){
+        let preferences = UserDefaults.standard
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(myTrip) {
+            preferences.set(encoded, forKey: getIdentifier(type: .SendRateTourListExcursion))
+            preferences.synchronize()
+        }
+    }
+    
+    public func getRateModelExcursionList() -> [SendRatedTourList]{
+        let preferences = UserDefaults.standard
+        let decoder = JSONDecoder()
+        if let savedPerson = preferences.object(forKey: getIdentifier(type: .SendRateTourListExcursion)) as? Data {
+            if let loadedPerson = try? decoder.decode([SendRatedTourList].self, from: savedPerson) {
+                return loadedPerson
+            }
+        }
+        return []
+    }
+    
+    
+    
     private  func  getIdentifier(type:DefaultsType)->String {
         switch type {
         case .User:
@@ -255,6 +376,18 @@ public class Defaults{
             return "LastEmail"
         case .FlagID:
             return "FlagIDSave"
+        case .ActualTrip:
+            return "ActualTrip"
+        case .PurschasedExcursions:
+            return "PurschasedExcursions"
+        case .SurveyListTrip:
+            return "SurveyListTrip"
+        case .SurveyListExcursions:
+            return "SurveyListExcursions"
+        case .SendRateTourListTrip:
+            return "SendRateTourListTrip"
+        case .SendRateTourListExcursion:
+            return "SendRateTourListExcursion"
         }
     }
 }

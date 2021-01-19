@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-public class GetActualTripResponseModel: Mappable {
+public class GetActualTripResponseModel: Mappable,Decodable,Encodable {
     
     public var iD: String = ""
     public var surveyStatus = false

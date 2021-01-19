@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-public class GetListResponseModel: Mappable {
+public class GetListResponseModel: Mappable,Decodable,Encodable {
     
     public var id = 0
     public var partnerNumber = 0
@@ -33,7 +33,7 @@ public class GetListResponseModel: Mappable {
     }
 }
 
-public class SubItem: Mappable {
+public class SubItem: Mappable,Decodable,Encodable {
     public var id = 0
     public var partnerNumber = 0
     public var name = ""

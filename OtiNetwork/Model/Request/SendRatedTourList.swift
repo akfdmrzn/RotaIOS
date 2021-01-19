@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-public class SendRatedTourList: Mappable {
+public class SendRatedTourList: Mappable,Decodable,Encodable {
     
     public var customerId:Int!
     public var touristId:Int!

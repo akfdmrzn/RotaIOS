@@ -18,7 +18,9 @@ class ViewController: UIViewController {
         
         let loginData = LoginShortRequest.init(userEncrypted: "sad")
         self.showIndicator(tag: "0")
-        
+        let saveactual = GetActualTripResponseModel.init(JSON: ["voucher":3])
+
+        print("")
     }
 
     override func didReceiveMemoryWarning() {

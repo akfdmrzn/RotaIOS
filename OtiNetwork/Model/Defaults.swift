@@ -271,7 +271,7 @@ public class Defaults{
         return []
     }
     
-    public func saveSurveyListTrip(myTrip:[GetListResponseModel]){
+    public func saveSurveyListTrip(myTrip:[[GetListResponseModel]]){
         let preferences = UserDefaults.standard
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(myTrip) {
@@ -280,11 +280,11 @@ public class Defaults{
         }
     }
     
-    public func getSurveyListTrip() -> [GetListResponseModel]{
+    public func getSurveyListTrip() -> [[GetListResponseModel]]{
         let preferences = UserDefaults.standard
         let decoder = JSONDecoder()
         if let savedPerson = preferences.object(forKey: getIdentifier(type: .SurveyListTrip)) as? Data {
-            if let loadedPerson = try? decoder.decode([GetListResponseModel].self, from: savedPerson) {
+            if let loadedPerson = try? decoder.decode([[GetListResponseModel]].self, from: savedPerson) {
                 return loadedPerson
             }
         }
@@ -292,7 +292,7 @@ public class Defaults{
     }
     
     
-    public func saveSurveyListExcursions(myTrip:[GetListResponseModel]){
+    public func saveSurveyListExcursions(myTrip:[[GetListResponseModel]]){
         let preferences = UserDefaults.standard
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(myTrip) {
@@ -301,18 +301,18 @@ public class Defaults{
         }
     }
     
-    public func getSurveyListExcursions() -> [GetListResponseModel]{
+    public func getSurveyListExcursions() -> [[GetListResponseModel]]{
         let preferences = UserDefaults.standard
         let decoder = JSONDecoder()
         if let savedPerson = preferences.object(forKey: getIdentifier(type: .SurveyListExcursions)) as? Data {
-            if let loadedPerson = try? decoder.decode([GetListResponseModel].self, from: savedPerson) {
+            if let loadedPerson = try? decoder.decode([[GetListResponseModel]].self, from: savedPerson) {
                 return loadedPerson
             }
         }
         return []
     }
     
-    public func saveRateModelTripList(myTrip:[SendRatedTourList]){
+    public func saveRateModelTripList(myTrip:[[SendRatedTourList]]){
         let preferences = UserDefaults.standard
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(myTrip) {
@@ -321,18 +321,18 @@ public class Defaults{
         }
     }
     
-    public func getRateModelTripList() -> [SendRatedTourList]{
+    public func getRateModelTripList() -> [[SendRatedTourList]]{
         let preferences = UserDefaults.standard
         let decoder = JSONDecoder()
         if let savedPerson = preferences.object(forKey: getIdentifier(type: .SendRateTourListTrip)) as? Data {
-            if let loadedPerson = try? decoder.decode([SendRatedTourList].self, from: savedPerson) {
+            if let loadedPerson = try? decoder.decode([[SendRatedTourList]].self, from: savedPerson) {
                 return loadedPerson
             }
         }
         return []
     }
     
-    public func saveRateModelExcursionList(myTrip:[SendRatedTourList]){
+    public func saveRateModelExcursionList(myTrip:[[SendRatedTourList]]){
         let preferences = UserDefaults.standard
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(myTrip) {
@@ -341,11 +341,11 @@ public class Defaults{
         }
     }
     
-    public func getRateModelExcursionList() -> [SendRatedTourList]{
+    public func getRateModelExcursionList() -> [[SendRatedTourList]]{
         let preferences = UserDefaults.standard
         let decoder = JSONDecoder()
         if let savedPerson = preferences.object(forKey: getIdentifier(type: .SendRateTourListExcursion)) as? Data {
-            if let loadedPerson = try? decoder.decode([SendRatedTourList].self, from: savedPerson) {
+            if let loadedPerson = try? decoder.decode([[SendRatedTourList]].self, from: savedPerson) {
                 return loadedPerson
             }
         }

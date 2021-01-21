@@ -27,6 +27,7 @@ public class Defaults{
         case SurveyListExcursions
         case SendRateTourListTrip
         case SendRateTourListExcursion
+        case CheckMyTripResponseModel
     }
     
    public init(){}
@@ -352,6 +353,26 @@ public class Defaults{
         return []
     }
     
+    public func saveCheckMyTripResponseList(myTrip:[CheckMyTripResponseModel]){
+        let preferences = UserDefaults.standard
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(myTrip) {
+            preferences.set(encoded, forKey: getIdentifier(type: .CheckMyTripResponseModel))
+            preferences.synchronize()
+        }
+    }
+    
+    public func getCheckMyTripResponseList() -> [CheckMyTripResponseModel]{
+        let preferences = UserDefaults.standard
+        let decoder = JSONDecoder()
+        if let savedPerson = preferences.object(forKey: getIdentifier(type: .CheckMyTripResponseModel)) as? Data {
+            if let loadedPerson = try? decoder.decode([CheckMyTripResponseModel].self, from: savedPerson) {
+                return loadedPerson
+            }
+        }
+        return []
+    }
+    
     
     
     private  func  getIdentifier(type:DefaultsType)->String {
@@ -388,6 +409,8 @@ public class Defaults{
             return "SendRateTourListTrip"
         case .SendRateTourListExcursion:
             return "SendRateTourListExcursion"
+        case .CheckMyTripResponseModel:
+            return "CheckMyTripResponseModel"
         }
     }
 }

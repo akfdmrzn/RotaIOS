@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-public class CheckMyTripResponseModel: Mappable {
+public class CheckMyTripResponseModel: Mappable,Decodable,Encodable {
     
     public var iD = 0
     public var birthDate = ""
@@ -33,7 +33,6 @@ public class CheckMyTripResponseModel: Mappable {
     public var visaStatus = false
     public var visaInfo = ""
     public var bringYourDocument = false
-    public var visaStatusName: Any?
     public var givenDateIntoTheEmbassy = ""
     public var givenDateIntoTheEmbassyString = ""
     public var recordDate = ""
@@ -46,6 +45,10 @@ public class CheckMyTripResponseModel: Mappable {
     public var insurances: [Insurances] = []
     public var agency: Agency?
     public var agencyStuff: Int = 0
+    
+    public init() {
+        
+    }
     
     public required init?(map: Map){
         
@@ -74,7 +77,6 @@ public class CheckMyTripResponseModel: Mappable {
         visaStatus <- map["VisaStatus"]
         visaInfo <- map["VisaInfo"]
         bringYourDocument <- map["BringYourDocument"]
-        visaStatusName <- map["VisaStatusName"]
         givenDateIntoTheEmbassy <- map["GivenDateIntoTheEmbassy"]
         givenDateIntoTheEmbassyString <- map["GivenDateIntoTheEmbassyString"]
         recordDate <- map["RecordDate"]
@@ -90,13 +92,18 @@ public class CheckMyTripResponseModel: Mappable {
     }
 }
 
-public class Agency: Mappable {
+public class Agency: Mappable,Decodable,Encodable {
     
     public var iD = 0
     public var name : String = ""
     public var address : String = ""
     public var email: String = ""
     public var phone: String = ""
+    
+    
+    public init() {
+        
+    }
     
     public required init?(map: Map){
     }
@@ -110,7 +117,7 @@ public class Agency: Mappable {
     }
 }
 
-public class Insurances: Mappable {
+public class Insurances: Mappable,Decodable,Encodable {
     
     public var iD = 0
     public var beginDate = ""
@@ -127,6 +134,10 @@ public class Insurances: Mappable {
     public var cancelStatus = ""
     public var previewInsuranceStatus = false
     
+    
+    public init() {
+        
+    }
     
     public required init?(map: Map){
     }
@@ -149,7 +160,7 @@ public class Insurances: Mappable {
     }
 }
 
-public class Transfers: Mappable {
+public class Transfers: Mappable,Decodable,Encodable {
     
     public var iD = 0
     public var transferDate = ""
@@ -181,6 +192,10 @@ public class Transfers: Mappable {
     public var departureGuidePhone: String = ""
     public var departureVehiclePlate: String = ""
     public var pickupPlace: String?
+    
+    public init() {
+        
+    }
     
     public required init?(map: Map){
     }
@@ -219,7 +234,7 @@ public class Transfers: Mappable {
     }
 }
 
-public class Extras: Mappable {
+public class Extras: Mappable,Decodable,Encodable {
     
     public var ID = 0
     public var extraServiceName = ""
@@ -232,6 +247,9 @@ public class Extras: Mappable {
     public var salePrice = 0
     public var saleCurrencyName = ""
     
+    public init() {
+        
+    }
     
     public required init?(map: Map){
     }
@@ -250,7 +268,7 @@ public class Extras: Mappable {
     }
 }
 
-public class BaggageExtra: Mappable {
+public class BaggageExtra: Mappable,Decodable,Encodable {
     
     public var baggageTypeName = ""
     public var baggageAmount = 0
@@ -269,7 +287,8 @@ public class BaggageExtra: Mappable {
     public var cancel = false
     public var baggageType = 0
     
-    public required init(){
+    
+    public init() {
         
     }
     
@@ -296,7 +315,7 @@ public class BaggageExtra: Mappable {
     }
 }
 
-public class Flights: Mappable {
+public class Flights: Mappable,Decodable,Encodable {
     
     public var iD = 0
     public var saleDate = ""
@@ -331,6 +350,10 @@ public class Flights: Mappable {
     public var cabinBaggageAllowanceFree = ""
     public var cabinBaggageIncludedFree = ""
     public var baggageExtraList : [BaggageExtra] = []
+    
+    public init() {
+        
+    }
     
     public required init?(map: Map){
     }
@@ -371,7 +394,7 @@ public class Flights: Mappable {
     }
 }
 
-public class Hotels: Mappable {
+public class Hotels: Mappable,Decodable,Encodable {
     
     public var iD = 0
     public var hotelID = 0
@@ -391,6 +414,11 @@ public class Hotels: Mappable {
     public var hotelPlace = ""
     public var countryName = ""
     public var imageUrl = ""
+    
+    
+    public init() {
+        
+    }
     
     public required init?(map: Map){
     }

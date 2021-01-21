@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-public class GetSaledExcursionInfoDetailResponseModel: Mappable {
+public class GetSaledExcursionInfoDetailResponseModel: Mappable,Decodable,Encodable {
     public var voucherNo: String?
     public var tourName: String?
     public var totalPax: Int?
@@ -71,7 +71,7 @@ public class GetSaledExcursionInfoDetailResponseModel: Mappable {
     
 }
 
-public class Tourist: Mappable {
+public class Tourist: Mappable,Decodable,Encodable {
     public var id: String?
     public var fullName: String?
     

@@ -21,8 +21,10 @@ public class Defaults{
         case IncomingID
         case TouristID
         case LastEmail
+        case LastPassword
         case ActualTrip
         case PurschasedExcursions
+        case PurschasedExcursionsDetails
         case SurveyListTrip
         case SurveyListExcursions
         case SendRateTourListTrip
@@ -146,6 +148,21 @@ public class Defaults{
         return data
     }
     
+    public func saveLastPassword(id:String){
+        let preferences = UserDefaults.standard
+        preferences.set( id , forKey:getIdentifier(type: .LastPassword))
+        preferences.synchronize()
+    }
+    
+    public func getLastPassword() -> String! {
+        let preferences = UserDefaults.standard
+        if preferences.object(forKey: getIdentifier(type: .LastPassword)) == nil {
+            return ""
+        }
+        let data:String = preferences.value(forKey: getIdentifier(type: .LastPassword)) as! String
+        return data
+    }
+    
     //FlagID
     public func saveFlagID(flagId:Int){
         let preferences = UserDefaults.standard
@@ -266,6 +283,26 @@ public class Defaults{
         let decoder = JSONDecoder()
         if let savedPerson = preferences.object(forKey: getIdentifier(type: .PurschasedExcursions)) as? Data {
             if let loadedPerson = try? decoder.decode([GetSaledExcursionInfoResponseModel].self, from: savedPerson) {
+                return loadedPerson
+            }
+        }
+        return []
+    }
+    
+    public func savePurschasedExcursionsDetails(myTrip:[GetSaledExcursionInfoDetailResponseModel]){
+        let preferences = UserDefaults.standard
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(myTrip) {
+            preferences.set(encoded, forKey: getIdentifier(type: .PurschasedExcursionsDetails))
+            preferences.synchronize()
+        }
+    }
+    
+    public func getPurschasedExcursionsDetails() -> [GetSaledExcursionInfoDetailResponseModel]{
+        let preferences = UserDefaults.standard
+        let decoder = JSONDecoder()
+        if let savedPerson = preferences.object(forKey: getIdentifier(type: .PurschasedExcursionsDetails)) as? Data {
+            if let loadedPerson = try? decoder.decode([GetSaledExcursionInfoDetailResponseModel].self, from: savedPerson) {
                 return loadedPerson
             }
         }
@@ -411,6 +448,11 @@ public class Defaults{
             return "SendRateTourListExcursion"
         case .CheckMyTripResponseModel:
             return "CheckMyTripResponseModel"
+        case .LastPassword:
+            return "LastPassword"
+        case .PurschasedExcursionsDetails:
+            return "PurschasedExcursionsDetails"
+        
         }
     }
 }

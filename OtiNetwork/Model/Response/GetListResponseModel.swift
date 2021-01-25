@@ -18,6 +18,7 @@ public class GetListResponseModel: Mappable,Decodable,Encodable {
     public var type = ""
     public var subItemState = false
     public var subItems: [SubItem] = []
+    public var tourSaleId: Int = 0 //I added for offline mode matching excursions
     
     public required init?(map: Map){
     }
@@ -30,6 +31,7 @@ public class GetListResponseModel: Mappable,Decodable,Encodable {
         type <- map["Type"]
         subItemState <- map["SubItemState"]
         subItems <- map["SubItems"]
+        tourSaleId <- map["tourSaleId"]
     }
 }
 

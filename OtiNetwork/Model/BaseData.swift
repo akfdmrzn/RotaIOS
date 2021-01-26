@@ -13,6 +13,6 @@ public class BaseData{
     
     public init(){}
     
-    public var getTokenResponse:BaseResponse<GetTokenResponse>!
+    public var getTokenResponse:BaseResponse<GetTokenResponse>?
     
 }

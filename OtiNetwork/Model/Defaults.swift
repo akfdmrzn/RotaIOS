@@ -150,19 +150,20 @@ public class Defaults{
         return data
     }
     
-    public func saveLastPassword(id:String){
+    public func saveLastEmail(lastEmail:String){
         let preferences = UserDefaults.standard
-        preferences.set( id , forKey:getIdentifier(type: .LastPassword))
+        let currentFlagKey = getIdentifier(type: .LastEmail)
+        preferences.set(lastEmail, forKey: currentFlagKey)
         preferences.synchronize()
     }
     
     public func getLastEmail() -> String{
         let preferences = UserDefaults.standard
-        let currentFlagKey = getIdentifier(type: .LastPassword)
+        let currentFlagKey = getIdentifier(type: .LastEmail)
         if preferences.object(forKey: currentFlagKey) == nil {
             return ""
         } else {
-            return preferences.value(forKey: getIdentifier(type: .LastPassword)) as! String
+            return preferences.value(forKey: getIdentifier(type: .LastEmail)) as! String
         }
     }
     
@@ -235,20 +236,19 @@ public class Defaults{
         }
     }
     
-    public func saveLastEmail(lastEmail:String){
+    public func saveLastPassword(id:String){
         let preferences = UserDefaults.standard
-        let currentFlagKey = getIdentifier(type: .LastEmail)
-        preferences.set(lastEmail, forKey: currentFlagKey)
+        preferences.set( id , forKey:getIdentifier(type: .LastPassword))
         preferences.synchronize()
     }
     
     public func getLastPassword() -> String{
         let preferences = UserDefaults.standard
-        let currentFlagKey = getIdentifier(type: .LastEmail)
+        let currentFlagKey = getIdentifier(type: .LastPassword)
         if preferences.object(forKey: currentFlagKey) == nil {
             return ""
         } else {
-            return preferences.value(forKey: getIdentifier(type: .LastEmail)) as! String
+            return preferences.value(forKey: getIdentifier(type: .LastPassword)) as! String
         }
     }
     

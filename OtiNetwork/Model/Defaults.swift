@@ -40,13 +40,15 @@ public class Defaults{
         let userDefaultsData:Defaults = Defaults()
         
         let tempMail = userDefaultsData.getLastEmail()
+        let tempPassword = userDefaultsData.getLastPassword()
         let lastDeviceId = userDefaultsData.getDeviceId() ?? ""
         let tempLanguageId = userDefaultsData.getLanguageId()
         if let appDomain = Bundle.main.bundleIdentifier {
             UserDefaults.standard.removePersistentDomain(forName: appDomain)
         }
-        _ = userDefaultsData.saveFlagChoosed(flagId: true)
+    
         userDefaultsData.saveLastEmail(lastEmail: tempMail)
+        userDefaultsData.saveLastPassword(id: tempPassword)
         userDefaultsData.saveLanguageId(languageId: tempLanguageId)
         userDefaultsData.saveDeviceId(id: lastDeviceId)
         
@@ -154,13 +156,14 @@ public class Defaults{
         preferences.synchronize()
     }
     
-    public func getLastPassword() -> String! {
+    public func getLastEmail() -> String{
         let preferences = UserDefaults.standard
-        if preferences.object(forKey: getIdentifier(type: .LastPassword)) == nil {
+        let currentFlagKey = getIdentifier(type: .LastPassword)
+        if preferences.object(forKey: currentFlagKey) == nil {
             return ""
+        } else {
+            return preferences.value(forKey: getIdentifier(type: .LastPassword)) as! String
         }
-        let data:String = preferences.value(forKey: getIdentifier(type: .LastPassword)) as! String
-        return data
     }
     
     //FlagID
@@ -239,7 +242,7 @@ public class Defaults{
         preferences.synchronize()
     }
     
-    public func getLastEmail() -> String{
+    public func getLastPassword() -> String{
         let preferences = UserDefaults.standard
         let currentFlagKey = getIdentifier(type: .LastEmail)
         if preferences.object(forKey: currentFlagKey) == nil {

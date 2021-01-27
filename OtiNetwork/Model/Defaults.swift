@@ -43,6 +43,11 @@ public class Defaults{
         let tempPassword = userDefaultsData.getLastPassword()
         let lastDeviceId = userDefaultsData.getDeviceId() ?? ""
         let tempLanguageId = userDefaultsData.getLanguageId()
+        let tempPurchasedExcursions = userDefaultsData.getPurschasedExcursions()
+        let tempPurchasedExcursionsDetail = userDefaultsData.getPurschasedExcursionsDetails()
+        let tempActualTrips = userDefaultsData.getActualTrip()
+        let tempCheckmyTrip = userDefaultsData.getCheckMyTripResponseList()
+    
         if let appDomain = Bundle.main.bundleIdentifier {
             UserDefaults.standard.removePersistentDomain(forName: appDomain)
         }
@@ -51,6 +56,11 @@ public class Defaults{
         userDefaultsData.saveLastPassword(id: tempPassword)
         userDefaultsData.saveLanguageId(languageId: tempLanguageId)
         userDefaultsData.saveDeviceId(id: lastDeviceId)
+        userDefaultsData.savePurschasedExcursions(myTrip: tempPurchasedExcursions)
+        userDefaultsData.savePurschasedExcursionsDetails(myTrip: tempPurchasedExcursionsDetail)
+        userDefaultsData.saveActualTrip(myTrip: tempActualTrips)
+        userDefaultsData.saveCheckMyTripResponseList(myTrip: tempCheckmyTrip)
+    
         
     }
     

@@ -103,6 +103,12 @@ public class Defaults{
         else if (Bundle.main.bundleIdentifier?.elementsEqual("com.oti.coral.ua"))! {
             return 10
         }
+        else if (Bundle.main.bundleIdentifier?.elementsEqual("com.oti.coral.lithuania"))! {
+            return 895
+        }
+        else if (Bundle.main.bundleIdentifier?.elementsEqual("com.oti.coral.belarus"))! {
+            return 276
+        }
         else{
             return 9
         }

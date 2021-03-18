@@ -166,6 +166,8 @@
 		A5AA0CB9BFE983E769FEBB95186787A4 /* MapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BC6610C3B3503F6FFD5EDDC574EC5C /* MapError.swift */; };
 		A68986E13F5E041F5BA4A6AA4D5B9455 /* CustomDateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6718C6D175E3C328009B816D17A69AF2 /* CustomDateFormatTransform.swift */; };
 		A787308C5CA0BCA2B3A706F44CD5F7B4 /* ErrorUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2A78A9ECBDF143AACC14AFD18DBD3 /* ErrorUtility.swift */; };
+		A91B21742603A01C00940B7B /* GetSuitcaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91B21732603A01C00940B7B /* GetSuitcaseResponseModel.swift */; };
+		A91B21812603A1E800940B7B /* GetSuitcaseRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91B21802603A1E800940B7B /* GetSuitcaseRequestModel.swift */; };
 		AB2F79D3BF6F4CB33383BDBA189AA12B /* AssertionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCCC230B9A2CFCA70CA3E9DC4E1CB4D /* AssertionDispatcher.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		AB8E2E1B150FD7C2D1336F2DD8B48853 /* DateFormatterTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C01556B0F34661A593DA786DCBF8BA /* DateFormatterTransform.swift */; };
 		AD104C7F1987FC950073EEA117722193 /* BaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278FF507EE49F4804841A34A325E9E22 /* BaseData.swift */; };
@@ -546,6 +548,8 @@
 		A56EFE162CBA1516E64413A2E6F3FA11 /* TransformOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOperators.swift; path = Sources/TransformOperators.swift; sourceTree = "<group>"; };
 		A5E33C935BB6734BBBE3288835358BF9 /* NimbleXCTestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleXCTestHandler.swift; path = Sources/Nimble/Adapters/NimbleXCTestHandler.swift; sourceTree = "<group>"; };
 		A855B84706ABBC8CB8B3EDBF4B1884D6 /* CwlCatchException.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CwlCatchException.h; path = Carthage/Checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchException.h; sourceTree = "<group>"; };
+		A91B21732603A01C00940B7B /* GetSuitcaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSuitcaseResponseModel.swift; sourceTree = "<group>"; };
+		A91B21802603A1E800940B7B /* GetSuitcaseRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSuitcaseRequestModel.swift; sourceTree = "<group>"; };
 		A939E4019E19561EAF64BC6270E1A978 /* Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mappable.swift; path = Sources/Mappable.swift; sourceTree = "<group>"; };
 		AA7BE1445EE8F7165DDD4BAD3FC54343 /* HooksPhase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HooksPhase.swift; path = Sources/Quick/Hooks/HooksPhase.swift; sourceTree = "<group>"; };
 		AAD02B89A8D848CC5686C0A791F63C75 /* PostNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostNotification.swift; path = Sources/Nimble/Matchers/PostNotification.swift; sourceTree = "<group>"; };
@@ -866,6 +870,7 @@
 				BF5EF2BC2536D42400EF1AFA /* GetBonusLoyaltyRequestModel.swift */,
 				BF6209E8257632480032E80B /* GetExcursionIncomingListModel.swift */,
 				BF9A45D82590E63500ADE49B /* CustomerUpdateRequestModel.swift */,
+				A91B21802603A1E800940B7B /* GetSuitcaseRequestModel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1066,6 +1071,7 @@
 				BF5EF2C62536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift */,
 				BF6209F2257636550032E80B /* GetExcursionIncomingListResponseModel.swift */,
 				BF9A46012590EBAA00ADE49B /* CustomerUpdateResponseModel.swift */,
+				A91B21732603A01C00940B7B /* GetSuitcaseResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1634,6 +1640,7 @@
 				7F0020144271C556EE6AA69D4706BE85 /* CustomerCreateRequestModel.swift in Sources */,
 				10238E06D7EF3CE4EAAFB180F4506DEF /* CustomerCreateResponseModel.swift in Sources */,
 				7B59A3404FB6072AC67C7DEDE44C43D0 /* CustomerDetailByIdRequestModel.swift in Sources */,
+				A91B21812603A1E800940B7B /* GetSuitcaseRequestModel.swift in Sources */,
 				4438EBFE25ECCB375BFAA69DDA751712 /* CustomerDetailByIdResponseModel.swift in Sources */,
 				30E3162427B2BCAE12E68AE6A19F3FE5 /* CustomerSendActiveCodeRequestModel.swift in Sources */,
 				3239768147A183EB8EFD42750E1D12B4 /* CustomerSendActiveCodeResponseModel.swift in Sources */,
@@ -1695,6 +1702,7 @@
 				3DE31CFEA809B9A33254D82093A722E9 /* SendRatedResultResponseModel.swift in Sources */,
 				44C1FC33FB268D6AEE80CCA9BCC54B04 /* SendRatedTourList.swift in Sources */,
 				FB9DEA6D7C01B3CFFE6A40BF7155391B /* ServiceEndPoint.swift in Sources */,
+				A91B21742603A01C00940B7B /* GetSuitcaseResponseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

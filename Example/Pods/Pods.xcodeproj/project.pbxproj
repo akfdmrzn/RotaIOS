@@ -168,6 +168,8 @@
 		A787308C5CA0BCA2B3A706F44CD5F7B4 /* ErrorUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2A78A9ECBDF143AACC14AFD18DBD3 /* ErrorUtility.swift */; };
 		A91B21742603A01C00940B7B /* GetSuitcaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91B21732603A01C00940B7B /* GetSuitcaseResponseModel.swift */; };
 		A91B21812603A1E800940B7B /* GetSuitcaseRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91B21802603A1E800940B7B /* GetSuitcaseRequestModel.swift */; };
+		A9BAF1722608A494007224FD /* GetPackupSuitCaseTourListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BAF1712608A494007224FD /* GetPackupSuitCaseTourListRequestModel.swift */; };
+		A9BAF17C2608B959007224FD /* GetPackupSuitCaseTourListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BAF17B2608B959007224FD /* GetPackupSuitCaseTourListResponseModel.swift */; };
 		AB2F79D3BF6F4CB33383BDBA189AA12B /* AssertionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCCC230B9A2CFCA70CA3E9DC4E1CB4D /* AssertionDispatcher.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		AB8E2E1B150FD7C2D1336F2DD8B48853 /* DateFormatterTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C01556B0F34661A593DA786DCBF8BA /* DateFormatterTransform.swift */; };
 		AD104C7F1987FC950073EEA117722193 /* BaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278FF507EE49F4804841A34A325E9E22 /* BaseData.swift */; };
@@ -551,6 +553,8 @@
 		A91B21732603A01C00940B7B /* GetSuitcaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSuitcaseResponseModel.swift; sourceTree = "<group>"; };
 		A91B21802603A1E800940B7B /* GetSuitcaseRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSuitcaseRequestModel.swift; sourceTree = "<group>"; };
 		A939E4019E19561EAF64BC6270E1A978 /* Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mappable.swift; path = Sources/Mappable.swift; sourceTree = "<group>"; };
+		A9BAF1712608A494007224FD /* GetPackupSuitCaseTourListRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPackupSuitCaseTourListRequestModel.swift; sourceTree = "<group>"; };
+		A9BAF17B2608B959007224FD /* GetPackupSuitCaseTourListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPackupSuitCaseTourListResponseModel.swift; sourceTree = "<group>"; };
 		AA7BE1445EE8F7165DDD4BAD3FC54343 /* HooksPhase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HooksPhase.swift; path = Sources/Quick/Hooks/HooksPhase.swift; sourceTree = "<group>"; };
 		AAD02B89A8D848CC5686C0A791F63C75 /* PostNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostNotification.swift; path = Sources/Nimble/Matchers/PostNotification.swift; sourceTree = "<group>"; };
 		ABA2A78A9ECBDF143AACC14AFD18DBD3 /* ErrorUtility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ErrorUtility.swift; path = Sources/Quick/ErrorUtility.swift; sourceTree = "<group>"; };
@@ -871,6 +875,7 @@
 				BF6209E8257632480032E80B /* GetExcursionIncomingListModel.swift */,
 				BF9A45D82590E63500ADE49B /* CustomerUpdateRequestModel.swift */,
 				A91B21802603A1E800940B7B /* GetSuitcaseRequestModel.swift */,
+				A9BAF1712608A494007224FD /* GetPackupSuitCaseTourListRequestModel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1072,6 +1077,7 @@
 				BF6209F2257636550032E80B /* GetExcursionIncomingListResponseModel.swift */,
 				BF9A46012590EBAA00ADE49B /* CustomerUpdateResponseModel.swift */,
 				A91B21732603A01C00940B7B /* GetSuitcaseResponseModel.swift */,
+				A9BAF17B2608B959007224FD /* GetPackupSuitCaseTourListResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1623,6 +1629,7 @@
 				DB07E8E82943F51B8D67A1E0919A26F8 /* BaseMessageItem.swift in Sources */,
 				7567599E670B7C05E3B35D931F434710 /* BaseResponse.swift in Sources */,
 				741BC11C5EE2B364070BDBACDA44E5BE /* CheckMyTripRequestModel.swift in Sources */,
+				A9BAF1722608A494007224FD /* GetPackupSuitCaseTourListRequestModel.swift in Sources */,
 				356474A41CA417C9CDCDAC1C52F510D6 /* CheckMyTripResponseModel.swift in Sources */,
 				3870E77424BA2D60B1E551825F3B2872 /* CreateFlightTicketRequestModel.swift in Sources */,
 				110F0D022345FD5900066130 /* GetTransferTypeListResponseModel.swift in Sources */,
@@ -1658,6 +1665,7 @@
 				BF0CD2C4232F4E59004A2E06 /* SaveVoucherCustomerLinkRequestModel.swift in Sources */,
 				5562B56DCB1EE4FA43850B37FB52BD1F /* GetExcursionDetailByIdResponseModel.swift in Sources */,
 				2BD28C9DEA7391C697FE28DD14D14E2C /* GetExcursionPrintDataRequestModel.swift in Sources */,
+				A9BAF17C2608B959007224FD /* GetPackupSuitCaseTourListResponseModel.swift in Sources */,
 				BF6209F3257636550032E80B /* GetExcursionIncomingListResponseModel.swift in Sources */,
 				ECDBC0C53706728116FD921F9F79B0D3 /* GetExcursionPrintDataResponseModel.swift in Sources */,
 				79E043F5A0265F7D975BF31450EE1D5A /* GetFavoritesRequestModel.swift in Sources */,

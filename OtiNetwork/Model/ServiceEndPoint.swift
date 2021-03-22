@@ -49,5 +49,6 @@ public enum ServiceEndPoint: String {
     case GetBonusLoyalty = "/api/Bonus/SaveAsync"
     case GetExcursionIncomingId = "/api/Excursion/GetExcursionIncomingListAsync"
     case CustomerUpdate = "/api/Account/CustomerUpdateAsync"
+    case GetPackupSuitCaseTourList = "api/Excursion/GetPackupSuitCaseTourList"
 
 }

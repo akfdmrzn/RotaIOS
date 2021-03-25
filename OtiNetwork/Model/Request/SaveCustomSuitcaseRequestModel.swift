@@ -14,7 +14,7 @@ public class SaveCustomSuitcaseRequestModel: Mappable{
     public var customerId:Int!
     public var tourId:String!
     public var itemName:String!
-    public var subItemId:int!
+    public var subItemId:Int!
                 
     public required init?(map: Map) {
         

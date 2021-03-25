@@ -14,6 +14,7 @@ public class GetSuitcaseResponseModel : Mappable {
     public var name : String?
     public var value : String?
     public var type : String?
+    public var imgUrl : String?
     public var subItemState : Bool?
     public var subItems : [SubItems]?
 
@@ -27,6 +28,7 @@ public class GetSuitcaseResponseModel : Mappable {
         partnerNumber <- map["PartnerNumber"]
         name <- map["Name"]
         value <- map["Value"]
+        imgUrl <- map["ImgUrl"]
         type <- map["Type"]
         subItemState <- map["SubItemState"]
         subItems <- map["SubItems"]

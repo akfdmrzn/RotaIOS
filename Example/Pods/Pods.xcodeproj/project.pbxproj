@@ -209,6 +209,13 @@
 		BF9A46022590EBAB00ADE49B /* CustomerUpdateResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A46012590EBAA00ADE49B /* CustomerUpdateResponseModel.swift */; };
 		BFA424BF24F3B7B7001628ED /* GetBarcodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA424BD24F3B761001628ED /* GetBarcodeResponseModel.swift */; };
 		BFA424C024F3B919001628ED /* GetBarcodeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA424BB24F3B373001628ED /* GetBarcodeRequestModel.swift */; };
+		BFBD9972260C888800780BBE /* SaveCustomSuitcaseRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD9971260C888800780BBE /* SaveCustomSuitcaseRequestModel.swift */; };
+		BFBD997C260C889A00780BBE /* SaveCustomSuitcaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD997B260C889A00780BBE /* SaveCustomSuitcaseResponseModel.swift */; };
+		BFBD9986260C89BD00780BBE /* SaveSuitcaseRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD9985260C89BD00780BBE /* SaveSuitcaseRequestModel.swift */; };
+		BFBD9990260C8BC900780BBE /* DeleteCustomSuitcaseRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD998F260C8BC900780BBE /* DeleteCustomSuitcaseRequestModel.swift */; };
+		BFBD999A260C8BD700780BBE /* DeleteCustomSuitcaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD9999260C8BD700780BBE /* DeleteCustomSuitcaseResponseModel.swift */; };
+		BFBD99A4260C8CA200780BBE /* SavePackupSuitCaseTourListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD99A3260C8CA200780BBE /* SavePackupSuitCaseTourListRequestModel.swift */; };
+		BFBD99AE260C8CAF00780BBE /* SavePackupSuitCaseTourListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD99AD260C8CAF00780BBE /* SavePackupSuitCaseTourListResponseModel.swift */; };
 		C098C153F2988A344EAD8EE4C0CDF882 /* PostNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD02B89A8D848CC5686C0A791F63C75 /* PostNotification.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		C0B393B80CD971349123D9F02DFDD554 /* ImmutableMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC90C5EFB883771F7204A13515A321 /* ImmutableMappable.swift */; };
 		C42E25AEAE4758760D9239D25E88FEAF /* CwlCatchException.h in Headers */ = {isa = PBXBuildFile; fileRef = A855B84706ABBC8CB8B3EDBF4B1884D6 /* CwlCatchException.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -589,6 +596,13 @@
 		BF9A46012590EBAA00ADE49B /* CustomerUpdateResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerUpdateResponseModel.swift; sourceTree = "<group>"; };
 		BFA424BB24F3B373001628ED /* GetBarcodeRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBarcodeRequestModel.swift; sourceTree = "<group>"; };
 		BFA424BD24F3B761001628ED /* GetBarcodeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBarcodeResponseModel.swift; sourceTree = "<group>"; };
+		BFBD9971260C888800780BBE /* SaveCustomSuitcaseRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCustomSuitcaseRequestModel.swift; sourceTree = "<group>"; };
+		BFBD997B260C889A00780BBE /* SaveCustomSuitcaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCustomSuitcaseResponseModel.swift; sourceTree = "<group>"; };
+		BFBD9985260C89BD00780BBE /* SaveSuitcaseRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveSuitcaseRequestModel.swift; sourceTree = "<group>"; };
+		BFBD998F260C8BC900780BBE /* DeleteCustomSuitcaseRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCustomSuitcaseRequestModel.swift; sourceTree = "<group>"; };
+		BFBD9999260C8BD700780BBE /* DeleteCustomSuitcaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCustomSuitcaseResponseModel.swift; sourceTree = "<group>"; };
+		BFBD99A3260C8CA200780BBE /* SavePackupSuitCaseTourListRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePackupSuitCaseTourListRequestModel.swift; sourceTree = "<group>"; };
+		BFBD99AD260C8CAF00780BBE /* SavePackupSuitCaseTourListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePackupSuitCaseTourListResponseModel.swift; sourceTree = "<group>"; };
 		BFCCC230B9A2CFCA70CA3E9DC4E1CB4D /* AssertionDispatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionDispatcher.swift; path = Sources/Nimble/Adapters/AssertionDispatcher.swift; sourceTree = "<group>"; };
 		C0597E7ABB137646DD796B1B1CA1DF94 /* MatcherFunc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherFunc.swift; path = Sources/Nimble/Matchers/MatcherFunc.swift; sourceTree = "<group>"; };
 		C08077BD069C563D717050D5A533DE0F /* BeNil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeNil.swift; path = Sources/Nimble/Matchers/BeNil.swift; sourceTree = "<group>"; };
@@ -876,6 +890,10 @@
 				BF9A45D82590E63500ADE49B /* CustomerUpdateRequestModel.swift */,
 				A91B21802603A1E800940B7B /* GetSuitcaseRequestModel.swift */,
 				A9BAF1712608A494007224FD /* GetPackupSuitCaseTourListRequestModel.swift */,
+				BFBD9971260C888800780BBE /* SaveCustomSuitcaseRequestModel.swift */,
+				BFBD9985260C89BD00780BBE /* SaveSuitcaseRequestModel.swift */,
+				BFBD998F260C8BC900780BBE /* DeleteCustomSuitcaseRequestModel.swift */,
+				BFBD99A3260C8CA200780BBE /* SavePackupSuitCaseTourListRequestModel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1078,6 +1096,9 @@
 				BF9A46012590EBAA00ADE49B /* CustomerUpdateResponseModel.swift */,
 				A91B21732603A01C00940B7B /* GetSuitcaseResponseModel.swift */,
 				A9BAF17B2608B959007224FD /* GetPackupSuitCaseTourListResponseModel.swift */,
+				BFBD997B260C889A00780BBE /* SaveCustomSuitcaseResponseModel.swift */,
+				BFBD9999260C8BD700780BBE /* DeleteCustomSuitcaseResponseModel.swift */,
+				BFBD99AD260C8CAF00780BBE /* SavePackupSuitCaseTourListResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1624,16 +1645,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				03A04CBEEA5D707FF75F1BDCAED9AC3E /* BaseApiRequestBody.swift in Sources */,
+				BFBD99A4260C8CA200780BBE /* SavePackupSuitCaseTourListRequestModel.swift in Sources */,
 				BF1028A023151BEA002FFE1E /* GetPDFRequestModel.swift in Sources */,
 				AD104C7F1987FC950073EEA117722193 /* BaseData.swift in Sources */,
 				DB07E8E82943F51B8D67A1E0919A26F8 /* BaseMessageItem.swift in Sources */,
 				7567599E670B7C05E3B35D931F434710 /* BaseResponse.swift in Sources */,
+				BFBD9986260C89BD00780BBE /* SaveSuitcaseRequestModel.swift in Sources */,
+				BFBD99AE260C8CAF00780BBE /* SavePackupSuitCaseTourListResponseModel.swift in Sources */,
 				741BC11C5EE2B364070BDBACDA44E5BE /* CheckMyTripRequestModel.swift in Sources */,
 				A9BAF1722608A494007224FD /* GetPackupSuitCaseTourListRequestModel.swift in Sources */,
 				356474A41CA417C9CDCDAC1C52F510D6 /* CheckMyTripResponseModel.swift in Sources */,
 				3870E77424BA2D60B1E551825F3B2872 /* CreateFlightTicketRequestModel.swift in Sources */,
+				BFBD997C260C889A00780BBE /* SaveCustomSuitcaseResponseModel.swift in Sources */,
 				110F0D022345FD5900066130 /* GetTransferTypeListResponseModel.swift in Sources */,
 				FEAC18257916A525907D7D3795AA89BF /* CreateFlightTicketResponseModel.swift in Sources */,
+				BFBD999A260C8BD700780BBE /* DeleteCustomSuitcaseResponseModel.swift in Sources */,
 				62B33F4228768A4511601D97878792B0 /* CreateInsuranceDocumentRequestModel.swift in Sources */,
 				3EE72702C84E2411E3D3378F0156B2AD /* CreateInsuranceDocumentResponseModel.swift in Sources */,
 				BB79E691522FA45447F0D7C4902A5AE0 /* CreateVoucherDocumentRequestModel.swift in Sources */,
@@ -1651,6 +1677,7 @@
 				4438EBFE25ECCB375BFAA69DDA751712 /* CustomerDetailByIdResponseModel.swift in Sources */,
 				30E3162427B2BCAE12E68AE6A19F3FE5 /* CustomerSendActiveCodeRequestModel.swift in Sources */,
 				3239768147A183EB8EFD42750E1D12B4 /* CustomerSendActiveCodeResponseModel.swift in Sources */,
+				BFBD9990260C8BC900780BBE /* DeleteCustomSuitcaseRequestModel.swift in Sources */,
 				39DB6B814AF5C14CF1E3B230EF1E170C /* Defaults.swift in Sources */,
 				BF9A46022590EBAB00ADE49B /* CustomerUpdateResponseModel.swift in Sources */,
 				5078D27EBDD9C4AE6997A4E09A7414FB /* ExtensionUIApplication.swift in Sources */,
@@ -1677,6 +1704,7 @@
 				DD98B74DA34219394E8EA9086B28FE6E /* GetNotificationReadRequestModel.swift in Sources */,
 				9020D6FD28480F6FEF728319A57BECA3 /* GetNotificationReadResponseModel.swift in Sources */,
 				069F0ED65687AD620C4BAE94016255D9 /* GetNotificationSearchRequestModel.swift in Sources */,
+				BFBD9972260C888800780BBE /* SaveCustomSuitcaseRequestModel.swift in Sources */,
 				445FB8F2FC8BCDB1DBFC0F28C89A1799 /* GetNotificationSearchResponseModel.swift in Sources */,
 				FF63A6A0C28D603DFBFD159E161A5258 /* GetPhoneNumberListRequestModel.swift in Sources */,
 				9C347080A42B5466D41A5A40BCC6EE60 /* GetPhoneNumberListResponseModel.swift in Sources */,

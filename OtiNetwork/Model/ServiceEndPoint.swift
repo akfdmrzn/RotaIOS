@@ -50,5 +50,9 @@ public enum ServiceEndPoint: String {
     case GetExcursionIncomingId = "/api/Excursion/GetExcursionIncomingListAsync"
     case CustomerUpdate = "/api/Account/CustomerUpdateAsync"
     case GetPackupSuitCaseTourList = "api/Excursion/GetPackupSuitCaseTourList"
-
+    case GetSuitcase = "api/Excursion/GetSuitcaseAsync"
+    case SaveCustomSuitcase = "api/Excursion/SaveCustomSuitcaseAsync"
+    case SaveSuitcase = "api/Excursion/SaveSuitcaseAsync"
+    case DeleteCustomSuitcase = "api/Excursion/DeleteCustomSuitcaseAsync"
+    case SavePackupSuitCaseTourList = "api/Excursion/SavePackupSuitCaseTourListAsync"
 }

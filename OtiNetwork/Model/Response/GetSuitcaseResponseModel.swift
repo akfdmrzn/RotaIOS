@@ -13,7 +13,7 @@ public class GetSuitcaseResponseModel : Mappable {
     public var partnerNumber : Int!
     public var name : String!
     public var value : Int?
-    public var type : Int!
+    public var type : Int?
     public var imgUrl : String!
     public var subItemState : Bool!
     public var subItems : [SubItems]!
@@ -51,14 +51,14 @@ public class SubItems : Mappable {
     public var id : Int!
     public var partnerNumber : Int!
     public var name : String!
-    public var type : String!
+    public var type : Int?
     public var value : Int?
     
     public required init?(map: Map){
         
     }
     
-    public init (id: Int, partnerNumber: Int,name : String,type : String,value : Int) {
+    public init (id: Int, partnerNumber: Int,name : String,type : Int,value : Int) {
         self.id = id
         self.partnerNumber = partnerNumber
         self.name = name

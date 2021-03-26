@@ -40,7 +40,7 @@ public class NetworkManager {
                 completion(responseModel)
                 
             case .failure(let error as NSError):
-                viewController.errorPopup(title: "Warning", message: "An error occurred when requesting", cancelButtonTitle: "OK")
+//                viewController.errorPopup(title: "Warning", message: "An error occurred when requesting", cancelButtonTitle: "OK")
                 debugPrint(error.description)
             }
         }
@@ -71,7 +71,7 @@ public class NetworkManager {
                 completion(responseModel)
                 
             case .failure(let error as NSError):
-                viewController.errorPopup(title: "Warning", message: "An error occurred when requesting", cancelButtonTitle: "OK")
+//                viewController.errorPopup(title: "Warning", message: "An error occurred when requesting", cancelButtonTitle: "OK")
                 debugPrint(error.description)
             }
         }

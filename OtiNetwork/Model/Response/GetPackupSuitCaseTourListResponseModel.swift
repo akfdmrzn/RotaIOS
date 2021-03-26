@@ -9,13 +9,13 @@ import Foundation
 import ObjectMapper
 
 public class GetPackupSuitCaseTourListResponseModel : Mappable {
-    public var customerId : String?
-    public var tourId : String?
-    public var tourName : String?
-    public var hotelName : String?
-    public var imgUrl : String?
-    public var tourBeginDate : String?
-    public var tourEndDate : String?
+    public var customerId : String!
+    public var tourId : String!
+    public var tourName : String!
+    public var hotelName : String!
+    public var imgUrl : String!
+    public var tourBeginDate : String!
+    public var tourEndDate : String!
 
     public required init?(map: Map){
         

@@ -9,7 +9,7 @@ import Foundation
 import ObjectMapper
 
 public class SaveCustomSuitcaseResponseModel : Mappable {
-    public var id : Int?
+    public var id : Int!
 
     public required init?(map: Map){
         

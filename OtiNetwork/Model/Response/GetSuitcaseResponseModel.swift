@@ -9,14 +9,14 @@ import UIKit
 import ObjectMapper
 
 public class GetSuitcaseResponseModel : Mappable {
-    public var id : Int?
-    public var partnerNumber : Int?
-    public var name : String?
-    public var value : Any?
-    public var type : String?
-    public var imgUrl : String?
-    public var subItemState : Bool?
-    public var subItems : [SubItems]?
+    public var id : Int!
+    public var partnerNumber : Int!
+    public var name : String!
+    public var value : Any!
+    public var type : String!
+    public var imgUrl : String!
+    public var subItemState : Bool!
+    public var subItems : [SubItems]!
 
     public required init?(map: Map){
         
@@ -37,11 +37,11 @@ public class GetSuitcaseResponseModel : Mappable {
 }
 
 public class SubItems : Mappable {
-    public var id : Int?
-    public var partnerNumber : Int?
-    public var name : String?
-    public var type : String?
-    public var value : Any?
+    public var id : Int!
+    public var partnerNumber : Int!
+    public var name : String!
+    public var type : String!
+    public var value : Any!
  
     public required init?(map: Map){
         

@@ -11,9 +11,9 @@ import ObjectMapper
 public class SaveSuitcaseRequestModel: Mappable{
     
     public var customerId:Int!
-    public var tourId:Int!
+    public var tourId:String!
     public var partnerNumber:Int!
-    public var value:String!
+    public var value:Int!
     public var type:Int!
     public var incomingId:Int!
                 
@@ -21,7 +21,7 @@ public class SaveSuitcaseRequestModel: Mappable{
         
     }
     
-    public init(customerId: Int,tourId : Int,partnerNumber : Int,value : String,type : Int,incomingId : Int) {
+    public init(customerId: Int,tourId : String,partnerNumber : Int,value : Int,type : Int,incomingId : Int) {
         self.customerId = customerId
         self.tourId = tourId
         self.partnerNumber = partnerNumber

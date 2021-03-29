@@ -17,6 +17,17 @@ public class GetPackupSuitCaseTourListResponseModel : Mappable {
     public var tourBeginDate : String!
     public var tourEndDate : String!
 
+    
+    public init(customerId: String,tourId : String,tourName : String,hotelName : String,imgUrl : String,tourBeginDate : String,tourEndDate : String) {
+        self.customerId = customerId
+        self.tourId = tourId
+        self.tourName = tourName
+        self.hotelName = hotelName
+        self.imgUrl = imgUrl
+        self.tourBeginDate = tourBeginDate
+        self.tourEndDate = tourEndDate
+    }
+    
     public required init?(map: Map){
         
     }

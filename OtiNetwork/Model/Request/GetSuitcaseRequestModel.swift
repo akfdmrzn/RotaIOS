@@ -27,7 +27,7 @@ public class GetSuitcaseRequestModel: Mappable{
     public func mapping(map: Map) {
         customerId <- map["CustomerId"]
         tourId <- map["TourId"]
-        tourId <- map["IsEdit"]
+        isEdit <- map["IsEdit"]
     }
     
 }

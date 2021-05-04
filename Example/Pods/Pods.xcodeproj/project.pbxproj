@@ -201,6 +201,9 @@
 		BF1028A023151BEA002FFE1E /* GetPDFRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10289C23151B38002FFE1E /* GetPDFRequestModel.swift */; };
 		BF1028A123151BF0002FFE1E /* GetPDFResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10289E23151B49002FFE1E /* GetPDFResponseModel.swift */; };
 		BF162FE488440AC9824E22EF6BD760FC /* DSL+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F812F05576FA8B6EF5EB05BFBCA159 /* DSL+Wait.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		BF44CA40264156A700238035 /* GetParametersRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44CA3F264156A700238035 /* GetParametersRequestModel.swift */; };
+		BF44CA4A264156E100238035 /* GetParametersResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44CA49264156E100238035 /* GetParametersResponseModel.swift */; };
+		BF44CA542641715200238035 /* GetAreaRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44CA532641715200238035 /* GetAreaRequestModel.swift */; };
 		BF5EF2BD2536D42400EF1AFA /* GetBonusLoyaltyRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF2BC2536D42400EF1AFA /* GetBonusLoyaltyRequestModel.swift */; };
 		BF5EF2C72536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF2C62536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift */; };
 		BF6209E9257632480032E80B /* GetExcursionIncomingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6209E8257632480032E80B /* GetExcursionIncomingListModel.swift */; };
@@ -588,6 +591,9 @@
 		BF0CD2C9232F535C004A2E06 /* DeleteVoucherCustomerLinkResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteVoucherCustomerLinkResponseModel.swift; sourceTree = "<group>"; };
 		BF10289C23151B38002FFE1E /* GetPDFRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPDFRequestModel.swift; sourceTree = "<group>"; };
 		BF10289E23151B49002FFE1E /* GetPDFResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPDFResponseModel.swift; sourceTree = "<group>"; };
+		BF44CA3F264156A700238035 /* GetParametersRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetParametersRequestModel.swift; sourceTree = "<group>"; };
+		BF44CA49264156E100238035 /* GetParametersResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetParametersResponseModel.swift; sourceTree = "<group>"; };
+		BF44CA532641715200238035 /* GetAreaRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAreaRequestModel.swift; sourceTree = "<group>"; };
 		BF5EF2BC2536D42400EF1AFA /* GetBonusLoyaltyRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBonusLoyaltyRequestModel.swift; sourceTree = "<group>"; };
 		BF5EF2C62536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBonusLoyaltyResponseModel.swift; sourceTree = "<group>"; };
 		BF6209E8257632480032E80B /* GetExcursionIncomingListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetExcursionIncomingListModel.swift; sourceTree = "<group>"; };
@@ -894,6 +900,8 @@
 				BFBD9985260C89BD00780BBE /* SaveSuitcaseRequestModel.swift */,
 				BFBD998F260C8BC900780BBE /* DeleteCustomSuitcaseRequestModel.swift */,
 				BFBD99A3260C8CA200780BBE /* SavePackupSuitCaseTourListRequestModel.swift */,
+				BF44CA3F264156A700238035 /* GetParametersRequestModel.swift */,
+				BF44CA532641715200238035 /* GetAreaRequestModel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1099,6 +1107,7 @@
 				BFBD997B260C889A00780BBE /* SaveCustomSuitcaseResponseModel.swift */,
 				BFBD9999260C8BD700780BBE /* DeleteCustomSuitcaseResponseModel.swift */,
 				BFBD99AD260C8CAF00780BBE /* SavePackupSuitCaseTourListResponseModel.swift */,
+				BF44CA49264156E100238035 /* GetParametersResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1647,6 +1656,7 @@
 				03A04CBEEA5D707FF75F1BDCAED9AC3E /* BaseApiRequestBody.swift in Sources */,
 				BFBD99A4260C8CA200780BBE /* SavePackupSuitCaseTourListRequestModel.swift in Sources */,
 				BF1028A023151BEA002FFE1E /* GetPDFRequestModel.swift in Sources */,
+				BF44CA4A264156E100238035 /* GetParametersResponseModel.swift in Sources */,
 				AD104C7F1987FC950073EEA117722193 /* BaseData.swift in Sources */,
 				DB07E8E82943F51B8D67A1E0919A26F8 /* BaseMessageItem.swift in Sources */,
 				7567599E670B7C05E3B35D931F434710 /* BaseResponse.swift in Sources */,
@@ -1692,6 +1702,7 @@
 				BF0CD2C4232F4E59004A2E06 /* SaveVoucherCustomerLinkRequestModel.swift in Sources */,
 				5562B56DCB1EE4FA43850B37FB52BD1F /* GetExcursionDetailByIdResponseModel.swift in Sources */,
 				2BD28C9DEA7391C697FE28DD14D14E2C /* GetExcursionPrintDataRequestModel.swift in Sources */,
+				BF44CA542641715200238035 /* GetAreaRequestModel.swift in Sources */,
 				A9BAF17C2608B959007224FD /* GetPackupSuitCaseTourListResponseModel.swift in Sources */,
 				BF6209F3257636550032E80B /* GetExcursionIncomingListResponseModel.swift in Sources */,
 				ECDBC0C53706728116FD921F9F79B0D3 /* GetExcursionPrintDataResponseModel.swift in Sources */,
@@ -1716,6 +1727,7 @@
 				BFA424BF24F3B7B7001628ED /* GetBarcodeResponseModel.swift in Sources */,
 				F2C9CE05A072D5A4BB42285E4F21E221 /* GetTourDefinationComboListRequestModel.swift in Sources */,
 				346A7407FC800197346C75E0490468F9 /* GetTourDefinationComboListResponseModel.swift in Sources */,
+				BF44CA40264156A700238035 /* GetParametersRequestModel.swift in Sources */,
 				9BD9442901B6906FFBDC15C4CAC551B7 /* GetTourDefinationListRequestModel.swift in Sources */,
 				85B1D239F9A45192F899BAE4F508C7CE /* GetTourDefinationListResponseModel.swift in Sources */,
 				BF0CD2C6232F4E7D004A2E06 /* SaveVoucherCustomerLinkResponseModel.swift in Sources */,

@@ -17,12 +17,13 @@ public class GetSuitcaseResponseModel : Mappable {
     public var imgUrl : String!
     public var subItemState : Bool!
     public var subItems : [SubItems]!
+    public var customItem : Bool!
 
     public required init?(map: Map){
         
     }
     
-    public init (id: Int, partnerNumber: Int,name : String,type : Int,value : Int,imgUrl : String,subItemState : Bool,subItems : [SubItems]) {
+    public init (id: Int, partnerNumber: Int,name : String,type : Int,value : Int,imgUrl : String,subItemState : Bool,subItems : [SubItems],customItem : Bool) {
         self.id = id
         self.partnerNumber = partnerNumber
         self.name = name
@@ -31,10 +32,10 @@ public class GetSuitcaseResponseModel : Mappable {
         self.imgUrl = imgUrl
         self.subItemState = subItemState
         self.subItems = subItems
+        self.customItem = customItem
     }
 
     public func mapping(map: Map) {
-
         id <- map["Id"]
         partnerNumber <- map["PartnerNumber"]
         name <- map["Name"]
@@ -43,6 +44,7 @@ public class GetSuitcaseResponseModel : Mappable {
         type <- map["Type"]
         subItemState <- map["SubItemState"]
         subItems <- map["SubItems"]
+        customItem <- map["CustomItem"]
     }
 
 }
@@ -53,17 +55,19 @@ public class SubItems : Mappable {
     public var name : String!
     public var type : Int?
     public var value : Int?
+    public var customItem : Bool!
     
     public required init?(map: Map){
         
     }
     
-    public init (id: Int, partnerNumber: Int,name : String,type : Int,value : Int) {
+    public init (id: Int, partnerNumber: Int,name : String,type : Int,value : Int,customItem : Bool) {
         self.id = id
         self.partnerNumber = partnerNumber
         self.name = name
         self.type = type
         self.value = value
+        self.customItem = customItem
     }
 
     public func mapping(map: Map) {
@@ -73,6 +77,7 @@ public class SubItems : Mappable {
         name <- map["Name"]
         type <- map["Type"]
         value <- map["Value"]
+        customItem <- map["CustomItem"]
     }
 
 }

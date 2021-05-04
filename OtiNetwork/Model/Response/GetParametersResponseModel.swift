@@ -12,6 +12,7 @@ public class GetParametersResponseModel: Mappable {
     public var countryList: Parameters?
     public var typeList: Parameters?
     public var durationsList: Parameters?
+    public var areaList: Parameters?
     
     public init() {
         
@@ -25,6 +26,7 @@ public class GetParametersResponseModel: Mappable {
         countryList <- map["Countrys"]
         durationsList <- map["Durations"]
         typeList <- map["Types"]
+        areaList <- map["Areas"]
         
     }
 }
@@ -34,7 +36,9 @@ public class GetParametersResponseModel: Mappable {
         public var languageCode: String!
         public var name: String!
         public var status: Int!
-        public var gksId: String!
+        public var gksId: Int!
+        public var countryGksId: Int!
+        
         
         public init() {
             
@@ -49,5 +53,6 @@ public class GetParametersResponseModel: Mappable {
             name <- map["name"]
             status <- map["status"]
             gksId <- map["gksId"]
+            countryGksId <- map["countryGksId"]
         }
     }

@@ -204,6 +204,7 @@
 		BF44CA40264156A700238035 /* GetParametersRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44CA3F264156A700238035 /* GetParametersRequestModel.swift */; };
 		BF44CA4A264156E100238035 /* GetParametersResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44CA49264156E100238035 /* GetParametersResponseModel.swift */; };
 		BF44CA542641715200238035 /* GetAreaRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44CA532641715200238035 /* GetAreaRequestModel.swift */; };
+		BF44CA7E26417E7000238035 /* GetAreaResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44CA7D26417E7000238035 /* GetAreaResponseModel.swift */; };
 		BF5EF2BD2536D42400EF1AFA /* GetBonusLoyaltyRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF2BC2536D42400EF1AFA /* GetBonusLoyaltyRequestModel.swift */; };
 		BF5EF2C72536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF2C62536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift */; };
 		BF6209E9257632480032E80B /* GetExcursionIncomingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6209E8257632480032E80B /* GetExcursionIncomingListModel.swift */; };
@@ -594,6 +595,7 @@
 		BF44CA3F264156A700238035 /* GetParametersRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetParametersRequestModel.swift; sourceTree = "<group>"; };
 		BF44CA49264156E100238035 /* GetParametersResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetParametersResponseModel.swift; sourceTree = "<group>"; };
 		BF44CA532641715200238035 /* GetAreaRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAreaRequestModel.swift; sourceTree = "<group>"; };
+		BF44CA7D26417E7000238035 /* GetAreaResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAreaResponseModel.swift; sourceTree = "<group>"; };
 		BF5EF2BC2536D42400EF1AFA /* GetBonusLoyaltyRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBonusLoyaltyRequestModel.swift; sourceTree = "<group>"; };
 		BF5EF2C62536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBonusLoyaltyResponseModel.swift; sourceTree = "<group>"; };
 		BF6209E8257632480032E80B /* GetExcursionIncomingListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetExcursionIncomingListModel.swift; sourceTree = "<group>"; };
@@ -1108,6 +1110,7 @@
 				BFBD9999260C8BD700780BBE /* DeleteCustomSuitcaseResponseModel.swift */,
 				BFBD99AD260C8CAF00780BBE /* SavePackupSuitCaseTourListResponseModel.swift */,
 				BF44CA49264156E100238035 /* GetParametersResponseModel.swift */,
+				BF44CA7D26417E7000238035 /* GetAreaResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1690,6 +1693,7 @@
 				BFBD9990260C8BC900780BBE /* DeleteCustomSuitcaseRequestModel.swift in Sources */,
 				39DB6B814AF5C14CF1E3B230EF1E170C /* Defaults.swift in Sources */,
 				BF9A46022590EBAB00ADE49B /* CustomerUpdateResponseModel.swift in Sources */,
+				BF44CA7E26417E7000238035 /* GetAreaResponseModel.swift in Sources */,
 				5078D27EBDD9C4AE6997A4E09A7414FB /* ExtensionUIApplication.swift in Sources */,
 				B3BA585EF13D2EA44F596EE510F1A44A /* ExtensionUIDevice.swift in Sources */,
 				58D46C751DF2ACEB05A61CD31F200297 /* ExtensionUIViewController.swift in Sources */,

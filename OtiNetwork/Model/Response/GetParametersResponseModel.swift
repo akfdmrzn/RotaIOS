@@ -9,10 +9,10 @@ import UIKit
 import ObjectMapper
 
 public class GetParametersResponseModel: Mappable {
-    public var countryList: Parameters?
-    public var typeList: Parameters?
-    public var durationsList: Parameters?
-    public var areaList: Parameters?
+    public var countryList: ParametersModel?
+    public var typeList: ParametersModel?
+    public var durationsList: ParametersModel?
+    public var areaList: ParametersModel?
     
     public init() {
         
@@ -31,7 +31,7 @@ public class GetParametersResponseModel: Mappable {
     }
 }
     
-    public class Parameters: Mappable{
+    public class ParametersModel: Mappable{
         public var id: Int!
         public var languageCode: String!
         public var name: String!

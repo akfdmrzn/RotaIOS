@@ -9,10 +9,10 @@ import UIKit
 import ObjectMapper
 
 public class GetParametersResponseModel: Mappable {
-    public var countryList: ParametersModel?
-    public var typeList: ParametersModel?
-    public var durationsList: ParametersModel?
-    public var areaList: ParametersModel?
+    public var countryList: [ParametersModel]?
+    public var typeList: [ParametersModel]?
+    public var durationsList: [ParametersModel]?
+    public var areaList: [ParametersModel]?
     
     public init() {
         

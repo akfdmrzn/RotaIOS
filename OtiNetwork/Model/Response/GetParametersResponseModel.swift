@@ -48,7 +48,7 @@ public class GetParametersResponseModel: Mappable {
         }
         
         public func mapping(map: Map) {
-            id <- map["ID"]
+            id <- map["id"]
             languageCode <- map["languageCode"]
             name <- map["name"]
             status <- map["status"]

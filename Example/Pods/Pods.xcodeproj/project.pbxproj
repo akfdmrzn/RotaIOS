@@ -168,6 +168,8 @@
 		A787308C5CA0BCA2B3A706F44CD5F7B4 /* ErrorUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2A78A9ECBDF143AACC14AFD18DBD3 /* ErrorUtility.swift */; };
 		A91B21742603A01C00940B7B /* GetSuitcaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91B21732603A01C00940B7B /* GetSuitcaseResponseModel.swift */; };
 		A91B21812603A1E800940B7B /* GetSuitcaseRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91B21802603A1E800940B7B /* GetSuitcaseRequestModel.swift */; };
+		A9B8DB97264ABB2D00C9510D /* WebLoginUrlRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8DB96264ABB2D00C9510D /* WebLoginUrlRequestModel.swift */; };
+		A9B8DBA1264ABB6B00C9510D /* WebLoginUrlResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8DBA0264ABB6B00C9510D /* WebLoginUrlResponseModel.swift */; };
 		A9BAF1722608A494007224FD /* GetPackupSuitCaseTourListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BAF1712608A494007224FD /* GetPackupSuitCaseTourListRequestModel.swift */; };
 		A9BAF17C2608B959007224FD /* GetPackupSuitCaseTourListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BAF17B2608B959007224FD /* GetPackupSuitCaseTourListResponseModel.swift */; };
 		AB2F79D3BF6F4CB33383BDBA189AA12B /* AssertionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCCC230B9A2CFCA70CA3E9DC4E1CB4D /* AssertionDispatcher.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -564,6 +566,8 @@
 		A91B21732603A01C00940B7B /* GetSuitcaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSuitcaseResponseModel.swift; sourceTree = "<group>"; };
 		A91B21802603A1E800940B7B /* GetSuitcaseRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSuitcaseRequestModel.swift; sourceTree = "<group>"; };
 		A939E4019E19561EAF64BC6270E1A978 /* Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mappable.swift; path = Sources/Mappable.swift; sourceTree = "<group>"; };
+		A9B8DB96264ABB2D00C9510D /* WebLoginUrlRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLoginUrlRequestModel.swift; sourceTree = "<group>"; };
+		A9B8DBA0264ABB6B00C9510D /* WebLoginUrlResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLoginUrlResponseModel.swift; sourceTree = "<group>"; };
 		A9BAF1712608A494007224FD /* GetPackupSuitCaseTourListRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPackupSuitCaseTourListRequestModel.swift; sourceTree = "<group>"; };
 		A9BAF17B2608B959007224FD /* GetPackupSuitCaseTourListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPackupSuitCaseTourListResponseModel.swift; sourceTree = "<group>"; };
 		AA7BE1445EE8F7165DDD4BAD3FC54343 /* HooksPhase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HooksPhase.swift; path = Sources/Quick/Hooks/HooksPhase.swift; sourceTree = "<group>"; };
@@ -904,6 +908,7 @@
 				BFBD99A3260C8CA200780BBE /* SavePackupSuitCaseTourListRequestModel.swift */,
 				BF44CA3F264156A700238035 /* GetParametersRequestModel.swift */,
 				BF44CA532641715200238035 /* GetAreaRequestModel.swift */,
+				A9B8DB96264ABB2D00C9510D /* WebLoginUrlRequestModel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1111,6 +1116,7 @@
 				BFBD99AD260C8CAF00780BBE /* SavePackupSuitCaseTourListResponseModel.swift */,
 				BF44CA49264156E100238035 /* GetParametersResponseModel.swift */,
 				BF44CA7D26417E7000238035 /* GetAreaResponseModel.swift */,
+				A9B8DBA0264ABB6B00C9510D /* WebLoginUrlResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1687,6 +1693,7 @@
 				10238E06D7EF3CE4EAAFB180F4506DEF /* CustomerCreateResponseModel.swift in Sources */,
 				7B59A3404FB6072AC67C7DEDE44C43D0 /* CustomerDetailByIdRequestModel.swift in Sources */,
 				A91B21812603A1E800940B7B /* GetSuitcaseRequestModel.swift in Sources */,
+				A9B8DBA1264ABB6B00C9510D /* WebLoginUrlResponseModel.swift in Sources */,
 				4438EBFE25ECCB375BFAA69DDA751712 /* CustomerDetailByIdResponseModel.swift in Sources */,
 				30E3162427B2BCAE12E68AE6A19F3FE5 /* CustomerSendActiveCodeRequestModel.swift in Sources */,
 				3239768147A183EB8EFD42750E1D12B4 /* CustomerSendActiveCodeResponseModel.swift in Sources */,
@@ -1744,6 +1751,7 @@
 				110F0D002345FCDB00066130 /* GetTransferTypeListRequestModel.swift in Sources */,
 				49DC822A0CD8C547F8821F2EA32F608E /* LoginRequest.swift in Sources */,
 				7FB14A827CD16997F007F74B01D60E9C /* LoginResponse.swift in Sources */,
+				A9B8DB97264ABB2D00C9510D /* WebLoginUrlRequestModel.swift in Sources */,
 				BFA424C024F3B919001628ED /* GetBarcodeRequestModel.swift in Sources */,
 				FBCA687435B1D15A1AA893F41C3FA8AC /* LoginShortRequest.swift in Sources */,
 				7ECE22F88A3BC37908F9FBDDDEACC0C3 /* NetworkManager.swift in Sources */,

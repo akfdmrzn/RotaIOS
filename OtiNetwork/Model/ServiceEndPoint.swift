@@ -57,4 +57,5 @@ public enum ServiceEndPoint: String {
     case SavePackupSuitCaseTourList = "/api/Excursion/SavePackupSuitCaseTourListAsync"
     case GetParameters = "/api/PcmsExcursion/ParametersAsync"
     case GetArea = "/api/PcmsExcursion/AreasAsync"
+    case WebLoginUrl = "/api/Integration/WebLoginUrlAsync"
 }

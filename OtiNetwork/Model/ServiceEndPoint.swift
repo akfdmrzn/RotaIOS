@@ -58,4 +58,6 @@ public enum ServiceEndPoint: String {
     case GetParameters = "/api/PcmsExcursion/ParametersAsync"
     case GetArea = "/api/PcmsExcursion/AreasAsync"
     case WebLoginUrl = "/api/Integration/WebLoginUrlAsync"
+    case SearchAsync = "/api/PcmsExcursion/SearchAsync"
+    case RecommendAsync = "/api/PcmsExcursion/RecommendAsync"
 }

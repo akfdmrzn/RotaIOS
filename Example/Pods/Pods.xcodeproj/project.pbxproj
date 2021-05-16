@@ -222,6 +222,10 @@
 		BFBD999A260C8BD700780BBE /* DeleteCustomSuitcaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD9999260C8BD700780BBE /* DeleteCustomSuitcaseResponseModel.swift */; };
 		BFBD99A4260C8CA200780BBE /* SavePackupSuitCaseTourListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD99A3260C8CA200780BBE /* SavePackupSuitCaseTourListRequestModel.swift */; };
 		BFBD99AE260C8CAF00780BBE /* SavePackupSuitCaseTourListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD99AD260C8CAF00780BBE /* SavePackupSuitCaseTourListResponseModel.swift */; };
+		BFCC8BAB264EBC510061637D /* GetSearchRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCC8BAA264EBC510061637D /* GetSearchRequestModel.swift */; };
+		BFCC8BB5264EBE970061637D /* GetSearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCC8BB4264EBE970061637D /* GetSearchResponseModel.swift */; };
+		BFCC8BBF264EE96B0061637D /* GetRecommendRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCC8BBE264EE96B0061637D /* GetRecommendRequestModel.swift */; };
+		BFCC8BC92651657C0061637D /* GetRecommendedResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCC8BC82651657C0061637D /* GetRecommendedResponseModel.swift */; };
 		C098C153F2988A344EAD8EE4C0CDF882 /* PostNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD02B89A8D848CC5686C0A791F63C75 /* PostNotification.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		C0B393B80CD971349123D9F02DFDD554 /* ImmutableMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC90C5EFB883771F7204A13515A321 /* ImmutableMappable.swift */; };
 		C42E25AEAE4758760D9239D25E88FEAF /* CwlCatchException.h in Headers */ = {isa = PBXBuildFile; fileRef = A855B84706ABBC8CB8B3EDBF4B1884D6 /* CwlCatchException.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -615,6 +619,10 @@
 		BFBD9999260C8BD700780BBE /* DeleteCustomSuitcaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCustomSuitcaseResponseModel.swift; sourceTree = "<group>"; };
 		BFBD99A3260C8CA200780BBE /* SavePackupSuitCaseTourListRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePackupSuitCaseTourListRequestModel.swift; sourceTree = "<group>"; };
 		BFBD99AD260C8CAF00780BBE /* SavePackupSuitCaseTourListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePackupSuitCaseTourListResponseModel.swift; sourceTree = "<group>"; };
+		BFCC8BAA264EBC510061637D /* GetSearchRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSearchRequestModel.swift; sourceTree = "<group>"; };
+		BFCC8BB4264EBE970061637D /* GetSearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSearchResponseModel.swift; sourceTree = "<group>"; };
+		BFCC8BBE264EE96B0061637D /* GetRecommendRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecommendRequestModel.swift; sourceTree = "<group>"; };
+		BFCC8BC82651657C0061637D /* GetRecommendedResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecommendedResponseModel.swift; sourceTree = "<group>"; };
 		BFCCC230B9A2CFCA70CA3E9DC4E1CB4D /* AssertionDispatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionDispatcher.swift; path = Sources/Nimble/Adapters/AssertionDispatcher.swift; sourceTree = "<group>"; };
 		C0597E7ABB137646DD796B1B1CA1DF94 /* MatcherFunc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherFunc.swift; path = Sources/Nimble/Matchers/MatcherFunc.swift; sourceTree = "<group>"; };
 		C08077BD069C563D717050D5A533DE0F /* BeNil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeNil.swift; path = Sources/Nimble/Matchers/BeNil.swift; sourceTree = "<group>"; };
@@ -909,6 +917,8 @@
 				BF44CA3F264156A700238035 /* GetParametersRequestModel.swift */,
 				BF44CA532641715200238035 /* GetAreaRequestModel.swift */,
 				A9B8DB96264ABB2D00C9510D /* WebLoginUrlRequestModel.swift */,
+				BFCC8BAA264EBC510061637D /* GetSearchRequestModel.swift */,
+				BFCC8BBE264EE96B0061637D /* GetRecommendRequestModel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1117,6 +1127,8 @@
 				BF44CA49264156E100238035 /* GetParametersResponseModel.swift */,
 				BF44CA7D26417E7000238035 /* GetAreaResponseModel.swift */,
 				A9B8DBA0264ABB6B00C9510D /* WebLoginUrlResponseModel.swift */,
+				BFCC8BB4264EBE970061637D /* GetSearchResponseModel.swift */,
+				BFCC8BC82651657C0061637D /* GetRecommendedResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1683,6 +1695,7 @@
 				3EE72702C84E2411E3D3378F0156B2AD /* CreateInsuranceDocumentResponseModel.swift in Sources */,
 				BB79E691522FA45447F0D7C4902A5AE0 /* CreateVoucherDocumentRequestModel.swift in Sources */,
 				EBAA631BE943BFA431F992B26A747C03 /* CreateVoucherDocumentResponseModel.swift in Sources */,
+				BFCC8BBF264EE96B0061637D /* GetRecommendRequestModel.swift in Sources */,
 				BF9A45D92590E63500ADE49B /* CustomerUpdateRequestModel.swift in Sources */,
 				6E285D0EABA2EFC520A6DD3BF09D9569 /* CustomerChangePasswordRequestModel.swift in Sources */,
 				BF1028A123151BF0002FFE1E /* GetPDFResponseModel.swift in Sources */,
@@ -1697,6 +1710,7 @@
 				4438EBFE25ECCB375BFAA69DDA751712 /* CustomerDetailByIdResponseModel.swift in Sources */,
 				30E3162427B2BCAE12E68AE6A19F3FE5 /* CustomerSendActiveCodeRequestModel.swift in Sources */,
 				3239768147A183EB8EFD42750E1D12B4 /* CustomerSendActiveCodeResponseModel.swift in Sources */,
+				BFCC8BB5264EBE970061637D /* GetSearchResponseModel.swift in Sources */,
 				BFBD9990260C8BC900780BBE /* DeleteCustomSuitcaseRequestModel.swift in Sources */,
 				39DB6B814AF5C14CF1E3B230EF1E170C /* Defaults.swift in Sources */,
 				BF9A46022590EBAB00ADE49B /* CustomerUpdateResponseModel.swift in Sources */,
@@ -1732,6 +1746,7 @@
 				9C347080A42B5466D41A5A40BCC6EE60 /* GetPhoneNumberListResponseModel.swift in Sources */,
 				408F2A89A247A965631C4272639D3CFC /* GetSaledExcursionInfoDetailRequestModel.swift in Sources */,
 				B5DC1950D9E4812761B4514082C71222 /* GetSaledExcursionInfoDetailResponseModel.swift in Sources */,
+				BFCC8BAB264EBC510061637D /* GetSearchRequestModel.swift in Sources */,
 				BF6209E9257632480032E80B /* GetExcursionIncomingListModel.swift in Sources */,
 				9D4B8E73DACC0DF557BA218E466E0A23 /* GetSaledExcursionInfoRequestModel.swift in Sources */,
 				011262BB96A50E5F2CDC634B425F1064 /* GetSaledExcursionInfoResponseModel.swift in Sources */,
@@ -1763,6 +1778,7 @@
 				44C1FC33FB268D6AEE80CCA9BCC54B04 /* SendRatedTourList.swift in Sources */,
 				FB9DEA6D7C01B3CFFE6A40BF7155391B /* ServiceEndPoint.swift in Sources */,
 				A91B21742603A01C00940B7B /* GetSuitcaseResponseModel.swift in Sources */,
+				BFCC8BC92651657C0061637D /* GetRecommendedResponseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

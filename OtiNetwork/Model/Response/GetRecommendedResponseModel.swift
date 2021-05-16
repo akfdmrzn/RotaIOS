@@ -12,8 +12,8 @@ public class GetRecommendedResponseModel: Mappable {
     
     public var operatorId: Int!
     public var countryId: Int!
-    public var bestSellerList: ExcursionSeller!
-    public var recommendedList: ExcursionSeller!
+    public var bestSellerList: [ExcursionSeller]!
+    public var recommendedList: [ExcursionSeller]!
     
     public required init?(map: Map) {
         

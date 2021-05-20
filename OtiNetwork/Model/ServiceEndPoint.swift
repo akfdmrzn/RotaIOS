@@ -60,4 +60,5 @@ public enum ServiceEndPoint: String {
     case WebLoginUrl = "/api/Integration/WebLoginUrlAsync"
     case SearchAsync = "/api/PcmsExcursion/SearchAsync"
     case RecommendAsync = "/api/PcmsExcursion/RecommendAsync"
+    case DetailAsync = "/api/PcmsExcursion/DetailAsync"
 }

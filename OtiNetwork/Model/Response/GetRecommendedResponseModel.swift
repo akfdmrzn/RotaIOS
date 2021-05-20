@@ -20,10 +20,10 @@ public class GetRecommendedResponseModel: Mappable {
     }
     
     public func mapping(map: Map) {
-        operatorId <- map["operatorId"]
-        countryId <- map["countryId"]
-        bestSellerList <- map["bestSeller"]
-        recommendedList <- map["recommended"]
+        operatorId <- map["OperatorId"]
+        countryId <- map["CountryId"]
+        bestSellerList <- map["BestSeller"]
+        recommendedList <- map["Recommended"]
         
     }
     
@@ -42,22 +42,29 @@ public class ExcursionSeller: Mappable {
     public var durationId: Int!
     public var durationName: String!
     public var isFavourite: Bool!
+    public var isBestSeller: Bool!
+    public var isRecommended: Bool!
+    public var isNew: Bool!
+    public var id_: Int!
     
     public required init?(map: Map) {
         
     }
     
     public func mapping(map: Map) {
-        excursionName <- map["excursionName"]
-        imageLink <- map["imageLink"]
-        priceType <- map["priceType"]
-        priceInfo <- map["priceInfo"]
-        currency <- map["Currency"]
+        excursionName <- map["Name"]
+        imageLink <- map["ImageUrl"]
+        priceType <- map["PriceType"]
+        priceInfo <- map["Price"]
+        currency <- map["PriceCurrency"]
         excursionId <- map["excursionId"]
         totalCount <- map["totalCount"]
         durationId <- map["durationId"]
         durationName <- map["durationName"]
         isFavourite <- map["IsFavorite"]
-        
+        isBestSeller <- map["IsBestSeller"]
+        isRecommended <- map["IsRecommended"]
+        isNew <- map["IsNew"]
+        id_ <- map["Id"]
     }
 }

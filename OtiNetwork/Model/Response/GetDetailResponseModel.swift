@@ -8,7 +8,7 @@
 import Foundation
 import ObjectMapper
 
-public class GetDetailResponseModel: NSObject {
+public class GetDetailResponseModel: Mappable {
     public var id : Int?
     public var minPriceType : String?
     public var minPriceTypeId : Int?

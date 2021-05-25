@@ -14,15 +14,19 @@ public class GetDetailResponseModel: Mappable {
     public var minPriceTypeId : Int?
     public var minPriceInfo : String?
     public var minPriceCurrency : String?
+    public var minPriceCurrencyId : Int?
+    public var languageCode : String?
     public var excursionId : Int?
     public var excursionName : String?
     public var excursionLocalName : String?
     public var excursionType : String?
     public var excursionTypeKey : Int?
-    public var duration : String?
-    public var durationKey : String?
+    public var duration : Duration?
     public var tourDescription : String?
     public var itineray : String?
+    public var serviceLanguageCode : String?
+    public var serviceLanguageKey : String?
+    public var serviceLanguageTrans : String?
     public var excursionImage : [ExcursionImage]?
     public var excursionVideos : [String]?
     public var includedServices : String?
@@ -38,6 +42,8 @@ public class GetDetailResponseModel: Mappable {
     public var allowToInfantKey : Int?
     public var extras : [String]?
     public var durationImageLink : String?
+    public var isVendable : Bool?
+    public var isFavorite : Bool?
 
     public required init?(map: Map) {
         
@@ -50,15 +56,19 @@ public class GetDetailResponseModel: Mappable {
         minPriceTypeId <- map["minPriceTypeId"]
         minPriceInfo <- map["minPriceInfo"]
         minPriceCurrency <- map["minPriceCurrency"]
+        minPriceCurrencyId <- map["minPriceCurrencyId"]
+        languageCode <- map["languageCode"]
         excursionId <- map["excursionId"]
         excursionName <- map["excursionName"]
         excursionLocalName <- map["excursionLocalName"]
         excursionType <- map["excursionType"]
         excursionTypeKey <- map["excursionTypeKey"]
         duration <- map["duration"]
-        durationKey <- map["durationKey"]
         tourDescription <- map["tourDescription"]
         itineray <- map["itineray"]
+        serviceLanguageCode <- map["serviceLanguageCode"]
+        serviceLanguageKey <- map["serviceLanguageKey"]
+        serviceLanguageTrans <- map["serviceLanguageTrans"]
         excursionImage <- map["excursionImage"]
         excursionVideos <- map["excursionVideos"]
         includedServices <- map["includedServices"]
@@ -74,12 +84,13 @@ public class GetDetailResponseModel: Mappable {
         allowToInfantKey <- map["allowToInfantKey"]
         extras <- map["extras"]
         durationImageLink <- map["DurationImageLink"]
+        isVendable <- map["IsVendable"]
+        isFavorite <- map["IsFavorite"]
     }
 
 }
 
 public class ExcursionImage : Mappable {
-    
     public var id : Int?
     public var tourId : Int?
     public var imagePath : String?
@@ -101,3 +112,20 @@ public class ExcursionImage : Mappable {
     
 }
 
+public class Duration : Mappable {
+    public var id : Int?
+    public var name : String?
+    public var localName : String?
+
+    public required init?(map: Map){
+        
+    }
+
+    public func mapping(map: Map) {
+
+        id <- map["id"]
+        name <- map["name"]
+        localName <- map["localName"]
+    }
+
+}

@@ -217,6 +217,8 @@
 		BF9A46022590EBAB00ADE49B /* CustomerUpdateResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A46012590EBAA00ADE49B /* CustomerUpdateResponseModel.swift */; };
 		BFA424BF24F3B7B7001628ED /* GetBarcodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA424BD24F3B761001628ED /* GetBarcodeResponseModel.swift */; };
 		BFA424C024F3B919001628ED /* GetBarcodeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA424BB24F3B373001628ED /* GetBarcodeRequestModel.swift */; };
+		BFB71593265EF6F600FE8D9D /* CalendarAsyncRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB71592265EF6F600FE8D9D /* CalendarAsyncRequestModel.swift */; };
+		BFB7159D265EF70600FE8D9D /* CalendarAsyncResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7159C265EF70600FE8D9D /* CalendarAsyncResponseModel.swift */; };
 		BFBD9972260C888800780BBE /* SaveCustomSuitcaseRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD9971260C888800780BBE /* SaveCustomSuitcaseRequestModel.swift */; };
 		BFBD997C260C889A00780BBE /* SaveCustomSuitcaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD997B260C889A00780BBE /* SaveCustomSuitcaseResponseModel.swift */; };
 		BFBD9986260C89BD00780BBE /* SaveSuitcaseRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD9985260C89BD00780BBE /* SaveSuitcaseRequestModel.swift */; };
@@ -616,6 +618,8 @@
 		BF9A46012590EBAA00ADE49B /* CustomerUpdateResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerUpdateResponseModel.swift; sourceTree = "<group>"; };
 		BFA424BB24F3B373001628ED /* GetBarcodeRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBarcodeRequestModel.swift; sourceTree = "<group>"; };
 		BFA424BD24F3B761001628ED /* GetBarcodeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBarcodeResponseModel.swift; sourceTree = "<group>"; };
+		BFB71592265EF6F600FE8D9D /* CalendarAsyncRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAsyncRequestModel.swift; sourceTree = "<group>"; };
+		BFB7159C265EF70600FE8D9D /* CalendarAsyncResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAsyncResponseModel.swift; sourceTree = "<group>"; };
 		BFBD9971260C888800780BBE /* SaveCustomSuitcaseRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCustomSuitcaseRequestModel.swift; sourceTree = "<group>"; };
 		BFBD997B260C889A00780BBE /* SaveCustomSuitcaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCustomSuitcaseResponseModel.swift; sourceTree = "<group>"; };
 		BFBD9985260C89BD00780BBE /* SaveSuitcaseRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveSuitcaseRequestModel.swift; sourceTree = "<group>"; };
@@ -924,6 +928,7 @@
 				BFCC8BAA264EBC510061637D /* GetSearchRequestModel.swift */,
 				BFCC8BBE264EE96B0061637D /* GetRecommendRequestModel.swift */,
 				A90740132656E2E900BA62FA /* GetDetailRequestModel.swift */,
+				BFB71592265EF6F600FE8D9D /* CalendarAsyncRequestModel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1135,6 +1140,7 @@
 				BFCC8BB4264EBE970061637D /* GetSearchResponseModel.swift */,
 				BFCC8BC82651657C0061637D /* GetRecommendedResponseModel.swift */,
 				A907401D2656E4C100BA62FA /* GetDetailResponseModel.swift */,
+				BFB7159C265EF70600FE8D9D /* CalendarAsyncResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1688,6 +1694,7 @@
 				DB07E8E82943F51B8D67A1E0919A26F8 /* BaseMessageItem.swift in Sources */,
 				7567599E670B7C05E3B35D931F434710 /* BaseResponse.swift in Sources */,
 				BFBD9986260C89BD00780BBE /* SaveSuitcaseRequestModel.swift in Sources */,
+				BFB71593265EF6F600FE8D9D /* CalendarAsyncRequestModel.swift in Sources */,
 				BFBD99AE260C8CAF00780BBE /* SavePackupSuitCaseTourListResponseModel.swift in Sources */,
 				741BC11C5EE2B364070BDBACDA44E5BE /* CheckMyTripRequestModel.swift in Sources */,
 				A9BAF1722608A494007224FD /* GetPackupSuitCaseTourListRequestModel.swift in Sources */,
@@ -1711,6 +1718,7 @@
 				8EE1682892C701CA67D79C8C75164BD7 /* CustomerControlActivateCodeResponseModel.swift in Sources */,
 				7F0020144271C556EE6AA69D4706BE85 /* CustomerCreateRequestModel.swift in Sources */,
 				10238E06D7EF3CE4EAAFB180F4506DEF /* CustomerCreateResponseModel.swift in Sources */,
+				BFB7159D265EF70600FE8D9D /* CalendarAsyncResponseModel.swift in Sources */,
 				7B59A3404FB6072AC67C7DEDE44C43D0 /* CustomerDetailByIdRequestModel.swift in Sources */,
 				A91B21812603A1E800940B7B /* GetSuitcaseRequestModel.swift in Sources */,
 				A9B8DBA1264ABB6B00C9510D /* WebLoginUrlResponseModel.swift in Sources */,

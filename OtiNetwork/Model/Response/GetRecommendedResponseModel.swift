@@ -66,6 +66,6 @@ public class ExcursionSeller: Mappable {
         isNew <- map["IsNew"]
         id_ <- map["Id"]
         isVandable <- map["IsVendable"]
-        durationId <- map["DurationImageLink"]
+        durationImageLink <- map["DurationImageLink"]
     }
 }

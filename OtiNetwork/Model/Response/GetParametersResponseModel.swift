@@ -38,7 +38,7 @@ public class GetParametersResponseModel: Mappable {
         public var status: Int!
         public var gksId: Int!
         public var countryGksId: Int!
-        
+        public var isOdeon: Int!
         
         public init() {
             
@@ -54,5 +54,6 @@ public class GetParametersResponseModel: Mappable {
             status <- map["status"]
             gksId <- map["gksId"]
             countryGksId <- map["countryGksId"]
+            isOdeon <- map["isOdeon"]
         }
     }

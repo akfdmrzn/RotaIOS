@@ -30,6 +30,8 @@ public class GetActualTripResponseModel: Mappable,Decodable,Encodable {
     public var touristId = 0
     public var incomingId = 0
     public var excursionActivedStatus = false
+    public var isActual : Bool!
+    
     
     public required init?(map: Map){
     }
@@ -54,6 +56,7 @@ public class GetActualTripResponseModel: Mappable,Decodable,Encodable {
         touristId <- map["TouristId"]
         incomingId <- map["IncomingId"]
         excursionActivedStatus <- map["ExcursionActivedStatus"]
+        isActual <- map["isActual"]
     }
 }
 

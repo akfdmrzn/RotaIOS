@@ -24,11 +24,8 @@ public class GetRecommendedResponseModel: Mappable {
         countryId <- map["CountryId"]
         bestSellerList <- map["BestSeller"]
         recommendedList <- map["Recommended"]
-        
     }
-    
 }
-
 
 public class ExcursionSeller: Mappable {
     
@@ -46,6 +43,8 @@ public class ExcursionSeller: Mappable {
     public var isRecommended: Bool!
     public var isNew: Bool!
     public var id_: Int!
+    public var isVandable: Int!
+    public var durationImageLink: String!
     
     public required init?(map: Map) {
         
@@ -66,5 +65,7 @@ public class ExcursionSeller: Mappable {
         isRecommended <- map["IsRecommended"]
         isNew <- map["IsNew"]
         id_ <- map["Id"]
+        isVandable <- map["IsVendable"]
+        durationId <- map["DurationImageLink"]
     }
 }

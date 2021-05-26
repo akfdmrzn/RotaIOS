@@ -17,7 +17,7 @@ public class CalendarAsyncRequestModel: Mappable{
         
     }
     
-    public init(checkMyTrip: String) {
+    public init(checkMyTripId: String) {
         self.checkMyTripId = checkMyTripId
     }
     

@@ -39,6 +39,7 @@ public class GetParametersResponseModel: Mappable {
         public var gksId: Int!
         public var countryGksId: Int!
         public var isOdeon: Int!
+        public var isSelected: Bool = false
         
         public init() {
             

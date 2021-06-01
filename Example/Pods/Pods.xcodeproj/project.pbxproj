@@ -205,6 +205,10 @@
 		BF1028A023151BEA002FFE1E /* GetPDFRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10289C23151B38002FFE1E /* GetPDFRequestModel.swift */; };
 		BF1028A123151BF0002FFE1E /* GetPDFResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10289E23151B49002FFE1E /* GetPDFResponseModel.swift */; };
 		BF162FE488440AC9824E22EF6BD760FC /* DSL+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F812F05576FA8B6EF5EB05BFBCA159 /* DSL+Wait.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		BF3F184E2666667200E3E225 /* QuestionAsyncRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3F184D2666667200E3E225 /* QuestionAsyncRequestModel.swift */; };
+		BF3F18582666668B00E3E225 /* QuestionAsyncResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3F18572666668B00E3E225 /* QuestionAsyncResponseModel.swift */; };
+		BF3F18622666697900E3E225 /* SaveQuestionRateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3F18612666697900E3E225 /* SaveQuestionRateRequestModel.swift */; };
+		BF3F186C2666698500E3E225 /* SaveQuestionRateResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3F186B2666698500E3E225 /* SaveQuestionRateResponseModel.swift */; };
 		BF44CA40264156A700238035 /* GetParametersRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44CA3F264156A700238035 /* GetParametersRequestModel.swift */; };
 		BF44CA4A264156E100238035 /* GetParametersResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44CA49264156E100238035 /* GetParametersResponseModel.swift */; };
 		BF44CA542641715200238035 /* GetAreaRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44CA532641715200238035 /* GetAreaRequestModel.swift */; };
@@ -606,6 +610,10 @@
 		BF0CD2C9232F535C004A2E06 /* DeleteVoucherCustomerLinkResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteVoucherCustomerLinkResponseModel.swift; sourceTree = "<group>"; };
 		BF10289C23151B38002FFE1E /* GetPDFRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPDFRequestModel.swift; sourceTree = "<group>"; };
 		BF10289E23151B49002FFE1E /* GetPDFResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPDFResponseModel.swift; sourceTree = "<group>"; };
+		BF3F184D2666667200E3E225 /* QuestionAsyncRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAsyncRequestModel.swift; sourceTree = "<group>"; };
+		BF3F18572666668B00E3E225 /* QuestionAsyncResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAsyncResponseModel.swift; sourceTree = "<group>"; };
+		BF3F18612666697900E3E225 /* SaveQuestionRateRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveQuestionRateRequestModel.swift; sourceTree = "<group>"; };
+		BF3F186B2666698500E3E225 /* SaveQuestionRateResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveQuestionRateResponseModel.swift; sourceTree = "<group>"; };
 		BF44CA3F264156A700238035 /* GetParametersRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetParametersRequestModel.swift; sourceTree = "<group>"; };
 		BF44CA49264156E100238035 /* GetParametersResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetParametersResponseModel.swift; sourceTree = "<group>"; };
 		BF44CA532641715200238035 /* GetAreaRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAreaRequestModel.swift; sourceTree = "<group>"; };
@@ -929,6 +937,8 @@
 				BFCC8BBE264EE96B0061637D /* GetRecommendRequestModel.swift */,
 				A90740132656E2E900BA62FA /* GetDetailRequestModel.swift */,
 				BFB71592265EF6F600FE8D9D /* CalendarAsyncRequestModel.swift */,
+				BF3F184D2666667200E3E225 /* QuestionAsyncRequestModel.swift */,
+				BF3F18612666697900E3E225 /* SaveQuestionRateRequestModel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1141,6 +1151,8 @@
 				BFCC8BC82651657C0061637D /* GetRecommendedResponseModel.swift */,
 				A907401D2656E4C100BA62FA /* GetDetailResponseModel.swift */,
 				BFB7159C265EF70600FE8D9D /* CalendarAsyncResponseModel.swift */,
+				BF3F18572666668B00E3E225 /* QuestionAsyncResponseModel.swift */,
+				BF3F186B2666698500E3E225 /* SaveQuestionRateResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1713,6 +1725,7 @@
 				BF9A45D92590E63500ADE49B /* CustomerUpdateRequestModel.swift in Sources */,
 				6E285D0EABA2EFC520A6DD3BF09D9569 /* CustomerChangePasswordRequestModel.swift in Sources */,
 				BF1028A123151BF0002FFE1E /* GetPDFResponseModel.swift in Sources */,
+				BF3F18582666668B00E3E225 /* QuestionAsyncResponseModel.swift in Sources */,
 				230ADF7155EF2C01A7CBD7CAC6F156EE /* CustomerChangePasswordResponseModel.swift in Sources */,
 				0B00AEDFE2E84032F0923220A56E893F /* CustomerControlActivateCodeRequestModel.swift in Sources */,
 				8EE1682892C701CA67D79C8C75164BD7 /* CustomerControlActivateCodeResponseModel.swift in Sources */,
@@ -1730,6 +1743,7 @@
 				39DB6B814AF5C14CF1E3B230EF1E170C /* Defaults.swift in Sources */,
 				BF9A46022590EBAB00ADE49B /* CustomerUpdateResponseModel.swift in Sources */,
 				BF44CA7E26417E7000238035 /* GetAreaResponseModel.swift in Sources */,
+				BF3F184E2666667200E3E225 /* QuestionAsyncRequestModel.swift in Sources */,
 				5078D27EBDD9C4AE6997A4E09A7414FB /* ExtensionUIApplication.swift in Sources */,
 				B3BA585EF13D2EA44F596EE510F1A44A /* ExtensionUIDevice.swift in Sources */,
 				58D46C751DF2ACEB05A61CD31F200297 /* ExtensionUIViewController.swift in Sources */,
@@ -1761,6 +1775,7 @@
 				9C347080A42B5466D41A5A40BCC6EE60 /* GetPhoneNumberListResponseModel.swift in Sources */,
 				A907401E2656E4C100BA62FA /* GetDetailResponseModel.swift in Sources */,
 				408F2A89A247A965631C4272639D3CFC /* GetSaledExcursionInfoDetailRequestModel.swift in Sources */,
+				BF3F186C2666698500E3E225 /* SaveQuestionRateResponseModel.swift in Sources */,
 				B5DC1950D9E4812761B4514082C71222 /* GetSaledExcursionInfoDetailResponseModel.swift in Sources */,
 				BFCC8BAB264EBC510061637D /* GetSearchRequestModel.swift in Sources */,
 				BF6209E9257632480032E80B /* GetExcursionIncomingListModel.swift in Sources */,
@@ -1782,6 +1797,7 @@
 				110F0D002345FCDB00066130 /* GetTransferTypeListRequestModel.swift in Sources */,
 				49DC822A0CD8C547F8821F2EA32F608E /* LoginRequest.swift in Sources */,
 				7FB14A827CD16997F007F74B01D60E9C /* LoginResponse.swift in Sources */,
+				BF3F18622666697900E3E225 /* SaveQuestionRateRequestModel.swift in Sources */,
 				A9B8DB97264ABB2D00C9510D /* WebLoginUrlRequestModel.swift in Sources */,
 				BFA424C024F3B919001628ED /* GetBarcodeRequestModel.swift in Sources */,
 				FBCA687435B1D15A1AA893F41C3FA8AC /* LoginShortRequest.swift in Sources */,

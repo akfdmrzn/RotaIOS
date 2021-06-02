@@ -80,7 +80,7 @@ public class Questions : Mappable {
    public var answerList : [AnswerList]?
    public var likertScale : Int?
    public var order : Int?
-   
+   public var isSelected : Bool?
     
     public required init?(map: Map) {
 

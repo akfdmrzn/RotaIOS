@@ -9,7 +9,7 @@ import UIKit
 import ObjectMapper
 
 public class QuestionAsyncResponseModel : Mappable {
-   public var questions : [Questions]?
+   public var mainQuestionsList : [MainQuestionsList]?
    public var tourists : [TouristsSurvey]?
    public var hotels : [HotelsSurvey]?
 
@@ -18,7 +18,7 @@ public class QuestionAsyncResponseModel : Mappable {
     }
 
     public  func mapping(map: Map) {
-        questions <- map["Questions"]
+        mainQuestionsList <- map["Questions"]
         tourists <- map["Tourists"]
         hotels <- map["Hotels"]
     }
@@ -43,21 +43,17 @@ public class HotelsSurvey : Mappable {
 
 }
 
-public class Questions : Mappable {
+public class MainQuestionsList : Mappable {
    public var surveyId : Int?
    public var surveyName : String?
    public var surveyTypeId : Int?
    public var surveyGroupId : Int?
-   public var questions : [Questions]?
-   public var settings : Settings?
    public var isActive : Bool?
    public var rateEndOfDate : String?
-   public var questionTypeId : Int?
-   public var isSelected : Bool?
-   public var answerList : AnswerList?
+   public var questions : [Questions]?
+   public var settings : Settings?
    
     
-
     public required init?(map: Map) {
 
     }
@@ -72,10 +68,35 @@ public class Questions : Mappable {
         settings <- map["settings"]
         isActive <- map["IsActive"]
         rateEndOfDate <- map["RateEndOfDate"]
-        questionTypeId <- map["questionTypeId"]
-        answerList <- map["answerList"]
     }
 
+}
+
+public class Questions : Mappable {
+   public var questionId : Int?
+   public var questionText : String?
+   public var questionType : String?
+   public var questionTypeId : Int?
+   public var answerList : [AnswerList]?
+   public var likertScale : Int?
+   public var order : Int?
+   
+    
+    public required init?(map: Map) {
+
+    }
+
+    public func mapping(map: Map) {
+
+        questionId <- map["questionId"]
+        questionText <- map["questionText"]
+        questionType <- map["questionType"]
+        questionTypeId <- map["questionTypeId"]
+        answerList <- map["answerList"]
+        likertScale <- map["likertScale"]
+        order <- map["order"]
+      
+    }
 }
 
 

@@ -28,6 +28,7 @@ public class HotelsSurvey : Mappable {
     public var id : Int?
     public var name : String?
     public var touristId : Int?
+    public var isSelected : Bool?
 
     public required init?(map: Map) {
 
@@ -52,6 +53,9 @@ public class Questions : Mappable {
    public var isActive : Bool?
    public var rateEndOfDate : String?
    public var questionTypeId : Int?
+   public var isSelected : Bool?
+   public var answerList : AnswerList?
+   
     
 
     public required init?(map: Map) {
@@ -69,6 +73,7 @@ public class Questions : Mappable {
         isActive <- map["IsActive"]
         rateEndOfDate <- map["RateEndOfDate"]
         questionTypeId <- map["questionTypeId"]
+        answerList <- map["answerList"]
     }
 
 }
@@ -112,6 +117,7 @@ public class TouristsSurvey : Mappable {
    public var id : Int?
    public var gender : String?
    public var fullName : String?
+   public var isSelected : Bool?
 
     public required init?(map: Map) {
 
@@ -121,6 +127,21 @@ public class TouristsSurvey : Mappable {
         id <- map["Id"]
         gender <- map["Gender"]
         fullName <- map["FullName"]
+    }
+
+}
+
+public class AnswerList : Mappable {
+   public var order : Int?
+   public var text : String?
+   
+    public required init?(map: Map) {
+
+    }
+
+    public func mapping(map: Map) {
+        order <- map["order"]
+        text <- map["text"]
     }
 
 }

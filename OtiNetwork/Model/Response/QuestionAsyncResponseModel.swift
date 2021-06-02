@@ -9,14 +9,14 @@ import UIKit
 import ObjectMapper
 
 public class QuestionAsyncResponseModel : Mappable {
-   public var mainQuestionsList : [MainQuestionsList]?
-   public var tourists : [TouristsSurvey]?
-   public var hotels : [HotelsSurvey]?
-
+    public var mainQuestionsList : [MainQuestionsList]?
+    public var tourists : [TouristsSurvey]?
+    public var hotels : [HotelsSurvey]?
+    
     public required init?(map: Map) {
-
+        
     }
-
+    
     public  func mapping(map: Map) {
         mainQuestionsList <- map["Questions"]
         tourists <- map["Tourists"]
@@ -29,37 +29,37 @@ public class HotelsSurvey : Mappable {
     public var name : String?
     public var touristId : Int?
     public var isSelected : Bool?
-
+    
     public required init?(map: Map) {
-
+        
     }
-
+    
     public func mapping(map: Map) {
-
+        
         id <- map["Id"]
         name <- map["Name"]
         touristId <- map["TouristId"]
     }
-
+    
 }
 
 public class MainQuestionsList : Mappable {
-   public var surveyId : Int?
-   public var surveyName : String?
-   public var surveyTypeId : Int?
-   public var surveyGroupId : Int?
-   public var isActive : Bool?
-   public var rateEndOfDate : String?
-   public var questions : [Questions]?
-   public var settings : Settings?
-   
+    public var surveyId : Int?
+    public var surveyName : String?
+    public var surveyTypeId : Int?
+    public var surveyGroupId : Int?
+    public var isActive : Bool?
+    public var rateEndOfDate : String?
+    public var questions : [Questions]?
+    public var settings : Settings?
+    
     
     public required init?(map: Map) {
-
+        
     }
-
+    
     public func mapping(map: Map) {
-
+        
         surveyId <- map["surveyId"]
         surveyName <- map["surveyName"]
         surveyTypeId <- map["surveyTypeId"]
@@ -69,25 +69,25 @@ public class MainQuestionsList : Mappable {
         isActive <- map["IsActive"]
         rateEndOfDate <- map["RateEndOfDate"]
     }
-
+    
 }
 
 public class Questions : Mappable {
-   public var questionId : Int?
-   public var questionText : String?
-   public var questionType : String?
-   public var questionTypeId : Int?
-   public var answerList : [AnswerList]?
-   public var likertScale : Int?
-   public var order : Int?
-   public var isSelected : Bool?
+    public var questionId : Int?
+    public var questionText : String?
+    public var questionType : String?
+    public var questionTypeId : Int?
+    public var answerList : [AnswerList]?
+    public var likertScale : Int?
+    public var order : Int?
+    public var isSelected : Bool?
     
     public required init?(map: Map) {
-
+        
     }
-
+    
     public func mapping(map: Map) {
-
+        
         questionId <- map["questionId"]
         questionText <- map["questionText"]
         questionType <- map["questionType"]
@@ -95,30 +95,30 @@ public class Questions : Mappable {
         answerList <- map["answerList"]
         likertScale <- map["likertScale"]
         order <- map["order"]
-      
+        
     }
 }
 
 
 public class Settings : Mappable {
-   public var settingId : Int?
-   public var sendExactTime : String?
-   public var totalNotificationNumber : Int?
-   public var repeatEvery : Int?
-   public var repeatPeriod : String?
-   public var makeInactive : Int?
-   public var makeInactivePeriod : String?
-   public var eventTypeId : Int?
-   public var eventTypeDesc : String?
-   public var sendDay : Int?
-   public var sendDayDesc : String?
-
-   public required init?(map: Map) {
-
+    public var settingId : Int?
+    public var sendExactTime : String?
+    public var totalNotificationNumber : Int?
+    public var repeatEvery : Int?
+    public var repeatPeriod : String?
+    public var makeInactive : Int?
+    public var makeInactivePeriod : String?
+    public var eventTypeId : Int?
+    public var eventTypeDesc : String?
+    public var sendDay : Int?
+    public var sendDayDesc : String?
+    
+    public required init?(map: Map) {
+        
     }
-
+    
     public func mapping(map: Map) {
-
+        
         settingId <- map["settingId"]
         sendExactTime <- map["sendExactTime"]
         totalNotificationNumber <- map["totalNotificationNumber"]
@@ -131,38 +131,39 @@ public class Settings : Mappable {
         sendDay <- map["sendDay"]
         sendDayDesc <- map["sendDayDesc"]
     }
-
+    
 }
 
 public class TouristsSurvey : Mappable {
-   public var id : Int?
-   public var gender : String?
-   public var fullName : String?
-   public var isSelected : Bool?
-
+    public var id : Int?
+    public var gender : String?
+    public var fullName : String?
+    public var isSelected : Bool?
+    
     public required init?(map: Map) {
-
+        
     }
-
+    
     public func mapping(map: Map) {
         id <- map["Id"]
         gender <- map["Gender"]
         fullName <- map["FullName"]
     }
-
+    
 }
 
 public class AnswerList : Mappable {
-   public var order : Int?
-   public var text : String?
-   
+    public var order : Int?
+    public var text : String?
+    public var isSelected : Bool?
+    
     public required init?(map: Map) {
-
+        
     }
-
+    
     public func mapping(map: Map) {
         order <- map["order"]
         text <- map["text"]
     }
-
+    
 }

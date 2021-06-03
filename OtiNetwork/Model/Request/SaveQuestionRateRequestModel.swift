@@ -53,7 +53,7 @@ public class SurveyResponses: Mappable{
     public init(questionId: Int,value : String,surveyId : Int) {
         self.questionId = questionId
         self.value = value
-        
+        self.surveyId = surveyId
     }
     
     public func mapping(map: Map) {

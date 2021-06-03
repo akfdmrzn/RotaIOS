@@ -44,12 +44,13 @@ public class SurveyResponses: Mappable{
     
     public var questionId: Int!
     public var value: String!
+    public var surveyId: Int!
     
     public required init?(map: Map) {
         
     }
     
-    public init(questionId: Int,value : String) {
+    public init(questionId: Int,value : String,surveyId : Int) {
         self.questionId = questionId
         self.value = value
         
@@ -58,5 +59,6 @@ public class SurveyResponses: Mappable{
     public func mapping(map: Map) {
         questionId <- map["questionId"]
         value <- map["value"]
+        surveyId <- map["surveyId"]
     }
 }

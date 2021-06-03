@@ -9,8 +9,7 @@ import UIKit
 import ObjectMapper
 
 public class QuestionAsyncResponseModel : Mappable {
-    public var mainQuestionsList : [MainQuestionsList]?
-    public var tourists : [TouristsSurvey]?
+    public var surveyList : [SurveyList]?
     public var hotels : [HotelsSurvey]?
     
     public required init?(map: Map) {
@@ -18,8 +17,7 @@ public class QuestionAsyncResponseModel : Mappable {
     }
     
     public  func mapping(map: Map) {
-        mainQuestionsList <- map["Questions"]
-        tourists <- map["Tourists"]
+        surveyList <- map["Surveys"]
         hotels <- map["Hotels"]
     }
 }
@@ -43,7 +41,7 @@ public class HotelsSurvey : Mappable {
     
 }
 
-public class MainQuestionsList : Mappable {
+public class SurveyList : Mappable {
     public var surveyId : Int?
     public var surveyName : String?
     public var surveyTypeId : Int?
@@ -52,6 +50,7 @@ public class MainQuestionsList : Mappable {
     public var rateEndOfDate : String?
     public var questions : [Questions]?
     public var settings : Settings?
+    public var tourists : [TouristsSurvey]?
     
     
     public required init?(map: Map) {
@@ -68,6 +67,8 @@ public class MainQuestionsList : Mappable {
         settings <- map["settings"]
         isActive <- map["IsActive"]
         rateEndOfDate <- map["RateEndOfDate"]
+        tourists <- map["Tourists"]
+        
     }
     
 }

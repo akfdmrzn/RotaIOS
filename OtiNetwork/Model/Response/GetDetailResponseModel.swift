@@ -40,10 +40,11 @@ public class GetDetailResponseModel: Mappable {
     public var allowToToddleKey : Int?
     public var allowToInfant : Bool?
     public var allowToInfantKey : Int?
+    public var height : Bool?
     public var extras : [String]?
-    public var durationImageLink : String?
     public var isVendable : Bool?
     public var isFavorite : Bool?
+    public var icons : [Icons]?
 
     public required init?(map: Map) {
         
@@ -82,10 +83,11 @@ public class GetDetailResponseModel: Mappable {
         allowToToddleKey <- map["allowToToddleKey"]
         allowToInfant <- map["allowToInfant"]
         allowToInfantKey <- map["allowToInfantKey"]
+        height <- map["height"]
         extras <- map["extras"]
-        durationImageLink <- map["DurationImageLink"]
         isVendable <- map["IsVendable"]
         isFavorite <- map["IsFavorite"]
+        icons <- map["Icons"]
     }
 
 }
@@ -126,6 +128,24 @@ public class Duration : Mappable {
         id <- map["id"]
         name <- map["name"]
         localName <- map["localName"]
+    }
+
+}
+
+public class Icons : Mappable {
+    public var id : Int?
+    public var name : String?
+    public var imageUrl : String?
+
+    public required init?(map: Map){
+        
+    }
+
+    public func mapping(map: Map) {
+
+        id <- map["Id"]
+        name <- map["Name"]
+        imageUrl <- map["ImageUrl"]
     }
 
 }

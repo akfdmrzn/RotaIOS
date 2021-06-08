@@ -73,7 +73,7 @@ public class SurveyList : Mappable {
     
 }
 
-public class Questions : Mappable {
+public class Questions : Mappable,Decodable,Encodable {
     public var questionId : Int?
     public var questionText : String?
     public var questionType : String?
@@ -153,7 +153,7 @@ public class TouristsSurvey : Mappable {
     
 }
 
-public class AnswerList : Mappable {
+public class AnswerList : Mappable,Decodable,Encodable {
     public var order : Int?
     public var text : String?
     public var isSelected : Bool?

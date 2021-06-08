@@ -8,7 +8,7 @@
 import UIKit
 import ObjectMapper
 
-public class SaveQuestionRateRequestModel: Mappable{
+public class SaveQuestionRateRequestModel: Mappable,Decodable,Encodable{
     
     public var incomingId: Int!
     public var touristId: Int!
@@ -40,7 +40,7 @@ public class SaveQuestionRateRequestModel: Mappable{
     }
 }
 
-public class SurveyResponses: Mappable{
+public class SurveyResponses: Mappable,Decodable,Encodable{
     
     public var questionId: Int!
     public var value: String!

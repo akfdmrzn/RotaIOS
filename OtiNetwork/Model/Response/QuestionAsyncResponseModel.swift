@@ -82,6 +82,7 @@ public class Questions : Mappable,Decodable,Encodable {
     public var likertScale : Int?
     public var order : Int?
     public var isSelected : Bool?
+    public var value : Int? //for rate type
     
     public required init?(map: Map) {
         

@@ -36,7 +36,7 @@ public class CheckMyTripResponseModel: Mappable,Decodable,Encodable {
     public var visaInfo = ""
     public var previewHotelStatus = false
     public var incomingId = ""
-    public var agencyStaff: Int = 0
+    public var agencyStuff: Int = 0
     public var givenDateIntoTheEmbassy = ""
     public var givenDateIntoTheEmbassyString = ""
     public var recordDate = ""

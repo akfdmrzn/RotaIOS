@@ -32,6 +32,7 @@ public class Defaults{
         case CheckMyTripResponseModel
         case NewSurveyQuestionsList
         case NewSurveyQuestionsRequestModel
+        case OfflineSurveyQuestionAsyncResponseModel
     }
     
    public init(){}
@@ -471,6 +472,26 @@ public class Defaults{
         return []
     }
     
+    public func saveOfflineQuestionAsyncResponseModel(model:QuestionAsyncResponseModel){
+        let preferences = UserDefaults.standard
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(model) {
+            preferences.set(encoded, forKey: getIdentifier(type: .OfflineSurveyQuestionAsyncResponseModel))
+            preferences.synchronize()
+        }
+    }
+    
+    public func getOfflineQuestionAsyncResponseModel() -> QuestionAsyncResponseModel{
+        let preferences = UserDefaults.standard
+        let decoder = JSONDecoder()
+        if let savedPerson = preferences.object(forKey: getIdentifier(type: .OfflineSurveyQuestionAsyncResponseModel)) as? Data {
+            if let loadedPerson = try? decoder.decode(QuestionAsyncResponseModel.self, from: savedPerson) {
+                return loadedPerson
+            }
+        }
+        return QuestionAsyncResponseModel.init(JSONString: "")!
+    }
+    
     private  func  getIdentifier(type:DefaultsType)->String {
         switch type {
         case .User:
@@ -515,6 +536,8 @@ public class Defaults{
             return "NewSurveyQuestionsList"
         case .NewSurveyQuestionsRequestModel:
             return "NewSurveyQuestionsRequestModel"
+        case .OfflineSurveyQuestionAsyncResponseModel:
+            return "OfflineSurveyQuestionAsyncResponseModel"
         }
     }
 }

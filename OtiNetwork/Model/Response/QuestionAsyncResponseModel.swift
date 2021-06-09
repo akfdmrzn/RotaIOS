@@ -8,7 +8,7 @@
 import UIKit
 import ObjectMapper
 
-public class QuestionAsyncResponseModel : Mappable {
+public class QuestionAsyncResponseModel : Mappable,Decodable,Encodable {
     public var surveyList : [SurveyList]?
     public var hotels : [HotelsSurvey]?
     
@@ -22,7 +22,7 @@ public class QuestionAsyncResponseModel : Mappable {
     }
 }
 
-public class HotelsSurvey : Mappable {
+public class HotelsSurvey : Mappable,Decodable,Encodable {
     public var id : Int?
     public var name : String?
     public var touristId : Int?
@@ -41,7 +41,7 @@ public class HotelsSurvey : Mappable {
     
 }
 
-public class SurveyList : Mappable {
+public class SurveyList : Mappable,Decodable,Encodable {
     public var surveyId : Int?
     public var surveyName : String?
     public var surveyTypeId : Int?
@@ -102,7 +102,7 @@ public class Questions : Mappable,Decodable,Encodable {
 }
 
 
-public class Settings : Mappable {
+public class Settings : Mappable,Decodable,Encodable {
     public var settingId : Int?
     public var sendExactTime : String?
     public var totalNotificationNumber : Int?
@@ -136,7 +136,7 @@ public class Settings : Mappable {
     
 }
 
-public class TouristsSurvey : Mappable {
+public class TouristsSurvey : Mappable,Decodable,Encodable {
     public var id : Int?
     public var gender : String?
     public var fullName : String?

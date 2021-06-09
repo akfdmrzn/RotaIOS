@@ -31,20 +31,23 @@ public class CheckMyTripResponseModel: Mappable,Decodable,Encodable {
     public var givenIntoTheEmbassy = false
     public var receivedFromEmbassy = false
     public var visaStatus = false
-    public var visaInfo = ""
     public var bringYourDocument = false
+    public var visaStatusName = ""
+    public var visaInfo = ""
+    public var previewHotelStatus = false
+    public var incomingId = ""
+    public var agencyStaff: Int = 0
     public var givenDateIntoTheEmbassy = ""
     public var givenDateIntoTheEmbassyString = ""
     public var recordDate = ""
-    public var previewHotelStatus = false
     public var recordDateString = ""
+    public var departureDate = ""
     public var hotels: [Hotels] = []
     public var flights: [Flights] = []
     public var extras: [Extras] = []
     public var transfers: [Transfers] = []
     public var insurances: [Insurances] = []
     public var agency: Agency?
-    public var agencyStuff: Int = 0
     
     public init() {
         
@@ -75,20 +78,23 @@ public class CheckMyTripResponseModel: Mappable,Decodable,Encodable {
         givenIntoTheEmbassy <- map["GivenIntoTheEmbassy"]
         receivedFromEmbassy <- map["ReceivedFromEmbassy"]
         visaStatus <- map["VisaStatus"]
-        visaInfo <- map["VisaInfo"]
         bringYourDocument <- map["BringYourDocument"]
+        visaStatusName <- map["VisaStatusName"]
+        visaInfo <- map["VisaInfo"]
+        previewHotelStatus <- map["PreviewHotelStatus"]
+        incomingId <- map["IncomingId"]
+        agencyStaff <- map["AgencyStaff"]
         givenDateIntoTheEmbassy <- map["GivenDateIntoTheEmbassy"]
         givenDateIntoTheEmbassyString <- map["GivenDateIntoTheEmbassyString"]
         recordDate <- map["RecordDate"]
         recordDateString <- map["RecordDateString"]
+        departureDate <- map["DepartureDate"]
         hotels <- map["Hotels"]
         flights <- map["Flights"]
         extras <- map["Extras"]
         transfers <- map["Transfers"]
         insurances <- map["Insurances"]
         agency <- map["Agency"]
-        previewHotelStatus <- map["PreviewHotelStatus"]
-        agencyStuff <- map["AgencyStaff"]
     }
 }
 
@@ -167,16 +173,17 @@ public class Transfers: Mappable,Decodable,Encodable {
     public var transferDateString = ""
     public var arrivalTransferDate = ""
     public var arrivalTransferDateString = ""
-    public var arrivalTransferTime = ""
     public var transferType = ""
     public var transferDirection = ""
+    public var transferDirectionType: Int = 0
     public var fromPointName = ""
     public var toPointName = ""
-    public var transferTime: String = ""
     public var route = ""
-    public var departurePoint = ""
     public var cancelStatus = ""
+    public var arrivalTransferTime = ""
     public var departureTransferTime = ""
+    public var transferTime: String = ""
+    public var departurePoint = ""
     public var pickupTime: String = ""
     public var pickupPoint: String = ""
     public var vehiclePoint: String = ""
@@ -184,7 +191,6 @@ public class Transfers: Mappable,Decodable,Encodable {
     public var guideName: String = ""
     public var guidePhoneNumber: String = ""
     public var isArrival : Bool = false
-    public var transferDirectionType: Int = 0
     public var arrivalGuideName: String = ""
     public var arrivalGuidePhone: String = ""
     public var arrivalVehiclePlate: String = ""
@@ -270,6 +276,8 @@ public class Extras: Mappable,Decodable,Encodable {
 
 public class BaggageExtra: Mappable,Decodable,Encodable {
     
+    public var baggageType = 0
+    public var tempBaggageTypeName = ""
     public var baggageTypeName = ""
     public var baggageAmount = 0
     public var baggageUnitName = ""
@@ -285,7 +293,6 @@ public class BaggageExtra: Mappable,Decodable,Encodable {
     public var salePrice = 0
     public var saleCurrencyName = ""
     public var cancel = false
-    public var baggageType = 0
     
     
     public init() {
@@ -414,6 +421,8 @@ public class Hotels: Mappable,Decodable,Encodable {
     public var hotelPlace = ""
     public var countryName = ""
     public var imageUrl = ""
+    public var hotelCountry = ""
+    public var hotelCountryID = ""
     
     
     public init() {
@@ -442,6 +451,8 @@ public class Hotels: Mappable,Decodable,Encodable {
         hotelPlace <- map["HotelPlace"]
         countryName <- map["CountryName"]
         imageUrl <- map["ImageUrl"]
+        hotelCountry <- map["HotelCountry"]
+        hotelCountryID <- map["HotelCountryID"]
     }
 }
 

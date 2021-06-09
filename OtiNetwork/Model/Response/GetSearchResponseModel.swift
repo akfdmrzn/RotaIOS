@@ -24,6 +24,7 @@ public class GetSearchResponseModel: Mappable {
     public var isBestSeller: Bool!
     public var passportRequired: Bool!
     public var isVendable: Bool!
+    public var height: Bool!
     
     public required init?(map: Map) {
         
@@ -42,6 +43,7 @@ public class GetSearchResponseModel: Mappable {
         isBestSeller <- map["IsBestSeller"]
         passportRequired <- map["PassportRequired"]
         isVendable <- map["IsVendable"]
+        height <- map["height"]
         
     }
 }

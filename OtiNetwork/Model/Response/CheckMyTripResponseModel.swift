@@ -83,7 +83,7 @@ public class CheckMyTripResponseModel: Mappable,Decodable,Encodable {
         visaInfo <- map["VisaInfo"]
         previewHotelStatus <- map["PreviewHotelStatus"]
         incomingId <- map["IncomingId"]
-        agencyStaff <- map["AgencyStaff"]
+        agencyStuff <- map["AgencyStaff"]
         givenDateIntoTheEmbassy <- map["GivenDateIntoTheEmbassy"]
         givenDateIntoTheEmbassyString <- map["GivenDateIntoTheEmbassyString"]
         recordDate <- map["RecordDate"]

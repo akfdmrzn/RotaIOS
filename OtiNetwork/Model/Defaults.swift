@@ -33,6 +33,7 @@ public class Defaults{
         case NewSurveyQuestionsList
         case NewSurveyQuestionsRequestModel
         case OfflineSurveyQuestionAsyncResponseModel
+        case WillSendWhenOfflineModeSaveQuestionModelList
     }
     
    public init(){}
@@ -492,6 +493,28 @@ public class Defaults{
         return QuestionAsyncResponseModel.init(JSONString: "")!
     }
     
+    public func getWillSendWhenOfflineModeSaveQuestionModelList() -> [SaveQuestionRateRequestModel]{
+        let preferences = UserDefaults.standard
+        let decoder = JSONDecoder()
+        if let savedPerson = preferences.object(forKey: getIdentifier(type: .NewSurveyQuestionsRequestModel)) as? Data {
+            if let loadedPerson = try? decoder.decode([SaveQuestionRateRequestModel].self, from: savedPerson) {
+                return loadedPerson
+            }
+        }
+        return []
+    }
+    
+    public func saveWillSendWhenOfflineModeSaveQuestionModelList() -> [SaveQuestionRateRequestModel]{
+        let preferences = UserDefaults.standard
+        let decoder = JSONDecoder()
+        if let savedPerson = preferences.object(forKey: getIdentifier(type: .NewSurveyQuestionsRequestModel)) as? Data {
+            if let loadedPerson = try? decoder.decode([SaveQuestionRateRequestModel].self, from: savedPerson) {
+                return loadedPerson
+            }
+        }
+        return []
+    }
+    
     private  func  getIdentifier(type:DefaultsType)->String {
         switch type {
         case .User:
@@ -538,6 +561,8 @@ public class Defaults{
             return "NewSurveyQuestionsRequestModel"
         case .OfflineSurveyQuestionAsyncResponseModel:
             return "OfflineSurveyQuestionAsyncResponseModel"
+        case .WillSendWhenOfflineModeSaveQuestionModelList:
+            return "WillSendWhenOfflineModeSaveQuestionModelList"
         }
     }
 }

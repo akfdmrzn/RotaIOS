@@ -496,7 +496,7 @@ public class Defaults{
     public func getWillSendWhenOfflineModeSaveQuestionModelList() -> [SaveQuestionRateRequestModel]{
         let preferences = UserDefaults.standard
         let decoder = JSONDecoder()
-        if let savedPerson = preferences.object(forKey: getIdentifier(type: .NewSurveyQuestionsRequestModel)) as? Data {
+        if let savedPerson = preferences.object(forKey: getIdentifier(type: .WillSendWhenOfflineModeSaveQuestionModelList)) as? Data {
             if let loadedPerson = try? decoder.decode([SaveQuestionRateRequestModel].self, from: savedPerson) {
                 return loadedPerson
             }
@@ -508,7 +508,7 @@ public class Defaults{
         let preferences = UserDefaults.standard
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(list) {
-            preferences.set(encoded, forKey: getIdentifier(type: .NewSurveyQuestionsRequestModel))
+            preferences.set(encoded, forKey: getIdentifier(type: .WillSendWhenOfflineModeSaveQuestionModelList))
             preferences.synchronize()
         }
     }

@@ -155,8 +155,10 @@ public class TouristsSurvey : Mappable,Decodable,Encodable {
 }
 
 public class AnswerList : Mappable,Decodable,Encodable {
+    
     public var order : Int?
     public var text : String?
+    public var answerId : Int?
     public var isSelected : Bool?
     
     public required init?(map: Map) {
@@ -164,6 +166,7 @@ public class AnswerList : Mappable,Decodable,Encodable {
     }
     
     public func mapping(map: Map) {
+        answerId <- map["answerId"]
         order <- map["order"]
         text <- map["text"]
     }

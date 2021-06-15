@@ -18,6 +18,12 @@ public class CalendarAsyncResponseModel: Mappable {
         
     }
     
+    public init(day : String,fontColor : String,backColor : String){
+        self.day = day
+        self.fontColor = fontColor
+        self.backColor = backColor
+    }
+    
     public func mapping(map: Map) {
         day <- map["day"]
         fontColor <- map["FontColor"]

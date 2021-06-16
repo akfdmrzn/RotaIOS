@@ -32,7 +32,9 @@ public class GetActualTripResponseModel: Mappable,Decodable,Encodable {
     public var excursionActivedStatus = false
     public var isActual : Bool!
     public var isValidForRate : Bool!
-    
+    public var hotelId = 0
+    public var hotelCountry = ""
+    public var hotelCountryId = 0
     
     public required init?(map: Map){
     }
@@ -59,6 +61,10 @@ public class GetActualTripResponseModel: Mappable,Decodable,Encodable {
         excursionActivedStatus <- map["ExcursionActivedStatus"]
         isActual <- map["isActual"]
         isValidForRate <- map["isValidForRate"]
+        hotelId <- map["HotelId"]
+        hotelCountry <- map["HotelCountry"]
+        hotelCountryId <- map["HotelCountryID"]
+        
     }
 }
 

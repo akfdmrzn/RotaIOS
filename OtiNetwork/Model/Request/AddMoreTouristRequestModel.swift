@@ -8,7 +8,7 @@
 import UIKit
 import ObjectMapper
 
-class AddMoreTouristRequestModel: Mappable{
+public class AddMoreTouristRequestModel: Mappable{
     
     public var countryId : Int?
     public var customerId : Int?

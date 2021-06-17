@@ -23,6 +23,10 @@ public class AddMoreTouristRequestModel: Mappable{
         
     }
     
+    public init() {
+        
+    }
+    
     public init(countryId: Int, customerId: Int, excursionId: Int, companyId: Int, voucherNumber: Int, dateOfBirth: String, passportNumber: String) {
         self.countryId = countryId
         self.customerId = customerId

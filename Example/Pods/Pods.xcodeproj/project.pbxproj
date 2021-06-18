@@ -174,6 +174,8 @@
 		A93D4ADB267B45AF00271744 /* AddMoreTouristRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4ADA267B45AF00271744 /* AddMoreTouristRequestModel.swift */; };
 		A93D4AE5267B45C000271744 /* GetTouristListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4AE4267B45C000271744 /* GetTouristListResponseModel.swift */; };
 		A93D4AEF267B45D400271744 /* AddMoreTouristResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4AEE267B45D400271744 /* AddMoreTouristResponseModel.swift */; };
+		A93D4BB9267CA59C00271744 /* PaidCalendarRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4BB8267CA59C00271744 /* PaidCalendarRequestModel.swift */; };
+		A93D4BC3267CA71900271744 /* PaidCalendarResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4BC2267CA71900271744 /* PaidCalendarResponseModel.swift */; };
 		A9B8DB97264ABB2D00C9510D /* WebLoginUrlRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8DB96264ABB2D00C9510D /* WebLoginUrlRequestModel.swift */; };
 		A9B8DBA1264ABB6B00C9510D /* WebLoginUrlResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8DBA0264ABB6B00C9510D /* WebLoginUrlResponseModel.swift */; };
 		A9BAF1722608A494007224FD /* GetPackupSuitCaseTourListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BAF1712608A494007224FD /* GetPackupSuitCaseTourListRequestModel.swift */; };
@@ -588,6 +590,8 @@
 		A93D4ADA267B45AF00271744 /* AddMoreTouristRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoreTouristRequestModel.swift; sourceTree = "<group>"; };
 		A93D4AE4267B45C000271744 /* GetTouristListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTouristListResponseModel.swift; sourceTree = "<group>"; };
 		A93D4AEE267B45D400271744 /* AddMoreTouristResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoreTouristResponseModel.swift; sourceTree = "<group>"; };
+		A93D4BB8267CA59C00271744 /* PaidCalendarRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidCalendarRequestModel.swift; sourceTree = "<group>"; };
+		A93D4BC2267CA71900271744 /* PaidCalendarResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidCalendarResponseModel.swift; sourceTree = "<group>"; };
 		A9B8DB96264ABB2D00C9510D /* WebLoginUrlRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLoginUrlRequestModel.swift; sourceTree = "<group>"; };
 		A9B8DBA0264ABB6B00C9510D /* WebLoginUrlResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLoginUrlResponseModel.swift; sourceTree = "<group>"; };
 		A9BAF1712608A494007224FD /* GetPackupSuitCaseTourListRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPackupSuitCaseTourListRequestModel.swift; sourceTree = "<group>"; };
@@ -949,6 +953,7 @@
 				BF3F18612666697900E3E225 /* SaveQuestionRateRequestModel.swift */,
 				A93D4AD0267B458100271744 /* GetTouristListRequestModel.swift */,
 				A93D4ADA267B45AF00271744 /* AddMoreTouristRequestModel.swift */,
+				A93D4BB8267CA59C00271744 /* PaidCalendarRequestModel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1165,6 +1170,7 @@
 				BF3F186B2666698500E3E225 /* SaveQuestionRateResponseModel.swift */,
 				A93D4AE4267B45C000271744 /* GetTouristListResponseModel.swift */,
 				A93D4AEE267B45D400271744 /* AddMoreTouristResponseModel.swift */,
+				A93D4BC2267CA71900271744 /* PaidCalendarResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1803,6 +1809,7 @@
 				9BD9442901B6906FFBDC15C4CAC551B7 /* GetTourDefinationListRequestModel.swift in Sources */,
 				85B1D239F9A45192F899BAE4F508C7CE /* GetTourDefinationListResponseModel.swift in Sources */,
 				BF0CD2C6232F4E7D004A2E06 /* SaveVoucherCustomerLinkResponseModel.swift in Sources */,
+				A93D4BB9267CA59C00271744 /* PaidCalendarRequestModel.swift in Sources */,
 				85BB9CDEE8A7EAC04E619C0E8E07EE02 /* GetTransferRequestModel.swift in Sources */,
 				BF5EF2BD2536D42400EF1AFA /* GetBonusLoyaltyRequestModel.swift in Sources */,
 				A93D4AD1267B458100271744 /* GetTouristListRequestModel.swift in Sources */,
@@ -1826,6 +1833,7 @@
 				44C1FC33FB268D6AEE80CCA9BCC54B04 /* SendRatedTourList.swift in Sources */,
 				FB9DEA6D7C01B3CFFE6A40BF7155391B /* ServiceEndPoint.swift in Sources */,
 				A91B21742603A01C00940B7B /* GetSuitcaseResponseModel.swift in Sources */,
+				A93D4BC3267CA71900271744 /* PaidCalendarResponseModel.swift in Sources */,
 				BFCC8BC92651657C0061637D /* GetRecommendedResponseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

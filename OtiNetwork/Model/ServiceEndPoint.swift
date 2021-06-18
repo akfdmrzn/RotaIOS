@@ -66,4 +66,5 @@ public enum ServiceEndPoint: String {
     case SaveQuestionRateResponses = "/api/Survey/SaveQuestionRateResponsesAsync"
     case GetTouristListAsync = "/api/PcmsExcursion/GetTouristListAsync"
     case AddMoreTouristAsync = "/api/PcmsExcursion/AddMoreTouristAsync"
+    case PaidCalendarAsync = "/api/PcmsExcursion/PaidCalendarAsync"
 }

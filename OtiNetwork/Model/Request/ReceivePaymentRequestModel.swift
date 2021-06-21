@@ -37,14 +37,14 @@ public class ReceivePaymentRequestModel: Mappable{
     }
 
     public func mapping(map: Map) {
-        userId <- map["CheckMyTripId"]
+        userId <- map["UserId"]
         excursionId <- map["ExcursionId"]
-        creditCard <- map["CountryId"]
-        cvv <- map["HotelAreaIds"]
-        owner <- map["CheckMyTripId"]
-        cardMonth <- map["ExcursionId"]
-        cardYear <- map["CountryId"]
-        currencyCode <- map["HotelAreaIds"]
-        amount <- map["HotelAreaIds"]
+        creditCard <- map["CreditCard"]
+        cvv <- map["Cvv"]
+        owner <- map["Owner"]
+        cardMonth <- map["CardMonth"]
+        cardYear <- map["CardYear"]
+        currencyCode <- map["CurrencyCode"]
+        amount <- map["Amount"]
     }
 }

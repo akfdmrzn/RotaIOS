@@ -8,7 +8,7 @@
 import UIKit
 import ObjectMapper
 
-public class ReceivePaymentResponseModel: NSObject {
+public class ReceivePaymentResponseModel: Mappable {
     
     public var url: String!
     

@@ -176,6 +176,8 @@
 		A93D4AEF267B45D400271744 /* AddMoreTouristResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4AEE267B45D400271744 /* AddMoreTouristResponseModel.swift */; };
 		A93D4BB9267CA59C00271744 /* PaidCalendarRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4BB8267CA59C00271744 /* PaidCalendarRequestModel.swift */; };
 		A93D4BC3267CA71900271744 /* PaidCalendarResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4BC2267CA71900271744 /* PaidCalendarResponseModel.swift */; };
+		A93D4BED2680B3DC00271744 /* ReceivePaymentRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4BEC2680B3DC00271744 /* ReceivePaymentRequestModel.swift */; };
+		A93D4BF72680B5E800271744 /* ReceivePaymentResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4BF62680B5E800271744 /* ReceivePaymentResponseModel.swift */; };
 		A9B8DB97264ABB2D00C9510D /* WebLoginUrlRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8DB96264ABB2D00C9510D /* WebLoginUrlRequestModel.swift */; };
 		A9B8DBA1264ABB6B00C9510D /* WebLoginUrlResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8DBA0264ABB6B00C9510D /* WebLoginUrlResponseModel.swift */; };
 		A9BAF1722608A494007224FD /* GetPackupSuitCaseTourListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BAF1712608A494007224FD /* GetPackupSuitCaseTourListRequestModel.swift */; };
@@ -592,6 +594,8 @@
 		A93D4AEE267B45D400271744 /* AddMoreTouristResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoreTouristResponseModel.swift; sourceTree = "<group>"; };
 		A93D4BB8267CA59C00271744 /* PaidCalendarRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidCalendarRequestModel.swift; sourceTree = "<group>"; };
 		A93D4BC2267CA71900271744 /* PaidCalendarResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidCalendarResponseModel.swift; sourceTree = "<group>"; };
+		A93D4BEC2680B3DC00271744 /* ReceivePaymentRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivePaymentRequestModel.swift; sourceTree = "<group>"; };
+		A93D4BF62680B5E800271744 /* ReceivePaymentResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivePaymentResponseModel.swift; sourceTree = "<group>"; };
 		A9B8DB96264ABB2D00C9510D /* WebLoginUrlRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLoginUrlRequestModel.swift; sourceTree = "<group>"; };
 		A9B8DBA0264ABB6B00C9510D /* WebLoginUrlResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLoginUrlResponseModel.swift; sourceTree = "<group>"; };
 		A9BAF1712608A494007224FD /* GetPackupSuitCaseTourListRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPackupSuitCaseTourListRequestModel.swift; sourceTree = "<group>"; };
@@ -954,6 +958,7 @@
 				A93D4AD0267B458100271744 /* GetTouristListRequestModel.swift */,
 				A93D4ADA267B45AF00271744 /* AddMoreTouristRequestModel.swift */,
 				A93D4BB8267CA59C00271744 /* PaidCalendarRequestModel.swift */,
+				A93D4BEC2680B3DC00271744 /* ReceivePaymentRequestModel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1171,6 +1176,7 @@
 				A93D4AE4267B45C000271744 /* GetTouristListResponseModel.swift */,
 				A93D4AEE267B45D400271744 /* AddMoreTouristResponseModel.swift */,
 				A93D4BC2267CA71900271744 /* PaidCalendarResponseModel.swift */,
+				A93D4BF62680B5E800271744 /* ReceivePaymentResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1744,6 +1750,7 @@
 				6E285D0EABA2EFC520A6DD3BF09D9569 /* CustomerChangePasswordRequestModel.swift in Sources */,
 				BF1028A123151BF0002FFE1E /* GetPDFResponseModel.swift in Sources */,
 				BF3F18582666668B00E3E225 /* QuestionAsyncResponseModel.swift in Sources */,
+				A93D4BED2680B3DC00271744 /* ReceivePaymentRequestModel.swift in Sources */,
 				230ADF7155EF2C01A7CBD7CAC6F156EE /* CustomerChangePasswordResponseModel.swift in Sources */,
 				0B00AEDFE2E84032F0923220A56E893F /* CustomerControlActivateCodeRequestModel.swift in Sources */,
 				8EE1682892C701CA67D79C8C75164BD7 /* CustomerControlActivateCodeResponseModel.swift in Sources */,
@@ -1791,6 +1798,7 @@
 				069F0ED65687AD620C4BAE94016255D9 /* GetNotificationSearchRequestModel.swift in Sources */,
 				BFBD9972260C888800780BBE /* SaveCustomSuitcaseRequestModel.swift in Sources */,
 				445FB8F2FC8BCDB1DBFC0F28C89A1799 /* GetNotificationSearchResponseModel.swift in Sources */,
+				A93D4BF72680B5E800271744 /* ReceivePaymentResponseModel.swift in Sources */,
 				FF63A6A0C28D603DFBFD159E161A5258 /* GetPhoneNumberListRequestModel.swift in Sources */,
 				9C347080A42B5466D41A5A40BCC6EE60 /* GetPhoneNumberListResponseModel.swift in Sources */,
 				A907401E2656E4C100BA62FA /* GetDetailResponseModel.swift in Sources */,

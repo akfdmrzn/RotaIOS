@@ -8,7 +8,7 @@
 import UIKit
 import ObjectMapper
 
-public class SavePassportRequestModel: Mappable {
+public class SavePassportList: Mappable,Decodable,Encodable{
     
     public var touristId : Int?
     public var operatorId : Int?

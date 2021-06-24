@@ -180,7 +180,7 @@
 		A93D4BF72680B5E800271744 /* ReceivePaymentResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4BF62680B5E800271744 /* ReceivePaymentResponseModel.swift */; };
 		A93D4F8126847CEE00271744 /* GetPassportDetailRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4F8026847CEE00271744 /* GetPassportDetailRequestModel.swift */; };
 		A93D4F8B26847FE100271744 /* GetPassportDetailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4F8A26847FE100271744 /* GetPassportDetailResponseModel.swift */; };
-		A93D4F952684820000271744 /* SavePassportRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4F942684820000271744 /* SavePassportRequestModel.swift */; };
+		A93D4F952684820000271744 /* SavePassportList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4F942684820000271744 /* SavePassportList.swift */; };
 		A93D4F9F2684829C00271744 /* SavePassportResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4F9E2684829C00271744 /* SavePassportResponseModel.swift */; };
 		A9B8DB97264ABB2D00C9510D /* WebLoginUrlRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8DB96264ABB2D00C9510D /* WebLoginUrlRequestModel.swift */; };
 		A9B8DBA1264ABB6B00C9510D /* WebLoginUrlResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8DBA0264ABB6B00C9510D /* WebLoginUrlResponseModel.swift */; };
@@ -602,7 +602,7 @@
 		A93D4BF62680B5E800271744 /* ReceivePaymentResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivePaymentResponseModel.swift; sourceTree = "<group>"; };
 		A93D4F8026847CEE00271744 /* GetPassportDetailRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPassportDetailRequestModel.swift; sourceTree = "<group>"; };
 		A93D4F8A26847FE100271744 /* GetPassportDetailResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPassportDetailResponseModel.swift; sourceTree = "<group>"; };
-		A93D4F942684820000271744 /* SavePassportRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePassportRequestModel.swift; sourceTree = "<group>"; };
+		A93D4F942684820000271744 /* SavePassportList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePassportList.swift; sourceTree = "<group>"; };
 		A93D4F9E2684829C00271744 /* SavePassportResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePassportResponseModel.swift; sourceTree = "<group>"; };
 		A9B8DB96264ABB2D00C9510D /* WebLoginUrlRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLoginUrlRequestModel.swift; sourceTree = "<group>"; };
 		A9B8DBA0264ABB6B00C9510D /* WebLoginUrlResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLoginUrlResponseModel.swift; sourceTree = "<group>"; };
@@ -968,7 +968,7 @@
 				A93D4BB8267CA59C00271744 /* PaidCalendarRequestModel.swift */,
 				A93D4BEC2680B3DC00271744 /* ReceivePaymentRequestModel.swift */,
 				A93D4F8026847CEE00271744 /* GetPassportDetailRequestModel.swift */,
-				A93D4F942684820000271744 /* SavePassportRequestModel.swift */,
+				A93D4F942684820000271744 /* SavePassportList.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1853,7 +1853,7 @@
 				E544A23D4C7D9920F1E3EF8C51603515 /* SaveFavoriteResponseModel.swift in Sources */,
 				3DE31CFEA809B9A33254D82093A722E9 /* SendRatedResultResponseModel.swift in Sources */,
 				A93D4F9F2684829C00271744 /* SavePassportResponseModel.swift in Sources */,
-				A93D4F952684820000271744 /* SavePassportRequestModel.swift in Sources */,
+				A93D4F952684820000271744 /* SavePassportList.swift in Sources */,
 				44C1FC33FB268D6AEE80CCA9BCC54B04 /* SendRatedTourList.swift in Sources */,
 				FB9DEA6D7C01B3CFFE6A40BF7155391B /* ServiceEndPoint.swift in Sources */,
 				A91B21742603A01C00940B7B /* GetSuitcaseResponseModel.swift in Sources */,

@@ -8,8 +8,8 @@
 import UIKit
 
 public class CompanyList: NSObject {
-    var id:Int!
-    var name:String!
+    public var id:Int!
+    public var name:String!
     override init() {}
     
     init(id:Int,name:String!) {

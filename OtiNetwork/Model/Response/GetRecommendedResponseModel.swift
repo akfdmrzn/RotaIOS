@@ -45,6 +45,7 @@ public class ExcursionSeller: Mappable {
     public var id_: Int!
     public var isVandable: Int!
     public var durationImageLink: String!
+    public var countryId: Int!
     
     public required init?(map: Map) {
         

@@ -178,6 +178,11 @@
 		A93D4BC3267CA71900271744 /* PaidCalendarResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4BC2267CA71900271744 /* PaidCalendarResponseModel.swift */; };
 		A93D4BED2680B3DC00271744 /* ReceivePaymentRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4BEC2680B3DC00271744 /* ReceivePaymentRequestModel.swift */; };
 		A93D4BF72680B5E800271744 /* ReceivePaymentResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4BF62680B5E800271744 /* ReceivePaymentResponseModel.swift */; };
+		A93D4F8126847CEE00271744 /* GetPassportDetailRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4F8026847CEE00271744 /* GetPassportDetailRequestModel.swift */; };
+		A93D4F8B26847FE100271744 /* GetPassportDetailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4F8A26847FE100271744 /* GetPassportDetailResponseModel.swift */; };
+		A93D4F952684820000271744 /* SavePassportList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4F942684820000271744 /* SavePassportList.swift */; };
+		A93D4F9F2684829C00271744 /* SavePassportResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4F9E2684829C00271744 /* SavePassportResponseModel.swift */; };
+		A9766A222685FED400151733 /* CompanyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9766A212685FED400151733 /* CompanyList.swift */; };
 		A9B8DB97264ABB2D00C9510D /* WebLoginUrlRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8DB96264ABB2D00C9510D /* WebLoginUrlRequestModel.swift */; };
 		A9B8DBA1264ABB6B00C9510D /* WebLoginUrlResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8DBA0264ABB6B00C9510D /* WebLoginUrlResponseModel.swift */; };
 		A9BAF1722608A494007224FD /* GetPackupSuitCaseTourListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BAF1712608A494007224FD /* GetPackupSuitCaseTourListRequestModel.swift */; };
@@ -596,6 +601,11 @@
 		A93D4BC2267CA71900271744 /* PaidCalendarResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidCalendarResponseModel.swift; sourceTree = "<group>"; };
 		A93D4BEC2680B3DC00271744 /* ReceivePaymentRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivePaymentRequestModel.swift; sourceTree = "<group>"; };
 		A93D4BF62680B5E800271744 /* ReceivePaymentResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivePaymentResponseModel.swift; sourceTree = "<group>"; };
+		A93D4F8026847CEE00271744 /* GetPassportDetailRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPassportDetailRequestModel.swift; sourceTree = "<group>"; };
+		A93D4F8A26847FE100271744 /* GetPassportDetailResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPassportDetailResponseModel.swift; sourceTree = "<group>"; };
+		A93D4F942684820000271744 /* SavePassportList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePassportList.swift; sourceTree = "<group>"; };
+		A93D4F9E2684829C00271744 /* SavePassportResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePassportResponseModel.swift; sourceTree = "<group>"; };
+		A9766A212685FED400151733 /* CompanyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyList.swift; sourceTree = "<group>"; };
 		A9B8DB96264ABB2D00C9510D /* WebLoginUrlRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLoginUrlRequestModel.swift; sourceTree = "<group>"; };
 		A9B8DBA0264ABB6B00C9510D /* WebLoginUrlResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLoginUrlResponseModel.swift; sourceTree = "<group>"; };
 		A9BAF1712608A494007224FD /* GetPackupSuitCaseTourListRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPackupSuitCaseTourListRequestModel.swift; sourceTree = "<group>"; };
@@ -959,6 +969,9 @@
 				A93D4ADA267B45AF00271744 /* AddMoreTouristRequestModel.swift */,
 				A93D4BB8267CA59C00271744 /* PaidCalendarRequestModel.swift */,
 				A93D4BEC2680B3DC00271744 /* ReceivePaymentRequestModel.swift */,
+				A93D4F8026847CEE00271744 /* GetPassportDetailRequestModel.swift */,
+				A93D4F942684820000271744 /* SavePassportList.swift */,
+				A9766A212685FED400151733 /* CompanyList.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1177,6 +1190,8 @@
 				A93D4AEE267B45D400271744 /* AddMoreTouristResponseModel.swift */,
 				A93D4BC2267CA71900271744 /* PaidCalendarResponseModel.swift */,
 				A93D4BF62680B5E800271744 /* ReceivePaymentResponseModel.swift */,
+				A93D4F8A26847FE100271744 /* GetPassportDetailResponseModel.swift */,
+				A93D4F9E2684829C00271744 /* SavePassportResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1756,6 +1771,7 @@
 				8EE1682892C701CA67D79C8C75164BD7 /* CustomerControlActivateCodeResponseModel.swift in Sources */,
 				7F0020144271C556EE6AA69D4706BE85 /* CustomerCreateRequestModel.swift in Sources */,
 				10238E06D7EF3CE4EAAFB180F4506DEF /* CustomerCreateResponseModel.swift in Sources */,
+				A93D4F8B26847FE100271744 /* GetPassportDetailResponseModel.swift in Sources */,
 				BFB7159D265EF70600FE8D9D /* CalendarAsyncResponseModel.swift in Sources */,
 				7B59A3404FB6072AC67C7DEDE44C43D0 /* CustomerDetailByIdRequestModel.swift in Sources */,
 				A91B21812603A1E800940B7B /* GetSuitcaseRequestModel.swift in Sources */,
@@ -1825,10 +1841,12 @@
 				96F8A81B2F45D8F9F32EDB7BFB4544E4 /* GetTripDetailByIdRequestModel.swift in Sources */,
 				DA2B26699095986E652A3163BFC59301 /* GetWeatherRequestModel.swift in Sources */,
 				F4E21E5058357E022C30016AD294E4DF /* GetWeatherResponseModel.swift in Sources */,
+				A93D4F8126847CEE00271744 /* GetPassportDetailRequestModel.swift in Sources */,
 				110F0D002345FCDB00066130 /* GetTransferTypeListRequestModel.swift in Sources */,
 				49DC822A0CD8C547F8821F2EA32F608E /* LoginRequest.swift in Sources */,
 				7FB14A827CD16997F007F74B01D60E9C /* LoginResponse.swift in Sources */,
 				BF3F18622666697900E3E225 /* SaveQuestionRateRequestModel.swift in Sources */,
+				A9766A222685FED400151733 /* CompanyList.swift in Sources */,
 				A9B8DB97264ABB2D00C9510D /* WebLoginUrlRequestModel.swift in Sources */,
 				BFA424C024F3B919001628ED /* GetBarcodeRequestModel.swift in Sources */,
 				FBCA687435B1D15A1AA893F41C3FA8AC /* LoginShortRequest.swift in Sources */,
@@ -1838,6 +1856,8 @@
 				432275A9740FBB9697AB762445DE0B37 /* SaveFavoriteRequestModel.swift in Sources */,
 				E544A23D4C7D9920F1E3EF8C51603515 /* SaveFavoriteResponseModel.swift in Sources */,
 				3DE31CFEA809B9A33254D82093A722E9 /* SendRatedResultResponseModel.swift in Sources */,
+				A93D4F9F2684829C00271744 /* SavePassportResponseModel.swift in Sources */,
+				A93D4F952684820000271744 /* SavePassportList.swift in Sources */,
 				44C1FC33FB268D6AEE80CCA9BCC54B04 /* SendRatedTourList.swift in Sources */,
 				FB9DEA6D7C01B3CFFE6A40BF7155391B /* ServiceEndPoint.swift in Sources */,
 				A91B21742603A01C00940B7B /* GetSuitcaseResponseModel.swift in Sources */,

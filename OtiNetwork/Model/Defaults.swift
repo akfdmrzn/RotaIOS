@@ -118,6 +118,44 @@ public class Defaults{
         }
     }
     
+    //AddMoreTouristAsync companyId field
+    public func getCompanyInfo() -> [CompanyList]{
+        
+        var companyList: [CompanyList]! = []
+        
+        if (Bundle.main.bundleIdentifier?.elementsEqual("com.oti.sunmar"))! {
+            companyList.append(CompanyList.init(id: 13, name: "Sunmar"))
+            companyList.append(CompanyList.init(id: 9, name: "Coral Travel Russia"))
+            return companyList
+        }
+        else if (Bundle.main.bundleIdentifier?.elementsEqual("com.oti.coral.ru"))! {
+            companyList.append(CompanyList.init(id: 9, name: "Coral Travel Russia"))
+            companyList.append(CompanyList.init(id: 13, name: "Sunmar"))
+            return companyList
+        }
+        else if (Bundle.main.bundleIdentifier?.elementsEqual("com.oti.coral.poland"))! {
+            companyList.append(CompanyList.init(id: 3, name: "Coral Travel Poland"))
+            return companyList
+        }
+        else if (Bundle.main.bundleIdentifier?.elementsEqual("com.oti.coral.ua"))! {
+            companyList.append(CompanyList.init(id: 10, name: "Coral Travel Ukraine"))
+            return companyList
+        }
+        else if (Bundle.main.bundleIdentifier?.elementsEqual("com.oti.coral.lithuania"))! {
+            companyList.append(CompanyList.init(id: 895, name: "Coral Travel Lithuania"))
+            return companyList
+        }
+        else if (Bundle.main.bundleIdentifier?.elementsEqual("com.oti.coral.belarus"))! {
+            companyList.append(CompanyList.init(id: 276, name: "Coral Belarus"))
+            return companyList
+        }
+        else{
+            companyList.append(CompanyList.init(id: 9, name: "Coral Russia"))
+            companyList.append(CompanyList.init(id: 13, name: "Sunmar"))
+            return companyList
+        }
+    }
+    
     //LanguageID
     public func saveLanguageId(languageId:Int){
         let preferences = UserDefaults.standard

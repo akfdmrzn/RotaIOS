@@ -43,7 +43,7 @@ public class ExcursionSeller: Mappable {
     public var isRecommended: Bool!
     public var isNew: Bool!
     public var id_: Int!
-    public var isVandable: Int!
+    public var isVandable: Bool!
     public var durationImageLink: String!
     public var countryId: Int!
     

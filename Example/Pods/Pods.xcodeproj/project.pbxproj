@@ -230,6 +230,10 @@
 		BF5EF2C72536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF2C62536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift */; };
 		BF6209E9257632480032E80B /* GetExcursionIncomingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6209E8257632480032E80B /* GetExcursionIncomingListModel.swift */; };
 		BF6209F3257636550032E80B /* GetExcursionIncomingListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6209F2257636550032E80B /* GetExcursionIncomingListResponseModel.swift */; };
+		BF815F43268B383E00287C9C /* InvoiceOrVoucherAsyncRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF815F42268B383E00287C9C /* InvoiceOrVoucherAsyncRequestModel.swift */; };
+		BF815F4D268B38B400287C9C /* InvoiceOrVoucherAsyncResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF815F4C268B38B400287C9C /* InvoiceOrVoucherAsyncResponseModel.swift */; };
+		BF815F57268B3C2900287C9C /* ExtrasAsyncRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF815F56268B3C2900287C9C /* ExtrasAsyncRequestModel.swift */; };
+		BF815F61268B3CD100287C9C /* ExtrasAsyncResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF815F60268B3CD100287C9C /* ExtrasAsyncResponseModel.swift */; };
 		BF9A45D92590E63500ADE49B /* CustomerUpdateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A45D82590E63500ADE49B /* CustomerUpdateRequestModel.swift */; };
 		BF9A46022590EBAB00ADE49B /* CustomerUpdateResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A46012590EBAA00ADE49B /* CustomerUpdateResponseModel.swift */; };
 		BFA424BF24F3B7B7001628ED /* GetBarcodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA424BD24F3B761001628ED /* GetBarcodeResponseModel.swift */; };
@@ -648,6 +652,10 @@
 		BF5EF2C62536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBonusLoyaltyResponseModel.swift; sourceTree = "<group>"; };
 		BF6209E8257632480032E80B /* GetExcursionIncomingListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetExcursionIncomingListModel.swift; sourceTree = "<group>"; };
 		BF6209F2257636550032E80B /* GetExcursionIncomingListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetExcursionIncomingListResponseModel.swift; sourceTree = "<group>"; };
+		BF815F42268B383E00287C9C /* InvoiceOrVoucherAsyncRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceOrVoucherAsyncRequestModel.swift; sourceTree = "<group>"; };
+		BF815F4C268B38B400287C9C /* InvoiceOrVoucherAsyncResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceOrVoucherAsyncResponseModel.swift; sourceTree = "<group>"; };
+		BF815F56268B3C2900287C9C /* ExtrasAsyncRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtrasAsyncRequestModel.swift; sourceTree = "<group>"; };
+		BF815F60268B3CD100287C9C /* ExtrasAsyncResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtrasAsyncResponseModel.swift; sourceTree = "<group>"; };
 		BF9A45D82590E63500ADE49B /* CustomerUpdateRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerUpdateRequestModel.swift; sourceTree = "<group>"; };
 		BF9A46012590EBAA00ADE49B /* CustomerUpdateResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerUpdateResponseModel.swift; sourceTree = "<group>"; };
 		BFA424BB24F3B373001628ED /* GetBarcodeRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBarcodeRequestModel.swift; sourceTree = "<group>"; };
@@ -972,6 +980,8 @@
 				A93D4F8026847CEE00271744 /* GetPassportDetailRequestModel.swift */,
 				A93D4F942684820000271744 /* SavePassportList.swift */,
 				A9766A212685FED400151733 /* CompanyList.swift */,
+				BF815F42268B383E00287C9C /* InvoiceOrVoucherAsyncRequestModel.swift */,
+				BF815F56268B3C2900287C9C /* ExtrasAsyncRequestModel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1192,6 +1202,8 @@
 				A93D4BF62680B5E800271744 /* ReceivePaymentResponseModel.swift */,
 				A93D4F8A26847FE100271744 /* GetPassportDetailResponseModel.swift */,
 				A93D4F9E2684829C00271744 /* SavePassportResponseModel.swift */,
+				BF815F4C268B38B400287C9C /* InvoiceOrVoucherAsyncResponseModel.swift */,
+				BF815F60268B3CD100287C9C /* ExtrasAsyncResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1780,6 +1792,7 @@
 				30E3162427B2BCAE12E68AE6A19F3FE5 /* CustomerSendActiveCodeRequestModel.swift in Sources */,
 				3239768147A183EB8EFD42750E1D12B4 /* CustomerSendActiveCodeResponseModel.swift in Sources */,
 				BFCC8BB5264EBE970061637D /* GetSearchResponseModel.swift in Sources */,
+				BF815F4D268B38B400287C9C /* InvoiceOrVoucherAsyncResponseModel.swift in Sources */,
 				BFBD9990260C8BC900780BBE /* DeleteCustomSuitcaseRequestModel.swift in Sources */,
 				A93D4ADB267B45AF00271744 /* AddMoreTouristRequestModel.swift in Sources */,
 				39DB6B814AF5C14CF1E3B230EF1E170C /* Defaults.swift in Sources */,
@@ -1809,6 +1822,7 @@
 				8CD159BB91877082BE426014C7B52C90 /* GetGuideInfoOfTouristResponseModel.swift in Sources */,
 				1C2F24E9B0EA482509DB016E0C23A276 /* GetListRequestModel.swift in Sources */,
 				86B26E6107F0710474B060CD269B7306 /* GetListResponseModel.swift in Sources */,
+				BF815F43268B383E00287C9C /* InvoiceOrVoucherAsyncRequestModel.swift in Sources */,
 				DD98B74DA34219394E8EA9086B28FE6E /* GetNotificationReadRequestModel.swift in Sources */,
 				9020D6FD28480F6FEF728319A57BECA3 /* GetNotificationReadResponseModel.swift in Sources */,
 				069F0ED65687AD620C4BAE94016255D9 /* GetNotificationSearchRequestModel.swift in Sources */,
@@ -1819,6 +1833,7 @@
 				9C347080A42B5466D41A5A40BCC6EE60 /* GetPhoneNumberListResponseModel.swift in Sources */,
 				A907401E2656E4C100BA62FA /* GetDetailResponseModel.swift in Sources */,
 				408F2A89A247A965631C4272639D3CFC /* GetSaledExcursionInfoDetailRequestModel.swift in Sources */,
+				BF815F61268B3CD100287C9C /* ExtrasAsyncResponseModel.swift in Sources */,
 				A93D4AE5267B45C000271744 /* GetTouristListResponseModel.swift in Sources */,
 				BF3F186C2666698500E3E225 /* SaveQuestionRateResponseModel.swift in Sources */,
 				B5DC1950D9E4812761B4514082C71222 /* GetSaledExcursionInfoDetailResponseModel.swift in Sources */,
@@ -1826,6 +1841,7 @@
 				BF6209E9257632480032E80B /* GetExcursionIncomingListModel.swift in Sources */,
 				9D4B8E73DACC0DF557BA218E466E0A23 /* GetSaledExcursionInfoRequestModel.swift in Sources */,
 				011262BB96A50E5F2CDC634B425F1064 /* GetSaledExcursionInfoResponseModel.swift in Sources */,
+				BF815F57268B3C2900287C9C /* ExtrasAsyncRequestModel.swift in Sources */,
 				BFA424BF24F3B7B7001628ED /* GetBarcodeResponseModel.swift in Sources */,
 				F2C9CE05A072D5A4BB42285E4F21E221 /* GetTourDefinationComboListRequestModel.swift in Sources */,
 				346A7407FC800197346C75E0490468F9 /* GetTourDefinationComboListResponseModel.swift in Sources */,

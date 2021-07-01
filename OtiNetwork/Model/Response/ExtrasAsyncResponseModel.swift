@@ -15,11 +15,18 @@ public class ExtrasAsyncResponseModel: Mappable {
     public var extraLocalName : String?
     public var priceType : String?
     public var priceTypeId : Int?
+    public var isPaxes : Bool?
     public var price : Double?
     public var currency : String?
     public var currencyId : Int?
     public var required : Bool?
     public var mandotaryExtra : Int?
+    public var minPerson : Int?
+    public var flatAmount : Double?
+    public var adultAmount : Double?
+    public var childAmount : Double?
+    public var toddleAmount : Double?
+    public var infantAmount : Double?
     
     public required init?(map: Map) {
         
@@ -31,10 +38,17 @@ public class ExtrasAsyncResponseModel: Mappable {
         extraLocalName <- map["extraLocalName"]
         priceType <- map["priceType"]
         priceTypeId <- map["priceTypeId"]
+        isPaxes <- map["isPaxes"]
         price <- map["price"]
         currency <- map["currency"]
         currencyId <- map["currencyId"]
         required <- map["required"]
         mandotaryExtra <- map["mandotaryExtra"]
+        minPerson <- map["minPerson"]
+        flatAmount <- map["flatAmount"]
+        adultAmount <- map["adultAmount"]
+        childAmount <- map["childAmount"]
+        toddleAmount <- map["toddleAmount"]
+        infantAmount <- map["infantAmount"]
     }
 }

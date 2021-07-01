@@ -44,6 +44,7 @@ public class GetDetailResponseModel: Mappable {
     public var extras : [String]?
     public var isVendable : Bool?
     public var isFavorite : Bool?
+    public var isPassportRequired : Bool?
     public var icons : [Icons]?
 
     public required init?(map: Map) {
@@ -86,6 +87,7 @@ public class GetDetailResponseModel: Mappable {
         height <- map["height"]
         extras <- map["extras"]
         isVendable <- map["IsVendable"]
+        isPassportRequired <- map["isPassportRequired"]
         isFavorite <- map["IsFavorite"]
         icons <- map["Icons"]
     }

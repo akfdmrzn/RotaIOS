@@ -27,6 +27,7 @@ public class ExtrasAsyncResponseModel: Mappable {
     public var childAmount : Double?
     public var toddleAmount : Double?
     public var infantAmount : Double?
+    public var isSelected : Bool?
     
     public required init?(map: Map) {
         

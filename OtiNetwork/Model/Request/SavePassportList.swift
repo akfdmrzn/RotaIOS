@@ -28,6 +28,10 @@ public class SavePassportList: Mappable,Decodable,Encodable{
         
     }
     
+    public init() {
+        
+    }
+    
     public init(touristId: Int, operatorId: Int, name: String, surName: String, birthDate: String, passportSerie: String, passportNumber: String, nationalityName: String, genderName: String, countryOfBirthName: String, passportValidThru: String, passportGivenDate: String, documentTypeName: String) {
         self.touristId = touristId
         self.operatorId = operatorId

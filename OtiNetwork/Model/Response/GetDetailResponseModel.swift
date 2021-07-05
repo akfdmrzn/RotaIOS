@@ -12,7 +12,7 @@ public class GetDetailResponseModel: Mappable {
     public var id : Int?
     public var minPriceType : String?
     public var minPriceTypeId : Int?
-    public var minPriceInfo : String?
+    public var minPriceInfo : Double?
     public var minPriceCurrency : String?
     public var minPriceCurrencyId : Int?
     public var languageCode : String?

@@ -45,7 +45,6 @@ public class CustomerDetailByIdResponseModel: Mappable {
     public var  validationErrorMessage  = ""
     
     
-    
     public required init?(map: Map) {
         
     }

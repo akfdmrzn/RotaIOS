@@ -9,7 +9,6 @@
 Pod::Spec.new do |s|
     s.name             = 'OtiNetwork'
     s.version          = '1.9.5'
->>>>>>> dcb2e841e29860f16e4d68ba34d74c51d9b7323b
     s.summary          = 'OtiNetworking Manager includes configuration private'
     
     # This description is used to generate tags and improve search results.

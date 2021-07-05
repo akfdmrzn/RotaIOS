@@ -42,6 +42,7 @@ public class CheckMyTripResponseModel: Mappable,Decodable,Encodable {
     public var recordDate = ""
     public var recordDateString = ""
     public var departureDate = ""
+    public var hotelAreaId : Int = 0
     public var hotels: [Hotels] = []
     public var flights: [Flights] = []
     public var extras: [Extras] = []
@@ -89,6 +90,7 @@ public class CheckMyTripResponseModel: Mappable,Decodable,Encodable {
         recordDate <- map["RecordDate"]
         recordDateString <- map["RecordDateString"]
         departureDate <- map["DepartureDate"]
+        hotelAreaId <- map["HotelAreaId"]
         hotels <- map["Hotels"]
         flights <- map["Flights"]
         extras <- map["Extras"]

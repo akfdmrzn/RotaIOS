@@ -97,14 +97,4 @@ extension UIViewController {
         baseApiRequestBodyModel.dataArray = dataArray
         return baseApiRequestBodyModel
     }
-    
-    public func getBaseRequestArrayDataStaticToken<T:Mappable> (dataArray:[T])-> BaseApiRequestBody<T>{
-        let systemVersion = UIDevice.current.systemVersion
-        let deviceModel = UIDevice.current.modelName
-        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
-        let baseApiRequestBodyModel =
-            BaseApiRequestBody.init(token: "2525505040406565111110206999" , languageId: userDefaultsData.getLanguageId(), mobilInformation: "\(deviceModel);iOS;\(systemVersion); Wifi; \(appVersion)", dataArray: dataArray)
-        baseApiRequestBodyModel.dataArray = dataArray
-        return baseApiRequestBodyModel
-    }
 }

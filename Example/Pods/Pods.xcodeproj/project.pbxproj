@@ -236,6 +236,8 @@
 		BF815F4D268B38B400287C9C /* InvoiceOrVoucherAsyncResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF815F4C268B38B400287C9C /* InvoiceOrVoucherAsyncResponseModel.swift */; };
 		BF815F57268B3C2900287C9C /* ExtrasAsyncRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF815F56268B3C2900287C9C /* ExtrasAsyncRequestModel.swift */; };
 		BF815F61268B3CD100287C9C /* ExtrasAsyncResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF815F60268B3CD100287C9C /* ExtrasAsyncResponseModel.swift */; };
+		BF8161E12696F73A00287C9C /* GetPaymentTypeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8161E02696F73A00287C9C /* GetPaymentTypeRequestModel.swift */; };
+		BF8161EB2696F7B800287C9C /* GetPaymentTypeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8161EA2696F7B800287C9C /* GetPaymentTypeResponseModel.swift */; };
 		BF9A45D92590E63500ADE49B /* CustomerUpdateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A45D82590E63500ADE49B /* CustomerUpdateRequestModel.swift */; };
 		BF9A46022590EBAB00ADE49B /* CustomerUpdateResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A46012590EBAA00ADE49B /* CustomerUpdateResponseModel.swift */; };
 		BFA424BF24F3B7B7001628ED /* GetBarcodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA424BD24F3B761001628ED /* GetBarcodeResponseModel.swift */; };
@@ -660,6 +662,8 @@
 		BF815F4C268B38B400287C9C /* InvoiceOrVoucherAsyncResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceOrVoucherAsyncResponseModel.swift; sourceTree = "<group>"; };
 		BF815F56268B3C2900287C9C /* ExtrasAsyncRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtrasAsyncRequestModel.swift; sourceTree = "<group>"; };
 		BF815F60268B3CD100287C9C /* ExtrasAsyncResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtrasAsyncResponseModel.swift; sourceTree = "<group>"; };
+		BF8161E02696F73A00287C9C /* GetPaymentTypeRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPaymentTypeRequestModel.swift; sourceTree = "<group>"; };
+		BF8161EA2696F7B800287C9C /* GetPaymentTypeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPaymentTypeResponseModel.swift; sourceTree = "<group>"; };
 		BF9A45D82590E63500ADE49B /* CustomerUpdateRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerUpdateRequestModel.swift; sourceTree = "<group>"; };
 		BF9A46012590EBAA00ADE49B /* CustomerUpdateResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerUpdateResponseModel.swift; sourceTree = "<group>"; };
 		BFA424BB24F3B373001628ED /* GetBarcodeRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBarcodeRequestModel.swift; sourceTree = "<group>"; };
@@ -987,6 +991,7 @@
 				BF815F42268B383E00287C9C /* InvoiceOrVoucherAsyncRequestModel.swift */,
 				BF815F56268B3C2900287C9C /* ExtrasAsyncRequestModel.swift */,
 				A9A0A0FA268DC5E70057C4B9 /* CalculateTotalPriceRequestModel.swift */,
+				BF8161E02696F73A00287C9C /* GetPaymentTypeRequestModel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1210,6 +1215,7 @@
 				BF815F4C268B38B400287C9C /* InvoiceOrVoucherAsyncResponseModel.swift */,
 				BF815F60268B3CD100287C9C /* ExtrasAsyncResponseModel.swift */,
 				A9A0A104268DD0060057C4B9 /* CalculateTotalPriceResponseModel.swift */,
+				BF8161EA2696F7B800287C9C /* GetPaymentTypeResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1809,8 +1815,10 @@
 				B3BA585EF13D2EA44F596EE510F1A44A /* ExtensionUIDevice.swift in Sources */,
 				58D46C751DF2ACEB05A61CD31F200297 /* ExtensionUIViewController.swift in Sources */,
 				BF0CD2CA232F535C004A2E06 /* DeleteVoucherCustomerLinkResponseModel.swift in Sources */,
+				BF8161EB2696F7B800287C9C /* GetPaymentTypeResponseModel.swift in Sources */,
 				87EBCB9139780C6167B13044E9026C0A /* GetActualTripRequestModel.swift in Sources */,
 				D95B3A0D0445AA00D8553EC9AEE2AA32 /* GetActualTripResponseModel.swift in Sources */,
+				BF8161E12696F73A00287C9C /* GetPaymentTypeRequestModel.swift in Sources */,
 				53640FAE66919178C2239EFD47A8DDC6 /* GetCustomerForgotPasswordRequestModel.swift in Sources */,
 				05C85987CD0344CD3403E4179A530A79 /* GetExcursionDetailByIdRequestModel.swift in Sources */,
 				BF0CD2C8232F523A004A2E06 /* DeleteVoucherCustomerLinkRequestModel.swift in Sources */,

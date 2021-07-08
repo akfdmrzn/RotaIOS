@@ -12,18 +12,21 @@ public class InvoiceOrVoucherAsyncRequestModel: Mappable{
     
     public var typeId: Int!
     public var email: String!
+    public var threadGuid: String!
     
     public required init?(map: Map) {
         
     }
     
-    public init(typeId: Int,email : String) {
+    public init(typeId: Int,email : String,threadGuid : String) {
         self.typeId = typeId
         self.email = email
+        self.threadGuid = threadGuid
     }
     
     public func mapping(map: Map) {
         typeId <- map["TypeId"]
         email <- map["Email"]
+        threadGuid <- map["ThreadGuid"]
     }
 }

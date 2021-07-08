@@ -13,6 +13,7 @@ public class GetPaymentTypeResponseModel: Mappable {
     public var id : Int?
     public var name : String?
     public var image : String?
+    public var isSelected : Bool?
     
     public required init?(map: Map) {
         

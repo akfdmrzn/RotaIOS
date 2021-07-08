@@ -238,6 +238,8 @@
 		BF815F61268B3CD100287C9C /* ExtrasAsyncResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF815F60268B3CD100287C9C /* ExtrasAsyncResponseModel.swift */; };
 		BF8161E12696F73A00287C9C /* GetPaymentTypeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8161E02696F73A00287C9C /* GetPaymentTypeRequestModel.swift */; };
 		BF8161EB2696F7B800287C9C /* GetPaymentTypeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8161EA2696F7B800287C9C /* GetPaymentTypeResponseModel.swift */; };
+		BF8162762697230B00287C9C /* GetStatusRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8162752697230B00287C9C /* GetStatusRequestModel.swift */; };
+		BF8162802697235A00287C9C /* GetStatusResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF81627F2697235A00287C9C /* GetStatusResponseModel.swift */; };
 		BF9A45D92590E63500ADE49B /* CustomerUpdateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A45D82590E63500ADE49B /* CustomerUpdateRequestModel.swift */; };
 		BF9A46022590EBAB00ADE49B /* CustomerUpdateResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A46012590EBAA00ADE49B /* CustomerUpdateResponseModel.swift */; };
 		BFA424BF24F3B7B7001628ED /* GetBarcodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA424BD24F3B761001628ED /* GetBarcodeResponseModel.swift */; };
@@ -664,6 +666,8 @@
 		BF815F60268B3CD100287C9C /* ExtrasAsyncResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtrasAsyncResponseModel.swift; sourceTree = "<group>"; };
 		BF8161E02696F73A00287C9C /* GetPaymentTypeRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPaymentTypeRequestModel.swift; sourceTree = "<group>"; };
 		BF8161EA2696F7B800287C9C /* GetPaymentTypeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPaymentTypeResponseModel.swift; sourceTree = "<group>"; };
+		BF8162752697230B00287C9C /* GetStatusRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStatusRequestModel.swift; sourceTree = "<group>"; };
+		BF81627F2697235A00287C9C /* GetStatusResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStatusResponseModel.swift; sourceTree = "<group>"; };
 		BF9A45D82590E63500ADE49B /* CustomerUpdateRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerUpdateRequestModel.swift; sourceTree = "<group>"; };
 		BF9A46012590EBAA00ADE49B /* CustomerUpdateResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerUpdateResponseModel.swift; sourceTree = "<group>"; };
 		BFA424BB24F3B373001628ED /* GetBarcodeRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBarcodeRequestModel.swift; sourceTree = "<group>"; };
@@ -992,6 +996,7 @@
 				BF815F56268B3C2900287C9C /* ExtrasAsyncRequestModel.swift */,
 				A9A0A0FA268DC5E70057C4B9 /* CalculateTotalPriceRequestModel.swift */,
 				BF8161E02696F73A00287C9C /* GetPaymentTypeRequestModel.swift */,
+				BF8162752697230B00287C9C /* GetStatusRequestModel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1216,6 +1221,7 @@
 				BF815F60268B3CD100287C9C /* ExtrasAsyncResponseModel.swift */,
 				A9A0A104268DD0060057C4B9 /* CalculateTotalPriceResponseModel.swift */,
 				BF8161EA2696F7B800287C9C /* GetPaymentTypeResponseModel.swift */,
+				BF81627F2697235A00287C9C /* GetStatusResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1799,6 +1805,7 @@
 				BFB7159D265EF70600FE8D9D /* CalendarAsyncResponseModel.swift in Sources */,
 				7B59A3404FB6072AC67C7DEDE44C43D0 /* CustomerDetailByIdRequestModel.swift in Sources */,
 				A91B21812603A1E800940B7B /* GetSuitcaseRequestModel.swift in Sources */,
+				BF8162762697230B00287C9C /* GetStatusRequestModel.swift in Sources */,
 				A9B8DBA1264ABB6B00C9510D /* WebLoginUrlResponseModel.swift in Sources */,
 				4438EBFE25ECCB375BFAA69DDA751712 /* CustomerDetailByIdResponseModel.swift in Sources */,
 				30E3162427B2BCAE12E68AE6A19F3FE5 /* CustomerSendActiveCodeRequestModel.swift in Sources */,
@@ -1883,6 +1890,7 @@
 				FBCA687435B1D15A1AA893F41C3FA8AC /* LoginShortRequest.swift in Sources */,
 				7ECE22F88A3BC37908F9FBDDDEACC0C3 /* NetworkManager.swift in Sources */,
 				DCA34003004859FB50CE8EC8A0DCA8DD /* OtiNetwork-dummy.m in Sources */,
+				BF8162802697235A00287C9C /* GetStatusResponseModel.swift in Sources */,
 				BF5EF2C72536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift in Sources */,
 				432275A9740FBB9697AB762445DE0B37 /* SaveFavoriteRequestModel.swift in Sources */,
 				E544A23D4C7D9920F1E3EF8C51603515 /* SaveFavoriteResponseModel.swift in Sources */,

@@ -74,4 +74,5 @@ public enum ServiceEndPoint: String {
     case InvoiceOrVoucherAsync = "/api/PcmsExcursion/InvoiceOrVoucherAsync"
     case CalculateTotalPriceAsync = "/api/PcmsExcursion/CalculateTotalPriceAsync"
     case GetPaymentType = "/api/Payment/GetPaymentType"
+    case GetStatusAsync = "/api/Payment/StatusAsync"
 }

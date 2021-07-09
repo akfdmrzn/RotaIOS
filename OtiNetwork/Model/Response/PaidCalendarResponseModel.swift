@@ -14,14 +14,14 @@ public class PaidCalendarResponseModel: Mappable {
     public var fontColor : String?
     public var backColor : String?
     public var opacity : Int?
-    public var price : String?
+    public var price : Double?
     public var priceCurrency : String?
 
     public required init?(map: Map) {
         
     }
     
-    public init(day: String, fontColor: String, backColor: String, opacity: Int, price: String, priceCurrency: String) {
+    public init(day: String, fontColor: String, backColor: String, opacity: Int, price: Double, priceCurrency: String) {
         self.day = day
         self.fontColor = fontColor
         self.backColor = backColor

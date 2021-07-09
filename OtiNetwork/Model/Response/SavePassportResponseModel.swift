@@ -10,11 +10,13 @@ import ObjectMapper
 
 public class SavePassportResponseModel: Mappable {
     
+    public var idList: [Int]?
+    
     public required init?(map: Map) {
         
     }
     
     public func mapping(map: Map) {
-        
+        idList <- map[""]
     }
 }

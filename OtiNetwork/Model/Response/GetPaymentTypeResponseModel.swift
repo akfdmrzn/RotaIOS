@@ -20,7 +20,7 @@ public class GetPaymentTypeResponseModel: Mappable {
     }
 
     public func mapping(map: Map) {
-        id <- map["Id"]
+        id <- map["PayId"]
         name <- map["Name"]
         image <- map["Image"]
     }

@@ -46,6 +46,7 @@ public class GetDetailResponseModel: Mappable {
     public var isFavorite : Bool?
     public var isPassportRequired : Bool?
     public var icons : [Icons]?
+    public var mandatoryExtraCount : Int?
 
     public required init?(map: Map) {
         
@@ -90,6 +91,7 @@ public class GetDetailResponseModel: Mappable {
         isPassportRequired <- map["isPassportRequired"]
         isFavorite <- map["IsFavorite"]
         icons <- map["Icons"]
+        mandatoryExtraCount <- map["MandatoryExtraCount"]
     }
 
 }

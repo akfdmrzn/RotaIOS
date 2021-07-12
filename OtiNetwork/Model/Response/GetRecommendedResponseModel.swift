@@ -10,10 +10,10 @@ import ObjectMapper
 
 public class GetRecommendedResponseModel: Mappable {
     
-    public var operatorId: Int!
-    public var countryId: Int!
-    public var bestSellerList: [ExcursionSeller]!
-    public var recommendedList: [ExcursionSeller]!
+    public var operatorId: Int?
+    public var countryId: Int?
+    public var bestSellerList: [ExcursionSeller]?
+    public var recommendedList: [ExcursionSeller]?
     
     public required init?(map: Map) {
         
@@ -29,23 +29,23 @@ public class GetRecommendedResponseModel: Mappable {
 
 public class ExcursionSeller: Mappable {
     
-    public var excursionName: String!
-    public var imageLink: String!
-    public var priceType: String!
-    public var priceInfo: Double!
-    public var currency: String!
-    public var excursionId: Int!
-    public var totalCount: Int!
-    public var durationId: Int!
-    public var durationName: String!
-    public var isFavourite: Bool!
-    public var isBestSeller: Bool!
-    public var isRecommended: Bool!
-    public var isNew: Bool!
-    public var id_: Int!
-    public var isVandable: Bool!
-    public var durationImageLink: String!
-    public var countryId: Int!
+    public var excursionName: String?
+    public var imageLink: String?
+    public var priceType: String?
+    public var priceInfo: Double?
+    public var currency: String?
+    public var excursionId: Int?
+    public var totalCount: Int?
+    public var durationId: Int?
+    public var durationName: String?
+    public var isFavourite: Bool?
+    public var isBestSeller: Bool?
+    public var isRecommended: Bool?
+    public var isNew: Bool?
+    public var id_: Int?
+    public var isVandable: Bool?
+    public var durationImageLink: String?
+    public var countryId: Int?
     
     public required init?(map: Map) {
         

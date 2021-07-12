@@ -15,6 +15,7 @@ public class BaseResponse<T:Mappable >:Mappable{
     public var baseMessageList :BaseMessageItem?
     public var dataArray: [T]?
     public var dataObject: T?
+    public var dataIntArray: [Int]?
     
     public required init?(map: Map) {
         
@@ -27,6 +28,7 @@ public class BaseResponse<T:Mappable >:Mappable{
         baseMessageList <- map["BaseMessage"]
         dataObject <- map["Data"]
         dataArray <- map["Data"]
+        dataIntArray <- map["Data"]
         
     }
     

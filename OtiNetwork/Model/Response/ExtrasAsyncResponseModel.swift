@@ -28,6 +28,7 @@ public class ExtrasAsyncResponseModel: Mappable {
     public var toddleAmount : Double?
     public var infantAmount : Double?
     public var isSelected : Bool?
+    public var minPriceAmount : Double?
     
     public required init?(map: Map) {
         
@@ -51,5 +52,6 @@ public class ExtrasAsyncResponseModel: Mappable {
         childAmount <- map["childAmount"]
         toddleAmount <- map["toddleAmount"]
         infantAmount <- map["infantAmount"]
+        minPriceAmount <- map["minPriceAmount"]
     }
 }

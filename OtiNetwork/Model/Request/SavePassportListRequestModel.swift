@@ -8,7 +8,7 @@
 import UIKit
 import ObjectMapper
 
-public class SavePassportList: Mappable,Decodable,Encodable{
+public class SavePassportListRequestModel: Mappable,Decodable,Encodable{
     
     public var touristId : Int?
     public var operatorId : Int?
@@ -23,6 +23,7 @@ public class SavePassportList: Mappable,Decodable,Encodable{
     public var passportValidThru : String?
     public var passportGivenDate : String?
     public var documentTypeName : String?
+    public var isPassportRequired : Bool?
     
     public required init?(map: Map) {
         
@@ -32,7 +33,7 @@ public class SavePassportList: Mappable,Decodable,Encodable{
         
     }
     
-    public init(touristId: Int, operatorId: Int, name: String, surName: String, birthDate: String, passportSerie: String, passportNumber: String, nationalityName: String, genderName: String, countryOfBirthName: String, passportValidThru: String, passportGivenDate: String, documentTypeName: String) {
+    public init(touristId: Int, operatorId: Int, name: String, surName: String, birthDate: String, passportSerie: String, passportNumber: String, nationalityName: String, genderName: String, countryOfBirthName: String, passportValidThru: String, passportGivenDate: String, documentTypeName: String,isPassportRequired : Bool) {
         self.touristId = touristId
         self.operatorId = operatorId
         self.name = name
@@ -46,6 +47,7 @@ public class SavePassportList: Mappable,Decodable,Encodable{
         self.passportValidThru = passportValidThru
         self.passportGivenDate = passportGivenDate
         self.documentTypeName = documentTypeName
+        self.isPassportRequired = isPassportRequired
     }
 
     public func mapping(map: Map) {
@@ -63,5 +65,6 @@ public class SavePassportList: Mappable,Decodable,Encodable{
         passportValidThru <- map["PassportValidThru"]
         passportGivenDate <- map["PassportGivenDate"]
         documentTypeName <- map["DocumentTypeName"]
+        isPassportRequired <- map["isPassportRequired"]
     }
 }

@@ -180,7 +180,7 @@
 		A93D4BF72680B5E800271744 /* ReceivePaymentResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4BF62680B5E800271744 /* ReceivePaymentResponseModel.swift */; };
 		A93D4F8126847CEE00271744 /* GetPassportDetailRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4F8026847CEE00271744 /* GetPassportDetailRequestModel.swift */; };
 		A93D4F8B26847FE100271744 /* GetPassportDetailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4F8A26847FE100271744 /* GetPassportDetailResponseModel.swift */; };
-		A93D4F952684820000271744 /* SavePassportList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4F942684820000271744 /* SavePassportList.swift */; };
+		A93D4F952684820000271744 /* SavePassportListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4F942684820000271744 /* SavePassportListRequestModel.swift */; };
 		A93D4F9F2684829C00271744 /* SavePassportResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4F9E2684829C00271744 /* SavePassportResponseModel.swift */; };
 		A9766A222685FED400151733 /* CompanyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9766A212685FED400151733 /* CompanyList.swift */; };
 		A9A0A0FB268DC5E70057C4B9 /* CalculateTotalPriceRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0A0FA268DC5E70057C4B9 /* CalculateTotalPriceRequestModel.swift */; };
@@ -613,7 +613,7 @@
 		A93D4BF62680B5E800271744 /* ReceivePaymentResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivePaymentResponseModel.swift; sourceTree = "<group>"; };
 		A93D4F8026847CEE00271744 /* GetPassportDetailRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPassportDetailRequestModel.swift; sourceTree = "<group>"; };
 		A93D4F8A26847FE100271744 /* GetPassportDetailResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPassportDetailResponseModel.swift; sourceTree = "<group>"; };
-		A93D4F942684820000271744 /* SavePassportList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePassportList.swift; sourceTree = "<group>"; };
+		A93D4F942684820000271744 /* SavePassportListRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePassportListRequestModel.swift; sourceTree = "<group>"; };
 		A93D4F9E2684829C00271744 /* SavePassportResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePassportResponseModel.swift; sourceTree = "<group>"; };
 		A9766A212685FED400151733 /* CompanyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyList.swift; sourceTree = "<group>"; };
 		A9A0A0FA268DC5E70057C4B9 /* CalculateTotalPriceRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateTotalPriceRequestModel.swift; sourceTree = "<group>"; };
@@ -990,7 +990,7 @@
 				A93D4BB8267CA59C00271744 /* PaidCalendarRequestModel.swift */,
 				A93D4BEC2680B3DC00271744 /* ReceivePaymentRequestModel.swift */,
 				A93D4F8026847CEE00271744 /* GetPassportDetailRequestModel.swift */,
-				A93D4F942684820000271744 /* SavePassportList.swift */,
+				A93D4F942684820000271744 /* SavePassportListRequestModel.swift */,
 				A9766A212685FED400151733 /* CompanyList.swift */,
 				BF815F42268B383E00287C9C /* InvoiceOrVoucherAsyncRequestModel.swift */,
 				BF815F56268B3C2900287C9C /* ExtrasAsyncRequestModel.swift */,
@@ -1896,7 +1896,7 @@
 				E544A23D4C7D9920F1E3EF8C51603515 /* SaveFavoriteResponseModel.swift in Sources */,
 				3DE31CFEA809B9A33254D82093A722E9 /* SendRatedResultResponseModel.swift in Sources */,
 				A93D4F9F2684829C00271744 /* SavePassportResponseModel.swift in Sources */,
-				A93D4F952684820000271744 /* SavePassportList.swift in Sources */,
+				A93D4F952684820000271744 /* SavePassportListRequestModel.swift in Sources */,
 				44C1FC33FB268D6AEE80CCA9BCC54B04 /* SendRatedTourList.swift in Sources */,
 				FB9DEA6D7C01B3CFFE6A40BF7155391B /* ServiceEndPoint.swift in Sources */,
 				A9A0A0FB268DC5E70057C4B9 /* CalculateTotalPriceRequestModel.swift in Sources */,

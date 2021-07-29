@@ -17,8 +17,9 @@ public class GetPaymentPassportRequestModel: Mappable{
         
     }
     
-    public init(userId: Int) {
+    public init(userId: Int,threadGuid : String) {
         self.userId = userId
+        self.threadGuid = threadGuid
     }
     
     public func mapping(map: Map) {

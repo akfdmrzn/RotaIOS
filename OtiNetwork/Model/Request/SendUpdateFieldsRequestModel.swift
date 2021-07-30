@@ -12,7 +12,6 @@ public class SendUpdateFieldsRequestModel: Mappable,Decodable,Encodable{
     
     public var threadGuid : String?
     public var touristId : Int?
-    public var operatorId : Int?
     public var name : String?
     public var room : String?
     public var surName : String?
@@ -26,7 +25,6 @@ public class SendUpdateFieldsRequestModel: Mappable,Decodable,Encodable{
     public var passportValidThru : String?
     public var passportGivenDate : String?
     public var documentTypeName : String?
-    public var isPassportRequired : Bool?
     
     public required init?(map: Map) {
         
@@ -36,10 +34,9 @@ public class SendUpdateFieldsRequestModel: Mappable,Decodable,Encodable{
         
     }
     
-    public init(threadGuid : String, touristId: Int, operatorId: Int,paymentOption : String, name: String, room : String,surName: String, birthDate: String, passportSerie: String, passportNumber: String, nationalityName: String, genderName: String, countryOfBirthName: String, passportValidThru: String, passportGivenDate: String, documentTypeName: String,isPassportRequired : Bool) {
+    public init(threadGuid : String, touristId: Int,paymentOption : String, name: String, room : String,surName: String, birthDate: String, passportSerie: String, passportNumber: String, nationalityName: String, genderName: String, countryOfBirthName: String, passportValidThru: String, passportGivenDate: String, documentTypeName: String) {
         self.threadGuid = threadGuid
         self.touristId = touristId
-        self.operatorId = operatorId
         self.name = name
         self.paymentOption = paymentOption
         self.room = room
@@ -53,14 +50,12 @@ public class SendUpdateFieldsRequestModel: Mappable,Decodable,Encodable{
         self.passportValidThru = passportValidThru
         self.passportGivenDate = passportGivenDate
         self.documentTypeName = documentTypeName
-        self.isPassportRequired = isPassportRequired
     }
 
     public func mapping(map: Map) {
         
         threadGuid <- map["ThreadGuid"]
         touristId <- map["TouristId"]
-        operatorId <- map["OperatorId"]
         name <- map["TouristName"]
         room <- map["Room"]
         paymentOption <- map["PaymentOption"]
@@ -74,6 +69,5 @@ public class SendUpdateFieldsRequestModel: Mappable,Decodable,Encodable{
         passportValidThru <- map["PassportValidThru"]
         passportGivenDate <- map["PassportGivenDate"]
         documentTypeName <- map["DocumentTypeName"]
-        isPassportRequired <- map["isPassportRequired"]
     }
 }

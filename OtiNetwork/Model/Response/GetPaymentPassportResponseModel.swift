@@ -46,6 +46,7 @@ public class GetPaymentPassportResponseModel: Mappable {
         documentTypeName <- map["DocumentTypeName"]
         operatorId <- map["OpetatorId"]
         reservationNumber <- map["ReservationNumber"]
+        editableArea <- map["Editable"]
     }
 }
 public class EditableArea: Mappable {

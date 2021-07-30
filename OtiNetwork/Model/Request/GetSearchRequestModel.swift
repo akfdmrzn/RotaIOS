@@ -11,7 +11,7 @@ import ObjectMapper
 public class GetSearchRequestModel: Mappable{
     
     public var countryId:Int!
-    public var hotelId:Int!
+    public var hotelId:Any?
     public var areaIds:[Int]!
     public var durationIds:[Int]!
     public var typeIds:[Int]!
@@ -27,7 +27,7 @@ public class GetSearchRequestModel: Mappable{
         
     }
     
-    public init(countryId: Int,hotelId : Int,areaIds : [Int],durationIds : [Int],typeIds: [Int],startDate : String,endDate : String,priceMin : Int,priceMax : Int,allowedChild : Bool ,allowedTdl : Bool, allowedInf : Bool) {
+    public init(countryId: Int,hotelId : Any,areaIds : [Int],durationIds : [Int],typeIds: [Int],startDate : String,endDate : String,priceMin : Int,priceMax : Int,allowedChild : Bool ,allowedTdl : Bool, allowedInf : Bool) {
         self.countryId = countryId
         self.hotelId = hotelId
         self.areaIds = areaIds

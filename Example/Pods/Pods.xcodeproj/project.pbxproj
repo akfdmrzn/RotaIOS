@@ -246,6 +246,10 @@
 		BFA424C024F3B919001628ED /* GetBarcodeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA424BB24F3B373001628ED /* GetBarcodeRequestModel.swift */; };
 		BFB71593265EF6F600FE8D9D /* CalendarAsyncRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB71592265EF6F600FE8D9D /* CalendarAsyncRequestModel.swift */; };
 		BFB7159D265EF70600FE8D9D /* CalendarAsyncResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7159C265EF70600FE8D9D /* CalendarAsyncResponseModel.swift */; };
+		BFB978B526B939C300F0DD6D /* CalculateRefundRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB978B426B939C300F0DD6D /* CalculateRefundRequestModel.swift */; };
+		BFB978BF26B93A5800F0DD6D /* CalculateRefundResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB978BE26B93A5800F0DD6D /* CalculateRefundResponseModel.swift */; };
+		BFB978C926B93E8000F0DD6D /* CancelExcursionRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB978C826B93E8000F0DD6D /* CancelExcursionRequestModel.swift */; };
+		BFB978D326B93FFD00F0DD6D /* CancelExcursionResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB978D226B93FFD00F0DD6D /* CancelExcursionResponseModel.swift */; };
 		BFBD9972260C888800780BBE /* SaveCustomSuitcaseRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD9971260C888800780BBE /* SaveCustomSuitcaseRequestModel.swift */; };
 		BFBD997C260C889A00780BBE /* SaveCustomSuitcaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD997B260C889A00780BBE /* SaveCustomSuitcaseResponseModel.swift */; };
 		BFBD9986260C89BD00780BBE /* SaveSuitcaseRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD9985260C89BD00780BBE /* SaveSuitcaseRequestModel.swift */; };
@@ -680,6 +684,10 @@
 		BFA424BD24F3B761001628ED /* GetBarcodeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBarcodeResponseModel.swift; sourceTree = "<group>"; };
 		BFB71592265EF6F600FE8D9D /* CalendarAsyncRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAsyncRequestModel.swift; sourceTree = "<group>"; };
 		BFB7159C265EF70600FE8D9D /* CalendarAsyncResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAsyncResponseModel.swift; sourceTree = "<group>"; };
+		BFB978B426B939C300F0DD6D /* CalculateRefundRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateRefundRequestModel.swift; sourceTree = "<group>"; };
+		BFB978BE26B93A5800F0DD6D /* CalculateRefundResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateRefundResponseModel.swift; sourceTree = "<group>"; };
+		BFB978C826B93E8000F0DD6D /* CancelExcursionRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelExcursionRequestModel.swift; sourceTree = "<group>"; };
+		BFB978D226B93FFD00F0DD6D /* CancelExcursionResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelExcursionResponseModel.swift; sourceTree = "<group>"; };
 		BFBD9971260C888800780BBE /* SaveCustomSuitcaseRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCustomSuitcaseRequestModel.swift; sourceTree = "<group>"; };
 		BFBD997B260C889A00780BBE /* SaveCustomSuitcaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCustomSuitcaseResponseModel.swift; sourceTree = "<group>"; };
 		BFBD9985260C89BD00780BBE /* SaveSuitcaseRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveSuitcaseRequestModel.swift; sourceTree = "<group>"; };
@@ -1012,6 +1020,8 @@
 				BFD3F55B26B2902C00C6FA9D /* GetUserPaymentsRequestModel.swift */,
 				BFD3F56F26B2925C00C6FA9D /* GetPaymentPassportRequestModel.swift */,
 				BFD3F5D726B355AB00C6FA9D /* SendUpdateFieldsRequestModel.swift */,
+				BFB978B426B939C300F0DD6D /* CalculateRefundRequestModel.swift */,
+				BFB978C826B93E8000F0DD6D /* CancelExcursionRequestModel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1240,6 +1250,8 @@
 				BFD3F56526B2909000C6FA9D /* GetUserPaymentsResponseModel.swift */,
 				BFD3F57926B2965F00C6FA9D /* GetPaymentPassportResponseModel.swift */,
 				BFD3F5E126B355EA00C6FA9D /* SendUpdateFieldsResponseModel.swift */,
+				BFB978BE26B93A5800F0DD6D /* CalculateRefundResponseModel.swift */,
+				BFB978D226B93FFD00F0DD6D /* CancelExcursionResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1803,6 +1815,7 @@
 				110F0D022345FD5900066130 /* GetTransferTypeListResponseModel.swift in Sources */,
 				FEAC18257916A525907D7D3795AA89BF /* CreateFlightTicketResponseModel.swift in Sources */,
 				BFD3F56626B2909000C6FA9D /* GetUserPaymentsResponseModel.swift in Sources */,
+				BFB978C926B93E8000F0DD6D /* CancelExcursionRequestModel.swift in Sources */,
 				BFBD999A260C8BD700780BBE /* DeleteCustomSuitcaseResponseModel.swift in Sources */,
 				62B33F4228768A4511601D97878792B0 /* CreateInsuranceDocumentRequestModel.swift in Sources */,
 				3EE72702C84E2411E3D3378F0156B2AD /* CreateInsuranceDocumentResponseModel.swift in Sources */,
@@ -1822,6 +1835,7 @@
 				10238E06D7EF3CE4EAAFB180F4506DEF /* CustomerCreateResponseModel.swift in Sources */,
 				A93D4F8B26847FE100271744 /* GetPassportDetailResponseModel.swift in Sources */,
 				BFB7159D265EF70600FE8D9D /* CalendarAsyncResponseModel.swift in Sources */,
+				BFB978B526B939C300F0DD6D /* CalculateRefundRequestModel.swift in Sources */,
 				7B59A3404FB6072AC67C7DEDE44C43D0 /* CustomerDetailByIdRequestModel.swift in Sources */,
 				A91B21812603A1E800940B7B /* GetSuitcaseRequestModel.swift in Sources */,
 				BF8162762697230B00287C9C /* GetStatusRequestModel.swift in Sources */,
@@ -1891,6 +1905,7 @@
 				346A7407FC800197346C75E0490468F9 /* GetTourDefinationComboListResponseModel.swift in Sources */,
 				BF44CA40264156A700238035 /* GetParametersRequestModel.swift in Sources */,
 				9BD9442901B6906FFBDC15C4CAC551B7 /* GetTourDefinationListRequestModel.swift in Sources */,
+				BFB978BF26B93A5800F0DD6D /* CalculateRefundResponseModel.swift in Sources */,
 				85B1D239F9A45192F899BAE4F508C7CE /* GetTourDefinationListResponseModel.swift in Sources */,
 				BF0CD2C6232F4E7D004A2E06 /* SaveVoucherCustomerLinkResponseModel.swift in Sources */,
 				A93D4BB9267CA59C00271744 /* PaidCalendarRequestModel.swift in Sources */,
@@ -1915,6 +1930,7 @@
 				BF8162802697235A00287C9C /* GetStatusResponseModel.swift in Sources */,
 				BF5EF2C72536D5CD00EF1AFA /* GetBonusLoyaltyResponseModel.swift in Sources */,
 				432275A9740FBB9697AB762445DE0B37 /* SaveFavoriteRequestModel.swift in Sources */,
+				BFB978D326B93FFD00F0DD6D /* CancelExcursionResponseModel.swift in Sources */,
 				E544A23D4C7D9920F1E3EF8C51603515 /* SaveFavoriteResponseModel.swift in Sources */,
 				3DE31CFEA809B9A33254D82093A722E9 /* SendRatedResultResponseModel.swift in Sources */,
 				BFD3F55C26B2902C00C6FA9D /* GetUserPaymentsRequestModel.swift in Sources */,

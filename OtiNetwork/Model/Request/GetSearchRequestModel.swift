@@ -17,8 +17,8 @@ public class GetSearchRequestModel: Mappable{
     public var typeIds:[Int]!
     public var startDate:String!
     public var endDate:String!
-    public var priceMin:Int!
-    public var priceMax:Int!
+    public var priceMin:Any?
+    public var priceMax:Any?
     public var allowedChild:Bool!
     public var allowedTdl:Bool!
     public var allowedInf:Bool!
@@ -27,7 +27,7 @@ public class GetSearchRequestModel: Mappable{
         
     }
     
-    public init(countryId: Int,hotelId : Any,areaIds : [Int],durationIds : [Int],typeIds: [Int],startDate : String,endDate : String,priceMin : Int,priceMax : Int,allowedChild : Bool ,allowedTdl : Bool, allowedInf : Bool) {
+    public init(countryId: Int,hotelId : Any,areaIds : [Int],durationIds : [Int],typeIds: [Int],startDate : String,endDate : String,priceMin : Any,priceMax : Any,allowedChild : Bool ,allowedTdl : Bool, allowedInf : Bool) {
         self.countryId = countryId
         self.hotelId = hotelId
         self.areaIds = areaIds

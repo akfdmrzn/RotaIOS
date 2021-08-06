@@ -17,13 +17,14 @@ public class GetTouristListResponseModel: Mappable {
     public var askForHeight : Bool?
     public var isSelected : Bool?
     public var voucherNumber : Int?
+    public var operatorId : Int?
     
 
     public required init?(map: Map) {
         
     }
     
-    public init(id: Int, fullName: String, gender: String, dateOfBirth: String, askForHeight: Bool,isSelected : Bool,voucherNumber : Int) {
+    public init(id: Int, fullName: String, gender: String, dateOfBirth: String, askForHeight: Bool,isSelected : Bool,voucherNumber : Int,operatorId : Int) {
         self.id = id
         self.fullName = fullName
         self.gender = gender
@@ -40,6 +41,7 @@ public class GetTouristListResponseModel: Mappable {
         dateOfBirth <- map["DateOfBirth"]
         askForHeight <- map["AskForHeight"]
         voucherNumber <- map["VoucherNumber"]
+        operatorId <- map["OperatorId"]
     }
 
 }

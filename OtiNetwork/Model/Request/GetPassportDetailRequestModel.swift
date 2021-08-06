@@ -34,19 +34,22 @@ public class TuristInfo: Mappable,Decodable,Encodable{
     
     public var touristId: Int!
     public var operatorId: Int!
+    public var voucherNumber: Int!
     
     public required init?(map: Map) {
         
     }
     
-    public init(touristId: Int, operatorId : Int) {
+    public init(touristId: Int, operatorId : Int,voucherNumber : Int) {
         self.touristId = touristId
         self.operatorId = operatorId
+        self.voucherNumber = voucherNumber
     }
     
     public func mapping(map: Map) {
         touristId <- map["TouristId"]
         operatorId <- map["OperatorId"]
+        voucherNumber <- map["VoucherNumber"]
     }
 }
 

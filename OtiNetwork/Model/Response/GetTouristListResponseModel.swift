@@ -16,18 +16,21 @@ public class GetTouristListResponseModel: Mappable {
     public var dateOfBirth : String?
     public var askForHeight : Bool?
     public var isSelected : Bool?
+    public var voucherNumber : Int?
+    
 
     public required init?(map: Map) {
         
     }
     
-    public init(id: Int, fullName: String, gender: String, dateOfBirth: String, askForHeight: Bool,isSelected : Bool) {
+    public init(id: Int, fullName: String, gender: String, dateOfBirth: String, askForHeight: Bool,isSelected : Bool,voucherNumber : Int) {
         self.id = id
         self.fullName = fullName
         self.gender = gender
         self.dateOfBirth = dateOfBirth
         self.askForHeight = askForHeight
         self.isSelected = isSelected
+        self.voucherNumber = voucherNumber
     }
 
     public func mapping(map: Map) {
@@ -36,6 +39,7 @@ public class GetTouristListResponseModel: Mappable {
         gender <- map["Gender"]
         dateOfBirth <- map["DateOfBirth"]
         askForHeight <- map["AskForHeight"]
+        voucherNumber <- map["VoucherNumber"]
     }
 
 }

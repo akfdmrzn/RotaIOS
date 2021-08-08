@@ -50,6 +50,7 @@ public class SendUpdateFieldsRequestModel: Mappable,Decodable,Encodable{
         self.passportValidThru = passportValidThru
         self.passportGivenDate = passportGivenDate
         self.documentTypeName = documentTypeName
+        self.room = room
     }
 
     public func mapping(map: Map) {

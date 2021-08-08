@@ -25,6 +25,7 @@ public class GetPaymentPassportResponseModel: Mappable {
     public var documentTypeName : String?
     public var operatorId : Int?
     public var reservationNumber : String?
+    public var room : String?
     public var editableArea : EditableArea?
     
     public required init?(map: Map) {
@@ -46,6 +47,7 @@ public class GetPaymentPassportResponseModel: Mappable {
         documentTypeName <- map["DocumentTypeName"]
         operatorId <- map["OpetatorId"]
         reservationNumber <- map["ReservationNumber"]
+        room <- map["Room"]
         editableArea <- map["Editable"]
     }
 }

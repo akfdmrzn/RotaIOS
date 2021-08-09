@@ -29,6 +29,7 @@ public class ExtrasAsyncResponseModel: Mappable {
     public var infantAmount : Double?
     public var isSelected : Bool?
     public var minPriceAmount : Double?
+    public var selectedTouristList : [ChooseHotel] = []
     
     public required init?(map: Map) {
         

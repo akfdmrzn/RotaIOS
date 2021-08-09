@@ -267,6 +267,7 @@
 		BFD3F57A26B2965F00C6FA9D /* GetPaymentPassportResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3F57926B2965F00C6FA9D /* GetPaymentPassportResponseModel.swift */; };
 		BFD3F5D826B355AB00C6FA9D /* SendUpdateFieldsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3F5D726B355AB00C6FA9D /* SendUpdateFieldsRequestModel.swift */; };
 		BFD3F5E226B355EA00C6FA9D /* SendUpdateFieldsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3F5E126B355EA00C6FA9D /* SendUpdateFieldsResponseModel.swift */; };
+		BFF085BF26C19BDA00525DA2 /* ChooseHotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF085BE26C19BDA00525DA2 /* ChooseHotel.swift */; };
 		C098C153F2988A344EAD8EE4C0CDF882 /* PostNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD02B89A8D848CC5686C0A791F63C75 /* PostNotification.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		C0B393B80CD971349123D9F02DFDD554 /* ImmutableMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC90C5EFB883771F7204A13515A321 /* ImmutableMappable.swift */; };
 		C42E25AEAE4758760D9239D25E88FEAF /* CwlCatchException.h in Headers */ = {isa = PBXBuildFile; fileRef = A855B84706ABBC8CB8B3EDBF4B1884D6 /* CwlCatchException.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -706,6 +707,7 @@
 		BFD3F57926B2965F00C6FA9D /* GetPaymentPassportResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPaymentPassportResponseModel.swift; sourceTree = "<group>"; };
 		BFD3F5D726B355AB00C6FA9D /* SendUpdateFieldsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendUpdateFieldsRequestModel.swift; sourceTree = "<group>"; };
 		BFD3F5E126B355EA00C6FA9D /* SendUpdateFieldsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendUpdateFieldsResponseModel.swift; sourceTree = "<group>"; };
+		BFF085BE26C19BDA00525DA2 /* ChooseHotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseHotel.swift; sourceTree = "<group>"; };
 		C0597E7ABB137646DD796B1B1CA1DF94 /* MatcherFunc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherFunc.swift; path = Sources/Nimble/Matchers/MatcherFunc.swift; sourceTree = "<group>"; };
 		C08077BD069C563D717050D5A533DE0F /* BeNil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeNil.swift; path = Sources/Nimble/Matchers/BeNil.swift; sourceTree = "<group>"; };
 		C0D1B84382324A18881C85C438B444F6 /* ToSucceed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToSucceed.swift; path = Sources/Nimble/Matchers/ToSucceed.swift; sourceTree = "<group>"; };
@@ -1022,6 +1024,7 @@
 				BFD3F5D726B355AB00C6FA9D /* SendUpdateFieldsRequestModel.swift */,
 				BFB978B426B939C300F0DD6D /* CalculateRefundRequestModel.swift */,
 				BFB978C826B93E8000F0DD6D /* CancelExcursionRequestModel.swift */,
+				BFF085BE26C19BDA00525DA2 /* ChooseHotel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1904,6 +1907,7 @@
 				F2C9CE05A072D5A4BB42285E4F21E221 /* GetTourDefinationComboListRequestModel.swift in Sources */,
 				346A7407FC800197346C75E0490468F9 /* GetTourDefinationComboListResponseModel.swift in Sources */,
 				BF44CA40264156A700238035 /* GetParametersRequestModel.swift in Sources */,
+				BFF085BF26C19BDA00525DA2 /* ChooseHotel.swift in Sources */,
 				9BD9442901B6906FFBDC15C4CAC551B7 /* GetTourDefinationListRequestModel.swift in Sources */,
 				BFB978BF26B93A5800F0DD6D /* CalculateRefundResponseModel.swift in Sources */,
 				85B1D239F9A45192F899BAE4F508C7CE /* GetTourDefinationListResponseModel.swift in Sources */,

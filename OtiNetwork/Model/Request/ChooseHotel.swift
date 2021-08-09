@@ -17,7 +17,7 @@ public class ChooseHotel{
     
     public init() {}
     
-    publicinit(id:Int,name:String,askForHeight:Bool,isSelected:Bool!,operatorId : Int = 0,voucherNumber : Int = 0) {
+    public init(id:Int,name:String,askForHeight:Bool,isSelected:Bool!,operatorId : Int = 0,voucherNumber : Int = 0) {
         self.id = id
         self.name = name
         self.askForHeight = askForHeight

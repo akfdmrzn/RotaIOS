@@ -33,5 +33,9 @@ public class CancelExcursionRequestModel: Mappable{
     public func mapping(map: Map) {
         userId <- map["UserId"]
         threadGuid <- map["ThreadGuid"]
+        refundAmount <- map["refundAmount"]
+        refundCurrency <- map["refundCurrency"]
+        penaltyAmount <- map["penaltyAmount"]
+        penaltyCurrency <- map["penaltyCurrency"]
     }
 }

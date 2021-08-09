@@ -24,12 +24,13 @@ public class GetPassportDetailResponseModel: Mappable {
     public var passportGivenDate : String?
     public var documentTypeName : String?
     public var isPassportRequired : Bool?
+    public var reservationNumber : String?
 
     public required init?(map: Map) {
         
     }
     
-    public init(touristId: Int, operatorId: Int, name: String, surName: String, birthDate: String, passportSerie: String, passportNumber: String, nationalityName: String, genderName: String, countryOfBirthName: String, passportValidThru: String, passportGivenDate: String, documentTypeName: String,isPassportRequired : Bool) {
+    public init(touristId: Int, operatorId: Int, name: String, surName: String, birthDate: String, passportSerie: String, passportNumber: String, nationalityName: String, genderName: String, countryOfBirthName: String, passportValidThru: String, passportGivenDate: String, documentTypeName: String,isPassportRequired : Bool,reservationNumber : String) {
         self.touristId = touristId
         self.operatorId = operatorId
         self.name = name
@@ -44,6 +45,7 @@ public class GetPassportDetailResponseModel: Mappable {
         self.passportGivenDate = passportGivenDate
         self.documentTypeName = documentTypeName
         self.isPassportRequired = isPassportRequired
+        self.reservationNumber = reservationNumber
     }
     
 
@@ -63,6 +65,7 @@ public class GetPassportDetailResponseModel: Mappable {
         passportGivenDate <- map["PassportGivenDate"]
         documentTypeName <- map["DocumentTypeName"]
         isPassportRequired <- map["isPassportRequired"]
+        reservationNumber <- map["ReservationNumber"]
     }
 
 }

@@ -15,20 +15,20 @@ public class CalculateTotalPriceRequestModel: Mappable {
     public var saleDate : String?
     public var hotelId : Int?
     public var tourists : [Tourists]?
-    public var flatExras : [String]?
+    public var flatExtras : [Extra]?
 
     public required init?(map: Map) {
         
     }
     
-    public init(countryId: Int, excursionId : Int, excursionDate : String, saleDate : String, hotelId : Int, tourists : [Tourists], flatExras : [String]) {
+    public init(countryId: Int, excursionId : Int, excursionDate : String, saleDate : String, hotelId : Int, tourists : [Tourists], flatExtras : [Extra]) {
         self.countryId = countryId
         self.excursionId = excursionId
         self.excursionDate = excursionDate
         self.saleDate = saleDate
         self.hotelId = hotelId
         self.tourists = tourists
-        self.flatExras = flatExras
+        self.flatExtras = flatExtras
     }
     
     public func mapping(map: Map) {
@@ -39,7 +39,7 @@ public class CalculateTotalPriceRequestModel: Mappable {
         saleDate <- map["saleDate"]
         hotelId <- map["hotelId"]
         tourists <- map["Tourists"]
-        flatExras <- map["FlatExras"]
+        flatExtras <- map["FlatExras"]
     }
 }
 

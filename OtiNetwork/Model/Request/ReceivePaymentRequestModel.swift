@@ -14,15 +14,15 @@ public class ReceivePaymentRequestModel: Mappable{
     public var payId : Int?
     public var threadGuid : String?
     public var reservationType : String?
-    public var card : Any?
-    public var excursion : Any?
-    public var calculateTotalPrice : Any?
+    public var card : ReceiveCardModel?
+    public var excursion : ReceiveExcursionModel?
+    public var calculateTotalPrice : CalculateTotalPriceRequestModel?
     
     public required init?(map: Map) {
         
     }
     
-    public init(userId: Int, payId: Int,card : Any,excursion : Any,calculateTotalPrice : Any,threadGuid : String = "",reservationType : String) {
+    public init(userId: Int, payId: Int,card : ReceiveCardModel,excursion : ReceiveExcursionModel,calculateTotalPrice : CalculateTotalPriceRequestModel,threadGuid : String = "",reservationType : String) {
         self.userId = userId
         self.payId = payId
         self.card = card
@@ -40,6 +40,29 @@ public class ReceivePaymentRequestModel: Mappable{
         calculateTotalPrice <- map["calculateTotalPrice"]
         threadGuid <- map["ThreadGuid"]
         reservationType <- map["ReservationType"]
+    }
+}
+
+public class ReceivePaymentEditPassportRequestModel: Mappable{
+    
+    public var userId : Int?
+    public var payId : Int?
+    public var threadGuid : String?
+    
+    public required init?(map: Map) {
+        
+    }
+    
+    public init(userId: Int, payId: Int,threadGuid : String) {
+        self.userId = userId
+        self.payId = payId
+        self.threadGuid = threadGuid
+    }
+
+    public func mapping(map: Map) {
+        userId <- map["UserId"]
+        payId <- map["payId"]
+        threadGuid <- map["ThreadGuid"]
     }
 }
 

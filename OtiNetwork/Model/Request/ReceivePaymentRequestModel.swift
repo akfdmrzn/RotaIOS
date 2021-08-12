@@ -14,15 +14,15 @@ public class ReceivePaymentRequestModel: Mappable{
     public var payId : Int?
     public var threadGuid : String?
     public var reservationType : String?
-    public var card : ReceiveCardModel?
-    public var excursion : ReceiveExcursionModel?
-    public var calculateTotalPrice : CalculateTotalPriceRequestModel?
+    public var card : Any?
+    public var excursion : Any?
+    public var calculateTotalPrice : Any?
     
     public required init?(map: Map) {
         
     }
     
-    public init(userId: Int, payId: Int,card : ReceiveCardModel,excursion : ReceiveExcursionModel,calculateTotalPrice : CalculateTotalPriceRequestModel,threadGuid : String = "",reservationType : String) {
+    public init(userId: Int, payId: Int,card : Any,excursion : Any,calculateTotalPrice : Any,threadGuid : String = "",reservationType : String) {
         self.userId = userId
         self.payId = payId
         self.card = card

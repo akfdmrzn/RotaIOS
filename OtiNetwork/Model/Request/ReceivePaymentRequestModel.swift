@@ -12,6 +12,8 @@ public class ReceivePaymentRequestModel: Mappable{
     
     public var userId : Int?
     public var payId : Int?
+    public var threadGuid : String?
+    public var reservationType : String?
     public var card : ReceiveCardModel?
     public var excursion : ReceiveExcursionModel?
     public var calculateTotalPrice : CalculateTotalPriceRequestModel?
@@ -20,12 +22,14 @@ public class ReceivePaymentRequestModel: Mappable{
         
     }
     
-    public init(userId: Int, payId: Int,card : ReceiveCardModel,excursion : ReceiveExcursionModel,calculateTotalPrice : CalculateTotalPriceRequestModel) {
+    public init(userId: Int, payId: Int,card : ReceiveCardModel,excursion : ReceiveExcursionModel,calculateTotalPrice : CalculateTotalPriceRequestModel,threadGuid : String = "",reservationType : String) {
         self.userId = userId
         self.payId = payId
         self.card = card
         self.excursion = excursion
         self.calculateTotalPrice = calculateTotalPrice
+        self.threadGuid = threadGuid
+        self.reservationType = reservationType
     }
 
     public func mapping(map: Map) {
@@ -34,6 +38,8 @@ public class ReceivePaymentRequestModel: Mappable{
         card <- map["card"]
         excursion <- map["excursion"]
         calculateTotalPrice <- map["calculateTotalPrice"]
+        threadGuid <- map["ThreadGuid"]
+        reservationType <- map["ReservationType"]
     }
 }
 

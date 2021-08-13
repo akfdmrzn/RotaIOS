@@ -23,6 +23,7 @@ public class GetUserPaymentsResponseModel: Mappable {
     public var bookStatus : Int?
     public var excursionVoucherNumber : String?
     public var preBookingVoucher : String?
+    public var paymentStatusText : String?
     public var excursion : ExcursionUserPayment?
     
     public required init?(map: Map) {
@@ -43,6 +44,7 @@ public class GetUserPaymentsResponseModel: Mappable {
         bookStatus <- map["BookStatus"]
         excursionVoucherNumber <- map["ExcursionVoucherNumber"]
         preBookingVoucher <- map["PreBookingVoucher"]
+        paymentStatusText <- map["PaymentStatusText"]
         excursion <- map["Excursion"]
     }
 }

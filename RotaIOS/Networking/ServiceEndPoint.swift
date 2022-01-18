@@ -39,6 +39,15 @@ public enum ServiceEndPoint: String {
     case GetCreateZReportPreview = "/api/api/AccountingZReportMobile/CreateZReport"
     case GetTourSaleSearchTour = "/api/api/TourSale/SearchTour"
     case GetTourSearchCache = "/api/api/TourSale/GetTourSearchCache"
+    case GetGuideDuties = "/api/api/TourTransferPlan/GetGuideDuties"
+    case GetArrAndDepHotelListForMobile = "/api/api/TourTransferPlan/GetArrAndDepHotelListForMobile"
+    case GetHotelListForMobile = "/api/api/TourTransferPlan/GetHotelListForMobile"
+    case GetInter = "/api/api/TourTransferPlan/GetInter"
+    case GetIndShopHotelListForMobile = "/api/api/IndShop/GetIndShopHotelListForMobile"
+    case GetInterPaxes = "/api/api/TourTransferPlan/GetInterPaxes"
+    case GetInfoPaxes = "/api/api/TourTransferPlan/GetInfoPaxes"
+    case GetArrAndDepPaxes = "/api/api/TourTransferPlan/GetArrAndDepPaxes"
+    case GetTourPaxes = "/api/api/TourTransferPlan/GetTourPaxes"
+    case GetColAndDelPaxes = "/api/api/TourTransferPlan/GetColAndDelPaxes"
+    case GetIndShopPaxes = "/api/api/IndShop/GetIndShopPaxes"
 }
-
-

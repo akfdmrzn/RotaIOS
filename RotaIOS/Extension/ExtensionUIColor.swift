@@ -32,6 +32,11 @@ extension UIColor {
     class var grayColor :                       UIColor { return UIColor(hexString: "#333333") }
     class var greenColor :                      UIColor { return UIColor(hexString: "##5AA427") }
     class var tableViewColor :                  UIColor { return UIColor(hexString: "#1C1C1D") }
+    class var lightGreenColor :                 UIColor { return UIColor(hexString: "#BFD732") }
+    class var darkGreenColor :                  UIColor { return UIColor(hexString: "#3DB54A") }
+    class var barGreenColor :                 UIColor { return UIColor(hexString: "#56B53B") }
+    class var barGrayColor :                  UIColor { return UIColor(hexString: "#191919") }
+    class var darkGrayColor :                       UIColor { return UIColor(hexString: "#1C1C1D") }
     
     convenience init(hexString: String) {
         let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
@@ -51,17 +56,6 @@ extension UIColor {
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
     
-}
-
-extension UIView {
-func applyGradient(colours: [UIColor]) -> Void {
- let gradient: CAGradientLayer = CAGradientLayer()
- gradient.frame = self.bounds
- gradient.colors = colours.map { $0.cgColor }
- gradient.startPoint = CGPoint(x : 0.0, y : 0.5)
- gradient.endPoint = CGPoint(x :1.0, y: 0.5)
- self.layer.insertSublayer(gradient, at: 0)
- }
 }
 
 extension UISearchBar {

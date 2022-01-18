@@ -13,6 +13,7 @@ target 'RotaIOS' do
     pod  'DropDown'
     pod 'IQKeyboardManagerSwift'
     pod 'Firebase/Analytics'
+    pod 'PureLayout'
     
   target 'RotaIOSTests' do
     inherit! :search_paths

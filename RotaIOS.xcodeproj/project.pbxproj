@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		128E9E1B2D339F9FC22925D9 /* Pods_RotaIOS_RotaIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3789029EF1E7A0F02957FE77 /* Pods_RotaIOS_RotaIOSUITests.framework */; };
+		432FE6668254BA0CA05DC6FF /* Pods_RotaIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F627A32011B10A339DD5FD27 /* Pods_RotaIOSTests.framework */; };
+		97EA547D8C247C4FB10DE7F7 /* Pods_RotaIOS_RotaIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83342E6867FA5C2B432CDAE /* Pods_RotaIOS_RotaIOSUITests.framework */; };
 		A9AAE53A2791631B00AFBA67 /* TasksPaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AAE5392791631B00AFBA67 /* TasksPaxView.swift */; };
 		A9AAE53D2791634200AFBA67 /* TasksPaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AAE53B2791634200AFBA67 /* TasksPaxViewController.swift */; };
 		A9AAE53E2791634200AFBA67 /* TasksPaxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9AAE53C2791634200AFBA67 /* TasksPaxViewController.xib */; };
@@ -126,7 +127,6 @@
 		BF44C9E42640023800238035 /* ProceedPageCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF44C9E22640023800238035 /* ProceedPageCustomView.xib */; };
 		BF75706D26753C2E002EA494 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75706C26753C2E002EA494 /* BaseViewController.swift */; };
 		BFB977ED26B6F25400F0DD6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFB977EC26B6F25400F0DD6D /* GoogleService-Info.plist */; };
-		D6432FFC98E3295B3B0EFF45 /* Pods_RotaIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B093EA7E3F353A2A3F207150 /* Pods_RotaIOS.framework */; };
 		D900406F271722B800DDE088 /* DailyReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D900406D271722B800DDE088 /* DailyReportViewController.swift */; };
 		D9004070271722B800DDE088 /* DailyReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D900406E271722B800DDE088 /* DailyReportViewController.xib */; };
 		D9004074271722E200DDE088 /* DailyReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9004073271722E200DDE088 /* DailyReportView.swift */; };
@@ -297,7 +297,7 @@
 		D9FD64EF273818C3009B6619 /* GetCreateZReportResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FD64EE273818C3009B6619 /* GetCreateZReportResponseModel.swift */; };
 		D9FD6503273C1F7B009B6619 /* HotelsandFlightsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FD6501273C1F7B009B6619 /* HotelsandFlightsTableViewCell.swift */; };
 		D9FD6504273C1F7B009B6619 /* HotelsandFlightsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FD6502273C1F7B009B6619 /* HotelsandFlightsTableViewCell.xib */; };
-		FA59B99855335A308CA23D82 /* Pods_RotaIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 594B0071A1EABE661285D73C /* Pods_RotaIOSTests.framework */; };
+		DEE977E8CF37F972490BCC73 /* Pods_RotaIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B501ED32EF6379402A0E4FCC /* Pods_RotaIOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -318,12 +318,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A7A383036B05487127CA936 /* Pods-RotaIOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOSTests.debug.xcconfig"; path = "Target Support Files/Pods-RotaIOSTests/Pods-RotaIOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2D8B6C3CD5C7B1D7A0605A5F /* Pods-RotaIOS-RotaIOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS-RotaIOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-RotaIOS-RotaIOSUITests/Pods-RotaIOS-RotaIOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		3789029EF1E7A0F02957FE77 /* Pods_RotaIOS_RotaIOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RotaIOS_RotaIOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		43C18E4CD65C45303319D0CD /* Pods-RotaIOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOSTests.release.xcconfig"; path = "Target Support Files/Pods-RotaIOSTests/Pods-RotaIOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		594B0071A1EABE661285D73C /* Pods_RotaIOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RotaIOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		802DB5F719C97EB160BF892F /* Pods-RotaIOS-RotaIOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS-RotaIOSUITests.release.xcconfig"; path = "Target Support Files/Pods-RotaIOS-RotaIOSUITests/Pods-RotaIOS-RotaIOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4D9D34BC74446C218503868A /* Pods-RotaIOS-RotaIOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS-RotaIOSUITests.release.xcconfig"; path = "Target Support Files/Pods-RotaIOS-RotaIOSUITests/Pods-RotaIOS-RotaIOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		538B1F7826F2A0ABE15360A5 /* Pods-RotaIOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOSTests.release.xcconfig"; path = "Target Support Files/Pods-RotaIOSTests/Pods-RotaIOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		783C07564E28FA3CD7B16983 /* Pods-RotaIOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOSTests.debug.xcconfig"; path = "Target Support Files/Pods-RotaIOSTests/Pods-RotaIOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A4F2F9223A9AE4B71EBB1F34 /* Pods-RotaIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS.debug.xcconfig"; path = "Target Support Files/Pods-RotaIOS/Pods-RotaIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A9AAE5392791631B00AFBA67 /* TasksPaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPaxView.swift; sourceTree = "<group>"; };
 		A9AAE53B2791634200AFBA67 /* TasksPaxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPaxViewController.swift; sourceTree = "<group>"; };
 		A9AAE53C2791634200AFBA67 /* TasksPaxViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksPaxViewController.xib; sourceTree = "<group>"; };
@@ -362,8 +360,7 @@
 		A9E3E0C72770B0F9004DF892 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		A9E8D7222796FADB00A9E90B /* TasksPaxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPaxCollectionViewCell.swift; sourceTree = "<group>"; };
 		A9E8D7232796FADB00A9E90B /* TasksPaxCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksPaxCollectionViewCell.xib; sourceTree = "<group>"; };
-		B093EA7E3F353A2A3F207150 /* Pods_RotaIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RotaIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B181CA2CAC533C3A2B3D9858 /* Pods-RotaIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS.debug.xcconfig"; path = "Target Support Files/Pods-RotaIOS/Pods-RotaIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		B501ED32EF6379402A0E4FCC /* Pods_RotaIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RotaIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF44C877263FF80000238035 /* RotaIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RotaIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF44C87A263FF80000238035 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF44C87E263FF80000238035 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -450,7 +447,7 @@
 		BF44C9E22640023800238035 /* ProceedPageCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProceedPageCustomView.xib; sourceTree = "<group>"; };
 		BF75706C26753C2E002EA494 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BFB977EC26B6F25400F0DD6D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CB6FE34ACFA6F35ECABA9BA1 /* Pods-RotaIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS.release.xcconfig"; path = "Target Support Files/Pods-RotaIOS/Pods-RotaIOS.release.xcconfig"; sourceTree = "<group>"; };
+		CC6AB70F69DDBF5F362414C6 /* Pods-RotaIOS-RotaIOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS-RotaIOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-RotaIOS-RotaIOSUITests/Pods-RotaIOS-RotaIOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D900406D271722B800DDE088 /* DailyReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReportViewController.swift; sourceTree = "<group>"; };
 		D900406E271722B800DDE088 /* DailyReportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyReportViewController.xib; sourceTree = "<group>"; };
 		D9004073271722E200DDE088 /* DailyReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReportView.swift; sourceTree = "<group>"; };
@@ -621,6 +618,9 @@
 		D9FD64EE273818C3009B6619 /* GetCreateZReportResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCreateZReportResponseModel.swift; sourceTree = "<group>"; };
 		D9FD6501273C1F7B009B6619 /* HotelsandFlightsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsandFlightsTableViewCell.swift; sourceTree = "<group>"; };
 		D9FD6502273C1F7B009B6619 /* HotelsandFlightsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelsandFlightsTableViewCell.xib; sourceTree = "<group>"; };
+		F627A32011B10A339DD5FD27 /* Pods_RotaIOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RotaIOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F83342E6867FA5C2B432CDAE /* Pods_RotaIOS_RotaIOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RotaIOS_RotaIOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD6F5AC0F77BF0B44406EBCF /* Pods-RotaIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS.release.xcconfig"; path = "Target Support Files/Pods-RotaIOS/Pods-RotaIOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -628,7 +628,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6432FFC98E3295B3B0EFF45 /* Pods_RotaIOS.framework in Frameworks */,
+				DEE977E8CF37F972490BCC73 /* Pods_RotaIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,7 +636,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA59B99855335A308CA23D82 /* Pods_RotaIOSTests.framework in Frameworks */,
+				432FE6668254BA0CA05DC6FF /* Pods_RotaIOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,19 +644,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				128E9E1B2D339F9FC22925D9 /* Pods_RotaIOS_RotaIOSUITests.framework in Frameworks */,
+				97EA547D8C247C4FB10DE7F7 /* Pods_RotaIOS_RotaIOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		77AB53A08E23A5DC40C3C969 /* Frameworks */ = {
+		3A9C680A6CB4E70A9614645D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B093EA7E3F353A2A3F207150 /* Pods_RotaIOS.framework */,
-				3789029EF1E7A0F02957FE77 /* Pods_RotaIOS_RotaIOSUITests.framework */,
-				594B0071A1EABE661285D73C /* Pods_RotaIOSTests.framework */,
+				B501ED32EF6379402A0E4FCC /* Pods_RotaIOS.framework */,
+				F83342E6867FA5C2B432CDAE /* Pods_RotaIOS_RotaIOSUITests.framework */,
+				F627A32011B10A339DD5FD27 /* Pods_RotaIOSTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -669,7 +669,7 @@
 				BF44C89B263FF80200238035 /* RotaIOSUITests */,
 				BF44C878263FF80000238035 /* Products */,
 				D0865CFF1BE0D1E5A877836C /* Pods */,
-				77AB53A08E23A5DC40C3C969 /* Frameworks */,
+				3A9C680A6CB4E70A9614645D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1062,12 +1062,12 @@
 		D0865CFF1BE0D1E5A877836C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B181CA2CAC533C3A2B3D9858 /* Pods-RotaIOS.debug.xcconfig */,
-				CB6FE34ACFA6F35ECABA9BA1 /* Pods-RotaIOS.release.xcconfig */,
-				2D8B6C3CD5C7B1D7A0605A5F /* Pods-RotaIOS-RotaIOSUITests.debug.xcconfig */,
-				802DB5F719C97EB160BF892F /* Pods-RotaIOS-RotaIOSUITests.release.xcconfig */,
-				2A7A383036B05487127CA936 /* Pods-RotaIOSTests.debug.xcconfig */,
-				43C18E4CD65C45303319D0CD /* Pods-RotaIOSTests.release.xcconfig */,
+				A4F2F9223A9AE4B71EBB1F34 /* Pods-RotaIOS.debug.xcconfig */,
+				FD6F5AC0F77BF0B44406EBCF /* Pods-RotaIOS.release.xcconfig */,
+				CC6AB70F69DDBF5F362414C6 /* Pods-RotaIOS-RotaIOSUITests.debug.xcconfig */,
+				4D9D34BC74446C218503868A /* Pods-RotaIOS-RotaIOSUITests.release.xcconfig */,
+				783C07564E28FA3CD7B16983 /* Pods-RotaIOSTests.debug.xcconfig */,
+				538B1F7826F2A0ABE15360A5 /* Pods-RotaIOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1079,11 +1079,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF44C8A1263FF80200238035 /* Build configuration list for PBXNativeTarget "RotaIOS" */;
 			buildPhases = (
-				053DB7C12AFCBA761F58231B /* [CP] Check Pods Manifest.lock */,
+				150ED49D600AEA683F762746 /* [CP] Check Pods Manifest.lock */,
 				BF44C873263FF80000238035 /* Sources */,
 				BF44C874263FF80000238035 /* Frameworks */,
 				BF44C875263FF80000238035 /* Resources */,
-				7DA98474BB28F804440F6199 /* [CP] Embed Pods Frameworks */,
+				E45E67CA8A4F841538F1703D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1098,7 +1098,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF44C8A4263FF80200238035 /* Build configuration list for PBXNativeTarget "RotaIOSTests" */;
 			buildPhases = (
-				BEF99051E8178623E8D3730E /* [CP] Check Pods Manifest.lock */,
+				36389B6D140F501242AF4F58 /* [CP] Check Pods Manifest.lock */,
 				BF44C889263FF80200238035 /* Sources */,
 				BF44C88A263FF80200238035 /* Frameworks */,
 				BF44C88B263FF80200238035 /* Resources */,
@@ -1117,11 +1117,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF44C8A7263FF80200238035 /* Build configuration list for PBXNativeTarget "RotaIOSUITests" */;
 			buildPhases = (
-				277FED68575C39C9B727F46B /* [CP] Check Pods Manifest.lock */,
+				17BE4C86656E4B8ED29A64C4 /* [CP] Check Pods Manifest.lock */,
 				BF44C894263FF80200238035 /* Sources */,
 				BF44C895263FF80200238035 /* Frameworks */,
 				BF44C896263FF80200238035 /* Resources */,
-				6E9E2B0C010E7FB86D772F36 /* [CP] Embed Pods Frameworks */,
+				0C38A941F6CE7867D2C4341A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1283,7 +1283,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		053DB7C12AFCBA761F58231B /* [CP] Check Pods Manifest.lock */ = {
+		0C38A941F6CE7867D2C4341A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RotaIOS-RotaIOSUITests/Pods-RotaIOS-RotaIOSUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RotaIOS-RotaIOSUITests/Pods-RotaIOS-RotaIOSUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RotaIOS-RotaIOSUITests/Pods-RotaIOS-RotaIOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		150ED49D600AEA683F762746 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1305,7 +1322,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		277FED68575C39C9B727F46B /* [CP] Check Pods Manifest.lock */ = {
+		17BE4C86656E4B8ED29A64C4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1327,41 +1344,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6E9E2B0C010E7FB86D772F36 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RotaIOS-RotaIOSUITests/Pods-RotaIOS-RotaIOSUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RotaIOS-RotaIOSUITests/Pods-RotaIOS-RotaIOSUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RotaIOS-RotaIOSUITests/Pods-RotaIOS-RotaIOSUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7DA98474BB28F804440F6199 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RotaIOS/Pods-RotaIOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RotaIOS/Pods-RotaIOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RotaIOS/Pods-RotaIOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BEF99051E8178623E8D3730E /* [CP] Check Pods Manifest.lock */ = {
+		36389B6D140F501242AF4F58 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1381,6 +1364,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E45E67CA8A4F841538F1703D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RotaIOS/Pods-RotaIOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RotaIOS/Pods-RotaIOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RotaIOS/Pods-RotaIOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1690,7 +1690,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1745,7 +1745,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1757,7 +1757,7 @@
 		};
 		BF44C8A2263FF80200238035 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B181CA2CAC533C3A2B3D9858 /* Pods-RotaIOS.debug.xcconfig */;
+			baseConfigurationReference = A4F2F9223A9AE4B71EBB1F34 /* Pods-RotaIOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1779,7 +1779,7 @@
 		};
 		BF44C8A3263FF80200238035 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB6FE34ACFA6F35ECABA9BA1 /* Pods-RotaIOS.release.xcconfig */;
+			baseConfigurationReference = FD6F5AC0F77BF0B44406EBCF /* Pods-RotaIOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1801,7 +1801,7 @@
 		};
 		BF44C8A5263FF80200238035 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2A7A383036B05487127CA936 /* Pods-RotaIOSTests.debug.xcconfig */;
+			baseConfigurationReference = 783C07564E28FA3CD7B16983 /* Pods-RotaIOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1824,7 +1824,7 @@
 		};
 		BF44C8A6263FF80200238035 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43C18E4CD65C45303319D0CD /* Pods-RotaIOSTests.release.xcconfig */;
+			baseConfigurationReference = 538B1F7826F2A0ABE15360A5 /* Pods-RotaIOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1847,7 +1847,7 @@
 		};
 		BF44C8A8263FF80200238035 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D8B6C3CD5C7B1D7A0605A5F /* Pods-RotaIOS-RotaIOSUITests.debug.xcconfig */;
+			baseConfigurationReference = CC6AB70F69DDBF5F362414C6 /* Pods-RotaIOS-RotaIOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1868,7 +1868,7 @@
 		};
 		BF44C8A9263FF80200238035 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 802DB5F719C97EB160BF892F /* Pods-RotaIOS-RotaIOSUITests.release.xcconfig */;
+			baseConfigurationReference = 4D9D34BC74446C218503868A /* Pods-RotaIOS-RotaIOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

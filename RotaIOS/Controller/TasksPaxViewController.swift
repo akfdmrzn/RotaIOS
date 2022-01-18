@@ -156,13 +156,13 @@ extension TasksPaxViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return self.paxList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:TasksPaxCollectionViewCell.identifier,for: indexPath) as! TasksPaxCollectionViewCell
-          cell.setInfo(paxName: self.paxList[indexPath.row].paxName, ageGroup: "", incResNo: "", operator_: self.paxList[indexPath.row].operatorList, voucherNo: self.paxList[indexPath.row].voucherNo, room: self.paxList[indexPath.row].room, oprResNo: self.paxList[indexPath.row].oprResNo, noShow: self.paxList[indexPath.row].show, infoRep: self.paxList[indexPath.row].infoRep, guideNote: self.paxList[indexPath.row].shoppingGuideNote)
+          //cell.setInfo(paxName: self.paxList[indexPath.row].paxName, ageGroup: "", incResNo: "", operator_: self.paxList[indexPath.row].operatorList, voucherNo: self.paxList[indexPath.row].voucherNo, room: self.paxList[indexPath.row].room, oprResNo: self.paxList[indexPath.row].oprResNo, noShow: self.paxList[indexPath.row].show, infoRep: self.paxList[indexPath.row].infoRep, guideNote: self.paxList[indexPath.row].shoppingGuideNote)
           return cell
     }
     

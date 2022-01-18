@@ -11,12 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TasksPaxViewController" customModule="RotaIOS" customModuleProvider="target">
             <connections>
+                <outlet property="collectionViewTasksPax" destination="zlp-3f-I8b" id="Scb-VR-B9F"/>
                 <outlet property="labelExcursionName" destination="sXa-5T-QYN" id="HUL-0g-eB3"/>
                 <outlet property="labelHotelName" destination="5gu-LD-752" id="6Em-pQ-ikE"/>
                 <outlet property="labelPax" destination="k6g-tk-bFv" id="jCL-ev-cmj"/>
                 <outlet property="labelWorkNo" destination="CJp-LI-Dht" id="wT3-L9-zfV"/>
-                <outlet property="tableViewTasksPax" destination="prB-ui-wVE" id="klf-Od-Adl"/>
-                <outlet property="tasksPaxInfoTableViewHeightConstraint" destination="3M5-0z-h32" id="9aP-Ri-AlH"/>
+                <outlet property="tasksPaxInfoCollectionViewHeightConstraint" destination="zgn-Kf-ecz" id="WbZ-iH-lVh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,11 +28,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNy-5B-ekm">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="O5b-KJ-odh">
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="O5b-KJ-odh">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPa-x7-wrv">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="265"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="245"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQM-sQ-4Xd" customClass="HeaderDetailCustomView" customModule="RotaIOS" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
@@ -125,29 +125,35 @@
                                                 <constraint firstItem="k6g-tk-bFv" firstAttribute="leading" secondItem="BBI-cx-S9I" secondAttribute="leading" constant="15" id="zm4-GZ-ASc"/>
                                             </constraints>
                                         </view>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="prB-ui-wVE">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="zlp-3f-I8b">
                                             <rect key="frame" x="0.0" y="245" width="414" height="0.0"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" id="3M5-0z-h32"/>
+                                                <constraint firstAttribute="height" id="zgn-Kf-ecz"/>
                                             </constraints>
-                                        </tableView>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WoR-ya-Kva">
+                                                <size key="itemSize" width="128" height="128"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                        </collectionView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="prB-ui-wVE" firstAttribute="top" secondItem="BBI-cx-S9I" secondAttribute="bottom" constant="5" id="2Eq-KM-bgw"/>
                                         <constraint firstItem="48x-ab-naK" firstAttribute="top" secondItem="tPa-x7-wrv" secondAttribute="top" constant="110" id="3F2-Mn-Uiz"/>
                                         <constraint firstItem="48x-ab-naK" firstAttribute="leading" secondItem="tPa-x7-wrv" secondAttribute="leading" id="57Y-ed-PAn"/>
-                                        <constraint firstItem="prB-ui-wVE" firstAttribute="leading" secondItem="tPa-x7-wrv" secondAttribute="leading" id="JCF-gD-hfc"/>
                                         <constraint firstAttribute="trailing" secondItem="BBI-cx-S9I" secondAttribute="trailing" id="LIb-og-FOZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="zlp-3f-I8b" secondAttribute="trailing" id="Nxp-Hn-uon"/>
                                         <constraint firstAttribute="trailing" secondItem="48x-ab-naK" secondAttribute="trailing" id="O3Z-pL-lpN"/>
+                                        <constraint firstAttribute="bottom" secondItem="zlp-3f-I8b" secondAttribute="bottom" id="Uhh-P9-yIO"/>
                                         <constraint firstAttribute="trailing" secondItem="iQM-sQ-4Xd" secondAttribute="trailing" id="Wef-zW-i6P"/>
                                         <constraint firstItem="iQM-sQ-4Xd" firstAttribute="top" secondItem="tPa-x7-wrv" secondAttribute="top" id="aDV-jx-bnF"/>
-                                        <constraint firstAttribute="trailing" secondItem="prB-ui-wVE" secondAttribute="trailing" id="f0V-X2-oqe"/>
-                                        <constraint firstAttribute="bottom" secondItem="prB-ui-wVE" secondAttribute="bottom" constant="20" id="gWg-gF-ufQ"/>
+                                        <constraint firstItem="zlp-3f-I8b" firstAttribute="leading" secondItem="tPa-x7-wrv" secondAttribute="leading" id="daa-8D-LWq"/>
                                         <constraint firstItem="BBI-cx-S9I" firstAttribute="top" secondItem="48x-ab-naK" secondAttribute="bottom" constant="15" id="jj2-FD-UTS"/>
                                         <constraint firstItem="BBI-cx-S9I" firstAttribute="leading" secondItem="tPa-x7-wrv" secondAttribute="leading" id="k2H-ci-ZtO"/>
                                         <constraint firstItem="iQM-sQ-4Xd" firstAttribute="leading" secondItem="tPa-x7-wrv" secondAttribute="leading" id="pdC-iq-li5"/>
+                                        <constraint firstItem="zlp-3f-I8b" firstAttribute="top" secondItem="BBI-cx-S9I" secondAttribute="bottom" constant="5" id="qyJ-0h-1ob"/>
                                     </constraints>
                                 </view>
                             </subviews>

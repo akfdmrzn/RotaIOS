@@ -44,6 +44,8 @@
 		A9C67508278744D000536F21 /* TasksCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C67507278744D000536F21 /* TasksCustomView.xib */; };
 		A9C6750A27877D1C00536F21 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C6750927877D1C00536F21 /* ExtensionString.swift */; };
 		A9E3E0C82770B0F9004DF892 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E3E0C72770B0F9004DF892 /* TasksView.swift */; };
+		A9E8D7242796FADB00A9E90B /* TasksPaxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E8D7222796FADB00A9E90B /* TasksPaxCollectionViewCell.swift */; };
+		A9E8D7252796FADC00A9E90B /* TasksPaxCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9E8D7232796FADB00A9E90B /* TasksPaxCollectionViewCell.xib */; };
 		BF44C87B263FF80000238035 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44C87A263FF80000238035 /* AppDelegate.swift */; };
 		BF44C87F263FF80000238035 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44C87E263FF80000238035 /* ViewController.swift */; };
 		BF44C884263FF80100238035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF44C883263FF80100238035 /* Assets.xcassets */; };
@@ -358,6 +360,8 @@
 		A9C67507278744D000536F21 /* TasksCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksCustomView.xib; sourceTree = "<group>"; };
 		A9C6750927877D1C00536F21 /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
 		A9E3E0C72770B0F9004DF892 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
+		A9E8D7222796FADB00A9E90B /* TasksPaxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPaxCollectionViewCell.swift; sourceTree = "<group>"; };
+		A9E8D7232796FADB00A9E90B /* TasksPaxCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksPaxCollectionViewCell.xib; sourceTree = "<group>"; };
 		B093EA7E3F353A2A3F207150 /* Pods_RotaIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RotaIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B181CA2CAC533C3A2B3D9858 /* Pods-RotaIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS.debug.xcconfig"; path = "Target Support Files/Pods-RotaIOS/Pods-RotaIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		BF44C877263FF80000238035 /* RotaIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RotaIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1013,6 +1017,8 @@
 				A9C674E627745D9900536F21 /* TasksHotelTableViewCell.xib */,
 				A9AAE53F27917BBB00AFBA67 /* TasksPaxTableViewCell.swift */,
 				A9AAE54027917BBB00AFBA67 /* TasksPaxTableViewCell.xib */,
+				A9E8D7222796FADB00A9E90B /* TasksPaxCollectionViewCell.swift */,
+				A9E8D7232796FADB00A9E90B /* TasksPaxCollectionViewCell.xib */,
 				D9561A3F269E099C00AA75E5 /* AnnoucmentsTableViewCell.swift */,
 				D9561A40269E099C00AA75E5 /* AnnoucmentsTableViewCell.xib */,
 				D9561A43269E110A00AA75E5 /* AnnoucmentsDetailTableViewCell.swift */,
@@ -1178,6 +1184,7 @@
 				D931577727033A54000C91AD /* ZReportPaymentViewController.xib in Resources */,
 				D95C203226F0CA70007D1506 /* SpeakingHoursViewController.xib in Resources */,
 				A9C674E227745CE300536F21 /* TasksHotelViewController.xib in Resources */,
+				A9E8D7252796FADC00A9E90B /* TasksPaxCollectionViewCell.xib in Resources */,
 				D9A48D0326B1895500D28A0A /* DocumentsTableViewCell.xib in Resources */,
 				D97EE013276B952B00683E66 /* AddMenuPaxTableViewCell.xib in Resources */,
 				BF44C9242640014800238035 /* MainPAgeViewController.xib in Resources */,
@@ -1392,6 +1399,7 @@
 				D97FB5B426C6ABC10099F28B /* MyShoppinSaleDetailViewController.swift in Sources */,
 				D931578F270496B4000C91AD /* GetZreportRefundRequestModel.swift in Sources */,
 				BF44C8F4264000E900238035 /* GetGuideMarketResponseModel.swift in Sources */,
+				A9E8D7242796FADB00A9E90B /* TasksPaxCollectionViewCell.swift in Sources */,
 				D931576226FCB0C0000C91AD /* ZReportTotalTableViewCell.swift in Sources */,
 				D9A48CFF26B1408A00D28A0A /* DocumentsView.swift in Sources */,
 				D93F889F264EFF7800397283 /* GetSaveForMobileRequestList.swift in Sources */,

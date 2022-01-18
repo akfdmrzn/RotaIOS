@@ -20,8 +20,8 @@ class TasksPaxViewController: BaseViewController {
     @IBOutlet weak var labelWorkNo: UILabel!
     @IBOutlet weak var labelHotelName: UILabel!
     @IBOutlet weak var labelExcursionName: UILabel!
-    @IBOutlet weak var tableViewTasksPax: UITableView!
-    @IBOutlet weak var tasksPaxInfoTableViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var collectionViewTasksPax: UICollectionView!
+    @IBOutlet weak var tasksPaxInfoCollectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var labelPax: UILabel!
     var serviceType: Int?
     var workNo: String?
@@ -29,22 +29,25 @@ class TasksPaxViewController: BaseViewController {
     var excursionName: String?
     var paxList: [PaxList] = []{
         didSet{
-            self.tasksPaxInfoTableViewHeightConstraint.constant = self.tableViewTasksPax.contentSize.height + 20
+            self.tasksPaxInfoCollectionViewHeightConstraint.constant = self.collectionViewTasksPax.contentSize.height + 20
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableViewTasksPax.delegate = self
-        self.tableViewTasksPax.dataSource = self
-        self.tableViewTasksPax.register(TasksPaxTableViewCell.nib, forCellReuseIdentifier: TasksPaxTableViewCell.identifier)
-        self.labelWorkNo.text = self.workNo
+        self.collectionViewTasksPax.delegate = self
+        self.collectionViewTasksPax.dataSource = self
+        self.collectionViewTasksPax.register(TasksPaxCollectionViewCell.nib, forCellWithReuseIdentifier: TasksPaxCollectionViewCell.identifier)
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        self.collectionViewTasksPax.collectionViewLayout = layout
+        self.labelWorkNo.text = "aswad"
         self.labelHotelName.text = self.hotelName
         self.labelExcursionName.text = self.excursionName
-        
+        self.labelPax.text = "Pax".localizedCapitalized
         getIndShopPaxesService()
         
-        switch self.serviceType {
+        /*switch self.serviceType {
         case ServiceType.COLDEL.rawValue:
             self.getColAndDelPaxesService()
         case ServiceType.EXC.rawValue:
@@ -59,11 +62,11 @@ class TasksPaxViewController: BaseViewController {
             self.getInfoPaxesService()
         default:
             break
-        }
+        }*/
     }
 
     override func viewWillLayoutSubviews() {
-        self.tasksPaxInfoTableViewHeightConstraint.constant = self.tableViewTasksPax.contentSize.height + 20
+        self.tasksPaxInfoCollectionViewHeightConstraint.constant = self.collectionViewTasksPax.contentSize.height + 20
     }
     
     func getInterPaxesService(){
@@ -138,7 +141,7 @@ class TasksPaxViewController: BaseViewController {
                 for item in response {
                     self.paxList.append(PaxList.init(paxName: item.name, ageGroup: item.ageGroup, incResNo: String(item.incResNo), operator_: item.operatorList, voucherNo: item.voucherNo, room: item.room, oprResNo: String(item.oprResNo), noShow: String(item.show), infoRep: item.infoRep, guideNote: item.shoppingGuideNote))
                 }
-                self.tableViewTasksPax.reloadData()
+                self.collectionViewTasksPax.reloadData()
             }else {
                print("error")
             }
@@ -146,25 +149,36 @@ class TasksPaxViewController: BaseViewController {
     }
 }
 
-extension TasksPaxViewController :UITableViewDelegate,UITableViewDataSource{
-    func tableView(_ tableView: UITableView,numberOfRowsInSection section: Int)-> Int {
-        return self.paxList.count
+extension TasksPaxViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       
     }
     
-    func tableView(_ tableView: UITableView,cellForRowAt indexPath: IndexPath) ->UITableViewCell{
-      let cell = tableView.dequeueReusableCell(withIdentifier:TasksPaxTableViewCell.identifier,for: indexPath) as! TasksPaxTableViewCell
-        cell.setInfo(paxName: self.paxList[indexPath.row].paxName, ageGroup: self.paxList[indexPath.row].ageGroup, incResNo: self.paxList[indexPath.row].incResNo, operator_: self.paxList[indexPath.row].operatorList, voucherNo: self.paxList[indexPath.row].voucherNo, room: self.paxList[indexPath.row].room, oprResNo: self.paxList[indexPath.row].oprResNo, noShow: self.paxList[indexPath.row].show, infoRep: self.paxList[indexPath.row].infoRep, guideNote: self.paxList[indexPath.row].shoppingGuideNote)
-        return cell
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 12
     }
     
-    func tableView(_ tableView: UITableView,didSelectRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:TasksPaxCollectionViewCell.identifier,for: indexPath) as! TasksPaxCollectionViewCell
+          cell.setInfo(paxName: self.paxList[indexPath.row].paxName, ageGroup: "", incResNo: "", operator_: self.paxList[indexPath.row].operatorList, voucherNo: self.paxList[indexPath.row].voucherNo, room: self.paxList[indexPath.row].room, oprResNo: self.paxList[indexPath.row].oprResNo, noShow: self.paxList[indexPath.row].show, infoRep: self.paxList[indexPath.row].infoRep, guideNote: self.paxList[indexPath.row].shoppingGuideNote)
+          return cell
     }
     
-    func tableView(_ tableView: UITableView,heightForRowAt indexPath: IndexPath)-> CGFloat {
-        return UITableView.automaticDimension
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+           return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 1500.0, height: self.collectionViewTasksPax.frame.size.height)
     }
     
-    func tableView(_ tableView: UITableView,estimatedHeightForRowAt indexPath:IndexPath) -> CGFloat {
-        return 44.0
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
     }
 }

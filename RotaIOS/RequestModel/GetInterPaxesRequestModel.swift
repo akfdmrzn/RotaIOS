@@ -11,13 +11,13 @@ import ObjectMapper
 
 public class GetInterPaxesRequestModel: Mappable{
     
-    public var id : Int!
+    public var id : String!
     
     public required init?(map: Map) {
         
     }
     
-    public init( id : Int ) {
+    public init( id : String ) {
         self.id = id
     }
     
@@ -25,6 +25,6 @@ public class GetInterPaxesRequestModel: Mappable{
     }
     
     public func requestPathString()->String{
-        return "/?Id=\(self.id ?? 0)"
+        return "/?Id=\(self.id ?? "")"
     }
 }

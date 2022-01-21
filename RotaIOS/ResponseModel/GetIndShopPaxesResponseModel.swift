@@ -9,21 +9,21 @@ import Foundation
 import ObjectMapper
 
 public class GetIndShopPaxesResponseModel : Mappable {
-    public var _id : String = ""
+    public var _id : String = "-"
     public var id : Int = 0
     public var show : Bool = false
-    public var name : String = ""
-    public var ageGroup : String = ""
-    public var gender : String = ""
+    public var name : String = "-"
+    public var ageGroup : String = "-"
+    public var gender : String = "-"
     public var age : Int = 0
-    public var infoRep : String = ""
-    public var infoRepPhone : String = ""
-    public var room : String = ""
+    public var infoRep : String = "-"
+    public var infoRepPhone : String = "-"
+    public var room : String = "-"
     public var incResNo : Int = 0
     public var oprResNo : Int = 0
-    public var operatorList : String = ""
-    public var voucherNo : String = ""
-    public var shoppingGuideNote : String = ""
+    public var operatorList : String = "-"
+    public var voucherNo : String = "-"
+    public var shoppingGuideNote : String = "-"
 
     required public init?(map: Map) {
 
@@ -51,6 +51,7 @@ public class GetIndShopPaxesResponseModel : Mappable {
 }
 
 public class PaxList : NSObject {
+    public var index: Int = 0
     public var paxName : String = ""
     public var ageGroup : String = ""
     public var incResNo : String = ""
@@ -61,12 +62,14 @@ public class PaxList : NSObject {
     public var show : String = ""
     public var infoRep : String = ""
     public var shoppingGuideNote : String = ""
+    public var check: Bool = false
     
     public required init?(map: Map) {
 
     }
 
-    public init(paxName: String, ageGroup: String, incResNo: String, operator_: String, voucherNo: String, room: String, oprResNo: String, noShow: String, infoRep: String, guideNote: String){
+    public init(index: Int, paxName: String, ageGroup: String, incResNo: String, operator_: String, voucherNo: String, room: String, oprResNo: String, noShow: String, infoRep: String, guideNote: String, check: Bool){
+        self.index = index
         self.paxName = paxName
         self.ageGroup = ageGroup
         self.incResNo = incResNo
@@ -77,8 +80,26 @@ public class PaxList : NSObject {
         self.show = noShow
         self.infoRep = infoRep
         self.shoppingGuideNote = guideNote
+        self.check = check
     }
 
 }
 
+public class PaxInfoList : NSObject {
+    var id: String = ""
+    var infoPlanId: String = ""
+    var planId: String = ""
+    var hotelId: String = ""
+    
+    public required init?(map: Map) {
 
+    }
+
+    public init(id: String, infoPlanId: String, planId: String, hotelId: String){
+        self.id = id
+        self.infoPlanId = infoPlanId
+        self.planId = planId
+        self.hotelId = hotelId
+    }
+
+}

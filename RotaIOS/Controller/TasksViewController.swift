@@ -9,14 +9,25 @@ import UIKit
 
 class TasksViewController: BaseViewController {
     enum ShortCode: String {
-        case COL = "COL"
         case EXC = "EXC"
+        case COL = "COL"
+        case DEL = "DEL"
         case ARR = "ARR"
         case DEP = "DEP"
-        case INFO = "INFO"
         case SHOP = "SHOP"
         case INT = "INT"
-        case DEL = "DEL"
+        case INFO = "INFO"
+    }
+    
+    enum ServiceType: Int {
+        case EXC = 1
+        case COL = 2
+        case DEL = 3
+        case ARR = 4
+        case DEP = 5
+        case SHOP = 6
+        case INT = 7
+        case INFO = 8
     }
     
     @IBOutlet weak var tasksTableView: UITableView!
@@ -44,29 +55,17 @@ class TasksViewController: BaseViewController {
     var workNo: String?
     var hotelName: String?
     var excursionName: String?
+    var getGuideDutiesList: [GetGuideDutiesList] = [] 
     var totalList:[TotalList] = [] {
         didSet {
-            
+            self.tasksTableView.reloadData()
+            self.tasksTableViewHeightConstraint.constant = self.tasksTableView.contentSize.height
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let date = Date()
-        let df = DateFormatter()
-        df.dateFormat = "MM-dd-yyyy"
-        dateString = df.string(from: date)
-        dateString = "01-05-2022"
-        let yesterday = Date.yesterday
-        let ydf = DateFormatter()
-        ydf.dateFormat = "MM-dd-yyyy"
-        yesterdayDateString = df.string(from: yesterday)
-        yesterdayDateString = "01-04-2022"
-        let tomorrow = Date.tomorrow
-        let tdf = DateFormatter()
-        tdf.dateFormat = "MM-dd-yyyy"
-        tomorrowDateString = tdf.string(from: tomorrow)
-        tomorrowDateString = "01-06-2022"
+        self.date()
         self.taskCustomView.delegate = self
         self.tasksTableView.delegate = self
         self.tasksTableView.dataSource = self
@@ -88,8 +87,8 @@ class TasksViewController: BaseViewController {
                 self.infoPlan = response.infoPlan
                 self.indShopForMobile = response.indShopForMobile
                 self.addList()
-                self.tasksTableView.reloadData()
-                self.tasksTableViewHeightConstraint.constant = self.tasksTableView.contentSize.height + 40
+                self.view.layoutIfNeeded()
+                self.viewWillLayoutSubviews()
             }else {
                print("error")
             }
@@ -97,7 +96,23 @@ class TasksViewController: BaseViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        self.tasksTableViewHeightConstraint.constant = self.tasksTableView.contentSize.height + 40
+        self.tasksTableViewHeightConstraint.constant = self.tasksTableView.contentSize.height
+    }
+    
+    func date(){
+        let date = Date()
+        let df = DateFormatter()
+        df.dateFormat = "MM-dd-yyyy"
+        dateString = df.string(from: date)
+        let yesterday = Date.yesterday
+        let ydf = DateFormatter()
+        ydf.dateFormat = "MM-dd-yyyy"
+        yesterdayDateString = df.string(from: yesterday)
+        let tomorrow = Date.tomorrow
+        let tdf = DateFormatter()
+        tdf.dateFormat = "MM-dd-yyyy"
+        tomorrowDateString = tdf.string(from: tomorrow)
+        //tomorrowDateString = "01-06-2022"
     }
     
     func addList(){
@@ -106,102 +121,110 @@ class TasksViewController: BaseViewController {
         self.tomorrowList.removeAll()
         self.shList.removeAll()
         for item in self.collection {
+            self.getGuideDutiesList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             switch item.tourDateStr {
             case self.yesterdayDateString.dateFormat():
-                self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 28/255, green: 38/255, blue: 183/255, alpha: 1.0) , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.collectionColor , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             case self.dateString.dateFormat():
-                self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 28/255, green: 38/255, blue: 183/255, alpha: 1.0) , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.collectionColor , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             case self.tomorrowDateString.dateFormat():
-                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 28/255, green: 38/255, blue: 183/255, alpha: 1.0) , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.collectionColor , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             default:
                 break
             }
         }
         for item in self.excursion {
+            self.getGuideDutiesList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             switch item.tourDateStr {
             case self.yesterdayDateString.dateFormat():
-                self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 255/255, green: 179/255, blue: 0/255, alpha: 1.0)  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.excursionColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             case self.dateString.dateFormat():
-                self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 255/255, green: 179/255, blue: 0/255, alpha: 1.0)  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.excursionColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             case self.tomorrowDateString.dateFormat():
-                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 255/255, green: 179/255, blue: 0/255, alpha: 1.0)  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.excursionColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             default:
                 break
             }
         }
         for item in self.delivery {
+            self.getGuideDutiesList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             switch item.tourDateStr {
             case self.yesterdayDateString.dateFormat():
-                self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 3/255, green: 93/255, blue: 0/255, alpha: 1.0)  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.deliveryColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             case self.dateString.dateFormat():
-                self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 3/255, green: 93/255, blue: 0/255, alpha: 1.0)  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.deliveryColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             case self.tomorrowDateString.dateFormat():
-                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 3/255, green: 93/255, blue: 0/255, alpha: 1.0)  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.deliveryColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             default:
                 break
             }
         }
         for item in self.arrival {
+            self.getGuideDutiesList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: String(item.id), planIds: ""))
             switch item.tourDateStr {
             case self.yesterdayDateString.dateFormat():
-                self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 38/255, green: 196/255, blue: 85/255, alpha: 1.0)  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.arrivalColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             case self.dateString.dateFormat():
-                self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 38/255, green: 196/255, blue: 85/255, alpha: 1.0)  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.arrivalColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             case self.tomorrowDateString.dateFormat():
-                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 38/255, green: 196/255, blue: 85/255, alpha: 1.0)  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.arrivalColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             default:
                 break
             }
         }
         for item in self.departure {
+            self.getGuideDutiesList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: String(item.id), planIds: ""))
             switch item.tourDateStr {
             case self.yesterdayDateString.dateFormat():
-                self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 183/255, green: 28/255, blue: 28/255, alpha: 1.0)  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.departureColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             case self.dateString.dateFormat():
-                self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 183/255, green: 28/255, blue: 28/255, alpha: 1.0)  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.departureColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             case self.tomorrowDateString.dateFormat():
-                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 183/255, green: 28/255, blue: 28/255, alpha: 1.0)  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.departureColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             default:
                 break
             }
         }
         for item in self.intern {
+            self.getGuideDutiesList.append(GetGuideDutiesList.init(id: item.id, ids: "", typeInt: "", planId: "", planIds: ""))
             switch item.tourDateStr {
             case self.yesterdayDateString.dateFormat():
-                self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1.0)  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.internColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             case self.dateString.dateFormat():
-                self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1.0)  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.internColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             case self.tomorrowDateString.dateFormat():
-                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1.0)  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.internColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             default:
                 break
             }
         }
         for item in self.speakTime {
-            self.shList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: "-", excursion: item.hotelName, transferType: "-", pax: "-", vehicle: "-", meetingPointAndTime: item.beginDate, meetingTime: item.startTime, extra: "-", driverName: item.endDate, driverPhone: item.days, color: UIColor(red: 0/255, green: 201/255, blue: 195/255, alpha: 1.0)  , noteColor: UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: ""))
+            self.shList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: "-", excursion: item.hotelName, transferType: "-", pax: "-", vehicle: "-", meetingPointAndTime: item.beginDate.dateToString().dateFormatStr(), meetingTime: item.startTime, extra: "-", driverName: item.endDate.dateToString().dateFormatStr(), driverPhone: item.days, color: UIColor.speakTimeColor  , noteColor: UIColor.noteGrayColor, note: ""))
             
         }
         for item in self.infoPlan {
+            self.getGuideDutiesList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: "", planId: String(item.id), planIds: ""))
             switch item.dateStr {
             case self.yesterdayDateString.dateFormat():
-                self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.dateStr, excursion: item.hotelName, transferType: item.market, pax: item.pax, vehicle: item.reelPax, meetingPointAndTime: "-", meetingTime: item.infoTime, extra: "-", driverName: "-", driverPhone: "-", color: UIColor(red: 184/255, green: 0/255, blue: 172/255, alpha: 1.0)  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.dateStr, excursion: item.hotelName, transferType: item.market, pax: item.pax, vehicle: item.reelPax, meetingPointAndTime: "-", meetingTime: item.infoTime, extra: "-", driverName: "-", driverPhone: "-", color: UIColor.infoPlanColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             case self.dateString.dateFormat():
-                self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.dateStr, excursion: item.hotelName, transferType: item.market, pax: item.pax, vehicle: item.reelPax, meetingPointAndTime: "-", meetingTime: item.infoTime, extra: "-", driverName: "-", driverPhone: "-", color: UIColor(red: 184/255, green: 0/255, blue: 172/255, alpha: 1.0)  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.dateStr, excursion: item.hotelName, transferType: item.market, pax: item.pax, vehicle: item.reelPax, meetingPointAndTime: "-", meetingTime: item.infoTime, extra: "-", driverName: "-", driverPhone: "-", color: UIColor.infoPlanColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             case self.tomorrowDateString.dateFormat():
-                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.dateStr, excursion: item.hotelName, transferType: item.market, pax: item.pax, vehicle: item.reelPax, meetingPointAndTime: "-", meetingTime: item.infoTime, extra: "-", driverName: "-", driverPhone: "-", color: UIColor(red: 184/255, green: 0/255, blue: 172/255, alpha: 1.0)  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.dateStr, excursion: item.hotelName, transferType: item.market, pax: item.pax, vehicle: item.reelPax, meetingPointAndTime: "-", meetingTime: item.infoTime, extra: "-", driverName: "-", driverPhone: "-", color: UIColor.infoPlanColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             default:
                 break
             }
         }
         for item in self.indShopForMobile {
+            self.getGuideDutiesList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: "", planIds: item.id))
             switch item.dateStr {
             case self.yesterdayDateString.dateFormat():
-                self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: item.workNo, tourDateStr: item.dateStr, excursion: item.meetingPoint, transferType: "-", pax: item.pax, vehicle: item.vehiclePlate, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 255/255, green: 102/255, blue: 0/255, alpha: 1.0), noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: item.workNo, tourDateStr: item.dateStr, excursion: item.meetingPoint, transferType: "-", pax: item.pax, vehicle: item.vehiclePlate, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.indShopForMobileColor, noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             case self.dateString.dateFormat():
-                self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: item.workNo, tourDateStr: item.dateStr, excursion: item.meetingPoint, transferType: "-", pax: item.pax, vehicle: item.vehiclePlate, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 255/255, green: 102/255, blue: 0/255, alpha: 1.0), noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: item.workNo, tourDateStr: item.dateStr, excursion: item.meetingPoint, transferType: "-", pax: item.pax, vehicle: item.vehiclePlate, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.indShopForMobileColor, noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
                 
             case self.tomorrowDateString.dateFormat():
-                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: item.workNo, tourDateStr: item.dateStr, excursion: item.meetingPoint, transferType: "-", pax: item.pax, vehicle: item.vehiclePlate, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor(red: 255/255, green: 102/255, blue: 0/255, alpha: 1.0), noteColor: (item.note != "") ? UIColor.greenColor : UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1.0), note: (item.note != "") ? item.note : ""))
+                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: item.workNo, tourDateStr: item.dateStr, excursion: item.meetingPoint, transferType: "-", pax: item.pax, vehicle: item.vehiclePlate, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.indShopForMobileColor, noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
             default:
                 break
             }
@@ -236,57 +259,77 @@ extension TasksViewController : UITableViewDelegate,UITableViewDataSource{
         let topVC = UIApplication.getTopViewController()
         let viewController = TasksHotelViewController()
         switch self.totalList[indexPath.row].shortCode {
-        case ShortCode.COL.rawValue:
-            viewController.shortCode = "COL"
-            viewController.lineColor = UIColor(red: 28/255, green: 38/255, blue: 183/255, alpha: 1.0)
-            viewController.serviceType = 1
-            viewController.workNo = self.totalList[indexPath.row].workNo
-            viewController.excursionName = self.totalList[indexPath.row].excursion
-            topVC?.otiPushViewController(viewController: viewController)
         case ShortCode.EXC.rawValue:
-            viewController.shortCode = "EXC"
-            viewController.lineColor = UIColor(red: 255/255, green: 179/255, blue: 0/255, alpha: 1.0)
-            viewController.serviceType = 1
+            viewController.lineColor = UIColor.excursionColor
+            viewController.shortCode = ShortCode.EXC.rawValue
+            viewController.serviceType = ServiceType.EXC.rawValue
             viewController.workNo = self.totalList[indexPath.row].workNo
             viewController.excursionName = self.totalList[indexPath.row].excursion
+            viewController.ids = self.getGuideDutiesList[indexPath.row].ids
+            viewController.typeInt = String(self.getGuideDutiesList[indexPath.row].typeInt)
             topVC?.otiPushViewController(viewController: viewController)
-        case ShortCode.ARR.rawValue:
-            viewController.shortCode = "ARR"
-            viewController.lineColor = UIColor(red: 38/255, green: 196/255, blue: 85/255, alpha: 1.0)
-            viewController.serviceType = 2
+        case ShortCode.COL.rawValue:
+            viewController.lineColor = UIColor.collectionColor
+            viewController.shortCode = ShortCode.COL.rawValue
+            viewController.serviceType = ServiceType.COL.rawValue
             viewController.workNo = self.totalList[indexPath.row].workNo
             viewController.excursionName = self.totalList[indexPath.row].excursion
-            topVC?.otiPushViewController(viewController: viewController)
-        case ShortCode.DEP.rawValue:
-            viewController.shortCode = "DEP"
-            viewController.lineColor = UIColor(red: 183/255, green: 28/255, blue: 28/255, alpha: 1.0)
-            viewController.serviceType = 2
-            viewController.workNo = self.totalList[indexPath.row].workNo
-            viewController.excursionName = self.totalList[indexPath.row].excursion
-            topVC?.otiPushViewController(viewController: viewController)
-        case ShortCode.INFO.rawValue:
-            viewController.shortCode = "INFO"
-            viewController.lineColor = UIColor(red: 184/255, green: 0/255, blue: 172/255, alpha: 1.0)
-        case ShortCode.SHOP.rawValue:
-            viewController.shortCode = "SHOP"
-            viewController.lineColor = UIColor(red: 255/255, green: 102/255, blue: 0/255, alpha: 1.0)
-            viewController.serviceType = 3
-            viewController.workNo = self.totalList[indexPath.row].workNo
-            viewController.excursionName = self.totalList[indexPath.row].excursion
-            topVC?.otiPushViewController(viewController: viewController)
-        case ShortCode.INT.rawValue:
-            viewController.shortCode = "INT"
-            viewController.lineColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1.0)
-            viewController.serviceType = 4
-            viewController.workNo = self.totalList[indexPath.row].workNo
-            viewController.excursionName = self.totalList[indexPath.row].excursion
+            viewController.ids = self.getGuideDutiesList[indexPath.row].ids
+            viewController.typeInt = String(self.getGuideDutiesList[indexPath.row].typeInt)
             topVC?.otiPushViewController(viewController: viewController)
         case ShortCode.DEL.rawValue:
-            viewController.shortCode = "DEL"
-            viewController.lineColor = UIColor(red: 3/255, green: 93/255, blue: 0/255, alpha: 1.0)
-            viewController.serviceType = 1
+            viewController.lineColor = UIColor.deliveryColor
+            viewController.shortCode = ShortCode.DEL.rawValue
+            viewController.serviceType = ServiceType.DEL.rawValue
             viewController.workNo = self.totalList[indexPath.row].workNo
             viewController.excursionName = self.totalList[indexPath.row].excursion
+            viewController.ids = self.getGuideDutiesList[indexPath.row].ids
+            viewController.typeInt = String(self.getGuideDutiesList[indexPath.row].typeInt)
+            topVC?.otiPushViewController(viewController: viewController)
+        case ShortCode.ARR.rawValue:
+            viewController.lineColor = UIColor.arrivalColor
+            viewController.shortCode = ShortCode.ARR.rawValue
+            viewController.serviceType = ServiceType.ARR.rawValue
+            viewController.workNo = self.totalList[indexPath.row].workNo
+            viewController.excursionName = self.totalList[indexPath.row].excursion
+            viewController.planId = String(self.getGuideDutiesList[indexPath.row].planId)
+            viewController.typeInt = String(self.getGuideDutiesList[indexPath.row].typeInt)
+            topVC?.otiPushViewController(viewController: viewController)
+        case ShortCode.DEP.rawValue:
+            viewController.lineColor = UIColor.departureColor
+            viewController.shortCode = ShortCode.DEP.rawValue
+            viewController.serviceType = ServiceType.DEP.rawValue
+            viewController.workNo = self.totalList[indexPath.row].workNo
+            viewController.excursionName = self.totalList[indexPath.row].excursion
+            viewController.planId = String(self.getGuideDutiesList[indexPath.row].planId)
+            viewController.typeInt = String(self.getGuideDutiesList[indexPath.row].typeInt)
+            topVC?.otiPushViewController(viewController: viewController)
+        case ShortCode.SHOP.rawValue:
+            viewController.lineColor = UIColor.indShopForMobileColor
+            viewController.shortCode = ShortCode.SHOP.rawValue
+            viewController.serviceType = ServiceType.SHOP.rawValue
+            viewController.workNo = self.totalList[indexPath.row].workNo
+            viewController.excursionName = self.totalList[indexPath.row].excursion
+            viewController.planIds = self.getGuideDutiesList[indexPath.row].planIds
+            viewController.typeInt = String(self.getGuideDutiesList[indexPath.row].typeInt)
+            topVC?.otiPushViewController(viewController: viewController)
+        case ShortCode.INT.rawValue:
+            viewController.lineColor = UIColor.internColor
+            viewController.shortCode = ShortCode.INT.rawValue
+            viewController.serviceType = ServiceType.INT.rawValue
+            viewController.workNo = self.totalList[indexPath.row].workNo
+            viewController.excursionName = self.totalList[indexPath.row].excursion
+            viewController.id = self.getGuideDutiesList[indexPath.row].id
+            viewController.typeInt = String(self.getGuideDutiesList[indexPath.row].typeInt)
+            topVC?.otiPushViewController(viewController: viewController)
+        case ShortCode.INFO.rawValue:
+            let viewController = TasksPaxViewController()
+            viewController.hotelName = self.totalList[indexPath.row].meetingPointAndTime
+            viewController.workNo = self.workNo
+            viewController.serviceType = ServiceType.INFO.rawValue
+            viewController.excursionName = self.excursionName
+            viewController.infoPlanId = self.getGuideDutiesList[indexPath.row].planId
+            viewController.typeInt = String(self.getGuideDutiesList[indexPath.row].typeInt)
             topVC?.otiPushViewController(viewController: viewController)
         default:
             break
@@ -304,28 +347,25 @@ extension TasksViewController : UITableViewDelegate,UITableViewDataSource{
 
 extension TasksViewController : TasksCustomViewDelegate{
     func tappedYesterday(){
-        DispatchQueue.main.async() {
-            // your UI update code
-            self.totalList.removeAll()
-            self.flag = 0
-            self.getGuideDutiesService()
-        }
+        self.totalList.removeAll()
+        self.flag = 0
+        self.getGuideDutiesService()
     }
     
     func tappedToday(){
-        DispatchQueue.main.async() {
-            self.totalList.removeAll()
-            self.flag = 1
-            self.getGuideDutiesService()
-        }
+       
+        self.totalList.removeAll()
+        self.flag = 1
+        self.getGuideDutiesService()
+        
     }
     
     func tappedTomorrow(){
-        DispatchQueue.main.async() {
+        
             self.totalList.removeAll()
             self.flag = 2
             self.getGuideDutiesService()
-        }
+        
     }
     
     func tappedSH(){

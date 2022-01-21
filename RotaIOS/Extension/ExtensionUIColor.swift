@@ -34,9 +34,20 @@ extension UIColor {
     class var tableViewColor :                  UIColor { return UIColor(hexString: "#1C1C1D") }
     class var lightGreenColor :                 UIColor { return UIColor(hexString: "#BFD732") }
     class var darkGreenColor :                  UIColor { return UIColor(hexString: "#3DB54A") }
-    class var barGreenColor :                 UIColor { return UIColor(hexString: "#56B53B") }
-    class var barGrayColor :                  UIColor { return UIColor(hexString: "#191919") }
-    class var darkGrayColor :                       UIColor { return UIColor(hexString: "#1C1C1D") }
+    class var barGreenColor :                   UIColor { return UIColor(hexString: "#56B53B") }
+    class var barGrayColor :                    UIColor { return UIColor(hexString: "#191919") }
+    class var darkGrayColor :                   UIColor { return UIColor(hexString: "#1C1C1D") }
+    class var excursionColor:                   UIColor { return UIColor(hexString: "#FFB300") }
+    class var collectionColor:                  UIColor { return UIColor(hexString: "#1C1C1D") }
+    class var deliveryColor:                    UIColor { return UIColor(hexString: "#035D00") }
+    class var arrivalColor:                     UIColor { return UIColor(hexString: "#26C455") }
+    class var departureColor:                   UIColor { return UIColor(hexString: "#B71C1C") }
+    class var internColor:                      UIColor { return UIColor(hexString: "#D9D9D9") }
+    class var speakTimeColor:                   UIColor { return UIColor(hexString: "#00C9C3") }
+    class var infoPlanColor:                    UIColor { return UIColor(hexString: "#B800AC") }
+    class var indShopForMobileColor:            UIColor { return UIColor(hexString: "#FF6600") }
+    class var noteGrayColor:                    UIColor { return UIColor(hexString: "#707070") }
+    
     
     convenience init(hexString: String) {
         let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)

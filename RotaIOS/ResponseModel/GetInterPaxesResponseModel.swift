@@ -9,20 +9,20 @@ import Foundation
 import ObjectMapper
 
 public class GetInterPaxesResponseModel: Mappable{
-    public var _id : String?
-    public var id : Int?
-    public var name : String?
-    public var operatorList : String?
-    public var oprResNo : String?
-    public var incResNo : String?
-    public var flightCode : String?
-    public var show : Bool?
-    public var surveyNo : String?
-    public var note : String?
-    public var age : Int?
-    public var terminal : String?
-    public var checkOutDateStr : String?
-    public var flightTimeStr : String?
+    public var _id : String = "-"
+    public var id : Int = 0
+    public var name : String = "-"
+    public var operatorList : String = "-"
+    public var oprResNo : String = "-"
+    public var incResNo : String = "-"
+    public var flightCode : String = "-"
+    public var show : Bool = false
+    public var surveyNo : String = "-"
+    public var note : String = "-"
+    public var age : Int = 0
+    public var terminal : String = "-"
+    public var checkOutDateStr : String = "-"
+    public var flightTimeStr : String = "-"
 
     required public init?(map: Map) {
 

@@ -9,10 +9,14 @@ import UIKit
 
 class TasksHotelViewController: BaseViewController {
     enum ServiceType: Int {
-        case COLEXCDEL = 1
-        case ARRDEP = 2
-        case SHOP = 3
-        case INT = 4
+        case EXC = 1
+        case COL = 2
+        case DEL = 3
+        case ARR = 4
+        case DEP = 5
+        case SHOP = 6
+        case INT = 7
+        case INFO = 8
     }
     
     @IBOutlet weak var tableViewTasksHotel: UITableView!
@@ -24,10 +28,17 @@ class TasksHotelViewController: BaseViewController {
     var workNo: String?
     var hotelName: String?
     var excursionName: String?
+    var id : Int = 0
+    var ids : String = ""
+    var typeInt : String = ""
+    var planId : String = ""
+    var planIds : String = ""
+    var infoPlanId: String = ""
+    var paxInfoList: [PaxInfoList] = []
     var list: [HotelList] = []{
         didSet {
             self.tableViewTasksHotel.reloadData()
-            self.tasksHotelTableViewHeightConstraint.constant = self.tableViewTasksHotel.contentSize.height + 20
+            self.tasksHotelTableViewHeightConstraint.constant = self.tableViewTasksHotel.contentSize.height
         }
     }
     
@@ -38,9 +49,15 @@ class TasksHotelViewController: BaseViewController {
         self.tableViewTasksHotel.dataSource = self
         self.tableViewTasksHotel.register(TasksHotelTableViewCell.nib, forCellReuseIdentifier: TasksHotelTableViewCell.identifier)
         switch self.serviceType {
-        case ServiceType.COLEXCDEL.rawValue:
+        case ServiceType.EXC.rawValue:
+                self.getHotelListForMobileService()
+        case ServiceType.COL.rawValue:
             self.getHotelListForMobileService()
-        case ServiceType.ARRDEP.rawValue:
+        case ServiceType.DEL.rawValue:
+                self.getHotelListForMobileService()
+        case ServiceType.ARR.rawValue:
+            self.getArrAndDepHotelListForMobileService()
+        case ServiceType.DEP.rawValue:
             self.getArrAndDepHotelListForMobileService()
         case ServiceType.SHOP.rawValue:
             self.getIndShopHotelListForMobileService()
@@ -52,15 +69,16 @@ class TasksHotelViewController: BaseViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        self.tasksHotelTableViewHeightConstraint.constant = self.tableViewTasksHotel.contentSize.height + 20
+        self.tasksHotelTableViewHeightConstraint.constant = self.tableViewTasksHotel.contentSize.height
     }
     
     func getHotelListForMobileService(){
-        let getHotelListForMobileRequestModel = GetHotelListForMobileRequestModel.init(guideId: String(userDefaultsData.getGuideId()), ids: "496533", typeInt: "1")
+        let getHotelListForMobileRequestModel = GetHotelListForMobileRequestModel.init(guideId: String(userDefaultsData.getGuideId()), ids: ids, typeInt: typeInt)
             NetworkManager.sendGetRequestArray(url: NetworkManager.BASEURL, endPoint: .GetHotelListForMobile, method: .get, parameters: getHotelListForMobileRequestModel.requestPathString()) { (response : [GetHotelListForMobileResponseModel]) in
             if response.count > 0 {
                 for item in response {
                     self.list.append(HotelList.init(hotel: item.hotelName, place: item.place, date: item.timeSpan, time: item.market, info: "-", title1: "Reel Pax", title2: "Plan Pax", title3: "", title4: "", body1: item.reelPax, body2: item.planPax, body3: "", body4: ""))
+                    self.paxInfoList.append(PaxInfoList.init(id: "", infoPlanId: "" , planId: String(item.id), hotelId: String(item.hotelId)))
                 }
             }else {
                print("error")
@@ -69,11 +87,12 @@ class TasksHotelViewController: BaseViewController {
     }
     
     func getArrAndDepHotelListForMobileService(){
-        let getArrAndDepHotelListForMobileRequestModel = GetArrAndDepHotelListForMobileRequestModel.init(planId: "433854", typeInt: "5")
-            NetworkManager.sendGetRequestArray(url: "https://rota.odeontours.com", endPoint: .GetArrAndDepHotelListForMobile, method: .get, parameters: getArrAndDepHotelListForMobileRequestModel.requestPathString()) { (response : [GetArrAndDepHotelListForMobileResponseModel]) in
+        let getArrAndDepHotelListForMobileRequestModel = GetArrAndDepHotelListForMobileRequestModel.init(planId: planId, typeInt: typeInt)
+            NetworkManager.sendGetRequestArray(url: NetworkManager.BASEURL, endPoint: .GetArrAndDepHotelListForMobile, method: .get, parameters: getArrAndDepHotelListForMobileRequestModel.requestPathString()) { (response : [GetArrAndDepHotelListForMobileResponseModel]) in
             if response.count > 0 {
                 for item in response {
                     self.list.append(HotelList.init(hotel: item.hotel, place: item.flightInfoStr, date: item.transferDateStr, time: item.guidePickUpTimeStr, info: item.pickUpTimeStr, title1: "Reel Pax", title2: "Plan Pax", title3: "", title4: "", body1: item.reelPax, body2: item.planPax, body3: "", body4: ""))
+                    self.paxInfoList.append(PaxInfoList.init(id: "", infoPlanId: "", planId: String(item.id), hotelId: String(item.hotelId)))
                 }
             }else {
                print("error")
@@ -82,11 +101,12 @@ class TasksHotelViewController: BaseViewController {
     }
     
     func getIndShopHotelListForMobileService(){
-        let getIndShopHotelListForMobileRequestModel = GetIndShopHotelListForMobileRequestModel.init(planIds: "15257", typeInt: "5")
-            NetworkManager.sendGetRequestArray(url: "https://rota-eg.odeontours.com", endPoint: .GetIndShopHotelListForMobile, method: .get, parameters: getIndShopHotelListForMobileRequestModel.requestPathString()) { (response : [GetIndShopHotelListForMobileResponseModel]) in
+        let getIndShopHotelListForMobileRequestModel = GetIndShopHotelListForMobileRequestModel.init(planIds: planIds, typeInt: typeInt)
+            NetworkManager.sendGetRequestArray(url: NetworkManager.BASEURL, endPoint: .GetIndShopHotelListForMobile, method: .get, parameters: getIndShopHotelListForMobileRequestModel.requestPathString()) { (response : [GetIndShopHotelListForMobileResponseModel]) in
             if response.count > 0 {
                 for item in response {
                     self.list.append(HotelList.init(hotel: item.hotel, place: item.place, date: item.pickUpTimeStr, time: item.voucherNumber, info: "-", title1: "Reel Pax", title2: "Plan Pax", title3: "", title4: "", body1: String(item.reelPax), body2: item.planPax, body3: "", body4: ""))
+                    self.paxInfoList.append(PaxInfoList.init(id: "", infoPlanId: "", planId: String(item.id), hotelId: String(item.hotelId)))
                 }
             }else {
                print("error")
@@ -95,10 +115,11 @@ class TasksHotelViewController: BaseViewController {
     }
     
     func getInterService(){
-        let getInterRequestModel = GetInterRequestModel.init(id: 433742)
-            NetworkManager.sendGetRequest(url: "https://rota.odeontours.com", endPoint: .GetInter, method: .get, parameters: getInterRequestModel.requestPathString()) { (response : GetInterResponseModel) in
+        let getInterRequestModel = GetInterRequestModel.init(id: id)
+            NetworkManager.sendGetRequest(url: NetworkManager.BASEURL, endPoint: .GetInter, method: .get, parameters: getInterRequestModel.requestPathString()) { (response : GetInterResponseModel) in
                 if response.id != 0 {
                     self.list.append(HotelList.init(hotel: response.firstHotel + " - " + response.lastHotel, place: response.meetinPoint, date: response.transferDateStr, time: response.guidePickupTime, info: response.pickupTime, title1: "Pax", title2: "Vehicle Type", title3: "Plate", title4: "Service Name", body1: String(response.pax), body2: response.vehicleType, body3: response.plate, body4: response.serviceName))
+                    self.paxInfoList.append(PaxInfoList.init(id: response._id, infoPlanId: "", planId: "", hotelId: ""))
                 
             }else {
                print("error")
@@ -124,6 +145,47 @@ extension TasksHotelViewController : UITableViewDelegate,UITableViewDataSource{
         viewController.hotelName = self.list[indexPath.row].hotel
         viewController.workNo = self.workNo
         viewController.excursionName = self.excursionName
+        
+        switch serviceType {
+        case ServiceType.EXC.rawValue:
+            viewController.serviceType = 1
+            viewController.planId = self.paxInfoList[indexPath.row].planId
+            viewController.hotelId = self.paxInfoList[indexPath.row].hotelId
+            viewController.typeInt = self.typeInt
+        case ServiceType.COL.rawValue:
+            viewController.serviceType = 2
+            viewController.planId = self.paxInfoList[indexPath.row].planId
+            viewController.hotelId = self.paxInfoList[indexPath.row].hotelId
+            viewController.typeInt = self.typeInt
+        case ServiceType.DEL.rawValue:
+            viewController.serviceType = 3
+            viewController.planId = self.paxInfoList[indexPath.row].planId
+            viewController.hotelId = self.paxInfoList[indexPath.row].hotelId
+            viewController.typeInt = self.typeInt
+        case ServiceType.ARR.rawValue:
+            viewController.serviceType = 4
+            viewController.planId = self.paxInfoList[indexPath.row].planId
+            viewController.hotelId = self.paxInfoList[indexPath.row].hotelId
+            viewController.typeInt = self.typeInt
+        case ServiceType.DEP.rawValue:
+            viewController.serviceType = 5
+            viewController.planId = self.paxInfoList[indexPath.row].planId
+            viewController.hotelId = self.paxInfoList[indexPath.row].hotelId
+            viewController.typeInt = self.typeInt
+        case ServiceType.SHOP.rawValue:
+            viewController.serviceType = 6
+            viewController.planId = self.paxInfoList[indexPath.row].planId
+            viewController.hotelId = self.paxInfoList[indexPath.row].hotelId
+            viewController.typeInt = self.typeInt
+        case ServiceType.INT.rawValue:
+            viewController.serviceType = 7
+            viewController.id = self.paxInfoList[indexPath.row].id
+            viewController.typeInt = self.typeInt
+        case ServiceType.INFO.rawValue:
+            break
+        default:
+            break
+        }
         topVC?.otiPushViewController(viewController: viewController)
     }
     

@@ -9,22 +9,22 @@ import Foundation
 import ObjectMapper
 
 public class GetTourPaxesResponseModel : Mappable {
-    public var _id : String?
-    public var saleGuide : String?
-    public var oprResNo : String?
-    public var note : String?
-    public var extraDesc : String?
-    public var id : Int?
-    public var paxId : Int?
-    public var name : String?
-    public var room : String?
-    public var ageGroup : String?
-    public var show : Bool?
-    public var infoRep : String?
-    public var voucherNo : String?
-    public var surveyNo : String?
-    public var operatorList : String?
-    public var incResNo : String?
+    public var _id : String = "-"
+    public var saleGuide : String = "-"
+    public var oprResNo : String = "-"
+    public var note : String = "-"
+    public var extraDesc : String = "-"
+    public var id : Int = 0
+    public var paxId : Int = 0
+    public var name : String = "-"
+    public var room : String = "-"
+    public var ageGroup : String = "-"
+    public var show : Bool = false
+    public var infoRep : String = "-"
+    public var voucherNo : String = "-"
+    public var surveyNo : String = "-"
+    public var operatorList : String = "-"
+    public var incResNo : String = "-"
 
     required public init?(map: Map) {
 

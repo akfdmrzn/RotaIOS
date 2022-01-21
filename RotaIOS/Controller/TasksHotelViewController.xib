@@ -27,7 +27,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Epu-lV-sC5">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQS-2g-ICC" customClass="HeaderDetailCustomView" customModule="RotaIOS" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
@@ -37,7 +37,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfw-VH-kh7">
-                                            <rect key="frame" x="0.0" y="110" width="414" height="20"/>
+                                            <rect key="frame" x="0.0" y="110" width="414" height="40"/>
                                         </view>
                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8B3-Qh-lWj">
                                             <rect key="frame" x="20" y="130" width="374" height="0.0"/>
@@ -54,8 +54,8 @@
                                         <constraint firstItem="pQS-2g-ICC" firstAttribute="top" secondItem="Epu-lV-sC5" secondAttribute="top" id="Afe-fl-Fzu"/>
                                         <constraint firstItem="8B3-Qh-lWj" firstAttribute="leading" secondItem="Epu-lV-sC5" secondAttribute="leading" constant="20" symbolic="YES" id="DeQ-w3-chu"/>
                                         <constraint firstAttribute="bottom" secondItem="wfw-VH-kh7" secondAttribute="bottom" id="EXv-R5-1Nj"/>
-                                        <constraint firstItem="8B3-Qh-lWj" firstAttribute="bottom" secondItem="wfw-VH-kh7" secondAttribute="bottom" id="VtK-Xq-J2j"/>
                                         <constraint firstItem="wfw-VH-kh7" firstAttribute="leading" secondItem="Epu-lV-sC5" secondAttribute="leading" id="ds1-0T-xIA"/>
+                                        <constraint firstAttribute="bottom" secondItem="8B3-Qh-lWj" secondAttribute="bottom" constant="20" id="gj0-0m-Sci"/>
                                         <constraint firstAttribute="trailing" secondItem="pQS-2g-ICC" secondAttribute="trailing" id="hMe-Nt-3oE"/>
                                         <constraint firstAttribute="trailing" secondItem="wfw-VH-kh7" secondAttribute="trailing" id="ob0-XZ-bJv"/>
                                         <constraint firstItem="8B3-Qh-lWj" firstAttribute="top" secondItem="wfw-VH-kh7" secondAttribute="top" constant="20" id="qah-1Q-p51"/>

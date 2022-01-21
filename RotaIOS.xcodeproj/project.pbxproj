@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		432FE6668254BA0CA05DC6FF /* Pods_RotaIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F627A32011B10A339DD5FD27 /* Pods_RotaIOSTests.framework */; };
 		97EA547D8C247C4FB10DE7F7 /* Pods_RotaIOS_RotaIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83342E6867FA5C2B432CDAE /* Pods_RotaIOS_RotaIOSUITests.framework */; };
+		A91D82D727988FCF0018C0A9 /* TasksPaxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91D82D527988FCF0018C0A9 /* TasksPaxTableViewCell.swift */; };
+		A91D82D827988FCF0018C0A9 /* TasksPaxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91D82D627988FCF0018C0A9 /* TasksPaxTableViewCell.xib */; };
 		A9AAE53A2791631B00AFBA67 /* TasksPaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AAE5392791631B00AFBA67 /* TasksPaxView.swift */; };
 		A9AAE53D2791634200AFBA67 /* TasksPaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AAE53B2791634200AFBA67 /* TasksPaxViewController.swift */; };
 		A9AAE53E2791634200AFBA67 /* TasksPaxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9AAE53C2791634200AFBA67 /* TasksPaxViewController.xib */; };
-		A9AAE54127917BBB00AFBA67 /* TasksPaxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AAE53F27917BBB00AFBA67 /* TasksPaxTableViewCell.swift */; };
-		A9AAE54227917BBB00AFBA67 /* TasksPaxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9AAE54027917BBB00AFBA67 /* TasksPaxTableViewCell.xib */; };
 		A9AAE54427917C5A00AFBA67 /* GetInterPaxesRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AAE54327917C5A00AFBA67 /* GetInterPaxesRequestModel.swift */; };
 		A9AAE54627917C8000AFBA67 /* GetInfoPaxesRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AAE54527917C8000AFBA67 /* GetInfoPaxesRequestModel.swift */; };
 		A9AAE54827917CA300AFBA67 /* GetArrAndDepPaxesRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AAE54727917CA300AFBA67 /* GetArrAndDepPaxesRequestModel.swift */; };
@@ -26,6 +26,11 @@
 		A9AAE556279182F800AFBA67 /* GetTourPaxesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AAE555279182F800AFBA67 /* GetTourPaxesResponseModel.swift */; };
 		A9AAE5582791830D00AFBA67 /* GetColAndDelPaxesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AAE5572791830D00AFBA67 /* GetColAndDelPaxesResponseModel.swift */; };
 		A9AAE55A2791832000AFBA67 /* GetIndShopPaxesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AAE5592791832000AFBA67 /* GetIndShopPaxesResponseModel.swift */; };
+		A9C0344327980B18000AA4DD /* UpdateIndShopNoShowRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0344227980B18000AA4DD /* UpdateIndShopNoShowRequestModel.swift */; };
+		A9C0344527980B37000AA4DD /* UpdateNoShowRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0344427980B37000AA4DD /* UpdateNoShowRequestModel.swift */; };
+		A9C0344727980B52000AA4DD /* UpdateInfoPlanNoShowRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0344627980B52000AA4DD /* UpdateInfoPlanNoShowRequestModel.swift */; };
+		A9C0344927980B69000AA4DD /* UpdateArrAndDepPlanNoShowRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0344827980B69000AA4DD /* UpdateArrAndDepPlanNoShowRequestModel.swift */; };
+		A9C0344B27980ED9000AA4DD /* UpdateNoShowResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0344A27980ED9000AA4DD /* UpdateNoShowResponseModel.swift */; };
 		A9C674E127745CE300536F21 /* TasksHotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C674DF27745CE300536F21 /* TasksHotelViewController.swift */; };
 		A9C674E227745CE300536F21 /* TasksHotelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C674E027745CE300536F21 /* TasksHotelViewController.xib */; };
 		A9C674E427745CF900536F21 /* TasksHotelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C674E327745CF900536F21 /* TasksHotelView.swift */; };
@@ -45,8 +50,6 @@
 		A9C67508278744D000536F21 /* TasksCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C67507278744D000536F21 /* TasksCustomView.xib */; };
 		A9C6750A27877D1C00536F21 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C6750927877D1C00536F21 /* ExtensionString.swift */; };
 		A9E3E0C82770B0F9004DF892 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E3E0C72770B0F9004DF892 /* TasksView.swift */; };
-		A9E8D7242796FADB00A9E90B /* TasksPaxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E8D7222796FADB00A9E90B /* TasksPaxCollectionViewCell.swift */; };
-		A9E8D7252796FADC00A9E90B /* TasksPaxCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9E8D7232796FADB00A9E90B /* TasksPaxCollectionViewCell.xib */; };
 		BF44C87B263FF80000238035 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44C87A263FF80000238035 /* AppDelegate.swift */; };
 		BF44C87F263FF80000238035 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44C87E263FF80000238035 /* ViewController.swift */; };
 		BF44C884263FF80100238035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF44C883263FF80100238035 /* Assets.xcassets */; };
@@ -322,11 +325,11 @@
 		538B1F7826F2A0ABE15360A5 /* Pods-RotaIOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOSTests.release.xcconfig"; path = "Target Support Files/Pods-RotaIOSTests/Pods-RotaIOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		783C07564E28FA3CD7B16983 /* Pods-RotaIOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOSTests.debug.xcconfig"; path = "Target Support Files/Pods-RotaIOSTests/Pods-RotaIOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A4F2F9223A9AE4B71EBB1F34 /* Pods-RotaIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS.debug.xcconfig"; path = "Target Support Files/Pods-RotaIOS/Pods-RotaIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		A91D82D527988FCF0018C0A9 /* TasksPaxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPaxTableViewCell.swift; sourceTree = "<group>"; };
+		A91D82D627988FCF0018C0A9 /* TasksPaxTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksPaxTableViewCell.xib; sourceTree = "<group>"; };
 		A9AAE5392791631B00AFBA67 /* TasksPaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPaxView.swift; sourceTree = "<group>"; };
 		A9AAE53B2791634200AFBA67 /* TasksPaxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPaxViewController.swift; sourceTree = "<group>"; };
 		A9AAE53C2791634200AFBA67 /* TasksPaxViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksPaxViewController.xib; sourceTree = "<group>"; };
-		A9AAE53F27917BBB00AFBA67 /* TasksPaxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPaxTableViewCell.swift; sourceTree = "<group>"; };
-		A9AAE54027917BBB00AFBA67 /* TasksPaxTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksPaxTableViewCell.xib; sourceTree = "<group>"; };
 		A9AAE54327917C5A00AFBA67 /* GetInterPaxesRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInterPaxesRequestModel.swift; sourceTree = "<group>"; };
 		A9AAE54527917C8000AFBA67 /* GetInfoPaxesRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfoPaxesRequestModel.swift; sourceTree = "<group>"; };
 		A9AAE54727917CA300AFBA67 /* GetArrAndDepPaxesRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArrAndDepPaxesRequestModel.swift; sourceTree = "<group>"; };
@@ -339,6 +342,11 @@
 		A9AAE555279182F800AFBA67 /* GetTourPaxesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTourPaxesResponseModel.swift; sourceTree = "<group>"; };
 		A9AAE5572791830D00AFBA67 /* GetColAndDelPaxesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetColAndDelPaxesResponseModel.swift; sourceTree = "<group>"; };
 		A9AAE5592791832000AFBA67 /* GetIndShopPaxesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndShopPaxesResponseModel.swift; sourceTree = "<group>"; };
+		A9C0344227980B18000AA4DD /* UpdateIndShopNoShowRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateIndShopNoShowRequestModel.swift; sourceTree = "<group>"; };
+		A9C0344427980B37000AA4DD /* UpdateNoShowRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoShowRequestModel.swift; sourceTree = "<group>"; };
+		A9C0344627980B52000AA4DD /* UpdateInfoPlanNoShowRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateInfoPlanNoShowRequestModel.swift; sourceTree = "<group>"; };
+		A9C0344827980B69000AA4DD /* UpdateArrAndDepPlanNoShowRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateArrAndDepPlanNoShowRequestModel.swift; sourceTree = "<group>"; };
+		A9C0344A27980ED9000AA4DD /* UpdateNoShowResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoShowResponseModel.swift; sourceTree = "<group>"; };
 		A9C674DF27745CE300536F21 /* TasksHotelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksHotelViewController.swift; sourceTree = "<group>"; };
 		A9C674E027745CE300536F21 /* TasksHotelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksHotelViewController.xib; sourceTree = "<group>"; };
 		A9C674E327745CF900536F21 /* TasksHotelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksHotelView.swift; sourceTree = "<group>"; };
@@ -358,8 +366,6 @@
 		A9C67507278744D000536F21 /* TasksCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksCustomView.xib; sourceTree = "<group>"; };
 		A9C6750927877D1C00536F21 /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
 		A9E3E0C72770B0F9004DF892 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
-		A9E8D7222796FADB00A9E90B /* TasksPaxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPaxCollectionViewCell.swift; sourceTree = "<group>"; };
-		A9E8D7232796FADB00A9E90B /* TasksPaxCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksPaxCollectionViewCell.xib; sourceTree = "<group>"; };
 		B501ED32EF6379402A0E4FCC /* Pods_RotaIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RotaIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF44C877263FF80000238035 /* RotaIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RotaIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF44C87A263FF80000238035 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -854,6 +860,10 @@
 				A9AAE5492791820600AFBA67 /* GetTourPaxesRequestModel.swift */,
 				A9AAE54B2791822400AFBA67 /* GetColAndDelPaxesRequestModel.swift */,
 				A9AAE54D2791823800AFBA67 /* GetIndShopPaxesRequestModel.swift */,
+				A9C0344227980B18000AA4DD /* UpdateIndShopNoShowRequestModel.swift */,
+				A9C0344427980B37000AA4DD /* UpdateNoShowRequestModel.swift */,
+				A9C0344627980B52000AA4DD /* UpdateInfoPlanNoShowRequestModel.swift */,
+				A9C0344827980B69000AA4DD /* UpdateArrAndDepPlanNoShowRequestModel.swift */,
 			);
 			path = RequestModel;
 			sourceTree = "<group>";
@@ -902,6 +912,7 @@
 				A9AAE555279182F800AFBA67 /* GetTourPaxesResponseModel.swift */,
 				A9AAE5572791830D00AFBA67 /* GetColAndDelPaxesResponseModel.swift */,
 				A9AAE5592791832000AFBA67 /* GetIndShopPaxesResponseModel.swift */,
+				A9C0344A27980ED9000AA4DD /* UpdateNoShowResponseModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -1015,10 +1026,8 @@
 				D94C40A826692D4C00EBC7CD /* TaskTableViewCell.xib */,
 				A9C674E527745D9900536F21 /* TasksHotelTableViewCell.swift */,
 				A9C674E627745D9900536F21 /* TasksHotelTableViewCell.xib */,
-				A9AAE53F27917BBB00AFBA67 /* TasksPaxTableViewCell.swift */,
-				A9AAE54027917BBB00AFBA67 /* TasksPaxTableViewCell.xib */,
-				A9E8D7222796FADB00A9E90B /* TasksPaxCollectionViewCell.swift */,
-				A9E8D7232796FADB00A9E90B /* TasksPaxCollectionViewCell.xib */,
+				A91D82D527988FCF0018C0A9 /* TasksPaxTableViewCell.swift */,
+				A91D82D627988FCF0018C0A9 /* TasksPaxTableViewCell.xib */,
 				D9561A3F269E099C00AA75E5 /* AnnoucmentsTableViewCell.swift */,
 				D9561A40269E099C00AA75E5 /* AnnoucmentsTableViewCell.xib */,
 				D9561A43269E110A00AA75E5 /* AnnoucmentsDetailTableViewCell.swift */,
@@ -1184,7 +1193,6 @@
 				D931577727033A54000C91AD /* ZReportPaymentViewController.xib in Resources */,
 				D95C203226F0CA70007D1506 /* SpeakingHoursViewController.xib in Resources */,
 				A9C674E227745CE300536F21 /* TasksHotelViewController.xib in Resources */,
-				A9E8D7252796FADC00A9E90B /* TasksPaxCollectionViewCell.xib in Resources */,
 				D9A48D0326B1895500D28A0A /* DocumentsTableViewCell.xib in Resources */,
 				D97EE013276B952B00683E66 /* AddMenuPaxTableViewCell.xib in Resources */,
 				BF44C9242640014800238035 /* MainPAgeViewController.xib in Resources */,
@@ -1209,7 +1217,6 @@
 				BF44C95C2640018B00238035 /* OfflineSalesViewController.xib in Resources */,
 				D97FB5B526C6ABC10099F28B /* MyShoppinSaleDetailViewController.xib in Resources */,
 				D991469326D68B620010E74F /* CancelVoucherViewController.xib in Resources */,
-				A9AAE54227917BBB00AFBA67 /* TasksPaxTableViewCell.xib in Resources */,
 				D97EE00F276ABFB700683E66 /* ExcProceedCustomView.xib in Resources */,
 				BF44C884263FF80100238035 /* Assets.xcassets in Resources */,
 				BF44C984264001B000238035 /* MainTextCustomView.xib in Resources */,
@@ -1260,6 +1267,7 @@
 				D9561A3C269DF27E00AA75E5 /* AnnoucmentsViewController.xib in Resources */,
 				D97FB59926C15F650099F28B /* MyTourSalesDetailPageTableViewCell.xib in Resources */,
 				D9004070271722B800DDE088 /* DailyReportViewController.xib in Resources */,
+				A91D82D827988FCF0018C0A9 /* TasksPaxTableViewCell.xib in Resources */,
 				D93157892704892B000C91AD /* ZReportRefundViewController.xib in Resources */,
 				BF44C9622640019200238035 /* HeaderCustomView.xib in Resources */,
 				D931575526FA5E72000C91AD /* ZReportMoreDetailViewController.xib in Resources */,
@@ -1399,7 +1407,6 @@
 				D97FB5B426C6ABC10099F28B /* MyShoppinSaleDetailViewController.swift in Sources */,
 				D931578F270496B4000C91AD /* GetZreportRefundRequestModel.swift in Sources */,
 				BF44C8F4264000E900238035 /* GetGuideMarketResponseModel.swift in Sources */,
-				A9E8D7242796FADB00A9E90B /* TasksPaxCollectionViewCell.swift in Sources */,
 				D931576226FCB0C0000C91AD /* ZReportTotalTableViewCell.swift in Sources */,
 				D9A48CFF26B1408A00D28A0A /* DocumentsView.swift in Sources */,
 				D93F889F264EFF7800397283 /* GetSaveForMobileRequestList.swift in Sources */,
@@ -1442,6 +1449,7 @@
 				D931575B26FB4A0F000C91AD /* GetReportDataRequestModel.swift in Sources */,
 				BF44C91C2640013B00238035 /* LoginView.swift in Sources */,
 				BF44C9152640011800238035 /* BaseTableViewCell.swift in Sources */,
+				A9C0344727980B52000AA4DD /* UpdateInfoPlanNoShowRequestModel.swift in Sources */,
 				D994FBDA2753A8D9003564F3 /* GetTourSearchCacheRequestModel.swift in Sources */,
 				D931578027036D4C000C91AD /* ZReportPaymentTableViewCell.swift in Sources */,
 				D994FBD027451862003564F3 /* ExcursionView.swift in Sources */,
@@ -1454,6 +1462,7 @@
 				D94C406C2659313000EBC7CD /* GetSaveForMobileResponseList.swift in Sources */,
 				A9C674F2277F490D00536F21 /* GetArrAndDepHotelListForMobileResponseModel.swift in Sources */,
 				A9C674FE277F4D9700536F21 /* GetIndShopHotelListForMobileResponseModel.swift in Sources */,
+				A9C0344B27980ED9000AA4DD /* UpdateNoShowResponseModel.swift in Sources */,
 				BF44C8F2264000E900238035 /* GetTokenResponseModel.swift in Sources */,
 				D9FD64E32737F8EA009B6619 /* GetZReportPreviewRequestModel.swift in Sources */,
 				D9561A45269E110A00AA75E5 /* AnnoucmentsDetailTableViewCell.swift in Sources */,
@@ -1469,6 +1478,7 @@
 				D9561A3E269DF31A00AA75E5 /* AnnoucmentsView.swift in Sources */,
 				D97EE012276B952B00683E66 /* AddMenuPaxTableViewCell.swift in Sources */,
 				D94C40A926692D4C00EBC7CD /* TaskTableViewCell.swift in Sources */,
+				A9C0344927980B69000AA4DD /* UpdateArrAndDepPlanNoShowRequestModel.swift in Sources */,
 				D9A48CFA26B1405D00D28A0A /* DocumentsViewController.swift in Sources */,
 				D97FB5BA26C6B5480099F28B /* MyShopingSalesDetailTableViewCell.swift in Sources */,
 				D97E4F54276725640049648A /* ExcAddCustomView.swift in Sources */,
@@ -1509,6 +1519,7 @@
 				D97FB58626C075940099F28B /* MyTourSaleDetailPageViewController.swift in Sources */,
 				D9FD6503273C1F7B009B6619 /* HotelsandFlightsTableViewCell.swift in Sources */,
 				BF44C9422640017600238035 /* TasksViewController.swift in Sources */,
+				A9C0344527980B37000AA4DD /* UpdateNoShowRequestModel.swift in Sources */,
 				BF44C908264000FA00238035 /* BaseResponse.swift in Sources */,
 				D95C202A26EFDDB7007D1506 /* GetHotelSelectListByAreaRefRequestModel.swift in Sources */,
 				BF44C96A2640019900238035 /* ApponintmentBarCollectionViewCell.swift in Sources */,
@@ -1516,13 +1527,14 @@
 				D931574E26FA2257000C91AD /* ZReportDetailViewController.swift in Sources */,
 				A9AAE552279182CF00AFBA67 /* GetInfoPaxesResponseModel.swift in Sources */,
 				D9561A41269E099C00AA75E5 /* AnnoucmentsTableViewCell.swift in Sources */,
+				A9C0344327980B18000AA4DD /* UpdateIndShopNoShowRequestModel.swift in Sources */,
 				BF44C93A2640016500238035 /* ShopAppointmentViewController.swift in Sources */,
 				BF44C8F1264000E900238035 /* GetUserResponseModel.swift in Sources */,
-				A9AAE54127917BBB00AFBA67 /* TasksPaxTableViewCell.swift in Sources */,
 				D97FB5AF26C69BE50099F28B /* GetShoppingSaleRequestModel.swift in Sources */,
 				BF44C9A7264001CE00238035 /* CheckBoxView.swift in Sources */,
 				A9AAE53D2791634200AFBA67 /* TasksPaxViewController.swift in Sources */,
 				D94C407F265D013C00EBC7CD /* FavoriteListCustomView.swift in Sources */,
+				A91D82D727988FCF0018C0A9 /* TasksPaxTableViewCell.swift in Sources */,
 				D95C202E26F0936F007D1506 /* GuideGetSelectListResponseModel.swift in Sources */,
 				D93F888B264AB14900397283 /* GetHotelsMobileRequestModel.swift in Sources */,
 				A9E3E0C82770B0F9004DF892 /* TasksView.swift in Sources */,

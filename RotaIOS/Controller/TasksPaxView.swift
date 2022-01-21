@@ -10,10 +10,14 @@ import UIKit
 
 final class TasksPaxView : UIView {
     @IBOutlet weak var view: UIView!
-    @IBOutlet weak var tasksPaxTableView: UITableView!
-    @IBOutlet weak var tasksPaxTableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var headerDetailCustomView: HeaderDetailCustomView!
+    @IBOutlet weak var buttonSendOffice: UIButton!
+    @IBOutlet weak var labelWorkNo: UILabel!
+    @IBOutlet weak var labelHotelName: UILabel!
+    @IBOutlet weak var labelExcursionName: UILabel!
+    @IBOutlet weak var labelPax: UILabel!
+    @IBOutlet weak var viewPaxInfo: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +25,10 @@ final class TasksPaxView : UIView {
         self.contentView.round(with: .top, radius: 20)
         self.view.backgroundColor = UIColor.darkGrayColor
         self.headerDetailCustomView.labelHeaderDetailView.text = "Tasks".localizedCapitalized
+        self.buttonSendOffice.setTitle("Send Office", for: .normal)
+        self.buttonSendOffice.backgroundColor = UIColor.greenColor
+        self.buttonSendOffice.round(with: .all, radius: 10)
+        self.buttonSendOffice.tintColor = .white
     }
     
     required init(customParamArg: String) {

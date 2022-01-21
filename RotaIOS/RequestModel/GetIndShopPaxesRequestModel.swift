@@ -12,13 +12,13 @@ import ObjectMapper
 public class  GetIndShopPaxesRequestModel : Mappable{
     public var planId : String!
     public var hotelId : String!
-    public var typeInt: Int!
+    public var typeInt: String!
     
     public required init?(map: Map) {
         
     }
     
-    public init(planId : String, hotelId : String, typeInt: Int) {
+    public init(planId : String, hotelId : String, typeInt: String) {
         self.planId = planId
         self.hotelId = hotelId
         self.typeInt = typeInt
@@ -28,6 +28,6 @@ public class  GetIndShopPaxesRequestModel : Mappable{
     }
     
     public func requestPathString()->String{
-        return "?planId=\(self.planId ?? "")&hotelId=\(self.hotelId ?? "")&typeInt=\(self.typeInt ?? 0)"
+        return "?planId=\(self.planId ?? "")&hotelId=\(self.hotelId ?? "")&typeInt=\(self.typeInt ?? "")"
     }
 }

@@ -93,6 +93,10 @@ extension UIViewController {
         return baseApiRequestBodyModel
     }
     
+    public func getBaseRequestStringData<T:Mappable> (data:T)-> BaseApiRequestBody<T>{
+        return BaseApiRequestBody.init(data: data)
+    }
+    
     func otiPushViewController(identifier : String, animated: Bool = true) {
         let storyBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyBoard.instantiateViewController(withIdentifier: identifier)

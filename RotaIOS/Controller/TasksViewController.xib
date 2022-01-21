@@ -28,7 +28,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rE2-v4-gMf">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="210"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xjv-gR-tgm" customClass="HeaderDetailCustomView" customModule="RotaIOS" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
@@ -38,7 +38,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ev-AZ-EoH">
-                                            <rect key="frame" x="0.0" y="110" width="414" height="80"/>
+                                            <rect key="frame" x="0.0" y="110" width="414" height="100"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="aPX-fJ-sdL"/>
                                             </constraints>
@@ -68,9 +68,9 @@
                                         <constraint firstAttribute="trailing" secondItem="7Wm-lu-yLt" secondAttribute="trailing" id="GPB-aL-gvf"/>
                                         <constraint firstAttribute="bottom" secondItem="0Ev-AZ-EoH" secondAttribute="bottom" id="GxP-VU-p1o"/>
                                         <constraint firstAttribute="trailing" secondItem="Xjv-gR-tgm" secondAttribute="trailing" id="QT6-NO-HoR"/>
+                                        <constraint firstAttribute="bottom" secondItem="jZp-2L-ogP" secondAttribute="bottom" constant="20" id="edm-Lf-F1f"/>
                                         <constraint firstItem="7Wm-lu-yLt" firstAttribute="leading" secondItem="rE2-v4-gMf" secondAttribute="leading" id="ehY-gX-5Gg"/>
                                         <constraint firstItem="jZp-2L-ogP" firstAttribute="top" secondItem="Xjv-gR-tgm" secondAttribute="bottom" constant="60" id="gKb-ed-kBd"/>
-                                        <constraint firstItem="jZp-2L-ogP" firstAttribute="bottom" secondItem="0Ev-AZ-EoH" secondAttribute="bottom" id="hyw-jK-fJO"/>
                                         <constraint firstItem="Xjv-gR-tgm" firstAttribute="leading" secondItem="rE2-v4-gMf" secondAttribute="leading" id="iOC-o8-oUx"/>
                                         <constraint firstItem="7Wm-lu-yLt" firstAttribute="top" secondItem="rE2-v4-gMf" secondAttribute="top" constant="100" id="sur-z4-pLd"/>
                                         <constraint firstItem="jZp-2L-ogP" firstAttribute="leading" secondItem="rE2-v4-gMf" secondAttribute="leading" constant="20" symbolic="YES" id="z7q-mR-UY1"/>

@@ -10,8 +10,6 @@ import UIKit
 
 final class TasksHotelView : UIView {
     @IBOutlet weak var view: UIView!
-    @IBOutlet weak var tasksHotelTableView: UITableView!
-    @IBOutlet weak var tasksHotelTableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var headerDetailCustomView: HeaderDetailCustomView!
     

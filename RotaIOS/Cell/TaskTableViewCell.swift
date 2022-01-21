@@ -36,6 +36,9 @@ class TaskTableViewCell: BaseTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    override func layoutSubviews() {
         self.mainView.round(with: .all, radius: 10)
     }
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 extension String {
     
@@ -15,6 +16,18 @@ extension String {
         let day = arr[1]
         let year = arr[2]
         return "\(day).\(month).\(year)"
+    }
+    
+    func dateFormatStr() -> String {
+        let arr = self.components(separatedBy: "-")
+        let year = arr[0]
+        let month = arr[1]
+        let day = arr[2]
+        return "\(day).\(month).\(year)"
+    }
+    
+    func dateToString() -> String {
+        return self.components(separatedBy: "T")[0]
     }
 }
 

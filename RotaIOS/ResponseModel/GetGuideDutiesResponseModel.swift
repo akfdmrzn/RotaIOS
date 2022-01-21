@@ -719,3 +719,24 @@ public class TotalList : NSObject {
     }
 
 }
+
+public class GetGuideDutiesList : NSObject {
+    var id : Int = 0
+    var ids : String = ""
+    var typeInt : String = ""
+    var planId : String = ""
+    var planIds : String = ""
+    
+    public required init?(map: Map) {
+
+    }
+
+    public init(id: Int, ids: String, typeInt: String, planId: String, planIds: String){
+        self.id = id
+        self.ids = ids
+        self.typeInt = typeInt
+        self.planId = planId
+        self.planIds = planIds
+    }
+
+}

@@ -50,4 +50,8 @@ public enum ServiceEndPoint: String {
     case GetTourPaxes = "/api/api/TourTransferPlan/GetTourPaxes"
     case GetColAndDelPaxes = "/api/api/TourTransferPlan/GetColAndDelPaxes"
     case GetIndShopPaxes = "/api/api/IndShop/GetIndShopPaxes"
+    case UpdateIndShopNoShow = "/api/api/IndShop/UpdateIndShopNoShow"
+    case UpdateNoShow = "/api/api/TourTransferPlan/UpdateNoShow"
+    case UpdateInfoPlanNoShow = "api/api/TourTransferPlan/UpdateInfoPlanNoShow"
+    case UpdateArrAndDepPlanNoShow = "/api/api/TourTransferPlan/UpdateArrAndDepPlanNoShow"
 }

@@ -211,45 +211,46 @@ class TasksPaxViewController: BaseViewController {
             }
         case ServiceType.ARR.rawValue:
             let updateNoShowModel = UpdateNoShow.init(typeInt: 4, noShowList: self.noShowList)
-            let UpdateArrAndDepPlanNoShowRequestModel = UpdateArrAndDepPlanNoShowRequestModel.init(data: updateNoShowModel.toJSONString() ?? "")
-            NetworkManager.sendGetRequest(url:NetworkManager.BASEURL, endPoint: .UpdateArrAndDepPlanNoShow, method: .get, parameters: UpdateArrAndDepPlanNoShowRequestModel.requestPathString()) { (response : UpdateNoShowResponseModel) in
-                if response.message != "" {
+            let updateArrAndDepPlanNoShowRequestModel = UpdateArrAndDepPlanNoShowRequestModel.init(data: updateNoShowModel.toJSONString() ?? "")
+            NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateArrAndDepPlanNoShow, requestModel: updateArrAndDepPlanNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
+                if response.isSuccesful == true {
                     UIApplication.getTopViewController()?.showAlertMsg(msg: response.message, finished: {
                     })
                 }
             }
         case ServiceType.DEP.rawValue:
             let updateNoShowModel = UpdateNoShow.init(typeInt: 5, noShowList: self.noShowList)
-            let UpdateArrAndDepPlanNoShowRequestModel = UpdateArrAndDepPlanNoShowRequestModel.init(data: updateNoShowModel.toJSONString() ?? "")
-            NetworkManager.sendGetRequest(url:NetworkManager.BASEURL, endPoint: .UpdateArrAndDepPlanNoShow, method: .get, parameters: UpdateArrAndDepPlanNoShowRequestModel.requestPathString()) { (response : UpdateNoShowResponseModel) in
-                if response.message != "" {
+            let updateArrAndDepPlanNoShowRequestModel = UpdateArrAndDepPlanNoShowRequestModel.init(data: updateNoShowModel.toJSONString() ?? "")
+            NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateArrAndDepPlanNoShow, requestModel: updateArrAndDepPlanNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
+                if response.isSuccesful == true {
                     UIApplication.getTopViewController()?.showAlertMsg(msg: response.message, finished: {
                     })
                 }
             }
         case ServiceType.SHOP.rawValue:
             let updateNoShowModel = UpdateNoShow.init(typeInt: 10, noShowList: self.noShowList)
-            let UpdateIndShopNoShowRequestModel = UpdateIndShopNoShowRequestModel.init(data: updateNoShowModel.toJSONString(prettyPrint: true) ?? "")
-            NetworkManager.sendGetRequest(url:NetworkManager.BASEURL, endPoint: .UpdateIndShopNoShow, method: .get, parameters: UpdateIndShopNoShowRequestModel.requestPathString()) { (response : UpdateNoShowResponseModel) in
-                if response.message != "" {
+            let updateIndShopNoShowRequestModel = UpdateIndShopNoShowRequestModel.init(data: updateNoShowModel.toJSONString() ?? "")
+            NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateIndShopNoShow, requestModel: updateIndShopNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
+                if response.isSuccesful == true {
                     UIApplication.getTopViewController()?.showAlertMsg(msg: response.message, finished: {
                     })
                 }
             }
+            
         case ServiceType.INT.rawValue:
             let updateNoShowModel = UpdateNoShow.init(typeInt: 6, noShowList: self.noShowList)
-            let UpdateArrAndDepPlanNoShowRequestModel = UpdateArrAndDepPlanNoShowRequestModel.init(data: updateNoShowModel.toJSONString(prettyPrint: true) ?? "")
-            NetworkManager.sendGetRequest(url:NetworkManager.BASEURL, endPoint: .UpdateArrAndDepPlanNoShow, method: .get, parameters: UpdateArrAndDepPlanNoShowRequestModel.requestPathString()) { (response : UpdateNoShowResponseModel) in
-                if response.message != "" {
+            let updateArrAndDepPlanNoShowRequestModel = UpdateArrAndDepPlanNoShowRequestModel.init(data: updateNoShowModel.toJSONString() ?? "")
+            NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateArrAndDepPlanNoShow, requestModel: updateArrAndDepPlanNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
+                if response.isSuccesful == true {
                     UIApplication.getTopViewController()?.showAlertMsg(msg: response.message, finished: {
                     })
                 }
             }
         case ServiceType.INFO.rawValue:
             let updateNoShowModel = UpdateNoShow.init(typeInt: 7, noShowList: self.noShowList)
-            let UpdateInfoPlanNoShowRequestModel = UpdateInfoPlanNoShowRequestModel.init(data: updateNoShowModel.toJSONString(prettyPrint: true) ?? "")
-            NetworkManager.sendGetRequest(url:NetworkManager.BASEURL, endPoint: .UpdateInfoPlanNoShow, method: .get, parameters: UpdateInfoPlanNoShowRequestModel.requestPathString()) { (response : UpdateNoShowResponseModel) in
-                if response.message != "" {
+            let updateInfoPlanNoShowRequestModel = UpdateInfoPlanNoShowRequestModel.init(data: updateNoShowModel.toJSONString() ?? "")
+            NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateInfoPlanNoShow, requestModel: updateInfoPlanNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
+                if response.isSuccesful == true {
                     UIApplication.getTopViewController()?.showAlertMsg(msg: response.message, finished: {
                     })
                 }

@@ -21,9 +21,6 @@ public class  UpdateArrAndDepPlanNoShowRequestModel : Mappable{
     }
     
     public func mapping(map: Map) {
-    }
-    
-    public func requestPathString()->String{
-        return "?data=\(self.data ?? "")"
+        data <- map["jsonStr"]
     }
 }

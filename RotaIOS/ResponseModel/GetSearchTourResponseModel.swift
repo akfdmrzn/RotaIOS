@@ -130,6 +130,7 @@ public class GetSearchTourResponseModel : Mappable, Decodable, Encodable{
 }
 
 public struct Transfers : Mappable, Decodable, Encodable{
+    var transfersPaxesList : [GetInHoseListResponseModel]?
     var savedAmount : Double?
     var TotalPrice : Double?
     var PriceID : Int?
@@ -239,7 +240,7 @@ public struct Transfers : Mappable, Decodable, Encodable{
 }
 
 public struct Extras : Mappable, Decodable, Encodable{
-    
+    var extrasPaxesList : [GetInHoseListResponseModel]?
     var savedAmount : Double?
     var TotalPrice : Double?
     var PriceID : Int?
@@ -296,6 +297,7 @@ public struct Extras : Mappable, Decodable, Encodable{
     }
 
    public mutating func mapping(map: Map) {
+        extrasPaxesList <- map["extrasPaxesList"]
         savedAmount <- map["savedAmount"]
         TotalPrice <- map["TotalPrice"]
         PriceID <- map["PriceID"]

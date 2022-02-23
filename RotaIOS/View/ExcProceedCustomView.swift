@@ -521,10 +521,10 @@ class ExcProceedCustomView: UIView{
     
     @IBAction func printButtonTapped(_ sender: Any) {
        
-        if self.printList.count > 0 {
+        if self.printList.count > 0 && self.connectedAccessories.count > 0{
             self.connectEaAccessory(eaAccessory: self.connectedAccessories[0])
         }else{
-            let alert = UIAlertController.init(title: "Warning", message: "Please send data", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController.init(title: "Warning", message: "Please send data and Connect Zebra device", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             if let topVC = UIApplication.getTopViewController() {
                 topVC.present(alert, animated: true, completion: nil)
@@ -905,7 +905,11 @@ extension ExcProceedCustomView{
                     
                 }else{
                     print ("Failed to Connect to ZQ620 Printer")
-                    
+                    let alert = UIAlertController.init(title: "Warning", message: "Please be sure connected to device", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    if let topVC = UIApplication.getTopViewController() {
+                        topVC.present(alert, animated: true, completion: nil)
+                    }
                 }
                 //Zebra SDK specific code -- End
             }

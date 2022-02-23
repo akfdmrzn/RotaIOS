@@ -167,19 +167,19 @@ extension ExcSelectCustomView : UITableViewDelegate, UITableViewDataSource {
             cell.tourid = self.filteredData[indexPath.row].tourId ?? 0
             cell.priceTypeDesc = filteredData[indexPath.row].priceType ?? 0
             cell.pickuptime = filteredData[indexPath.row].pickUpTime ?? ""
-            cell.createTimePicker()
         }else {
             if self.promotionButtonTapped == true {
                 cell.pickuptime = ""
                 if Connectivity.isConnectedToInternet {
                     print("connect")
                     cell.labelExcursion.text = self.promotionList[indexPath.row].tourName
-                    if pickUpTimeList.count == 0 {
+                  /*  if pickUpTimeList.count == 0 {
                         cell.textPickUpTime.text = self.promotionList[indexPath.row].pickUpTime
                     }else if promotionPickupTimeList.count > 0{
                         cell.textPickUpTime.text = self.promotionPickupTimeList[indexPath.row]
-                    }
+                    }*/
                     // cell.labelSeat.text = self.promotionList[indexPath.row] // yok
+                    cell.textPickUpTime.text = self.promotionList[indexPath.row].pickUpTime
                     cell.labelPriceType.text = String(self.promotionList[indexPath.row].priceTypeDesc ?? "") // pricetypedesc mi yoksa pricetype mı?
                     cell.labelCurrency.text = self.promotionList[indexPath.row].currencyDesc // currencyy mi yoksa currencyDesc mi?
                     cell.labelAdultPrice.text = String(self.promotionList[indexPath.row].adultPrice ?? 0)
@@ -197,7 +197,6 @@ extension ExcSelectCustomView : UITableViewDelegate, UITableViewDataSource {
                     cell.tourid = self.promotionList[indexPath.row].tourId  ?? 0
                     cell.priceTypeDesc = promotionList[indexPath.row].priceType ?? 0
                     cell.pickuptime = promotionList[indexPath.row].pickUpTime ?? ""
-                    cell.createTimePicker()
                 } else {
                     return cell
                 }
@@ -227,7 +226,6 @@ extension ExcSelectCustomView : UITableViewDelegate, UITableViewDataSource {
                 cell.tourid = self.excursionList[indexPath.row].tourId  ?? 0
                 cell.priceTypeDesc = excursionList[indexPath.row].priceType ?? 0
                 cell.pickuptime = excursionList[indexPath.row].pickUpTime ?? ""
-                cell.createTimePicker()
             }
         }
         return cell
@@ -261,6 +259,7 @@ extension ExcSelectCustomView : UISearchBarDelegate {
                     self.filteredList.append(filter[0])
                 }
             }
+            
             for index in 0...self.filteredList.count - 1 {
                 self.checkFilteredList.append(self.filteredList[index].isTapped ?? false)
                 //   self.checkList.append(self.paxesNameList[index].isTapped ?? false)
@@ -285,7 +284,7 @@ extension ExcSelectCustomView : UISearchBarDelegate {
 }
 
 extension ExcSelectCustomView : ExcursionListTableViewCellDelegate {
-    func checkBoxTapped(checkCounter: Bool, tourid: Int, tourDate: String, tempPaxes: GetSearchTourResponseModel, priceTypeDesc : Int, pickUpTime: String) {
+    func checkBoxTapped(checkCounter: Bool, tourid: Int, tourDate: String, tempPaxes: GetSearchTourResponseModel, priceTypeDesc : Int, pickUpTime: String, labelNameTapped: Bool) {
         
         self.tempFilteredList = []
         if isFiltered == true {
@@ -363,7 +362,6 @@ extension ExcSelectCustomView : ExcursionListTableViewCellDelegate {
                                 self.pickUpTime = "\(self.pickUpTime)0"
                             }
                             
-                            
                             self.pickUpTime.insert(":", at: self.pickUpTime.index(self.pickUpTime.startIndex, offsetBy: 2))
                             
                             if let index = self.promotionList.firstIndex(where: {$0 === tempPaxes}){
@@ -430,6 +428,10 @@ extension ExcSelectCustomView : ExcursionListTableViewCellDelegate {
                         
                         if self.pickUpTime.count == 3{
                             self.pickUpTime = "\(self.pickUpTime)0"
+                        }
+                        
+                        if self.pickUpTime.count > 4 {
+                            self.pickUpTime = String(self.pickUpTime.prefix(4))
                         }
                         
                         self.pickUpTime.insert(":", at: self.pickUpTime.index(self.pickUpTime.startIndex, offsetBy: 2))

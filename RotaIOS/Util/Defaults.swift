@@ -45,9 +45,32 @@ public class Defaults{
         case printString
         case UserNameList
         case HotelList
+        case UserPasswordList
+        case GetToken
     }
     
    public init(){}
+    // CurrencyList
+    func saveGetToken(token:[GetTokenResponseModel]){
+        let preferences = UserDefaults.standard
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(token){
+            preferences.set(encoded, forKey: getIdentifier(type: .GetToken))
+            preferences.synchronize()
+        }
+    }
+    
+    func getGetToken() -> [GetTokenResponseModel]? {
+        let preferences = UserDefaults.standard
+        let decoder = JSONDecoder()
+        if let savedTourList = preferences.object(forKey: getIdentifier(type: .GetToken)) as? Data {
+            if let loadedTourList = try? decoder.decode([GetTokenResponseModel].self, from: savedTourList){
+                return loadedTourList
+            }
+        }
+        return []
+    }
+    
     // CurrencyList
     func saveHotelList(hotelList:[GetHotelsMobileResponseModel]){
         let preferences = UserDefaults.standard
@@ -85,6 +108,23 @@ public class Defaults{
         let data:[String] = preferences.value(forKey: getIdentifier(type: .UserNameList)) as! [String]
         return data
     }
+    
+    public func saveUserPasswordList(passwordList:[String]){
+        let preferences = UserDefaults.standard
+        let currentLanguageKey = getIdentifier(type: .UserPasswordList)
+        preferences.set(passwordList, forKey: currentLanguageKey)
+        preferences.synchronize()
+    }
+    
+    public func getUserPasswordList() -> [String]! {
+        let preferences = UserDefaults.standard
+        if preferences.object(forKey: getIdentifier(type: .UserPasswordList)) == nil {
+            return nil
+        }
+        let data:[String] = preferences.value(forKey: getIdentifier(type: .UserPasswordList)) as! [String]
+        return data
+    }
+    
     
     // Printer String
     public func savePrintString(id:String){
@@ -724,6 +764,10 @@ public class Defaults{
             return "UserNameList"
         case .HotelList:
             return "HotelList"
+        case .UserPasswordList:
+            return "UserPasswordList"
+        case .GetToken:
+            return "GetToken"
         }
     }
 }

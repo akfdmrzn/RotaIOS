@@ -137,6 +137,23 @@ class ExcPaxCustomView : UIView {
                 print(filter)
                 if filter.count > 0 {
                     self.paxesList = filter
+                    for i in 0...self.paxesList.count - 1 {
+                        let getInTouristInfoRequestModelList = GetTouristInfoRequestModel(touristId: paxesList[i].ID ?? 0, resNo: paxesList[i].ResNo ?? "")
+                        
+                        NetworkManager.sendGetRequestArray(url:NetworkManager.BASEURL, endPoint: .GetTouristInfo, method: .get, parameters: getInTouristInfoRequestModelList.requestPathString() ) { (response : [GetTouristInfoResponseModel] ) in
+                            if response.count > 0 {
+                                self.touristDetailInfoList.append(Paxes.init(pAX_CHECKOUT_DATE: "", pAX_OPRID: response[0].oprId ?? 0, pAX_OPRNAME: response[0].operatorName ?? "", pAX_PHONE: "", hotelname: response[0].hotelName ?? "", pAX_GENDER: response[0].gender ?? "", pAX_AGEGROUP: response[0].ageGroup ?? "", pAX_NAME: response[0].name ?? "", pAX_BIRTHDAY: response[0].birthDay ?? "", pAX_RESNO: response[0].resNo ?? "", pAX_PASSPORT: response[0].passport ?? "", pAX_ROOM: response[0].room ?? "", pAX_TOURISTREF: response[0].touristIdRef ?? 0, pAX_STATUS: 1, ID: response[0].touristIdRef ?? 0 ))
+                                userDefaultsData.saveTouristDetailInfoList(tour: self.touristDetailInfoList)
+                            }else{
+                                print("error")
+                            }
+                        }
+                        self.paxesList[i].isTapped = true
+                        self.savePaxesList.append(self.paxesList[i])
+                    }
+                    userDefaultsData.saveTouristDetailInfoList(tour: self.touristDetailInfoList)
+                    userDefaultsData.savePaxesList(tour: self.savePaxesList)
+                    
                     self.tableView.reloadData()
                 }else{
                     return
@@ -193,6 +210,7 @@ extension ExcPaxCustomView : UITableViewDelegate, UITableViewDataSource {
             cell.labelRoomName.text = self.filteredData[indexPath.row].room ?? "-"
             cell.labelAgeGroup.text = self.filteredData[indexPath.row].ageGroup ?? "-"
             cell.paxRoom = self.filteredData[indexPath.row].room ?? ""
+            cell.isTappedCheck = self.filteredData[indexPath.row].isTapped ?? false
         }else{
             cell.labelPaxName.text = self.paxesList[indexPath.row].name
             cell.marketGroup = self.paxesList[indexPath.row].mrkGrp ?? 0
@@ -201,6 +219,7 @@ extension ExcPaxCustomView : UITableViewDelegate, UITableViewDataSource {
             cell.paxRoom = self.paxesList[indexPath.row].room ?? ""
             cell.labelRoomName.text = self.paxesList[indexPath.row].room ?? "-"
             cell.labelAgeGroup.text = self.paxesList[indexPath.row].ageGroup ?? "-"
+            cell.isTappedCheck = self.paxesList[indexPath.row].isTapped ?? false
         }
         return cell
     }
@@ -267,7 +286,6 @@ extension ExcPaxCustomView : TempAddPaxesListDelegate {
             if self.tempValue != changeValue {
                 self.tempValue = changeValue
               
-                   
                     self.filteredArray = self.tempListofPaxes.filter{!self.sendingListofPaxes.contains($0)}
                     
                     print(filteredArray)
@@ -277,7 +295,6 @@ extension ExcPaxCustomView : TempAddPaxesListDelegate {
                             self.sendingListofPaxes.append(filteredArray[i])
                         }
                     }
-                
                 
                 userDefaultsData.saveManuelandHousePaxesList(tour: self.sendingListofPaxes)
                 if self.filteredArray.count > 0 {
@@ -361,8 +378,16 @@ extension ExcPaxCustomView : TempAddPaxesListDelegate {
                         self.manuelAddedPaxesList[i].isTapped = true
                         self.checkList.append(true)
                         self.savePaxesList.append(self.manuelAddedPaxesList[i])
+                        
+                    }
+                    
+                    for i in 0...manuelAddedPaxesList.count - 1 {
+                        if let index = self.paxesList.firstIndex(where: {$0 === self.manuelAddedPaxesList[i]}){
+                            self.paxesList[index].isTapped = true
+                        }
                     }
                 }
+                
                 userDefaultsData.savePaxesList(tour: self.savePaxesList)
                 self.tableView.reloadData()
                 return
@@ -395,7 +420,6 @@ extension ExcPaxCustomView : TempAddPaxesListDelegate {
                         if self.manuelAddedPaxesList[index].name != self.paxesList[i].name {
                             self.paxesList.append(self.manuelAddedPaxesList[i])
                             self.checkList.append(false)
-                            
                         }
                     }
                 }
@@ -426,7 +450,7 @@ extension ExcPaxCustomView : ExcPaxPageTableViewCellDelegate {
             }
         }
         self.tableView.reloadData()
-        if checkCounter == true || paxNameLabelSelect == true{
+        if checkCounter == true {
             let filter = paxesList.filter{ $0 === tempPaxes}
             // let filter = self.excursionList.filter{($0.tourId?.elementsEqual(tourid) ?? false)}
             if filter[0].room == nil {
@@ -478,7 +502,7 @@ extension ExcPaxCustomView : ExcPaxPageTableViewCellDelegate {
             // manuelPaxes added
             let filterManuelPax = self.manuelAddedPaxesList.filter{ $0 === tempPaxes}
             var manuelPaxList : [Paxes] = []
-            if self.sendingListofPaxes.count > 0 {
+            if self.sendingListofPaxes.count > 0 && filterManuelPax.count > 0{
                 for i in 0...self.sendingListofPaxes.count - 1 {
                     if filterManuelPax[0].name ==  self.sendingListofPaxes[i].pAX_NAME {
                         manuelPaxList.append(self.sendingListofPaxes[i])

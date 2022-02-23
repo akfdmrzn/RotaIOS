@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import GoogleUtilities
 
 struct Connectivity {
     static let sharedInstance = NetworkReachabilityManager()!
@@ -77,6 +78,8 @@ class ExcursionViewController: UIViewController {
     var savedTransFerList : [Transfers] = []
     var totalPriceBeforExtrasandTransfersAded = 0.0
     var buttonTappedCount = 0
+    var tempPaxesList : [GetInHoseListResponseModel] = []
+    var paxesListIsEqual = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +89,7 @@ class ExcursionViewController: UIViewController {
          } else {
          printerConnectionStatus.text = "Not Connected"
          } */
+       
         self.viewFooterViewCustomView.isHidden = false
         self.hideKeyboardWhenTappedAround()
         userDefaultsData.saveHotelId(hotelId: 0)
@@ -129,6 +133,7 @@ class ExcursionViewController: UIViewController {
             self.viewExcursionView.viewOfflineLabel.isHidden = false
         }
     }
+
     
     @objc func viewSendTapped() {
         print("tapped")
@@ -462,7 +467,12 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
             }
             
         }else if self.buttonTappedCount == 2 {
-            
+            if self.tempPaxesList == userDefaultsData.getPaxesList() ?? self.tempPaxesList {
+                self.paxesListIsEqual = true
+            }else{
+                self.paxesListIsEqual = false
+            }
+            // =self.tempListofPaxes.filter{!self.sendingListofPaxes.contains($0)}
             self.saveButtonTappet = false
             //  self.viewExcursionView.scrollView.contentOffset = CGPoint(x: 0, y: 0)
             if self.changeNumber != userDefaultsData.getTourList()?.count {
@@ -487,7 +497,9 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
             self.viewFooterViewCustomView.buttonView.removeFromSuperview()
             self.constraintOnAddFunc()
             self.viewExcSelectCustomView?.excSelectDelegate = self
-            if self.viewExcAddCustomView == nil || self.isTourChange == true || self.isPAxesListChange == true{
+            if self.viewExcAddCustomView == nil || self.isTourChange == true || self.isPAxesListChange == true || self.paxesListIsEqual == false {
+                self.tempPaxesList = userDefaultsData.getPaxesList() ?? self.tempPaxesList
+                self.savedExtrasTotalPrice = 0.0
                 if self.isTourChange == true {
                     self.voucherList = []
                     //Max Voucher
@@ -514,11 +526,17 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
                     }else{
                         convertMonth = String(month)
                     }
+                    if month.words.count == 1 {
+                        convertMonth = String("0\(month)")
+                    }
                     
                     if day < 10 {
                         convertDay = String("0\(day)")
                     }else{
                         convertDay = String(day)
+                    }
+                    if day.words.count == 1 {
+                        convertDay = String("0\(day)")
                     }
                     
                     if hour < 10 {
@@ -526,11 +544,17 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
                     }else{
                         convertHour = String(hour)
                     }
+                    if hour.words.count == 1 {
+                        convertHour = String("0\(hour)")
+                    }
                     
                     if minute < 10 {
                         convertMinute = String("0\(minute)")
                     }else {
                         convertMinute = String(minute)
+                    }
+                    if minute.words.count == 1 {
+                        convertMinute = String("0\(minute)")
                     }
                     
                     let mergeDate = "\(convertMonth)\(convertDay)\(convertHour)\(convertMinute)"
@@ -955,7 +979,7 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
         self.viewExcursionView.scrollView.contentOffset = CGPoint(x: 0, y: 0)
         self.viewFooterViewCustomView.viewSendVoucher.isHidden = true
         
-        self.viewPaxCustomView?.isHidden = true
+        //self.viewPaxCustomView?.isHidden = true
         if Connectivity.isConnectedToInternet {
             print("Connected")
             self.isConnectedInternet = true
@@ -1157,6 +1181,11 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
             }
             
         }else if self.buttonTappedCount == 2 {
+            if self.tempPaxesList == userDefaultsData.getPaxesList() ?? self.tempPaxesList {
+                self.paxesListIsEqual = true
+            }else{
+                self.paxesListIsEqual = false
+            }
             self.saveButtonTappet = false
             // self.viewExcursionView.scrollView.contentOffset = CGPoint(x: 0, y: 0)
             self.tourList = userDefaultsData.getTourList() ?? self.tourList
@@ -1184,7 +1213,9 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
                 self.isPAxesListChange = false
             }
             
-            if self.viewExcAddCustomView == nil || self.isTourChange == true || self.isPAxesListChange == true{
+            if self.viewExcAddCustomView == nil || self.isTourChange == true || self.isPAxesListChange == true || self.paxesListIsEqual == false{
+                self.tempPaxesList = userDefaultsData.getPaxesList() ?? self.tempPaxesList
+                self.savedExtrasTotalPrice = 0.0
                 if self.isTourChange == true {
                     self.voucherList = []
                     // Create VOucher
@@ -1212,11 +1243,17 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
                     }else{
                         convertMonth = String(month)
                     }
+                    if month.words.count == 1 {
+                        convertMonth = String("0\(month)")
+                    }
                     
                     if day < 10 {
                         convertDay = String("0\(day)")
                     }else{
                         convertDay = String(day)
+                    }
+                    if day.words.count == 1 {
+                        convertDay = String("0\(day)")
                     }
                     
                     if hour < 10 {
@@ -1224,11 +1261,17 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
                     }else{
                         convertHour = String(hour)
                     }
+                    if hour.words.count == 1 {
+                        convertHour = String("0\(hour)")
+                    }
                     
                     if minute < 10 {
                         convertMinute = String("0\(minute)")
                     }else {
                         convertMinute = String(minute)
+                    }
+                    if minute.words.count == 1 {
+                        convertMinute = String("0\(minute)")
                     }
                     
                     let mergeDate = "\(convertMonth)\(convertDay)\(convertHour)\(convertMinute)"

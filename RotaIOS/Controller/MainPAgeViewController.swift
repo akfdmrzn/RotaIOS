@@ -20,8 +20,7 @@ class MainPAgeViewController: BaseViewController {
         
         print(dateString)
         
-        NetworkManager.sendGetRequest(url:NetworkManager.BASEURL, endPoint: .GetUser, method: .get, parameters: "") { (response : GetMyInfoResponseModel) in
-            
+     /*  NetworkManager.sendGetRequest(url:NetworkManager.BASEURL, endPoint: .GetUser, method: .get, parameters: "") { (response : GetMyInfoResponseModel) in
             if response.id != nil {
                 print("info recived - \(response.id ?? "")")
                 userDefaultsData.saveUserId(languageId: response.id ?? "default")
@@ -36,17 +35,17 @@ class MainPAgeViewController: BaseViewController {
         
         let getGuideInfRequestModel =  GetGuideInfoRequestModel( id : userDefaultsData.getGuideId())
         NetworkManager.sendGetRequest(url:NetworkManager.BASEURL, endPoint: .GetGuideInfo, method: .get, parameters: getGuideInfRequestModel.requestPathString()) { (response : GetGuideInfoResponseModel) in
-            
+         
             if response.marketGroupId != nil {
-                
+         
                 userDefaultsData.saveMarketGruopId(marketGroupId: response.marketGroupId ?? 0)
-                
+         
             }else{
                 let alert = UIAlertController(title: "Error", message: "Token has not recived", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
-        } 
+        }*/
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -9,6 +9,12 @@ import Foundation
 import UIKit
 import DropDown
 
+struct ExtraPaxes {
+    var extraName : String?
+    var tourName : String?
+    var CheckList : [Bool]?
+}
+
 protocol ExcAddCustomViewDelegate {
     func excurAddCustomDelegate(changeTransferNumber : Int, changeExtraNumber : Int, extrasTotalPrice : Double, transfersTotalPrice : Double, extraButtonTapped : Bool, savedExtrasList : [Extras], savedTransferList : [Transfers], currentExtrasTotalPrice : Double, currentTransfersTotalPirce : Double)
 }
@@ -52,7 +58,22 @@ class ExcAddCustomView : UIView {
     var currentExtrasTotalPrice = 0.0
     var currentTransfersTotalPrice = 0.0
     var perPersonSavedTotalPrice = 0.0
-    
+    var extras : Extras?
+    var transfers : Transfers?
+    var extrasIndex = 0
+    var transferIndex = 0
+    var tempExcursionList : [GetSearchTourResponseModel] = []
+    var tempExtrasList : [Extras] = []
+    var tempTransferList : [Transfers] = []
+    var perPersonTappet = false
+    var extrasorTranfersListTapped = false
+    var tempExtrasPaxesList : [GetInHoseListResponseModel] = []
+    var tempTransfersPaxesList : [GetInHoseListResponseModel] = []
+    var extraPaxes : ExtraPaxes?
+    var extraPaxesListSaved : [ExtraPaxes] = []
+    var transferPaxes : ExtraPaxes?
+    var transferPaxesListSaved : [ExtraPaxes] = []
+    var excursionName = ""
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -67,14 +88,26 @@ class ExcAddCustomView : UIView {
     func commonInit() {
         Bundle.main.loadNibNamed(String(describing: ExcAddCustomView.self), owner: self, options: nil)
         self.viewMainView.addCustomContainerView(self)
-    
-            self.excursionListInAddMenu = userDefaultsData.getTourList() ?? self.excursionListInAddMenu
-          //  self.savedExcursionList = self.excursionListInAddMenu
-            if let paxesList = userDefaultsData.getPaxesList(){
-                self.extrasPaxesList = paxesList
-                self.transferPaxesList = paxesList
-            }
-         
+        
+        self.excursionListInAddMenu = userDefaultsData.getTourList() ?? self.excursionListInAddMenu
+        //  self.savedExcursionList = self.excursionListInAddMenu
+        
+        if let paxesList = userDefaultsData.getPaxesList(){
+            self.extrasPaxesList = paxesList
+            self.transferPaxesList = paxesList
+        }
+ 
+        for i in 0...self.extrasPaxesList.count - 1 {
+            self.extrasPaxesList[i].isTapped = false
+            self.extrasPaxCheckList.append(false)
+        }
+        
+        for i in 0...self.transferPaxesList.count - 1 {
+            self.transferPaxesList[i].isTapped = false
+            self.transfersPaxCheckList.append(false)
+        }
+      
+        
         self.labelExtorTransf.addLine(position: .bottom, color: .lightGray, width: 1.0)
         self.tableView.backgroundColor = UIColor.tableViewColor
         self.tableViewPax.backgroundColor = UIColor.tableViewColor
@@ -94,7 +127,7 @@ class ExcAddCustomView : UIView {
         
         self.viewExcursions.layer.cornerRadius = 10
         self.viewExcursions.backgroundColor = UIColor.mainTextColor
-      
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(AddMenuTableViewCell.nib, forCellReuseIdentifier: AddMenuTableViewCell.identifier)
@@ -109,12 +142,12 @@ class ExcAddCustomView : UIView {
         gesture.numberOfTouchesRequired = 1
         self.viewExcursions.addGestureRecognizer(gesture)
         
-      for listofArray in self.excursionListInAddMenu {
+        for listofArray in self.excursionListInAddMenu {
             self.tempExcurionMenu.append(listofArray.tourName ?? "")
         }
         
         self.excursionMenu.dataSource = self.tempExcurionMenu
-       // self.excursionMenu.dataSource.insert("", at: 0)
+        // self.excursionMenu.dataSource.insert("", at: 0)
         self.excursionMenu.backgroundColor = UIColor.grayColor
         self.excursionMenu.separatorColor = UIColor.gray
         self.excursionMenu.textColor = .white
@@ -125,7 +158,7 @@ class ExcAddCustomView : UIView {
             if title != self.viewExcursions.mainLabel.text {
             }
             self.viewExcursions.mainLabel.text = title
-           
+            self.excursionName = title
             var filtered : [GetSearchTourResponseModel] = []
             
             if self.excursionListInAddMenu.count == 1  || self.excursionListInAddMenu.count == 0 {
@@ -139,27 +172,83 @@ class ExcAddCustomView : UIView {
                     }
                 }
             }
-          //  filtered = self.excursionListInAddMenu.filter{($0.tourName?.contains(title) ?? false)}
-            
+            //  filtered = self.excursionListInAddMenu.filter{($0.tourName?.contains(title) ?? false)}
             
             self.filteredExcursionList = filtered
             
             for listofArray in self.filteredExcursionList {
                 self.extrasList = listofArray.extras ?? self.extrasList
                 self.transfersList = listofArray.transfers ?? self.transfersList
+                self.extrasorTranfersListTapped = true
             }
+            
+            if let paxesList = userDefaultsData.getPaxesList(){
+                self.extrasPaxesList = paxesList
+                self.transferPaxesList = paxesList
+            }
+            
+            for i in 0...self.extrasList.count - 1{
+                if self.extrasList[i].priceType == 35 {
+                    if self.extrasList[i].extrasPaxesList?.count ?? 0 > 0 {
+                        self.extrasPaxesList = self.extrasList[self.extrasIndex].extrasPaxesList ?? self.extrasPaxesList
+                        break
+                    }else{
+                        self.extrasList[i].extrasPaxesList = self.extrasPaxesList
+                        for i in 0...self.extrasPaxesList.count - 1 {
+                            self.extrasPaxesList[i].isSelected = false
+                        }
+                    }
+                }
+            }
+            
+            for i in 0...self.transfersList.count - 1{
+                if self.transfersList[i].priceType == 35 {
+                    if self.transfersList[i].transfersPaxesList?.count ?? 0 > 0 {
+                        self.transferPaxesList = self.transfersList[self.transferIndex].transfersPaxesList ?? self.transferPaxesList
+                        break
+                    }else{
+                        self.transfersList[i].transfersPaxesList = self.transferPaxesList
+                        for i in 0...self.transferPaxesList.count - 1 {
+                            self.transferPaxesList[i].isSelected = false
+                        }
+                    }
+                }
+            }
+            
             
             if self.extrasList.count > 0 {
                 for index in 0...self.extrasList.count - 1 {
-                   // self.extrasList[index].isTapped = false
+                    // self.extrasList[index].isTapped = false
                     self.extrasChecklist.append(self.extrasList[index].isTapped ?? false)
+                    //self.extrasList[index].extrasPaxesList = self.extrasPaxesList
+                    // self.transfersList[index].isTapped = false
+                    // self.transferChecklist.append(self.transfersList[index].isTapped ?? false)
+                    if self.extrasList[index].isTapped == true {
+                        if self.extrasList[index].priceType == 35 {
+                            self.perPersonTappet = true
+                            self.tableViewPax.reloadData()
+                        }else{
+                            self.perPersonTappet = false
+                        }
+                    }
                 }
             }
             
             if self.transfersList.count > 0  {
                 for index in 0...self.transfersList.count - 1 {
-                   // self.transfersList[index].isTapped = false
+                    // self.transfersList[index].isTapped = false
                     self.transferChecklist.append(self.transfersList[index].isTapped ?? false)
+                    //  self.transfersList[index].transfersPaxesList = self.transferPaxesList
+                    // self.transfersList[index].isTapped = false
+                    // self.transferChecklist.append(self.transfersList[index].isTapped ?? false)
+                    if self.transfersList[index].isTapped == true {
+                        if self.transfersList[index].priceType == 35 {
+                            self.perPersonTappet = true
+                            self.tableViewPax.reloadData()
+                        }else{
+                            self.perPersonTappet = false
+                        }
+                    }
                 }
             }
             self.tableView.reloadData()
@@ -170,7 +259,7 @@ class ExcAddCustomView : UIView {
         self.excursionMenu.show()
         self.excursionMenu.direction = .bottom
     }
-
+    
     
     @IBAction func transfersButtonTapped(_ sender: Any) {
         if  self.buttonExtraTapped == true {
@@ -186,9 +275,9 @@ class ExcAddCustomView : UIView {
     }
     
     @IBAction func extrasButtonTapped(_ sender: Any) {
-      if  self.buttonExtraTapped == false {
-        self.buttonExtraTapped = true
-          self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
+        if  self.buttonExtraTapped == false {
+            self.buttonExtraTapped = true
+            self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
         }
         
         self.buttonExtras.backgroundColor = UIColor.greenColor
@@ -201,145 +290,155 @@ class ExcAddCustomView : UIView {
     
     func extrapriceReduceCalculation( _ extrasSavePaxesList : [GetInHoseListResponseModel] ){
         self.saveExtrasPaxesList = extrasSavePaxesList
-           // self.extrasTotalPrice = 0.00
+        let chosenExtras = self.extrasList[self.extrasIndex]
+        var extrasIndex = 0
+        // self.extrasTotalPrice = 0.00
         self.currentExtrasTotalPrice = 0.0
-            if self.saveExtrasList.count > 0 && extrasSavePaxesList.count > 0 {
-                for i in 0...self.saveExtrasList.count - 1{
-                    // Per Person Price calculation
-                    if self.saveExtrasList[i].priceType == 35 {
-                       
-                        for index in 0...extrasSavePaxesList.count - 1 {
-                            switch extrasSavePaxesList[index].ageGroup {
-                            case "INF":
-                                self.currentExtrasTotalPrice += self.saveExtrasList[i].infantPrice ?? 0.00
-                            case "TDL":
-                                self.currentExtrasTotalPrice += self.saveExtrasList[i].toodlePrice ?? 0.00
-                            case "CHD":
-                                self.currentExtrasTotalPrice += self.saveExtrasList[i].childPrice ?? 0.00
-                            default:
-                                self.currentExtrasTotalPrice += self.saveExtrasList[i].adultPrice ?? 0.00
-                            }
-                        }
-                        self.perPersonSavedTotalPrice -= self.currentExtrasTotalPrice
-                        self.extrasTotalPrice -= self.currentExtrasTotalPrice
-                        self.currentExtrasTotalPrice = -(self.currentExtrasTotalPrice)
-                        self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
+        if self.saveExtrasList.count > 0 && extrasSavePaxesList.count > 0 {
+            if let index = self.saveExtrasList.firstIndex(where: {$0.iD == chosenExtras.iD}){
+                extrasIndex = index
+            }
+            
+            // Per Person Price calculation
+            if self.saveExtrasList[extrasIndex].priceType == 35 {
+                
+                for index in 0...extrasSavePaxesList.count - 1 {
+                    switch extrasSavePaxesList[index].ageGroup {
+                    case "INF":
+                        self.currentExtrasTotalPrice += self.saveExtrasList[extrasIndex].infantPrice ?? 0.00
+                    case "TDL":
+                        self.currentExtrasTotalPrice += self.saveExtrasList[extrasIndex].toodlePrice ?? 0.00
+                    case "CHD":
+                        self.currentExtrasTotalPrice += self.saveExtrasList[extrasIndex].childPrice ?? 0.00
+                    default:
+                        self.currentExtrasTotalPrice += self.saveExtrasList[extrasIndex].adultPrice ?? 0.00
                     }
                 }
+                self.perPersonSavedTotalPrice -= self.currentExtrasTotalPrice
+                self.extrasTotalPrice -= self.currentExtrasTotalPrice
+                self.currentExtrasTotalPrice = -(self.currentExtrasTotalPrice)
+                self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
             }
-       /* self.saveExtrasList.removeAll()
-        self.saveExtrasPaxesList.removeAll()*/
-           // self.showToast(message: "\(self.totalPrice)")
+        }
+        /* self.saveExtrasList.removeAll()
+         self.saveExtrasPaxesList.removeAll()*/
+        // self.showToast(message: "\(self.totalPrice)")
     }
     
     func extrapriceAddCalculation( _ extrasSavePaxesList : [GetInHoseListResponseModel] ){
         self.saveExtrasPaxesList = extrasSavePaxesList
+        let chosenExtras = self.extrasList[self.extrasIndex]
+        var extrasIndex = 0
+        
         self.currentExtrasTotalPrice = 0.0
-           // self.extrasTotalPrice = 0.00
-            if self.saveExtrasList.count > 0 && extrasSavePaxesList.count > 0 {
-                for i in 0...self.saveExtrasList.count - 1{
-                    // Per Person Price calculation
-                    if self.saveExtrasList[i].priceType == 35 {
-                        
-                        // Özgeye sor getinforesponse mu yoksa direk gethouselisten dönen agegrup mu alınacak
-                        /*   let getTouristInfoModel = GetTouristInfoRequestModel.init(touristId: self.paxesListSaved[i].value ?? 0, resNo: self.paxesListSaved[i].resNo ?? "")
-                         NetworkManager.sendGetRequestArray(url:NetworkManager.BASEURL, endPoint: .GetTouristInfo, method: .get, parameters: getTouristInfoModel.requestPathString()) { (response : [GetTouristInfoResponseModel] ) in
-                         if response.count > 0 {
-                         
-                         }
-                         }*/
-                        /*
-                         if self.tourListSaved[i].infantAge1 ?? 0.00 <= self.tourListSaved[i].infantAge2 ?? 0.00 {
-                         self.ageGroup = "INF"
-                         }else if self.tourListSaved[i].toodleAge1 ?? 0.00 <= self.tourListSaved[i].toodleAge2 ?? 0.00 {
-                         self.ageGroup = "TDL"
-                         }else if self.tourListSaved[i].childAge1 ?? 0.00 <= self.tourListSaved[i].childAge1 ?? 0.00 {
-                         self.ageGroup = "CHD"
-                         }else{
-                         self.ageGroup = "ADL"
-                         }*/
-                        for index in 0...extrasSavePaxesList.count - 1 {
-                            switch extrasSavePaxesList[index].ageGroup {
-                            case "INF":
-                                self.currentExtrasTotalPrice += self.saveExtrasList[i].infantPrice ?? 0.00
-                            case "TDL":
-                                self.currentExtrasTotalPrice += self.saveExtrasList[i].toodlePrice ?? 0.00
-                            case "CHD":
-                                self.currentExtrasTotalPrice += self.saveExtrasList[i].childPrice ?? 0.00
-                            default:
-                                self.currentExtrasTotalPrice += self.saveExtrasList[i].adultPrice ?? 0.00
-                            }
-                        }
-                        self.perPersonSavedTotalPrice += self.currentExtrasTotalPrice
-                        self.extrasTotalPrice += self.currentExtrasTotalPrice
-                        self.saveExtrasList[i].savedAmount = self.perPersonSavedTotalPrice
-                        
-                        self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
-                    }
-                    //Flat Price calculation
-                   /* else if self.saveExtrasList[i].priceType == 36{
-                        let alert = UIAlertController(title: "Flat Price", message: "Please insert Flat amount", preferredStyle: .alert)
-                        
-                        alert.addTextField {
-                            $0.placeholder = "Flat Amount"
-                            $0.addTarget(alert, action: #selector(alert.textDidChangeInLoginAlert), for: .editingChanged)
-                           }
-                        
-                        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-
-                          let flatAmountAction = UIAlertAction(title: "Submit", style: .default) { [unowned self] _ in
-                              guard let flatamount = alert.textFields?[0].text
-                                  else { return } // Should never happen
-                            self.flatAmount = Int(flatamount) ?? 0
-                          }
-                        
-                        flatAmountAction.isEnabled = false
-                        alert.addAction(flatAmountAction)
-                        
-                        if let topVC = UIApplication.getTopViewController() {
-                            topVC.present(alert, animated: true, completion: nil)
-                        }
-                        self.extrasTotalPrice += self.saveExtrasList[i].flatPrice ?? 0.00
-                    }
-                    else if self.saveExtrasList[i].priceType == 37{
-                        self.extrasMinPerson = Int(self.saveExtrasList[i].minPax ?? Int(0.00))
-                        if self.extrasMinPerson > 0 {
-                            for index in 0...self.saveExtrasPaxesList.count - 1{
-                                if  self.saveExtrasPaxesList[index].ageGroup == "ADL" {
-                                    self.extrasMinPrice = self.saveExtrasList[i].minPrice ?? 0.00
-                                    self.extrasMinPerson -= 1
-                                }else if self.extrasMinPerson > 0 && self.saveExtrasPaxesList[index].ageGroup == "CHD" {
-                                    self.extrasMinPrice = self.saveExtrasList[i].minPrice ?? 0.00
-                                    self.extrasMinPerson -= 1
-                                }else if self.extrasMinPerson > 0 && self.saveExtrasPaxesList[index].ageGroup == "TDL" {
-                                    self.extrasMinPrice = self.saveExtrasList[i].minPrice ?? 0.00
-                                    self.extrasMinPerson -= 1
-                                }else if self.extrasMinPerson > 0 && self.saveExtrasPaxesList[index].ageGroup == "INF" {
-                                    self.extrasMinPrice = self.saveExtrasList[i].minPrice ?? 0.00
-                                    self.extrasMinPerson -= 1
-                                }
-                            }
-                        }else {
-                            for index in 0...self.saveExtrasPaxesList.count - 1{
-                                if  self.saveExtrasPaxesList[index].ageGroup == "ADL" {
-                                    self.extrasTotalPrice += saveExtrasList[i].adultPrice ?? 0.00
-                                }else if self.extrasMinPerson > 0 && self.saveExtrasPaxesList[index].ageGroup == "CHD" {
-                                    self.extrasTotalPrice += saveExtrasList[i].childPrice ?? 0.00
-                                }else if self.extrasMinPerson > 0 && self.saveExtrasPaxesList[index].ageGroup == "TDL" {
-                                    self.extrasTotalPrice += saveExtrasList[i].toodlePrice ?? 0.00
-                                }else if self.extrasMinPerson > 0 && self.saveExtrasPaxesList[index].ageGroup == "INF" {
-                                    self.extrasTotalPrice += saveExtrasList[i].infantPrice ?? 0.00
-                                }
-                            }
-                        }
-                        self.extrasTotalPrice += self.extrasMinPrice
-                      
-                    }*/
-                }
+        // self.extrasTotalPrice = 0.00
+        if self.saveExtrasList.count > 0 && extrasSavePaxesList.count > 0 {
+            if let index = self.saveExtrasList.firstIndex(where: {$0.iD == chosenExtras.iD}){
+                extrasIndex = index
             }
-     /*   self.saveExtrasList.removeAll()
-        self.saveExtrasPaxesList.removeAll()*/
-           // self.showToast(message: "\(self.totalPrice)")
+            
+            // Per Person Price calculation
+            if self.saveExtrasList[extrasIndex].priceType == 35 {
+                
+                // Özgeye sor getinforesponse mu yoksa direk gethouselisten dönen agegrup mu alınacak
+                /*   let getTouristInfoModel = GetTouristInfoRequestModel.init(touristId: self.paxesListSaved[i].value ?? 0, resNo: self.paxesListSaved[i].resNo ?? "")
+                 NetworkManager.sendGetRequestArray(url:NetworkManager.BASEURL, endPoint: .GetTouristInfo, method: .get, parameters: getTouristInfoModel.requestPathString()) { (response : [GetTouristInfoResponseModel] ) in
+                 if response.count > 0 {
+                 
+                 }
+                 }*/
+                /*
+                 if self.tourListSaved[i].infantAge1 ?? 0.00 <= self.tourListSaved[i].infantAge2 ?? 0.00 {
+                 self.ageGroup = "INF"
+                 }else if self.tourListSaved[i].toodleAge1 ?? 0.00 <= self.tourListSaved[i].toodleAge2 ?? 0.00 {
+                 self.ageGroup = "TDL"
+                 }else if self.tourListSaved[i].childAge1 ?? 0.00 <= self.tourListSaved[i].childAge1 ?? 0.00 {
+                 self.ageGroup = "CHD"
+                 }else{
+                 self.ageGroup = "ADL"
+                 }*/
+                for index in 0...extrasSavePaxesList.count - 1 {
+                    switch extrasSavePaxesList[index].ageGroup {
+                    case "INF":
+                        self.currentExtrasTotalPrice += self.saveExtrasList[extrasIndex].infantPrice ?? 0.00
+                    case "TDL":
+                        self.currentExtrasTotalPrice += self.saveExtrasList[extrasIndex].toodlePrice ?? 0.00
+                    case "CHD":
+                        self.currentExtrasTotalPrice += self.saveExtrasList[extrasIndex].childPrice ?? 0.00
+                    default:
+                        self.currentExtrasTotalPrice += self.saveExtrasList[extrasIndex].adultPrice ?? 0.00
+                    }
+                }
+                self.perPersonSavedTotalPrice += self.currentExtrasTotalPrice
+                self.extrasTotalPrice += self.currentExtrasTotalPrice
+                self.saveExtrasList[extrasIndex].savedAmount = self.perPersonSavedTotalPrice
+                
+                self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
+            }
+            //Flat Price calculation
+            /* else if self.saveExtrasList[i].priceType == 36{
+             let alert = UIAlertController(title: "Flat Price", message: "Please insert Flat amount", preferredStyle: .alert)
+             
+             alert.addTextField {
+             $0.placeholder = "Flat Amount"
+             $0.addTarget(alert, action: #selector(alert.textDidChangeInLoginAlert), for: .editingChanged)
+             }
+             
+             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+             
+             let flatAmountAction = UIAlertAction(title: "Submit", style: .default) { [unowned self] _ in
+             guard let flatamount = alert.textFields?[0].text
+             else { return } // Should never happen
+             self.flatAmount = Int(flatamount) ?? 0
+             }
+             
+             flatAmountAction.isEnabled = false
+             alert.addAction(flatAmountAction)
+             
+             if let topVC = UIApplication.getTopViewController() {
+             topVC.present(alert, animated: true, completion: nil)
+             }
+             self.extrasTotalPrice += self.saveExtrasList[i].flatPrice ?? 0.00
+             }
+             else if self.saveExtrasList[i].priceType == 37{
+             self.extrasMinPerson = Int(self.saveExtrasList[i].minPax ?? Int(0.00))
+             if self.extrasMinPerson > 0 {
+             for index in 0...self.saveExtrasPaxesList.count - 1{
+             if  self.saveExtrasPaxesList[index].ageGroup == "ADL" {
+             self.extrasMinPrice = self.saveExtrasList[i].minPrice ?? 0.00
+             self.extrasMinPerson -= 1
+             }else if self.extrasMinPerson > 0 && self.saveExtrasPaxesList[index].ageGroup == "CHD" {
+             self.extrasMinPrice = self.saveExtrasList[i].minPrice ?? 0.00
+             self.extrasMinPerson -= 1
+             }else if self.extrasMinPerson > 0 && self.saveExtrasPaxesList[index].ageGroup == "TDL" {
+             self.extrasMinPrice = self.saveExtrasList[i].minPrice ?? 0.00
+             self.extrasMinPerson -= 1
+             }else if self.extrasMinPerson > 0 && self.saveExtrasPaxesList[index].ageGroup == "INF" {
+             self.extrasMinPrice = self.saveExtrasList[i].minPrice ?? 0.00
+             self.extrasMinPerson -= 1
+             }
+             }
+             }else {
+             for index in 0...self.saveExtrasPaxesList.count - 1{
+             if  self.saveExtrasPaxesList[index].ageGroup == "ADL" {
+             self.extrasTotalPrice += saveExtrasList[i].adultPrice ?? 0.00
+             }else if self.extrasMinPerson > 0 && self.saveExtrasPaxesList[index].ageGroup == "CHD" {
+             self.extrasTotalPrice += saveExtrasList[i].childPrice ?? 0.00
+             }else if self.extrasMinPerson > 0 && self.saveExtrasPaxesList[index].ageGroup == "TDL" {
+             self.extrasTotalPrice += saveExtrasList[i].toodlePrice ?? 0.00
+             }else if self.extrasMinPerson > 0 && self.saveExtrasPaxesList[index].ageGroup == "INF" {
+             self.extrasTotalPrice += saveExtrasList[i].infantPrice ?? 0.00
+             }
+             }
+             }
+             self.extrasTotalPrice += self.extrasMinPrice
+             
+             }*/
+            
+        }
+        /*   self.saveExtrasList.removeAll()
+         self.saveExtrasPaxesList.removeAll()*/
+        // self.showToast(message: "\(self.totalPrice)")
     }
 }
 
@@ -365,7 +464,7 @@ extension ExcAddCustomView : UITableViewDelegate, UITableViewDataSource {
         if tableView == self.tableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: AddMenuTableViewCell.identifier ) as! AddMenuTableViewCell
             cell.addMenuTableViewCellDelegate = self
-            if self.buttonExtraTapped == true {
+            if self.buttonExtraTapped == true && extrasorTranfersListTapped == true {
                 cell.labelTransforExtraName.text = self.extrasList[indexPath.row].desc
                 cell.labelPriceType.text = self.extrasList[indexPath.row].priceTypeDesc
                 cell.labelAdultPrice.text = String(self.extrasList[indexPath.row].adultPrice ?? 0.0)
@@ -380,7 +479,7 @@ extension ExcAddCustomView : UITableViewDelegate, UITableViewDataSource {
                 cell.isTappedCheck = self.extrasList[indexPath.row].isTapped ?? false
                 cell.tourDate = self.extrasList[indexPath.row].tourDate ?? ""
                 return cell
-            }else{
+            }else if self.buttonExtraTapped == false && extrasorTranfersListTapped == true{
                 cell.labelTransforExtraName.text = self.transfersList[indexPath.row].desc
                 cell.labelPriceType.text = self.transfersList[indexPath.row].priceTypeDesc
                 cell.labelAdultPrice.text = String(self.transfersList[indexPath.row].adultPrice ?? 0.0)
@@ -395,41 +494,77 @@ extension ExcAddCustomView : UITableViewDelegate, UITableViewDataSource {
                 cell.isTappedCheck = self.transfersList[indexPath.row].isTapped ?? false
                 cell.tourDate = self.transfersList[indexPath.row].tourDate ?? ""
                 return cell
+            }else{
+                return cell
             }
         }else if tableView == self.tableViewPax {
             let cell = tableView.dequeueReusableCell(withIdentifier: AddMenuPaxTableViewCell.identifier ) as! AddMenuPaxTableViewCell
             cell.addMenuPaxTableViewCellDelegate = self
-            if self.buttonExtraTapped == true {
-                if self.extrasPaxesList.count > 0 && self.extrasPaxCheckList.count > 0 {
+            if self.buttonExtraTapped == true && self.perPersonTappet == true {
+                if self.extrasPaxesList.count > 0 {
                     if self.extrasPaxesList[indexPath.row].text == nil {
-                        cell.labelPaxName.text = self.extrasPaxesList[indexPath.row].name
-                        cell.isTappedCheck = self.extrasPaxesList[indexPath.row].isTapped ?? false
+                        cell.labelPaxName.text =  self.extrasPaxesList[indexPath.row].name
+                        cell.isTappedCheck =  self.extrasPaxesList[indexPath.row].isTapped ?? false
+                        cell.labelRoomName.text = self.extrasPaxesList[indexPath.row].ageGroup
                     }else {
                         cell.labelPaxName.text = self.extrasPaxesList[indexPath.row].text
-                        cell.isTappedCheck = self.extrasPaxesList[indexPath.row].isTapped ?? false
+                        cell.isTappedCheck = self.extrasPaxesList[indexPath.row].isSelected ?? false
+                        cell.labelRoomName.text = self.extrasPaxesList[indexPath.row].ageGroup
                     }
-                  cell.paxesListInCell = self.extrasPaxesList[indexPath.row]
-                  //  cell.isTappedCheck = self.extrasPaxCheckList[indexPath.row]
+                    cell.paxesListInCell = self.extrasPaxesList[indexPath.row]
+                    cell.isTappedCheck = self.extrasPaxesList[indexPath.row].isTapped ?? false
+                    //  cell.isTappedCheck = self.extrasPaxCheckList[indexPath.row]
+                    return cell
+                }
+            }else if self.buttonExtraTapped == false && self.perPersonTappet == true {
+                if self.transferPaxesList.count > 0 && self.perPersonTappet == true {
+                    if self.transferPaxesList[indexPath.row].text == nil {
+                        cell.labelPaxName.text = self.transferPaxesList[indexPath.row].name
+                        cell.labelRoomName.text = self.transferPaxesList[indexPath.row].ageGroup
+                    }else {
+                        cell.labelPaxName.text = self.transferPaxesList[indexPath.row].text
+                        cell.labelRoomName.text = self.transferPaxesList[indexPath.row].ageGroup
+                    }
+                    cell.paxesListInCell = self.transferPaxesList[indexPath.row]
+                    cell.isTappedCheck = self.transferPaxesList[indexPath.row].isTapped ?? false
+                    //  cell.isTappedCheck = self.transfersPaxCheckList[indexPath.row]
                     return cell
                 }
             }else{
-                if self.transferPaxesList.count > 0  && self.transfersPaxCheckList.count > 0 {
-                    if self.transferPaxesList[indexPath.row].text == nil {
-                        cell.labelPaxName.text = self.transferPaxesList[indexPath.row].name
-                    }else {
-                        cell.labelPaxName.text = self.transferPaxesList[indexPath.row].text
-                    }
-                    cell.paxesListInCell = self.transferPaxesList[indexPath.row]
-                    cell.isTappedCheck = self.transfersPaxCheckList[indexPath.row]
-                    return cell
-                }
+                return cell
             }
         }
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var tourName = ""
+        if self.extrasList.count > 0 && self.buttonExtraTapped == true {
+            tourName = self.extrasList[indexPath.row].desc ?? ""
+            
+            if let index = self.extraPaxesListSaved.firstIndex(where: {$0.tourName == self.excursionName && $0.extraName == tourName}){
+                self.extrasPaxCheckList = self.extraPaxesListSaved[index].CheckList ?? []
+                for i in 0...self.extrasPaxCheckList.count - 1 {
+                    self.extrasPaxesList[i].isTapped = self.extrasPaxCheckList[i]
+                }
+                self.tableViewPax.reloadData()
+            }
+        }else{
+            tourName = self.transfersList[indexPath.row].desc ?? ""
+            
+            if let index = self.transferPaxesListSaved.firstIndex(where: {$0.tourName == self.excursionName && $0.extraName == tourName}){
+                self.transfersPaxCheckList = self.transferPaxesListSaved[index].CheckList ?? []
+                for i in 0...self.transfersPaxCheckList.count - 1 {
+                    self.transferPaxesList[i].isTapped = self.transfersPaxCheckList[i]
+                }
+                self.tableViewPax.reloadData()
+            }
+        }
+    }
 }
 
 extension ExcAddCustomView : AddMenuTableViewCellDelegate, AddMenuPaxTableViewCellDelegate {
+    
     func addMenuPaxcheckBoxTapped(checkCounter: Bool, touristName: String, tempPaxes: GetInHoseListResponseModel) {
         var adlCount = 0
         var chdCount = 0
@@ -437,15 +572,33 @@ extension ExcAddCustomView : AddMenuTableViewCellDelegate, AddMenuPaxTableViewCe
         var infCount = 0
         self.saveExtrasPaxesList.removeAll()
         self.tempaxeslist.removeAll()
-        if let index = self.extrasPaxesList.firstIndex(where: {$0 === tempPaxes}){
-            self.extrasPaxesList[index].isTapped = checkCounter
-            self.extrasPaxCheckList[index] = checkCounter
+    
+         if let index = self.extrasPaxesList.firstIndex(where: {$0 === tempPaxes}){
+             self.extrasPaxesList[index].isTapped = checkCounter
+             self.extrasPaxCheckList[index] = checkCounter
+         }
+        
+        self.extraPaxes = ExtraPaxes(extraName: self.extrasList[self.extrasIndex].desc, tourName:  self.excursionName, CheckList: self.extrasPaxCheckList)
+      
+        if let index = self.extraPaxesListSaved.firstIndex(where: {$0.extraName == self.extraPaxes?.extraName && $0.tourName == self.extraPaxes?.tourName}){
+            self.extraPaxesListSaved[index] = self.extraPaxes ?? ExtraPaxes(extraName: "", tourName: "", CheckList: [])
+        }else{
+            self.extraPaxesListSaved.append(self.extraPaxes ?? ExtraPaxes(extraName: "", tourName: "", CheckList: []))
         }
         
         if let index = self.transferPaxesList.firstIndex(where: {$0 === tempPaxes}){
             self.transferPaxesList[index].isTapped = checkCounter
             self.transfersPaxCheckList[index] = checkCounter
         }
+        
+        self.transferPaxes = ExtraPaxes(extraName: self.transfersList[self.extrasIndex].desc, tourName:  self.excursionName, CheckList: self.transfersPaxCheckList)
+      
+        if let index = self.transferPaxesListSaved.firstIndex(where: {$0.extraName == self.transferPaxes?.extraName && $0.tourName == self.transferPaxes?.tourName}){
+            self.transferPaxesListSaved[index] = self.transferPaxes ?? ExtraPaxes(extraName: "", tourName: "", CheckList: [])
+        }else{
+            self.transferPaxesListSaved.append(self.transferPaxes ?? ExtraPaxes(extraName: "", tourName: "", CheckList: []))
+        }
+       
         self.tableViewPax.reloadData()
         self.tempaxeslist.append(tempPaxes)
         if self.tempaxeslist[0].ageGroup == "ADL"{
@@ -471,352 +624,371 @@ extension ExcAddCustomView : AddMenuTableViewCellDelegate, AddMenuPaxTableViewCe
         }else {
             self.extrapriceReduceCalculation(self.tempaxeslist)
         }
+        
+        self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.saveTransferList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
     }
     
-   func checkBoxTapped(checkCounter: Bool, transExtrDesc : String, priceTypeDesc : Int, extras : Extras?, transfers : Transfers?, tourdate: String) {
-        if let index = self.extrasList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate }){
-            self.extrasList[index].isTapped = checkCounter
-            self.extrasChecklist[index] = checkCounter
-        }
-        
-        if let index = self.transfersList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate}){
-            self.transfersList[index].isTapped = checkCounter
-            self.transferChecklist[index] = checkCounter
-        }
-       
-//       self.filteredExcursionList[0].extras = self.extrasList
-    //   self.filteredExcursionList[0].transfers = self.transfersList
-     
-     //  let filter = self.savedExcursionList.filter{ $0 === self.filteredExcursionList[0]}
-      
-        self.tableView.reloadData()
-        
-        if checkCounter == true {
-            self.currentExtrasTotalPrice = 0.0
-            self.currentTransfersTotalPrice = 0.0
-            if let paxesList = userDefaultsData.getPaxesList(){
-                self.extrasPaxesList = paxesList
-                self.transferPaxesList = paxesList
-            }
-            
-            if priceTypeDesc == 35 {
-                self.perPersonSavedTotalPrice = 0.0
-                print(priceTypeDesc)
-                if self.extrasPaxesList.count > 0 {
-                    for index in 0...self.extrasPaxesList.count - 1 {
-                        self.extrasPaxesList[index].isTapped = false
-                        self.extrasPaxCheckList.append(self.extrasPaxesList[index].isTapped ?? false)
-                    }
-                }
-                
-                if self.transferPaxesList.count > 0  {
-                    for index in 0...self.transferPaxesList.count - 1 {
-                        self.transferPaxesList[index].isTapped = false
-                        self.transfersPaxCheckList.append(self.transferPaxesList[index].isTapped ?? false)
-                    }
-                }
-                
-                self.filteredExcursionList[0].extras = self.extrasList
-                self.filteredExcursionList[0].transfers = self.transfersList
-                if let insideIndex = self.excursionListInAddMenu.firstIndex(where: {$0.tourName == self.filteredExcursionList[0].tourName && $0.tourDate == self.filteredExcursionList[0].tourDate}){
-                    self.excursionListInAddMenu.remove(at: insideIndex)
-                    self.excursionListInAddMenu.insert(self.filteredExcursionList[0], at: insideIndex)
-                }
-                self.tableViewPax.reloadData()
-               /* self.extrasPaxesList = []
-                self.transferPaxesList = []
-                self.extrasPaxCheckList = []
-                self.transfersPaxCheckList = [] */
-            } else if priceTypeDesc == 36 {
-                    let alert = UIAlertController(title: "Flat Price", message: "Please insert Flat amount", preferredStyle: .alert)
-                    alert.addTextField {
-                        $0.placeholder = "Flat Amount"
-                        $0.addTarget(alert, action: #selector(alert.textDidChangeInLoginAlert), for: .editingChanged)
-                       }
-                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-                      let flatAmountAction = UIAlertAction(title: "Submit", style: .default) { [unowned self] _ in
-                          guard let flatamount = alert.textFields?[0].text
-                           
-                              else { return } // Should never happen
-                        self.flatAmount = Int(flatamount) ?? 0
-                        self.extrasTotalPrice += Double(self.flatAmount) * (extras?.flatPrice ?? 0.00)
-                        self.transfersTotalPrice += Double(self.flatAmount) * (transfers?.flatPrice ?? 0.00)
-                          // Perform login action
-                          if let index = self.extrasList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate}){
-                              self.extrasList[index].savedAmount = self.extrasTotalPrice
-                          }
-                          
-                          if let index = self.transfersList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate}){
-                              self.transfersList[index].savedAmount = self.transfersTotalPrice
-                          }
-                
-                          self.filteredExcursionList[0].extras = self.extrasList
-                          self.filteredExcursionList[0].transfers = self.transfersList
-                          if let insideIndex = self.excursionListInAddMenu.firstIndex(where: {$0.tourName == self.filteredExcursionList[0].tourName && $0.tourDate == self.filteredExcursionList[0].tourDate}){
-                              self.excursionListInAddMenu.remove(at: insideIndex)
-                              self.excursionListInAddMenu.insert(self.filteredExcursionList[0], at: insideIndex)
-                          }
-                          
-                          self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
-                      }
-               
-                    
-                  //  flatAmountAction.isEnabled = false
-                    alert.addAction(flatAmountAction)
-                    
-                    if let topVC = UIApplication.getTopViewController() {
-                        topVC.present(alert, animated: true, completion: nil)
-                    }
-                
-            } else if priceTypeDesc == 37 {
-                //extras
-                self.extrasMinPrice = 0
-                self.extrasMinPerson = Int(extras?.minPax  ?? Int(0.00))
-                if self.extrasMinPerson > 0 {
-                    for index in 0...self.extrasPaxesList.count - 1{
-                        if  self.extrasPaxesList[index].ageGroup == "ADL" {
-                            self.extrasMinPrice = extras?.minPrice ?? 0.00
-                            self.extrasMinPerson -= 1
-                        }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "CHD" {
-                            self.extrasMinPrice = extras?.minPrice ?? 0.00
-                            self.extrasMinPerson -= 1
-                        }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "TDL" {
-                            self.extrasMinPrice = extras?.minPrice ?? 0.00
-                            self.extrasMinPerson -= 1
-                        }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "INF" {
-                            self.extrasMinPrice = extras?.minPrice ?? 0.00
-                            self.extrasMinPerson -= 1
-                        }
-                    }
-                }else {
-                    for index in 0...self.extrasPaxesList.count - 1{
-                        if  self.extrasPaxesList[index].ageGroup == "ADL" {
-                            self.extrasMinPrice += extras?.adultPrice ?? 0.00
-                        }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "CHD" {
-                            self.extrasTotalPrice += extras?.childPrice ?? 0.00
-                        }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "TDL" {
-                            self.extrasTotalPrice += extras?.toodlePrice ?? 0.00
-                        }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "INF" {
-                            self.extrasTotalPrice += extras?.infantPrice ?? 0.00
-                        }
-                    }
-                }
-                
-                // transfers
-                self.transfersMinPrice = 0
-                self.transfersMinPerson = Int(transfers?.minPax  ?? Int(0.00))
-                if self.transfersMinPerson > 0 {
-                    for index in 0...self.extrasPaxesList.count - 1{
-                        if  self.extrasPaxesList[index].ageGroup == "ADL" {
-                            self.transfersMinPrice = transfers?.minPrice ?? 0.00
-                            self.transfersMinPerson -= 1
-                        }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "CHD" {
-                            self.transfersMinPrice = transfers?.minPrice ?? 0.00
-                            self.transfersMinPerson -= 1
-                        }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "TDL" {
-                            self.transfersMinPrice = transfers?.minPrice ?? 0.00
-                            self.transfersMinPerson -= 1
-                        }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "INF" {
-                            self.transfersMinPrice = transfers?.minPrice ?? 0.00
-                            self.transfersMinPerson -= 1
-                        }
-                    }
-                }else {
-                    for index in 0...self.extrasPaxesList.count - 1{
-                        if  self.extrasPaxesList[index].ageGroup == "ADL" {
-                            self.transfersTotalPrice += transfers?.adultPrice ?? 0.00
-                        }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "CHD" {
-                            self.transfersTotalPrice += transfers?.childPrice ?? 0.00
-                        }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "TDL" {
-                            self.extrasTotalPrice += transfers?.toodlePrice ?? 0.00
-                        }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "INF" {
-                            self.transfersTotalPrice += transfers?.infantPrice ?? 0.00
-                        }
-                    }
-                }
-                self.extrasTotalPrice += self.extrasMinPrice
-                self.transfersTotalPrice += self.transfersMinPrice
-                
-                self.filteredExcursionList[0].extras = self.extrasList
-                self.filteredExcursionList[0].transfers = self.transfersList
-                if let insideIndex = self.excursionListInAddMenu.firstIndex(where: {$0.tourName == self.filteredExcursionList[0].tourName && $0.tourDate == self.filteredExcursionList[0].tourDate}){
-                    self.excursionListInAddMenu.remove(at: insideIndex)
-                    self.excursionListInAddMenu.insert(self.filteredExcursionList[0], at: insideIndex)
-                }
-            }
-            
-            let filterExtras = extrasList.filter{ $0.desc == transExtrDesc && $0.tourDate == tourdate}
-            let filterTransfers = transfersList.filter{ $0.desc == transExtrDesc && $0.tourDate == tourdate}
-           // let filter = self.excursionList.filter{($0.tourId?.elementsEqual(tourid) ?? false)}
-            for index in filterExtras {
-                self.saveExtrasList.append(index)
-            }
-            
-            for index in filterTransfers {
-                self.saveTransferList.append(index)
-            }
-            
-        }else{
-            if priceTypeDesc == 35 {
-                //self.extrasTotalPrice = 0.00
-               // self.transfersTotalPrice = 0.00
-                if self.extrasPaxesList.count > 0 {
-                    for i in 0...self.extrasPaxesList.count - 1 {
+    func checkBoxTapped(checkCounter: Bool, transExtrDesc : String, priceTypeDesc : Int, extras : Extras?, transfers : Transfers?, tourdate: String) {
+        if priceTypeDesc == 35 {
+            if let index = self.extrasList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate }){
+                if self.extrasList[index].isTapped == nil {
+                    for i in 0...self.extrasPaxesList.count - 1{
                         self.extrasPaxesList[i].isTapped = false
+                        self.extrasPaxCheckList[i] = false
                     }
                 }
-                if self.transferPaxesList.count > 0 {
-                    for i in 0...self.transferPaxesList.count - 1 {
+            }
+            
+            if let index = self.transfersList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate}){
+                if self.transfersList[index].isTapped == nil {
+                    for i in 0...self.transferPaxesList.count - 1{
                         self.transferPaxesList[i].isTapped = false
+                        self.transfersPaxCheckList[i] = false
                     }
                 }
-                self.transferPaxesList.removeAll()
-                self.extrasPaxesList.removeAll()
-                self.tableViewPax.reloadData()
-               if let index = self.extrasList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate}){
-                    self.perPersonSavedTotalPrice -= self.extrasList[index].savedAmount ?? 0.0
-                }
-                
-                self.extrasTotalPrice -= self.perPersonSavedTotalPrice
             }
-            // reduce price
-          if priceTypeDesc == 36 {
-                    let alert = UIAlertController(title: "WARNING", message: "Are you sure delete Transfer/Extra price?", preferredStyle: .alert)
-                   
-                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-
-                      let flatAmountAction = UIAlertAction(title: "Yes", style: .default) { [unowned self] _ in
-                       
-                          
-                          if let index = self.extrasList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate}){
-                              self.extrasTotalPrice -=  self.extrasList[index].savedAmount ?? 0.0
-                          }
-                          
-                          if let index = self.transfersList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate}){
-                              self.transfersTotalPrice -=  self.transfersList[index].savedAmount ?? 0.0
-                          }
-                          
-                          self.filteredExcursionList[0].extras = self.extrasList
-                          self.filteredExcursionList[0].transfers = self.transfersList
-                          if let insideIndex = self.excursionListInAddMenu.firstIndex(where: {$0.tourName == self.filteredExcursionList[0].tourName && $0.tourDate == self.filteredExcursionList[0].tourDate}){
-                              self.excursionListInAddMenu.remove(at: insideIndex)
-                              self.excursionListInAddMenu.insert(self.filteredExcursionList[0], at: insideIndex)
-                          }
-                          
-                     
-                          
-                       /* self.extrasTotalPrice -= Double(self.flatAmount) * (extras?.flatPrice ?? 0.00)
-                        self.transfersTotalPrice -= Double(self.flatAmount) * (transfers?.flatPrice ?? 0.00) */
-                          // Perform login action
-                          self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
-                      }
-                    
-                  //  flatAmountAction.isEnabled = false
-                    alert.addAction(flatAmountAction)
-                    
-                    if let topVC = UIApplication.getTopViewController() {
-                        topVC.present(alert, animated: true, completion: nil)
-                    }
-            } else if priceTypeDesc == 37 {
-                self.extrasMinPrice = 0
-                self.extrasMinPerson = Int(extras?.minPax  ?? Int(0.00))
-                self.transfersMinPrice = 0
-                self.transfersMinPerson = Int(transfers?.minPax  ?? Int(0.00))
-                if self.extrasMinPerson > 0 {
-                    for index in 0...self.extrasPaxesList.count - 1{
-                        if  self.extrasPaxesList[index].ageGroup == "ADL" {
-                            self.extrasMinPrice -= extras?.minPrice ?? 0.00
-                            self.extrasMinPerson -= 1
-                        }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "CHD" {
-                            self.extrasMinPrice -= extras?.minPrice ?? 0.00
-                            self.extrasMinPerson -= 1
-                        }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "TDL" {
-                            self.extrasMinPrice -= extras?.minPrice ?? 0.00
-                            self.extrasMinPerson -= 1
-                        }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "INF" {
-                            self.extrasMinPrice -= extras?.minPrice ?? 0.00
-                            self.extrasMinPerson -= 1
-                        }
-                    }
-                }else {
-                    for index in 0...self.extrasPaxesList.count - 1{
-                        if  self.extrasPaxesList[index].ageGroup == "ADL" {
-                            self.extrasMinPrice -= extras?.adultPrice ?? 0.00
-                        }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "CHD" {
-                            self.extrasTotalPrice -= extras?.childPrice ?? 0.00
-                        }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "TDL" {
-                            self.extrasTotalPrice -= extras?.toodlePrice ?? 0.00
-                        }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "INF" {
-                            self.extrasTotalPrice -= extras?.infantPrice ?? 0.00
-                        }
-                    }
-                }
-                
-                  if self.transfersMinPerson > 0 {
-                      for index in 0...self.extrasPaxesList.count - 1{
-                          if  self.extrasPaxesList[index].ageGroup == "ADL" {
-                              self.transfersMinPrice = transfers?.minPrice ?? 0.00
-                              self.transfersMinPerson -= 1
-                          }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "CHD" {
-                              self.transfersMinPrice = transfers?.minPrice ?? 0.00
-                              self.transfersMinPerson -= 1
-                          }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "TDL" {
-                              self.transfersMinPrice = transfers?.minPrice ?? 0.00
-                              self.transfersMinPerson -= 1
-                          }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "INF" {
-                              self.transfersMinPrice = transfers?.minPrice ?? 0.00
-                              self.transfersMinPerson -= 1
-                          }
-                      }
-                  }else {
-                      for index in 0...self.extrasPaxesList.count - 1{
-                          if  self.extrasPaxesList[index].ageGroup == "ADL" {
-                              self.transfersTotalPrice -= transfers?.adultPrice ?? 0.00
-                          }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "CHD" {
-                              self.transfersTotalPrice -= transfers?.childPrice ?? 0.00
-                          }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "TDL" {
-                              self.extrasTotalPrice -= transfers?.toodlePrice ?? 0.00
-                          }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "INF" {
-                              self.transfersTotalPrice -= transfers?.infantPrice ?? 0.00
-                          }
-                      }
-                  }
-                
-                self.currentExtrasTotalPrice = self.extrasMinPrice
-                self.currentTransfersTotalPrice = self.transfersMinPrice
-                self.extrasTotalPrice += self.extrasMinPrice
-                self.transfersTotalPrice += self.transfersMinPrice
-                
-                self.currentExtrasTotalPrice = -(self.currentExtrasTotalPrice)
-                self.currentTransfersTotalPrice = -(self.currentTransfersTotalPrice)
-            }
-            
-           // let filter = self.excursionList.filter{($0.tourName?.elementsEqual(tourid) ?? false)}
-            let filterExtras = extrasList.filter{ $0.desc == transExtrDesc && $0.tourDate == tourdate}
-            let filterTransfers = transfersList.filter{ $0.desc == transExtrDesc && $0.tourDate == tourdate}
-            
-            
-            if filterExtras.count > 0 {
-                if let insideIndex = self.saveExtrasList.firstIndex(where: {$0.desc == filterExtras[0].desc && $0.tourDate == self.filteredExcursionList[0].tourDate}){
-                    self.saveExtrasList.remove(at: insideIndex)
-                    
-                }
-            }else if filterTransfers.count > 0 {
-                if let insideIndex = self.saveTransferList.firstIndex(where: {$0.desc == filterTransfers[0].desc && $0.tourDate == self.filteredExcursionList[0].tourDate}){
-                    self.saveTransferList.remove(at: insideIndex)
-                }
-            }else{
-                return
-            }
-            
-            self.filteredExcursionList[0].extras = self.extrasList
-            self.filteredExcursionList[0].transfers = self.transfersList
-            if let insideIndex = self.excursionListInAddMenu.firstIndex(where: {$0.tourName == self.filteredExcursionList[0].tourName && $0.tourDate == self.filteredExcursionList[0].tourDate}){
-                self.excursionListInAddMenu.remove(at: insideIndex)
-                self.excursionListInAddMenu.insert(self.filteredExcursionList[0], at: insideIndex)
-            } 
+            self.tableViewPax.reloadData()
         }
-       self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.saveTransferList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
-      }
-  }
+            
+            if let index = self.extrasList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate }){
+                self.extrasList[index].isTapped = checkCounter
+                self.extrasChecklist[index] = checkCounter
+            }
+            
+            if let index = self.transfersList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate}){
+                self.transfersList[index].isTapped = checkCounter
+                self.transferChecklist[index] = checkCounter
+            }
+            self.extras = extras
+            self.transfers = transfers
+            
+            //       self.filteredExcursionList[0].extras = self.extrasList
+            //   self.filteredExcursionList[0].transfers = self.transfersList
+            
+            //  let filter = self.savedExcursionList.filter{ $0 === self.filteredExcursionList[0]}
+            
+            self.tableView.reloadData()
+            
+            if checkCounter == true  {
+                self.currentExtrasTotalPrice = 0.0
+                self.currentTransfersTotalPrice = 0.0
+                
+                if priceTypeDesc == 35 {
+                    self.perPersonTappet = true
+                    self.perPersonSavedTotalPrice = 0.0
+                    print(priceTypeDesc)
+                    if self.extrasList.count > 0 {
+                        if let index = self.extrasList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate }){
+                            self.extrasIndex = index
+                        }
+                    }
+                        if self.transfersList.count > 0  {
+                            if let index = self.transfersList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate }){
+                                self.transferIndex = index
+                            }
+                        }
+                        
+                        self.filteredExcursionList[0].extras = self.extrasList
+                        self.filteredExcursionList[0].transfers = self.transfersList
+                        if let insideIndex = self.excursionListInAddMenu.firstIndex(where: {$0.tourName == self.filteredExcursionList[0].tourName && $0.tourDate == self.filteredExcursionList[0].tourDate}){
+                            self.excursionListInAddMenu.remove(at: insideIndex)
+                            self.excursionListInAddMenu.insert(self.filteredExcursionList[0], at: insideIndex)
+                        }
+                        //self.tableViewPax.reloadData()
+                        /* self.extrasPaxesList = []
+                         self.transferPaxesList = []
+                         self.extrasPaxCheckList = []
+                         self.transfersPaxCheckList = [] */
+                    } else if priceTypeDesc == 36 {
+                        let alert = UIAlertController(title: "Flat Price", message: "Please insert Flat amount", preferredStyle: .alert)
+                        alert.addTextField {
+                            $0.placeholder = "Flat Amount"
+                            $0.addTarget(alert, action: #selector(alert.textDidChangeInLoginAlert), for: .editingChanged)
+                        }
+                        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+                        let flatAmountAction = UIAlertAction(title: "Submit", style: .default) { [unowned self] _ in
+                            guard let flatamount = alert.textFields?[0].text
+                                    
+                            else { return } // Should never happen
+                            self.flatAmount = Int(flatamount) ?? 0
+                            self.extrasTotalPrice += Double(self.flatAmount) * (extras?.flatPrice ?? 0.00)
+                            self.transfersTotalPrice += Double(self.flatAmount) * (transfers?.flatPrice ?? 0.00)
+                            // Perform login action
+                            if let index = self.extrasList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate}){
+                                self.extrasList[index].savedAmount = self.extrasTotalPrice
+                            }
+                            
+                            if let index = self.transfersList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate}){
+                                self.transfersList[index].savedAmount = self.transfersTotalPrice
+                            }
+                            
+                            self.filteredExcursionList[0].extras = self.extrasList
+                            self.filteredExcursionList[0].transfers = self.transfersList
+                            if let insideIndex = self.excursionListInAddMenu.firstIndex(where: {$0.tourName == self.filteredExcursionList[0].tourName && $0.tourDate == self.filteredExcursionList[0].tourDate}){
+                                self.excursionListInAddMenu.remove(at: insideIndex)
+                                self.excursionListInAddMenu.insert(self.filteredExcursionList[0], at: insideIndex)
+                            }
+                            
+                            self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
+                        }
+                        
+                        
+                        //  flatAmountAction.isEnabled = false
+                        alert.addAction(flatAmountAction)
+                        
+                        if let topVC = UIApplication.getTopViewController() {
+                            topVC.present(alert, animated: true, completion: nil)
+                        }
+                        
+                    } else if priceTypeDesc == 37 {
+                        //extras
+                        self.extrasMinPrice = 0
+                        self.extrasMinPerson = Int(extras?.minPax  ?? Int(0.00))
+                        if self.extrasMinPerson > 0 {
+                            for index in 0...self.extrasPaxesList.count - 1{
+                                if  self.extrasPaxesList[index].ageGroup == "ADL" {
+                                    self.extrasMinPrice = extras?.minPrice ?? 0.00
+                                    self.extrasMinPerson -= 1
+                                }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "CHD" {
+                                    self.extrasMinPrice = extras?.minPrice ?? 0.00
+                                    self.extrasMinPerson -= 1
+                                }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "TDL" {
+                                    self.extrasMinPrice = extras?.minPrice ?? 0.00
+                                    self.extrasMinPerson -= 1
+                                }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "INF" {
+                                    self.extrasMinPrice = extras?.minPrice ?? 0.00
+                                    self.extrasMinPerson -= 1
+                                }
+                            }
+                        }else {
+                            for index in 0...self.extrasPaxesList.count - 1{
+                                if  self.extrasPaxesList[index].ageGroup == "ADL" {
+                                    self.extrasMinPrice += extras?.adultPrice ?? 0.00
+                                }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "CHD" {
+                                    self.extrasTotalPrice += extras?.childPrice ?? 0.00
+                                }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "TDL" {
+                                    self.extrasTotalPrice += extras?.toodlePrice ?? 0.00
+                                }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "INF" {
+                                    self.extrasTotalPrice += extras?.infantPrice ?? 0.00
+                                }
+                            }
+                        }
+                        
+                        // transfers
+                        self.transfersMinPrice = 0
+                        self.transfersMinPerson = Int(transfers?.minPax  ?? Int(0.00))
+                        if self.transfersMinPerson > 0 {
+                            for index in 0...self.extrasPaxesList.count - 1{
+                                if  self.extrasPaxesList[index].ageGroup == "ADL" {
+                                    self.transfersMinPrice = transfers?.minPrice ?? 0.00
+                                    self.transfersMinPerson -= 1
+                                }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "CHD" {
+                                    self.transfersMinPrice = transfers?.minPrice ?? 0.00
+                                    self.transfersMinPerson -= 1
+                                }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "TDL" {
+                                    self.transfersMinPrice = transfers?.minPrice ?? 0.00
+                                    self.transfersMinPerson -= 1
+                                }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "INF" {
+                                    self.transfersMinPrice = transfers?.minPrice ?? 0.00
+                                    self.transfersMinPerson -= 1
+                                }
+                            }
+                        }else {
+                            for index in 0...self.extrasPaxesList.count - 1{
+                                if  self.extrasPaxesList[index].ageGroup == "ADL" {
+                                    self.transfersTotalPrice += transfers?.adultPrice ?? 0.00
+                                }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "CHD" {
+                                    self.transfersTotalPrice += transfers?.childPrice ?? 0.00
+                                }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "TDL" {
+                                    self.extrasTotalPrice += transfers?.toodlePrice ?? 0.00
+                                }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "INF" {
+                                    self.transfersTotalPrice += transfers?.infantPrice ?? 0.00
+                                }
+                            }
+                        }
+                        self.extrasTotalPrice += self.extrasMinPrice
+                        self.transfersTotalPrice += self.transfersMinPrice
+                        
+                        self.filteredExcursionList[0].extras = self.extrasList
+                        self.filteredExcursionList[0].transfers = self.transfersList
+                        if let insideIndex = self.excursionListInAddMenu.firstIndex(where: {$0.tourName == self.filteredExcursionList[0].tourName && $0.tourDate == self.filteredExcursionList[0].tourDate}){
+                            self.excursionListInAddMenu.remove(at: insideIndex)
+                            self.excursionListInAddMenu.insert(self.filteredExcursionList[0], at: insideIndex)
+                        }
+                    }
+                    
+                    let filterExtras = extrasList.filter{ $0.desc == transExtrDesc && $0.tourDate == tourdate}
+                    let filterTransfers = transfersList.filter{ $0.desc == transExtrDesc && $0.tourDate == tourdate}
+                    // let filter = self.excursionList.filter{($0.tourId?.elementsEqual(tourid) ?? false)}
+                    for index in filterExtras {
+                        self.saveExtrasList.append(index)
+                    }
+                    
+                    for index in filterTransfers {
+                        self.saveTransferList.append(index)
+                    }
+                    
+                }else{
+                    if priceTypeDesc == 35 {
+                        self.perPersonTappet = true
+                        //self.extrasTotalPrice = 0.00
+                        // self.transfersTotalPrice = 0.00
+                        if self.extrasPaxesList.count > 0 {
+                            for i in 0...self.extrasPaxesList.count - 1 {
+                                self.extrasPaxesList[i].isTapped = false
+                            }
+                        }
+                        if self.transferPaxesList.count > 0 {
+                            for i in 0...self.transferPaxesList.count - 1 {
+                                self.transferPaxesList[i].isTapped = false
+                            }
+                        }
+                        self.transferPaxesList.removeAll()
+                        self.extrasPaxesList.removeAll()
+                        self.tableViewPax.reloadData()
+                        if let index = self.extrasList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate}){
+                            self.perPersonSavedTotalPrice -= self.extrasList[index].savedAmount ?? 0.0
+                        }
+                        
+                        self.extrasTotalPrice -= self.perPersonSavedTotalPrice
+                    }
+                    // reduce price
+                    if priceTypeDesc == 36 {
+                        let alert = UIAlertController(title: "WARNING", message: "Are you sure delete Transfer/Extra price?", preferredStyle: .alert)
+                        
+                        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+                        
+                        let flatAmountAction = UIAlertAction(title: "Yes", style: .default) { [unowned self] _ in
+                            
+                            
+                            if let index = self.extrasList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate}){
+                                self.extrasTotalPrice -= self.extrasList[index].savedAmount ?? 0.0
+                            }
+                            
+                            if let index = self.transfersList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate}){
+                                self.transfersTotalPrice -= self.transfersList[index].savedAmount ?? 0.0
+                            }
+                            
+                            self.filteredExcursionList[0].extras = self.extrasList
+                            self.filteredExcursionList[0].transfers = self.transfersList
+                            if let insideIndex = self.excursionListInAddMenu.firstIndex(where: {$0.tourName == self.filteredExcursionList[0].tourName && $0.tourDate == self.filteredExcursionList[0].tourDate}){
+                                self.excursionListInAddMenu.remove(at: insideIndex)
+                                self.excursionListInAddMenu.insert(self.filteredExcursionList[0], at: insideIndex)
+                            }
+                            
+                            /* self.extrasTotalPrice -= Double(self.flatAmount) * (extras?.flatPrice ?? 0.00)
+                             self.transfersTotalPrice -= Double(self.flatAmount) * (transfers?.flatPrice ?? 0.00) */
+                            // Perform login action
+                            self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
+                        }
+                        
+                        //  flatAmountAction.isEnabled = false
+                        alert.addAction(flatAmountAction)
+                        
+                        if let topVC = UIApplication.getTopViewController() {
+                            topVC.present(alert, animated: true, completion: nil)
+                        }
+                    } else if priceTypeDesc == 37 {
+                        self.extrasMinPrice = 0
+                        self.extrasMinPerson = Int(extras?.minPax  ?? Int(0.00))
+                        self.transfersMinPrice = 0
+                        self.transfersMinPerson = Int(transfers?.minPax  ?? Int(0.00))
+                        if self.extrasMinPerson > 0 {
+                            for index in 0...self.extrasPaxesList.count - 1{
+                                if  self.extrasPaxesList[index].ageGroup == "ADL" {
+                                    self.extrasMinPrice -= extras?.minPrice ?? 0.00
+                                    self.extrasMinPerson -= 1
+                                }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "CHD" {
+                                    self.extrasMinPrice -= extras?.minPrice ?? 0.00
+                                    self.extrasMinPerson -= 1
+                                }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "TDL" {
+                                    self.extrasMinPrice -= extras?.minPrice ?? 0.00
+                                    self.extrasMinPerson -= 1
+                                }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "INF" {
+                                    self.extrasMinPrice -= extras?.minPrice ?? 0.00
+                                    self.extrasMinPerson -= 1
+                                }
+                            }
+                        }else {
+                            for index in 0...self.extrasPaxesList.count - 1{
+                                if  self.extrasPaxesList[index].ageGroup == "ADL" {
+                                    self.extrasMinPrice -= extras?.adultPrice ?? 0.00
+                                }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "CHD" {
+                                    self.extrasTotalPrice -= extras?.childPrice ?? 0.00
+                                }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "TDL" {
+                                    self.extrasTotalPrice -= extras?.toodlePrice ?? 0.00
+                                }else if self.extrasMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "INF" {
+                                    self.extrasTotalPrice -= extras?.infantPrice ?? 0.00
+                                }
+                            }
+                        }
+                        
+                        if self.transfersMinPerson > 0 {
+                            for index in 0...self.extrasPaxesList.count - 1{
+                                if  self.extrasPaxesList[index].ageGroup == "ADL" {
+                                    self.transfersMinPrice = transfers?.minPrice ?? 0.00
+                                    self.transfersMinPerson -= 1
+                                }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "CHD" {
+                                    self.transfersMinPrice = transfers?.minPrice ?? 0.00
+                                    self.transfersMinPerson -= 1
+                                }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "TDL" {
+                                    self.transfersMinPrice = transfers?.minPrice ?? 0.00
+                                    self.transfersMinPerson -= 1
+                                }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "INF" {
+                                    self.transfersMinPrice = transfers?.minPrice ?? 0.00
+                                    self.transfersMinPerson -= 1
+                                }
+                            }
+                        }else {
+                            for index in 0...self.extrasPaxesList.count - 1{
+                                if  self.extrasPaxesList[index].ageGroup == "ADL" {
+                                    self.transfersTotalPrice -= transfers?.adultPrice ?? 0.00
+                                }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "CHD" {
+                                    self.transfersTotalPrice -= transfers?.childPrice ?? 0.00
+                                }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "TDL" {
+                                    self.extrasTotalPrice -= transfers?.toodlePrice ?? 0.00
+                                }else if self.transfersMinPerson > 0 && self.extrasPaxesList[index].ageGroup == "INF" {
+                                    self.transfersTotalPrice -= transfers?.infantPrice ?? 0.00
+                                }
+                            }
+                        }
+                        
+                        self.currentExtrasTotalPrice = self.extrasMinPrice
+                        self.currentTransfersTotalPrice = self.transfersMinPrice
+                        self.extrasTotalPrice += self.extrasMinPrice
+                        self.transfersTotalPrice += self.transfersMinPrice
+                        
+                        self.currentExtrasTotalPrice = -(self.currentExtrasTotalPrice)
+                        self.currentTransfersTotalPrice = -(self.currentTransfersTotalPrice)
+                    }
+                    
+                    // let filter = self.excursionList.filter{($0.tourName?.elementsEqual(tourid) ?? false)}
+                    let filterExtras = extrasList.filter{ $0.desc == transExtrDesc && $0.tourDate == tourdate}
+                    let filterTransfers = transfersList.filter{ $0.desc == transExtrDesc && $0.tourDate == tourdate}
+                    
+                    
+                    if filterExtras.count > 0 {
+                        if let insideIndex = self.saveExtrasList.firstIndex(where: {$0.desc == filterExtras[0].desc && $0.tourDate == self.filteredExcursionList[0].tourDate}){
+                            self.saveExtrasList.remove(at: insideIndex)
+                            
+                        }
+                    }else if filterTransfers.count > 0 {
+                        if let insideIndex = self.saveTransferList.firstIndex(where: {$0.desc == filterTransfers[0].desc && $0.tourDate == self.filteredExcursionList[0].tourDate}){
+                            self.saveTransferList.remove(at: insideIndex)
+                        }
+                    }else{
+                        return
+                    }
+                    
+                    self.filteredExcursionList[0].extras = self.extrasList
+                    self.filteredExcursionList[0].transfers = self.transfersList
+                    if let insideIndex = self.excursionListInAddMenu.firstIndex(where: {$0.tourName == self.filteredExcursionList[0].tourName && $0.tourDate == self.filteredExcursionList[0].tourDate}){
+                        self.excursionListInAddMenu.remove(at: insideIndex)
+                        self.excursionListInAddMenu.insert(self.filteredExcursionList[0], at: insideIndex)
+                    }
+                }
+        self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.saveTransferList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
+            }
+        
+    }
 

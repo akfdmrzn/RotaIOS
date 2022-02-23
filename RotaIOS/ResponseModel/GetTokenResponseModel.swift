@@ -10,7 +10,7 @@ import Foundation
 import Foundation
 import ObjectMapper
 
-struct GetTokenResponseModel : Mappable {
+struct GetTokenResponseModel : Mappable, Decodable, Encodable {
     var id : String?
     var access_token : String?
     var token_type : String?

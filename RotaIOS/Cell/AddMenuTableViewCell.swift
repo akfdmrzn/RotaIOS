@@ -40,7 +40,6 @@ class AddMenuTableViewCell: BaseTableViewCell {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tappedChecBox))
         self.imageCheck.isUserInteractionEnabled = true
         self.imageCheck.addGestureRecognizer(gesture)
-        // Initialization code
     }
     
     @objc func tappedChecBox(){

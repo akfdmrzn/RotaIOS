@@ -265,6 +265,7 @@
 		D9DCB19D26BBEB900064A040 /* MyTourSalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB19B26BBEB900064A040 /* MyTourSalesViewController.swift */; };
 		D9DCB19E26BBEB900064A040 /* MyTourSalesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9DCB19C26BBEB900064A040 /* MyTourSalesViewController.xib */; };
 		D9DCB1A026BBECE50064A040 /* MyTourSaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB19F26BBECE50064A040 /* MyTourSaleView.swift */; };
+		D9DD9F9B27C2EA8800BF73AE /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DD9F9A27C2EA8800BF73AE /* LaunchViewController.swift */; };
 		D9FD64DC27355EFF009B6619 /* ZReportPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FD64DA27355EFF009B6619 /* ZReportPreviewViewController.swift */; };
 		D9FD64DD27355EFF009B6619 /* ZReportPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FD64DB27355EFF009B6619 /* ZReportPreviewViewController.xib */; };
 		D9FD64DF27355F42009B6619 /* ZReportPreviewViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FD64DE27355F42009B6619 /* ZReportPreviewViewView.swift */; };
@@ -612,6 +613,7 @@
 		D9DCB19B26BBEB900064A040 /* MyTourSalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTourSalesViewController.swift; sourceTree = "<group>"; };
 		D9DCB19C26BBEB900064A040 /* MyTourSalesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTourSalesViewController.xib; sourceTree = "<group>"; };
 		D9DCB19F26BBECE50064A040 /* MyTourSaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTourSaleView.swift; sourceTree = "<group>"; };
+		D9DD9F9A27C2EA8800BF73AE /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		D9FD64DA27355EFF009B6619 /* ZReportPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZReportPreviewViewController.swift; sourceTree = "<group>"; };
 		D9FD64DB27355EFF009B6619 /* ZReportPreviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZReportPreviewViewController.xib; sourceTree = "<group>"; };
 		D9FD64DE27355F42009B6619 /* ZReportPreviewViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZReportPreviewViewView.swift; sourceTree = "<group>"; };
@@ -706,6 +708,7 @@
 				BF44C883263FF80100238035 /* Contents.json */,
 				BF44C885263FF80100238035 /* LaunchScreen.storyboard */,
 				BF44C888263FF80100238035 /* Info.plist */,
+				D9DD9F9A27C2EA8800BF73AE /* LaunchViewController.swift */,
 			);
 			path = RotaIOS;
 			sourceTree = "<group>";
@@ -1473,6 +1476,7 @@
 				D994FBD027451862003564F3 /* ExcursionView.swift in Sources */,
 				D9956C0626DC022B006CFC6D /* GetCancelRulesRequestModel.swift in Sources */,
 				BF44C90A264000FA00238035 /* BaseMessageItem.swift in Sources */,
+				D9DD9F9B27C2EA8800BF73AE /* LaunchViewController.swift in Sources */,
 				BF44C9252640014800238035 /* MainPAgeViewController.swift in Sources */,
 				BF44C9E32640023800238035 /* ProceedPageCustomView.swift in Sources */,
 				D900407B271738DD00DDE088 /* DailyReportTableViewCell.swift in Sources */,
@@ -1776,7 +1780,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7.5;
+				CURRENT_PROJECT_VERSION = 7.6;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
 				INFOPLIST_FILE = RotaIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1803,7 +1807,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7.5;
+				CURRENT_PROJECT_VERSION = 7.6;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
 				INFOPLIST_FILE = RotaIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

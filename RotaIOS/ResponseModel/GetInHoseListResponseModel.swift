@@ -9,7 +9,11 @@
 import Foundation
 import ObjectMapper
 
-class GetInHoseListResponseModel : Mappable, Decodable, Encodable {
+class GetInHoseListResponseModel : Mappable, Decodable, Encodable, Equatable {
+    static func == (lhs: GetInHoseListResponseModel, rhs: GetInHoseListResponseModel) -> Bool {
+        return true
+    }
+    
     var isTapped : Bool?
     var name : String?
     var ID : Int?
@@ -47,6 +51,7 @@ class GetInHoseListResponseModel : Mappable, Decodable, Encodable {
     
     
     func mapping(map: Map) {
+        isTapped <- map["isTapped"]
         name <- map["Name"]
         ID <- map["ID"]
         value <- map["Value"]

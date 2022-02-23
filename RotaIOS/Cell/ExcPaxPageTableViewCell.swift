@@ -32,14 +32,14 @@ class ExcPaxPageTableViewCell: BaseTableViewCell {
         self.imageCheck.isUserInteractionEnabled = true
         self.imageCheck.addGestureRecognizer(gesture)
         
-        let gestureNameLabel = UITapGestureRecognizer(target: self, action: #selector(tappedChecBox))
+      /*  let gestureNameLabel = UITapGestureRecognizer(target: self, action: #selector(tappedChecBox))
         self.labelPaxName.isUserInteractionEnabled = true
-        self.labelPaxName.addGestureRecognizer(gestureNameLabel)
+        self.labelPaxName.addGestureRecognizer(gestureNameLabel) */
     }
     
     @objc func tappedChecBox(){
         self.isTappedCheck = !self.isTappedCheck
-        self.isTappedNameLabel = !self.isTappedNameLabel
+      //  self.isTappedNameLabel = !self.isTappedNameLabel
         self.excPaxPageTableViewCellDelegate?.checkBoxTapped(checkCounter: self.isTappedCheck, touristName: self.labelPaxName.text ?? "", marketGroup: self.marketGroup, tempPaxes: self.paxesListInCell!, paxRoom: self.paxRoom, paxNameLabelSelect: self.isTappedNameLabel)
     }
     

@@ -19,10 +19,10 @@ final class LoginViewController : BaseViewController {
     var getTokenResponse : [GetTokenResponseModel] = []
     
     override func viewDidLoad() {
-        self.userNAmeList = userDefaultsData.getUserNameList()
-        self.userPasswordList = userDefaultsData.getUserPasswordList()
-        self.userName = userDefaultsData.geUserNAme()
-        self.password = userDefaultsData.getPassword()
+        self.userNAmeList = userDefaultsData.getUserNameList() ?? []
+        self.userPasswordList = userDefaultsData.getUserPasswordList() ?? []
+        self.userName = userDefaultsData.geUserNAme() ?? ""
+        self.password = userDefaultsData.getPassword() ?? ""
         self.getTokenResponse = userDefaultsData.getGetToken() ?? self.getTokenResponse
         if getTokenResponse.count > 0 {
             baseData.getTokenResponse = self.getTokenResponse[0]

@@ -499,7 +499,7 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
             self.viewExcSelectCustomView?.excSelectDelegate = self
             if self.viewExcAddCustomView == nil || self.isTourChange == true || self.isPAxesListChange == true || self.paxesListIsEqual == false {
                 self.tempPaxesList = userDefaultsData.getPaxesList() ?? self.tempPaxesList
-                self.savedExtrasTotalPrice = 0.0
+                self.viewFooterViewCustomView.labelAmount.text = "0.0"
                 if self.isTourChange == true {
                     self.voucherList = []
                     //Max Voucher
@@ -1215,7 +1215,7 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
             
             if self.viewExcAddCustomView == nil || self.isTourChange == true || self.isPAxesListChange == true || self.paxesListIsEqual == false{
                 self.tempPaxesList = userDefaultsData.getPaxesList() ?? self.tempPaxesList
-                self.savedExtrasTotalPrice = 0.0
+                self.viewFooterViewCustomView.labelAmount.text = "0.0"
                 if self.isTourChange == true {
                     self.voucherList = []
                     // Create VOucher

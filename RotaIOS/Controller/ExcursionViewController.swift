@@ -526,36 +526,28 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
                     }else{
                         convertMonth = String(month)
                     }
-                    if month.words.count == 1 {
-                        convertMonth = String("0\(month)")
-                    }
+                    
                     
                     if day < 10 {
                         convertDay = String("0\(day)")
                     }else{
                         convertDay = String(day)
                     }
-                    if day.words.count == 1 {
-                        convertDay = String("0\(day)")
-                    }
+                    
                     
                     if hour < 10 {
                         convertHour = String("0\(hour)")
                     }else{
                         convertHour = String(hour)
                     }
-                    if hour.words.count == 1 {
-                        convertHour = String("0\(hour)")
-                    }
+                    
                     
                     if minute < 10 {
                         convertMinute = String("0\(minute)")
                     }else {
                         convertMinute = String(minute)
                     }
-                    if minute.words.count == 1 {
-                        convertMinute = String("0\(minute)")
-                    }
+                   
                     
                     let mergeDate = "\(convertMonth)\(convertDay)\(convertHour)\(convertMinute)"
                     print(mergeDate)

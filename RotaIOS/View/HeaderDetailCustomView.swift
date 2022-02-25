@@ -13,7 +13,6 @@ class HeaderDetailCustomView : UIView {
     @IBOutlet var viewMainView: UIView!
     @IBOutlet weak var viewContentView: UIView!
     @IBOutlet weak var labelHeaderDetailView: UILabel!
-    @IBOutlet weak var buttonBack: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

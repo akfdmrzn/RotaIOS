@@ -71,6 +71,50 @@ class TasksViewController: BaseViewController {
         self.tasksTableView.dataSource = self
         self.tasksTableView.register(TaskTableViewCell.nib, forCellReuseIdentifier: TaskTableViewCell.identifier)
         getGuideDutiesService()
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(TasksViewController.longPress(longPressGestureRecognizer:)))
+        self.tasksTableView.addGestureRecognizer(longPressRecognizer)
+    }
+    
+    @objc func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
+
+        if longPressGestureRecognizer.state == UIGestureRecognizer.State.began {
+            let touchPoint = longPressGestureRecognizer.location(in: self.tasksTableView)
+            if let indexPath = self.tasksTableView.indexPathForRow(at: touchPoint) {
+                if self.totalList[indexPath.row].shortCode == ShortCode.INFO.rawValue{
+                    print(indexPath.row)
+                    self.showAlertMsgWithTxtField(msg: "Report", workNo: self.totalList[indexPath.row].workNo, typeInt: String(ServiceType.INT.rawValue), relatedId: self.getGuideDutiesList[indexPath.row].ids, tourDate: self.totalList[indexPath.row].tourDateStr, finished: {
+                    })
+                }
+            }
+        }
+    }
+    
+    public func showAlertMsgWithTxtField(msg : String, workNo: String, typeInt: String,
+                                         relatedId: String, tourDate: String, finished: @escaping () -> Void){
+        let alertController = UIAlertController(title: "Note", message: nil, preferredStyle: .alert)
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Note"
+        }
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Plate"
+        }
+        let continueAction = UIAlertAction(title: "Save", style: .default) { [weak alertController] _ in
+            guard let textFields = alertController?.textFields else { return }
+            if let noteText = textFields[0].text, let plateText = textFields[1].text {
+                self.saveGuideMeetingTimeAndReport(workNo: workNo, guide: String(userDefaultsData.getGuideId()), typeInt: typeInt, note: noteText, isReport: "true", action: "1", plate: plateText, state: "", relatedId: relatedId, tourDate: tourDate)
+            }
+        }
+
+        alertController.addAction(continueAction)
+        self.present(alertController, animated: true)
+    }
+    
+    func saveGuideMeetingTimeAndReport(workNo : String, guide: String, typeInt: String, note: String, isReport: String, action: String, plate: String, state: String, relatedId: String, tourDate: String){
+        let saveGuideMeetingTimeAndReportRequestModel = SaveGuideMeetingTimeAndReportRequestModel.init(workNo: workNo, guide: guide, typeInt: typeInt, note: note, isReport: isReport, action: action, plate: plate, state: state, relatedId: relatedId, tourDate: tourDate.getDateFormatStr())
+        NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .SaveGuideMeetingTimeAndReport, requestModel: saveGuideMeetingTimeAndReportRequestModel) { (response : SaveGuideMeetingTimeAndReportResponseModel) in
+            UIApplication.getTopViewController()?.showAlertMsg(msg: response.message, finished: {
+            })
+        }
     }
     
     func getGuideDutiesService(){

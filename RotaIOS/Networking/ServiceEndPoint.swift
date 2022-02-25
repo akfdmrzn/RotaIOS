@@ -54,4 +54,5 @@ public enum ServiceEndPoint: String {
     case UpdateNoShow = "/api/api/TourTransferPlan/UpdateNoShow"
     case UpdateInfoPlanNoShow = "api/api/TourTransferPlan/UpdateInfoPlanNoShow"
     case UpdateArrAndDepPlanNoShow = "/api/api/TourTransferPlan/UpdateArrAndDepPlanNoShow"
+    case SaveGuideMeetingTimeAndReport = "/api/api/TourTransferPlan/SaveGuideMeetingTimeAndRepot"
 }

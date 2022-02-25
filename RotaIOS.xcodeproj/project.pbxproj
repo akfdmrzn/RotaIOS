@@ -11,6 +11,8 @@
 		97EA547D8C247C4FB10DE7F7 /* Pods_RotaIOS_RotaIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83342E6867FA5C2B432CDAE /* Pods_RotaIOS_RotaIOSUITests.framework */; };
 		A91D82D727988FCF0018C0A9 /* TasksPaxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91D82D527988FCF0018C0A9 /* TasksPaxTableViewCell.swift */; };
 		A91D82D827988FCF0018C0A9 /* TasksPaxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91D82D627988FCF0018C0A9 /* TasksPaxTableViewCell.xib */; };
+		A96A532D27C79A5600611475 /* SaveGuideMeetingTimeAndReportResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A532C27C79A5500611475 /* SaveGuideMeetingTimeAndReportResponseModel.swift */; };
+		A96A532F27C79A6500611475 /* SaveGuideMeetingTimeAndReportRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A532E27C79A6500611475 /* SaveGuideMeetingTimeAndReportRequestModel.swift */; };
 		A9AAE53A2791631B00AFBA67 /* TasksPaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AAE5392791631B00AFBA67 /* TasksPaxView.swift */; };
 		A9AAE53D2791634200AFBA67 /* TasksPaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AAE53B2791634200AFBA67 /* TasksPaxViewController.swift */; };
 		A9AAE53E2791634200AFBA67 /* TasksPaxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9AAE53C2791634200AFBA67 /* TasksPaxViewController.xib */; };
@@ -327,6 +329,8 @@
 		A4F2F9223A9AE4B71EBB1F34 /* Pods-RotaIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS.debug.xcconfig"; path = "Target Support Files/Pods-RotaIOS/Pods-RotaIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A91D82D527988FCF0018C0A9 /* TasksPaxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPaxTableViewCell.swift; sourceTree = "<group>"; };
 		A91D82D627988FCF0018C0A9 /* TasksPaxTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksPaxTableViewCell.xib; sourceTree = "<group>"; };
+		A96A532C27C79A5500611475 /* SaveGuideMeetingTimeAndReportResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveGuideMeetingTimeAndReportResponseModel.swift; sourceTree = "<group>"; };
+		A96A532E27C79A6500611475 /* SaveGuideMeetingTimeAndReportRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveGuideMeetingTimeAndReportRequestModel.swift; sourceTree = "<group>"; };
 		A9AAE5392791631B00AFBA67 /* TasksPaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPaxView.swift; sourceTree = "<group>"; };
 		A9AAE53B2791634200AFBA67 /* TasksPaxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPaxViewController.swift; sourceTree = "<group>"; };
 		A9AAE53C2791634200AFBA67 /* TasksPaxViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksPaxViewController.xib; sourceTree = "<group>"; };
@@ -864,6 +868,7 @@
 				A9C0344427980B37000AA4DD /* UpdateNoShowRequestModel.swift */,
 				A9C0344627980B52000AA4DD /* UpdateInfoPlanNoShowRequestModel.swift */,
 				A9C0344827980B69000AA4DD /* UpdateArrAndDepPlanNoShowRequestModel.swift */,
+				A96A532E27C79A6500611475 /* SaveGuideMeetingTimeAndReportRequestModel.swift */,
 			);
 			path = RequestModel;
 			sourceTree = "<group>";
@@ -913,6 +918,7 @@
 				A9AAE5572791830D00AFBA67 /* GetColAndDelPaxesResponseModel.swift */,
 				A9AAE5592791832000AFBA67 /* GetIndShopPaxesResponseModel.swift */,
 				A9C0344A27980ED9000AA4DD /* UpdateNoShowResponseModel.swift */,
+				A96A532C27C79A5500611475 /* SaveGuideMeetingTimeAndReportResponseModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -1429,6 +1435,7 @@
 				D931577D2703698E000C91AD /* ZReportPaymentRequestModel.swift in Sources */,
 				D9FD64EF273818C3009B6619 /* GetCreateZReportResponseModel.swift in Sources */,
 				BF44C9CE2640022600238035 /* StepsPageTableViewCell.swift in Sources */,
+				A96A532D27C79A5600611475 /* SaveGuideMeetingTimeAndReportResponseModel.swift in Sources */,
 				D9956BFC26D7D31C006CFC6D /* GetVoucherDetailResponseModel.swift in Sources */,
 				D900407827172F1C00DDE088 /* GetDailyReportRequestModel.swift in Sources */,
 				D95C202826EFDD83007D1506 /* GetHotelSelectListByAreaRefResponseModel.swift in Sources */,
@@ -1563,6 +1570,7 @@
 				BF44C8F3264000E900238035 /* GetMyInfoResponseModel.swift in Sources */,
 				D93F886E26471B4D00397283 /* TempTouristAddCustomView.swift in Sources */,
 				D93F88A42651AAE300397283 /* GetTouristInfoRequestModel.swift in Sources */,
+				A96A532F27C79A6500611475 /* SaveGuideMeetingTimeAndReportRequestModel.swift in Sources */,
 				D968ABF626E91A260046761E /* GetTourSaleCancelMobileRequestModel.swift in Sources */,
 				BF44C8FA264000F000238035 /* GetUserRequestModel.swift in Sources */,
 				D9956C0426DC01E7006CFC6D /* GetCancelRulesResponseModel.swift in Sources */,

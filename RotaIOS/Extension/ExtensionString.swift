@@ -26,6 +26,14 @@ extension String {
         return "\(day).\(month).\(year)"
     }
     
+    func getDateFormatStr() -> String {
+        let arr = self.components(separatedBy: ".")
+        let day = arr[0]
+        let month = arr[1]
+        let year = arr[2]
+        return "\(year)\(month)\(day)"
+    }
+    
     func dateToString() -> String {
         return self.components(separatedBy: "T")[0]
     }

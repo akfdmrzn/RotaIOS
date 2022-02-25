@@ -21,8 +21,8 @@ final class LoginViewController : BaseViewController {
     override func viewDidLoad() {
         self.userNAmeList = userDefaultsData.getUserNameList() ?? []
         self.userPasswordList = userDefaultsData.getUserPasswordList() ?? []
-        self.userName = userDefaultsData.geUserNAme() ?? ""
-        self.password = userDefaultsData.getPassword() ?? ""
+        self.userName = userDefaultsData.geUserNAme()
+        self.password = userDefaultsData.getPassword()
         self.getTokenResponse = userDefaultsData.getGetToken() ?? self.getTokenResponse
         if getTokenResponse.count > 0 {
             baseData.getTokenResponse = self.getTokenResponse[0]
@@ -50,9 +50,7 @@ final class LoginViewController : BaseViewController {
         let dateString = df.string(from: date)
         
         print(dateString)
-        
-      
-        
+   
         self.userName = self.viewLogin.textUsername.text ?? ""
         self.password = self.viewLogin.textPassword.text ?? ""
         userDefaultsData.savePassword(id: self.password)

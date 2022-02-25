@@ -30,6 +30,8 @@ struct SendDataPrint {
     var card : String?
     var guideInfoNumber : String?
     var pickUpTime : String?
+    var extras : String?
+    var transfers : String?
 }
 
 struct PaymentType {
@@ -122,6 +124,7 @@ class ExcProceedCustomView: UIView{
     var printListStringType : [String] = []
     var connectedAccessories : [EAAccessory] = []
     var savedFirstValue = 0.0
+    var addedNumber = 1100
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -548,6 +551,7 @@ class ExcProceedCustomView: UIView{
     }
     
     @IBAction func sendButtonTapped(_ sender: Any) {
+        
         if self.balanceAmount == 0.0{
             if Connectivity.isConnectedToInternet == true {
                 self.hotelId = userDefaultsData.getHotelId()
@@ -581,9 +585,13 @@ class ExcProceedCustomView: UIView{
             var paxName = ""
             var resNo = ""
             var operatorName = ""
-            var netTotal = 0.0
-            var discount = 0.0
-            var total = 0.0
+            var tourExtrasString = ""
+            var tourTransfersString = ""
+            
+            var voucherLabelSize = ""
+    
+            var discountList : [Double] = []
+            var perTourPriceList : [Double] = []
 
             paxes = userDefaultsData.getTouristDetailInfoList() ?? paxes
             if paxes.count > 0 {
@@ -638,6 +646,8 @@ class ExcProceedCustomView: UIView{
                     self.tourExtras = []
                     self.tourTransfers = []
                     self.totalPricePerTour = 0.0
+                    tourExtrasString = ""
+                    self.addedNumber = 1000
                     
                     if self.extras.count > 0 {
                         for index in 0...self.extras.count - 1 {
@@ -720,8 +730,8 @@ class ExcProceedCustomView: UIView{
                     tourListIndata.append(TourList(id: Int(self.tourList[i].id ?? "") ?? 0, AdultAmount:(self.tourList[i].adultPrice ?? 0.0)*Double(adultCount), AdultCount:adultCount, AdultPrice:self.tourList[i].adultPrice ?? 0.00,ChildAmount:(self.tourList[i].childPrice ?? 0.0)*Double(childCount), ChildCount:childCount, ChildPrice:self.tourList[i].childPrice ?? 0.00, InfantAmount: (self.tourList[i].infantPrice ?? 0.0)*Double(infantCount), InfantCount:infantCount, InfantPrice: self.tourList[i].infantPrice ?? 0.00, ToodleAmount:  (self.tourList[i].toodlePrice ?? 0.0)*Double(toodleCount), ToodleCount:toodleCount, ToodlePrice: self.tourList[i].toodlePrice ?? 0.00, MatchId: self.tourList[i].matchId ?? 0, MarketId: self.tourList[i].marketId ?? 0, PromotionId: self.tourList[i].promotionId ?? 0, PoolType: self.tourList[i].poolType ?? 0, PriceId: self.tourList[i].priceId ?? 0, PlanId: self.tourList[i].planId ?? 0, TourType: self.tourList[i].tourType ?? 0, TourName: self.tourList[i].tourName ?? "", TourId:  self.tourList[i].tourId ?? 0, Currency: self.tourList[i].currency ?? 0 , CurrencyDesc: self.tourList[i].currencyDesc ?? "", TourDateStr:self.tourList[i].tourDateStr ?? "", TourDate: self.tourList[i].tourDate ?? "", AllotmenStatus: self.tourList[i].allotmenStatus ?? 0, RemainingAllotment: self.tourList[i].remainingAllotment ?? 0, PriceType: self.tourList[i].priceType ?? 0, MinPax:self.tourList[i].minPax ?? 0.0, TotalPrice: self.tourTotalAmount, FlatPrice: self.tourList[i].flatPrice ?? 0.0, MinPrice: self.tourList[i].minPrice ?? 0.0, InfantAge1: self.tourList[i].infantAge1 ?? 0.0, InfantAge2: self.tourList[i].infantAge2 ?? 0.0, ToodleAge1: self.tourList[i].toodleAge1 ?? 0.0, ToodleAge2: self.tourList[i].toodleAge2 ?? 0.0, ChildAge1: self.tourList[i].childAge1 ?? 0.0, ChildAge2: self.tourList[i].childAge2 ?? 0.0, PickUpTime:  self.pickUpTimeProceedView, DetractAdult: self.tourList[i].detractAdult ?? false, DetractChild: self.tourList[i].detractChild ?? false, DetractKid: self.tourList[i].detractKid ?? false, DetractInfant: self.tourList[i].detractInfant ?? false, AskSell: self.tourList[i].askSell ?? false, MeetingPointId: self.tourList[i].meetingPointId ?? 0, Paref: String(self.tourList[i].paref ?? 0) ,TourCode: self.tourList[i].tourCode ?? "", ID: self.tourList[i].ID ?? 0, CREATEDDATE: self.tourList[i].cREATEDDATE ?? "", RefundCondition:"", TicketCount: 0, TourAmount: self.totalPricePerTour, VoucherNo: self.voucherNo[i], ExtraTourist: self.tourExtras, TransferTourist:self.tourTransfers))
                     self.selectedTouristName.append(tourList[i].tourName ?? "")
                     
+                    // printList düzenlemre
                    var isTransfersHave = ""
-                    
                     
                     if self.tourTransfers.count > 0 {
                         isTransfersHave = "YES"
@@ -729,19 +739,56 @@ class ExcProceedCustomView: UIView{
                         isTransfersHave = "NO"
                     }
                     
-                    self.printList.append(SendDataPrint(tourName: self.tourList[i].tourName, paxInfo: "ADL :\(adultCount),CHD: \(childCount), TDL:\(toodleCount), INF: \(infantCount)", voucher: self.voucherNo[i], tourDate: self.tourList[i].tourDateStr, transTourist: isTransfersHave, hotelName: hotelName, date: self.currentDate, room: room, paxName: paxName, operatorName: operatorName, resNo: resNo, total:"\(total)EUR" , discount: "\(discount)EUR", netTotal: "\(netTotal)EUR", cash: "", card: "", guideInfoNumber: "", pickUpTime: self.tourList[i].pickUpTime))
+                   
+                    
+                    if self.tourExtras.count > 0 {
+                        self.addedNumber += 80
+                        for i in 0...self.tourExtras.count - 1{
+                            let extrasLabelType = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDExtras^FS^FO 250, \(self.addedNumber + 5)^A 0, 20 ^FDExtra Name^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 20 ^FD 1  ADL  2  CHD  0  TDL  0  INF  30.0  EUR^FS"
+                            tourExtrasString.append(extrasLabelType)
+                            self.addedNumber += (i * 120)
+                        }
+                        
+                    }else{
+                        self.addedNumber += 120
+                    }
+                    
+                    if self.tourTransfers.count > 0 {
+                        self.addedNumber += 80
+                        for i in 0...self.tourTransfers.count - 1{
+                            let transfersLabelType = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDExtras^FS^FO 250, \(self.addedNumber + 5)^A 0, 20 ^FDExtra Name^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 20 ^FD 1  ADL  2  CHD  0  TDL  0  INF  30.0  EUR^FS"
+                            tourExtrasString.append(transfersLabelType)
+                            self.addedNumber += (i * 120)
+                        }
+                        
+                    }else{
+                        self.addedNumber += 120
+                    }
+                    
+                    voucherLabelSize = "^FO20,\(self.addedNumber)^A 0, 20 ^FDYour Info Guide Number:^FS^FO20,\(self.addedNumber + 22)^A 0, 20 ^FD+9005418281989^FS^FO20,\(self.addedNumber + 50)^BY2^BCN,120,Y,N,N^FD\(self.voucherNo[i])^FS^CF0,40^FO20,\(self.addedNumber + 200)^FDNotes^FS"
+                    self.addedNumber += 300
+                    perTourPriceList.append(self.totalPricePerTour)
+                    self.printList.append(SendDataPrint(tourName: self.tourList[i].tourName, paxInfo: "ADL :\(adultCount),CHD: \(childCount), TDL:\(toodleCount), INF: \(infantCount)", voucher: voucherLabelSize, tourDate: self.tourList[i].tourDateStr, transTourist: isTransfersHave, hotelName: hotelName, date: self.currentDate, room: room, paxName: paxName, operatorName: operatorName, resNo: resNo, total:"\(0.0)EUR" , discount: "\(0.0)EUR", netTotal: "\(0.0)EUR", cash: "", card: "", guideInfoNumber: "", pickUpTime: self.tourList[i].pickUpTime, extras: tourExtrasString, transfers: <#T##String?#>))
                 }
+                // printList düzenlemre
+                var perPersonTotalPrice = 0.0
+                
+                for i in 0...perTourPriceList.count - 1 {
+                    perPersonTotalPrice += perTourPriceList[i]
+                }
+                
+                for i in 0...perTourPriceList.count - 1 {
+                    var perDiscount = 0.0
+                    perDiscount = self.discount * (perTourPriceList[i]/perPersonTotalPrice)
+                    discountList.append(perDiscount)
+                }
+                for i in 0...self.printList.count - 1{
+                    self.printList[i].total = String(perTourPriceList[i] - discountList[i])
+                    self.printList[i].discount = String(discountList[i])
+                }
+                
             }
             
-            if  self.payments.count > 0 && self.payments.count < 2 && self.printList.count > 0 {
-                for i in 0...self.printList.count - 1 {
-                    if self.payments.count == 1 {
-                        self.printList[i].cash = String(payments[0].PaymentAmount ?? 0.0)
-                    }else{
-                        self.printList[i].card = String(payments[1].PaymentAmount ?? 0.0)
-                    }
-               }
-            }
         
             print(self.data)
             
@@ -795,7 +842,7 @@ class ExcProceedCustomView: UIView{
             }
             return
         }
-        
+        self.buttonSend.isEnabled = false
     }
 }
 
@@ -951,7 +998,7 @@ extension ExcProceedCustomView{
                 }else{
                     hotelNameFirstColumn = self.printList[i].hotelName ?? ""
                 }
-                self.printString = "^XA^PON^LL2800^XGMyFormat^FS^CF0,25^FO280,30^FDVoucher No^FS^CF0,25^FO280,60^FD\(self.printList[i].voucher ?? "")^FS^CF0,25^FO280,90^FDPrint Date : ^FS^CF0,25^FO400,90^FD\(self.printList[i].date ?? "")^FS^FO10,150^GB200,100,0^FS^CF0,25^FO20,170^FDTour^FS^FO210,150^GB340,100,0^FS^FO 220, 170 ^A 0, 20 ^FD\(self.printList[i].tourName ?? "")^FS^FO10,250^GB200,60,0^FS^CF0,25^FO20,270^FDPax Info^FS^FO210,250^GB340,60,0^FS^FO220, 270 ^A 0, 20 ^FD\(self.printList[i].paxInfo ?? "")^FS^FO10,310^GB200,60,0^FS^CF0,25^FO20,330^FDDate^FS^FO210,310^GB340,60,0^FS^FO 220, 330 ^A 0, 20 ^FD\(self.printList[i].tourDate ?? "")^FS^FO10,370^GB200,60,0^FS^CF0,25^FO20,390^FDConcept^FS^FO210,370^GB340,60,0^FS^FO 220, 390 ^A 0, 20 ^FDStandart^FS^FO10,430^GB200,60,0^FS^CF0,25^FO20,450^FDTransfer^FS^FO210,430^GB340,60,0^FS^FO 220, 450 ^A 0, 20 ^FD\(self.printList[i].transTourist ?? "")^FS^FO10,490^GB200,100,0^FS^CF0,25^FO20,510^FDHotel^FS^FO210,490^GB340,100,0^FS^FO 220, 510 ^A 0, 20 ^FD\(hotelNameFirstColumn)^FS^FO 220, 550 ^A 0, 20 ^FD\(hotelNameScondColumn)^FS^FO10,590^GB200,60,0^FS^CF0,25^FO20,610^FDRoom^FS^FO210,590^GB340,60,0^FS^FO 220, 610 ^A 0, 20 ^FD\(self.printList[i].room ?? "")^FS^FO10,650^GB200,60,0^FS^CF0,25^FO20,670^FDPick Up^FS^FO210,650^GB340,60,0^FS^FO 220, 670 ^A 0, 20 ^FD\(self.printList[i].pickUpTime ?? "")^FS^FO10,710^GB200,60,0^FS^CF0,25^FO20,730^FDPick Up Point^FS^FO210,710^GB340,60,0^FS^FO 220, 730 ^A 0, 20 ^FD-^FS^FO10,770^GB200,60,0^FS^CF0,25^FO20,790^FDName^FS^FO210,770^GB340,60,0^FS^FO 220, 790 ^A 0, 20 ^FD\(self.printList[i].paxName ?? "")^FS^FO10,830^GB200,60,0^FS^CF0,25^FO20,850^FDOperator^FS^FO210,830^GB340,60,0^FS^FO 220, 850 ^A 0, 20 ^FD\(self.printList[i].operatorName ?? "")^FS^FO10,890^GB200,60,0^FS^CF0,25^FO20,910^FDRes No^FS^FO210,890^GB340,60,0^FS^FO 220, 910 ^A 0, 20 ^FD\(self.printList[i].resNo ?? "")^FS^CF0,25^FO20,980^FDNet Total^FS^CF0,25^FO150,980^FD\(self.printList[i].netTotal ?? "")^FS^CF0,25^FO20,1020^FDDiscount^FS^CF0,25^FO150,1020^FD\(self.printList[i].discount ?? "")^FS^CF0,25^FO20,1080^FDPayment Detail^FS^FO10,1110^GB200,60,0^FS^CF0,25^FO20,1130^FDCASH^FS^FO210,1110^GB340,60,0^FS^FO 220, 1130 ^A 0, 20 ^FD\(self.printList[i].cash ?? "")^FS^FO10,1170^GB540,100,0^FS^FO 20, 1190 ^A 0, 20 ^FDPrivate Transfer^FS^FO 20, 1290 ^A 0, 20 ^FDYour Info Guide Number:^FS^FO 20, 1330 ^A 0, 20 ^FD+900552323232^FS^FO20,1370^BY2^BCN,120,Y,N,N^FD\(self.printList[i].voucher ?? "")^FS^CF0,40^FO20,1530^FDNotes^FS^FO10,1800^GB200,60,0^FS^CF0,25^FO20,910^FDRes No^FS^FO210,890^GB340,60,0^FS^FO 220, 910 ^A 0, 20 ^FD473824^FS^XZ"
+                self.printString = "^XA^PON^LL\(self.addedNumber + 200)^XGMyFormat^FS^CF0,25^FO280,30^FDVoucher No^FS^CF0,25^FO280,60^FD\(self.printList[i].voucher ?? "")^FS^CF0,25^FO280,90^FDPrint Date : ^FS^CF0,25^FO400,90^FD\(self.printList[i].date ?? "")^FS^FO10,150^GB200,100,0^FS^CF0,25^FO20,170^FDTour^FS^FO210,150^GB340,100,0^FS^FO 220, 170 ^A 0, 20 ^FD\(self.printList[i].tourName ?? "")^FS^FO10,250^GB200,60,0^FS^CF0,25^FO20,270^FDPax Info^FS^FO210,250^GB340,60,0^FS^FO220, 270 ^A 0, 20 ^FD\(self.printList[i].paxInfo ?? "")^FS^FO10,310^GB200,60,0^FS^CF0,25^FO20,330^FDDate^FS^FO210,310^GB340,60,0^FS^FO 220, 330 ^A 0, 20 ^FD\(self.printList[i].tourDate ?? "")^FS^FO10,370^GB200,60,0^FS^CF0,25^FO20,390^FDConcept^FS^FO210,370^GB340,60,0^FS^FO 220, 390 ^A 0, 20 ^FDStandart^FS^FO10,430^GB200,60,0^FS^CF0,25^FO20,450^FDTransfer^FS^FO210,430^GB340,60,0^FS^FO 220, 450 ^A 0, 20 ^FD\(self.printList[i].transTourist ?? "")^FS^FO10,490^GB200,100,0^FS^CF0,25^FO20,510^FDHotel^FS^FO210,490^GB340,100,0^FS^FO 220, 510 ^A 0, 20 ^FD\(hotelNameFirstColumn)^FS^FO 220, 550 ^A 0, 20 ^FD\(hotelNameScondColumn)^FS^FO10,590^GB200,60,0^FS^CF0,25^FO20,610^FDRoom^FS^FO210,590^GB340,60,0^FS^FO 220, 610 ^A 0, 20 ^FD\(self.printList[i].room ?? "")^FS^FO10,650^GB200,60,0^FS^CF0,25^FO20,670^FDPick Up^FS^FO210,650^GB340,60,0^FS^FO 220, 670 ^A 0, 20 ^FD\(self.printList[i].pickUpTime ?? "")^FS^FO10,710^GB200,60,0^FS^CF0,25^FO20,730^FDPick Up Point^FS^FO210,710^GB340,60,0^FS^FO 220, 730 ^A 0, 20 ^FD-^FS^FO10,770^GB200,60,0^FS^CF0,25^FO20,790^FDName^FS^FO210,770^GB340,60,0^FS^FO 220, 790 ^A 0, 20 ^FD\(self.printList[i].paxName ?? "")^FS^FO10,830^GB200,60,0^FS^CF0,25^FO20,850^FDOperator^FS^FO210,830^GB340,60,0^FS^FO 220, 850 ^A 0, 20 ^FD\(self.printList[i].operatorName ?? "")^FS^FO10,890^GB200,60,0^FS^CF0,25^FO20,910^FDRes No^FS^FO210,890^GB340,60,0^FS^FO 220, 910 ^A 0, 20 ^FD\(self.printList[i].resNo ?? "")^FS^CF0,25^FO20,980^FDNet Total^FS^CF0,25^FO150,980^FD\(self.printList[i].total ?? "")^FS^CF0,25^FO20,1020^FDDiscount^FS^CF0,25^FO150,1020^FD\(self.printList[i].discount ?? "")^FS\(self.printList[i].extras ?? "")\(self.printList[i].voucher ?? "")^XZ"
               //  self.printListStringType.append(printString)
                 sendStrToPrinter(self.printString, connection: connection)
             }

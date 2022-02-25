@@ -46,6 +46,47 @@ extension UIView{
             break
         }
     }
+    
+    func applyGradient(colours: [UIColor]) -> Void {
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.frame = self.bounds
+        gradient.colors = colours.map { $0.cgColor }
+        gradient.startPoint = CGPoint(x : 0.0, y : 0.5)
+        gradient.endPoint = CGPoint(x :1.0, y: 0.5)
+        self.layer.insertSublayer(gradient, at: 0)
+     }
+    
+    enum RoundType {
+        case top
+        case custom
+        case bottom
+        case leftTopAndBottom
+        case all
+    }
+    
+    func round(with type: RoundType, radius: CGFloat = 3.0) {
+            var corners: UIRectCorner
+            
+            switch type {
+            case .top:
+                corners = [.topLeft, .topRight]
+            case .custom:
+                corners = []
+            case .bottom:
+                corners = [.bottomLeft, .bottomRight]
+            case .leftTopAndBottom:
+                corners = [.topLeft, .bottomLeft]
+            case .all:
+                corners = [.allCorners]
+            }
+            
+            DispatchQueue.main.async {
+                let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+                let mask = CAShapeLayer()
+                mask.path = path.cgPath
+                self.layer.mask = mask
+            }
+        }
 }
 enum LinePosition {
     case top

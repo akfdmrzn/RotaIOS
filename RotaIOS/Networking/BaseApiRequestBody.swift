@@ -47,6 +47,9 @@ public class BaseApiRequestBody<T:Mappable >:Mappable{
         self.mobilInformation = mobilInformation
         self.dataArray = dataArray
     }
+   public init(data:T){
+        self.data = data
+   }
    public func setData(data:T){
         self.data = data
     }

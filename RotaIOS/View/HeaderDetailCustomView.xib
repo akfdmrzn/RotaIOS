@@ -25,7 +25,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="490" height="79"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PqR-Eb-TXq">
-                            <rect key="frame" x="20" y="30" width="30" height="30"/>
+                            <rect key="frame" x="20" y="44.5" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="8jc-2r-V2i"/>
                                 <constraint firstAttribute="width" constant="30" id="p1q-Zf-2HH"/>
@@ -38,7 +38,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPR-oK-lMf">
-                            <rect key="frame" x="70" y="26" width="351" height="39"/>
+                            <rect key="frame" x="70" y="40" width="351" height="39"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="39" id="xNv-lf-6Yy"/>
                             </constraints>
@@ -51,9 +51,9 @@
                     <constraints>
                         <constraint firstItem="zPR-oK-lMf" firstAttribute="leading" secondItem="PqR-Eb-TXq" secondAttribute="trailing" constant="20" id="OBc-O5-Yz9"/>
                         <constraint firstItem="PqR-Eb-TXq" firstAttribute="leading" secondItem="hxL-d7-ZkI" secondAttribute="leading" constant="20" id="PIP-Fm-EWm"/>
-                        <constraint firstItem="zPR-oK-lMf" firstAttribute="top" secondItem="hxL-d7-ZkI" secondAttribute="top" constant="26" id="Sw8-cd-Fr7"/>
+                        <constraint firstItem="zPR-oK-lMf" firstAttribute="top" secondItem="hxL-d7-ZkI" secondAttribute="top" constant="40" id="Sw8-cd-Fr7"/>
+                        <constraint firstItem="PqR-Eb-TXq" firstAttribute="centerY" secondItem="zPR-oK-lMf" secondAttribute="centerY" id="W1s-VV-nG7"/>
                         <constraint firstAttribute="trailing" secondItem="zPR-oK-lMf" secondAttribute="trailing" constant="69" id="tzW-Im-2HJ"/>
-                        <constraint firstItem="PqR-Eb-TXq" firstAttribute="top" secondItem="hxL-d7-ZkI" secondAttribute="top" constant="30" id="wNU-Pr-7Hn"/>
                     </constraints>
                 </view>
             </subviews>

@@ -36,7 +36,7 @@ final class LoginView : UIView {
         self.textUsername.layer.cornerRadius = 10
         self.textPassword.layer.cornerRadius = 10
         self.viewBottom.layer.cornerRadius = 20.0
-        self.viewTop.applyGradient(colours: [UIColor(hexString: "#BFD732"), UIColor(hexString: "#3DB54A")])
+        self.viewTop.applyGradient(colours: [UIColor.lightGreenColor, UIColor.darkGreenColor])
         self.buttonLogin.layer.cornerRadius = 10
     }
     

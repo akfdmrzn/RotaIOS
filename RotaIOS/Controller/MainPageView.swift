@@ -32,7 +32,7 @@ final class MainPageView : UIView, UITableViewDelegate, UITableViewDataSource {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(MainPageTableViewCell.nib, forCellReuseIdentifier: MainPageTableViewCell.identifier)
-        self.viewHeader.applyGradient(colours: [UIColor(hexString: "#BFD732"), UIColor(hexString: "#3DB54A")])
+        self.viewHeader.applyGradient(colours: [UIColor.lightGreenColor, UIColor.darkGreenColor])
         self.tableView.layer.cornerRadius = 10
         
     }

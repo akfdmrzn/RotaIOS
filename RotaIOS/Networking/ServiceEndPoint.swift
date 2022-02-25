@@ -46,6 +46,20 @@ public enum ServiceEndPoint: String {
     case GetTourSalePromotions = "/api/api/TourSale/GetPromotions"
     case GetApplyPromotionMobile = "/api/api/TourSale/ApplyPromotionMobile"
     case GetInHouseListForMobile = "/api/api/TourSale/GetInHouseListForMobile"
+    case GetGuideDuties = "/api/api/TourTransferPlan/GetGuideDuties"
+    case GetArrAndDepHotelListForMobile = "/api/api/TourTransferPlan/GetArrAndDepHotelListForMobile"
+    case GetHotelListForMobile = "/api/api/TourTransferPlan/GetHotelListForMobile"
+    case GetInter = "/api/api/TourTransferPlan/GetInter"
+    case GetIndShopHotelListForMobile = "/api/api/IndShop/GetIndShopHotelListForMobile"
+    case GetInterPaxes = "/api/api/TourTransferPlan/GetInterPaxes"
+    case GetInfoPaxes = "/api/api/TourTransferPlan/GetInfoPaxes"
+    case GetArrAndDepPaxes = "/api/api/TourTransferPlan/GetArrAndDepPaxes"
+    case GetTourPaxes = "/api/api/TourTransferPlan/GetTourPaxes"
+    case GetColAndDelPaxes = "/api/api/TourTransferPlan/GetColAndDelPaxes"
+    case GetIndShopPaxes = "/api/api/IndShop/GetIndShopPaxes"
+    case UpdateIndShopNoShow = "/api/api/IndShop/UpdateIndShopNoShow"
+    case UpdateNoShow = "/api/api/TourTransferPlan/UpdateNoShow"
+    case UpdateInfoPlanNoShow = "api/api/TourTransferPlan/UpdateInfoPlanNoShow"
+    case UpdateArrAndDepPlanNoShow = "/api/api/TourTransferPlan/UpdateArrAndDepPlanNoShow"
+    case SaveGuideMeetingTimeAndReport = "/api/api/TourTransferPlan/SaveGuideMeetingTimeAndRepot"
 }
-
-

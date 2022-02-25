@@ -59,7 +59,6 @@ extension UIViewController {
         
     }
     
-    
     public func showAlertMsg(msg : String, finished: @escaping () -> Void){
         let alert = UIAlertController(title: "Message", message : msg, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
@@ -76,7 +75,6 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    
     public func getBaseRequestData<T:Mappable> (data:T)-> BaseApiRequestBody<T>{
         let systemVersion = UIDevice.current.systemVersion
         let deviceModel = UIDevice.current.modelName
@@ -91,6 +89,10 @@ extension UIViewController {
         let baseApiRequestBodyModel = BaseApiRequestBody.init(token: baseData.getTokenResponse?.access_token ?? "", languageId: userDefaultsData.getLanguageId(), mobilInformation: "\(deviceModel);iOS;\(systemVersion); Wifi; \(appVersion)", dataArray: dataArray)
         baseApiRequestBodyModel.dataArray = dataArray
         return baseApiRequestBodyModel
+    }
+    
+    public func getBaseRequestStringData<T:Mappable> (data:T)-> BaseApiRequestBody<T>{
+        return BaseApiRequestBody.init(data: data)
     }
     
     func otiPushViewController(identifier : String, animated: Bool = true) {

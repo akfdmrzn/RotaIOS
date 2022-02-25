@@ -28,7 +28,7 @@ class HeaderDetailCustomView : UIView {
     func commonInit() {
         Bundle.main.loadNibNamed(String(describing: HeaderDetailCustomView.self), owner: self, options: nil)
         self.viewMainView.addCustomContainerView(self)
-        self.viewMainView.applyGradient(colours: [UIColor(hexString: "#BFD732"), UIColor(hexString: "#3DB54A")])
+        self.viewMainView.applyGradient(colours: [UIColor.lightGreenColor, UIColor.darkGreenColor])
         
     }
     @IBAction func buttonClicked(_ sender: Any) {

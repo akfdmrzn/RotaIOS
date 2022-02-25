@@ -10,6 +10,7 @@ import UIKit
 import DropDown
 import ObjectMapper
 
+
 struct SendDataPrint {
     var tourName : String?
     var paxInfo : String?
@@ -466,12 +467,12 @@ class ExcProceedCustomView: UIView{
         let filter = self.exchangeList.filter{ $0.sHORTCODE == self.selectedCurrencyType}
         var paymentAmount = Double(self.viewAmount.mainText.text ?? "")
         roundedPaymentAmountChosenCurrency = paymentAmount ?? 0.0
-        roundedPaymentAmountChosenCurrency = Double(round(100 * roundedPaymentAmountChosenCurrency) / 100 )
+        roundedPaymentAmountChosenCurrency = Double(Darwin.round(100 * roundedPaymentAmountChosenCurrency) / 100 )
         if filter.count > 0 {
             paymentAmount = (paymentAmount ?? 0.0) * (filter[0].eUROCROSS ?? 0.0)
         }
         roundedPaymentAmount = paymentAmount ?? 0.00
-        roundedPaymentAmount = Double(round(100 * roundedPaymentAmount) / 100 )
+        roundedPaymentAmount = Double(Darwin.round(100 * roundedPaymentAmount) / 100 )
         
         if self.selectedTouristName != "" && self.selectedPaymentType != "" && self.viewCurrencyType.mainLabel.text != "" {
             
@@ -483,7 +484,7 @@ class ExcProceedCustomView: UIView{
             
             self.savedTotalAmount += paymentAmount ?? 0.0
             
-            var roundedSavedTotalAmountValue = Double(round(100 * self.savedTotalAmount) / 100 )
+            var roundedSavedTotalAmountValue = Double(Darwin.round(100 * self.savedTotalAmount) / 100 )
             
             self.viewPaid.mainText.text = String(roundedSavedTotalAmountValue)
             self.viewPaid.mainText.text = self.viewPaid.mainText.text?.replacingOccurrences(of: ",", with: ".")
@@ -493,7 +494,7 @@ class ExcProceedCustomView: UIView{
             }
             self.balanceAmount = self.totalAmount - roundedSavedTotalAmountValue
             //self.totalAmount = self.balanceAmount
-            let roundedBalanceValue = Double(round(100 * self.balanceAmount) / 100 )
+            let roundedBalanceValue = Double(Darwin.round(100 * self.balanceAmount) / 100 )
             if roundedBalanceValue <= 0.5 && roundedBalanceValue >= -0.5 {
                 self.balanceAmount = 0.0
                 
@@ -537,7 +538,7 @@ class ExcProceedCustomView: UIView{
     
     @IBAction func convertButtonTapped(_ sender: Any) {
         self.convertedCurrency = self.balanceAmount / self.valueforDivided
-        let roundedValue = Double(round(100 * self.convertedCurrency) / 100 )
+        let roundedValue = Double(Darwin.round(100 * self.convertedCurrency) / 100 )
         let alert = UIAlertController.init(title: "Message", message: "Converted balance  for \(self.balanceAmount) EUR is \(roundedValue)\(self.convertedCurrencyTitle)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         if let topVC = UIApplication.getTopViewController() {
@@ -835,9 +836,9 @@ extension ExcProceedCustomView : UITableViewDelegate, UITableViewDataSource {
             
             self.deletedAmount = self.paymentTypeList[indexPath.row].paymentAmount ?? 0.00
             self.deletedAmount = self.deletedAmount * baseCrossValue
-            let roundedDeletedValue = Double(round(100 * self.deletedAmount) / 100 )
+            let roundedDeletedValue = Double(Darwin.round(100 * self.deletedAmount) / 100 )
             self.savedTotalAmount -= roundedDeletedValue
-            roundedSavedValue = Double(round(100 * self.savedTotalAmount) / 100 )
+            roundedSavedValue = Double(Darwin.round(100 * self.savedTotalAmount) / 100 )
             if roundedSavedValue == -0.0 {
                 roundedSavedValue = 0.0
             }

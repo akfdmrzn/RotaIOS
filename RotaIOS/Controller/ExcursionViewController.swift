@@ -80,6 +80,8 @@ class ExcursionViewController: UIViewController {
     var buttonTappedCount = 0
     var tempPaxesList : [GetInHoseListResponseModel] = []
     var paxesListIsEqual = false
+    var extraPaxesList : [ExtraPaxes] = []
+    var transferPaxesList : [ExtraPaxes] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -237,6 +239,8 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
         if isSaveButtonTapped == true {
             userDefaultsData.saveExtrasList(tour: self.savedExtrasList)
             userDefaultsData.saveTransfersList(tour: self.savedTransFerList)
+            userDefaultsData.saveExtraPaxesList(extraPaxes: self.extraPaxesList)
+            userDefaultsData.saveTransferPaxesList(transferPaxes: self.transferPaxesList)
             self.saveButtonTappet = true
             userDefaultsData.saveExtrasandTransfersTotalPrice(totalPrice: self.extraAndTransTotalPrice)
         }
@@ -255,7 +259,7 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
             }
         }
         
-        if self.buttonTappedCount == 3  && self.extraAndTransTotalPrice != 0.0{
+        if self.buttonTappedCount == 3  && self.extraAndTransTotalPrice != 0.0 && self.extraPaxesList.count > 0 && self.transferPaxesList.count > 0{
             //self.buttonTappedCount = 2
             if self.saveButtonTappet == false{
                 self.viewFooterViewCustomView.counter = 2
@@ -527,6 +531,8 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
                         convertMonth = String(month)
                     }
                     
+                    convertMonth = String(format: "%02d", arguments: [month])
+                    print(convertMonth)
                     
                     if day < 10 {
                         convertDay = String("0\(day)")
@@ -534,6 +540,8 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
                         convertDay = String(day)
                     }
                     
+                    convertDay = String(format: "%02d", arguments: [day])
+                    print(convertDay)
                     
                     if hour < 10 {
                         convertHour = String("0\(hour)")
@@ -541,17 +549,20 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
                         convertHour = String(hour)
                     }
                     
+                    convertHour = String(format: "%02d", arguments: [hour])
+                    print(convertDay)
                     
                     if minute < 10 {
                         convertMinute = String("0\(minute)")
                     }else {
                         convertMinute = String(minute)
                     }
-                   
                     
+                    convertMinute = String(format: "%02d", arguments: [minute])
+                    print(convertMinute)
+                   
                     let mergeDate = "\(convertMonth)\(convertDay)\(convertHour)\(convertMinute)"
                     print(mergeDate)
-                    
                     
                     let getMaxVoucherRequestModel = GetMaxGuideVoucherNumberRequestModel(guideId: userDefaultsData.getGuideId(), saleDate: userDefaultsData.getSaleDate())
                     
@@ -959,7 +970,7 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
         
         if self.buttonTappedCount == 3{
           //  self.buttonTappedCount = 2
-            if self.saveButtonTappet == false && self.extraAndTransTotalPrice != 0.0 {
+            if self.saveButtonTappet == false && self.extraAndTransTotalPrice != 0.0 && self.extraPaxesList.count > 0 && self.transferPaxesList.count > 0{
                 self.viewAppointMentBarCutomView.selectedIndex.row = 2
                 let alert = UIAlertController.init(title: "WARNING", message: "Please Clicked Save Button", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default, handler: nil))
@@ -1235,36 +1246,36 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
                     }else{
                         convertMonth = String(month)
                     }
-                    if month.words.count == 1 {
-                        convertMonth = String("0\(month)")
-                    }
+                    
+                    convertMonth = String(format: "%02d", arguments: [month])
+                    print(convertMonth)
                     
                     if day < 10 {
                         convertDay = String("0\(day)")
                     }else{
                         convertDay = String(day)
                     }
-                    if day.words.count == 1 {
-                        convertDay = String("0\(day)")
-                    }
+                    
+                    convertDay = String(format: "%02d", arguments: [day])
+                    print(convertDay)
                     
                     if hour < 10 {
                         convertHour = String("0\(hour)")
                     }else{
                         convertHour = String(hour)
                     }
-                    if hour.words.count == 1 {
-                        convertHour = String("0\(hour)")
-                    }
+                    
+                    convertHour = String(format: "%02d", arguments: [hour])
+                    print(convertDay)
                     
                     if minute < 10 {
                         convertMinute = String("0\(minute)")
                     }else {
                         convertMinute = String(minute)
                     }
-                    if minute.words.count == 1 {
-                        convertMinute = String("0\(minute)")
-                    }
+                    
+                    convertMinute = String(format: "%02d", arguments: [minute])
+                    print(convertMinute)
                     
                     let mergeDate = "\(convertMonth)\(convertDay)\(convertHour)\(convertMinute)"
                     print(mergeDate)
@@ -1788,7 +1799,8 @@ extension ExcursionViewController : ExcPaxPageDelegate {
 }
 
 extension ExcursionViewController : ExcAddCustomViewDelegate {
-    func excurAddCustomDelegate(changeTransferNumber: Int, changeExtraNumber: Int, extrasTotalPrice: Double, transfersTotalPrice: Double, extraButtonTapped: Bool, savedExtrasList: [Extras], savedTransferList: [Transfers], currentExtrasTotalPrice: Double, currentTransfersTotalPirce: Double) {
+    
+    func excurAddCustomDelegate(changeTransferNumber: Int, changeExtraNumber: Int, extrasTotalPrice: Double, transfersTotalPrice: Double, extraButtonTapped: Bool, savedExtrasList: [Extras], savedTransferList: [Transfers], currentExtrasTotalPrice: Double, currentTransfersTotalPirce: Double, extraPaxesListSaved: [ExtraPaxes], transferPaxesListSaved: [ExtraPaxes]) {
         self.extraAndTransTotalPrice = 0.0
         self.changeExcNumber = changeExtraNumber
         self.changeTransferNumber = changeTransferNumber
@@ -1803,6 +1815,8 @@ extension ExcursionViewController : ExcAddCustomViewDelegate {
         self.extraAndTransTotalPrice = extrasTotalPrice + transfersTotalPrice
         self.extrasTotalPrice = extrasTotalPrice
         self.transfersTotalPrice = transfersTotalPrice
+        self.extraPaxesList = extraPaxesListSaved
+        self.transferPaxesList = transferPaxesListSaved
         
         /*if  self.viewFooterViewCustomView.totalPriceIsSaved == true {
          userDefaultsData.saveTotalPrice(totalPrice: self.totalPrice)

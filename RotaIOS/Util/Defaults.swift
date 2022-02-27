@@ -47,6 +47,8 @@ public class Defaults{
         case HotelList
         case UserPasswordList
         case GetToken
+        case ExtraPaxes
+        case TransferPaxes
     }
     
    public init(){}
@@ -460,6 +462,48 @@ public class Defaults{
         return []
     }
     
+    //Save extraPaxes and save TransferPaxes
+    
+    func saveExtraPaxesList(extraPaxes:[ExtraPaxes]){
+        let preferences = UserDefaults.standard
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(extraPaxes){
+            preferences.set(encoded, forKey: getIdentifier(type: .ExtraPaxes))
+            preferences.synchronize()
+        }
+    }
+    
+    func getExtraPaxesList() -> [ExtraPaxes]? {
+        let preferences = UserDefaults.standard
+        let decoder = JSONDecoder()
+        if let savedTourList = preferences.object(forKey: getIdentifier(type: .ExtraPaxes)) as? Data {
+            if let loadedTourList = try? decoder.decode([ExtraPaxes].self, from: savedTourList){
+                return loadedTourList
+            }
+        }
+        return []
+    }
+    
+    func saveTransferPaxesList(transferPaxes:[ExtraPaxes]){
+        let preferences = UserDefaults.standard
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(transferPaxes){
+            preferences.set(encoded, forKey: getIdentifier(type: .TransferPaxes))
+            preferences.synchronize()
+        }
+    }
+    
+    func getTransferPaxesList() -> [ExtraPaxes]? {
+        let preferences = UserDefaults.standard
+        let decoder = JSONDecoder()
+        if let savedTourList = preferences.object(forKey: getIdentifier(type: .TransferPaxes)) as? Data {
+            if let loadedTourList = try? decoder.decode([ExtraPaxes].self, from: savedTourList){
+                return loadedTourList
+            }
+        }
+        return []
+    }
+    
     //LanguageID
     public func saveLanguageId(languageId:Int){
         let preferences = UserDefaults.standard
@@ -768,6 +812,10 @@ public class Defaults{
             return "UserPasswordList"
         case .GetToken:
             return "GetToken"
+        case .ExtraPaxes:
+            return "ExtraPaxes"
+        case .TransferPaxes:
+            return "TransferPaxes"
         }
     }
 }

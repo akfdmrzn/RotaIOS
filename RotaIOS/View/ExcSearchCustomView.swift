@@ -166,7 +166,13 @@ class ExcSearchCustomView : UIView {
                     self.tempHotelMenu.removeAll()
                     let filtered = response.filter({return ($0.guideHotel != 0)})
                     print("\(filtered)")
-                    if filtered[0].guideHotel != 0 {
+                    var tempGuideNumber = 0
+                    
+                    if filtered.count > 0 {
+                        tempGuideNumber = filtered[0].guideHotel ?? 0
+                    }
+                    
+                    if  tempGuideNumber != 0 {
                         self.viewChecBoxView.imageCheck.isHidden = true
                         self.viewChecBoxView.isCheckRemember = false
                         self.hotelList = filtered

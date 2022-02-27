@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import DropDown
 
-struct ExtraPaxes {
+struct ExtraPaxes : Encodable, Decodable {
     var extraName : String?
     var tourName : String?
     var CheckList : [Bool]?
@@ -17,7 +17,7 @@ struct ExtraPaxes {
 }
 
 protocol ExcAddCustomViewDelegate {
-    func excurAddCustomDelegate(changeTransferNumber : Int, changeExtraNumber : Int, extrasTotalPrice : Double, transfersTotalPrice : Double, extraButtonTapped : Bool, savedExtrasList : [Extras], savedTransferList : [Transfers], currentExtrasTotalPrice : Double, currentTransfersTotalPirce : Double)
+    func excurAddCustomDelegate(changeTransferNumber : Int, changeExtraNumber : Int, extrasTotalPrice : Double, transfersTotalPrice : Double, extraButtonTapped : Bool, savedExtrasList : [Extras], savedTransferList : [Transfers], currentExtrasTotalPrice : Double, currentTransfersTotalPirce : Double, extraPaxesListSaved : [ExtraPaxes], transferPaxesListSaved : [ExtraPaxes])
 }
 
 class ExcAddCustomView : UIView {
@@ -178,8 +178,11 @@ class ExcAddCustomView : UIView {
             self.filteredExcursionList = filtered
             
             for listofArray in self.filteredExcursionList {
-                self.extrasList = listofArray.extras ?? self.extrasList
-                self.transfersList = listofArray.transfers ?? self.transfersList
+                if self.buttonExtraTapped == true {
+                    self.extrasList = listofArray.extras ?? self.extrasList
+                }else{
+                    self.transfersList = listofArray.transfers ?? self.transfersList
+                }
                 self.extrasorTranfersListTapped = true
             }
             
@@ -232,7 +235,7 @@ class ExcAddCustomView : UIView {
     @IBAction func transfersButtonTapped(_ sender: Any) {
         if  self.buttonExtraTapped == true {
             self.buttonExtraTapped = false
-            self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice : self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
+            self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice : self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice, extraPaxesListSaved : self.extraPaxesListSaved, transferPaxesListSaved : self.transferPaxesListSaved)
         }
         self.buttonTransfers.backgroundColor = UIColor.greenColor
         self.buttonExtras.layer.borderWidth = 1
@@ -245,7 +248,7 @@ class ExcAddCustomView : UIView {
     @IBAction func extrasButtonTapped(_ sender: Any) {
         if  self.buttonExtraTapped == false {
             self.buttonExtraTapped = true
-            self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
+            self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice, extraPaxesListSaved : self.extraPaxesListSaved, transferPaxesListSaved : self.transferPaxesListSaved)
         }
         
         self.buttonExtras.backgroundColor = UIColor.greenColor
@@ -281,7 +284,7 @@ class ExcAddCustomView : UIView {
                 self.extrasTotalPrice -= self.currentExtrasTotalPrice
                 self.currentExtrasTotalPrice = -(self.currentExtrasTotalPrice)
                 self.extrasPaxesListControl()
-                self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
+                self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice, extraPaxesListSaved : self.extraPaxesListSaved, transferPaxesListSaved : self.transferPaxesListSaved)
             }
         }
     }
@@ -312,7 +315,7 @@ class ExcAddCustomView : UIView {
                 
                 self.extrasPaxesListControl()
                 
-                self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
+                self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice, extraPaxesListSaved : self.extraPaxesListSaved, transferPaxesListSaved : self.transferPaxesListSaved)
             }
 
         }
@@ -326,14 +329,18 @@ class ExcAddCustomView : UIView {
         }else{
             self.extraPaxesListSaved.append(self.extraPaxes ?? ExtraPaxes(extraName: "", tourName: "", CheckList: [], savedAmount: self.perPersonSavedTotalPrice))
         }
- 
-        self.transferPaxes = ExtraPaxes(extraName: self.transfersList[self.extrasIndex].desc, tourName:  self.excursionName, CheckList: self.transfersPaxCheckList)
-      
-        if let index = self.transferPaxesListSaved.firstIndex(where: {$0.extraName == self.transferPaxes?.extraName && $0.tourName == self.transferPaxes?.tourName}){
-            self.transferPaxesListSaved[index] = self.transferPaxes ?? ExtraPaxes(extraName: "", tourName: "", CheckList: [], savedAmount: self.perPersonSavedTotalPrice)
-        }else{
-            self.transferPaxesListSaved.append(self.transferPaxes ?? ExtraPaxes(extraName: "", tourName: "", CheckList: [], savedAmount: self.perPersonSavedTotalPrice))
+        
+        if self.buttonExtraTapped == false {
+            self.transferPaxes = ExtraPaxes(extraName: self.transfersList[self.extrasIndex].desc, tourName:  self.excursionName, CheckList: self.transfersPaxCheckList)
+          
+            if let index = self.transferPaxesListSaved.firstIndex(where: {$0.extraName == self.transferPaxes?.extraName && $0.tourName == self.transferPaxes?.tourName}){
+                self.transferPaxesListSaved[index] = self.transferPaxes ?? ExtraPaxes(extraName: "", tourName: "", CheckList: [], savedAmount: self.perPersonSavedTotalPrice)
+            }else{
+                self.transferPaxesListSaved.append(self.transferPaxes ?? ExtraPaxes(extraName: "", tourName: "", CheckList: [], savedAmount: self.perPersonSavedTotalPrice))
+            }
         }
+        
+        self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice, extraPaxesListSaved : self.extraPaxesListSaved, transferPaxesListSaved : self.transferPaxesListSaved)
     }
 }
 
@@ -531,7 +538,7 @@ extension ExcAddCustomView : AddMenuTableViewCellDelegate, AddMenuPaxTableViewCe
             self.extrapriceReduceCalculation(self.tempaxeslist)
         }
         
-        self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.saveTransferList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
+        self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.saveTransferList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice, extraPaxesListSaved : self.extraPaxesListSaved, transferPaxesListSaved : self.transferPaxesListSaved)
     }
     
     func checkBoxTapped(checkCounter: Bool, transExtrDesc : String, priceTypeDesc : Int, extras : Extras?, transfers : Transfers?, tourdate: String) {
@@ -645,6 +652,14 @@ extension ExcAddCustomView : AddMenuTableViewCellDelegate, AddMenuPaxTableViewCe
                                 self.transfersList[index].savedAmount = self.transfersTotalPrice
                             }
                             
+                            if let index = self.saveExtrasList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate}){
+                                self.saveExtrasList[index].savedAmount = Double(self.flatAmount) * (extras?.flatPrice ?? 0.00)
+                            }
+                            
+                            if let index = self.saveTransferList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate}){
+                                self.saveTransferList[index].savedAmount = Double(self.flatAmount) * (transfers?.flatPrice ?? 0.00)
+                            }
+                            
                             self.filteredExcursionList[0].extras = self.extrasList
                             self.filteredExcursionList[0].transfers = self.transfersList
                             if let insideIndex = self.excursionListInAddMenu.firstIndex(where: {$0.tourName == self.filteredExcursionList[0].tourName && $0.tourDate == self.filteredExcursionList[0].tourDate}){
@@ -652,7 +667,7 @@ extension ExcAddCustomView : AddMenuTableViewCellDelegate, AddMenuPaxTableViewCe
                                 self.excursionListInAddMenu.insert(self.filteredExcursionList[0], at: insideIndex)
                             }
                             
-                            self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
+                            self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice, extraPaxesListSaved : self.extraPaxesListSaved, transferPaxesListSaved : self.transferPaxesListSaved)
                         }
                         
                         
@@ -819,7 +834,7 @@ extension ExcAddCustomView : AddMenuTableViewCellDelegate, AddMenuPaxTableViewCe
                             /* self.extrasTotalPrice -= Double(self.flatAmount) * (extras?.flatPrice ?? 0.00)
                              self.transfersTotalPrice -= Double(self.flatAmount) * (transfers?.flatPrice ?? 0.00) */
                             // Perform login action
-                            self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
+                            self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.transfersList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice, extraPaxesListSaved : self.extraPaxesListSaved, transferPaxesListSaved : self.transferPaxesListSaved)
                         }
                         
                         //  flatAmountAction.isEnabled = false
@@ -927,7 +942,7 @@ extension ExcAddCustomView : AddMenuTableViewCellDelegate, AddMenuPaxTableViewCe
                         self.excursionListInAddMenu.insert(self.filteredExcursionList[0], at: insideIndex)
                     }
                 }
-        self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.saveTransferList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice)
+        self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.saveTransferList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice, extraPaxesListSaved : self.extraPaxesListSaved, transferPaxesListSaved : self.transferPaxesListSaved)
             }
         
     }

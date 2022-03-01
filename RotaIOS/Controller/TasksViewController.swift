@@ -48,14 +48,17 @@ class TasksViewController: BaseViewController {
     var todayList:[TotalList] = []
     var tomorrowList:[TotalList] = []
     var shList:[TotalList] = []
-    var flag: Int = 0
+    var flag: Int = 1
     var dateString = ""
     var yesterdayDateString = ""
     var tomorrowDateString = ""
     var workNo: String?
     var hotelName: String?
     var excursionName: String?
-    var getGuideDutiesList: [GetGuideDutiesList] = [] 
+    var getGuideDutiesList: [GetGuideDutiesList] = []
+    var getGuideDutiesYesterdayList: [GetGuideDutiesList] = []
+    var getGuideDutiesTodayList: [GetGuideDutiesList] = []
+    var getGuideDutiesTomorrowList: [GetGuideDutiesList] = []
     var totalList:[TotalList] = [] {
         didSet {
             self.tasksTableView.reloadData()
@@ -164,80 +167,95 @@ class TasksViewController: BaseViewController {
         self.todayList.removeAll()
         self.tomorrowList.removeAll()
         self.shList.removeAll()
+        self.getGuideDutiesYesterdayList.removeAll()
+        self.getGuideDutiesTodayList.removeAll()
+        self.getGuideDutiesTomorrowList.removeAll()
         for item in self.collection {
-            self.getGuideDutiesList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             switch item.tourDateStr {
             case self.yesterdayDateString.dateFormat():
                 self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.collectionColor , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesYesterdayList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             case self.dateString.dateFormat():
                 self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.collectionColor , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTodayList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             case self.tomorrowDateString.dateFormat():
                 self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.collectionColor , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             default:
                 break
             }
         }
         for item in self.excursion {
-            self.getGuideDutiesList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             switch item.tourDateStr {
             case self.yesterdayDateString.dateFormat():
                 self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.excursionColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesYesterdayList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             case self.dateString.dateFormat():
                 self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.excursionColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTodayList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             case self.tomorrowDateString.dateFormat():
                 self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.excursionColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             default:
                 break
             }
         }
         for item in self.delivery {
-            self.getGuideDutiesList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             switch item.tourDateStr {
             case self.yesterdayDateString.dateFormat():
                 self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.deliveryColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesYesterdayList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             case self.dateString.dateFormat():
                 self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.deliveryColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTodayList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             case self.tomorrowDateString.dateFormat():
                 self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.deliveryColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             default:
                 break
             }
         }
         for item in self.arrival {
-            self.getGuideDutiesList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: String(item.id), planIds: ""))
             switch item.tourDateStr {
             case self.yesterdayDateString.dateFormat():
                 self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.arrivalColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesYesterdayList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: String(item.id), planIds: ""))
             case self.dateString.dateFormat():
                 self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.arrivalColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTodayList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: String(item.id), planIds: ""))
             case self.tomorrowDateString.dateFormat():
                 self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.arrivalColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: String(item.id), planIds: ""))
             default:
                 break
             }
         }
         for item in self.departure {
-            self.getGuideDutiesList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: String(item.id), planIds: ""))
             switch item.tourDateStr {
             case self.yesterdayDateString.dateFormat():
                 self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.departureColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesYesterdayList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: String(item.id), planIds: ""))
             case self.dateString.dateFormat():
                 self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.departureColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTodayList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: String(item.id), planIds: ""))
             case self.tomorrowDateString.dateFormat():
                 self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.departureColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: String(item.id), planIds: ""))
             default:
                 break
             }
         }
         for item in self.intern {
-            self.getGuideDutiesList.append(GetGuideDutiesList.init(id: item.id, ids: "", typeInt: "", planId: "", planIds: ""))
             switch item.tourDateStr {
             case self.yesterdayDateString.dateFormat():
                 self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.internColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesYesterdayList.append(GetGuideDutiesList.init(id: item.id, ids: "", typeInt: "", planId: "", planIds: ""))
             case self.dateString.dateFormat():
                 self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.internColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTodayList.append(GetGuideDutiesList.init(id: item.id, ids: "", typeInt: "", planId: "", planIds: ""))
             case self.tomorrowDateString.dateFormat():
                 self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.internColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: item.id, ids: "", typeInt: "", planId: "", planIds: ""))
             default:
                 break
             }
@@ -247,28 +265,31 @@ class TasksViewController: BaseViewController {
             
         }
         for item in self.infoPlan {
-            self.getGuideDutiesList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: "", planId: String(item.id), planIds: ""))
             switch item.dateStr {
             case self.yesterdayDateString.dateFormat():
                 self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.dateStr, excursion: item.hotelName, transferType: item.market, pax: item.pax, vehicle: item.reelPax, meetingPointAndTime: "-", meetingTime: item.infoTime, extra: "-", driverName: "-", driverPhone: "-", color: UIColor.infoPlanColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesYesterdayList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: "", planId: String(item.id), planIds: ""))
             case self.dateString.dateFormat():
                 self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.dateStr, excursion: item.hotelName, transferType: item.market, pax: item.pax, vehicle: item.reelPax, meetingPointAndTime: "-", meetingTime: item.infoTime, extra: "-", driverName: "-", driverPhone: "-", color: UIColor.infoPlanColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTodayList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: "", planId: String(item.id), planIds: ""))
             case self.tomorrowDateString.dateFormat():
                 self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.dateStr, excursion: item.hotelName, transferType: item.market, pax: item.pax, vehicle: item.reelPax, meetingPointAndTime: "-", meetingTime: item.infoTime, extra: "-", driverName: "-", driverPhone: "-", color: UIColor.infoPlanColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: "", planId: String(item.id), planIds: ""))
             default:
                 break
             }
         }
         for item in self.indShopForMobile {
-            self.getGuideDutiesList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: "", planIds: item.id))
             switch item.dateStr {
             case self.yesterdayDateString.dateFormat():
                 self.yesterdayList.append(TotalList.init(shortCode: item.shortCode, workNo: item.workNo, tourDateStr: item.dateStr, excursion: item.meetingPoint, transferType: "-", pax: item.pax, vehicle: item.vehiclePlate, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.indShopForMobileColor, noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesYesterdayList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: "", planIds: item.id))
             case self.dateString.dateFormat():
                 self.todayList.append(TotalList.init(shortCode: item.shortCode, workNo: item.workNo, tourDateStr: item.dateStr, excursion: item.meetingPoint, transferType: "-", pax: item.pax, vehicle: item.vehiclePlate, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.indShopForMobileColor, noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
-                
+                self.getGuideDutiesTodayList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: "", planIds: item.id))
             case self.tomorrowDateString.dateFormat():
                 self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: item.workNo, tourDateStr: item.dateStr, excursion: item.meetingPoint, transferType: "-", pax: item.pax, vehicle: item.vehiclePlate, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.indShopForMobileColor, noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: "", planIds: item.id))
             default:
                 break
             }
@@ -276,10 +297,13 @@ class TasksViewController: BaseViewController {
         switch flag {
         case 0:
             self.totalList = self.yesterdayList
+            self.getGuideDutiesList = self.getGuideDutiesYesterdayList
         case 1:
             self.totalList = self.todayList
+            self.getGuideDutiesList = self.getGuideDutiesTodayList
         case 2:
             self.totalList = self.tomorrowList
+            self.getGuideDutiesList = self.getGuideDutiesTomorrowList
         case 3:
             self.totalList = self.shList
         default:
@@ -392,24 +416,23 @@ extension TasksViewController : UITableViewDelegate,UITableViewDataSource{
 extension TasksViewController : TasksCustomViewDelegate{
     func tappedYesterday(){
         self.totalList.removeAll()
+        self.getGuideDutiesList.removeAll()
         self.flag = 0
         self.getGuideDutiesService()
     }
     
     func tappedToday(){
-       
         self.totalList.removeAll()
+        self.getGuideDutiesList.removeAll()
         self.flag = 1
         self.getGuideDutiesService()
-        
     }
     
     func tappedTomorrow(){
-        
-            self.totalList.removeAll()
-            self.flag = 2
-            self.getGuideDutiesService()
-        
+        self.totalList.removeAll()
+        self.getGuideDutiesList.removeAll()
+        self.flag = 2
+        self.getGuideDutiesService()
     }
     
     func tappedSH(){

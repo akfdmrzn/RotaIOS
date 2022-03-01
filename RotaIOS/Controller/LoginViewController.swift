@@ -21,8 +21,8 @@ final class LoginViewController : BaseViewController {
     override func viewDidLoad() {
         self.userNAmeList = userDefaultsData.getUserNameList() ?? []
         self.userPasswordList = userDefaultsData.getUserPasswordList() ?? []
-        self.userName = userDefaultsData.geUserNAme()
-        self.password = userDefaultsData.getPassword()
+        self.userName = userDefaultsData.geUserNAme() ?? ""
+        self.password = userDefaultsData.getPassword() ?? ""
         self.getTokenResponse = userDefaultsData.getGetToken() ?? self.getTokenResponse
         if getTokenResponse.count > 0 {
             baseData.getTokenResponse = self.getTokenResponse[0]
@@ -78,27 +78,28 @@ final class LoginViewController : BaseViewController {
                              userDefaultsData.saveUserId(languageId: response.id ?? "default")
                              userDefaultsData.saveGuideId(languageId: response.guideId!)
                              userDefaultsData.saveSaleDate(saleDate: dateString)
+                             
+                             let getGuideInfRequestModel =  GetGuideInfoRequestModel( id : userDefaultsData.getGuideId())
+                             NetworkManager.sendGetRequest(url:NetworkManager.BASEURL, endPoint: .GetGuideInfo, method: .get, parameters: getGuideInfRequestModel.requestPathString()) { (response : GetGuideInfoResponseModel) in
+                                 
+                                 if response.marketGroupId != nil {
+                                     
+                                     userDefaultsData.saveMarketGruopId(marketGroupId: response.marketGroupId ?? 0)
+                                     self.otiPushViewController(viewController: MainPAgeViewController())
+                                     
+                                 }else{
+                                     let alert = UIAlertController(title: "Error", message: "Token has not recived", preferredStyle: UIAlertController.Style.alert)
+                                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                                     self.present(alert, animated: true, completion: nil)
+                                 }
+                             }
+                             
                          }else{
                              let alert = UIAlertController(title: "Error", message: "Token has not recived", preferredStyle: UIAlertController.Style.alert)
                              alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                              self.present(alert, animated: true, completion: nil)
                          }
                      }
-                     
-                     let getGuideInfRequestModel =  GetGuideInfoRequestModel( id : userDefaultsData.getGuideId())
-                     NetworkManager.sendGetRequest(url:NetworkManager.BASEURL, endPoint: .GetGuideInfo, method: .get, parameters: getGuideInfRequestModel.requestPathString()) { (response : GetGuideInfoResponseModel) in
-                         
-                         if response.marketGroupId != nil {
-                             
-                             userDefaultsData.saveMarketGruopId(marketGroupId: response.marketGroupId ?? 0)
-                             
-                         }else{
-                             let alert = UIAlertController(title: "Error", message: "Token has not recived", preferredStyle: UIAlertController.Style.alert)
-                             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-                             self.present(alert, animated: true, completion: nil)
-                         }
-                     }
-                    self.otiPushViewController(viewController: MainPAgeViewController())
                 }else{
                     let alert = UIAlertController(title: "Error", message: "Invalid Username/Password.", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))

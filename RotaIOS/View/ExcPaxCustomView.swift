@@ -90,6 +90,7 @@ class ExcPaxCustomView : UIView {
     
     func commonInit() {
         Bundle.main.loadNibNamed(String(describing: ExcPaxCustomView.self), owner: self, options: nil)
+        userDefaultsData.saveTouristDetailInfoList(tour: self.touristDetailInfoList)
         self.viewMainView.addCustomContainerView(self)
         self.labelPaxes.addLine(position: .bottom, color: .lightGray, width: 1.0)
         self.tableView.backgroundColor = UIColor.tableViewColor
@@ -282,6 +283,7 @@ extension ExcPaxCustomView : TempAddPaxesListDelegate {
             self.tempListofPaxes = listofpaxes
             var lastIndex = 0
             self.manuelAddedPaxesList.removeAll()
+            var manuelPaxesList : [Paxes] = []
             let currentYear =  Calendar.current.component(.year, from: Date())
             if self.tempValue != changeValue {
                 self.tempValue = changeValue
@@ -378,17 +380,19 @@ extension ExcPaxCustomView : TempAddPaxesListDelegate {
                         self.manuelAddedPaxesList[i].isTapped = true
                         self.checkList.append(true)
                         self.savePaxesList.append(self.manuelAddedPaxesList[i])
-                        
                     }
                     
                     for i in 0...manuelAddedPaxesList.count - 1 {
                         if let index = self.paxesList.firstIndex(where: {$0 === self.manuelAddedPaxesList[i]}){
                             self.paxesList[index].isTapped = true
                         }
+                        manuelPaxesList.append(Paxes.init(pAX_CHECKOUT_DATE: self.manuelAddedPaxesList[i].checkOut ?? "", pAX_OPRID: 0, pAX_OPRNAME: self.manuelAddedPaxesList[i].operatorName ?? "", pAX_PHONE: self.manuelAddedPaxesList[i].phone ?? "", hotelname:"", pAX_GENDER: self.manuelAddedPaxesList[i].gender ?? "", pAX_AGEGROUP: self.manuelAddedPaxesList[i].ageGroup ?? "", pAX_NAME: self.manuelAddedPaxesList[i].name ?? "", pAX_BIRTHDAY: self.manuelAddedPaxesList[i].birtDate ?? "", pAX_RESNO: self.manuelAddedPaxesList[i].ResNo ?? "", pAX_PASSPORT: self.manuelAddedPaxesList[i].passPort ?? "", pAX_ROOM: self.manuelAddedPaxesList[i].room ?? "", pAX_TOURISTREF: 0, pAX_STATUS: 0, ID: 0))
+                        self.touristDetailInfoList.append(manuelPaxesList[i])
                     }
                 }
                 
                 userDefaultsData.savePaxesList(tour: self.savePaxesList)
+                userDefaultsData.saveTouristDetailInfoList(tour: self.touristDetailInfoList)
                 self.tableView.reloadData()
                 return
             }else {
@@ -422,9 +426,13 @@ extension ExcPaxCustomView : TempAddPaxesListDelegate {
                             self.checkList.append(false)
                         }
                     }
+                    manuelPaxesList.append(Paxes.init(pAX_CHECKOUT_DATE: self.manuelAddedPaxesList[i].checkOut ?? "", pAX_OPRID: 0, pAX_OPRNAME: self.manuelAddedPaxesList[i].operatorName ?? "", pAX_PHONE: self.manuelAddedPaxesList[i].phone ?? "", hotelname:"", pAX_GENDER: self.manuelAddedPaxesList[i].gender ?? "", pAX_AGEGROUP: self.manuelAddedPaxesList[i].ageGroup ?? "", pAX_NAME: self.manuelAddedPaxesList[i].name ?? "", pAX_BIRTHDAY: self.manuelAddedPaxesList[i].birtDate ?? "", pAX_RESNO: self.manuelAddedPaxesList[i].ResNo ?? "", pAX_PASSPORT: self.manuelAddedPaxesList[i].passPort ?? "", pAX_ROOM: self.manuelAddedPaxesList[i].room ?? "", pAX_TOURISTREF: 0, pAX_STATUS: 0, ID: 0))
+                    self.touristDetailInfoList.append(manuelPaxesList[i])
                 }
             }
+            
             userDefaultsData.savePaxesList(tour: self.savePaxesList)
+            userDefaultsData.saveTouristDetailInfoList(tour: self.touristDetailInfoList)
             self.tableView.reloadData()
         }else{
             return

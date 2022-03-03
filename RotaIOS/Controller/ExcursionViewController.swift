@@ -585,7 +585,7 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
                                         }
                                         self.addedVoucher = String(format: "%02d", self.maxVoucherIntAdeed)
                                         if userDefaultsData.getDay() != day {
-                                            self.createVoucher = "\(userDefaultsData.geUserNAme() ?? "")\(shortyear)\(month)\(day)\(hour)\(minute)\(self.addedVoucher)"
+                                            self.createVoucher = "\(userDefaultsData.geUserNAme() ?? "")\(shortyear)\(mergeDate)\(self.addedVoucher)"
                                             userDefaultsData.saveDay(day: day)
                                         }else if userDefaultsData.getDay() == day {
                                             self.counter = 1
@@ -1300,7 +1300,7 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
                                         }
                                         self.addedVoucher = String(format: "%02d", self.maxVoucherIntAdeed)
                                         if userDefaultsData.getDay() != day {
-                                            self.createVoucher = "\(userDefaultsData.geUserNAme() ?? "")\(shortyear)\(month)\(day)\(hour)\(minute)\(self.addedVoucher)"
+                                            self.createVoucher = "\(userDefaultsData.geUserNAme() ?? "")\(shortyear)\(mergeDate)\(self.addedVoucher)"
                                             userDefaultsData.saveDay(day: day)
                                         }else if userDefaultsData.getDay() == day {
                                             self.counter = 1

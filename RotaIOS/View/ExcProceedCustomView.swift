@@ -604,6 +604,7 @@ class ExcProceedCustomView: UIView{
             
 
             paxes = userDefaultsData.getTouristDetailInfoList() ?? paxes
+            
             if paxes.count > 0 {
                 for i in 0...paxes.count - 1 {
                     self.paxList.append(paxes[i].pAX_AGEGROUP ?? "")
@@ -631,6 +632,7 @@ class ExcProceedCustomView: UIView{
                     self.transfers[i].totalAmount = self.transfersTotalPrice
                 }
             }
+            
             
             if self.tourList.count > 0 && self.touristList.count > 0 && self.voucherNo.count > 0{
                 for i in 0...self.tourList.count - 1{
@@ -946,6 +948,7 @@ class ExcProceedCustomView: UIView{
                         userDefaultsData.saveTransfersList(tour: [])
                         userDefaultsData.saveExtrasandTransfersTotalPrice(totalPrice: 0.0)
                         userDefaultsData.saveTourList(tour: [])
+                        userDefaultsData.savePaxesList(tour: [])
                         self.buttonSend.isEnabled = false
                     }else {
                         let alert = UIAlertController(title: "FAILED", message: response.Message ?? "", preferredStyle: .alert)

@@ -112,10 +112,12 @@ class ProceedPageCustomView : UIView {
                     self.sendButton.layer.cornerRadius = 10
                     self.sendButton.isEnabled = false
                     self.proceedPageDelegate?.proceedPage(isSuccsess: true)
+                    userDefaultsData.saveHotelId(hotelId: 0)
+                    userDefaultsData.saveMarketId(marketId: 0)
                     print(response)
                 }else{
                     if let topVC = UIApplication.getTopViewController() {
-                        let alert = UIAlertController(title: "Errror", message: response.exceptionMessage, preferredStyle: UIAlertController.Style.alert)
+                        let alert = UIAlertController(title: "Error", message: response.exceptionMessage, preferredStyle: UIAlertController.Style.alert)
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                         topVC.present(alert, animated: true, completion: nil)
                         self.proceedPageDelegate?.proceedPage(isSuccsess: false)
@@ -168,7 +170,7 @@ class ProceedPageCustomView : UIView {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .medium
-        formatter.dateFormat = "HH:dd a"
+        formatter.dateFormat = "HH:mm"
         self.viewPickUpTimeMainTextView.mainText.text = "\(formatter.string(for: timePicker.date) ?? "12:00")"
         self.viewMainView.endEditing(true)
         print(formatter.string(from: timePicker.date))

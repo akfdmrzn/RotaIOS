@@ -72,8 +72,7 @@ class PaxPageCustomView : UIView {
             NetworkManager.sendGetRequestArray(url:NetworkManager.BASEURL, endPoint: .GetInHouseList, method: .get, parameters: getInHouseListRequestModel.requestPathString()) { (response : [GetInHoseListResponseModel] ) in
                 if response.count > 0 {
                     //   let filter = response.filter{($0.text?.contains("ADONIS HOTEL ANTALYA") ?? false)}
-                    userDefaultsData.saveHotelId(hotelId: 0)
-                    userDefaultsData.saveMarketId(marketId: 0)
+                  
                     self.paxesNameList = response
                     // düzenleme yapılıyor
                     for index in 0...self.paxesNameList.count - 1 {
@@ -121,7 +120,7 @@ class PaxPageCustomView : UIView {
         if let topVC = UIApplication.getTopViewController() {
             UIView.animate(withDuration: 0, animations: {
                 self.tempTouristAddView = TempTouristAddCustomView()
-                self.tempTouristAddView?.tempPaxesList = self.sendingListofPaxes
+               // self.tempTouristAddView?.tempPaxesList = self.sendingListofPaxes
                 self.tempTouristAddView?.changeCounterValue = self.tempValue
                 self.tempTouristAddView?.temppAddPaxesListDelegate = self
                 self.tempTouristAddView!.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 1200)
@@ -302,6 +301,8 @@ extension PaxPageCustomView : PaxPageTableViewCellDelegate {
                         print(response)
                         // let filter = response.filter{($0.text?.contains("ADONIS HOTEL ANTALYA") ?? false)}
                         self.touristInfoList = response
+                       // filterExcursionTourDate = filterExcursionTourDate.filterDuplicate{($0.tourName,$0.tourDate)}
+                        self.touristInfoList = self.touristInfoList.filterDuplicate{($0.touristIdRef,$0.name)}
                         self.oprID.removeAll()
                         self.oprName.removeAll()
                         self.reservationNo.removeAll()

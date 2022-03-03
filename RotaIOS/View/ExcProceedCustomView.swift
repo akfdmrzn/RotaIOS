@@ -459,7 +459,7 @@ class ExcProceedCustomView: UIView{
            // self.totalDiscount = discount
         }
         self.viewDiscount.mainText.text = self.viewDiscount.mainText.text?.replacingOccurrences(of: ",", with: ".")
-        self.viewDicountCalculate.mainText.text = String(self.discount + self.promotionDiscount)
+        self.viewDicountCalculate.mainText.text = String(self.discount)
         self.balanceAmount = self.balanceAmount - self.discount
         self.viewBalanced.mainText.text = String(self.balanceAmount)
         self.totalAmount = self.totalAmount - self.discount

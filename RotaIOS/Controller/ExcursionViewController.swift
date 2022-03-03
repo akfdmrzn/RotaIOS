@@ -907,8 +907,8 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
                             self.viewExcProceedCustomView?.viewBalanced.mainText.text = String(self.totalPrice - self.discount)
                             self.viewExcProceedCustomView?.balanceAmount = Double(self.totalPrice - self.discount)
                             self.viewExcProceedCustomView?.viewTotalAmount.mainText.text = String(self.totalPrice - self.discount)
-                            self.viewExcProceedCustomView?.sendedTotalAmount = self.totalPrice
-                            self.viewExcProceedCustomView?.savedFirstValue = self.totalPrice
+                            self.viewExcProceedCustomView?.sendedTotalAmount = self.totalPrice - self.discount
+                            self.viewExcProceedCustomView?.savedFirstValue = self.totalPrice - self.discount
                             self.viewExcProceedCustomView?.extrasTotalPrice = self.extrasTotalPrice
                             self.viewExcProceedCustomView?.transfersTotalPrice = self.transfersTotalPrice
                             // self.viewExcProceedCustomView?.voucherNo = self.voucherList
@@ -1618,8 +1618,8 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
                             self.viewExcProceedCustomView?.viewTotalAmount.mainText.text = String(self.totalPrice - self.discount)
                             self.viewExcProceedCustomView?.balanceAmount = Double(self.totalPrice - self.discount)
                             self.viewExcProceedCustomView?.totalAmount = self.totalPrice - self.discount
-                            self.viewExcProceedCustomView?.savedFirstValue = self.totalPrice
-                            self.viewExcProceedCustomView?.sendedTotalAmount = self.totalPrice
+                            self.viewExcProceedCustomView?.savedFirstValue = self.totalPrice - self.discount
+                            self.viewExcProceedCustomView?.sendedTotalAmount = self.totalPrice - self.discount
                             self.viewExcProceedCustomView?.extrasTotalPrice = self.extrasTotalPrice
                             self.viewExcProceedCustomView?.transfersTotalPrice = self.transfersTotalPrice
                             self.viewExcProceedCustomView?.promotionId = self.viewExcSearchCustomView?.promotionid ?? 0

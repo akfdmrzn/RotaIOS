@@ -108,6 +108,7 @@ class FooterCustomView: UIView {
     
     func buttonHiding( hidePrintbutton : Bool, hideButton : Bool) {
         self.printButton.isHidden = hidePrintbutton
+
         self.buttonView.isHidden = hideButton
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProceedPageCustomView" customModule="RotaIOS" customModuleProvider="target">
             <connections>
+                <outlet property="buttonPrintVoucher" destination="va2-fw-b6M" id="kfG-Zt-8Uh"/>
                 <outlet property="sendButton" destination="CFd-gh-74w" id="Crf-Ny-dfA"/>
                 <outlet property="viewMainView" destination="iN0-l3-epB" id="r50-Si-agp"/>
                 <outlet property="viewNotesMainTextView" destination="oeo-BM-xiH" id="KkO-Gt-rOX"/>
@@ -51,7 +52,7 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFd-gh-74w">
                     <rect key="frame" x="35" y="525" width="318" height="50"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="UC6-5N-hlb"/>
                     </constraints>
@@ -83,19 +84,32 @@
                         <constraint firstAttribute="height" constant="90" id="xTG-6P-6Rt"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="va2-fw-b6M">
+                    <rect key="frame" x="35" y="603" width="318" height="50"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="8hG-SL-GHF"/>
+                    </constraints>
+                    <state key="normal" title="PRINT VOUCHER">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="L90-kk-sKk" secondAttribute="trailing" constant="30" id="3kh-9W-6qS"/>
                 <constraint firstItem="CFd-gh-74w" firstAttribute="top" secondItem="oeo-BM-xiH" secondAttribute="bottom" constant="80" id="64d-tu-UG0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="va2-fw-b6M" secondAttribute="trailing" constant="35" id="EMa-FU-plM"/>
                 <constraint firstItem="SPA-pH-URU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="55" id="MJM-gs-l8k"/>
+                <constraint firstItem="va2-fw-b6M" firstAttribute="top" secondItem="CFd-gh-74w" secondAttribute="bottom" constant="28" id="Rzo-VY-wBs"/>
                 <constraint firstAttribute="trailing" secondItem="CFd-gh-74w" secondAttribute="trailing" constant="35" id="TDh-qA-Gza"/>
                 <constraint firstItem="L90-kk-sKk" firstAttribute="top" secondItem="Fad-V6-QWt" secondAttribute="bottom" constant="10" id="Vfr-QJ-CzD"/>
                 <constraint firstItem="oeo-BM-xiH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="WKi-ew-V7s"/>
                 <constraint firstAttribute="trailing" secondItem="Fad-V6-QWt" secondAttribute="trailing" constant="30" id="Xoh-gH-ivk"/>
                 <constraint firstItem="oeo-BM-xiH" firstAttribute="top" secondItem="L90-kk-sKk" secondAttribute="bottom" constant="10" id="Y9V-vS-Klg"/>
                 <constraint firstAttribute="trailing" secondItem="oeo-BM-xiH" secondAttribute="trailing" constant="30" id="cFX-Zf-RDO"/>
+                <constraint firstItem="va2-fw-b6M" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="35" id="fkU-zy-Em4"/>
                 <constraint firstItem="4am-rg-722" firstAttribute="top" secondItem="oeo-BM-xiH" secondAttribute="bottom" constant="20" id="gbU-sy-t5o"/>
                 <constraint firstItem="CFd-gh-74w" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="35" id="gfO-tx-WZm"/>
                 <constraint firstItem="4am-rg-722" firstAttribute="leading" secondItem="E1t-O7-1yu" secondAttribute="trailing" constant="20" id="hYZ-ya-Jun"/>
@@ -114,6 +128,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

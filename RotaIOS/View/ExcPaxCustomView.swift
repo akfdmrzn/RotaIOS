@@ -393,6 +393,8 @@ extension ExcPaxCustomView : TempAddPaxesListDelegate {
                 
                 userDefaultsData.savePaxesList(tour: self.savePaxesList)
                 userDefaultsData.saveTouristDetailInfoList(tour: self.touristDetailInfoList)
+                self.totalPaxesCount = self.savePaxesList.count
+                self.labelTouristAdded.text = "\(self.totalPaxesCount) Tourist Added"
                 self.tableView.reloadData()
                 return
             }else {
@@ -433,6 +435,8 @@ extension ExcPaxCustomView : TempAddPaxesListDelegate {
             
             userDefaultsData.savePaxesList(tour: self.savePaxesList)
             userDefaultsData.saveTouristDetailInfoList(tour: self.touristDetailInfoList)
+            self.totalPaxesCount = self.savePaxesList.count
+            self.labelTouristAdded.text = "\(self.totalPaxesCount) Tourist Added"
             self.tableView.reloadData()
         }else{
             return

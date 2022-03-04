@@ -157,7 +157,8 @@ extension ShopAppointmentView : HomePageTappedDelegate , ContinueButtonTappedDel
             
         }else if tapped == 3 {
             
-            self.footerView.buttonHiding(hidePrintbutton: false, hideButton: true)
+            self.footerView.buttonHiding(hidePrintbutton: true, hideButton: true)
+            self.footerView.isHidden = true
             if proceedPageCustomView == nil || self.isPaxesListChange == true || self.isStepListChange == true {
                 // self.lastUIView.removeFromSuperview()
                 //  self.animatedCustomView(customView: ProceedPageCustomView())
@@ -285,7 +286,8 @@ extension ShopAppointmentView : HomePageTappedDelegate , ContinueButtonTappedDel
             }
             
         }else if ischosen == 3 {
-            self.footerView.buttonHiding(hidePrintbutton: false, hideButton: true)
+            self.footerView.buttonHiding(hidePrintbutton: true, hideButton: true)
+            self.footerView.isHidden = true
             
             if self.proceedPageCustomView == nil || self.isPaxesListChange == true || self.isStepListChange == true {
                 self.paxPageCustomView?.isHidden = true

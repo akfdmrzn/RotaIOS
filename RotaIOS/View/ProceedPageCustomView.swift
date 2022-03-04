@@ -24,6 +24,7 @@ class ProceedPageCustomView : UIView {
     var timeString = ""
     var proceedPageDelegate : ProceedPageDelegate?
     var paxFilteredList : [String] = []
+    @IBOutlet weak var buttonPrintVoucher: UIButton!
     var datePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
@@ -67,10 +68,7 @@ class ProceedPageCustomView : UIView {
         self.viewMainView.addCustomContainerView(self)
         self.sendButton.isEnabled = true
         self.viewMainView.backgroundColor = UIColor.mainViewColor
-        self.sendButton.backgroundColor = UIColor.greenColor
-        self.sendButton.layer.borderWidth = 1
-        self.sendButton.layer.borderColor = UIColor.green.cgColor
-        self.sendButton.layer.cornerRadius = 10
+        
         self.viewShopDateMainTextView.headerLAbel.text = "Shop Date"
         self.viewPickUpTimeMainTextView.headerLAbel.text = "Pick Up Time"
         self.viewRoomMainTextView.headerLAbel.text = "Room"
@@ -88,8 +86,27 @@ class ProceedPageCustomView : UIView {
         self.viewNotesMainTextView.mainText.isHidden = false
         self.viewNotesMainTextView.imageMainText.isHidden = true
         
+        self.buttonColor(isEnable: true, button: self.sendButton)
+        self.buttonColor(isEnable: false, button: self.buttonPrintVoucher)
+        
         self.createDatePicker()
         self.createTimePicker()
+    }
+    
+    func buttonColor(isEnable : Bool, button : UIButton){
+        if isEnable == true {
+            button.isEnabled = true
+            button.backgroundColor = UIColor.greenColor
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.green.cgColor
+            button.layer.cornerRadius = 10
+        }else{
+            button.isEnabled = false
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.green.cgColor
+            button.layer.cornerRadius = 10
+            button.backgroundColor = UIColor.clear
+        } 
     }
     
     @IBAction func sendButtonClicked(_ sender: Any) {
@@ -115,6 +132,10 @@ class ProceedPageCustomView : UIView {
                     userDefaultsData.saveHotelId(hotelId: 0)
                     userDefaultsData.saveMarketId(marketId: 0)
                     print(response)
+                    self.sendButton.isEnabled = false
+                    
+                    self.buttonColor(isEnable: false, button: self.sendButton)
+                    self.buttonColor(isEnable: true, button: self.buttonPrintVoucher)
                 }else{
                     if let topVC = UIApplication.getTopViewController() {
                         let alert = UIAlertController(title: "Error", message: response.exceptionMessage, preferredStyle: UIAlertController.Style.alert)

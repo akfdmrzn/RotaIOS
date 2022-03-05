@@ -13,23 +13,19 @@ final class LoginViewController : BaseViewController {
     @IBOutlet var viewLogin: LoginView!
     var userName = ""
     var password = ""
-    var userNAmeList : [String] = []
-    var userPasswordList : [String] = []
     let date = Date()
     var getTokenResponse : [GetTokenResponseModel] = []
     
     override func viewDidLoad() {
-        self.userNAmeList = userDefaultsData.getUserNameList() ?? []
-        self.userPasswordList = userDefaultsData.getUserPasswordList() ?? []
         self.userName = userDefaultsData.geUserNAme() ?? ""
         self.password = userDefaultsData.getPassword() ?? ""
         self.getTokenResponse = userDefaultsData.getGetToken() ?? self.getTokenResponse
         if getTokenResponse.count > 0 {
             baseData.getTokenResponse = self.getTokenResponse[0]
         }
-       if self.userNAmeList.count > 0 && self.userPasswordList.count > 0 && baseData.getTokenResponse != nil{
-            if self.userNAmeList[0] == self.userName {
-                if self.userPasswordList[0] == self.password {
+       if self.userName != "" &&  self.password != "" && baseData.getTokenResponse != nil{
+            if userDefaultsData.geUserNAme() ?? "" == self.userName {
+                if userDefaultsData.getPassword() ?? "" == self.password {
                     self.otiPushViewController(viewController: MainPAgeViewController(), animated: false)
                 }
             }
@@ -39,8 +35,6 @@ final class LoginViewController : BaseViewController {
         self.viewLogin.textUsername.delegate = self
         self.viewLogin.textUsername.keyboardType = .numberPad
         self.viewLogin.textPassword.keyboardType = .numberPad
-        userDefaultsData.saveUserPasswordList(passwordList: [])
-        userDefaultsData.saveUserNameList(nameList: [])
     }
     
     @IBAction func buttonClicked(_ sender: Any) {
@@ -55,10 +49,6 @@ final class LoginViewController : BaseViewController {
         self.password = self.viewLogin.textPassword.text ?? ""
         userDefaultsData.savePassword(id: self.password)
         userDefaultsData.saveUserName(id: self.userName)
-        self.userNAmeList.append(self.userName)
-        self.userPasswordList.append(self.password)
-        userDefaultsData.saveUserNameList(nameList: self.userNAmeList )
-        userDefaultsData.saveUserPasswordList(passwordList: self.userPasswordList)
         if Connectivity.isConnectedToInternet {
             print("connect")
             let createTokenRequestModel = CreateTokenRequestModel.init()

@@ -15,6 +15,7 @@ struct GetZReportResponseModel : Mappable {
     var guideRef : Int?
     var collectionState : Int?
     var collectionStateDesc : String?
+    var guideName : String?
 
     init?(map: Map) {
 

@@ -114,7 +114,7 @@ public class NetworkManager {
                     }else{
                         print ("fail")
                     }
-                completion((response.value) as! Int)
+                completion((response.value ?? 0) as! Int)
 
                 }
         }

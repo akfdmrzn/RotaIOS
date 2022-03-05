@@ -11,6 +11,7 @@ class ZReportLoginViewController: UIViewController {
     @IBOutlet var viewZReportLoginView: ZReportLoginView!
     var userName = ""
     var password = ""
+    @IBOutlet weak var buttonLogin: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class ZReportLoginViewController: UIViewController {
                 alert.addAction(UIAlertAction.init(title: "OK", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 self.viewZReportLoginView.buttonLogin.isEnabled = false
+                self.buttonLogin.isEnabled = false
             }else if response.isSuccesful == false {
                 let alert = UIAlertController(title: "FALSE", message:  response.message ?? "" , preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction.init(title: "OK", style: .default, handler: nil))

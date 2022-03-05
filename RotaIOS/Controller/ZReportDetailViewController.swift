@@ -35,9 +35,9 @@ extension ZReportDetailViewController : UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableview.dequeueReusableCell(withIdentifier: ZReportTableViewCell.identifier) as! ZReportTableViewCell
-        cell.labelGuideName.text = "\(zReportDetailListInZReportDetailPage[indexPath.row].guideRef ?? 0)"
+        cell.labelGuideName.text = "\(zReportDetailListInZReportDetailPage[indexPath.row].guideName ?? "")"
         cell.labelZreportNo.text = "\(zReportDetailListInZReportDetailPage[indexPath.row].zReportNo ?? 0)"
-        cell.labelZreportDay.text = zReportDetailListInZReportDetailPage[indexPath.row].reportCreateDate
+        cell.zReportDay = zReportDetailListInZReportDetailPage[indexPath.row].reportCreateDate ?? ""
         cell.labelCollectionStatus.text =  zReportDetailListInZReportDetailPage[indexPath.row].collectionStateDesc
         return cell
     }

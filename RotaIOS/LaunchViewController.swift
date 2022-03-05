@@ -8,26 +8,10 @@
 import UIKit
 
 class LaunchViewController: UIViewController {
-    var userNameList : [String] = []
-    var userPasswordList : [String] = []
-    var userName = ""
-    var password = ""
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        if self.userNameList.count > 0 && self.userPasswordList.count > 0 {
-        self.userNameList = userDefaultsData.getUserNameList()
-        self.userPasswordList = userDefaultsData.getUserPasswordList()
-        self.userName = userDefaultsData.geUserNAme()
-        self.password = userDefaultsData.getPassword()
-        if self.userNameList[0] == self.userName {
-            if self.userPasswordList[0] == self.password {
-                self.otiPushViewController(viewController: MainPAgeViewController())
-            }
-        }else{
-            self.otiPushViewController(viewController: LoginViewController())
-        }
-     }
+     
     }
     
 

@@ -807,8 +807,9 @@ class ExcProceedCustomView: UIView{
                     }else{
                         self.addedNumber += 120
                     }
+                    // Transfers control
                     
-                  /*  if self.tourTransfers.count > 0 {
+                    if self.tourTransfers.count > 0 {
                         var transfersAmount = 0.0
                         self.addedNumber += 80
                         for i in 0...self.tourTransfers.count - 1{
@@ -851,9 +852,9 @@ class ExcProceedCustomView: UIView{
                         
                     }else{
                         self.addedNumber += 120
-                    }*/
+                    }
                   
-                   
+                   ///
                     tourPaxPrice = self.totalPricePerTour - extrasTotalAmout
                     let tourPaxLabel = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 25 ^FDTourPax^FS^FO 250, \(self.addedNumber + 5)^A 0, 25 ^FD\("")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 25 ^FD \(adultCount)  ADL  \(childCount)  CHD  \(toodleCount)  TDL  \(infantCount)  INF  \(tourPaxPrice) EUR^FS"
                     

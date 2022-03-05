@@ -110,6 +110,33 @@ class MyTourSalesViewController: UIViewController {
         
         let removeStatusMenuGesture = UITapGestureRecognizer(target: self, action: #selector(tappedViewContentView))
         self.viewMyTourSales.addGestureRecognizer(removeStatusMenuGesture)
+        
+        // put one week to begin date
+        let formatterBeginDate = DateFormatter()
+        formatterBeginDate.dateStyle = .medium
+        formatterBeginDate.timeStyle = .none
+        formatterBeginDate.dateFormat = "MM-dd-yyyy"
+        print(formatterBeginDate.string(from: self.beginDatePicker.date))
+        self.beginDate = formatterBeginDate.string(from: self.beginDatePicker.date)
+        formatterBeginDate.dateFormat = "dd-MM-yyyy"
+        self.viewMyTourSales.viewBeginDate.mainText.text = "\(formatterBeginDate.string(from: self.beginDatePicker.date))"
+        
+        // put one week to end date
+        
+        let calendar = Calendar.current
+        let addOneWeekToCurrentDate = calendar.date(byAdding: .weekOfYear, value: 1, to: Date())
+        
+        let formatterEndDate = DateFormatter()
+        formatterEndDate.dateStyle = .medium
+        formatterEndDate.timeStyle = .none
+        formatterEndDate.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        formatterEndDate.dateFormat = "MM-dd-yyyy"
+        print(formatterEndDate.string(from: addOneWeekToCurrentDate!))
+        self.endDate = formatterEndDate.string(from:  addOneWeekToCurrentDate!)
+        formatterEndDate.dateFormat = "dd-MM-yyyy"
+        self.viewMyTourSales.viewEndDate.mainText.text = "\(formatterEndDate.string(from:  addOneWeekToCurrentDate!))"
+        ///
+        ///
     }
     
     func createBeginDatePicker() {

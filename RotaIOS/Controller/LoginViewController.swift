@@ -17,9 +17,10 @@ final class LoginViewController : BaseViewController {
     var getTokenResponse : [GetTokenResponseModel] = []
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         self.userName = userDefaultsData.geUserNAme() ?? ""
         self.password = userDefaultsData.getPassword() ?? ""
-        self.getTokenResponse = userDefaultsData.getGetToken() ?? self.getTokenResponse
+       /* self.getTokenResponse = userDefaultsData.getGetToken() ?? self.getTokenResponse
         if getTokenResponse.count > 0 {
             baseData.getTokenResponse = self.getTokenResponse[0]
         }
@@ -29,12 +30,16 @@ final class LoginViewController : BaseViewController {
                     self.otiPushViewController(viewController: MainPAgeViewController(), animated: false)
                 }
             }
-        }
-   
-        super.viewDidLoad()
+        }*/
+        self.viewLogin.textUsername.text = self.userName
+        self.viewLogin.textPassword.text = self.userName
         self.viewLogin.textUsername.delegate = self
         self.viewLogin.textUsername.keyboardType = .numberPad
         self.viewLogin.textPassword.keyboardType = .numberPad
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("burda")
     }
     
     @IBAction func buttonClicked(_ sender: Any) {

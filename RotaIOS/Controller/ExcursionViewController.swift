@@ -892,32 +892,35 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
                 
                 self.data = "\(tourPromotionPostRequestModel.toJSONString(prettyPrint: true) ?? "")"
                 if self.isConnectedInternet == true {
-                    let promotionRequestModel = GetSaveMobileSaleRequestModel.init(data: self.data)
-                    NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .GetApplyPromotionMobile, requestModel: promotionRequestModel ) { (response: GetApplyPromotionMobileResponseModel) in
-                        if response.isSuccesful == true && response.record?.tours?.count ?? 0 > 0 {
-                            print(response)
-                            
-                            self.promotionTourList = response.record?.tours ?? self.promotionTourList
-                            for i in 0...self.promotionTourList.count - 1 {
-                                self.discount += self.promotionTourList[i].promotionDiscount ?? 0.0
+                    if self.promotionTourList.count == 0 {
+                        let promotionRequestModel = GetSaveMobileSaleRequestModel.init(data: self.data)
+                        NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .GetApplyPromotionMobile, requestModel: promotionRequestModel ) { (response: GetApplyPromotionMobileResponseModel) in
+                            if response.isSuccesful == true && response.record?.tours?.count ?? 0 > 0 {
+                                print(response)
+                                
+                                self.promotionTourList = response.record?.tours ?? self.promotionTourList
+                                for i in 0...self.promotionTourList.count - 1 {
+                                    self.discount += self.promotionTourList[i].promotionDiscount ?? 0.0
+                                }
+                                self.viewExcProceedCustomView?.promotionDiscount = self.discount
+                                self.viewExcProceedCustomView?.viewDicountCalculate.mainText.text = String(self.discount)
+                                self.viewExcProceedCustomView?.viewAmount.mainText.text = String(self.totalPrice )
+                                self.viewExcProceedCustomView?.viewBalanced.mainText.text = String(self.totalPrice - self.discount)
+                                self.viewExcProceedCustomView?.balanceAmount = Double(self.totalPrice - self.discount)
+                                self.viewExcProceedCustomView?.viewTotalAmount.mainText.text = String(self.totalPrice - self.discount)
+                                self.viewExcProceedCustomView?.sendedTotalAmount = self.totalPrice - self.discount
+                                self.viewExcProceedCustomView?.savedFirstValue = self.totalPrice - self.discount
+                                self.viewExcProceedCustomView?.extrasTotalPrice = self.extrasTotalPrice
+                                self.viewExcProceedCustomView?.transfersTotalPrice = self.transfersTotalPrice
+                                // self.viewExcProceedCustomView?.voucherNo = self.voucherList
+                                self.viewExcProceedCustomView?.totalAmount = self.totalPrice - self.discount
+                                self.viewExcProceedCustomView?.promotionId = self.viewExcSearchCustomView?.promotionid ?? 0
+                            }else {
+                                print("error")
                             }
-                            self.viewExcProceedCustomView?.promotionDiscount = self.discount
-                            self.viewExcProceedCustomView?.viewDicountCalculate.mainText.text = String(self.discount)
-                            self.viewExcProceedCustomView?.viewAmount.mainText.text = String(self.totalPrice )
-                            self.viewExcProceedCustomView?.viewBalanced.mainText.text = String(self.totalPrice - self.discount)
-                            self.viewExcProceedCustomView?.balanceAmount = Double(self.totalPrice - self.discount)
-                            self.viewExcProceedCustomView?.viewTotalAmount.mainText.text = String(self.totalPrice - self.discount)
-                            self.viewExcProceedCustomView?.sendedTotalAmount = self.totalPrice - self.discount
-                            self.viewExcProceedCustomView?.savedFirstValue = self.totalPrice - self.discount
-                            self.viewExcProceedCustomView?.extrasTotalPrice = self.extrasTotalPrice
-                            self.viewExcProceedCustomView?.transfersTotalPrice = self.transfersTotalPrice
-                            // self.viewExcProceedCustomView?.voucherNo = self.voucherList
-                            self.viewExcProceedCustomView?.totalAmount = self.totalPrice - self.discount
-                            self.viewExcProceedCustomView?.promotionId = self.viewExcSearchCustomView?.promotionid ?? 0
-                        }else {
-                            print("error")
                         }
                     }
+                   
                 }
                 ///
                 self.viewExcAddCustomView?.isHidden = true
@@ -1603,29 +1606,31 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
                 
                 self.data = "\(tourPromotionPostRequestModel.toJSONString(prettyPrint: true) ?? "")"
                 if self.isConnectedInternet == true {
-                    let promotionRequestModel = GetSaveMobileSaleRequestModel.init(data: self.data)
-                    NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .GetApplyPromotionMobile, requestModel: promotionRequestModel ) { (response: GetApplyPromotionMobileResponseModel) in
-                        if response.isSuccesful == true {
-                            print(response)
-                            self.promotionTourList = response.record?.tours ?? self.promotionTourList
-                            for i in 0...self.promotionTourList.count - 1 {
-                                self.discount += self.promotionTourList[i].promotionDiscount ?? 0.0
+                    if self.promotionTourList.count == 0 {
+                        let promotionRequestModel = GetSaveMobileSaleRequestModel.init(data: self.data)
+                        NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .GetApplyPromotionMobile, requestModel: promotionRequestModel ) { (response: GetApplyPromotionMobileResponseModel) in
+                            if response.isSuccesful == true {
+                                print(response)
+                                self.promotionTourList = response.record?.tours ?? self.promotionTourList
+                                for i in 0...self.promotionTourList.count - 1 {
+                                    self.discount += self.promotionTourList[i].promotionDiscount ?? 0.0
+                                }
+                                self.viewExcProceedCustomView?.promotionDiscount = self.discount
+                                self.viewExcProceedCustomView?.viewDicountCalculate.mainText.text = String(self.discount)
+                                self.viewExcProceedCustomView?.viewAmount.mainText.text = String(self.totalPrice)
+                                self.viewExcProceedCustomView?.viewBalanced.mainText.text = String(self.totalPrice - self.discount)
+                                self.viewExcProceedCustomView?.viewTotalAmount.mainText.text = String(self.totalPrice - self.discount)
+                                self.viewExcProceedCustomView?.balanceAmount = Double(self.totalPrice - self.discount)
+                                self.viewExcProceedCustomView?.totalAmount = self.totalPrice - self.discount
+                                self.viewExcProceedCustomView?.savedFirstValue = self.totalPrice - self.discount
+                                self.viewExcProceedCustomView?.sendedTotalAmount = self.totalPrice - self.discount
+                                self.viewExcProceedCustomView?.extrasTotalPrice = self.extrasTotalPrice
+                                self.viewExcProceedCustomView?.transfersTotalPrice = self.transfersTotalPrice
+                                self.viewExcProceedCustomView?.promotionId = self.viewExcSearchCustomView?.promotionid ?? 0
+                                
+                            }else {
+                                print("error")
                             }
-                            self.viewExcProceedCustomView?.promotionDiscount = self.discount
-                            self.viewExcProceedCustomView?.viewDicountCalculate.mainText.text = String(self.discount)
-                            self.viewExcProceedCustomView?.viewAmount.mainText.text = String(self.totalPrice)
-                            self.viewExcProceedCustomView?.viewBalanced.mainText.text = String(self.totalPrice - self.discount)
-                            self.viewExcProceedCustomView?.viewTotalAmount.mainText.text = String(self.totalPrice - self.discount)
-                            self.viewExcProceedCustomView?.balanceAmount = Double(self.totalPrice - self.discount)
-                            self.viewExcProceedCustomView?.totalAmount = self.totalPrice - self.discount
-                            self.viewExcProceedCustomView?.savedFirstValue = self.totalPrice - self.discount
-                            self.viewExcProceedCustomView?.sendedTotalAmount = self.totalPrice - self.discount
-                            self.viewExcProceedCustomView?.extrasTotalPrice = self.extrasTotalPrice
-                            self.viewExcProceedCustomView?.transfersTotalPrice = self.transfersTotalPrice
-                            self.viewExcProceedCustomView?.promotionId = self.viewExcSearchCustomView?.promotionid ?? 0
-                            
-                        }else {
-                            print("error")
                         }
                     }
                 }

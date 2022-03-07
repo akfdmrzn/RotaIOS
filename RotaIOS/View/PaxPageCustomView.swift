@@ -402,7 +402,6 @@ extension PaxPageCustomView : PaxPageTableViewCellDelegate {
                             for i in 0...self.sendingListofPaxes.count - 1 {
                                 if self.paxesListinPaxPage[0].pAX_NAME == self.sendingListofPaxes[i].pAX_NAME  &&  self.paxesListinPaxPage[0].pAX_TOURISTREF == self.sendingListofPaxes[i].pAX_TOURISTREF{
                                     self.tempSendingListofPaxes.remove(at: i)
-                                   
                                 }
                             }
                             self.sendingListofPaxes = self.tempSendingListofPaxes
@@ -417,8 +416,6 @@ extension PaxPageCustomView : PaxPageTableViewCellDelegate {
                 }      
             }
         }
-      
-        
         self.tableView.reloadData()
     }
 }
@@ -428,9 +425,11 @@ extension PaxPageCustomView : TempAddPaxesListDelegate {
         if self.tempValue != changeValue {
             self.tempValue = changeValue
             self.sendingListofPaxes = listofpaxes
-            for i in 0...self.paxesNameList.count - 1 {
-                self.paxesNameList[i].isTapped = false
-                self.checkList[i] = false
+            if self.paxesNameList.count > 0 {
+                for i in 0...self.paxesNameList.count - 1 {
+                    self.paxesNameList[i].isTapped = false
+                    self.checkList[i] = false
+                }
             }
             if self.sendingListofPaxes.count > 0 {
                 for i in 0...self.sendingListofPaxes.count - 1 {

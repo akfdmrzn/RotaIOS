@@ -641,7 +641,10 @@ extension ExcAddCustomView : AddMenuTableViewCellDelegate, AddMenuPaxTableViewCe
                                     
                             else { return } // Should never happen
                             self.flatAmount = Int(flatamount) ?? 0
-                            self.extrasTotalPrice += Double(self.flatAmount) * (extras?.flatPrice ?? 0.00)
+                            if self.buttonExtraTapped == true {
+                                self.extrasTotalPrice += Double(self.flatAmount) * (extras?.flatPrice ?? 0.00)
+                            }
+                            
                             self.transfersTotalPrice += Double(self.flatAmount) * (transfers?.flatPrice ?? 0.00)
                             // Perform login action
                             if let index = self.extrasList.firstIndex(where: {$0.desc == transExtrDesc && $0.tourDate == tourdate}){

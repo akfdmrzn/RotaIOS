@@ -46,6 +46,7 @@ class MyShoppingSaleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         let getHotelsMobileRequestModel = GetHotelsMobileRequestModel.init(userId: userDefaultsData.getGuideId(), saleDate: userDefaultsData.getSaleDate())
         NetworkManager.sendGetRequestArray(url:NetworkManager.BASEURL, endPoint: .GetHotelsMobie, method: .get, parameters: getHotelsMobileRequestModel.requestPathString()) { (response : [GetHotelsMobileResponseModel] ) in
             if response.count > 0 {
@@ -71,6 +72,7 @@ class MyShoppingSaleViewController: UIViewController {
             let filteredHotelList = self.hotelList.filter{($0.text?.contains(title) ?? false)}
             for item in filteredHotelList {
                 self.hotelIntId = item.value ?? 0
+                self.hotelId = String(self.hotelIntId)
             }
             if self.hotelIntId == 0 {
                 self.hotelId = ""

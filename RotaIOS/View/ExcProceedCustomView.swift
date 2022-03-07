@@ -811,7 +811,7 @@ class ExcProceedCustomView: UIView{
                     
                     if self.tourTransfers.count > 0 {
                         var transfersAmount = 0.0
-                        self.addedNumber += 80
+                        self.addedNumber += 120
                         for i in 0...self.tourTransfers.count - 1{
                             if let index = self.transfersPaxesList.firstIndex(where: {$0.extraName == self.tourTransfers[i].desc}){
                                 for j in 0...self.extraTransferPaxesList.count - 1{
@@ -838,15 +838,16 @@ class ExcProceedCustomView: UIView{
                                     }
                                 }
                                 
-                                let transfersLabelType = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDExtras^FS^FO 250, \(self.addedNumber + 5)^A 0, 20 ^FD\(self.tourTransfers[i].desc ?? "")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 20 ^FD \(adl)  ADL  \(chd)  CHD  \(tdl)  TDL  \(inf)  INF  \(transfersAmount)  EUR^FS"
+                                let transfersLabelType = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDTransfers^FS^FO 250, \(self.addedNumber + 5)^A 0, 20 ^FD\(self.tourTransfers[i].desc ?? "")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 20 ^FD \(adl)  ADL  \(chd)  CHD  \(tdl)  TDL  \(inf)  INF  \(transfersAmount)  EUR^FS"
                                 tourTransfersString.append(transfersLabelType)
                                 self.addedNumber += (i * 120)
                             }else{
                                 transfersAmount = self.tourExtras[i].savedAmount ?? 0.0
-                                let transfersLabelType = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDExtras^FS^FO 250, \(self.addedNumber + 5)^A 0, 20 ^FD\(self.tourTransfers[i].desc ?? "")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 20 ^FD \(adultCount)  ADL  \(childCount)  CHD  \(toodleCount)  TDL  \(infantCount)  INF  \(transfersAmount)  EUR^FS"
+                                let transfersLabelType = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDTransferss^FS^FO 250, \(self.addedNumber + 5)^A 0, 20 ^FD\(self.tourTransfers[i].desc ?? "")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 20 ^FD \(adultCount)  ADL  \(childCount)  CHD  \(toodleCount)  TDL  \(infantCount)  INF  \(transfersAmount)  EUR^FS"
                                 tourTransfersString.append(transfersLabelType)
                                 self.addedNumber += (i * 120)
                             }
+                            transfersAmount = Double(Darwin.round(100 * transfersAmount) / 100 )
                             self.totalPricePerTour += transfersAmount
                         }
                         
@@ -937,12 +938,6 @@ class ExcProceedCustomView: UIView{
                 let toursaleRequestModel = GetSaveMobileSaleRequestModel.init(data: self.data)
                 NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .GetSaveMobileSale, requestModel: toursaleRequestModel ) { (response: GetSaveMobileSaleResponseModel) in
                     if response.IsSuccesful == true {
-                        print(response)
-                        let alert = UIAlertController(title: "SUCCSESS", message: "\(response.Message ?? "")\(self.voucherNo)", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                        if let topVC = UIApplication.getTopViewController() {
-                            topVC.present(alert, animated: true, completion: nil)
-                        }
                         userDefaultsData.saveMaxVoucher(voucher: [])
                         userDefaultsData.saveTouristDetailInfoList(tour: [])
                         userDefaultsData.saveExtrasList(tour: [])
@@ -950,8 +945,19 @@ class ExcProceedCustomView: UIView{
                         userDefaultsData.saveExtrasandTransfersTotalPrice(totalPrice: 0.0)
                         userDefaultsData.saveTourList(tour: [])
                         userDefaultsData.savePaxesList(tour: [])
+                        self.buttonColor(isEnable: false, button: self.buttonSend)
+                        self.buttonColor(isEnable: true, button: self.buttonPrintVoucher)
                         self.buttonSend.isEnabled = false
+                        print(response)
+                        let alert = UIAlertController(title: "SUCCSESS", message: "\(response.Message ?? "")\(self.voucherNo)", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        if let topVC = UIApplication.getTopViewController() {
+                            topVC.present(alert, animated: true, completion: nil)
+                        }
+                       
                     }else {
+                        self.buttonColor(isEnable: false, button: self.buttonSend)
+                        self.buttonColor(isEnable: false, button: self.buttonPrintVoucher)
                         let alert = UIAlertController(title: "FAILED", message: response.Message ?? "", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                         if let topVC = UIApplication.getTopViewController() {
@@ -978,6 +984,7 @@ class ExcProceedCustomView: UIView{
             }
             return
         }
+     
         self.buttonSend.isEnabled = false
     }
 }

@@ -92,22 +92,7 @@ class ProceedPageCustomView : UIView {
         self.createDatePicker()
         self.createTimePicker()
     }
-    
-    func buttonColor(isEnable : Bool, button : UIButton){
-        if isEnable == true {
-            button.isEnabled = true
-            button.backgroundColor = UIColor.greenColor
-            button.layer.borderWidth = 1
-            button.layer.borderColor = UIColor.green.cgColor
-            button.layer.cornerRadius = 10
-        }else{
-            button.isEnabled = false
-            button.layer.borderWidth = 1
-            button.layer.borderColor = UIColor.green.cgColor
-            button.layer.cornerRadius = 10
-            button.backgroundColor = UIColor.clear
-        } 
-    }
+  
     
     @IBAction func sendButtonClicked(_ sender: Any) {
         print(paxListinProceedPage)

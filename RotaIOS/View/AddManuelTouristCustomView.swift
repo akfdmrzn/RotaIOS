@@ -47,7 +47,8 @@ class AddManuelTouristCustomView : UIView {
         }
         return datePicker
     }()
-    
+    var manuelPaxAge = 0
+    var manuelPaxAgeGroup = ""
     var checkOutDate = ""
     var paxcheckOutDate = ""
     let checkOutDateToolBar = UIToolbar()
@@ -197,6 +198,21 @@ class AddManuelTouristCustomView : UIView {
     
     
     @IBAction func addManuelButton(_ sender: Any) {
+        
+        let currentYear =  Calendar.current.component(.year, from: Date())
+        let year = Int(self.paxBirthDate.prefix(4))
+            self.manuelPaxAge = currentYear - (year ?? 0)
+            if self.manuelPaxAge >= 0 &&  self.manuelPaxAge < 2 {
+                self.manuelPaxAgeGroup = "INF"
+            }else if self.manuelPaxAge >= 2 &&  self.manuelPaxAge < 6{
+                self.manuelPaxAgeGroup = "TDL"
+            }else if self.manuelPaxAge >= 6 &&  self.manuelPaxAge < 11{
+                self.manuelPaxAgeGroup = "CHL"
+            }else{
+                self.manuelPaxAgeGroup = "ADL"
+            }
+        
+        
         if self.viewName.mainText.text?.count ?? 0 > 2 {
             self.paxName = self.viewName.mainText.text ?? ""
             
@@ -210,7 +226,7 @@ class AddManuelTouristCustomView : UIView {
         }
         if self.viewGender.mainLabel.text != "Select" && self.viewName.mainText.text != "" && self.birtDate != "" && self.paxName != ""{
             self.buttonAdd.isEnabled = true
-            let manuelAddPaxName = Paxes.init(pAX_CHECKOUT_DATE: self.checkOutDate, pAX_OPRID: 0, pAX_OPRNAME: self.viewOperator.mainText.text ?? "", pAX_PHONE: self.viewPhone.mainText.text ?? "", hotelname: "", pAX_GENDER: self.viewGender.mainLabel.text ?? "" , pAX_AGEGROUP: "", pAX_NAME: self.paxName , pAX_BIRTHDAY: self.paxBirthDate, pAX_RESNO: "", pAX_PASSPORT: "", pAX_ROOM: self.viewRoom.mainText.text ?? "", pAX_TOURISTREF: 0, pAX_STATUS: 1, ID: 0)
+            let manuelAddPaxName = Paxes.init(pAX_CHECKOUT_DATE: self.checkOutDate, pAX_OPRID: 0, pAX_OPRNAME: self.viewOperator.mainText.text ?? "", pAX_PHONE: self.viewPhone.mainText.text ?? "", hotelname: "", pAX_GENDER: self.viewGender.mainLabel.text ?? "" , pAX_AGEGROUP: "\(self.manuelPaxAgeGroup)", pAX_NAME: self.paxName , pAX_BIRTHDAY: self.paxBirthDate, pAX_RESNO: "", pAX_PASSPORT: "", pAX_ROOM: self.viewRoom.mainText.text ?? "", pAX_TOURISTREF: 0, pAX_STATUS: 1, ID: 0)
             self.saveMAnuelListDelegate?.saveManuelList(manuelList: manuelAddPaxName)
             self.removeFromSuperview()
         }else{

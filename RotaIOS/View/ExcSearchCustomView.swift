@@ -284,6 +284,7 @@ class ExcSearchCustomView : UIView {
                 self.promotionMenu.topOffset = CGPoint(x: 0, y:-(self.promotionMenu.anchorView?.plainView.bounds.height)!)
             }else{
                 print("data has not recived")
+                self.promotionMenu.dataSource = []
             }
         }
         

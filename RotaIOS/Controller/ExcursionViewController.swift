@@ -82,6 +82,8 @@ class ExcursionViewController: UIViewController {
     var paxesListIsEqual = false
     var extraPaxesList : [ExtraPaxes] = []
     var transferPaxesList : [ExtraPaxes] = []
+    var comperadPaxesList  : [GetInHoseListResponseModel] = []
+    var paxesListIsChange = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -328,9 +330,15 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
                                     if response.count > 0 {
                                         //   let filter = response.filter{($0.text?.contains("ADONIS HOTEL ANTALYA") ?? false)}
                                         self.paxesList = response
+                                        if self.comperadPaxesList != self.paxesList {
+                                            self.isPAxesListChange = true
+                                        }
+                                        self.comperadPaxesList = self.paxesList
                                         /* userDefaultsData.saveHotelId(hotelId: 0)
                                          userDefaultsData.saveMarketId(marketId: 0)*/
                                     }else{
+                                        self.paxesList = []
+                                        self.isPAxesListChange = true
                                         print("data has not recived")
                                     }
                                 }
@@ -358,10 +366,16 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
                                     if response.count > 0 {
                                         //   let filter = response.filter{($0.text?.contains("ADONIS HOTEL ANTALYA") ?? false)}
                                         self.paxesList = response
+                                        if self.comperadPaxesList != self.paxesList {
+                                            self.isPAxesListChange = true
+                                        }
+                                        self.comperadPaxesList = self.paxesList
                                         /* userDefaultsData.saveHotelId(hotelId: 0)
                                          userDefaultsData.saveMarketId(marketId: 0)*/
                                     }else{
                                         print("data has not recived")
+                                        self.paxesList = []
+                                        self.isPAxesListChange = true
                                     }
                                 }
                                 
@@ -960,6 +974,7 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
     
     func homePageTapped(ischosen: Int) {
         self.buttonTappedCount = ischosen
+        self.viewPaxCustomView?.isHidden = true
         if self.buttonTappedCount == 2 || self.buttonTappedCount == 3{
           //  self.buttonTappedCount = 2
             if userDefaultsData.getPaxesList()?.count == 0 {
@@ -1044,10 +1059,16 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
                                     if response.count > 0 {
                                         //   let filter = response.filter{($0.text?.contains("ADONIS HOTEL ANTALYA") ?? false)}
                                         self.paxesList = response
+                                        if self.comperadPaxesList != self.paxesList {
+                                            self.isPAxesListChange = true
+                                        }
+                                        self.comperadPaxesList = self.paxesList
                                         /* userDefaultsData.saveHotelId(hotelId: 0)
                                          userDefaultsData.saveMarketId(marketId: 0)*/
                                     }else{
                                         print("data has not recived")
+                                        self.paxesList = []
+                                        self.isPAxesListChange = true
                                     }
                                 }
                                 self.viewExcSelectCustomView?.excursionList = self.tourList
@@ -1074,10 +1095,16 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
                                     if response.count > 0 {
                                         //   let filter = response.filter{($0.text?.contains("ADONIS HOTEL ANTALYA") ?? false)}
                                         self.paxesList = response
+                                        if self.comperadPaxesList != self.paxesList {
+                                            self.isPAxesListChange = true
+                                        }
+                                        self.comperadPaxesList = self.paxesList
                                         /* userDefaultsData.saveHotelId(hotelId: 0)
                                          userDefaultsData.saveMarketId(marketId: 0)*/
                                     }else{
                                         print("data has not recived")
+                                        self.paxesList = []
+                                        self.isPAxesListChange = true
                                     }
                                 }
                                 
@@ -1710,7 +1737,7 @@ extension ExcursionViewController : ExcSelectDelegate {
             self.viewExcSelectCustomView?.isHidden = true
             self.viewFooterViewCustomView.buttonAddButton.isHidden = false
             // self.viewFooterViewCustomView.buttonView.isHidden = false
-            if viewPaxCustomView == nil {
+            if self.viewPaxCustomView == nil || self.isPAxesListChange == true{
                 UIView.animate(withDuration: 0, animations: { [self] in
                     self.viewPaxCustomView = ExcPaxCustomView()
                     self.viewPaxCustomView?.excPaxPageDelegate = self
@@ -1764,7 +1791,7 @@ extension ExcursionViewController : ExcPaxPageDelegate {
             self.viewFooterViewCustomView.buttonView.removeFromSuperview()
             self.constraintOnPaxFunc()
             self.viewExcSelectCustomView?.isHidden = true
-            if viewPaxCustomView == nil {
+            if self.viewPaxCustomView == nil {
                 UIView.animate(withDuration: 0, animations: { [self] in
                     self.viewPaxCustomView = ExcPaxCustomView()
                     self.viewExcursionView.viewContentView.addSubview(self.viewPaxCustomView!)
@@ -1812,9 +1839,10 @@ extension ExcursionViewController : ExcAddCustomViewDelegate {
         self.savedExtrasTotalPrice = extrasTotalPrice
         if extraButtonTapped == true {
             self.savedExtrasList = savedExtrasList
-            self.savedTransFerList = savedTransferList
+            
             self.viewFooterViewCustomView.labelAmount.text = String(self.savedExtrasTotalPrice)
         }else{
+            self.savedTransFerList = savedTransferList
             self.viewFooterViewCustomView.labelAmount.text = String(transfersTotalPrice)
         }
         self.extraAndTransTotalPrice = extrasTotalPrice + transfersTotalPrice

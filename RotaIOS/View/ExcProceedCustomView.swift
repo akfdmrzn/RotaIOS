@@ -654,15 +654,17 @@ class ExcProceedCustomView: UIView{
                 }
                 
                 
+                
                 for i in 0...self.tourList.count - 1 {
                     self.tourExtras = []
                     self.tourTransfers = []
                     self.totalPricePerTour = 0.0
                     tourExtrasString = ""
+                    tourTransfersString = ""
                     self.addedNumber = 1000
                     var tourPaxPrice = 0.0
                     var extrasTotalAmout = 0.0
-                    
+                    var transfersTotalAmout = 0.0
                     if self.extras.count > 0 {
                         for index in 0...self.extras.count - 1 {
                             if self.extras[index].tourId == self.tourList[i].tourId && self.extras[index].tourDate == self.tourList[i].tourDate && self.extras[index].tourName == self.tourList[i].tourName {
@@ -787,32 +789,32 @@ class ExcProceedCustomView: UIView{
                                 let extrasLabelType = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDExtras^FS^FO 250, \(self.addedNumber + 5)^A 0, 20 ^FD\(self.tourExtras[i].desc ?? "")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 20 ^FD \(adl)  ADL  \(chd)  CHD  \(tdl)  TDL  \(inf)  INF  \(extrasAmount)  EUR^FS"
                                 tourExtrasString.append(extrasLabelType)
                                 self.addedNumber += (i * 120)
-                               if self.tourExtras.count == 1 {
+                              /* if self.tourExtras.count == 1 {
                                     self.addedNumber += 120
-                                }
+                                }*/
                             }else{
                                 extrasAmount = self.tourExtras[i].savedAmount ?? 0.0
                                 let extrasLabelType = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDExtras^FS^FO 250, \(self.addedNumber + 5)^A 0, 20 ^FD\(self.tourExtras[i].desc ?? "")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 20 ^FD \(adultCount)  ADL  \(childCount)  CHD  \(toodleCount)  TDL  \(infantCount)  INF  \(extrasAmount)  EUR^FS"
                                 tourExtrasString.append(extrasLabelType)
                                 self.addedNumber += (i * 120)
-                                if self.tourExtras.count == 1 {
+                               /* if self.tourExtras.count == 1 {
                                      self.addedNumber += 120
-                                 }
+                                 }*/
                             }
                             extrasAmount = Double(Darwin.round(100 * extrasAmount) / 100 )
                             self.totalPricePerTour += extrasAmount
                             extrasTotalAmout += extrasAmount
                         }
-                        
-                    }else{
                         self.addedNumber += 120
+                    }else{
+                      //  self.addedNumber += 120
                     }
                     // Transfers control
                     
                     if self.tourTransfers.count > 0 {
-                        var transfersAmount = 0.0
-                        self.addedNumber += 120
                         for i in 0...self.tourTransfers.count - 1{
+                            var transfersAmount = 0.0
+                            self.addedNumber += 120
                             if let index = self.transfersPaxesList.firstIndex(where: {$0.extraName == self.tourTransfers[i].desc}){
                                 for j in 0...self.extraTransferPaxesList.count - 1{
                                     self.extraTransferPaxesList[j].isTapped = self.transfersPaxesList[index].CheckList?[j]
@@ -841,22 +843,31 @@ class ExcProceedCustomView: UIView{
                                 let transfersLabelType = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDTransfers^FS^FO 250, \(self.addedNumber + 5)^A 0, 20 ^FD\(self.tourTransfers[i].desc ?? "")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 20 ^FD \(adl)  ADL  \(chd)  CHD  \(tdl)  TDL  \(inf)  INF  \(transfersAmount)  EUR^FS"
                                 tourTransfersString.append(transfersLabelType)
                                 self.addedNumber += (i * 120)
+                               /* if self.tourTransfers.count == 1 {
+                                     self.addedNumber += 120
+                                 }*/
                             }else{
-                                transfersAmount = self.tourExtras[i].savedAmount ?? 0.0
+                                transfersAmount = self.tourTransfers[i].savedAmount ?? 0.0
                                 let transfersLabelType = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDTransferss^FS^FO 250, \(self.addedNumber + 5)^A 0, 20 ^FD\(self.tourTransfers[i].desc ?? "")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 20 ^FD \(adultCount)  ADL  \(childCount)  CHD  \(toodleCount)  TDL  \(infantCount)  INF  \(transfersAmount)  EUR^FS"
                                 tourTransfersString.append(transfersLabelType)
                                 self.addedNumber += (i * 120)
+                               /* if self.tourTransfers.count == 1 {
+                                     self.addedNumber += 120
+                                 }*/
                             }
                             transfersAmount = Double(Darwin.round(100 * transfersAmount) / 100 )
                             self.totalPricePerTour += transfersAmount
+                            transfersTotalAmout += transfersAmount
                         }
-                        
+                        self.addedNumber += 120
                     }else{
+                      //  self.addedNumber += 120
+                    }
+                    if self.tourTransfers.count == 0 && self.tourExtras.count == 0 {
                         self.addedNumber += 120
                     }
-                  
                    ///
-                    tourPaxPrice = self.totalPricePerTour - extrasTotalAmout
+                    tourPaxPrice = self.totalPricePerTour - extrasTotalAmout - transfersTotalAmout
                     let tourPaxLabel = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 25 ^FDTourPax^FS^FO 250, \(self.addedNumber + 5)^A 0, 25 ^FD\("")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 25 ^FD \(adultCount)  ADL  \(childCount)  CHD  \(toodleCount)  TDL  \(infantCount)  INF  \(tourPaxPrice) EUR^FS"
                     
                    
@@ -957,7 +968,7 @@ class ExcProceedCustomView: UIView{
                        
                     }else {
                         self.buttonColor(isEnable: false, button: self.buttonSend)
-                        self.buttonColor(isEnable: false, button: self.buttonPrintVoucher)
+                        self.buttonColor(isEnable: true, button: self.buttonPrintVoucher)
                         let alert = UIAlertController(title: "FAILED", message: response.Message ?? "", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                         if let topVC = UIApplication.getTopViewController() {
@@ -1144,7 +1155,7 @@ extension ExcProceedCustomView{
                 }else{
                     hotelNameFirstColumn = self.printList[i].hotelName ?? ""
                 }
-                self.printString = "^XA^PON^LL\(self.addedNumber + 200)^XGMyFormat^FS^CF0,25^FO280,30^FDVoucher No^FS^CF0,25^FO280,60^FD\(self.printList[i].voucherNoTop ?? "")^FS^CF0,25^FO280,90^FDPrint Date : ^FS^CF0,25^FO400,90^FD\(self.printList[i].date ?? "")^FS^FO10,150^GB200,100,0^FS^CF0,25^FO20,170^FDTour^FS^FO210,150^GB340,100,0^FS^FO 220, 170 ^A 0, 20 ^FD\(self.printList[i].tourName ?? "")^FS^FO10,250^GB200,60,0^FS^CF0,25^FO20,270^FDPax Info^FS^FO210,250^GB340,60,0^FS^FO220, 270 ^A 0, 20 ^FD\(self.printList[i].paxInfo ?? "")^FS^FO10,310^GB200,60,0^FS^CF0,25^FO20,330^FDDate^FS^FO210,310^GB340,60,0^FS^FO 220, 330 ^A 0, 20 ^FD\(self.printList[i].tourDate ?? "")^FS^FO10,370^GB200,60,0^FS^CF0,25^FO20,390^FDConcept^FS^FO210,370^GB340,60,0^FS^FO 220, 390 ^A 0, 20 ^FDStandart^FS^FO10,430^GB200,60,0^FS^CF0,25^FO20,450^FDTransfer^FS^FO210,430^GB340,60,0^FS^FO 220, 450 ^A 0, 20 ^FD\(self.printList[i].transTourist ?? "")^FS^FO10,490^GB200,100,0^FS^CF0,25^FO20,510^FDHotel^FS^FO210,490^GB340,100,0^FS^FO 220, 510 ^A 0, 20 ^FD\(hotelNameFirstColumn)^FS^FO 220, 550 ^A 0, 20 ^FD\(hotelNameScondColumn)^FS^FO10,590^GB200,60,0^FS^CF0,25^FO20,610^FDRoom^FS^FO210,590^GB340,60,0^FS^FO 220, 610 ^A 0, 20 ^FD\(self.printList[i].room ?? "")^FS^FO10,650^GB200,60,0^FS^CF0,25^FO20,670^FDPick Up^FS^FO210,650^GB340,60,0^FS^FO 220, 670 ^A 0, 20 ^FD\(self.printList[i].pickUpTime ?? "")^FS^FO10,710^GB200,60,0^FS^CF0,25^FO20,730^FDPick Up Point^FS^FO210,710^GB340,60,0^FS^FO 220, 730 ^A 0, 20 ^FD-^FS^FO10,770^GB200,60,0^FS^CF0,25^FO20,790^FDName^FS^FO210,770^GB340,60,0^FS^FO 220, 790 ^A 0, 20 ^FD\(self.printList[i].paxName ?? "")^FS^FO10,830^GB200,60,0^FS^CF0,25^FO20,850^FDOperator^FS^FO210,830^GB340,60,0^FS^FO 220, 850 ^A 0, 20 ^FD\(self.printList[i].operatorName ?? "")^FS^FO10,890^GB200,60,0^FS^CF0,25^FO20,910^FDRes No^FS^FO210,890^GB340,60,0^FS^FO 220, 910 ^A 0, 20 ^FD\(self.printList[i].resNo ?? "")^FS^CF0,25^FO20,980^FDNet Total^FS^CF0,25^FO150,980^FD\(self.printList[i].total ?? "")^FS^CF0,25^FO20,1020^FDDiscount^FS^CF0,25^FO150,1020^FD\(self.printList[i].discount ?? "")^FS\(self.printList[i].tourPax ?? "")\(self.printList[i].paymentDetail ?? "")\(self.printList[i].extras ?? "")\(self.printList[i].voucher ?? "")\(odeonLabel)^XZ"
+                self.printString = "^XA^PON^LL\(self.addedNumber + 200)^XGMyFormat^FS^CF0,25^FO280,30^FDVoucher No^FS^CF0,25^FO280,60^FD\(self.printList[i].voucherNoTop ?? "")^FS^CF0,25^FO280,90^FDPrint Date : ^FS^CF0,25^FO400,90^FD\(self.printList[i].date ?? "")^FS^FO10,150^GB200,100,0^FS^CF0,25^FO20,170^FDTour^FS^FO210,150^GB340,100,0^FS^FO 220, 170 ^A 0, 20 ^FD\(self.printList[i].tourName ?? "")^FS^FO10,250^GB200,60,0^FS^CF0,25^FO20,270^FDPax Info^FS^FO210,250^GB340,60,0^FS^FO220, 270 ^A 0, 20 ^FD\(self.printList[i].paxInfo ?? "")^FS^FO10,310^GB200,60,0^FS^CF0,25^FO20,330^FDDate^FS^FO210,310^GB340,60,0^FS^FO 220, 330 ^A 0, 20 ^FD\(self.printList[i].tourDate ?? "")^FS^FO10,370^GB200,60,0^FS^CF0,25^FO20,390^FDConcept^FS^FO210,370^GB340,60,0^FS^FO 220, 390 ^A 0, 20 ^FDStandart^FS^FO10,430^GB200,60,0^FS^CF0,25^FO20,450^FDTransfer^FS^FO210,430^GB340,60,0^FS^FO 220, 450 ^A 0, 20 ^FD\(self.printList[i].transTourist ?? "")^FS^FO10,490^GB200,100,0^FS^CF0,25^FO20,510^FDHotel^FS^FO210,490^GB340,100,0^FS^FO 220, 510 ^A 0, 20 ^FD\(hotelNameFirstColumn)^FS^FO 220, 550 ^A 0, 20 ^FD\(hotelNameScondColumn)^FS^FO10,590^GB200,60,0^FS^CF0,25^FO20,610^FDRoom^FS^FO210,590^GB340,60,0^FS^FO 220, 610 ^A 0, 20 ^FD\(self.printList[i].room ?? "")^FS^FO10,650^GB200,60,0^FS^CF0,25^FO20,670^FDPick Up^FS^FO210,650^GB340,60,0^FS^FO 220, 670 ^A 0, 20 ^FD\(self.printList[i].pickUpTime ?? "")^FS^FO10,710^GB200,60,0^FS^CF0,25^FO20,730^FDPick Up Point^FS^FO210,710^GB340,60,0^FS^FO 220, 730 ^A 0, 20 ^FD-^FS^FO10,770^GB200,60,0^FS^CF0,25^FO20,790^FDName^FS^FO210,770^GB340,60,0^FS^FO 220, 790 ^A 0, 20 ^FD\(self.printList[i].paxName ?? "")^FS^FO10,830^GB200,60,0^FS^CF0,25^FO20,850^FDOperator^FS^FO210,830^GB340,60,0^FS^FO 220, 850 ^A 0, 20 ^FD\(self.printList[i].operatorName ?? "")^FS^FO10,890^GB200,60,0^FS^CF0,25^FO20,910^FDRes No^FS^FO210,890^GB340,60,0^FS^FO 220, 910 ^A 0, 20 ^FD\(self.printList[i].resNo ?? "")^FS^CF0,25^FO20,980^FDNet Total^FS^CF0,25^FO150,980^FD\(self.printList[i].total ?? "")^FS^CF0,25^FO20,1020^FDDiscount^FS^CF0,25^FO150,1020^FD\(self.printList[i].discount ?? "")^FS\(self.printList[i].tourPax ?? "")\(self.printList[i].paymentDetail ?? "")\(self.printList[i].extras ?? "")\(self.printList[i].transfers ?? "")\(self.printList[i].voucher ?? "")\(odeonLabel)^XZ"
               //  self.printListStringType.append(printString)
                 sendStrToPrinter(self.printString, connection: connection)
             }

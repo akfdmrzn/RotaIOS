@@ -35,6 +35,7 @@ struct SendDataPrint {
     var tourPax : String?
     var voucherNoTop : String?
     var paymentDetail : String?
+    var steps : String?
 }
 
 struct PaymentType {
@@ -633,7 +634,6 @@ class ExcProceedCustomView: UIView{
                 }
             }
             
-            
             if self.tourList.count > 0 && self.touristList.count > 0 && self.voucherNo.count > 0{
                 for i in 0...self.tourList.count - 1{
                     for index in 0...self.touristList.count - 1 {
@@ -652,9 +652,7 @@ class ExcProceedCustomView: UIView{
                         infantCount += 1
                     }
                 }
-                
-                
-                
+        
                 for i in 0...self.tourList.count - 1 {
                     self.tourExtras = []
                     self.tourTransfers = []

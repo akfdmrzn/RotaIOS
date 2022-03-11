@@ -14,9 +14,9 @@ class TasksPaxViewController: BaseViewController {
         case DEL = 3
         case ARR = 4
         case DEP = 5
-        case SHOP = 6
-        case INT = 7
-        case INFO = 8
+        case INT = 6
+        case INFO = 7
+        case SHOP = 10
     }
     
     @IBOutlet weak var tableViewTasksPax: UITableView!
@@ -183,7 +183,7 @@ class TasksPaxViewController: BaseViewController {
     func sendOffice(){
         switch self.serviceType {
         case ServiceType.EXC.rawValue:
-            let updateNoShowModel = UpdateNoShow.init(typeInt: 1, noShowList: self.noShowList)
+            let updateNoShowModel = UpdateNoShow.init(typeInt: ServiceType.EXC.rawValue, noShowList: self.noShowList)
             let updateNoShowRequestModel = UpdateNoShowRequestModel.init(data: updateNoShowModel.toJSONString() ?? "")
             NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateNoShow, requestModel: updateNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
                 if response.isSuccesful == true {
@@ -192,7 +192,7 @@ class TasksPaxViewController: BaseViewController {
                 }
             }
         case ServiceType.COL.rawValue:
-            let updateNoShowModel = UpdateNoShow.init(typeInt: 2, noShowList: self.noShowList)
+            let updateNoShowModel = UpdateNoShow.init(typeInt: ServiceType.COL.rawValue, noShowList: self.noShowList)
             let updateNoShowRequestModel = UpdateNoShowRequestModel.init(data: updateNoShowModel.toJSONString() ?? "")
             NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateNoShow, requestModel: updateNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
                 if response.isSuccesful == true {
@@ -201,7 +201,7 @@ class TasksPaxViewController: BaseViewController {
                 }
             }
         case ServiceType.DEL.rawValue:
-            let updateNoShowModel = UpdateNoShow.init(typeInt: 3, noShowList: self.noShowList)
+            let updateNoShowModel = UpdateNoShow.init(typeInt: ServiceType.DEL.rawValue, noShowList: self.noShowList)
             let updateNoShowRequestModel = UpdateNoShowRequestModel.init(data: updateNoShowModel.toJSONString() ?? "")
             NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateNoShow, requestModel: updateNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
                 if response.isSuccesful == true {
@@ -210,7 +210,7 @@ class TasksPaxViewController: BaseViewController {
                 }
             }
         case ServiceType.ARR.rawValue:
-            let updateNoShowModel = UpdateNoShow.init(typeInt: 4, noShowList: self.noShowList)
+            let updateNoShowModel = UpdateNoShow.init(typeInt: ServiceType.ARR.rawValue, noShowList: self.noShowList)
             let updateArrAndDepPlanNoShowRequestModel = UpdateArrAndDepPlanNoShowRequestModel.init(data: updateNoShowModel.toJSONString() ?? "")
             NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateArrAndDepPlanNoShow, requestModel: updateArrAndDepPlanNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
                 if response.isSuccesful == true {
@@ -219,7 +219,7 @@ class TasksPaxViewController: BaseViewController {
                 }
             }
         case ServiceType.DEP.rawValue:
-            let updateNoShowModel = UpdateNoShow.init(typeInt: 5, noShowList: self.noShowList)
+            let updateNoShowModel = UpdateNoShow.init(typeInt: ServiceType.DEP.rawValue, noShowList: self.noShowList)
             let updateArrAndDepPlanNoShowRequestModel = UpdateArrAndDepPlanNoShowRequestModel.init(data: updateNoShowModel.toJSONString() ?? "")
             NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateArrAndDepPlanNoShow, requestModel: updateArrAndDepPlanNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
                 if response.isSuccesful == true {
@@ -227,18 +227,8 @@ class TasksPaxViewController: BaseViewController {
                     })
                 }
             }
-        case ServiceType.SHOP.rawValue:
-            let updateNoShowModel = UpdateNoShow.init(typeInt: 10, noShowList: self.noShowList)
-            let updateIndShopNoShowRequestModel = UpdateIndShopNoShowRequestModel.init(data: updateNoShowModel.toJSONString() ?? "")
-            NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateIndShopNoShow, requestModel: updateIndShopNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
-                if response.isSuccesful == true {
-                    UIApplication.getTopViewController()?.showAlertMsg(msg: response.message, finished: {
-                    })
-                }
-            }
-            
         case ServiceType.INT.rawValue:
-            let updateNoShowModel = UpdateNoShow.init(typeInt: 6, noShowList: self.noShowList)
+            let updateNoShowModel = UpdateNoShow.init(typeInt: ServiceType.INT.rawValue, noShowList: self.noShowList)
             let updateArrAndDepPlanNoShowRequestModel = UpdateArrAndDepPlanNoShowRequestModel.init(data: updateNoShowModel.toJSONString() ?? "")
             NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateArrAndDepPlanNoShow, requestModel: updateArrAndDepPlanNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
                 if response.isSuccesful == true {
@@ -247,9 +237,18 @@ class TasksPaxViewController: BaseViewController {
                 }
             }
         case ServiceType.INFO.rawValue:
-            let updateNoShowModel = UpdateNoShow.init(typeInt: 7, noShowList: self.noShowList)
+            let updateNoShowModel = UpdateNoShow.init(typeInt: ServiceType.INFO.rawValue, noShowList: self.noShowList)
             let updateInfoPlanNoShowRequestModel = UpdateInfoPlanNoShowRequestModel.init(data: updateNoShowModel.toJSONString() ?? "")
             NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateInfoPlanNoShow, requestModel: updateInfoPlanNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
+                if response.isSuccesful == true {
+                    UIApplication.getTopViewController()?.showAlertMsg(msg: response.message, finished: {
+                    })
+                }
+            }
+        case ServiceType.SHOP.rawValue:
+            let updateNoShowModel = UpdateNoShow.init(typeInt: ServiceType.SHOP.rawValue, noShowList: self.noShowList)
+            let updateIndShopNoShowRequestModel = UpdateIndShopNoShowRequestModel.init(data: updateNoShowModel.toJSONString() ?? "")
+            NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateIndShopNoShow, requestModel: updateIndShopNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
                 if response.isSuccesful == true {
                     UIApplication.getTopViewController()?.showAlertMsg(msg: response.message, finished: {
                     })

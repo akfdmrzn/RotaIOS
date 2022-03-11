@@ -9,25 +9,24 @@ import UIKit
 
 class TasksViewController: BaseViewController {
     enum ShortCode: String {
-        case EXC = "EXC"
-        case COL = "COL"
-        case DEL = "DEL"
-        case ARR = "ARR"
-        case DEP = "DEP"
-        case SHOP = "SHOP"
-        case INT = "INT"
-        case INFO = "INFO"
+        case EXC = "EXC" //1
+        case COL = "COL" //2
+        case DEL = "DEL" //3
+        case ARR = "ARR" //4
+        case DEP = "DEP" //5
+        case INT = "INT" //6
+        case INFO = "INFO" //7
+        case SHOP = "SHOP" //10
     }
-    
     enum ServiceType: Int {
         case EXC = 1
         case COL = 2
         case DEL = 3
         case ARR = 4
         case DEP = 5
-        case SHOP = 6
-        case INT = 7
-        case INFO = 8
+        case INT = 6
+        case INFO = 7
+        case SHOP = 10
     }
     
     @IBOutlet weak var tasksTableView: UITableView!
@@ -79,17 +78,75 @@ class TasksViewController: BaseViewController {
     }
     
     @objc func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
-
         if longPressGestureRecognizer.state == UIGestureRecognizer.State.began {
             let touchPoint = longPressGestureRecognizer.location(in: self.tasksTableView)
             if let indexPath = self.tasksTableView.indexPathForRow(at: touchPoint) {
-                if self.totalList[indexPath.row].shortCode == ShortCode.INFO.rawValue{
-                    print(indexPath.row)
-                    self.showAlertMsgWithTxtField(msg: "Report", workNo: self.totalList[indexPath.row].workNo, typeInt: String(ServiceType.INT.rawValue), relatedId: self.getGuideDutiesList[indexPath.row].ids, tourDate: self.totalList[indexPath.row].tourDateStr, finished: {
+                switch self.totalList[indexPath.row].shortCode {
+                case ShortCode.EXC.rawValue:
+                    self.showAlertMenu(msg: "EXC", isCreateReport: true, isSendMeetingTime: true, isTourDetail: true, isSteps: true, index: indexPath.row, typeInt: ServiceType.EXC.rawValue, finished: {
                     })
+                case ShortCode.COL.rawValue:
+                    self.showAlertMenu(msg: "COL", isCreateReport: true, isSendMeetingTime: true, isTourDetail: true, isSteps: false, index: indexPath.row, typeInt: ServiceType.COL.rawValue, finished: {
+                    })
+                case ShortCode.DEL.rawValue:
+                    self.showAlertMenu(msg: "DEL", isCreateReport: true, isSendMeetingTime: true, isTourDetail: true, isSteps: false, index: indexPath.row, typeInt: ServiceType.DEL.rawValue, finished: {
+                    })
+                case ShortCode.ARR.rawValue:
+                    self.showAlertMenu(msg: "ARR", isCreateReport: true, isSendMeetingTime: true, isTourDetail: false, isSteps: true, index: indexPath.row, typeInt: ServiceType.ARR.rawValue, finished: {
+                    })
+                case ShortCode.DEP.rawValue:
+                    self.showAlertMenu(msg: "DEP", isCreateReport: true, isSendMeetingTime: true, isTourDetail: false, isSteps: true, index: indexPath.row, typeInt: ServiceType.DEP.rawValue, finished: {
+                    })
+                case ShortCode.INT.rawValue:
+                    self.showAlertMenu(msg: "INT", isCreateReport: true, isSendMeetingTime: true, isTourDetail: false, isSteps: true, index: indexPath.row, typeInt: ServiceType.INT.rawValue, finished: {
+                    })
+                case ShortCode.INFO.rawValue:
+                    self.showAlertMenu(msg: "INFO", isCreateReport: true, isSendMeetingTime: false, isTourDetail: false, isSteps: false, index: indexPath.row, typeInt: ServiceType.INFO.rawValue, finished: {
+                    })
+                case ShortCode.SHOP.rawValue:
+                    self.showAlertMenu(msg: "SHOP", isCreateReport: true, isSendMeetingTime: true, isTourDetail: false, isSteps: false, index: indexPath.row, typeInt: ServiceType.SHOP.rawValue, finished: {
+                    })
+                    break
+                default:
+                    break
                 }
             }
         }
+    }
+    
+    public func showAlertMenu(msg : String, isCreateReport: Bool, isSendMeetingTime: Bool, isTourDetail: Bool, isSteps: Bool, index: Int, typeInt: Int, finished: @escaping () -> Void){
+        let alertController = UIAlertController(title: "Actions", message: nil, preferredStyle: .actionSheet)
+        let createReportAction = UIAlertAction(title: "Create Report", style: .default) { _ in
+            self.showAlertMsgWithTxtField(msg: "Create Report", workNo: self.totalList[index].workNo, typeInt: self.getGuideDutiesList[index].typeInt, relatedId: self.getGuideDutiesList[index].ids, tourDate: self.totalList[index].tourDateStr, finished: {
+            })
+        }
+        let sendMeetingTimeAction = UIAlertAction(title: "Send Meeting Time", style: .default) { _ in
+            self.showAlertButton(msg: "Send Meeting Time", workNo: self.totalList[index].workNo, typeInt: self.getGuideDutiesList[index].typeInt, relatedId: self.getGuideDutiesList[index].ids, tourDate: self.totalList[index].tourDateStr, finished: {
+            })
+        }
+        let tourDetailAction = UIAlertAction(title: "Tour Detail", style: .default) { _ in
+            let topVC = UIApplication.getTopViewController()
+            let viewController = TasksTourDetailViewController()
+            viewController.ids = self.getGuideDutiesList[index].ids
+            viewController.typeInt = self.getGuideDutiesList[index].typeInt
+            topVC?.otiPushViewController(viewController: viewController)
+        }
+        let stepsAction = UIAlertAction(title: "Steps", style: .default) { _ in
+            let topVC = UIApplication.getTopViewController()
+            let viewController = TasksStepsViewController()
+            viewController.ids = self.getGuideDutiesList[index].ids
+            viewController.serviceType = typeInt
+            topVC?.otiPushViewController(viewController: viewController)
+        }
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {
+                    (alertAction: UIAlertAction!) in
+            alertController.dismiss(animated: true, completion: nil)
+                }))
+        isCreateReport == true ? alertController.addAction(createReportAction) : nil
+        isSendMeetingTime == true ? alertController.addAction(sendMeetingTimeAction) : nil
+        isTourDetail == true ? alertController.addAction(tourDetailAction) : nil
+        isSteps == true ? alertController.addAction(stepsAction) : nil
+        self.present(alertController, animated: true)
     }
     
     public func showAlertMsgWithTxtField(msg : String, workNo: String, typeInt: String,
@@ -107,8 +164,25 @@ class TasksViewController: BaseViewController {
                 self.saveGuideMeetingTimeAndReport(workNo: workNo, guide: String(userDefaultsData.getGuideId()), typeInt: typeInt, note: noteText, isReport: "true", action: "1", plate: plateText, state: "", relatedId: relatedId, tourDate: tourDate)
             }
         }
-
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {
+                    (alertAction: UIAlertAction!) in
+            alertController.dismiss(animated: true, completion: nil)
+                }))
         alertController.addAction(continueAction)
+        self.present(alertController, animated: true)
+    }
+    
+    public func showAlertButton(msg : String, workNo: String, typeInt: String,
+                               relatedId: String, tourDate: String, finished: @escaping () -> Void){
+        let alertController = UIAlertController(title: msg, message: nil, preferredStyle: .alert)
+        let sendAction = UIAlertAction(title: "Send", style: .default) { _ in
+            self.saveGuideMeetingTimeAndReport(workNo: workNo, guide: String(userDefaultsData.getGuideId()), typeInt: typeInt, note: "", isReport: "false", action: "1", plate: "Test", state: "1", relatedId: relatedId, tourDate: tourDate)
+        }
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {
+                    (alertAction: UIAlertAction!) in
+            alertController.dismiss(animated: true, completion: nil)
+                }))
+        alertController.addAction(sendAction)
         self.present(alertController, animated: true)
     }
     

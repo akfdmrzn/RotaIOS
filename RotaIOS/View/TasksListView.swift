@@ -1,15 +1,14 @@
 //
-//  HeaderDetailCustomView.swift
-//  Rota
+//  TasksListView.swift
+//  RotaIOS
 //
-//  Created by Yasin Dalkilic on 24.04.2021.
+//  Created by odeon on 2.03.2022.
 //
 
 import Foundation
-
 import UIKit
 
-class HeaderDetailCustomView : UIView {
+class TasksListView : UIView {
     @IBOutlet var viewMainView: UIView!
     @IBOutlet weak var viewContentView: UIView!
     @IBOutlet weak var labelHeaderDetailView: UILabel!
@@ -29,10 +28,5 @@ class HeaderDetailCustomView : UIView {
         self.viewMainView.addCustomContainerView(self)
         self.viewMainView.applyGradient(colours: [UIColor.lightGreenColor, UIColor.darkGreenColor])
         
-    }
-    @IBAction func buttonClicked(_ sender: Any) {
-        if let topVC = UIApplication.getTopViewController() {
-            topVC.navigationController?.popViewController(animated: true)
-        }
     }
 }

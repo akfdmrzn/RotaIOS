@@ -24,7 +24,7 @@ class ZReportTableViewCell: BaseTableViewCell {
         self.viewDetailContentView.backgroundColor = UIColor.mainTextColor
  
         let longPressOnContentView = UILongPressGestureRecognizer(target: self, action: #selector(longPressed(gestureReconizer:)))
-        longPressOnContentView.minimumPressDuration = 2.0
+        longPressOnContentView.minimumPressDuration = 1.0
         longPressOnContentView.delaysTouchesBegan = true
         longPressOnContentView.delegate = self
         self.contentView.addGestureRecognizer(longPressOnContentView)

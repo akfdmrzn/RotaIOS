@@ -261,7 +261,7 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
             }
         }
         
-        if self.buttonTappedCount == 3  && self.extraAndTransTotalPrice != 0.0 && self.extraPaxesList.count > 0 && self.transferPaxesList.count > 0{
+        if self.buttonTappedCount == 3  && self.extraAndTransTotalPrice != 0.0 || self.extraPaxesList.count > 0 || self.transferPaxesList.count > 0{
             //self.buttonTappedCount = 2
             if self.saveButtonTappet == false{
                 self.viewFooterViewCustomView.counter = 2
@@ -988,7 +988,7 @@ extension ExcursionViewController : HomePageTappedDelegate , ContinueButtonTappe
         
         if self.buttonTappedCount == 3{
           //  self.buttonTappedCount = 2
-            if self.saveButtonTappet == false && self.extraAndTransTotalPrice != 0.0 && self.extraPaxesList.count > 0 && self.transferPaxesList.count > 0{
+            if self.saveButtonTappet == false && self.extraAndTransTotalPrice != 0.0 || self.extraPaxesList.count > 0 || self.transferPaxesList.count > 0{
                 self.viewAppointMentBarCutomView.selectedIndex.row = 2
                 let alert = UIAlertController.init(title: "WARNING", message: "Please Clicked Save Button", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default, handler: nil))

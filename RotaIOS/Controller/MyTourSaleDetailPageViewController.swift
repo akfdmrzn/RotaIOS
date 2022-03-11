@@ -45,6 +45,7 @@ extension MyTourSaleDetailPageViewController : UITableViewDelegate, UITableViewD
         cell.labelHotelName.text = self.tourDetailItem?.hotelName
         cell.labelReelPax.text = self.tourDetailItem?.totalPax
         cell.labelResNo.text = self.tourDetailItem?.pax_ResNo
+        cell.voucherNo = self.tourDetailItem?.tourVoucher ?? ""
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

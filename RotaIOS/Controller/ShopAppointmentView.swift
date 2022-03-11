@@ -201,7 +201,7 @@ extension ShopAppointmentView : HomePageTappedDelegate , ContinueButtonTappedDel
     }
     
     func homePageTapped(ischosen: Int) {
-        
+        self.footerView.isHidden = false
         if self.footerView.counter == ischosen {
             return
         }

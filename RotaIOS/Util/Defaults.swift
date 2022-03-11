@@ -49,6 +49,7 @@ public class Defaults{
         case GetToken
         case ExtraPaxes
         case TransferPaxes
+        case HotelName
     }
     
    public init(){}
@@ -222,6 +223,24 @@ public class Defaults{
             }
         }
         return []
+    }
+    
+    // Hotel Name List
+   
+    
+    public func saveHotelName(hotelName:String){
+        let preferences = UserDefaults.standard
+        preferences.set( hotelName , forKey:getIdentifier(type: .HotelName))
+        preferences.synchronize()
+    }
+    
+    public func getHotelName() -> String! {
+        let preferences = UserDefaults.standard
+        if preferences.object(forKey: getIdentifier(type: .HotelName)) == nil {
+            return nil
+        }
+        let data:String = preferences.value(forKey: getIdentifier(type: .HotelName)) as! String
+        return data
     }
     
     //SaveData
@@ -816,6 +835,8 @@ public class Defaults{
             return "ExtraPaxes"
         case .TransferPaxes:
             return "TransferPaxes"
+        case .HotelName:
+            return "HotelName"
         }
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZReportLongClickMenu" customModule="RotaIOS" customModuleProvider="target">
             <connections>
+                <outlet property="buttonAddSaleNote" destination="g5K-A7-jF2" id="wAY-ka-9Rk"/>
                 <outlet property="buttonBackButton" destination="5v1-jA-L3x" id="hfP-dV-upA"/>
+                <outlet property="buttonCopyVoucher" destination="iX0-38-B6w" id="l9s-Sh-Szh"/>
+                <outlet property="buttonReprint" destination="jGU-iT-NE7" id="HjM-oC-UJU"/>
                 <outlet property="buttonZReportPayments" destination="l99-jB-5eU" id="Gky-8m-DSO"/>
                 <outlet property="buttonZReportRefund" destination="1RE-R4-rfD" id="8P6-3O-k3D"/>
                 <outlet property="viewContentView" destination="p5g-CO-M6F" id="j0p-6K-yLr"/>
@@ -28,7 +31,7 @@
                     <rect key="frame" x="0.0" y="300" width="503" height="546"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l99-jB-5eU">
-                            <rect key="frame" x="40" y="77" width="423" height="50"/>
+                            <rect key="frame" x="40" y="120" width="423" height="50"/>
                             <color key="backgroundColor" systemColor="systemGreenColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="sVj-Up-3yy"/>
@@ -41,8 +44,22 @@
                                 <action selector="zReportPaymentsButtonClicked:" destination="-1" eventType="touchUpInside" id="sOA-9e-En3"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iX0-38-B6w">
+                            <rect key="frame" x="40" y="120" width="423" height="50"/>
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="PQO-nu-zuR"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="Copy Voucher Number">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="copyVoucherButtonTapped:" destination="-1" eventType="touchUpInside" id="PNd-0w-999"/>
+                            </connections>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RE-R4-rfD">
-                            <rect key="frame" x="40" y="147" width="423" height="50"/>
+                            <rect key="frame" x="40" y="190" width="423" height="50"/>
                             <color key="backgroundColor" systemColor="systemGreenColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="BNB-0O-oAF"/>
@@ -56,7 +73,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5v1-jA-L3x">
-                            <rect key="frame" x="40" y="227" width="423" height="50"/>
+                            <rect key="frame" x="40" y="270" width="423" height="50"/>
                             <color key="backgroundColor" systemColor="systemGreenColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="F2k-UH-OUQ"/>
@@ -76,17 +93,54 @@
                                 <constraint firstAttribute="height" constant="5" id="62i-xP-yXO"/>
                             </constraints>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGU-iT-NE7">
+                            <rect key="frame" x="40" y="50" width="423" height="50"/>
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="Iu8-j0-EWe"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="Reprint">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="reprintButtonTapped:" destination="-1" eventType="touchUpInside" id="UGW-Jc-out"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5K-A7-jF2">
+                            <rect key="frame" x="40" y="190" width="423" height="50"/>
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="nyi-R9-JhI"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="Add Sale Note">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="addSaleNoteButtonTapeed:" destination="-1" eventType="touchUpInside" id="PDH-Am-hti"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="g5K-A7-jF2" secondAttribute="trailing" constant="40" id="19M-UK-n6y"/>
                         <constraint firstAttribute="trailing" secondItem="5v1-jA-L3x" secondAttribute="trailing" constant="40" id="5p3-aZ-Xps"/>
                         <constraint firstItem="1RE-R4-rfD" firstAttribute="top" secondItem="l99-jB-5eU" secondAttribute="bottom" constant="20" id="7YA-b6-bFD"/>
+                        <constraint firstItem="g5K-A7-jF2" firstAttribute="leading" secondItem="p5g-CO-M6F" secondAttribute="leading" constant="40" id="9pd-Nz-IhC"/>
                         <constraint firstItem="5v1-jA-L3x" firstAttribute="leading" secondItem="p5g-CO-M6F" secondAttribute="leading" constant="40" id="Avm-g5-e2n"/>
+                        <constraint firstItem="g5K-A7-jF2" firstAttribute="top" secondItem="l99-jB-5eU" secondAttribute="bottom" constant="20" id="B19-Qd-BLg"/>
+                        <constraint firstItem="iX0-38-B6w" firstAttribute="top" secondItem="jGU-iT-NE7" secondAttribute="bottom" constant="20" id="Hv4-Xg-ji2"/>
+                        <constraint firstItem="jGU-iT-NE7" firstAttribute="leading" secondItem="p5g-CO-M6F" secondAttribute="leading" constant="40" id="I4o-hg-sQa"/>
                         <constraint firstAttribute="trailing" secondItem="l99-jB-5eU" secondAttribute="trailing" constant="40" id="JvL-oR-xl4"/>
+                        <constraint firstAttribute="trailing" secondItem="jGU-iT-NE7" secondAttribute="trailing" constant="40" id="LTO-wn-7NX"/>
+                        <constraint firstItem="iX0-38-B6w" firstAttribute="leading" secondItem="p5g-CO-M6F" secondAttribute="leading" constant="40" id="NVa-ZI-EXf"/>
                         <constraint firstAttribute="trailing" secondItem="1RE-R4-rfD" secondAttribute="trailing" constant="40" id="QK6-n1-Clg"/>
                         <constraint firstItem="1RE-R4-rfD" firstAttribute="leading" secondItem="p5g-CO-M6F" secondAttribute="leading" constant="40" id="QL4-fB-Gc0"/>
                         <constraint firstItem="l99-jB-5eU" firstAttribute="leading" secondItem="p5g-CO-M6F" secondAttribute="leading" constant="40" id="Qjh-qa-Zc1"/>
-                        <constraint firstItem="l99-jB-5eU" firstAttribute="top" secondItem="8NL-NJ-76f" secondAttribute="bottom" constant="62" id="iIQ-tg-Zed"/>
+                        <constraint firstAttribute="trailing" secondItem="iX0-38-B6w" secondAttribute="trailing" constant="40" id="RKp-nL-pVK"/>
+                        <constraint firstItem="jGU-iT-NE7" firstAttribute="top" secondItem="p5g-CO-M6F" secondAttribute="top" constant="50" id="bot-df-V4w"/>
+                        <constraint firstItem="l99-jB-5eU" firstAttribute="top" secondItem="jGU-iT-NE7" secondAttribute="bottom" constant="20" id="g9j-Cu-Vkj"/>
                         <constraint firstItem="8NL-NJ-76f" firstAttribute="top" secondItem="p5g-CO-M6F" secondAttribute="top" constant="10" id="nwr-87-d2j"/>
                         <constraint firstItem="5v1-jA-L3x" firstAttribute="top" secondItem="1RE-R4-rfD" secondAttribute="bottom" constant="30" id="rAf-qO-5It"/>
                         <constraint firstItem="8NL-NJ-76f" firstAttribute="leading" secondItem="p5g-CO-M6F" secondAttribute="leading" constant="132" id="t7Q-cu-znJ"/>

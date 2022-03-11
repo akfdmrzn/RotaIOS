@@ -55,7 +55,14 @@ class ProceedPageCustomView : UIView {
     var printString = ""
     var printList : [SendDataPrint] = []
     var connectedAccessories : [EAAccessory] = []
-    var addedNumber = 1000
+    var addedNumber = 800
+    var hotelName = ""
+    var paxName = ""
+    var room = ""
+    var operatorName = ""
+    var phone = ""
+    var voucherNo = ""
+    var shopDate = ""
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -72,7 +79,7 @@ class ProceedPageCustomView : UIView {
         self.viewMainView.addCustomContainerView(self)
         self.sendButton.isEnabled = true
         self.viewMainView.backgroundColor = UIColor.mainViewColor
-        
+        self.updateConnectedAccessories() // bunu butona ekliyeceğiz özgeyle konuş
         self.viewShopDateMainTextView.headerLAbel.text = "Shop Date"
         self.viewPickUpTimeMainTextView.headerLAbel.text = "Pick Up Time"
         self.viewRoomMainTextView.headerLAbel.text = "Room"
@@ -102,6 +109,29 @@ class ProceedPageCustomView : UIView {
         print(paxListinProceedPage)
         print(stepsListinProceedPage)
         
+        if self.paxListinProceedPage.count > 0 {
+            self.paxName = self.paxListinProceedPage[0].pAX_NAME
+            self.operatorName = self.paxListinProceedPage[0].pAX_OPRNAME
+           // self.room = self.paxListinProceedPage[0].pAX_ROOM
+            self.phone = self.paxListinProceedPage[0].pAX_PHONE
+        }
+        
+        self.room = self.viewRoomMainTextView.mainText.text ?? ""
+        self.hotelName = userDefaultsData.getHotelName() ?? ""
+        
+        var stepsString = ""
+        if self.stepsListinProceedPage.count > 0 {
+            stepsString = "^FO10,\(self.addedNumber)^GB540,30,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDSteps^FS"
+            self.addedNumber += 40
+            for i in 0...self.stepsListinProceedPage.count - 1 {
+                var stepsName = ""
+                stepsName = self.stepsListinProceedPage[i].name
+                let extrasLabelType = "^FO10,\(self.addedNumber)^GB540,50,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FD\(stepsName)^FS"
+                stepsString.append(extrasLabelType)
+                self.addedNumber += 80
+            }
+        }
+        
         let saveForMobileRequestModel = GetSaveForMobileRequestList.init(iND_CHLMAXAGE: NSNull() , iND_NOTE: self.viewNotesMainTextView.mainText.text ?? NSNull(), iND_VOUCHER: NSNull(), iND_SHOPDATE: self.dateString , iND_GUIDEREF: userDefaultsData.getGuideId() , iND_MARKETGROUPREF: userDefaultsData.getMarketGruopId() , iND_MARKETREF: userDefaultsData.getMarketId() , iND_AREAREF: userDefaultsData.getHotelArea() , iND_HOTELREF: userDefaultsData.getHotelId() , iND_SHOPPICKUPTIME: self.timeString,  strPaxes: self.paxListinProceedPage.toJSONString() ?? "" , strSteps: self.stepsListinProceedPage.toJSONString() ?? "")
        
         if dateString.isEmpty == false && self.paxListinProceedPage.isEmpty == false && self.stepsListinProceedPage.isEmpty == false {
@@ -122,7 +152,9 @@ class ProceedPageCustomView : UIView {
                     userDefaultsData.saveMarketId(marketId: 0)
                     print(response)
                     self.sendButton.isEnabled = false
-                    self.printList.append(SendDataPrint.init(tourName: "", paxInfo: "", voucher: "", tourDate: "", transTourist: "", hotelName: "", date: "", room: "", paxName: "", operatorName: "", resNo: "", total: "", discount: "", netTotal: "", cash: "", card: "", guideInfoNumber: "", pickUpTime: "", extras: "", transfers: "", tourPax: "", voucherNoTop: "", paymentDetail: "", steps: ""))
+                    self.voucherNo = response.message ?? ""
+                    self.printList.append(SendDataPrint.init(tourName: "", paxInfo: "ADL :\(self.adultCountinProceedPage),CHD: \(self.childCountinProceedPage), TDL:, INF: \(self.infantCountinProceedPage)", voucher: self.voucherNo, tourDate: self.shopDate, transTourist: "", hotelName: self.hotelName, date: self.dateString, room: self.room, paxName: self.paxName, operatorName: self.operatorName, resNo: "", total: "", discount: "", netTotal: "", cash: "", card: "", guideInfoNumber: "", pickUpTime: self.timeString, extras: "", transfers: "", tourPax: "", voucherNoTop: self.voucherNo, paymentDetail: "", steps: stepsString))
+                    
                     self.buttonColor(isEnable: false, button: self.sendButton)
                     self.buttonColor(isEnable: true, button: self.buttonPrintVoucher)
                 }else{
@@ -158,6 +190,11 @@ class ProceedPageCustomView : UIView {
             topVC.otiPushViewController(viewController: MainPAgeViewController())
         }
     }
+    
+    func updateConnectedAccessories(){
+        self.connectedAccessories = EAAccessoryManager.shared().connectedAccessories
+    }
+    
     func createDatePicker() {
         self.viewShopDateMainTextView.mainText.textAlignment = .left
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(datePickerDonePressed))
@@ -177,6 +214,7 @@ class ProceedPageCustomView : UIView {
         self.dateString = formatter.string(from: datePicker.date)
         formatter.dateFormat = "dd-MM-yyyy"
         self.viewShopDateMainTextView.mainText.text = "\(formatter.string(from: datePicker.date))"
+        self.shopDate =  "\(formatter.string(from: datePicker.date))"
         self.viewMainView.endEditing(true)
     }
     
@@ -276,12 +314,12 @@ extension ProceedPageCustomView {
         if self.printList.count > 0 {
             for i in 0...self.printList.count - 1 {
                 if self.printList[i].hotelName?.count ?? 0 > 20 {
-                    hotelNameFirstColumn = self.printList[i].hotelName?[1..<20] ?? ""
+                    hotelNameFirstColumn = self.printList[i].hotelName?[0..<21] ?? ""
                     hotelNameScondColumn = self.printList[i].hotelName?.substring(fromIndex: 20) ?? ""
                 }else{
                     hotelNameFirstColumn = self.printList[i].hotelName ?? ""
                 }
-                self.printString = "^XA^PON^LL\(self.addedNumber + 200)^XGMyFormat^FS^CF0,25^FO280,30^FDVoucher No^FS^CF0,25^FO280,60^FD\(self.printList[i].voucherNoTop ?? "")^FS^CF0,25^FO280,90^FDPrint Date : ^FS^CF0,25^FO400,90^FD\(self.printList[i].date ?? "")^FS^FO10,150^GB200,100,0^FS^CF0,25^FO20,170^FDShop Date^FS^FO210,150^GB340,100,0^FS^FO 220, 170 ^A 0, 20 ^FD\(self.printList[i].tourName ?? "")^FS^FO10,250^GB200,60,0^FS^CF0,25^FO20,270^FDPick Up Time^FS^FO210,250^GB340,60,0^FS^FO220, 270 ^A 0, 20 ^FD\(self.printList[i].paxInfo ?? "")^FS^FO10,310^GB200,60,0^FS^CF0,25^FO20,330^FDConcept^FS^FO210,310^GB340,60,0^FS^FO 220, 330 ^A 0, 20 ^FD\(self.printList[i].tourDate ?? "")^FS^FO10,370^GB200,60,0^FS^CF0,25^FO20,390^FDHotel^FS^FO210,370^GB340,60,0^FS^FO 220, 390 ^A 0, 20 ^FDStandart^FS^FO10,430^GB200,60,0^FS^CF0,25^FO20,450^FDRoom^FS^FO210,430^GB340,60,0^FS^FO 220, 450 ^A 0, 20 ^FD\(self.printList[i].transTourist ?? "")^FS^FO10,490^GB200,100,0^FS^CF0,25^FO20,510^FDHotel^FS^FO210,490^GB340,100,0^FS^FO 220, 510 ^A 0, 20 ^FD\(hotelNameFirstColumn)^FS^FO 220, 550 ^A 0, 20 ^FD\(hotelNameScondColumn)^FS^FO10,590^GB200,60,0^FS^CF0,25^FO20,610^FDPax^FS^FO210,590^GB340,60,0^FS^FO 220, 610 ^A 0, 20 ^FD\(self.printList[i].room ?? "")^FS^FO10,650^GB200,60,0^FS^CF0,25^FO20,670^FDPhone^FS^FO210,650^GB340,60,0^FS^FO 220, 670 ^A 0, 20 ^FD\(self.printList[i].pickUpTime ?? "")^FS^FO10,710^GB200,60,0^FS^CF0,25^FO20,730^FDName^FS^FO210,710^GB340,60,0^FS^FO 220, 730 ^A 0, 20 ^FD-^FS^FO10,770^GB200,60,0^FS^CF0,25^FO20,790^FDOperator^FS^FO210,770^GB340,60,0^FS^FO 220, 790 ^A 0, 20 ^FD\(self.printList[i].paxName ?? "")^FS^FO10,830^GB200,60,0^FS^CF0,25^FO20,850^FDOperator^FS^FO210,830^GB340,60,0^FS^FO 220, 850 ^A 0, 20 ^FD\(self.printList[i].operatorName ?? "")^FS\(odeonLabel)^XZ"
+                self.printString = "^XA^PON^LL\(self.addedNumber + 200)^XGMyFormat^FS^CF0,25^FO280,30^FDVoucher No^FS^CF0,25^FO280,60^FD\(self.printList[i].voucherNoTop ?? "")^FS^CF0,25^FO280,90^FDPrint Date : ^FS^CF0,25^FO400,90^FD\(self.printList[i].date ?? "")^FS^FO10,150^GB200,60,0^FS^CF0,25^FO20,170^FDShop Date^FS^FO210,150^GB340,60,0^FS^FO 220, 170 ^A 0, 20 ^FD\(self.printList[i].tourDate ?? "")^FS^FO10,210^GB200,60,0^FS^CF0,25^FO20,230^FDPick Up Time^FS^FO210,210^GB340,60,0^FS^FO220, 230 ^A 0, 20 ^FD\(self.printList[i].pickUpTime ?? "")^FS^FO10,270^GB200,60,0^FS^CF0,25^FO20,290^FDConcept^FS^FO210,270^GB340,60,0^FS^FO 220, 290 ^A 0, 20 ^FDStandart^FS^FO10,330^GB200,60,0^FS^CF0,25^FO20,340^FDRoom^FS^FO210,330^GB340,60,0^FS^FO 220, 340 ^A 0, 20 ^FD\(self.printList[i].room ?? "")^FS^FO10,390^GB200,100,0^FS^CF0,25^FO20,400^FDHotel^FS^FO210,390^GB340,100,0^FS^FO 240, 400 ^A 0, 20 ^FD\(hotelNameFirstColumn)^FS^FO 220, 440 ^A 0, 20 ^FD\(hotelNameScondColumn)^FS^FO10,490^GB200,60,0^FS^CF0,25^FO20,500^FDPax^FS^FO210,490^GB340,60,0^FS^FO 220, 500 ^A 0, 20 ^FD\(self.printList[i].paxInfo ?? "")^FS^FO10,550^GB200,60,0^FS^CF0,25^FO20,560^FDPhone^FS^FO210,550^GB340,60,0^FS^FO 220, 560 ^A 0, 20 ^FD\(self.printList[i].pickUpTime ?? "")^FS^FO10,610^GB200,60,0^FS^CF0,25^FO20,620^FDName^FS^FO210,610^GB340,60,0^FS^FO 220, 620 ^A 0, 20 ^FD\(self.printList[i].paxName ?? "")^FS^FO10,670^GB200,60,0^FS^CF0,25^FO20,680^FDOperator^FS^FO210,670^GB340,60,0^FS^FO 220, 680 ^A 0, 20 ^FD\(self.printList[i].operatorName ?? "")\(self.printList[i].steps ?? "")^FS\(odeonLabel)^XZ"
               //  self.printListStringType.append(printString)
                 sendStrToPrinter(self.printString, connection: connection)
             }

@@ -278,6 +278,10 @@
 		D986E5E327AC0DE80032D756 /* PrintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986E5E227AC0DE80032D756 /* PrintManager.swift */; };
 		D986E5FC27AC0EEC0032D756 /* libZSDK_API.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D986E5FB27AC0EEC0032D756 /* libZSDK_API.a */; };
 		D986E5FF27AD371B0032D756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D986E5FE27AD371B0032D756 /* Assets.xcassets */; };
+		D989D66F27DB2A6300072EA6 /* SaveNotePageCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D989D66E27DB2A6300072EA6 /* SaveNotePageCustomView.swift */; };
+		D989D67127DB2A7B00072EA6 /* SaveNotePageCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D989D67027DB2A7B00072EA6 /* SaveNotePageCustomView.xib */; };
+		D989D67327DB3DF100072EA6 /* GetUpdateSaleNoteforMobileRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D989D67227DB3DF100072EA6 /* GetUpdateSaleNoteforMobileRequestModel.swift */; };
+		D989D67527DB432900072EA6 /* GetUpdateSaleNoteforMobileResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D989D67427DB432900072EA6 /* GetUpdateSaleNoteforMobileResponseModel.swift */; };
 		D991469226D68B620010E74F /* CancelVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991469026D68B620010E74F /* CancelVoucherViewController.swift */; };
 		D991469326D68B620010E74F /* CancelVoucherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D991469126D68B620010E74F /* CancelVoucherViewController.xib */; };
 		D991469526D68CBF0010E74F /* CancelVoucherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991469426D68CBF0010E74F /* CancelVoucherView.swift */; };
@@ -644,6 +648,10 @@
 		D986E5FB27AC0EEC0032D756 /* libZSDK_API.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libZSDK_API.a; sourceTree = "<group>"; };
 		D986E5FD27AC0FDF0032D756 /* RotaIOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RotaIOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		D986E5FE27AD371B0032D756 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D989D66E27DB2A6300072EA6 /* SaveNotePageCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNotePageCustomView.swift; sourceTree = "<group>"; };
+		D989D67027DB2A7B00072EA6 /* SaveNotePageCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaveNotePageCustomView.xib; sourceTree = "<group>"; };
+		D989D67227DB3DF100072EA6 /* GetUpdateSaleNoteforMobileRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUpdateSaleNoteforMobileRequestModel.swift; sourceTree = "<group>"; };
+		D989D67427DB432900072EA6 /* GetUpdateSaleNoteforMobileResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUpdateSaleNoteforMobileResponseModel.swift; sourceTree = "<group>"; };
 		D991469026D68B620010E74F /* CancelVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelVoucherViewController.swift; sourceTree = "<group>"; };
 		D991469126D68B620010E74F /* CancelVoucherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CancelVoucherViewController.xib; sourceTree = "<group>"; };
 		D991469426D68CBF0010E74F /* CancelVoucherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelVoucherView.swift; sourceTree = "<group>"; };
@@ -938,6 +946,7 @@
 				A9C0344627980B52000AA4DD /* UpdateInfoPlanNoShowRequestModel.swift */,
 				A9C0344827980B69000AA4DD /* UpdateArrAndDepPlanNoShowRequestModel.swift */,
 				A96A532E27C79A6500611475 /* SaveGuideMeetingTimeAndReportRequestModel.swift */,
+				D989D67227DB3DF100072EA6 /* GetUpdateSaleNoteforMobileRequestModel.swift */,
 			);
 			path = RequestModel;
 			sourceTree = "<group>";
@@ -994,6 +1003,7 @@
 				A9AAE5592791832000AFBA67 /* GetIndShopPaxesResponseModel.swift */,
 				A9C0344A27980ED9000AA4DD /* UpdateNoShowResponseModel.swift */,
 				A96A532C27C79A5500611475 /* SaveGuideMeetingTimeAndReportResponseModel.swift */,
+				D989D67427DB432900072EA6 /* GetUpdateSaleNoteforMobileResponseModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -1089,6 +1099,8 @@
 				D97EE00E276ABFB700683E66 /* ExcProceedCustomView.xib */,
 				A9C67505278744B600536F21 /* TasksCustomView.swift */,
 				A9C67507278744D000536F21 /* TasksCustomView.xib */,
+				D989D66E27DB2A6300072EA6 /* SaveNotePageCustomView.swift */,
+				D989D67027DB2A7B00072EA6 /* SaveNotePageCustomView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1322,6 +1334,7 @@
 				BF44C9D62640022F00238035 /* AddStepCustomView.xib in Resources */,
 				D994FBDE27563796003564F3 /* ExcSelectCustomView.xib in Resources */,
 				D97E4F5227624D640049648A /* ExcPaxPageTableViewCell.xib in Resources */,
+				D989D67127DB2A7B00072EA6 /* SaveNotePageCustomView.xib in Resources */,
 				D97FB5A926C685E90099F28B /* MyShoppingSaleViewController.xib in Resources */,
 				BF44C93C2640016500238035 /* ShopAppointmentViewController.xib in Resources */,
 				D9FD64E927381280009B6619 /* ZReportLoginViewController.xib in Resources */,
@@ -1660,10 +1673,12 @@
 				BF44C93A2640016500238035 /* ShopAppointmentViewController.swift in Sources */,
 				BF44C8F1264000E900238035 /* GetUserResponseModel.swift in Sources */,
 				D97FB5AF26C69BE50099F28B /* GetShoppingSaleRequestModel.swift in Sources */,
+				D989D67327DB3DF100072EA6 /* GetUpdateSaleNoteforMobileRequestModel.swift in Sources */,
 				BF44C9A7264001CE00238035 /* CheckBoxView.swift in Sources */,
 				A9AAE53D2791634200AFBA67 /* TasksPaxViewController.swift in Sources */,
 				D94C407F265D013C00EBC7CD /* FavoriteListCustomView.swift in Sources */,
 				A91D82D727988FCF0018C0A9 /* TasksPaxTableViewCell.swift in Sources */,
+				D989D67527DB432900072EA6 /* GetUpdateSaleNoteforMobileResponseModel.swift in Sources */,
 				D95C202E26F0936F007D1506 /* GuideGetSelectListResponseModel.swift in Sources */,
 				D93F888B264AB14900397283 /* GetHotelsMobileRequestModel.swift in Sources */,
 				A9E3E0C82770B0F9004DF892 /* TasksView.swift in Sources */,
@@ -1717,6 +1732,7 @@
 				D994FBDC2756377F003564F3 /* ExcSelectCustomView.swift in Sources */,
 				D97FB5A826C685E90099F28B /* MyShoppingSaleViewController.swift in Sources */,
 				BF44C907264000FA00238035 /* BaseData.swift in Sources */,
+				D989D66F27DB2A6300072EA6 /* SaveNotePageCustomView.swift in Sources */,
 				D97FB58226C00F2D0099F28B /* MyTourStatusTableViewCell.swift in Sources */,
 				D97EE0272779A6D100683E66 /* GetMaxGuideVoucherNumberResponseModel.swift in Sources */,
 				D95C203F26F216B8007D1506 /* SpeakingHoursTableViewCell.swift in Sources */,

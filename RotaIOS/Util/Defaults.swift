@@ -50,9 +50,33 @@ public class Defaults{
         case ExtraPaxes
         case TransferPaxes
         case HotelName
+        case PrintList
     }
     
    public init(){}
+    
+
+    // SavePrintList
+    func savePrintList(printlist:[SendDataPrint]){
+        let preferences = UserDefaults.standard
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(printlist){
+            preferences.set(encoded, forKey: getIdentifier(type: .PrintList))
+            preferences.synchronize()
+        }
+    }
+    
+    func getPrintList() -> [SendDataPrint]? {
+        let preferences = UserDefaults.standard
+        let decoder = JSONDecoder()
+        if let savedTourList = preferences.object(forKey: getIdentifier(type: .PrintList)) as? Data {
+            if let loadedTourList = try? decoder.decode([SendDataPrint].self, from: savedTourList){
+                return loadedTourList
+            }
+        }
+        return []
+    }
+    
     // CurrencyList
     func saveGetToken(token:[GetTokenResponseModel]){
         let preferences = UserDefaults.standard
@@ -837,6 +861,8 @@ public class Defaults{
             return "TransferPaxes"
         case .HotelName:
             return "HotelName"
+        case .PrintList:
+            return "PrintList"
         }
     }
 }

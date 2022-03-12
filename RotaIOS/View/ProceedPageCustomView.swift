@@ -179,6 +179,9 @@ class ProceedPageCustomView : UIView {
     @IBAction func printButtonTapped(_ sender: Any) {
         if self.printList.count > 0 && self.connectedAccessories.count > 0{
             self.connectEaAccessory(eaAccessory: self.connectedAccessories[0])
+            if let topVC = UIApplication.getTopViewController() {
+                    topVC.otiPushViewController(viewController: MainPAgeViewController())
+                }
         }else{
             let alert = UIAlertController.init(title: "Warning", message: "Please send data and Connect Zebra device", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -186,9 +189,9 @@ class ProceedPageCustomView : UIView {
                 topVC.present(alert, animated: true, completion: nil)
             }
         }
-     if let topVC = UIApplication.getTopViewController() {
+    /* if let topVC = UIApplication.getTopViewController() {
             topVC.otiPushViewController(viewController: MainPAgeViewController())
-        }
+        }*/
     }
     
     func updateConnectedAccessories(){
@@ -319,7 +322,7 @@ extension ProceedPageCustomView {
                 }else{
                     hotelNameFirstColumn = self.printList[i].hotelName ?? ""
                 }
-                self.printString = "^XA^PON^LL\(self.addedNumber + 200)^XGMyFormat^FS^CF0,25^FO280,30^FDVoucher No^FS^CF0,25^FO280,60^FD\(self.printList[i].voucherNoTop ?? "")^FS^CF0,25^FO280,90^FDPrint Date : ^FS^CF0,25^FO400,90^FD\(self.printList[i].date ?? "")^FS^FO10,150^GB200,60,0^FS^CF0,25^FO20,170^FDShop Date^FS^FO210,150^GB340,60,0^FS^FO 220, 170 ^A 0, 20 ^FD\(self.printList[i].tourDate ?? "")^FS^FO10,210^GB200,60,0^FS^CF0,25^FO20,230^FDPick Up Time^FS^FO210,210^GB340,60,0^FS^FO220, 230 ^A 0, 20 ^FD\(self.printList[i].pickUpTime ?? "")^FS^FO10,270^GB200,60,0^FS^CF0,25^FO20,290^FDConcept^FS^FO210,270^GB340,60,0^FS^FO 220, 290 ^A 0, 20 ^FDStandart^FS^FO10,330^GB200,60,0^FS^CF0,25^FO20,340^FDRoom^FS^FO210,330^GB340,60,0^FS^FO 220, 340 ^A 0, 20 ^FD\(self.printList[i].room ?? "")^FS^FO10,390^GB200,100,0^FS^CF0,25^FO20,400^FDHotel^FS^FO210,390^GB340,100,0^FS^FO 240, 400 ^A 0, 20 ^FD\(hotelNameFirstColumn)^FS^FO 220, 440 ^A 0, 20 ^FD\(hotelNameScondColumn)^FS^FO10,490^GB200,60,0^FS^CF0,25^FO20,500^FDPax^FS^FO210,490^GB340,60,0^FS^FO 220, 500 ^A 0, 20 ^FD\(self.printList[i].paxInfo ?? "")^FS^FO10,550^GB200,60,0^FS^CF0,25^FO20,560^FDPhone^FS^FO210,550^GB340,60,0^FS^FO 220, 560 ^A 0, 20 ^FD\(self.printList[i].pickUpTime ?? "")^FS^FO10,610^GB200,60,0^FS^CF0,25^FO20,620^FDName^FS^FO210,610^GB340,60,0^FS^FO 220, 620 ^A 0, 20 ^FD\(self.printList[i].paxName ?? "")^FS^FO10,670^GB200,60,0^FS^CF0,25^FO20,680^FDOperator^FS^FO210,670^GB340,60,0^FS^FO 220, 680 ^A 0, 20 ^FD\(self.printList[i].operatorName ?? "")\(self.printList[i].steps ?? "")^FS\(odeonLabel)^XZ"
+                self.printString = "^XA^CI28^PON^LL\(self.addedNumber + 200)^XGMyFormat^FS^CF0,25^FO280,30^FDVoucher No^FS^CF0,25^FO280,60^FD\(self.printList[i].voucherNoTop ?? "")^FS^CF0,25^FO280,90^FDPrint Date : ^FS^CF0,25^FO400,90^FD\(self.printList[i].date ?? "")^FS^FO10,150^GB200,60,0^FS^CF0,25^FO20,170^FDShop Date^FS^FO210,150^GB340,60,0^FS^FO 220, 170 ^A 0, 20 ^FD\(self.printList[i].tourDate ?? "")^FS^FO10,210^GB200,60,0^FS^CF0,25^FO20,230^FDPick Up Time^FS^FO210,210^GB340,60,0^FS^FO220, 230 ^A 0, 20 ^FD\(self.printList[i].pickUpTime ?? "")^FS^FO10,270^GB200,60,0^FS^CF0,25^FO20,290^FDConcept^FS^FO210,270^GB340,60,0^FS^FO 220, 290 ^A 0, 20 ^FDStandart^FS^FO10,330^GB200,60,0^FS^CF0,25^FO20,340^FDRoom^FS^FO210,330^GB340,60,0^FS^FO 220, 340 ^A 0, 20 ^FD\(self.printList[i].room ?? "")^FS^FO10,390^GB200,100,0^FS^CF0,25^FO20,400^FDHotel^FS^FO210,390^GB340,100,0^FS^FO 240, 400 ^A 0, 20 ^FD\(hotelNameFirstColumn)^FS^FO 220, 440 ^A 0, 20 ^FD\(hotelNameScondColumn)^FS^FO10,490^GB200,60,0^FS^CF0,25^FO20,500^FDPax^FS^FO210,490^GB340,60,0^FS^FO 220, 500 ^A 0, 20 ^FD\(self.printList[i].paxInfo ?? "")^FS^FO10,550^GB200,60,0^FS^CF0,25^FO20,560^FDPhone^FS^FO210,550^GB340,60,0^FS^FO 220, 560 ^A 0, 20 ^FD\(self.printList[i].pickUpTime ?? "")^FS^FO10,610^GB200,60,0^FS^CF0,25^FO20,620^FDName^FS^FO210,610^GB340,60,0^FS^FO 220, 620 ^A 0, 20 ^FD\(self.printList[i].paxName ?? "")^FS^FO10,670^GB200,60,0^FS^CF0,25^FO20,680^FDOperator^FS^FO210,670^GB340,60,0^FS^FO 220, 680 ^A 0, 20 ^FD\(self.printList[i].operatorName ?? "")\(self.printList[i].steps ?? "")^FS\(odeonLabel)^XZ"
               //  self.printListStringType.append(printString)
                 sendStrToPrinter(self.printString, connection: connection)
             }

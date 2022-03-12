@@ -20,6 +20,7 @@ class MyTourSalesDetailPageTableViewCell: BaseTableViewCell {
     var viewZReportLongClickMenu : ZReportLongClickMenu?
     var clicked = false
     var voucherNo = ""
+    var tourSaleId = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -49,7 +50,7 @@ class MyTourSalesDetailPageTableViewCell: BaseTableViewCell {
                     self.viewZReportLongClickMenu?.buttonZReportRefund.isHidden = true
                     self.viewZReportLongClickMenu?.buttonZReportPayments.isHidden = true
                     self.viewZReportLongClickMenu?.voucherNo = self.voucherNo
-                    
+                    self.viewZReportLongClickMenu?.tourSaleId = self.tourSaleId
             
                     self.viewZReportLongClickMenu!.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
                     topVC.view.addSubview(self.viewZReportLongClickMenu!)

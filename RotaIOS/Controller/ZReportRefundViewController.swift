@@ -40,6 +40,10 @@ extension ZReportRefundViewController : UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: ZReportRefundTableViewCell.identifier) as! ZReportRefundTableViewCell
         cell.labelVoucherNo.text = self.zReportRefundList[indexPath.row].voucherNo
         cell.labelDate.text = self.zReportRefundList[indexPath.row].saleDate
+        cell.labelCurrency.text = self.zReportRefundList[indexPath.row].paymentCurrencyDesc
+        cell.labelID.text = String(self.zReportRefundList[indexPath.row].iD ?? 0)
+        cell.labelType.text = self.zReportRefundList[indexPath.row].paymentType
+        cell.labelAmount.text = String(self.zReportRefundList[indexPath.row].paymentAmount ?? 0.0)
         return cell
     }
 }

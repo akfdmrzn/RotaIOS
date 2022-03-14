@@ -37,6 +37,7 @@ struct SendDataPrint : Encodable, Decodable{
     var paymentDetail : String?
     var steps : String?
     var addedNumber : Int?
+    var refundConditionLabel : String?
 }
 
 struct PaymentType {
@@ -849,7 +850,7 @@ class ExcProceedCustomView: UIView{
                                  }*/
                             }else{
                                 transfersAmount = self.tourTransfers[i].savedAmount ?? 0.0
-                                let transfersLabelType = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDTransferss^FS^FO 250, \(self.addedNumber + 5)^A 0, 20 ^FD\(self.tourTransfers[i].desc ?? "")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 20 ^FD \(adultCount)  ADL  \(childCount)  CHD  \(toodleCount)  TDL  \(infantCount)  INF  \(transfersAmount)  EUR^FS"
+                                let transfersLabelType = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDTransfers^FS^FO 250, \(self.addedNumber + 5)^A 0, 20 ^FD\(self.tourTransfers[i].desc ?? "")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 20 ^FD \(adultCount)  ADL  \(childCount)  CHD  \(toodleCount)  TDL  \(infantCount)  INF  \(transfersAmount)  EUR^FS"
                                 tourTransfersString.append(transfersLabelType)
                                 self.addedNumber += (i * 120)
                                /* if self.tourTransfers.count == 1 {
@@ -901,25 +902,23 @@ class ExcProceedCustomView: UIView{
                 
                 var refundCondition = ""
                 
-                if self.hotelId == 2 || self.hotelId == 7 || self.hotelId == 13 || self.hotelId == 6 || self.hotelId == 8  || self.hotelId == 16 {
+                if self.marketId == 2 || self.marketId == 7 || self.marketId == 13 || self.marketId == 6 || self.marketId == 8  || self.marketId == 16 {
                     refundCondition = russian
-                }else if self.hotelId == 26 {
+                }else if self.marketId == 26 {
                     refundCondition = ukranian
-                }else if self.hotelId == 14{
+                }else if self.marketId == 14{
                     refundCondition = german
-                }else if self.hotelId == 11{
+                }else if self.marketId == 11{
                     refundCondition = estonian
-                }else if self.hotelId == 18{
+                }else if self.marketId == 18{
                     refundCondition = latvian
-                }else if self.hotelId == 19{
+                }else if self.marketId == 19{
                     refundCondition = lithuanian
-                }else if self.hotelId == 56{
+                }else if self.marketId == 56{
                     refundCondition = polish
-                }else if self.hotelId == 10 || self.hotelId == 3 || self.hotelId == 17 || self.hotelId == 20 || self.hotelId == 24 {
+                }else if self.marketId == 10 || self.marketId == 3 || self.marketId == 17 || self.marketId == 20 || self.marketId == 24 {
                     refundCondition = english
                 }
-                
-                
                 
                 // printList düzenlemre
                 var tourAllTotalPrice = 0.0
@@ -967,7 +966,8 @@ class ExcProceedCustomView: UIView{
                     voucherLabelSize = "^FO20,\(bottomListSzieNumberList[i])^A 0, 20 ^FDYour Info Guide Number:^FS^FO20,\(bottomListSzieNumberList[i] + 22)^A 0, 20 ^FD+9005418281989^FS^FO20,\(bottomListSzieNumberList[i] + 50)^BY2^BCN,120,Y,N,N^FD\(self.voucherNo[i])^FS^CF0,40^FO20,\(bottomListSzieNumberList[i] + 200)^FDNotes^FS"
                     
                     self.refundCondationLabel = "^FO20,\(bottomListSzieNumberList[i] + 230)^FD\(refundCondition)^FS"
-                    
+                    self.refundCondationLabel = "" // değiştirilecek
+                    self.printList[i].refundConditionLabel = self.refundCondationLabel
                     self.printList[i].paymentDetail = paymentLastCombineLabel
                     self.printList[i].voucher = voucherLabelSize
                     self.printList[i].addedNumber = self.addedNumber
@@ -1197,13 +1197,13 @@ extension ExcProceedCustomView{
             userDefaultsData.savePrintList(printlist: self.savedPrintList)
             for i in 0...self.printList.count - 1 {
                 if self.printList[i].hotelName?.count ?? 0 > 20 {
-                    hotelNameFirstColumn = self.printList[i].hotelName?[1..<20] ?? ""
+                    hotelNameFirstColumn = self.printList[i].hotelName?[0..<20] ?? ""
                     hotelNameScondColumn = self.printList[i].hotelName?.substring(fromIndex: 20) ?? ""
                 }else{
                     hotelNameFirstColumn = self.printList[i].hotelName ?? ""
                 }
                 
-              /*  self.printString = "^XA^PON^LL\(self.addedNumber + 200)^XGMyFormat^FS^CF0,25^FO280,30^FDVoucher No^FS^CF0,25^FO280,60^FD\(self.printList[i].voucherNoTop ?? "")^FS^CF0,25^FO280,90^FDPrint Date : ^FS^CF0,25^FO400,90^FD\(self.printList[i].date ?? "")^FS^FO10,150^GB200,100,0^FS^CF0,25^FO20,170^FDTour^FS^FO210,150^GB340,100,0^FS^FO 220, 170 ^A 0, 20 ^FD\(self.printList[i].tourName ?? "")^FS^FO10,250^GB200,60,0^FS^CF0,25^FO20,270^FDPick Up^FS^FO210,250^GB340,60,0^FS^FO220, 270 ^A 0, 20 ^FD\(self.printList[i].pickUpTime ?? "")^FS^FO10,310^GB200,60,0^FS^CF0,25^FO20,330^FDick Up Point^FS^FO210,310^GB340,60,0^FS^FO 220, 330 ^A 0, 20 ^FD-^FS^FO10,370^GB200,60,0^FS^CF0,25^FO20,390^FDDate^FS^FO210,370^GB340,60,0^FS^FO 220, 390 ^A 0, 20 ^FD\(self.printList[i].tourDate ?? "")^FS^FO10,430^GB200,60,0^FS^CF0,25^FO20,450^FDConcept^FS^FO210,430^GB340,60,0^FS^FO 220, 450 ^A 0, 20 ^FDStandart^FS^FO10,490^GB200,60,0^FS^CF0,25^FO20,510^FDTransfer^FS^FO210,490^GB340,60,0^FS^FO 220, 510 ^A 0, 20 ^FD\(self.printList[i].transTourist ?? "")^FS^FO10,610^GB200,100,0^FS^CF0,25^FO20,630^FDHotel^FS^FO210,610^GB340,100,0^FS^FO 220, 630 ^A 0, 20 ^FD\(hotelNameFirstColumn)^FS^FO 220, 670 ^A 0, 20 ^FD\(hotelNameScondColumn)^FS^FO10,710^GB200,60,0^FS^CF0,25^FO20,730^FDRoom^FS^FO210,710^GB340,60,0^FS^FO 220, 730 ^A 0, 20 ^FD\(self.printList[i].room ?? "")^FS^FO10,770^GB200,60,0^FS^CF0,25^FO20,790^FDName^FS^FO210,770^GB340,60,0^FS^FO 220, 790 ^A 0, 20 ^FD\(self.printList[i].paxName ?? "")^FS^FO10,830^GB200,60,0^FS^CF0,25^FO20,850^FDOperator^FS^FO210,830^GB340,60,0^FS^FO 220, 850 ^A 0, 20 ^FD\(self.printList[i].operatorName ?? "")^FS^FO10,890^GB200,60,0^FS^CF0,25^FO20,910^FDRes No^FS^FO210,890^GB340,60,0^FS^FO 220, 910 ^A 0, 20 ^FD\(self.printList[i].resNo ?? "")^FS^CF0,25^FO20,980^FDNet Total^FS^CF0,25^FO150,980^FD\(self.printList[i].total ?? "")^FS^CF0,25^FO20,1020^FDDiscount^FS^CF0,25^FO150,1020^FD\(self.printList[i].discount ?? "")^FS\(self.printList[i].tourPax ?? "")\(self.printList[i].paymentDetail ?? "")\(self.printList[i].extras ?? "")\(self.printList[i].transfers ?? "")\(self.printList[i].voucher ?? "")\(self.refundCondationLabel)\(odeonLabel)^XZ"*/
+               /* self.printString = "^XA^PON^LL\(self.addedNumber + 200)^XGMyFormat^FS^CF0,25^FO280,30^FDVoucher No^FS^CF0,25^FO280,60^FD\(self.printList[i].voucherNoTop ?? "")^FS^CF0,25^FO280,90^FDPrint Date : ^FS^CF0,25^FO400,90^FD\(self.printList[i].date ?? "")^FS^FO10,150^GB200,100,0^FS^CF0,25^FO20,170^FDTour^FS^FO210,150^GB340,100,0^FS^FO 220, 170 ^A 0, 20 ^FD\(self.printList[i].tourName ?? "")^FS^FO10,250^GB200,60,0^FS^CF0,25^FO20,270^FDPick Up^FS^FO210,250^GB340,60,0^FS^FO220, 270 ^A 0, 20 ^FD\(self.printList[i].pickUpTime ?? "")^FS^FO10,310^GB200,60,0^FS^CF0,25^FO20,330^FDPick Up Point^FS^FO210,310^GB340,60,0^FS^FO 220, 330 ^A 0, 20 ^FD-^FS^FO10,370^GB200,60,0^FS^CF0,25^FO20,390^FDDate^FS^FO210,370^GB340,60,0^FS^FO 220, 390 ^A 0, 20 ^FD\(self.printList[i].tourDate ?? "")^FS^FO10,430^GB200,60,0^FS^CF0,25^FO20,450^FDConcept^FS^FO210,430^GB340,60,0^FS^FO 220, 450 ^A 0, 20 ^FDStandart^FS^FO10,490^GB200,60,0^FS^CF0,25^FO20,510^FDTransfer^FS^FO210,490^GB340,60,0^FS^FO 220, 510 ^A 0, 20 ^FD\(self.printList[i].transTourist ?? "")^FS^FO10,610^GB200,100,0^FS^CF0,25^FO20,630^FDHotel^FS^FO210,610^GB340,100,0^FS^FO 220, 630 ^A 0, 20 ^FD\(hotelNameFirstColumn)^FS^FO 220, 670 ^A 0, 20 ^FD\(hotelNameScondColumn)^FS^FO10,710^GB200,60,0^FS^CF0,25^FO20,730^FDRoom^FS^FO210,710^GB340,60,0^FS^FO 220, 730 ^A 0, 20 ^FD\(self.printList[i].room ?? "")^FS^FO10,770^GB200,60,0^FS^CF0,25^FO20,790^FDName^FS^FO210,770^GB340,60,0^FS^FO 220, 790 ^A 0, 20 ^FD\(self.printList[i].paxName ?? "")^FS^FO10,830^GB200,60,0^FS^CF0,25^FO20,850^FDOperator^FS^FO210,830^GB340,60,0^FS^FO 220, 850 ^A 0, 20 ^FD\(self.printList[i].operatorName ?? "")^FS^FO10,890^GB200,60,0^FS^CF0,25^FO20,910^FDRes No^FS^FO210,890^GB340,60,0^FS^FO 220, 910 ^A 0, 20 ^FD\(self.printList[i].resNo ?? "")^FS^CF0,25^FO20,980^FDNet Total^FS^CF0,25^FO150,980^FD\(self.printList[i].total ?? "")^FS^CF0,25^FO20,1020^FDDiscount^FS^CF0,25^FO150,1020^FD\(self.printList[i].discount ?? "")^FS\(self.printList[i].tourPax ?? "")\(self.printList[i].paymentDetail ?? "")\(self.printList[i].extras ?? "")\(self.printList[i].transfers ?? "")\(self.printList[i].voucher ?? "")\(self.printList[i].refundConditionLabel ?? "")\(odeonLabel)^XZ"*/
                 
                 
                 self.printString = "^XA^PON^LL\(self.addedNumber + 200)^XGMyFormat^FS^CF0,25^FO280,30^FDVoucher No^FS^CF0,25^FO280,60^FD\(self.printList[i].voucherNoTop ?? "")^FS^CF0,25^FO280,90^FDPrint Date : ^FS^CF0,25^FO400,90^FD\(self.printList[i].date ?? "")^FS^FO10,150^GB200,100,0^FS^CF0,25^FO20,170^FDTour^FS^FO210,150^GB340,100,0^FS^FO 220, 170 ^A 0, 20 ^FD\(self.printList[i].tourName ?? "")^FS^FO10,250^GB200,60,0^FS^CF0,25^FO20,270^FDPax Info^FS^FO210,250^GB340,60,0^FS^FO220, 270 ^A 0, 20 ^FD\(self.printList[i].paxInfo ?? "")^FS^FO10,310^GB200,60,0^FS^CF0,25^FO20,330^FDDate^FS^FO210,310^GB340,60,0^FS^FO 220, 330 ^A 0, 20 ^FD\(self.printList[i].tourDate ?? "")^FS^FO10,370^GB200,60,0^FS^CF0,25^FO20,390^FDConcept^FS^FO210,370^GB340,60,0^FS^FO 220, 390 ^A 0, 20 ^FDStandart^FS^FO10,430^GB200,60,0^FS^CF0,25^FO20,450^FDTransfer^FS^FO210,430^GB340,60,0^FS^FO 220, 450 ^A 0, 20 ^FD\(self.printList[i].transTourist ?? "")^FS^FO10,490^GB200,100,0^FS^CF0,25^FO20,510^FDHotel^FS^FO210,490^GB340,100,0^FS^FO 220, 510 ^A 0, 20 ^FD\(hotelNameFirstColumn)^FS^FO 220, 550 ^A 0, 20 ^FD\(hotelNameScondColumn)^FS^FO10,590^GB200,60,0^FS^CF0,25^FO20,610^FDRoom^FS^FO210,590^GB340,60,0^FS^FO 220, 610 ^A 0, 20 ^FD\(self.printList[i].room ?? "")^FS^FO10,650^GB200,60,0^FS^CF0,25^FO20,670^FDPick Up^FS^FO210,650^GB340,60,0^FS^FO 220, 670 ^A 0, 20 ^FD\(self.printList[i].pickUpTime ?? "")^FS^FO10,710^GB200,60,0^FS^CF0,25^FO20,730^FDPick Up Point^FS^FO210,710^GB340,60,0^FS^FO 220, 730 ^A 0, 20 ^FD-^FS^FO10,770^GB200,60,0^FS^CF0,25^FO20,790^FDName^FS^FO210,770^GB340,60,0^FS^FO 220, 790 ^A 0, 20 ^FD\(self.printList[i].paxName ?? "")^FS^FO10,830^GB200,60,0^FS^CF0,25^FO20,850^FDOperator^FS^FO210,830^GB340,60,0^FS^FO 220, 850 ^A 0, 20 ^FD\(self.printList[i].operatorName ?? "")^FS^FO10,890^GB200,60,0^FS^CF0,25^FO20,910^FDRes No^FS^FO210,890^GB340,60,0^FS^FO 220, 910 ^A 0, 20 ^FD\(self.printList[i].resNo ?? "")^FS^CF0,25^FO20,980^FDNet Total^FS^CF0,25^FO150,980^FD\(self.printList[i].total ?? "")^FS^CF0,25^FO20,1020^FDDiscount^FS^CF0,25^FO150,1020^FD\(self.printList[i].discount ?? "")^FS\(self.printList[i].tourPax ?? "")\(self.printList[i].paymentDetail ?? "")\(self.printList[i].extras ?? "")\(self.printList[i].transfers ?? "")\(self.printList[i].voucher ?? "")\(self.refundCondationLabel)\(odeonLabel)^XZ"

@@ -90,7 +90,7 @@
                 <constraints>
                     <constraint firstItem="92h-op-Op6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="4jW-ra-rlp"/>
                     <constraint firstAttribute="trailing" secondItem="92h-op-Op6" secondAttribute="trailing" id="GX5-fb-S44"/>
-                    <constraint firstAttribute="bottom" secondItem="92h-op-Op6" secondAttribute="bottom" constant="10" id="JNf-HB-Sie"/>
+                    <constraint firstAttribute="bottom" secondItem="92h-op-Op6" secondAttribute="bottom" priority="250" constant="10" id="JNf-HB-Sie"/>
                     <constraint firstAttribute="trailing" secondItem="92h-op-Op6" secondAttribute="trailing" id="T1c-Hs-0nA"/>
                     <constraint firstItem="92h-op-Op6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="kVr-4x-BTp"/>
                 </constraints>

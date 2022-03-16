@@ -25,7 +25,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="CTg-Yp-e73">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="766"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="731"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RyN-pk-LKd">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -106,7 +106,7 @@
                             </constraints>
                         </scrollView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBp-L9-4Z4">
-                            <rect key="frame" x="40" y="806" width="334" height="50"/>
+                            <rect key="frame" x="40" y="771" width="334" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="KXc-qh-feL"/>
                             </constraints>
@@ -129,7 +129,7 @@
                         <constraint firstAttribute="trailing" secondItem="WBp-L9-4Z4" secondAttribute="trailing" constant="40" id="Xc4-cX-bGv"/>
                         <constraint firstItem="CTg-Yp-e73" firstAttribute="top" secondItem="0cB-qI-7ci" secondAttribute="top" id="f6j-kX-aT9"/>
                         <constraint firstItem="WBp-L9-4Z4" firstAttribute="leading" secondItem="0cB-qI-7ci" secondAttribute="leading" constant="40" id="sGD-o4-7cU"/>
-                        <constraint firstAttribute="bottom" secondItem="WBp-L9-4Z4" secondAttribute="bottom" constant="40" id="u8G-1U-elR"/>
+                        <constraint firstAttribute="bottom" secondItem="WBp-L9-4Z4" secondAttribute="bottom" constant="75" id="u8G-1U-elR"/>
                         <constraint firstItem="CTg-Yp-e73" firstAttribute="leading" secondItem="0cB-qI-7ci" secondAttribute="leading" id="uzx-Vm-2SH"/>
                     </constraints>
                 </view>

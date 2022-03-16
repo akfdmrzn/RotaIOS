@@ -101,6 +101,6 @@ extension TasksTourDetailViewController : UITableViewDelegate,UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 55
+        return 60
     }
 }

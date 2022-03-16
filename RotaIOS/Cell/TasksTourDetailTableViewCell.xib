@@ -151,7 +151,7 @@
                 <constraints>
                     <constraint firstItem="7QR-R8-6iO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="cuh-0s-WpR"/>
                     <constraint firstItem="7QR-R8-6iO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="gUX-Vg-gIb"/>
-                    <constraint firstAttribute="bottom" secondItem="7QR-R8-6iO" secondAttribute="bottom" constant="10" id="qVM-Bf-68r"/>
+                    <constraint firstAttribute="bottom" secondItem="7QR-R8-6iO" secondAttribute="bottom" priority="250" constant="10" id="qVM-Bf-68r"/>
                     <constraint firstAttribute="trailing" secondItem="7QR-R8-6iO" secondAttribute="trailing" id="tbW-G4-hTP"/>
                 </constraints>
             </tableViewCellContentView>

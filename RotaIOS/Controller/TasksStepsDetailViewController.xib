@@ -25,7 +25,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="Oca-cb-Ebg">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="766"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="731"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryA-od-eDN">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -105,7 +105,7 @@
                             </constraints>
                         </scrollView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3CF-nB-z7D">
-                            <rect key="frame" x="40" y="806" width="334" height="50"/>
+                            <rect key="frame" x="40" y="771" width="334" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="xcA-yr-ptk"/>
                             </constraints>
@@ -127,7 +127,7 @@
                         <constraint firstItem="ryA-od-eDN" firstAttribute="height" secondItem="lPx-BD-Lbo" secondAttribute="height" priority="250" id="V74-HZ-pSd"/>
                         <constraint firstItem="Oca-cb-Ebg" firstAttribute="top" secondItem="lPx-BD-Lbo" secondAttribute="top" id="aNG-Th-MBG"/>
                         <constraint firstItem="Oca-cb-Ebg" firstAttribute="leading" secondItem="lPx-BD-Lbo" secondAttribute="leading" id="lJ6-Sp-bga"/>
-                        <constraint firstAttribute="bottom" secondItem="3CF-nB-z7D" secondAttribute="bottom" constant="40" id="oIG-Jt-mL4"/>
+                        <constraint firstAttribute="bottom" secondItem="3CF-nB-z7D" secondAttribute="bottom" constant="75" id="oIG-Jt-mL4"/>
                         <constraint firstItem="3CF-nB-z7D" firstAttribute="top" secondItem="Oca-cb-Ebg" secondAttribute="bottom" priority="250" constant="40" id="qu9-g1-4DS"/>
                     </constraints>
                 </view>

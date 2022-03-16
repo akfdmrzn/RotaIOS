@@ -256,6 +256,47 @@ public class NetworkManager {
         
         }
     
+    public static func sendGetRequestTextResponse(url:String, endPoint: ServiceEndPoint, method: HTTPMethod, parameters: String, indicatorEnabled: Bool = true,
+                                                completion: @escaping(String) -> ()) {
+            
+            if !networkConnectionEnabled {
+                return
+            }
+            
+            var urlPath = url + endPoint.rawValue
+            if !parameters.elementsEqual("") {
+                urlPath.append(parameters)
+            }
+            urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+            
+            var requestModel = URLRequest(url: URL(string: urlPath)!)
+            requestModel.timeoutInterval = TIMEOUT_INTERVAL
+            requestModel.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            requestModel.setValue("bearer \(baseData.getTokenResponse?.access_token ?? "")", forHTTPHeaderField: "Authorization")
+            requestModel.httpMethod = method.rawValue
+
+            
+            let request = requestModel
+            let viewController = UIApplication.getTopViewController()
+            
+            
+            if indicatorEnabled {
+                viewController!.showIndicator(tag: String(describing: request.self))
+            }
+        
+              Alamofire.request(request).responseJSON {(response) in
+                
+                if indicatorEnabled {
+                    viewController?.hideIndicator(tag: String(describing: request.self))
+                }
+                  
+                let str = String(decoding: response.data!, as: UTF8.self)
+                  
+                  completion((str) )
+
+                }
+        }
+    
     public static func sendGetRequestArray<T: Mappable>(url:String,endPoint: ServiceEndPoint, method: HTTPMethod, parameters: String, indicatorEnabled: Bool = true,
                                                 completion: @escaping([T]) -> ()) {
             

@@ -64,7 +64,9 @@ class ZReportViewController: UIViewController {
                         for i in 0...self.zReportList.count - 1 {
                             var filter : [GuideGetSelectListResponseModel] = []
                             filter = self.guideList.filter{$0.value == self.zReportList[i].guideRef}
-                            self.zReportList[i].guideName = filter[0].text ?? ""
+                            if filter.count > 0 {
+                                self.zReportList[i].guideName = filter[0].text ?? ""
+                            }
                         }
                         
                         self.otiPushViewController(viewController: ZReportDetailViewController.init(zReportDetailListInZReportDetailPage: self.zReportList), animated: true)

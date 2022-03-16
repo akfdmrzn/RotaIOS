@@ -26,6 +26,10 @@ class TasksTourDetailViewController: BaseViewController {
         self.getTourEventDetail()
     }
     
+    override func viewWillLayoutSubviews() {
+        self.tasksTableViewHeightConstraint.constant = self.tableViewTasksTourDetail.contentSize.height
+    }
+    
     func getTourEventDetail(){
         let getTourEventDetailRequestModel = GetTourEventDetailRequestModel.init(ids: self.ids, typeInt: self.typeInt)
         NetworkManager.sendGetRequestArray(url:NetworkManager.BASEURL, endPoint: .GetTourEventDetail, method: .get, parameters: getTourEventDetailRequestModel.requestPathString()) { (response : [GetTourEventDetailResponseModel]) in
@@ -33,8 +37,6 @@ class TasksTourDetailViewController: BaseViewController {
                 self.tourDetailList.append(TourDetailList.init(id: "", plate: "Plate", driver: "Driver Name", driverPhone: "Driver Phone", guideName: "Guide Name", guidePhone: "Guide Phone", meetingPoint: "Meeting Point", typeInt: "Type", vehicleNo: "Vehicle No", kokartGuideName: "Kokart Guide Name", kokartGuidePhone: "Kokart Guide Phone", plate_ColOrDes: "", drive_ColOrDes: "", driverPhone_ColOrDes: "", meetingPoint_ColOrDes: "", col: [], del: [], exc: []))
                 for item in response {
                     self.tourDetailList.append(TourDetailList.init(id: item.id, plate: item.plate == "" ? "-" : item.plate, driver: item.driver == "" ? "-" : item.driver, driverPhone: item.driverPhone == "" ? "-" : item.driverPhone, guideName: item.guideName == "" ? "-" : item.guideName, guidePhone: item.guidePhone == "" ? "-" : item.guideName, meetingPoint: item.meetingPoint == "" ? "-" : item.meetingPoint, typeInt: String(item.typeInt) == "0" ? "-" : String(item.typeInt), vehicleNo: String(item.vehicleNo) == "0" ? "0" : String(item.vehicleNo), kokartGuideName: item.kokartGuideName == "" ? "-" : item.kokartGuideName, kokartGuidePhone: item.kokartGuidePhone == "" ? "-" : item.kokartGuidePhone, plate_ColOrDes: item.plate_ColOrDes, drive_ColOrDes: item.drive_ColOrDes, driverPhone_ColOrDes: item.driverPhone_ColOrDes, meetingPoint_ColOrDes: item.meetingPoint_ColOrDes, col: item.col, del: item.del, exc: item.exc))
-                        self.view.layoutIfNeeded()
-                        self.viewWillLayoutSubviews()
                 }
             }else {
                print("error")
@@ -101,6 +103,6 @@ extension TasksTourDetailViewController : UITableViewDelegate,UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 55
     }
 }

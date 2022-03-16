@@ -27,7 +27,7 @@
                     </constraints>
                 </imageView>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jH7-pA-KIO">
-                    <rect key="frame" x="20" y="0.0" width="353" height="50"/>
+                    <rect key="frame" x="7" y="0.0" width="366" height="50"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -36,7 +36,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="jH7-pA-KIO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="BTy-Sj-1ei"/>
+                <constraint firstItem="jH7-pA-KIO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="7" id="BTy-Sj-1ei"/>
                 <constraint firstAttribute="trailing" secondItem="jH7-pA-KIO" secondAttribute="trailing" id="QOx-3L-2fy"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="GR7-Ve-ZM7" secondAttribute="trailing" constant="20" id="ZwX-ZY-AsO"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="jH7-pA-KIO" secondAttribute="bottom" id="cAl-3I-OaF"/>

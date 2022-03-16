@@ -48,6 +48,10 @@ class TasksStepsDetailViewController: BaseViewController {
         }
     }
     
+    override func viewWillLayoutSubviews() {
+        self.tasksTableViewHeightConstraint.constant = self.tableViewTasksStepsDetail.contentSize.height
+    }
+    
     func getStepsDetail(){
         let getStepsDetailRequestModel = GetStepDetailRequestModel.init(ids: self.ids, stepId: self.stepId)
         NetworkManager.sendGetRequestArray(url:NetworkManager.BASEURL, endPoint: .GetStepDetail, method: .get, parameters: getStepsDetailRequestModel.requestPathString()) { (response : [GetStepDetailResponseModel]) in
@@ -55,8 +59,6 @@ class TasksStepsDetailViewController: BaseViewController {
                 self.stepsDetailList.append(GetStepDetail.init(_id: "", ids: "", stepId: "", companyId: "", serviceId: "", isExtraService: "", extraServiceId: "", tourTransferPlanArrAndDepId: "", serviceType: "Type", realTotal: "Real Total", realAdult: "Real Adult", realChild: "Real Child", realToodle: "Real Toodle", realInfant: "Real Infant", freeAdult: "free Adult", freeChild: "Free Child", freeToodle: "Free Toodle", freeInfant: "Free Infant", totalAdult: "Total Adult", totalChild: "Total Child", totalToodle: "Total Toodle", totalInfant: "Total Infant", realAmount: "Real Amount", freeAmount: "Free Amount", freeTotal: "Free Total", totalAmount: "Total Amount", grandTotal: "Grand Total", iD: "", action: ""))
                 for item in response {
                     self.stepsDetailList.append(GetStepDetail.init(_id: item._id ?? "", ids: item.ids ?? "", stepId: String(item.stepId ?? 0), companyId: String(item.companyId ?? 0), serviceId: String(item.serviceId ?? 0), isExtraService: String(item.isExtraService ?? false), extraServiceId: String(item.extraServiceId ?? 0), tourTransferPlanArrAndDepId: String(item.tourTransferPlanArrAndDepId ?? 0), serviceType: String(item.serviceType ?? ""), realTotal: String(item.realTotal ?? 0), realAdult: String(item.realAdult ?? 0), realChild: String(item.realChild ?? 0), realToodle: String(item.realToodle ?? 0), realInfant: String(item.realInfant ?? 0), freeAdult: String(item.freeAdult ?? 0), freeChild: String(item.freeChild ?? 0), freeToodle: String(item.freeToodle ?? 0), freeInfant: String(item.freeInfant ?? 0), totalAdult: String(item.totalInfant ?? 0), totalChild: String(item.totalChild ?? 0), totalToodle: String(item.totalToodle ?? 0), totalInfant: String(item.totalInfant ?? 0), realAmount: String(item.realAmount ?? 0), freeAmount: String(item.freeAmount ?? 0), freeTotal: String(item.freeTotal ?? 0), totalAmount: String(item.totalAmount ?? 0), grandTotal: String(item.grandTotal ?? 0), iD: String(item.iD ?? 0), action: String(item.action ?? 0)))
-                        self.view.layoutIfNeeded()
-                        self.viewWillLayoutSubviews()
                 }
             }else {
                print("error")
@@ -71,8 +73,6 @@ class TasksStepsDetailViewController: BaseViewController {
                 self.stepsDetailList.append(GetStepDetail.init(_id: "", ids: "", stepId: "", companyId: "", serviceId: "", isExtraService: "", extraServiceId: "", tourTransferPlanArrAndDepId: "", serviceType: "Type", realTotal: "Real Total", realAdult: "Real Adult", realChild: "Real Child", realToodle: "Real Toodle", realInfant: "Real Infant", freeAdult: "free Adult", freeChild: "Free Child", freeToodle: "Free Toodle", freeInfant: "Free Infant", totalAdult: "Total Adult", totalChild: "Total Child", totalToodle: "Total Toodle", totalInfant: "Total Infant", realAmount: "Real Amount", freeAmount: "Free Amount", freeTotal: "Free Total", totalAmount: "Total Amount", grandTotal: "Grand Total", iD: "", action: ""))
                 for item in response {
                     self.stepsDetailList.append(GetStepDetail.init(_id: item._id ?? "", ids: item.ids ?? "", stepId: String(item.stepId ?? 0), companyId: String(item.companyId ?? 0), serviceId: String(item.serviceId ?? 0), isExtraService: String(item.isExtraService ?? false), extraServiceId: String(item.extraServiceId ?? 0), tourTransferPlanArrAndDepId: String(item.tourTransferPlanArrAndDepId ?? 0), serviceType: String(item.serviceType ?? ""), realTotal: String(item.realTotal ?? 0), realAdult: String(item.realAdult ?? 0), realChild: String(item.realChild ?? 0), realToodle: String(item.realToodle ?? 0), realInfant: String(item.realInfant ?? 0), freeAdult: String(item.freeAdult ?? 0), freeChild: String(item.freeChild ?? 0), freeToodle: String(item.freeToodle ?? 0), freeInfant: String(item.freeInfant ?? 0), totalAdult: String(item.totalInfant ?? 0), totalChild: String(item.totalChild ?? 0), totalToodle: String(item.totalToodle ?? 0), totalInfant: String(item.totalInfant ?? 0), realAmount: String(item.realAmount ?? 0), freeAmount: String(item.freeAmount ?? 0), freeTotal: String(item.freeTotal ?? 0), totalAmount: String(item.totalAmount ?? 0), grandTotal: String(item.grandTotal ?? 0), iD: String(item.iD ?? 0), action: String(item.action ?? 0)))
-                        self.view.layoutIfNeeded()
-                        self.viewWillLayoutSubviews()
                 }
             }else {
                print("error")

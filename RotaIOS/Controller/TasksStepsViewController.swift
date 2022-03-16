@@ -48,6 +48,10 @@ class TasksStepsViewController: BaseViewController {
         }
     }
     
+    override func viewWillLayoutSubviews() {
+        self.tasksTableViewHeightConstraint.constant = self.tableViewTasksSteps.contentSize.height
+    }
+    
     func getSteps(){
         let getStepsRequestModel = GetStepsRequestModel.init(ids: self.ids)
         NetworkManager.sendGetRequestArray(url:NetworkManager.BASEURL, endPoint: .GetSteps, method: .get, parameters: getStepsRequestModel.requestPathString()) { (response : [GetStepsResponseModel]) in
@@ -55,8 +59,6 @@ class TasksStepsViewController: BaseViewController {
                 self.stepsList.append(StepsList.init(_id: "", stepId: "", ids: "", companyId: "", stepName: "Step", serviceType: "Service Type", supplierName: "Supplier Name", realPax: "Real Pax", sVPax: "SV Pax", supplierType: "", isSVCreatedBeforeForShopSupplier: "false", realTotalPax: "", realAdultPax: "", realChildPax: "", realInfantPax: "", sVTotalPax: "", sVAdultPax: "", sVChildPax: "", sVInfantPax: "", iD: "", action: ""))
                 for item in response {
                     self.stepsList.append(StepsList.init(_id: item._id ?? "", stepId: String(item.stepId ?? 0), ids: item.ids ?? "", companyId: String(item.companyId ?? 0), stepName: item.stepName ?? "", serviceType: item.serviceType ?? "", supplierName: item.supplierName ?? "", realPax: item.realPax ?? "", sVPax: item.sVPax ?? "", supplierType: String(item.supplierType ?? 0), isSVCreatedBeforeForShopSupplier: String(item.isSVCreatedBeforeForShopSupplier ?? false), realTotalPax: String(item.realTotalPax ?? 0), realAdultPax: String(item.realAdultPax ?? 0), realChildPax: String(item.realChildPax ?? 0), realInfantPax: String(item.realInfantPax ?? 0), sVTotalPax: String(item.sVTotalPax ?? 0), sVAdultPax: String(item.sVAdultPax ?? 0), sVChildPax: String(item.sVChildPax ?? 0), sVInfantPax: String(item.sVInfantPax ?? 0), iD: String(item.iD ?? 0), action: String(item.action ?? 0)))
-                        self.view.layoutIfNeeded()
-                        self.viewWillLayoutSubviews()
                 }
             }else {
                print("error")
@@ -71,8 +73,6 @@ class TasksStepsViewController: BaseViewController {
                 self.stepsList.append(StepsList.init(_id: "", stepId: "", ids: "", companyId: "", stepName: "Step", serviceType: "Service Type", supplierName: "Supplier Name", realPax: "Real Pax", sVPax: "SV Pax", supplierType: "", isSVCreatedBeforeForShopSupplier: "false", realTotalPax: "", realAdultPax: "", realChildPax: "", realInfantPax: "", sVTotalPax: "", sVAdultPax: "", sVChildPax: "", sVInfantPax: "", iD: "", action: ""))
                 for item in response {
                     self.stepsList.append(StepsList.init(_id: item._id ?? "", stepId: String(item.stepId ?? 0), ids: item.ids ?? "", companyId: String(item.companyId ?? 0), stepName: item.stepName ?? "", serviceType: item.serviceType ?? "", supplierName: item.supplierName ?? "", realPax: item.realPax ?? "", sVPax: item.sVPax ?? "", supplierType: String(item.supplierType ?? 0), isSVCreatedBeforeForShopSupplier: String(item.isSVCreatedBeforeForShopSupplier ?? false), realTotalPax: String(item.realTotalPax ?? 0), realAdultPax: String(item.realAdultPax ?? 0), realChildPax: String(item.realChildPax ?? 0), realInfantPax: String(item.realInfantPax ?? 0), sVTotalPax: String(item.sVTotalPax ?? 0), sVAdultPax: String(item.sVAdultPax ?? 0), sVChildPax: String(item.sVChildPax ?? 0), sVInfantPax: String(item.sVInfantPax ?? 0), iD: String(item.iD ?? 0), action: String(item.action ?? 0)))
-                        self.view.layoutIfNeeded()
-                        self.viewWillLayoutSubviews()
                 }
             }else {
                print("error")

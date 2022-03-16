@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TasksTourDetailViewController" customModule="RotaIOS" customModuleProvider="target">
             <connections>
-                <outlet property="tableViewTasksTourDetail" destination="r0D-8B-JHF" id="cXj-Rb-TE6"/>
+                <outlet property="tableViewTasksTourDetail" destination="r0D-8B-JHF" id="TbU-SK-REO"/>
                 <outlet property="tasksTableViewHeightConstraint" destination="uaH-bk-HJw" id="QrN-7m-liP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="aQf-1f-A1B"/>
             </connections>

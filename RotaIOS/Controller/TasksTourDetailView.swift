@@ -10,7 +10,7 @@ import UIKit
 
 final class TasksTourDetailView : UIView {
     @IBOutlet weak var view: UIView!
-    @IBOutlet weak var tasksTourDetailTableView: UITableView!
+    @IBOutlet weak var tableViewTasksTourDetail: UITableView!
     @IBOutlet weak var tasksTableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var headerDetailCustomView: HeaderDetailCustomView!

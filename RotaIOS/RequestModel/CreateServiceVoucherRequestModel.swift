@@ -35,31 +35,42 @@ public class  CreateServiceVoucherRequestModel : Mappable{
 }
 
 public class JsonModelList: Mappable{
-    public var serviceType : String?
-    public var realAdult : String?
-    public var realChild : String?
+    public var action : String?
     public var realToodle : String?
     public var realInfant : String?
-    public var freeAdult : String?
-    public var freeChild : String?
+    public var totalInfant : String?
+    public var serviceId : String?
+    public var isExtraService : String?
+    public var realAdult : String?
+    public var stepId : String?
     public var freeToodle : String?
+    public var realChild : String?
+    public var serviceType : String?
     public var freeInfant : String?
+    public var ids : String?
+    public var extraServiceId : String?
+    public var ID : String?
+    public var freeAmount : String?
+    public var tourTransferPlanArrAndDepId : String?
+    public var freeAdult : String?
+    public var companyId : String?
+    public var freeTotal : String?
+    public var sV_CreatedBy : String?
+    public var totalAmount : String?
     public var totalAdult : String?
     public var totalChild : String?
-    public var totalToodle : String?
-    public var totalInfant : String?
     public var realAmount : String?
-    public var realTotal : String?
-    public var freeAmount : String?
-    public var freeTotal : String?
-    public var totalAmount : String?
+    public var totalToodle : String?
     public var grandTotal : String?
+    public var realTotal : String?
+    public var freeChild : String?
+    public var id : String?
     
     public required init?(map: Map) {
 
     }
     
-    public init(serviceType: String, realTotal: String, realAdult: String, realChild: String, realToodle: String, realInfant: String, freeAdult: String, freeChild: String, freeToodle: String, freeInfant: String, totalAdult: String, totalChild: String, totalToodle: String, totalInfant: String, realAmount: String, freeAmount: String, freeTotal: String, totalAmount: String, grandTotal: String) {
+    public init(serviceType: String, realTotal: String, realAdult: String, realChild: String, realToodle: String, realInfant: String, freeAdult: String, freeChild: String, freeToodle: String, freeInfant: String, totalAdult: String, totalChild: String, totalToodle: String, totalInfant: String, realAmount: String, freeAmount: String, freeTotal: String, totalAmount: String, grandTotal: String, action: String, serviceId: String, isExtraService: String, stepId: String, ids: String, extraServiceId: String, ID: String, tourTransferPlanArrAndDepId: String, companyId: String, sV_CreatedBy: String, id: String) {
         self.serviceType = serviceType
         self.realAdult = realAdult
         self.realChild = realChild
@@ -79,27 +90,49 @@ public class JsonModelList: Mappable{
         self.freeTotal = freeTotal
         self.totalAmount = totalAmount
         self.grandTotal = grandTotal
+        self.action = action
+        self.serviceId = serviceId
+        self.isExtraService = isExtraService
+        self.stepId = stepId
+        self.ids = ids
+        self.extraServiceId = extraServiceId
+        self.ID = ID
+        self.tourTransferPlanArrAndDepId = tourTransferPlanArrAndDepId
+        self.companyId = companyId
+        self.sV_CreatedBy = sV_CreatedBy
+        self.id = id
     }
     
     public func mapping(map: Map) {
-        serviceType <- map["ServiceType"]
-        realAdult <- map["RealAdult"]
-        realChild <- map["RealChild"]
+        action <- map["Action"]
         realToodle <- map["RealToodle"]
         realInfant <- map["RealInfant"]
-        freeAdult <- map["FreeAdult"]
-        freeChild <- map["FreeChild"]
+        totalInfant <- map["TotalInfant"]
+        serviceId <- map["ServiceId"]
+        isExtraService <- map["IsExtraService"]
+        realAdult <- map["RealAdult"]
+        stepId <- map["StepId"]
         freeToodle <- map["FreeToodle"]
+        realChild <- map["RealChild"]
+        serviceType <- map["ServiceType"]
         freeInfant <- map["FreeInfant"]
+        ids <- map["Ids"]
+        extraServiceId <- map["ExtraServiceId"]
+        ID <- map["ID"]
+        freeAmount <- map["FreeAmount"]
+        tourTransferPlanArrAndDepId <- map["TourTransferPlanArrAndDepId"]
+        freeAdult <- map["FreeAdult"]
+        companyId <- map["CompanyId"]
+        freeTotal <- map["FreeTotal"]
+        sV_CreatedBy <- map["SV_CreatedBy"]
+        totalAmount <- map["TotalAmount"]
         totalAdult <- map["TotalAdult"]
         totalChild <- map["TotalChild"]
-        totalToodle <- map["TotalToodle"]
-        totalInfant <- map["TotalInfant"]
         realAmount <- map["RealAmount"]
-        realTotal <- map["RealTotal"]
-        freeAmount <- map["FreeAmount"]
-        freeTotal <- map["FreeTotal"]
-        totalAmount <- map["TotalAmount"]
+        totalToodle <- map["TotalToodle"]
         grandTotal <- map["GrandTotal"]
+        realTotal <- map["RealTotal"]
+        freeChild <- map["FreeChild"]
+        id <- map["$id"]
     }
 }

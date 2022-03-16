@@ -40,30 +40,47 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HUg-Hu-gFa">
                                             <rect key="frame" x="0.0" y="110" width="414" height="786"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2mx-wO-uaA">
-                                                    <rect key="frame" x="40" y="313" width="334" height="50"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2mx-wO-uaA">
+                                                    <rect key="frame" x="40" y="370" width="334" height="50"/>
                                                     <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="tb9-Uu-TOt"/>
                                                     </constraints>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q5X-RU-lo1" customClass="PickerView" customModule="RotaIOS" customModuleProvider="target">
-                                                    <rect key="frame" x="40" y="223" width="334" height="50"/>
+                                                    <rect key="frame" x="40" y="258" width="334" height="50"/>
                                                     <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="yhV-8a-9qU"/>
                                                     </constraints>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUc-H6-cIZ">
+                                                    <rect key="frame" x="40" y="236" width="36" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0S-g0-KLy">
+                                                    <rect key="frame" x="40" y="348" width="36" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Q5X-RU-lo1" firstAttribute="leading" secondItem="HUg-Hu-gFa" secondAttribute="leading" constant="40" id="5KZ-wo-DJd"/>
-                                                <constraint firstItem="2mx-wO-uaA" firstAttribute="centerY" secondItem="HUg-Hu-gFa" secondAttribute="centerY" constant="-55" id="M72-vm-46F"/>
+                                                <constraint firstItem="2mx-wO-uaA" firstAttribute="top" secondItem="b0S-g0-KLy" secondAttribute="bottom" constant="5" id="943-jF-jdh"/>
+                                                <constraint firstItem="Q5X-RU-lo1" firstAttribute="centerY" secondItem="HUg-Hu-gFa" secondAttribute="centerY" constant="-110" id="946-pK-7LQ"/>
+                                                <constraint firstItem="Q5X-RU-lo1" firstAttribute="top" secondItem="WUc-H6-cIZ" secondAttribute="bottom" constant="5" id="Q2E-1o-Rn8"/>
+                                                <constraint firstItem="b0S-g0-KLy" firstAttribute="top" secondItem="Q5X-RU-lo1" secondAttribute="bottom" constant="40" id="SyY-Gg-mp5"/>
                                                 <constraint firstAttribute="trailing" secondItem="Q5X-RU-lo1" secondAttribute="trailing" constant="40" id="YRL-Y7-tQ4"/>
                                                 <constraint firstAttribute="trailing" secondItem="2mx-wO-uaA" secondAttribute="trailing" constant="40" id="Yih-vG-2XG"/>
-                                                <constraint firstItem="2mx-wO-uaA" firstAttribute="top" secondItem="Q5X-RU-lo1" secondAttribute="bottom" constant="40" id="bGT-8d-tMe"/>
                                                 <constraint firstItem="2mx-wO-uaA" firstAttribute="leading" secondItem="HUg-Hu-gFa" secondAttribute="leading" constant="40" id="bRn-nU-rRK"/>
+                                                <constraint firstItem="WUc-H6-cIZ" firstAttribute="leading" secondItem="HUg-Hu-gFa" secondAttribute="leading" constant="40" id="eCj-x9-pA2"/>
+                                                <constraint firstItem="b0S-g0-KLy" firstAttribute="leading" secondItem="HUg-Hu-gFa" secondAttribute="leading" constant="40" id="eKR-Vd-2ib"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -129,6 +146,8 @@
                 <outlet property="buttonLogin" destination="WBp-L9-4Z4" id="NKK-5a-bCV"/>
                 <outlet property="contentView" destination="HUg-Hu-gFa" id="tTo-GU-pWM"/>
                 <outlet property="headerDetailCustomView" destination="b9V-Gc-Vru" id="nIZ-t6-n0n"/>
+                <outlet property="labelPassword" destination="b0S-g0-KLy" id="k23-o6-NXx"/>
+                <outlet property="labelUsername" destination="WUc-H6-cIZ" id="YcC-D8-rMU"/>
                 <outlet property="mainView" destination="0cB-qI-7ci" id="wZE-Pf-ALE"/>
                 <outlet property="pickerView" destination="Q5X-RU-lo1" id="qkq-iO-AIY"/>
                 <outlet property="view" destination="RyN-pk-LKd" id="icg-Ms-2b1"/>

@@ -11,7 +11,7 @@ import UIKit
 final class TasksStepsDetailView : UIView {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var view: UIView!
-    @IBOutlet weak var tasksTourDetailTableView: UITableView!
+    @IBOutlet weak var tableViewTasksStepsDetail: UITableView!
     @IBOutlet weak var tasksTableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var headerDetailCustomView: HeaderDetailCustomView!

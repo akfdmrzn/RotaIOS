@@ -10,11 +10,8 @@ import ObjectMapper
 
 public class GetCompanyUsersResponseModel: Mappable{
    var id : String?
-   var record : Records?
-   var isSuccesful : Bool?
-   var resultKey : String?
-   var message : String?
-   var detailMessage : String?
+   var username : String?
+   var userDesc : String?
 
     public required init?(map: Map) {
         
@@ -22,12 +19,9 @@ public class GetCompanyUsersResponseModel: Mappable{
     
     public func mapping(map: Map) {
 
-       id <- map["id"]
-       record <- map["Record"]
-       isSuccesful <- map["IsSuccesful"]
-       resultKey <- map["ResultKey"]
-       message <- map["Message"]
-       detailMessage <- map["DetailMessage"]
+       id <- map["$id"]
+       username <- map["Username"]
+       userDesc <- map["UserDesc"]
    }
 
 }

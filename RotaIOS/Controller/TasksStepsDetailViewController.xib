@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TasksStepsDetailViewController" customModule="RotaIOS" customModuleProvider="target">
             <connections>
-                <outlet property="tableViewTasksCreateServiceVoucher" destination="hNI-w2-VGm" id="LAC-Ox-cPM"/>
+                <outlet property="tableViewTasksStepsDetail" destination="hNI-w2-VGm" id="oas-bb-4La"/>
                 <outlet property="tasksTableViewHeightConstraint" destination="8dQ-FQ-Vwx" id="KSt-m3-y7L"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -146,7 +146,6 @@
                 <outlet property="headerDetailCustomView" destination="gah-AD-BJA" id="GEH-EU-tLA"/>
                 <outlet property="mainView" destination="lPx-BD-Lbo" id="uZF-hb-Bvp"/>
                 <outlet property="tasksTableViewHeightConstraint" destination="8dQ-FQ-Vwx" id="TuX-ba-N3e"/>
-                <outlet property="tasksTourDetailTableView" destination="hNI-w2-VGm" id="sfA-US-Eat"/>
                 <outlet property="view" destination="ryA-od-eDN" id="avT-PU-enf"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="73.660714285714278"/>

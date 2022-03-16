@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol PickerViewDelegate {
-    func selectCompany(id: Int, name: String)
+    func selectCompany(id: String, name: String)
 }
 
 class PickerView : UIView {
@@ -18,7 +18,7 @@ class PickerView : UIView {
     @IBOutlet weak var textFieldCompanyUser: UITextField!
     var pickerViewCompany : UIPickerView?
     var list: [PickerList] = []
-    var id: Int = 0
+    var id: String = ""
     var delegate: PickerViewDelegate?
     
     override init(frame: CGRect) {
@@ -94,10 +94,10 @@ extension PickerView: UIPickerViewDelegate, UIPickerViewDataSource {
 }
 
 struct PickerList{
-    var id: Int = 0
+    var id: String = ""
     var name: String = ""
     
-    mutating func setInfo(id: Int, name: String){
+    mutating func setInfo(id: String, name: String){
         self.id = id
         self.name = name
     }

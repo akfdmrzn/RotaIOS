@@ -18,22 +18,22 @@ class TasksStepsDetailViewController: BaseViewController {
         case INFO = 7
         case SHOP = 10
     }
-    @IBOutlet weak var tableViewTasksCreateServiceVoucher: UITableView!
+    @IBOutlet weak var tableViewTasksStepsDetail: UITableView!
     @IBOutlet weak var tasksTableViewHeightConstraint: NSLayoutConstraint!
     public var ids: String = ""
     public var stepId: String = ""
     public var serviceType: Int = 0
     var stepsDetailList: [GetStepDetail] = [] {
         didSet {
-            self.tableViewTasksCreateServiceVoucher.reloadData()
-            self.tasksTableViewHeightConstraint.constant = self.tableViewTasksCreateServiceVoucher.contentSize.height
+            self.tableViewTasksStepsDetail.reloadData()
+            self.tasksTableViewHeightConstraint.constant = self.tableViewTasksStepsDetail.contentSize.height
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableViewTasksCreateServiceVoucher.delegate = self
-        self.tableViewTasksCreateServiceVoucher.dataSource = self
-        self.tableViewTasksCreateServiceVoucher.register(TasksStepsDetailTableViewCell.nib, forCellReuseIdentifier: TasksStepsDetailTableViewCell.identifier)
+        self.tableViewTasksStepsDetail.delegate = self
+        self.tableViewTasksStepsDetail.dataSource = self
+        self.tableViewTasksStepsDetail.register(TasksStepsDetailTableViewCell.nib, forCellReuseIdentifier: TasksStepsDetailTableViewCell.identifier)
         switch self.serviceType {
         case ServiceType.EXC.rawValue:
             self.getStepsDetail()
@@ -84,7 +84,21 @@ class TasksStepsDetailViewController: BaseViewController {
         let topVC = UIApplication.getTopViewController()
         let viewController = TasksCreateServiceVoucherViewController()
         viewController.action = self.stepsDetailList.count > 0 ? (self.stepsDetailList[0].action ?? "") : ""
-        viewController.stepsDetailList = self.stepsDetailList.count > 0 ? (self.stepsDetailList ) : []
+        var list : [GetStepDetail] = []
+        if self.stepsDetailList.count > 0 {
+            for index in 1...self.stepsDetailList.count - 1 {
+                let indexPath = IndexPath(row: index, section: 0)
+                if let cell = self.tableViewTasksStepsDetail.cellForRow(at: indexPath) as? TasksStepsDetailTableViewCell {
+                list.append(GetStepDetail.init(_id: self.stepsDetailList[index]._id ?? "", ids: self.stepsDetailList[index].ids ?? "", stepId: self.stepsDetailList[index].stepId ?? "", companyId: self.stepsDetailList[index].companyId ?? "", serviceId: self.stepsDetailList[index].serviceId ?? "", isExtraService: self.stepsDetailList[index].isExtraService ?? "", extraServiceId: self.stepsDetailList[index].extraServiceId ?? "", tourTransferPlanArrAndDepId : self.stepsDetailList[index].tourTransferPlanArrAndDepId ?? "", serviceType: self.stepsDetailList[index].serviceType ?? "", realTotal: cell.textFieldRealTotal.text ?? "", realAdult: cell.textFieldRealAdult.text ?? "", realChild: cell.textFieldRealChild.text ?? "", realToodle: cell.textFieldRealToodle.text ?? "", realInfant: cell.textFieldRealInfant.text ?? "", freeAdult: cell.textFieldFreeAdult.text ?? "", freeChild: cell.textFieldFreeChild.text ?? "", freeToodle: cell.textFieldFreeToodle.text ?? "", freeInfant: cell.textFieldFreeInfant.text ?? "", totalAdult: cell.textFieldTotalAdult.text ?? "", totalChild: cell.textFieldTotalChild.text ?? "", totalToodle: cell.textFieldTotalToodle.text ?? "", totalInfant: cell.textFieldTotalInfant.text ?? "", realAmount: cell.textFieldRealAmount.text ?? "", freeAmount: cell.textFieldFreeAmount.text ?? "", freeTotal: cell.textFieldFreeTotal.text ?? "", totalAmount: cell.textFieldTotalAmount.text ?? "", grandTotal: cell.textFieldGrandTotal.text ?? "", iD: self.stepsDetailList[index].iD ?? "", action: self.stepsDetailList[index].action ?? ""))
+                }
+            }
+            viewController.stepsDetailList = list
+        }
+        else{
+            viewController.stepsDetailList = []
+        }
+        viewController.ids = ids
+        viewController.stepId = stepId
         topVC?.otiPushViewController(viewController: viewController)
     }
 }
@@ -103,7 +117,7 @@ extension TasksStepsDetailViewController : UITableViewDelegate,UITableViewDataSo
         else{
             cell.setTextColor(color: .white)
         }
-        cell.setInfo(labelType: self.stepsDetailList[indexPath.row].serviceType ?? "", realTotal: self.stepsDetailList[indexPath.row].realTotal ?? "", realAdult: self.stepsDetailList[indexPath.row].realAdult ?? "", realChild: self.stepsDetailList[indexPath.row].realChild ?? "", realToodle: self.stepsDetailList[indexPath.row].realToodle ?? "", realInfant: self.stepsDetailList[indexPath.row].realInfant ?? "", freeAdult: self.stepsDetailList[indexPath.row].freeAdult ?? "", freeChild: self.stepsDetailList[indexPath.row].freeChild ?? "", freeToodle: self.stepsDetailList[indexPath.row].freeToodle ?? "", freeInfant: self.stepsDetailList[indexPath.row].freeInfant ?? "", totalAdult: self.stepsDetailList[indexPath.row].totalAdult ?? "", totalChild: self.stepsDetailList[indexPath.row].totalChild ?? "", totalToodle: self.stepsDetailList[indexPath.row].totalToodle ?? "", totalInfant: self.stepsDetailList[indexPath.row].totalInfant ?? "", realAmount: self.stepsDetailList[indexPath.row].realAmount ?? "", freeAmount: self.stepsDetailList[indexPath.row].freeAmount ?? "", freeTotal: self.stepsDetailList[indexPath.row].freeTotal ?? "", totalAmount:  self.stepsDetailList[indexPath.row].totalAmount ?? "", grandTotal: self.stepsDetailList[indexPath.row].grandTotal ?? "")
+        cell.setInfo(type: self.stepsDetailList[indexPath.row].serviceType ?? "", realTotal: self.stepsDetailList[indexPath.row].realTotal ?? "", realAdult: self.stepsDetailList[indexPath.row].realAdult ?? "", realChild: self.stepsDetailList[indexPath.row].realChild ?? "", realToodle: self.stepsDetailList[indexPath.row].realToodle ?? "", realInfant: self.stepsDetailList[indexPath.row].realInfant ?? "", freeAdult: self.stepsDetailList[indexPath.row].freeAdult ?? "", freeChild: self.stepsDetailList[indexPath.row].freeChild ?? "", freeToodle: self.stepsDetailList[indexPath.row].freeToodle ?? "", freeInfant: self.stepsDetailList[indexPath.row].freeInfant ?? "", totalAdult: self.stepsDetailList[indexPath.row].totalAdult ?? "", totalChild: self.stepsDetailList[indexPath.row].totalChild ?? "", totalToodle: self.stepsDetailList[indexPath.row].totalToodle ?? "", totalInfant: self.stepsDetailList[indexPath.row].totalInfant ?? "", realAmount: self.stepsDetailList[indexPath.row].realAmount ?? "", freeAmount: self.stepsDetailList[indexPath.row].freeAmount ?? "", freeTotal: self.stepsDetailList[indexPath.row].freeTotal ?? "", totalAmount:  self.stepsDetailList[indexPath.row].totalAmount ?? "", grandTotal: self.stepsDetailList[indexPath.row].grandTotal ?? "")
         return cell
     }
     

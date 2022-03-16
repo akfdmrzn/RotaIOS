@@ -10,7 +10,7 @@ import ObjectMapper
 
 public class CreateServiceVoucherResponseModel: Mappable{
    var id : String?
-   var record : Records?
+   var record : Int?
    var isSuccesful : Bool?
    var resultKey : String?
    var message : String?

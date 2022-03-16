@@ -9,24 +9,24 @@ import UIKit
 
 class TasksStepsDetailTableViewCell: BaseTableViewCell {
     @IBOutlet weak var labelType: UILabel!
-    @IBOutlet weak var labelRealTotal: UILabel!
-    @IBOutlet weak var labelRealAdult: UILabel!
-    @IBOutlet weak var labelRealChild: UILabel!
-    @IBOutlet weak var labelRealToodle: UILabel!
-    @IBOutlet weak var labelRealInfant: UILabel!
-    @IBOutlet weak var labelFreeAdult: UILabel!
-    @IBOutlet weak var labelFreeChild: UILabel!
-    @IBOutlet weak var labelFreeToodle: UILabel!
-    @IBOutlet weak var labelFreeInfant: UILabel!
-    @IBOutlet weak var labelTotalAdult: UILabel!
-    @IBOutlet weak var labelTotalChild: UILabel!
-    @IBOutlet weak var labelTotalToodle: UILabel!
-    @IBOutlet weak var labelTotalInfant: UILabel!
-    @IBOutlet weak var labelRealAmount: UILabel!
-    @IBOutlet weak var labelFreeAmount: UILabel!
-    @IBOutlet weak var labelFreeTotal: UILabel!
-    @IBOutlet weak var labelTotalAmount: UILabel!
-    @IBOutlet weak var labelGrandTotal: UILabel!
+    @IBOutlet weak var textFieldRealTotal: UITextField!
+    @IBOutlet weak var textFieldRealAdult: UITextField!
+    @IBOutlet weak var textFieldRealChild: UITextField!
+    @IBOutlet weak var textFieldRealToodle: UITextField!
+    @IBOutlet weak var textFieldRealInfant: UITextField!
+    @IBOutlet weak var textFieldFreeAdult: UITextField!
+    @IBOutlet weak var textFieldFreeChild: UITextField!
+    @IBOutlet weak var textFieldFreeToodle: UITextField!
+    @IBOutlet weak var textFieldFreeInfant: UITextField!
+    @IBOutlet weak var textFieldTotalAdult: UITextField!
+    @IBOutlet weak var textFieldTotalChild: UITextField!
+    @IBOutlet weak var textFieldTotalToodle: UITextField!
+    @IBOutlet weak var textFieldTotalInfant: UITextField!
+    @IBOutlet weak var textFieldRealAmount: UITextField!
+    @IBOutlet weak var textFieldFreeAmount: UITextField!
+    @IBOutlet weak var textFieldFreeTotal: UITextField!
+    @IBOutlet weak var textFieldTotalAmount: UITextField!
+    @IBOutlet weak var textFieldGrandTotal: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,45 +41,45 @@ class TasksStepsDetailTableViewCell: BaseTableViewCell {
     
     func setTextColor(color: UIColor){
         self.labelType.textColor = color
-        self.labelRealAdult.textColor = color
-        self.labelRealChild.textColor = color
-        self.labelRealToodle.textColor = color
-        self.labelRealInfant.textColor = color
-        self.labelFreeAdult.textColor = color
-        self.labelFreeChild.textColor = color
-        self.labelFreeToodle.textColor = color
-        self.labelFreeInfant.textColor = color
-        self.labelTotalAdult.textColor = color
-        self.labelTotalChild.textColor = color
-        self.labelTotalToodle.textColor = color
-        self.labelTotalInfant.textColor = color
-        self.labelRealAmount.textColor = color
-        self.labelRealTotal.textColor = color
-        self.labelFreeAmount.textColor = color
-        self.labelFreeTotal.textColor = color
-        self.labelTotalAmount.textColor = color
-        self.labelGrandTotal.textColor = color
+        self.textFieldRealAdult.textColor = color
+        self.textFieldRealChild.textColor = color
+        self.textFieldRealToodle.textColor = color
+        self.textFieldRealInfant.textColor = color
+        self.textFieldFreeAdult.textColor = color
+        self.textFieldFreeChild.textColor = color
+        self.textFieldFreeToodle.textColor = color
+        self.textFieldFreeInfant.textColor = color
+        self.textFieldTotalAdult.textColor = color
+        self.textFieldTotalChild.textColor = color
+        self.textFieldTotalToodle.textColor = color
+        self.textFieldTotalInfant.textColor = color
+        self.textFieldRealAmount.textColor = color
+        self.textFieldRealTotal.textColor = color
+        self.textFieldFreeAmount.textColor = color
+        self.textFieldFreeTotal.textColor = color
+        self.textFieldTotalAmount.textColor = color
+        self.textFieldGrandTotal.textColor = color
     }
     
-    func setInfo(labelType: String, realTotal: String, realAdult: String, realChild: String, realToodle: String, realInfant: String, freeAdult: String, freeChild: String, freeToodle: String, freeInfant: String, totalAdult: String, totalChild: String, totalToodle: String, totalInfant: String, realAmount: String, freeAmount: String, freeTotal: String, totalAmount: String, grandTotal: String){
-        self.labelType.text = labelType
-        self.labelRealTotal.text = realTotal
-        self.labelRealAdult.text = realAdult
-        self.labelRealChild.text = realChild
-        self.labelRealToodle.text = realToodle
-        self.labelRealInfant.text = realInfant
-        self.labelFreeAdult.text = freeAdult
-        self.labelFreeChild.text = freeChild
-        self.labelFreeToodle.text = freeToodle
-        self.labelFreeInfant.text = freeInfant
-        self.labelTotalAdult.text = totalAdult
-        self.labelTotalChild.text = totalChild
-        self.labelTotalToodle.text = totalToodle
-        self.labelTotalInfant.text = totalInfant
-        self.labelRealAmount.text = realAmount
-        self.labelFreeAmount.text = freeAmount
-        self.labelFreeTotal.text = freeTotal
-        self.labelTotalAmount.text = totalAmount
-        self.labelGrandTotal.text = grandTotal
+    func setInfo(type: String, realTotal: String, realAdult: String, realChild: String, realToodle: String, realInfant: String, freeAdult: String, freeChild: String, freeToodle: String, freeInfant: String, totalAdult: String, totalChild: String, totalToodle: String, totalInfant: String, realAmount: String, freeAmount: String, freeTotal: String, totalAmount: String, grandTotal: String){
+        self.labelType.text = type
+        self.textFieldRealTotal.text = realTotal
+        self.textFieldRealAdult.text = realAdult
+        self.textFieldRealChild.text = realChild
+        self.textFieldRealToodle.text = realToodle
+        self.textFieldRealInfant.text = realInfant
+        self.textFieldFreeAdult.text = freeAdult
+        self.textFieldFreeChild.text = freeChild
+        self.textFieldFreeToodle.text = freeToodle
+        self.textFieldFreeInfant.text = freeInfant
+        self.textFieldTotalAdult.text = totalAdult
+        self.textFieldTotalChild.text = totalChild
+        self.textFieldTotalToodle.text = totalToodle
+        self.textFieldTotalInfant.text = totalInfant
+        self.textFieldRealAmount.text = realAmount
+        self.textFieldFreeAmount.text = freeAmount
+        self.textFieldFreeTotal.text = freeTotal
+        self.textFieldTotalAmount.text = totalAmount
+        self.textFieldGrandTotal.text = grandTotal
     }
 }

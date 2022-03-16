@@ -11,12 +11,12 @@ import UIKit
 final class TasksCreateServiceVoucherView : UIView {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var view: UIView!
-    @IBOutlet weak var tasksTourDetailTableView: UITableView!
-    @IBOutlet weak var tasksTableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var headerDetailCustomView: HeaderDetailCustomView!
     @IBOutlet weak var buttonLogin: UIButton!
     @IBOutlet weak var pickerView: PickerView!
+    @IBOutlet weak var labelUsername: UILabel!
+    @IBOutlet weak var labelPassword: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +29,8 @@ final class TasksCreateServiceVoucherView : UIView {
         self.buttonLogin.backgroundColor = UIColor.greenColor
         self.buttonLogin.round(with: .all, radius: 10)
         self.pickerView.round(with: .all, radius: 10)
+        self.labelUsername.text = "Username"
+        self.labelPassword.text = "Password"
     }
     
     required init(customParamArg: String) {

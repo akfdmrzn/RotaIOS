@@ -47,6 +47,7 @@ extension UIColor {
     class var infoPlanColor:                    UIColor { return UIColor(hexString: "#B800AC") }
     class var indShopForMobileColor:            UIColor { return UIColor(hexString: "#FF6600") }
     class var noteGrayColor:                    UIColor { return UIColor(hexString: "#707070") }
+    class var medGrayColor:                    UIColor { return UIColor(hexString: "#8B8B8B") }
     
     
     convenience init(hexString: String) {

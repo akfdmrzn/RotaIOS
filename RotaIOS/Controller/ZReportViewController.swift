@@ -13,6 +13,7 @@ class ZReportViewController: UIViewController {
     var zReportDate = ""
     let zReportDateToolBar = UIToolbar()
     var ZReportNumber = ""
+    var guideList : [GuideGetSelectListResponseModel] = []
     var zreportDatePicker : UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
@@ -52,11 +53,29 @@ class ZReportViewController: UIViewController {
         self.viewZReportView.endEditing(true)
     }
     @IBAction func searchButtonClicked(_ sender: Any) {
+        self.ZReportNumber = self.viewZReportView.viewZreportNumberView.mainText.text ?? ""
         let zReportRequestModel = GetZReportRequestModel.init(reportCreateDateStart: self.zReportDate, reportCreateDateEnd: self.zReportDate, zReportNumber: self.ZReportNumber, guideId: String(userDefaultsData.getGuideId()))
         NetworkManager.sendGetRequestArray(url: NetworkManager.BASEURL, endPoint: .GetSearchZReport, method: .get, parameters: zReportRequestModel.requestPathString()) { (response : [GetZReportResponseModel]) in
             if response.count > 0 {
                 self.zReportList = response
-                self.otiPushViewController(viewController: ZReportDetailViewController.init(zReportDetailListInZReportDetailPage: self.zReportList), animated: true)
+                NetworkManager.sendGetRequestArray(url: NetworkManager.BASEURL, endPoint: .GetGuideSelectList, method:.get, parameters: "") { (response : [GuideGetSelectListResponseModel]) in
+                    if response.count > 0 {
+                        self.guideList = response
+                        for i in 0...self.zReportList.count - 1 {
+                            var filter : [GuideGetSelectListResponseModel] = []
+                            filter = self.guideList.filter{$0.value == self.zReportList[i].guideRef}
+                            if filter.count > 0 {
+                                self.zReportList[i].guideName = filter[0].text ?? ""
+                            }
+                        }
+                        
+                        self.otiPushViewController(viewController: ZReportDetailViewController.init(zReportDetailListInZReportDetailPage: self.zReportList), animated: true)
+                    }else{
+                        print("guidelist data has not recived")
+                    }
+                }
+               
+               
                 
             }else {
                 let alert = UIAlertController(title: "Error", message: "Please Check Date and ZReport No", preferredStyle:UIAlertController.Style.alert)

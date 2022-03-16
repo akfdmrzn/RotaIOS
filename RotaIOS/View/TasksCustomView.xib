@@ -51,7 +51,7 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.33725490196078434" green="0.70980392156862748" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
                                         <constraint firstItem="S8T-h4-yjB" firstAttribute="top" secondItem="jsF-Rd-24V" secondAttribute="top" id="1Vd-W2-Vwk"/>
                                         <constraint firstAttribute="trailing" secondItem="eYx-Uc-7cK" secondAttribute="trailing" constant="10" id="MUE-on-XeH"/>
@@ -102,7 +102,7 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" red="0.33725490196078434" green="0.70980392156862748" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
                                         <constraint firstItem="Nug-oe-YEm" firstAttribute="leading" secondItem="e6W-EJ-JuD" secondAttribute="leading" id="4NT-Af-B9t"/>
                                         <constraint firstItem="Nug-oe-YEm" firstAttribute="top" secondItem="e6W-EJ-JuD" secondAttribute="top" id="Rde-wd-K8L"/>

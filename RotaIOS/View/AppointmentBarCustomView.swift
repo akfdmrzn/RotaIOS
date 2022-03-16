@@ -75,9 +75,9 @@ extension AppointmentBarCustomView : UICollectionViewDelegate, UICollectionViewD
         print("selected")
         self.selectedIndex = indexPath
         
-        if self.selectedIndex.row == 2 && userDefaultsData.getPaxesList()?.count == 0 {
+      /*  if self.selectedIndex.row == 2 && userDefaultsData.getPaxesList()?.count == 0 {
             return
-        }
+        }*/
         switch(indexPath.row) {
         case 0 :
             self.homePageTappedDelegate?.homePageTapped(ischosen: 0)

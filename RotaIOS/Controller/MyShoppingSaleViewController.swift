@@ -46,6 +46,7 @@ class MyShoppingSaleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         let getHotelsMobileRequestModel = GetHotelsMobileRequestModel.init(userId: userDefaultsData.getGuideId(), saleDate: userDefaultsData.getSaleDate())
         NetworkManager.sendGetRequestArray(url:NetworkManager.BASEURL, endPoint: .GetHotelsMobie, method: .get, parameters: getHotelsMobileRequestModel.requestPathString()) { (response : [GetHotelsMobileResponseModel] ) in
             if response.count > 0 {
@@ -71,11 +72,39 @@ class MyShoppingSaleViewController: UIViewController {
             let filteredHotelList = self.hotelList.filter{($0.text?.contains(title) ?? false)}
             for item in filteredHotelList {
                 self.hotelIntId = item.value ?? 0
+                self.hotelId = String(self.hotelIntId)
             }
             if self.hotelIntId == 0 {
                 self.hotelId = ""
             }
         }
+        
+        // put one week to begin date
+        let formatterBeginDate = DateFormatter()
+        formatterBeginDate.dateStyle = .medium
+        formatterBeginDate.timeStyle = .none
+        formatterBeginDate.dateFormat = "MM-dd-yyyy"
+        print(formatterBeginDate.string(from: self.beginDatePicker.date))
+        self.beginDate = formatterBeginDate.string(from: self.beginDatePicker.date)
+        formatterBeginDate.dateFormat = "dd-MM-yyyy"
+        self.viewMyShoppinSaleView.viewBeginDate.mainText.text = "\(formatterBeginDate.string(from: self.beginDatePicker.date))"
+        
+        // put one week to end date
+        
+        let calendar = Calendar.current
+        let addOneWeekToCurrentDate = calendar.date(byAdding: .weekOfYear, value: 1, to: Date())
+        
+        let formatterEndDate = DateFormatter()
+        formatterEndDate.dateStyle = .medium
+        formatterEndDate.timeStyle = .none
+        formatterEndDate.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        formatterEndDate.dateFormat = "MM-dd-yyyy"
+        print(formatterEndDate.string(from: addOneWeekToCurrentDate!))
+        self.endDate = formatterEndDate.string(from:  addOneWeekToCurrentDate!)
+        formatterEndDate.dateFormat = "dd-MM-yyyy"
+        self.viewMyShoppinSaleView.viewEndDate.mainText.text = "\(formatterEndDate.string(from:  addOneWeekToCurrentDate!))"
+        ///
+        ///
         
         let hotelListTapgesture = UITapGestureRecognizer(target: self, action: #selector(didTouchHotelListMenu))
         hotelListTapgesture.numberOfTouchesRequired = 1

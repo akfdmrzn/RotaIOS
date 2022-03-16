@@ -25,7 +25,10 @@ final class MyTourSaleMoreDetailView : UIView {
     @IBOutlet weak var labelCancelNote: UILabel!
     @IBOutlet weak var labelCancelVoucher: UILabel!
     @IBOutlet weak var labelRefund: UILabel!
+    @IBOutlet weak var labelPArentVoucher: UILabel!
     @IBOutlet weak var labelTotalPayment: UILabel!
+    @IBOutlet weak var labelTotalDiscount: UILabel!
+    
     
     override func awakeFromNib() {
         self.viewHeaderDetailView.labelHeaderDetailView.text = "My Tour Sale"

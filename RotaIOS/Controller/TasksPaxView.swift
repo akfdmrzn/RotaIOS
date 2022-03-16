@@ -25,10 +25,9 @@ final class TasksPaxView : UIView {
         self.contentView.round(with: .top, radius: 20)
         self.view.backgroundColor = UIColor.darkGrayColor
         self.headerDetailCustomView.labelHeaderDetailView.text = "Tasks".localizedCapitalized
-        self.buttonSendOffice.setTitle("Send Office", for: .normal)
+        self.buttonSendOffice.setTitle("SEND OFFICE", for: .normal)
         self.buttonSendOffice.backgroundColor = UIColor.greenColor
         self.buttonSendOffice.round(with: .all, radius: 10)
-        self.buttonSendOffice.tintColor = .white
     }
     
     required init(customParamArg: String) {

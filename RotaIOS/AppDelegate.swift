@@ -23,21 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         FirebaseApp.configure()
        
-      /*  if self.userNameList.count > 0 && self.userPasswordList.count > 0 && baseData.getTokenResponse != nil{
-            if self.userNameList[0] == self.userName {
-                if self.userPasswordList[0] == self.password {
-                    self.initialViewController  = MainPAgeViewController(nibName:"MainPAgeViewController",bundle:nil)
-
-                    let frame = UIScreen.main.bounds
-                       window = UIWindow(frame: frame)
-
-                    window!.rootViewController = self.initialViewController
-                       window!.makeKeyAndVisible()
-                    
-                    return true
-                }
-            }
-        }*/
         return true
     }
 }

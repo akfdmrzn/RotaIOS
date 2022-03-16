@@ -11,6 +11,10 @@ class ZReportPaymentTableViewCell: BaseTableViewCell {
     @IBOutlet weak var viewDetailContentView: UIView!
     @IBOutlet weak var labelVoucherNo: UILabel!
     @IBOutlet weak var labelDate: UILabel!
+    @IBOutlet weak var labelType: UILabel!
+    @IBOutlet weak var labelAmount: UILabel!
+    @IBOutlet weak var labelCurrency: UILabel!
+    @IBOutlet weak var labelID: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

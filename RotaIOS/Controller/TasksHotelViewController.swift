@@ -14,9 +14,9 @@ class TasksHotelViewController: BaseViewController {
         case DEL = 3
         case ARR = 4
         case DEP = 5
-        case SHOP = 6
-        case INT = 7
-        case INFO = 8
+        case INT = 6
+        case INFO = 7
+        case SHOP = 10
     }
     
     @IBOutlet weak var tableViewTasksHotel: UITableView!
@@ -172,14 +172,14 @@ extension TasksHotelViewController : UITableViewDelegate,UITableViewDataSource{
             viewController.planId = self.paxInfoList[indexPath.row].planId
             viewController.hotelId = self.paxInfoList[indexPath.row].hotelId
             viewController.typeInt = self.typeInt
-        case ServiceType.SHOP.rawValue:
+        case ServiceType.INT.rawValue:
             viewController.serviceType = 6
+            viewController.id = self.paxInfoList[indexPath.row].id
+            viewController.typeInt = self.typeInt
+        case ServiceType.SHOP.rawValue:
+            viewController.serviceType = 10
             viewController.planId = self.paxInfoList[indexPath.row].planId
             viewController.hotelId = self.paxInfoList[indexPath.row].hotelId
-            viewController.typeInt = self.typeInt
-        case ServiceType.INT.rawValue:
-            viewController.serviceType = 7
-            viewController.id = self.paxInfoList[indexPath.row].id
             viewController.typeInt = self.typeInt
         case ServiceType.INFO.rawValue:
             break

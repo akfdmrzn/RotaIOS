@@ -83,12 +83,21 @@
                                             <action selector="buttonClicked:" destination="hrp-fu-4Ts" eventType="touchUpInside" id="wAJ-rs-5t9"/>
                                         </connections>
                                     </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginlogo" translatesAutoresizingMaskIntoConstraints="NO" id="OkQ-u9-TUe">
+                                        <rect key="frame" x="137" y="390" width="140" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="3Ia-pM-HQP"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="OkQ-u9-TUe" secondAttribute="trailing" constant="137" id="2RN-qN-iIA"/>
+                                    <constraint firstItem="OkQ-u9-TUe" firstAttribute="top" secondItem="zMk-E7-avG" secondAttribute="bottom" constant="150" id="CfW-XK-imF"/>
                                     <constraint firstItem="NI9-ln-ECl" firstAttribute="top" secondItem="jnP-rX-67E" secondAttribute="top" constant="100" id="HKD-Y2-6yK"/>
                                     <constraint firstItem="YiF-ga-9Nf" firstAttribute="leading" secondItem="jnP-rX-67E" secondAttribute="leading" constant="40" id="NUU-lk-G9B"/>
                                     <constraint firstAttribute="trailing" secondItem="YiF-ga-9Nf" secondAttribute="trailing" constant="40" id="Php-Jz-CGW"/>
+                                    <constraint firstItem="OkQ-u9-TUe" firstAttribute="leading" secondItem="jnP-rX-67E" secondAttribute="leading" constant="137" id="aCm-IZ-f8r"/>
                                     <constraint firstItem="NI9-ln-ECl" firstAttribute="leading" secondItem="jnP-rX-67E" secondAttribute="leading" constant="40" id="aiH-Nf-4MX"/>
                                     <constraint firstItem="zMk-E7-avG" firstAttribute="top" secondItem="jnP-rX-67E" secondAttribute="top" constant="190" id="oGz-74-pEI"/>
                                     <constraint firstAttribute="trailing" secondItem="NI9-ln-ECl" secondAttribute="trailing" constant="40" id="rVu-3x-7KX"/>
@@ -145,6 +154,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="loginlogo" width="100" height="50"/>
         <image name="odeonicon" width="92" height="117"/>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

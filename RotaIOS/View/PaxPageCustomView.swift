@@ -72,8 +72,7 @@ class PaxPageCustomView : UIView {
             NetworkManager.sendGetRequestArray(url:NetworkManager.BASEURL, endPoint: .GetInHouseList, method: .get, parameters: getInHouseListRequestModel.requestPathString()) { (response : [GetInHoseListResponseModel] ) in
                 if response.count > 0 {
                     //   let filter = response.filter{($0.text?.contains("ADONIS HOTEL ANTALYA") ?? false)}
-                    userDefaultsData.saveHotelId(hotelId: 0)
-                    userDefaultsData.saveMarketId(marketId: 0)
+                  
                     self.paxesNameList = response
                     // düzenleme yapılıyor
                     for index in 0...self.paxesNameList.count - 1 {
@@ -302,6 +301,8 @@ extension PaxPageCustomView : PaxPageTableViewCellDelegate {
                         print(response)
                         // let filter = response.filter{($0.text?.contains("ADONIS HOTEL ANTALYA") ?? false)}
                         self.touristInfoList = response
+                       // filterExcursionTourDate = filterExcursionTourDate.filterDuplicate{($0.tourName,$0.tourDate)}
+                        self.touristInfoList = self.touristInfoList.filterDuplicate{($0.touristIdRef,$0.name)}
                         self.oprID.removeAll()
                         self.oprName.removeAll()
                         self.reservationNo.removeAll()
@@ -339,6 +340,7 @@ extension PaxPageCustomView : PaxPageTableViewCellDelegate {
             }
         }
         else{
+           
             self.counter -= 1
             print(self.counter)
             if self.counter >= 0 {
@@ -366,7 +368,9 @@ extension PaxPageCustomView : PaxPageTableViewCellDelegate {
                 NetworkManager.sendGetRequestArray(url:NetworkManager.BASEURL, endPoint: .GetTouristInfo, method: .get, parameters: getInTouristInfoRequestModelList[0].requestPathString()) { (response : [GetTouristInfoResponseModel] ) in
                     if response.count > 0 {
                         // let filter = response.filter{($0.text?.contains("ADONIS HOTEL ANTALYA") ?? false)
+                        
                         self.touristInfoList = response
+                        self.touristInfoList = self.touristInfoList.filterDuplicate{($0.touristIdRef,$0.name)}
                         self.oprID.removeAll()
                         self.oprName.removeAll()
                         self.reservationNo.removeAll()
@@ -396,7 +400,7 @@ extension PaxPageCustomView : PaxPageTableViewCellDelegate {
                         self.tempSendingListofPaxes = self.sendingListofPaxes
                         if self.tempSendingListofPaxes.count > 0 {
                             for i in 0...self.sendingListofPaxes.count - 1 {
-                                if self.paxesListinPaxPage[0] === self.sendingListofPaxes[i]{
+                                if self.paxesListinPaxPage[0].pAX_NAME == self.sendingListofPaxes[i].pAX_NAME  &&  self.paxesListinPaxPage[0].pAX_TOURISTREF == self.sendingListofPaxes[i].pAX_TOURISTREF{
                                     self.tempSendingListofPaxes.remove(at: i)
                                 }
                             }
@@ -405,7 +409,7 @@ extension PaxPageCustomView : PaxPageTableViewCellDelegate {
                             self.sendingListofPaxes.removeAll()
                         }
                         self.paxesListDelegate?.paxesList(ischosen: false, sendingPaxesLis: self.sendingListofPaxes, isChange: true)
-                        
+                        self.labelTouristAdded.text = "\(self.counter + self.tempValue) Tourist Added"
                     }else{
                         print("data has not recived")
                     }
@@ -421,8 +425,23 @@ extension PaxPageCustomView : TempAddPaxesListDelegate {
         if self.tempValue != changeValue {
             self.tempValue = changeValue
             self.sendingListofPaxes = listofpaxes
+            if self.paxesNameList.count > 0 {
+                for i in 0...self.paxesNameList.count - 1 {
+                    self.paxesNameList[i].isTapped = false
+                    self.checkList[i] = false
+                }
+            }
+            if self.sendingListofPaxes.count > 0 {
+                for i in 0...self.sendingListofPaxes.count - 1 {
+                    if let index = self.paxesNameList.firstIndex(where: {$0.value == self.sendingListofPaxes[i].pAX_TOURISTREF}){
+                        self.paxesNameList[index].isTapped = true
+                        self.checkList[index] = true
+                    }
+                }
+            }
             self.labelTouristAdded.text = "\(self.counter + self.tempValue) Tourist Added"
             self.paxesListDelegate?.paxesList(ischosen: false, sendingPaxesLis: self.sendingListofPaxes, isChange: true)
+            self.tableView.reloadData()
             return
         }else {
             self.paxesListinPaxPage.removeAll()
@@ -432,7 +451,6 @@ extension PaxPageCustomView : TempAddPaxesListDelegate {
         }
     }
 }
-
 
 
 

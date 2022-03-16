@@ -224,11 +224,11 @@ extension StepsPageCustomView : SendFavoriteInfoDelegate {
             self.nameList.append(sendinfo)
             self.tableView.reloadData()
             self.filteredSelectedStepList.removeAll()
-            for updateList in self.nameList {
-                let filter = self.selectedStepList.filter{($0.text?.elementsEqual(updateList) ?? false)}
-                self.filteredSelectedStepList.append(filter[0])
+           
+            let filter = self.selectedStepList.filter{($0.text?.elementsEqual(sendinfo) ?? false)}
+            self.filteredSelectedStepList.append(filter[0])
                 // let filter = paxesNameList.filter{($0.text?.contains(updateList) ?? false)}
-            }
+            
             print(self.filteredSelectedStepList)
             var companyValue : [Int] = []
             var companyName  : [String] = []
@@ -242,13 +242,21 @@ extension StepsPageCustomView : SendFavoriteInfoDelegate {
             
             self.sendingListofSteps.removeAll()
             self.orderOfStep = 1
-            for i in 0...(self.filteredSelectedStepList.count) - 1 {
-                
-                self.stepsList.append(Steps(sTP_STATE: 0, name: companyName[i], sTP_COMPANY: companyValue[i], sTP_NOTE: "", sTP_ID: 0, sTP_ADULTCOUNT: self.adlCount, sTP_CHILDCOUNT: self.chldCount, sTP_INFANTCOUNT: self.infCount, sTP_SHOPREF: 0, sTP_STATUS: status[i], sTP_ORDER: (self.orderOfStep) ))
-                
-                self.sendingListofSteps.append(self.stepsList[i])
-                self.orderOfStep += 1
+            if self.filteredSelectedStepList.count > 0 {
+                for i in 0...(self.filteredSelectedStepList.count) - 1 {
+                    
+                    self.stepsList.append(Steps(sTP_STATE: 0, name: companyName[i], sTP_COMPANY: companyValue[i], sTP_NOTE: "", sTP_ID: 0, sTP_ADULTCOUNT: self.adlCount, sTP_CHILDCOUNT: self.chldCount, sTP_INFANTCOUNT: self.infCount, sTP_SHOPREF: 0, sTP_STATUS: status[i], sTP_ORDER: (self.orderOfStep) ))
+                  
+                    self.orderOfStep += 1
+                }
             }
+            
+            if self.stepsList.count > 0 {
+                for i in 0...self.stepsList.count - 1 {
+                    self.sendingListofSteps.append(self.stepsList[i])
+                }
+            }
+         
             self.stepsPageListDelegate?.stepsPageList(listofsteps: self.sendingListofSteps, isChange: true)
         }else {
             return

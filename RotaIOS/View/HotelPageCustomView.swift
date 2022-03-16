@@ -78,6 +78,7 @@ class HotelPageCustomView : UIView {
                     for listofArray in self.hotelList {
                         self.tempHotelMenu.append(listofArray.text ?? "")
                     }
+                   
                     self.hotelMenu.dataSource = self.tempHotelMenu
                     self.hotelMenu.dataSource.insert("", at: 0)
                     self.hotelMenu.backgroundColor = UIColor.grayColor
@@ -134,6 +135,7 @@ class HotelPageCustomView : UIView {
                 self.hotelPageDlegate?.hotelPage(isChange: true)
             }
             self.viewHotelListView.mainLabel.text = title
+            userDefaultsData.saveHotelName(hotelName: title)
             let filtered = self.hotelList.filter{($0.text?.contains(title) ?? false)}
             self.filteredHotelList = filtered
             for listofArray in self.filteredHotelList {

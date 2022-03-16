@@ -25,7 +25,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="490" height="115"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PqR-Eb-TXq">
-                            <rect key="frame" x="32" y="61.5" width="30" height="30"/>
+                            <rect key="frame" x="30" y="61.5" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="8jc-2r-V2i"/>
                                 <constraint firstAttribute="width" constant="30" id="p1q-Zf-2HH"/>
@@ -40,7 +40,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPR-oK-lMf">
-                            <rect key="frame" x="62" y="57" width="366" height="39"/>
+                            <rect key="frame" x="60" y="57" width="370" height="39"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="39" id="xNv-lf-6Yy"/>
                             </constraints>
@@ -53,7 +53,7 @@
                     <constraints>
                         <constraint firstItem="PqR-Eb-TXq" firstAttribute="centerY" secondItem="zPR-oK-lMf" secondAttribute="centerY" id="2vu-na-jIn"/>
                         <constraint firstItem="zPR-oK-lMf" firstAttribute="leading" secondItem="PqR-Eb-TXq" secondAttribute="trailing" id="2xa-8Q-177"/>
-                        <constraint firstItem="PqR-Eb-TXq" firstAttribute="leading" secondItem="hxL-d7-ZkI" secondAttribute="leading" constant="32" id="PIP-Fm-EWm"/>
+                        <constraint firstItem="PqR-Eb-TXq" firstAttribute="leading" secondItem="hxL-d7-ZkI" secondAttribute="leading" constant="30" id="PIP-Fm-EWm"/>
                         <constraint firstItem="zPR-oK-lMf" firstAttribute="top" secondItem="hxL-d7-ZkI" secondAttribute="top" constant="57" id="Sw8-cd-Fr7"/>
                         <constraint firstItem="zPR-oK-lMf" firstAttribute="centerX" secondItem="hxL-d7-ZkI" secondAttribute="centerX" id="cqp-bX-orC"/>
                     </constraints>

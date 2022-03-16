@@ -14,6 +14,8 @@ class ZReportPreviewViewController: UIViewController {
     var zReportPreview : [ReportPreview] = []
     var zReportTotal : [ReportTotal] = []
     var zReportRefund : [TourRefund] = []
+    @IBOutlet weak var buttonCreate: UIButton!
+    @IBOutlet weak var buttonSearch: UIButton!
     let date = Date()
     var dateString = ""
     var tempReportPreview : [String] = ["-","-","-","-","-","-"]
@@ -47,6 +49,10 @@ class ZReportPreviewViewController: UIViewController {
                 self.zReportTotal = response.reportTotal ?? self.zReportTotal
                 self.zReportRefund = response.tourRefund ?? self.zReportRefund
                 self.tableView.reloadData()
+                self.buttonSearch.isEnabled = false
+                self.viewZreportPreview.buttonSearch.backgroundColor = UIColor.clear
+                self.viewZreportPreview.buttonSearch.layer.borderWidth = 1
+                self.viewZreportPreview.buttonSearch.layer.borderColor = UIColor.greenColor.cgColor
             }else {
                 let alert = UIAlertController(title: "Error", message: "Data Has not Recived", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction.init(title: "OK", style: .default, handler: nil))

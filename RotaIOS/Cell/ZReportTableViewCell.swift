@@ -15,6 +15,7 @@ class ZReportTableViewCell: BaseTableViewCell {
     @IBOutlet weak var labelCollectionStatus: UILabel!
     var viewZReportLongClickMenu : ZReportLongClickMenu?
     var clicked = false
+    var zReportDay = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,14 +24,18 @@ class ZReportTableViewCell: BaseTableViewCell {
         self.viewDetailContentView.backgroundColor = UIColor.mainTextColor
  
         let longPressOnContentView = UILongPressGestureRecognizer(target: self, action: #selector(longPressed(gestureReconizer:)))
-        longPressOnContentView.minimumPressDuration = 2.0
+        longPressOnContentView.minimumPressDuration = 1.0
         longPressOnContentView.delaysTouchesBegan = true
         longPressOnContentView.delegate = self
         self.contentView.addGestureRecognizer(longPressOnContentView)
+        
+      
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        self.zReportDay = String(self.zReportDay.prefix(10))
+        self.labelZreportDay.text = self.zReportDay
     }
     
     @objc func longPressed(gestureReconizer: UILongPressGestureRecognizer) {

@@ -23,7 +23,15 @@ class MyTourSaleMoreDetailViewController: UIViewController {
         self.viewMyTourSaleMoreDetailView.labelExcursionGuide.text = self.tourDetailListInMoreDetailPage?.excKokartGuide
         self.viewMyTourSaleMoreDetailView.labelDeployingGuide.text = self.tourDetailListInMoreDetailPage?.delGuide
         self.viewMyTourSaleMoreDetailView.labelCancelNote.text = self.tourDetailListInMoreDetailPage?.note
-        self.viewMyTourSaleMoreDetailView.labelCancelVoucher.text = self.tourDetailListInMoreDetailPage?.tourVoucher
+        if self.tourDetailListInMoreDetailPage?.tourDateStr != nil {
+            self.viewMyTourSaleMoreDetailView.labelCancelVoucher.text = self.tourDetailListInMoreDetailPage?.tourVoucher
+        }else{
+            self.viewMyTourSaleMoreDetailView.labelCancelVoucher.text = ""
+        }
+        self.viewMyTourSaleMoreDetailView.labelPArentVoucher.text = self.tourDetailListInMoreDetailPage?.parentVoucher ?? ""
+        self.viewMyTourSaleMoreDetailView.labelTotalPayment.text = self.tourDetailListInMoreDetailPage?.paymentStr ?? ""
+        self.viewMyTourSaleMoreDetailView.labelTotalDiscount.text = String(self.tourDetailListInMoreDetailPage?.totalDiscount ?? 0.0)
+        self.viewMyTourSaleMoreDetailView.labelPArentVoucher.text = self.tourDetailListInMoreDetailPage?.parentVoucher ?? ""
         self.viewMyTourSaleMoreDetailView.labelCancelDate.text = self.tourDetailListInMoreDetailPage?.cancelDate
         self.viewMyTourSaleMoreDetailView.labelCancelStaff.text = self.tourDetailListInMoreDetailPage?.cancelStaff
         self.viewMyTourSaleMoreDetailView.labelRefund.text = "\(self.tourDetailListInMoreDetailPage?.refundAmount ?? 0.0)"

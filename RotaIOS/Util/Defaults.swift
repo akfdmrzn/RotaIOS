@@ -47,9 +47,36 @@ public class Defaults{
         case HotelList
         case UserPasswordList
         case GetToken
+        case ExtraPaxes
+        case TransferPaxes
+        case HotelName
+        case PrintList
     }
     
    public init(){}
+    
+
+    // SavePrintList
+    func savePrintList(printlist:[SendDataPrint]){
+        let preferences = UserDefaults.standard
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(printlist){
+            preferences.set(encoded, forKey: getIdentifier(type: .PrintList))
+            preferences.synchronize()
+        }
+    }
+    
+    func getPrintList() -> [SendDataPrint]? {
+        let preferences = UserDefaults.standard
+        let decoder = JSONDecoder()
+        if let savedTourList = preferences.object(forKey: getIdentifier(type: .PrintList)) as? Data {
+            if let loadedTourList = try? decoder.decode([SendDataPrint].self, from: savedTourList){
+                return loadedTourList
+            }
+        }
+        return []
+    }
+    
     // CurrencyList
     func saveGetToken(token:[GetTokenResponseModel]){
         let preferences = UserDefaults.standard
@@ -220,6 +247,24 @@ public class Defaults{
             }
         }
         return []
+    }
+    
+    // Hotel Name List
+   
+    
+    public func saveHotelName(hotelName:String){
+        let preferences = UserDefaults.standard
+        preferences.set( hotelName , forKey:getIdentifier(type: .HotelName))
+        preferences.synchronize()
+    }
+    
+    public func getHotelName() -> String! {
+        let preferences = UserDefaults.standard
+        if preferences.object(forKey: getIdentifier(type: .HotelName)) == nil {
+            return nil
+        }
+        let data:String = preferences.value(forKey: getIdentifier(type: .HotelName)) as! String
+        return data
     }
     
     //SaveData
@@ -454,6 +499,48 @@ public class Defaults{
         let decoder = JSONDecoder()
         if let savedTourList = preferences.object(forKey: getIdentifier(type: .TransferList)) as? Data {
             if let loadedTourList = try? decoder.decode([Transfers].self, from: savedTourList){
+                return loadedTourList
+            }
+        }
+        return []
+    }
+    
+    //Save extraPaxes and save TransferPaxes
+    
+    func saveExtraPaxesList(extraPaxes:[ExtraPaxes]){
+        let preferences = UserDefaults.standard
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(extraPaxes){
+            preferences.set(encoded, forKey: getIdentifier(type: .ExtraPaxes))
+            preferences.synchronize()
+        }
+    }
+    
+    func getExtraPaxesList() -> [ExtraPaxes]? {
+        let preferences = UserDefaults.standard
+        let decoder = JSONDecoder()
+        if let savedTourList = preferences.object(forKey: getIdentifier(type: .ExtraPaxes)) as? Data {
+            if let loadedTourList = try? decoder.decode([ExtraPaxes].self, from: savedTourList){
+                return loadedTourList
+            }
+        }
+        return []
+    }
+    
+    func saveTransferPaxesList(transferPaxes:[ExtraPaxes]){
+        let preferences = UserDefaults.standard
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(transferPaxes){
+            preferences.set(encoded, forKey: getIdentifier(type: .TransferPaxes))
+            preferences.synchronize()
+        }
+    }
+    
+    func getTransferPaxesList() -> [ExtraPaxes]? {
+        let preferences = UserDefaults.standard
+        let decoder = JSONDecoder()
+        if let savedTourList = preferences.object(forKey: getIdentifier(type: .TransferPaxes)) as? Data {
+            if let loadedTourList = try? decoder.decode([ExtraPaxes].self, from: savedTourList){
                 return loadedTourList
             }
         }
@@ -768,6 +855,14 @@ public class Defaults{
             return "UserPasswordList"
         case .GetToken:
             return "GetToken"
+        case .ExtraPaxes:
+            return "ExtraPaxes"
+        case .TransferPaxes:
+            return "TransferPaxes"
+        case .HotelName:
+            return "HotelName"
+        case .PrintList:
+            return "PrintList"
         }
     }
 }

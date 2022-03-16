@@ -13,34 +13,33 @@ final class LoginViewController : BaseViewController {
     @IBOutlet var viewLogin: LoginView!
     var userName = ""
     var password = ""
-    var userNAmeList : [String] = []
-    var userPasswordList : [String] = []
     let date = Date()
     var getTokenResponse : [GetTokenResponseModel] = []
     
     override func viewDidLoad() {
-        self.userNAmeList = userDefaultsData.getUserNameList() ?? []
-        self.userPasswordList = userDefaultsData.getUserPasswordList() ?? []
+        super.viewDidLoad()
         self.userName = userDefaultsData.geUserNAme() ?? ""
         self.password = userDefaultsData.getPassword() ?? ""
-        self.getTokenResponse = userDefaultsData.getGetToken() ?? self.getTokenResponse
+       /* self.getTokenResponse = userDefaultsData.getGetToken() ?? self.getTokenResponse
         if getTokenResponse.count > 0 {
             baseData.getTokenResponse = self.getTokenResponse[0]
         }
-       if self.userNAmeList.count > 0 && self.userPasswordList.count > 0 && baseData.getTokenResponse != nil{
-            if self.userNAmeList[0] == self.userName {
-                if self.userPasswordList[0] == self.password {
+       if self.userName != "" &&  self.password != "" && baseData.getTokenResponse != nil{
+            if userDefaultsData.geUserNAme() ?? "" == self.userName {
+                if userDefaultsData.getPassword() ?? "" == self.password {
                     self.otiPushViewController(viewController: MainPAgeViewController(), animated: false)
                 }
             }
-        }
-   
-        super.viewDidLoad()
+        }*/
+        self.viewLogin.textUsername.text = self.userName
+        self.viewLogin.textPassword.text = self.userName
         self.viewLogin.textUsername.delegate = self
         self.viewLogin.textUsername.keyboardType = .numberPad
         self.viewLogin.textPassword.keyboardType = .numberPad
-        userDefaultsData.saveUserPasswordList(passwordList: [])
-        userDefaultsData.saveUserNameList(nameList: [])
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("burda")
     }
     
     @IBAction func buttonClicked(_ sender: Any) {
@@ -50,17 +49,11 @@ final class LoginViewController : BaseViewController {
         let dateString = df.string(from: date)
         
         print(dateString)
-        
-      
-        
+   
         self.userName = self.viewLogin.textUsername.text ?? ""
         self.password = self.viewLogin.textPassword.text ?? ""
         userDefaultsData.savePassword(id: self.password)
         userDefaultsData.saveUserName(id: self.userName)
-        self.userNAmeList.append(self.userName)
-        self.userPasswordList.append(self.password)
-        userDefaultsData.saveUserNameList(nameList: self.userNAmeList )
-        userDefaultsData.saveUserPasswordList(passwordList: self.userPasswordList)
         if Connectivity.isConnectedToInternet {
             print("connect")
             let createTokenRequestModel = CreateTokenRequestModel.init()
@@ -80,27 +73,28 @@ final class LoginViewController : BaseViewController {
                              userDefaultsData.saveUserId(languageId: response.id ?? "default")
                              userDefaultsData.saveGuideId(languageId: response.guideId!)
                              userDefaultsData.saveSaleDate(saleDate: dateString)
+                             
+                             let getGuideInfRequestModel =  GetGuideInfoRequestModel( id : userDefaultsData.getGuideId())
+                             NetworkManager.sendGetRequest(url:NetworkManager.BASEURL, endPoint: .GetGuideInfo, method: .get, parameters: getGuideInfRequestModel.requestPathString()) { (response : GetGuideInfoResponseModel) in
+                                 
+                                 if response.marketGroupId != nil {
+                                     
+                                     userDefaultsData.saveMarketGruopId(marketGroupId: response.marketGroupId ?? 0)
+                                     self.otiPushViewController(viewController: MainPAgeViewController())
+                                     
+                                 }else{
+                                     let alert = UIAlertController(title: "Error", message: "Token has not recived", preferredStyle: UIAlertController.Style.alert)
+                                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                                     self.present(alert, animated: true, completion: nil)
+                                 }
+                             }
+                             
                          }else{
                              let alert = UIAlertController(title: "Error", message: "Token has not recived", preferredStyle: UIAlertController.Style.alert)
                              alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                              self.present(alert, animated: true, completion: nil)
                          }
                      }
-                     
-                     let getGuideInfRequestModel =  GetGuideInfoRequestModel( id : userDefaultsData.getGuideId())
-                     NetworkManager.sendGetRequest(url:NetworkManager.BASEURL, endPoint: .GetGuideInfo, method: .get, parameters: getGuideInfRequestModel.requestPathString()) { (response : GetGuideInfoResponseModel) in
-                         
-                         if response.marketGroupId != nil {
-                             
-                             userDefaultsData.saveMarketGruopId(marketGroupId: response.marketGroupId ?? 0)
-                             
-                         }else{
-                             let alert = UIAlertController(title: "Error", message: "Token has not recived", preferredStyle: UIAlertController.Style.alert)
-                             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-                             self.present(alert, animated: true, completion: nil)
-                         }
-                     }
-                    self.otiPushViewController(viewController: MainPAgeViewController())
                 }else{
                     let alert = UIAlertController(title: "Error", message: "Invalid Username/Password.", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))

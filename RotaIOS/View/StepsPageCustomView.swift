@@ -195,7 +195,6 @@ extension StepsPageCustomView : SendInfoDelegate {
             }
             self.sendingListofSteps.removeAll()
             self.stepsList.removeAll()
-            self.orderOfStep = 1
             for i in 0...(self.filteredSelectedStepList.count) - 1 {
                 
                 self.stepsList.append(Steps(sTP_STATE: 0, name: companyName[i], sTP_COMPANY: companyValue[i], sTP_NOTE: "", sTP_ID: 0, sTP_ADULTCOUNT: self.adlCount, sTP_CHILDCOUNT: self.chldCount, sTP_INFANTCOUNT: self.infCount, sTP_SHOPREF: 0, sTP_STATUS: status[i], sTP_ORDER: (self.orderOfStep) ))
@@ -241,7 +240,6 @@ extension StepsPageCustomView : SendFavoriteInfoDelegate {
             }
             
             self.sendingListofSteps.removeAll()
-            self.orderOfStep = 1
             if self.filteredSelectedStepList.count > 0 {
                 for i in 0...(self.filteredSelectedStepList.count) - 1 {
                     

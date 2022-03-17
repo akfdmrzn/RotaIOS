@@ -443,42 +443,45 @@ extension ExcAddCustomView : UITableViewDelegate, UITableViewDataSource {
         if tableView == self.tableViewPax {
             return
         }
-        if self.extrasList[self.extrasIndex].priceType == 35 {
-            if self.extrasPaxesList.count == 0 {
-                self.extrasPaxesList = userDefaultsData.getPaxesList() ?? []
-                self.transferPaxesList = userDefaultsData.getPaxesList() ?? []
-                
-                for i in 0...self.extrasPaxesList.count - 1 {
-                    self.extrasPaxesList[i].isTapped = false
-                    self.extrasPaxCheckList.append(false)
-                }
-                
-                for i in 0...self.transferPaxesList.count - 1 {
-                    self.transferPaxesList[i].isTapped = false
-                    self.transfersPaxCheckList.append(false)
-                }
-            }
-            
-            var tourName = ""
-            if self.extrasList.count > 0 && self.buttonExtraTapped == true {
-                tourName = self.extrasList[indexPath.row].desc ?? ""
-                self.extrasIndex = indexPath.row
-                if let index = self.extraPaxesListSaved.firstIndex(where: {$0.tourName == self.excursionName && $0.extraName == tourName}){
-                    self.extrasPaxCheckList = self.extraPaxesListSaved[index].CheckList ?? []
-                    for i in 0...self.extrasPaxCheckList.count - 1 {
-                        self.extrasPaxesList[i].isTapped = self.extrasPaxCheckList[i]
+       
+        if self.extrasList.count > 0 {
+            if self.extrasList[self.extrasIndex].priceType == 35{
+                if self.extrasPaxesList.count == 0 {
+                    self.extrasPaxesList = userDefaultsData.getPaxesList() ?? []
+                    self.transferPaxesList = userDefaultsData.getPaxesList() ?? []
+                    
+                    for i in 0...self.extrasPaxesList.count - 1 {
+                        self.extrasPaxesList[i].isTapped = false
+                        self.extrasPaxCheckList.append(false)
                     }
-                    self.tableViewPax.reloadData()
-                }
-            }else{
-                tourName = self.transfersList[indexPath.row].desc ?? ""
-                self.transferIndex = indexPath.row
-                if let index = self.transferPaxesListSaved.firstIndex(where: {$0.tourName == self.excursionName && $0.extraName == tourName}){
-                    self.transfersPaxCheckList = self.transferPaxesListSaved[index].CheckList ?? []
-                    for i in 0...self.transfersPaxCheckList.count - 1 {
-                        self.transferPaxesList[i].isTapped = self.transfersPaxCheckList[i]
+                    
+                    for i in 0...self.transferPaxesList.count - 1 {
+                        self.transferPaxesList[i].isTapped = false
+                        self.transfersPaxCheckList.append(false)
                     }
-                    self.tableViewPax.reloadData()
+                }
+                
+                var tourName = ""
+                if self.extrasList.count > 0 && self.buttonExtraTapped == true {
+                    tourName = self.extrasList[indexPath.row].desc ?? ""
+                    self.extrasIndex = indexPath.row
+                    if let index = self.extraPaxesListSaved.firstIndex(where: {$0.tourName == self.excursionName && $0.extraName == tourName}){
+                        self.extrasPaxCheckList = self.extraPaxesListSaved[index].CheckList ?? []
+                        for i in 0...self.extrasPaxCheckList.count - 1 {
+                            self.extrasPaxesList[i].isTapped = self.extrasPaxCheckList[i]
+                        }
+                        self.tableViewPax.reloadData()
+                    }
+                }else{
+                    tourName = self.transfersList[indexPath.row].desc ?? ""
+                    self.transferIndex = indexPath.row
+                    if let index = self.transferPaxesListSaved.firstIndex(where: {$0.tourName == self.excursionName && $0.extraName == tourName}){
+                        self.transfersPaxCheckList = self.transferPaxesListSaved[index].CheckList ?? []
+                        for i in 0...self.transfersPaxCheckList.count - 1 {
+                            self.transferPaxesList[i].isTapped = self.transfersPaxCheckList[i]
+                        }
+                        self.tableViewPax.reloadData()
+                    }
                 }
             }
         }

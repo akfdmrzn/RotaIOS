@@ -39,7 +39,7 @@ extension ZReportPaymentViewController : UITableViewDelegate, UITableViewDataSou
         cell.labelVoucherNo.text = self.zReportPaymentList[indexPath.row].voucherNo
         cell.labelDate.text = self.zReportPaymentList[indexPath.row].saleDate
         cell.labelCurrency.text = self.zReportPaymentList[indexPath.row].paymentCurrencyDesc
-        cell.labelID.text = String(self.zReportPaymentList[indexPath.row].iD ?? 0)
+        cell.labelID.text = String(self.zReportPaymentList[indexPath.row].paymentId ?? 0)
         cell.labelType.text = self.zReportPaymentList[indexPath.row].paymentType
         cell.labelAmount.text = String(self.zReportPaymentList[indexPath.row].paymentAmount ?? 0.0)
         return cell

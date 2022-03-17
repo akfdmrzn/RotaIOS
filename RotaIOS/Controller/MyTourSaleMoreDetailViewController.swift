@@ -23,7 +23,7 @@ class MyTourSaleMoreDetailViewController: UIViewController {
         self.viewMyTourSaleMoreDetailView.labelExcursionGuide.text = self.tourDetailListInMoreDetailPage?.excKokartGuide
         self.viewMyTourSaleMoreDetailView.labelDeployingGuide.text = self.tourDetailListInMoreDetailPage?.delGuide
         self.viewMyTourSaleMoreDetailView.labelCancelNote.text = self.tourDetailListInMoreDetailPage?.note
-        if self.tourDetailListInMoreDetailPage?.tourDateStr != nil {
+        if self.tourDetailListInMoreDetailPage?.cancelDate != nil {
             self.viewMyTourSaleMoreDetailView.labelCancelVoucher.text = self.tourDetailListInMoreDetailPage?.tourVoucher
         }else{
             self.viewMyTourSaleMoreDetailView.labelCancelVoucher.text = ""

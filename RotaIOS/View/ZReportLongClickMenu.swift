@@ -68,6 +68,8 @@ class ZReportLongClickMenu : UIView {
         self.buttonCopyVoucher.isHidden = true
         self.buttonAddSaleNote.isHidden = true
         
+        buttonColor(isEnable: false, button: self.buttonReprint)
+        
         let gesture = UITapGestureRecognizer(target: self, action: #selector(removeView))
         self.viewRemoveView.addGestureRecognizer(gesture)
     }

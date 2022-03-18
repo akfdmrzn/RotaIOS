@@ -10,6 +10,8 @@ import Foundation
 class ConfigManager {
     
     static let shared = ConfigManager()
+    private var appType: AppType
+    private var testConfiguration: Bool
     
     private init() {
         switch Bundle.main.bundleIdentifier {
@@ -27,9 +29,6 @@ class ConfigManager {
         #endif
     }
     
-    private var appType: AppType
-    private var testConfiguration: Bool
-    
     func getAppType() -> AppType {
         return appType
     }
@@ -40,15 +39,6 @@ class ConfigManager {
             return testConfiguration ? ConfigConstants.Rota_IOS_TR_TEST_URL : ConfigConstants.Rota_IOS_TR_PROD_URL
         case .RotaEgypt:
             return testConfiguration ? ConfigConstants.Rota_IOS_EGYPT_TEST_URL : ConfigConstants.Rota_IOS_EGYPT_PROD_URL
-        }
-    }
-    
-    func getAppName() -> String {
-        switch appType {
-        case .RotaTR:
-            return ConfigConstants.Rota_IOS_TR_APP_NAME
-        case .RotaEgypt:
-            return ConfigConstants.Rota_IOS_EGYPT_APP_NAME
         }
     }
     

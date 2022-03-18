@@ -265,16 +265,7 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
           //  self.buttonTappedCount = 2
             
             if self.saveButtonTappet == false && self.extraAndTransTotalPrice != 0.0 {
-                self.viewAppointMentBarCutomView.selectedIndex.row = 2
-                let alert = UIAlertController.init(title: "WARNING", message: "Please Clicked Save Button", preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-                present(alert, animated: true, completion: nil)
-                return
-            }
-            
-            if self.saveButtonTappet == false && self.extraPaxesList.count > 0{
-                
-                self.viewAppointMentBarCutomView.selectedIndex.row = 2
+                self.viewFooterViewCustomView.counter = 2
                 let alert = UIAlertController.init(title: "WARNING", message: "Please Clicked Save Button", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                 present(alert, animated: true, completion: nil)
@@ -283,12 +274,40 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
             
             if self.saveButtonTappet == false && self.extraPaxesList.count > 0 {
                 
-                self.viewAppointMentBarCutomView.selectedIndex.row = 2
+                self.viewFooterViewCustomView.counter = 2
                 let alert = UIAlertController.init(title: "WARNING", message: "Please Clicked Save Button", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                 present(alert, animated: true, completion: nil)
                 return
             }
+            
+            if self.saveButtonTappet == false && self.transferPaxesList.count > 0 {
+                
+                self.viewFooterViewCustomView.counter = 2
+                let alert = UIAlertController.init(title: "WARNING", message: "Please Clicked Save Button", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                return
+            }
+            
+            if self.saveButtonTappet == false && self.savedExtrasList.count > 0 {
+                
+                self.viewFooterViewCustomView.counter = 2
+                let alert = UIAlertController.init(title: "WARNING", message: "Please Clicked Save Button", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                return
+            }
+            
+            if self.saveButtonTappet == false && self.savedTransFerList.count > 0 {
+                
+                self.viewFooterViewCustomView.counter = 2
+                let alert = UIAlertController.init(title: "WARNING", message: "Please Clicked Save Button", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                return
+            }
+            
         }
         
         self.viewExcursionView.scrollView.contentOffset = CGPoint(x: 0, y: 0)
@@ -1026,7 +1045,25 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
                 return
             }
             
-            if self.saveButtonTappet == false && self.extraPaxesList.count > 0 {
+            if self.saveButtonTappet == false && self.transferPaxesList.count > 0 {
+                
+                self.viewAppointMentBarCutomView.selectedIndex.row = 2
+                let alert = UIAlertController.init(title: "WARNING", message: "Please Clicked Save Button", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                return
+            }
+            
+            if self.saveButtonTappet == false && self.savedExtrasList.count > 0{
+                
+                self.viewAppointMentBarCutomView.selectedIndex.row = 2
+                let alert = UIAlertController.init(title: "WARNING", message: "Please Clicked Save Button", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                return
+            }
+            
+            if self.saveButtonTappet == false && self.savedTransFerList.count > 0 {
                 
                 self.viewAppointMentBarCutomView.selectedIndex.row = 2
                 let alert = UIAlertController.init(title: "WARNING", message: "Please Clicked Save Button", preferredStyle: UIAlertController.Style.alert)

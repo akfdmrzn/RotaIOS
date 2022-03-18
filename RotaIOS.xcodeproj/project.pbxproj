@@ -177,6 +177,8 @@
 		BF44C9E32640023800238035 /* ProceedPageCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44C9E12640023800238035 /* ProceedPageCustomView.swift */; };
 		BF44C9E42640023800238035 /* ProceedPageCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF44C9E22640023800238035 /* ProceedPageCustomView.xib */; };
 		BF75706D26753C2E002EA494 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75706C26753C2E002EA494 /* BaseViewController.swift */; };
+		BFEE6A3A27E4B7D8006352E6 /* RussianRefundConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEE6A3927E4B7D8006352E6 /* RussianRefundConditions.swift */; };
+		BFEE6A3D27E4B8B8006352E6 /* MarketIdEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEE6A3C27E4B8B8006352E6 /* MarketIdEnums.swift */; };
 		BFFC579C27E350FA001F89F0 /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFC579B27E350FA001F89F0 /* ConfigManager.swift */; };
 		BFFC579F27E355AF001F89F0 /* ConfigConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFC579E27E355AF001F89F0 /* ConfigConstants.swift */; };
 		BFFC581B27E3EBBC001F89F0 /* GoogleService-Info-RotaTR.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFFC581A27E3EBBC001F89F0 /* GoogleService-Info-RotaTR.plist */; };
@@ -577,6 +579,8 @@
 		BF44C9E12640023800238035 /* ProceedPageCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProceedPageCustomView.swift; sourceTree = "<group>"; };
 		BF44C9E22640023800238035 /* ProceedPageCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProceedPageCustomView.xib; sourceTree = "<group>"; };
 		BF75706C26753C2E002EA494 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BFEE6A3927E4B7D8006352E6 /* RussianRefundConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RussianRefundConditions.swift; sourceTree = "<group>"; };
+		BFEE6A3C27E4B8B8006352E6 /* MarketIdEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketIdEnums.swift; sourceTree = "<group>"; };
 		BFFC579B27E350FA001F89F0 /* ConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
 		BFFC579E27E355AF001F89F0 /* ConfigConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigConstants.swift; sourceTree = "<group>"; };
 		BFFC581827E3E89D001F89F0 /* ConfigRotaIOSTR.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigRotaIOSTR.xcconfig; sourceTree = "<group>"; };
@@ -1151,6 +1155,8 @@
 		BF44C8D42640008300238035 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				BFEE6A3B27E4B8A5006352E6 /* Enums */,
+				BFEE6A3827E4B7BF006352E6 /* RefundConditions */,
 				BFFC57A027E359B2001F89F0 /* Firebase */,
 				BFFC579D27E3559D001F89F0 /* Config */,
 				D986E5E527AC0EC30032D756 /* ZebraSDK */,
@@ -1318,6 +1324,22 @@
 				D97EE01F277519FD00683E66 /* ProceedPaxTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		BFEE6A3827E4B7BF006352E6 /* RefundConditions */ = {
+			isa = PBXGroup;
+			children = (
+				BFEE6A3927E4B7D8006352E6 /* RussianRefundConditions.swift */,
+			);
+			path = RefundConditions;
+			sourceTree = "<group>";
+		};
+		BFEE6A3B27E4B8A5006352E6 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				BFEE6A3C27E4B8B8006352E6 /* MarketIdEnums.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		BFFC579D27E3559D001F89F0 /* Config */ = {
@@ -1772,6 +1794,7 @@
 				A97E530B27D62E9900044B78 /* GetSteps_ArrDepH2HResponseModel.swift in Sources */,
 				D9FD64EF273818C3009B6619 /* GetCreateZReportResponseModel.swift in Sources */,
 				BF44C9CE2640022600238035 /* StepsPageTableViewCell.swift in Sources */,
+				BFEE6A3A27E4B7D8006352E6 /* RussianRefundConditions.swift in Sources */,
 				A97E531327D62EF800044B78 /* GetStepDetail_IndShopSupplierResponseModel.swift in Sources */,
 				A96A532D27C79A5600611475 /* SaveGuideMeetingTimeAndReportResponseModel.swift in Sources */,
 				D9956BFC26D7D31C006CFC6D /* GetVoucherDetailResponseModel.swift in Sources */,
@@ -1819,6 +1842,7 @@
 				D97EE02D277DF1A900683E66 /* GetSaveMobileSaleRequestModel.swift in Sources */,
 				A9C674F2277F490D00536F21 /* GetArrAndDepHotelListForMobileResponseModel.swift in Sources */,
 				A9C674FE277F4D9700536F21 /* GetIndShopHotelListForMobileResponseModel.swift in Sources */,
+				BFEE6A3D27E4B8B8006352E6 /* MarketIdEnums.swift in Sources */,
 				BFFC579F27E355AF001F89F0 /* ConfigConstants.swift in Sources */,
 				A9C0344B27980ED9000AA4DD /* UpdateNoShowResponseModel.swift in Sources */,
 				BF44C8F2264000E900238035 /* GetTokenResponseModel.swift in Sources */,
@@ -2169,7 +2193,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8.5;
+				CURRENT_PROJECT_VERSION = 8.6;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
 				INFOPLIST_FILE = RotaIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2183,7 +2207,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIosTRMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/akifdemirezen/Desktop/Rota/RotaIOS/Util/RotaIOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/yasindalkilic/Desktop/RotaiOS/RotaIOS/Util/RotaIOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2197,7 +2221,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8.5;
+				CURRENT_PROJECT_VERSION = 8.6;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
 				INFOPLIST_FILE = RotaIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2211,7 +2235,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIosTRMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/akifdemirezen/Desktop/Rota/RotaIOS/Util/RotaIOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/yasindalkilic/Desktop/RotaiOS/RotaIOS/Util/RotaIOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

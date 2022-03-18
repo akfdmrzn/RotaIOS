@@ -13,6 +13,7 @@ target 'RotaIOS' do
     pod  'DropDown'
     pod 'IQKeyboardManagerSwift'
     pod 'Firebase/Analytics'
+    pod 'Firebase/Messaging'
     pod 'PureLayout'
     
   target 'RotaIOSTests' do

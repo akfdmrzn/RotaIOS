@@ -101,7 +101,6 @@
 		A9E3E0C82770B0F9004DF892 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E3E0C72770B0F9004DF892 /* TasksView.swift */; };
 		BF44C87B263FF80000238035 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44C87A263FF80000238035 /* AppDelegate.swift */; };
 		BF44C87F263FF80000238035 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44C87E263FF80000238035 /* ViewController.swift */; };
-		BF44C884263FF80100238035 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = BF44C883263FF80100238035 /* Contents.json */; };
 		BF44C887263FF80100238035 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF44C885263FF80100238035 /* LaunchScreen.storyboard */; };
 		BF44C892263FF80200238035 /* RotaIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44C891263FF80200238035 /* RotaIOSTests.swift */; };
 		BF44C89D263FF80200238035 /* RotaIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44C89C263FF80200238035 /* RotaIOSUITests.swift */; };
@@ -178,7 +177,10 @@
 		BF44C9E32640023800238035 /* ProceedPageCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44C9E12640023800238035 /* ProceedPageCustomView.swift */; };
 		BF44C9E42640023800238035 /* ProceedPageCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF44C9E22640023800238035 /* ProceedPageCustomView.xib */; };
 		BF75706D26753C2E002EA494 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75706C26753C2E002EA494 /* BaseViewController.swift */; };
-		BFB977ED26B6F25400F0DD6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFB977EC26B6F25400F0DD6D /* GoogleService-Info.plist */; };
+		BFFC579C27E350FA001F89F0 /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFC579B27E350FA001F89F0 /* ConfigManager.swift */; };
+		BFFC579F27E355AF001F89F0 /* ConfigConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFC579E27E355AF001F89F0 /* ConfigConstants.swift */; };
+		BFFC581B27E3EBBC001F89F0 /* GoogleService-Info-RotaTR.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFFC581A27E3EBBC001F89F0 /* GoogleService-Info-RotaTR.plist */; };
+		BFFC581D27E3EC91001F89F0 /* GoogleService-Info-RotaEGYPT.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFFC581C27E3EC91001F89F0 /* GoogleService-Info-RotaEGYPT.plist */; };
 		D900406F271722B800DDE088 /* DailyReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D900406D271722B800DDE088 /* DailyReportViewController.swift */; };
 		D9004070271722B800DDE088 /* DailyReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D900406E271722B800DDE088 /* DailyReportViewController.xib */; };
 		D9004074271722E200DDE088 /* DailyReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9004073271722E200DDE088 /* DailyReportView.swift */; };
@@ -392,9 +394,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		232B84973BB79F5D835AE5EB /* Pods-RotaIOS-RotaIOSUITests.rotaiostrtest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS-RotaIOSUITests.rotaiostrtest.xcconfig"; path = "Target Support Files/Pods-RotaIOS-RotaIOSUITests/Pods-RotaIOS-RotaIOSUITests.rotaiostrtest.xcconfig"; sourceTree = "<group>"; };
 		4D9D34BC74446C218503868A /* Pods-RotaIOS-RotaIOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS-RotaIOSUITests.release.xcconfig"; path = "Target Support Files/Pods-RotaIOS-RotaIOSUITests/Pods-RotaIOS-RotaIOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		538B1F7826F2A0ABE15360A5 /* Pods-RotaIOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOSTests.release.xcconfig"; path = "Target Support Files/Pods-RotaIOSTests/Pods-RotaIOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		5C206E9BDFBF1628D97964A4 /* Pods-RotaIOSTests.rotaiosegypttest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOSTests.rotaiosegypttest.xcconfig"; path = "Target Support Files/Pods-RotaIOSTests/Pods-RotaIOSTests.rotaiosegypttest.xcconfig"; sourceTree = "<group>"; };
 		783C07564E28FA3CD7B16983 /* Pods-RotaIOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOSTests.debug.xcconfig"; path = "Target Support Files/Pods-RotaIOSTests/Pods-RotaIOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8109CDAE677CFEA6B6E1D7FC /* Pods-RotaIOS.rotaiosegypttest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS.rotaiosegypttest.xcconfig"; path = "Target Support Files/Pods-RotaIOS/Pods-RotaIOS.rotaiosegypttest.xcconfig"; sourceTree = "<group>"; };
+		A4967B45886E8DAB32B9C334 /* Pods-RotaIOS.rotaiostrtest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS.rotaiostrtest.xcconfig"; path = "Target Support Files/Pods-RotaIOS/Pods-RotaIOS.rotaiostrtest.xcconfig"; sourceTree = "<group>"; };
 		A4F2F9223A9AE4B71EBB1F34 /* Pods-RotaIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS.debug.xcconfig"; path = "Target Support Files/Pods-RotaIOS/Pods-RotaIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A91D82D527988FCF0018C0A9 /* TasksPaxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPaxTableViewCell.swift; sourceTree = "<group>"; };
 		A91D82D627988FCF0018C0A9 /* TasksPaxTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksPaxTableViewCell.xib; sourceTree = "<group>"; };
@@ -486,10 +492,10 @@
 		A9C6750927877D1C00536F21 /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
 		A9E3E0C72770B0F9004DF892 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		B501ED32EF6379402A0E4FCC /* Pods_RotaIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RotaIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE6739580D5B45F3AD356964 /* Pods-RotaIOS-RotaIOSUITests.rotaiosegypttest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS-RotaIOSUITests.rotaiosegypttest.xcconfig"; path = "Target Support Files/Pods-RotaIOS-RotaIOSUITests/Pods-RotaIOS-RotaIOSUITests.rotaiosegypttest.xcconfig"; sourceTree = "<group>"; };
 		BF44C877263FF80000238035 /* RotaIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RotaIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF44C87A263FF80000238035 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF44C87E263FF80000238035 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BF44C883263FF80100238035 /* Contents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Contents.json; path = Assets.xcassets/AppIcon.appiconset/Contents.json; sourceTree = "<group>"; };
 		BF44C886263FF80100238035 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF44C888263FF80100238035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF44C88D263FF80200238035 /* RotaIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RotaIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -571,8 +577,15 @@
 		BF44C9E12640023800238035 /* ProceedPageCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProceedPageCustomView.swift; sourceTree = "<group>"; };
 		BF44C9E22640023800238035 /* ProceedPageCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProceedPageCustomView.xib; sourceTree = "<group>"; };
 		BF75706C26753C2E002EA494 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		BFB977EC26B6F25400F0DD6D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BFFC579B27E350FA001F89F0 /* ConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
+		BFFC579E27E355AF001F89F0 /* ConfigConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigConstants.swift; sourceTree = "<group>"; };
+		BFFC581827E3E89D001F89F0 /* ConfigRotaIOSTR.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigRotaIOSTR.xcconfig; sourceTree = "<group>"; };
+		BFFC581927E3E91C001F89F0 /* ConfigRotaIOSEgypt.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigRotaIOSEgypt.xcconfig; sourceTree = "<group>"; };
+		BFFC581A27E3EBBC001F89F0 /* GoogleService-Info-RotaTR.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-RotaTR.plist"; sourceTree = "<group>"; };
+		BFFC581C27E3EC91001F89F0 /* GoogleService-Info-RotaEGYPT.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-RotaEGYPT.plist"; sourceTree = "<group>"; };
+		BFFC581E27E4A1BC001F89F0 /* RotaIOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RotaIOS.entitlements; sourceTree = "<group>"; };
 		CC6AB70F69DDBF5F362414C6 /* Pods-RotaIOS-RotaIOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS-RotaIOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-RotaIOS-RotaIOSUITests/Pods-RotaIOS-RotaIOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D7B5BF43DF70EF757480D7AA /* Pods-RotaIOSTests.rotaiostrtest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOSTests.rotaiostrtest.xcconfig"; path = "Target Support Files/Pods-RotaIOSTests/Pods-RotaIOSTests.rotaiostrtest.xcconfig"; sourceTree = "<group>"; };
 		D900406D271722B800DDE088 /* DailyReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReportViewController.swift; sourceTree = "<group>"; };
 		D900406E271722B800DDE088 /* DailyReportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyReportViewController.xib; sourceTree = "<group>"; };
 		D9004073271722E200DDE088 /* DailyReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReportView.swift; sourceTree = "<group>"; };
@@ -857,8 +870,8 @@
 		BF44C879263FF80000238035 /* RotaIOS */ = {
 			isa = PBXGroup;
 			children = (
+				BFFC581E27E4A1BC001F89F0 /* RotaIOS.entitlements */,
 				D986E5FE27AD371B0032D756 /* Assets.xcassets */,
-				BFB977EC26B6F25400F0DD6D /* GoogleService-Info.plist */,
 				BF44C9132640011100238035 /* Cell */,
 				BF44C8DF264000D900238035 /* View */,
 				BF44C8D62640009500238035 /* Networking */,
@@ -870,7 +883,6 @@
 				BF44C87A263FF80000238035 /* AppDelegate.swift */,
 				BF44C87E263FF80000238035 /* ViewController.swift */,
 				BF44C8DA264000C700238035 /* Main.storyboard */,
-				BF44C883263FF80100238035 /* Contents.json */,
 				BF44C885263FF80100238035 /* LaunchScreen.storyboard */,
 				BF44C888263FF80100238035 /* Info.plist */,
 				D9DD9F9A27C2EA8800BF73AE /* LaunchViewController.swift */,
@@ -1139,6 +1151,8 @@
 		BF44C8D42640008300238035 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				BFFC57A027E359B2001F89F0 /* Firebase */,
+				BFFC579D27E3559D001F89F0 /* Config */,
 				D986E5E527AC0EC30032D756 /* ZebraSDK */,
 				BF44C9C0264001F800238035 /* PresentationController.swift */,
 				BF44C90E2640010200238035 /* Defaults.swift */,
@@ -1306,6 +1320,42 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		BFFC579D27E3559D001F89F0 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				BFFC579B27E350FA001F89F0 /* ConfigManager.swift */,
+				BFFC579E27E355AF001F89F0 /* ConfigConstants.swift */,
+				BFFC581827E3E89D001F89F0 /* ConfigRotaIOSTR.xcconfig */,
+				BFFC581927E3E91C001F89F0 /* ConfigRotaIOSEgypt.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		BFFC57A027E359B2001F89F0 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				BFFC57A227E359C2001F89F0 /* RotaIOSEGYPT */,
+				BFFC57A127E359B7001F89F0 /* RotaIOSTR */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		BFFC57A127E359B7001F89F0 /* RotaIOSTR */ = {
+			isa = PBXGroup;
+			children = (
+				BFFC581A27E3EBBC001F89F0 /* GoogleService-Info-RotaTR.plist */,
+			);
+			path = RotaIOSTR;
+			sourceTree = "<group>";
+		};
+		BFFC57A227E359C2001F89F0 /* RotaIOSEGYPT */ = {
+			isa = PBXGroup;
+			children = (
+				BFFC581C27E3EC91001F89F0 /* GoogleService-Info-RotaEGYPT.plist */,
+			);
+			path = RotaIOSEGYPT;
+			sourceTree = "<group>";
+		};
 		D0865CFF1BE0D1E5A877836C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1315,6 +1365,12 @@
 				4D9D34BC74446C218503868A /* Pods-RotaIOS-RotaIOSUITests.release.xcconfig */,
 				783C07564E28FA3CD7B16983 /* Pods-RotaIOSTests.debug.xcconfig */,
 				538B1F7826F2A0ABE15360A5 /* Pods-RotaIOSTests.release.xcconfig */,
+				8109CDAE677CFEA6B6E1D7FC /* Pods-RotaIOS.rotaiosegypttest.xcconfig */,
+				A4967B45886E8DAB32B9C334 /* Pods-RotaIOS.rotaiostrtest.xcconfig */,
+				BE6739580D5B45F3AD356964 /* Pods-RotaIOS-RotaIOSUITests.rotaiosegypttest.xcconfig */,
+				232B84973BB79F5D835AE5EB /* Pods-RotaIOS-RotaIOSUITests.rotaiostrtest.xcconfig */,
+				5C206E9BDFBF1628D97964A4 /* Pods-RotaIOSTests.rotaiosegypttest.xcconfig */,
+				D7B5BF43DF70EF757480D7AA /* Pods-RotaIOSTests.rotaiostrtest.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1483,12 +1539,10 @@
 				D97FB58726C075940099F28B /* MyTourSaleDetailPageViewController.xib in Resources */,
 				BF44C887263FF80100238035 /* LaunchScreen.storyboard in Resources */,
 				BF44C95B2640018B00238035 /* MyTourSaleViewController.xib in Resources */,
-				BFB977ED26B6F25400F0DD6D /* GoogleService-Info.plist in Resources */,
 				BF44C95C2640018B00238035 /* OfflineSalesViewController.xib in Resources */,
 				D97FB5B526C6ABC10099F28B /* MyShoppinSaleDetailViewController.xib in Resources */,
 				D991469326D68B620010E74F /* CancelVoucherViewController.xib in Resources */,
 				D97EE00F276ABFB700683E66 /* ExcProceedCustomView.xib in Resources */,
-				BF44C884263FF80100238035 /* Contents.json in Resources */,
 				BF44C984264001B000238035 /* MainTextCustomView.xib in Resources */,
 				BF44C9A6264001CE00238035 /* CheckBoxView.xib in Resources */,
 				D9FD64DD27355EFF009B6619 /* ZReportPreviewViewController.xib in Resources */,
@@ -1534,6 +1588,7 @@
 				D95C204026F216B8007D1506 /* SpeakingHoursTableViewCell.xib in Resources */,
 				A9C674E827745D9900536F21 /* TasksHotelTableViewCell.xib in Resources */,
 				A97E531B27D630D400044B78 /* TasksStepsViewController.xib in Resources */,
+				BFFC581B27E3EBBC001F89F0 /* GoogleService-Info-RotaTR.plist in Resources */,
 				D93157732700ADBB000C91AD /* ZReportLongClickMenu.xib in Resources */,
 				D97FB5BB26C6B5480099F28B /* MyShopingSalesDetailTableViewCell.xib in Resources */,
 				A97E534527DB69B800044B78 /* PickerView.xib in Resources */,
@@ -1543,6 +1598,7 @@
 				D931575F26FB58A3000C91AD /* ZReportPriviewTableViewCell.xib in Resources */,
 				D9561A3C269DF27E00AA75E5 /* AnnoucmentsViewController.xib in Resources */,
 				D97FB59926C15F650099F28B /* MyTourSalesDetailPageTableViewCell.xib in Resources */,
+				BFFC581D27E3EC91001F89F0 /* GoogleService-Info-RotaEGYPT.plist in Resources */,
 				D9004070271722B800DDE088 /* DailyReportViewController.xib in Resources */,
 				A91D82D827988FCF0018C0A9 /* TasksPaxTableViewCell.xib in Resources */,
 				D93157892704892B000C91AD /* ZReportRefundViewController.xib in Resources */,
@@ -1763,6 +1819,7 @@
 				D97EE02D277DF1A900683E66 /* GetSaveMobileSaleRequestModel.swift in Sources */,
 				A9C674F2277F490D00536F21 /* GetArrAndDepHotelListForMobileResponseModel.swift in Sources */,
 				A9C674FE277F4D9700536F21 /* GetIndShopHotelListForMobileResponseModel.swift in Sources */,
+				BFFC579F27E355AF001F89F0 /* ConfigConstants.swift in Sources */,
 				A9C0344B27980ED9000AA4DD /* UpdateNoShowResponseModel.swift in Sources */,
 				BF44C8F2264000E900238035 /* GetTokenResponseModel.swift in Sources */,
 				D9FD64E32737F8EA009B6619 /* GetZReportPreviewRequestModel.swift in Sources */,
@@ -1905,6 +1962,7 @@
 				D95C203C26F20428007D1506 /* GetSpeakTimeForMobileRequestModel.swift in Sources */,
 				A97E52F727CFFC9500044B78 /* TasksTourDetailView.swift in Sources */,
 				D9956C0826DE2E6E006CFC6D /* GetCalculateCancelFeeResponseModel.swift in Sources */,
+				BFFC579C27E350FA001F89F0 /* ConfigManager.swift in Sources */,
 				A9C67506278744B800536F21 /* TasksCustomView.swift in Sources */,
 				D994FBDC2756377F003564F3 /* ExcSelectCustomView.swift in Sources */,
 				A97E530327D62C5900044B78 /* GetStepDetail_IndShopSupplierRequestModel.swift in Sources */,
@@ -2107,8 +2165,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A4F2F9223A9AE4B71EBB1F34 /* Pods-RotaIOS.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-TR";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8.5;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
@@ -2122,7 +2181,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/RotaIOS/Util",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIosMobile;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIosTRMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/akifdemirezen/Desktop/Rota/RotaIOS/Util/RotaIOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -2134,8 +2193,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FD6F5AC0F77BF0B44406EBCF /* Pods-RotaIOS.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-TR";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8.5;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
@@ -2149,7 +2209,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/RotaIOS/Util",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIosMobile;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIosTRMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/akifdemirezen/Desktop/Rota/RotaIOS/Util/RotaIOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -2245,6 +2305,276 @@
 			};
 			name = Release;
 		};
+		BFFC57FB27E3E11E001F89F0 /* RotaIOSTRTest */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFFC581827E3E89D001F89F0 /* ConfigRotaIOSTR.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RotaIOSTRTest;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = RotaIOSTRTest;
+		};
+		BFFC57FC27E3E11E001F89F0 /* RotaIOSTRTest */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4967B45886E8DAB32B9C334 /* Pods-RotaIOS.rotaiostrtest.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-TR";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8.5;
+				DEVELOPMENT_TEAM = X9CFQGNH8N;
+				INFOPLIST_FILE = RotaIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RotaIOS/Util",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIosTRMobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RotaIOSTRTest;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/akifdemirezen/Desktop/Rota/RotaIOS/Util/RotaIOS-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = RotaIOSTRTest;
+		};
+		BFFC57FD27E3E11E001F89F0 /* RotaIOSTRTest */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7B5BF43DF70EF757480D7AA /* Pods-RotaIOSTests.rotaiostrtest.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X9CFQGNH8N;
+				INFOPLIST_FILE = RotaIOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIos.RotaIOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RotaIOS.app/RotaIOS";
+			};
+			name = RotaIOSTRTest;
+		};
+		BFFC57FE27E3E11E001F89F0 /* RotaIOSTRTest */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 232B84973BB79F5D835AE5EB /* Pods-RotaIOS-RotaIOSUITests.rotaiostrtest.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X9CFQGNH8N;
+				INFOPLIST_FILE = RotaIOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIos.RotaIOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RotaIOS;
+			};
+			name = RotaIOSTRTest;
+		};
+		BFFC57FF27E3E12C001F89F0 /* RotaIOSEgyptTest */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFFC581927E3E91C001F89F0 /* ConfigRotaIOSEgypt.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RotaIOSEgyptTest;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = RotaIOSEgyptTest;
+		};
+		BFFC580027E3E12C001F89F0 /* RotaIOSEgyptTest */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8109CDAE677CFEA6B6E1D7FC /* Pods-RotaIOS.rotaiosegypttest.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Egypt";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8.5;
+				DEVELOPMENT_TEAM = X9CFQGNH8N;
+				INFOPLIST_FILE = RotaIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RotaIOS/Util",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIosEgyptMobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RotaIOSEgyptTest;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/akifdemirezen/Desktop/Rota/RotaIOS/Util/RotaIOS-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = RotaIOSEgyptTest;
+		};
+		BFFC580127E3E12C001F89F0 /* RotaIOSEgyptTest */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C206E9BDFBF1628D97964A4 /* Pods-RotaIOSTests.rotaiosegypttest.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X9CFQGNH8N;
+				INFOPLIST_FILE = RotaIOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIos.RotaIOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RotaIOS.app/RotaIOS";
+			};
+			name = RotaIOSEgyptTest;
+		};
+		BFFC580227E3E12C001F89F0 /* RotaIOSEgyptTest */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE6739580D5B45F3AD356964 /* Pods-RotaIOS-RotaIOSUITests.rotaiosegypttest.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X9CFQGNH8N;
+				INFOPLIST_FILE = RotaIOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIos.RotaIOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RotaIOS;
+			};
+			name = RotaIOSEgyptTest;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2252,6 +2582,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF44C89F263FF80200238035 /* Debug */,
+				BFFC57FF27E3E12C001F89F0 /* RotaIOSEgyptTest */,
+				BFFC57FB27E3E11E001F89F0 /* RotaIOSTRTest */,
 				BF44C8A0263FF80200238035 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -2261,6 +2593,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF44C8A2263FF80200238035 /* Debug */,
+				BFFC580027E3E12C001F89F0 /* RotaIOSEgyptTest */,
+				BFFC57FC27E3E11E001F89F0 /* RotaIOSTRTest */,
 				BF44C8A3263FF80200238035 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -2270,6 +2604,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF44C8A5263FF80200238035 /* Debug */,
+				BFFC580127E3E12C001F89F0 /* RotaIOSEgyptTest */,
+				BFFC57FD27E3E11E001F89F0 /* RotaIOSTRTest */,
 				BF44C8A6263FF80200238035 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -2279,6 +2615,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF44C8A8263FF80200238035 /* Debug */,
+				BFFC580227E3E12C001F89F0 /* RotaIOSEgyptTest */,
+				BFFC57FE27E3E11E001F89F0 /* RotaIOSTRTest */,
 				BF44C8A9263FF80200238035 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

@@ -15,8 +15,7 @@ public class NetworkManager {
     
     public static var networkConnectionEnabled = true
     private static let TIMEOUT_INTERVAL: TimeInterval = 300
-    //https://rota-uat-eg.odeontours.com  https://rota-uat.odeontours.com
-    public static var BASEURL = "https://rota-uat.odeontours.com"
+    public static var BASEURL = ConfigManager.shared.getBaseUrl()
     
     public static func sendRequest<T: Mappable>(url: String,endPoint: ServiceEndPoint, method: HTTPMethod = .post, requestModel: Mappable, indicatorEnabled: Bool = true,
                                          completion: @escaping(T) -> ()) {
@@ -57,7 +56,7 @@ public class NetworkManager {
                return
            }
            
-        guard let request = prepareRequest(url : "https://rota-uat.odeontours.com" ,endPoint: endPoint, method: method, requestModel: requestModel),
+        guard let request = prepareRequest(url : NetworkManager.BASEURL ,endPoint: endPoint, method: method, requestModel: requestModel),
                let viewController = UIApplication.getTopViewController()
                else { return }
            

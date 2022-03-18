@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>868373476574-m5ari4tdpq9volepcepis4n1vv400kl7.apps.googleusercontent.com</string>
+	<string>868373476574-kku1av4o8fkfu1qpbb05qt1n9dc2s5h5.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.868373476574-m5ari4tdpq9volepcepis4n1vv400kl7</string>
+	<string>com.googleusercontent.apps.868373476574-kku1av4o8fkfu1qpbb05qt1n9dc2s5h5</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBUMlAXB4_kgwJKRhFHV8uxBh7Tet7V0Mk</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.oti.rotaIosMobile</string>
+	<string>com.oti.rotaIosTRMobile</string>
 	<key>PROJECT_ID</key>
 	<string>my-project-1522849222218</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:868373476574:ios:49352dd28dfd107ae83e4f</string>
+	<string>1:868373476574:ios:03da46266bcbf3bde83e4f</string>
 	<key>DATABASE_URL</key>
 	<string>https://my-project-1522849222218.firebaseio.com</string>
 </dict>

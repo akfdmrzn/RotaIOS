@@ -135,7 +135,7 @@ class TasksPaxViewController: BaseViewController {
                 self.paxList.append(PaxList.init(index:0, paxName: "Name", ageGroup: "Age Group", incResNo: "Inc Res No", operator_: "Operator", voucherNo: "Voucher No", room: "Room", oprResNo: "Opr Res No", noShow: "Show", infoRep: "Info Rep", guideNote: "Note", check: false))
                 for item in response {
                     self.paxList.append(PaxList.init(index:0, paxName: item.name, ageGroup: item.ageGroup, incResNo: item.incResNo, operator_: item.operatorList, voucherNo: item.voucherNo, room: item.room, oprResNo: item.oprResNo, noShow: String(item.show), infoRep: item.infoRep, guideNote: item.note, check: item.show))
-                    self.noShowList.append(NoShowList.init(paxId: item.id, show: item.show))
+                    self.noShowList.append(NoShowList.init(paxId: item.paxId, show: item.show))
                 }
                 
             }else {
@@ -151,7 +151,7 @@ class TasksPaxViewController: BaseViewController {
                 self.paxList.append(PaxList.init(index:0, paxName: "Name", ageGroup: "Age Group", incResNo: "Inc Res No", operator_: "Operator", voucherNo: "Voucher No", room: "Room", oprResNo: "Opr Res No", noShow: "Show", infoRep: "Info Rep", guideNote: "-", check: false))
                 for item in response {
                     self.paxList.append(PaxList.init(index:0, paxName: item.name, ageGroup: item.ageGroup, incResNo: String(item.incResNo), operator_: item.operatorList, voucherNo: item.voucherNo, room: item.room, oprResNo: String(item.oprResNo), noShow: String(item.show), infoRep: item.infoRep, guideNote: "-", check: item.show))
-                    self.noShowList.append(NoShowList.init(paxId: item.id, show: item.show))
+                    self.noShowList.append(NoShowList.init(paxId: item.paxId, show: item.show))
                 }
                 
             }else {

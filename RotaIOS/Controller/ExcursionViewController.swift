@@ -556,6 +556,7 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
             self.constraintOnAddFunc()
             self.viewExcSelectCustomView?.excSelectDelegate = self
             if self.viewExcAddCustomView == nil || self.isTourChange == true || self.isPAxesListChange == true || self.paxesListIsEqual == false {
+                self.isPAxesListChange = false
                 self.tempPaxesList = userDefaultsData.getPaxesList() ?? self.tempPaxesList
                 self.viewFooterViewCustomView.labelAmount.text = "0.0"
                 if self.isTourChange == true {
@@ -1324,6 +1325,7 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
             }
             
             if self.viewExcAddCustomView == nil || self.isTourChange == true || self.isPAxesListChange == true || self.paxesListIsEqual == false{
+                self.isPAxesListChange = false
                 self.tempPaxesList = userDefaultsData.getPaxesList() ?? self.tempPaxesList
                 self.viewFooterViewCustomView.labelAmount.text = "0.0"
                 if self.isTourChange == true {

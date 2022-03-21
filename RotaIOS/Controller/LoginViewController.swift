@@ -32,7 +32,7 @@ final class LoginViewController : BaseViewController {
             }
         }*/
         self.viewLogin.textUsername.text = self.userName
-        self.viewLogin.textPassword.text = self.userName
+        self.viewLogin.textPassword.text = self.password
         self.viewLogin.textUsername.delegate = self
         self.viewLogin.textUsername.keyboardType = .numberPad
         self.viewLogin.textPassword.keyboardType = .numberPad
@@ -52,8 +52,7 @@ final class LoginViewController : BaseViewController {
    
         self.userName = self.viewLogin.textUsername.text ?? ""
         self.password = self.viewLogin.textPassword.text ?? ""
-        userDefaultsData.savePassword(id: self.password)
-        userDefaultsData.saveUserName(id: self.userName)
+        
         if Connectivity.isConnectedToInternet {
             print("connect")
             let createTokenRequestModel = CreateTokenRequestModel.init()
@@ -78,10 +77,10 @@ final class LoginViewController : BaseViewController {
                              NetworkManager.sendGetRequest(url:NetworkManager.BASEURL, endPoint: .GetGuideInfo, method: .get, parameters: getGuideInfRequestModel.requestPathString()) { (response : GetGuideInfoResponseModel) in
                                  
                                  if response.marketGroupId != nil {
-                                     
+                                     userDefaultsData.savePassword(id: self.password)
+                                     userDefaultsData.saveUserName(id: self.userName)
                                      userDefaultsData.saveMarketGruopId(marketGroupId: response.marketGroupId ?? 0)
                                      self.otiPushViewController(viewController: MainPAgeViewController())
-                                     
                                  }else{
                                      let alert = UIAlertController(title: "Error", message: "Token has not recived", preferredStyle: UIAlertController.Style.alert)
                                      alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))

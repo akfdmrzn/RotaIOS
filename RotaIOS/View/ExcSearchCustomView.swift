@@ -240,6 +240,7 @@ class ExcSearchCustomView : UIView {
                     self.excurSearchDelegate?.hotelorMarketChange(isChange: true)
                 }
                 self.viewHotelList.mainLabel.text = title
+                userDefaultsData.saveHotelName(hotelName: title)
                 let filtered = self.hotelList.filter{($0.text?.contains(title) ?? false)}
                 self.filteredHotelList = filtered
                 for listofArray in self.filteredHotelList {

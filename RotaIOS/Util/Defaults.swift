@@ -368,7 +368,7 @@ public class Defaults{
         if preferences.object(forKey: getIdentifier(type: .Password)) == nil {
             return nil
         }
-        let data:String = preferences.value(forKey: getIdentifier(type: .UserName)) as! String
+        let data:String = preferences.value(forKey: getIdentifier(type: .Password)) as! String
         return data
     }
     

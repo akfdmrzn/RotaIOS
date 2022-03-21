@@ -249,6 +249,7 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
     }
     
     func continueButtonTappedDelegate(tapped: Int) {
+        
         self.buttonTappedCount = tapped
         if self.buttonTappedCount == 2 || self.buttonTappedCount == 3{
             //self.buttonTappedCount = 2
@@ -530,7 +531,7 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
                 self.paxesListIsEqual = false
             }
             // =self.tempListofPaxes.filter{!self.sendingListofPaxes.contains($0)}
-            self.saveButtonTappet = false
+           // self.saveButtonTappet = false
             //  self.viewExcursionView.scrollView.contentOffset = CGPoint(x: 0, y: 0)
             if self.changeNumber != userDefaultsData.getTourList()?.count {
                 self.isTourChange = true
@@ -936,7 +937,7 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
                 }
             }
             
-            if self.isExcOrTransChange == true || self.viewExcProceedCustomView == nil || self.saveButtonTappet == true || self.isPAxesListChange == true{
+            if self.isExcOrTransChange == true || self.viewExcProceedCustomView == nil || self.isPAxesListChange == true{
                 
                 self.totalPrice = self.totalPriceBeforExtrasandTransfersAded + userDefaultsData.getExtrasandTransfersTotalPrice()
                 
@@ -1295,7 +1296,7 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
             }else{
                 self.paxesListIsEqual = false
             }
-            self.saveButtonTappet = false
+          // self.saveButtonTappet = false
             // self.viewExcursionView.scrollView.contentOffset = CGPoint(x: 0, y: 0)
             self.tourList = userDefaultsData.getTourList() ?? self.tourList
             self.viewFooterViewCustomView.printButton.isHidden = true
@@ -1701,7 +1702,7 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
                 }
             }
             
-            if self.isExcOrTransChange == true || self.viewExcProceedCustomView == nil || self.saveButtonTappet == true || self.isPAxesListChange == true{
+            if self.isExcOrTransChange == true || self.viewExcProceedCustomView == nil || self.isPAxesListChange == true{
                 
                 self.totalPrice = self.totalPriceBeforExtrasandTransfersAded + userDefaultsData.getExtrasandTransfersTotalPrice()
                 // TourPromotionDiscount service

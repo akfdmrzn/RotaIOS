@@ -9,4 +9,6 @@ import UIKit
 
 public enum MarketIdEnums: Int {
     case Russia = 2
+    
+    
 }

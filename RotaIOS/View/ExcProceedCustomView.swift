@@ -38,6 +38,7 @@ struct SendDataPrint : Encodable, Decodable{
     var steps : String?
     var addedNumber : Int?
     var refundConditionLabel : String?
+    var vatAmount : String?
 }
 
 struct PaymentType {
@@ -518,9 +519,7 @@ class ExcProceedCustomView: UIView{
                 self.balanceAmount = 0.0
                 
             }
-            
-            tempDiscount = Double(self.viewDiscount.mainText.text ?? "") ?? 0.0
-            self.viewBalanced.mainText.text = String(roundedBalanceValue - tempDiscount)
+            self.viewBalanced.mainText.text = String(roundedBalanceValue)
             
             if self.currencyId == 0 {
                 if let index = self.currencyList.firstIndex(where: {$0.text == self.viewCurrencyType.mainLabel.text} ){
@@ -963,8 +962,12 @@ class ExcProceedCustomView: UIView{
                 }
                
                 for i in 0...self.printList.count - 1{
+                    var vatAmount = 0.0
                     self.printList[i].total = String(Double(Darwin.round(100 * (perTourPriceList[i] - discountList[i])) / 100 ))
+                    vatAmount = Darwin.round((Double(self.printList[i].total ?? "") ?? 0.0) * 0.14) / 100
+                    self.printList[i].vatAmount = String(vatAmount)
                     self.printList[i].discount = String(Double(Darwin.round(100 * (discountList[i])) / 100 ))
+                   
                 }
             }
             
@@ -1194,9 +1197,10 @@ extension ExcProceedCustomView{
                 }
                 
                 if  ConfigManager.shared.getAppType() == .RotaTR {
+                    
                     self.printString = "^XA^PON^LL\(self.addedNumber + 200 + 1200)^XGMyFormat^FS^CF0,25^FO280,30^FDVoucher No^FS^CF0,25^FO280,60^FD\(self.printList[i].voucherNoTop ?? "")^FS^CF0,25^FO280,90^FDPrint Date : ^FS^CF0,25^FO400,90^FD\(self.printList[i].date ?? "")^FS^FO10,150^GB200,100,0^FS^CF0,25^FO20,170^FDTour^FS^FO210,150^GB340,100,0^FS^FO 220, 170 ^A 0, 20 ^FD\(self.printList[i].tourName ?? "")^FS^FO10,250^GB200,60,0^FS^CF0,25^FO20,270^FDPax Info^FS^FO210,250^GB340,60,0^FS^FO220, 270 ^A 0, 20 ^FD\(self.printList[i].paxInfo ?? "")^FS^FO10,310^GB200,60,0^FS^CF0,25^FO20,330^FDDate^FS^FO210,310^GB340,60,0^FS^FO 220, 330 ^A 0, 20 ^FD\(self.printList[i].tourDate ?? "")^FS^FO10,370^GB200,60,0^FS^CF0,25^FO20,390^FDConcept^FS^FO210,370^GB340,60,0^FS^FO 220, 390 ^A 0, 20 ^FDStandart^FS^FO10,430^GB200,60,0^FS^CF0,25^FO20,450^FDTransfer^FS^FO210,430^GB340,60,0^FS^FO 220, 450 ^A 0, 20 ^FD\(self.printList[i].transTourist ?? "")^FS^FO10,490^GB200,100,0^FS^CF0,25^FO20,510^FDHotel^FS^FO210,490^GB340,100,0^FS^FO 220, 510 ^A 0, 20 ^FD\(hotelNameFirstColumn)^FS^FO 220, 550 ^A 0, 20 ^FD\(hotelNameScondColumn)^FS^FO10,590^GB200,60,0^FS^CF0,25^FO20,610^FDRoom^FS^FO210,590^GB340,60,0^FS^FO 220, 610 ^A 0, 20 ^FD\(self.printList[i].room ?? "")^FS^FO10,650^GB200,60,0^FS^CF0,25^FO20,670^FDPick Up^FS^FO210,650^GB340,60,0^FS^FO 220, 670 ^A 0, 20 ^FD\(self.printList[i].pickUpTime ?? "")^FS^FO10,710^GB200,60,0^FS^CF0,25^FO20,730^FDPick Up Point^FS^FO210,710^GB340,60,0^FS^FO 220, 730 ^A 0, 20 ^FD-^FS^FO10,770^GB200,60,0^FS^CF0,25^FO20,790^FDName^FS^FO210,770^GB340,60,0^FS^FO 220, 790 ^A 0, 20 ^FD\(self.printList[i].paxName ?? "")^FS^FO10,830^GB200,60,0^FS^CF0,25^FO20,850^FDOperator^FS^FO210,830^GB340,60,0^FS^FO 220, 850 ^A 0, 20 ^FD\(self.printList[i].operatorName ?? "")^FS^FO10,890^GB200,60,0^FS^CF0,25^FO20,910^FDRes No^FS^FO210,890^GB340,60,0^FS^FO 220, 910 ^A 0, 20 ^FD\(self.printList[i].resNo ?? "")^FS^CF0,25^FO20,980^FDNet Total^FS^CF0,25^FO150,980^FD\(self.printList[i].total ?? "")^FS^CF0,25^FO20,1020^FDDiscount^FS^CF0,25^FO150,1020^FD\(self.printList[i].discount ?? "")^FS\(self.printList[i].tourPax ?? "")\(self.printList[i].paymentDetail ?? "")\(self.printList[i].extras ?? "")\(self.printList[i].transfers ?? "")\(self.printList[i].voucher ?? "")\(self.printList[i].refundConditionLabel ?? "")\(odeonLabel)^XZ"
                 }else if  ConfigManager.shared.getAppType() == .RotaEgypt {
-                     self.printString = "^XA^PON^LL\(self.addedNumber + 200 + 1200)^XGMyFormat^FS^CF0,25^FO280,30^FDVoucher No^FS^CF0,25^FO280,60^FD\(self.printList[i].voucherNoTop ?? "")^FS^CF0,25^FO280,90^FDPrint Date : ^FS^CF0,25^FO400,90^FD\(self.printList[i].date ?? "")^FS^FO10,150^GB200,100,0^FS^CF0,25^FO20,170^FDTour^FS^FO210,150^GB340,100,0^FS^FO 220, 170 ^A 0, 20 ^FD\(self.printList[i].tourName ?? "")^FS^FO10,250^GB200,60,0^FS^CF0,25^FO20,270^FDPick Up^FS^FO210,250^GB340,60,0^FS^FO220, 270 ^A 0, 20 ^FD\(self.printList[i].pickUpTime ?? "")^FS^FO10,310^GB200,60,0^FS^CF0,25^FO20,330^FDPick Up Point^FS^FO210,310^GB340,60,0^FS^FO 220, 330 ^A 0, 20 ^FD-^FS^FO10,370^GB200,60,0^FS^CF0,25^FO20,390^FDDate^FS^FO210,370^GB340,60,0^FS^FO 220, 390 ^A 0, 20 ^FD\(self.printList[i].tourDate ?? "")^FS^FO10,430^GB200,60,0^FS^CF0,25^FO20,450^FDConcept^FS^FO210,430^GB340,60,0^FS^FO 220, 450 ^A 0, 20 ^FDStandart^FS^FO10,490^GB200,60,0^FS^CF0,25^FO20,510^FDTransfer^FS^FO210,490^GB340,60,0^FS^FO 220, 510 ^A 0, 20 ^FD\(self.printList[i].transTourist ?? "")^FS^FO10,610^GB200,100,0^FS^CF0,25^FO20,630^FDHotel^FS^FO210,610^GB340,100,0^FS^FO 220, 630 ^A 0, 20 ^FD\(hotelNameFirstColumn)^FS^FO 220, 670 ^A 0, 20 ^FD\(hotelNameScondColumn)^FS^FO10,710^GB200,60,0^FS^CF0,25^FO20,730^FDRoom^FS^FO210,710^GB340,60,0^FS^FO 220, 730 ^A 0, 20 ^FD\(self.printList[i].room ?? "")^FS^FO10,770^GB200,60,0^FS^CF0,25^FO20,790^FDName^FS^FO210,770^GB340,60,0^FS^FO 220, 790 ^A 0, 20 ^FD\(self.printList[i].paxName ?? "")^FS^FO10,830^GB200,60,0^FS^CF0,25^FO20,850^FDOperator^FS^FO210,830^GB340,60,0^FS^FO 220, 850 ^A 0, 20 ^FD\(self.printList[i].operatorName ?? "")^FS^FO10,890^GB200,60,0^FS^CF0,25^FO20,910^FDRes No^FS^FO210,890^GB340,60,0^FS^FO 220, 910 ^A 0, 20 ^FD\(self.printList[i].resNo ?? "")^FS^CF0,25^FO20,980^FDNet Total^FS^CF0,25^FO150,980^FD\(self.printList[i].total ?? "")^FS^CF0,25^FO20,1020^FDDiscount^FS^CF0,25^FO150,1020^FD\(self.printList[i].discount ?? "")^FS\(self.printList[i].tourPax ?? "")\(self.printList[i].paymentDetail ?? "")\(self.printList[i].extras ?? "")\(self.printList[i].transfers ?? "")\(self.printList[i].voucher ?? "")\(self.printList[i].refundConditionLabel ?? "")\(odeonLabel)^XZ"
+                     self.printString = "^XA^PON^LL\(self.addedNumber + 200 + 1200)^XGMyFormat^FS^CF0,25^FO280,30^FDVoucher No^FS^CF0,25^FO280,60^FD\(self.printList[i].voucherNoTop ?? "")^FS^CF0,25^FO280,90^FDPrint Date : ^FS^CF0,25^FO400,90^FD\(self.printList[i].date ?? "")^FS^FO10,150^GB200,100,0^FS^CF0,25^FO20,170^FDTour^FS^FO210,150^GB340,100,0^FS^FO 220, 170 ^A 0, 20 ^FD\(self.printList[i].tourName ?? "")^FS^FO10,250^GB200,60,0^FS^CF0,25^FO20,270^FDPick Up^FS^FO210,250^GB340,60,0^FS^FO220, 270 ^A 0, 20 ^FD\(self.printList[i].pickUpTime ?? "")^FS^FO10,310^GB200,60,0^FS^CF0,25^FO20,330^FDPick Up Point^FS^FO210,310^GB340,60,0^FS^FO 220, 330 ^A 0, 20 ^FD-^FS^FO10,370^GB200,60,0^FS^CF0,25^FO20,390^FDDate^FS^FO210,370^GB340,60,0^FS^FO 220, 390 ^A 0, 20 ^FD\(self.printList[i].tourDate ?? "")^FS^FO10,430^GB200,60,0^FS^CF0,25^FO20,450^FDConcept^FS^FO210,430^GB340,60,0^FS^FO 220, 450 ^A 0, 20 ^FDStandart^FS^FO10,490^GB200,60,0^FS^CF0,25^FO20,510^FDTransfer^FS^FO210,490^GB340,60,0^FS^FO 220, 510 ^A 0, 20 ^FD\(self.printList[i].transTourist ?? "")^FS^FO10,610^GB200,100,0^FS^CF0,25^FO20,630^FDHotel^FS^FO210,610^GB340,100,0^FS^FO 220, 630 ^A 0, 20 ^FD\(hotelNameFirstColumn)^FS^FO 220, 670 ^A 0, 20 ^FD\(hotelNameScondColumn)^FS^FO10,710^GB200,60,0^FS^CF0,25^FO20,730^FDRoom^FS^FO210,710^GB340,60,0^FS^FO 220, 730 ^A 0, 20 ^FD\(self.printList[i].room ?? "")^FS^FO10,770^GB200,60,0^FS^CF0,25^FO20,790^FDName^FS^FO210,770^GB340,60,0^FS^FO 220, 790 ^A 0, 20 ^FD\(self.printList[i].paxName ?? "")^FS^FO10,830^GB200,60,0^FS^CF0,25^FO20,850^FDOperator^FS^FO210,830^GB340,60,0^FS^FO 220, 850 ^A 0, 20 ^FD\(self.printList[i].operatorName ?? "")^FS^FO10,890^GB200,60,0^FS^CF0,25^FO20,910^FDRes No^FS^FO210,890^GB340,60,0^FS^FO 220, 910 ^A 0, 20 ^FD\(self.printList[i].resNo ?? "")^FS^CF0,25^FO20,980^FDNet Total(VAT Inc.)^FS^CF0,25^FO220,980^FD\(self.printList[i].total ?? "")^FS^CF0,25^FO20,1020^FDVat Amount^FS^CF0,25^FO150,1020^FD\(self.printList[i].vatAmount ?? "")^FS^CF0,25^FO20,1060^FDDiscount^FS^CF0,25^FO150,1060^FD\(self.printList[i].discount ?? "")^FS\(self.printList[i].tourPax ?? "")\(self.printList[i].paymentDetail ?? "")\(self.printList[i].extras ?? "")\(self.printList[i].transfers ?? "")\(self.printList[i].voucher ?? "")\(self.printList[i].refundConditionLabel ?? "")\(odeonLabel)^XZ"
                 }
                 
               //  self.printListStringType.append(printString)

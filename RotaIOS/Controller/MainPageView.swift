@@ -198,7 +198,7 @@ final class MainPageView : UIView, UITableViewDelegate, UITableViewDataSource {
                 case 1 :
                     viewController = MyShoppingSaleViewController()
                 case 2 :
-                    viewController = MyTourSaleViewController()
+                    return
                 case 3 :
                     viewController = SpeakingHoursViewController()
                 case 4 :

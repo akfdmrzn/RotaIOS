@@ -330,7 +330,7 @@ class ExcAddCustomView : UIView {
             self.extraPaxesListSaved.append(self.extraPaxes ?? ExtraPaxes(extraName: "", tourName: "", CheckList: [], savedAmount: self.perPersonSavedTotalPrice))
         }
         
-        if self.buttonExtraTapped == false {
+        if self.buttonExtraTapped == false && self.transfersList.count > 0 {
             self.transferPaxes = ExtraPaxes(extraName: self.transfersList[self.extrasIndex].desc, tourName:  self.excursionName, CheckList: self.transfersPaxCheckList)
           
             if let index = self.transferPaxesListSaved.firstIndex(where: {$0.extraName == self.transferPaxes?.extraName && $0.tourName == self.transferPaxes?.tourName}){

@@ -27,6 +27,7 @@ class TasksHotelViewController: BaseViewController {
     var arrAndDepHotelListForMobileList: [GetArrAndDepHotelListForMobileResponseModel] = []
     var workNo: String?
     var hotelName: String?
+    var hotelId: String?
     var excursionName: String?
     var id : Int = 0
     var ids : String = ""
@@ -48,6 +49,21 @@ class TasksHotelViewController: BaseViewController {
         self.tableViewTasksHotel.delegate = self
         self.tableViewTasksHotel.dataSource = self
         self.tableViewTasksHotel.register(TasksHotelTableViewCell.nib, forCellReuseIdentifier: TasksHotelTableViewCell.identifier)
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(TasksViewController.longPress(longPressGestureRecognizer:)))
+        self.tableViewTasksHotel.addGestureRecognizer(longPressRecognizer)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        self.tasksHotelTableViewHeightConstraint.constant = self.tableViewTasksHotel.contentSize.height
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.list.removeAll()
+        self.paxInfoList.removeAll()
+        self.getService()
+    }
+    
+    func getService(){
         switch self.serviceType {
         case ServiceType.EXC.rawValue:
                 self.getHotelListForMobileService()
@@ -68,8 +84,50 @@ class TasksHotelViewController: BaseViewController {
         }
     }
     
-    override func viewWillLayoutSubviews() {
-        self.tasksHotelTableViewHeightConstraint.constant = self.tableViewTasksHotel.contentSize.height
+    @objc func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
+        if longPressGestureRecognizer.state == UIGestureRecognizer.State.began {
+            let touchPoint = longPressGestureRecognizer.location(in: self.tableViewTasksHotel)
+            if let indexPath = self.tableViewTasksHotel.indexPathForRow(at: touchPoint)
+            {
+                switch self.serviceType {
+                case ServiceType.EXC.rawValue:
+                    let topVC = UIApplication.getTopViewController()
+                    let viewController = TasksGoShowViewController()
+                    viewController.hotelId = self.paxInfoList[indexPath.row].hotelId
+                    viewController.planId = self.paxInfoList[indexPath.row].planId
+                    topVC?.otiPushViewController(viewController: viewController)
+                case ServiceType.COL.rawValue:
+                    let topVC = UIApplication.getTopViewController()
+                    let viewController = TasksGoShowViewController()
+                    viewController.hotelId = self.paxInfoList[indexPath.row].hotelId
+                    viewController.planId = self.paxInfoList[indexPath.row].planId
+                    topVC?.otiPushViewController(viewController: viewController)
+                case ServiceType.DEL.rawValue:
+                    let topVC = UIApplication.getTopViewController()
+                    let viewController = TasksGoShowViewController()
+                    viewController.hotelId = self.paxInfoList[indexPath.row].hotelId
+                    viewController.planId = self.paxInfoList[indexPath.row].planId
+                    topVC?.otiPushViewController(viewController: viewController)
+                case ServiceType.ARR.rawValue:
+                    break
+                case ServiceType.DEP.rawValue:
+                    break
+                case ServiceType.INT.rawValue:
+                    break
+                case ServiceType.INFO.rawValue:
+                    break
+                case ServiceType.SHOP.rawValue:
+                    let topVC = UIApplication.getTopViewController()
+                    let viewController = TasksStepsViewController()
+                    viewController.ids = self.paxInfoList[indexPath.row].planId
+                    viewController.serviceType = Int(self.typeInt) ?? 0
+                    viewController.indShopVoucherNo = self.paxInfoList[indexPath.row].id
+                    topVC?.otiPushViewController(viewController: viewController)
+                default:
+                    break
+                }
+            }
+        }
     }
     
     func getHotelListForMobileService(){
@@ -106,7 +164,7 @@ class TasksHotelViewController: BaseViewController {
             if response.count > 0 {
                 for item in response {
                     self.list.append(HotelList.init(hotel: item.hotel, place: item.place, date: item.pickUpTimeStr, time: item.voucherNumber, info: "-", title1: "Reel Pax", title2: "Plan Pax", title3: "", title4: "", body1: String(item.reelPax), body2: item.planPax, body3: "", body4: ""))
-                    self.paxInfoList.append(PaxInfoList.init(id: "", infoPlanId: "", planId: String(item.id), hotelId: String(item.hotelId)))
+                    self.paxInfoList.append(PaxInfoList.init(id: item.voucherNumber, infoPlanId: "", planId: String(item.id), hotelId: String(item.hotelId)))
                 }
             }else {
                print("error")

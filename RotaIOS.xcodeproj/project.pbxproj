@@ -10,6 +10,17 @@
 		432FE6668254BA0CA05DC6FF /* Pods_RotaIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F627A32011B10A339DD5FD27 /* Pods_RotaIOSTests.framework */; };
 		97EA547D8C247C4FB10DE7F7 /* Pods_RotaIOS_RotaIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83342E6867FA5C2B432CDAE /* Pods_RotaIOS_RotaIOSUITests.framework */; };
 		A83BB6A8969AFCB200085DB8 /* Pods_RotaIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B501ED32EF6379402A0E4FCC /* Pods_RotaIOS.framework */; };
+		A90BF97D27E8660200579CBB /* TasksGoShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90BF97B27E8660200579CBB /* TasksGoShowViewController.swift */; };
+		A90BF97E27E8660200579CBB /* TasksGoShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90BF97C27E8660200579CBB /* TasksGoShowViewController.xib */; };
+		A90BF98027E8763500579CBB /* GetVoucherForGoShowResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90BF97F27E8763500579CBB /* GetVoucherForGoShowResponseModel.swift */; };
+		A90BF98227E8764B00579CBB /* GetVoucherForGoShowRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90BF98127E8764B00579CBB /* GetVoucherForGoShowRequestModel.swift */; };
+		A90BF98427E8769800579CBB /* SetGoShowOnMobileResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90BF98327E8769800579CBB /* SetGoShowOnMobileResponseModel.swift */; };
+		A90BF98627E876A800579CBB /* SetGoShowOnMobileRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90BF98527E876A800579CBB /* SetGoShowOnMobileRequestModel.swift */; };
+		A90BF98827E8944B00579CBB /* TasksGoShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90BF98727E8944B00579CBB /* TasksGoShowView.swift */; };
+		A90BF98B27E8AFE500579CBB /* TasksGoShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90BF98927E8AFE500579CBB /* TasksGoShowTableViewCell.swift */; };
+		A90BF98C27E8AFE500579CBB /* TasksGoShowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90BF98A27E8AFE500579CBB /* TasksGoShowTableViewCell.xib */; };
+		A90BF98F27EA0D6C00579CBB /* TasksStepsDetailPaxesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90BF98D27EA0D6C00579CBB /* TasksStepsDetailPaxesTableViewCell.swift */; };
+		A90BF99027EA0D6C00579CBB /* TasksStepsDetailPaxesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90BF98E27EA0D6C00579CBB /* TasksStepsDetailPaxesTableViewCell.xib */; };
 		A91D82D727988FCF0018C0A9 /* TasksPaxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91D82D527988FCF0018C0A9 /* TasksPaxTableViewCell.swift */; };
 		A91D82D827988FCF0018C0A9 /* TasksPaxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91D82D627988FCF0018C0A9 /* TasksPaxTableViewCell.xib */; };
 		A96A532D27C79A5600611475 /* SaveGuideMeetingTimeAndReportResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A532C27C79A5500611475 /* SaveGuideMeetingTimeAndReportResponseModel.swift */; };
@@ -404,6 +415,17 @@
 		8109CDAE677CFEA6B6E1D7FC /* Pods-RotaIOS.rotaiosegypttest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS.rotaiosegypttest.xcconfig"; path = "Target Support Files/Pods-RotaIOS/Pods-RotaIOS.rotaiosegypttest.xcconfig"; sourceTree = "<group>"; };
 		A4967B45886E8DAB32B9C334 /* Pods-RotaIOS.rotaiostrtest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS.rotaiostrtest.xcconfig"; path = "Target Support Files/Pods-RotaIOS/Pods-RotaIOS.rotaiostrtest.xcconfig"; sourceTree = "<group>"; };
 		A4F2F9223A9AE4B71EBB1F34 /* Pods-RotaIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotaIOS.debug.xcconfig"; path = "Target Support Files/Pods-RotaIOS/Pods-RotaIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		A90BF97B27E8660200579CBB /* TasksGoShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksGoShowViewController.swift; sourceTree = "<group>"; };
+		A90BF97C27E8660200579CBB /* TasksGoShowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksGoShowViewController.xib; sourceTree = "<group>"; };
+		A90BF97F27E8763500579CBB /* GetVoucherForGoShowResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetVoucherForGoShowResponseModel.swift; sourceTree = "<group>"; };
+		A90BF98127E8764B00579CBB /* GetVoucherForGoShowRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetVoucherForGoShowRequestModel.swift; sourceTree = "<group>"; };
+		A90BF98327E8769800579CBB /* SetGoShowOnMobileResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGoShowOnMobileResponseModel.swift; sourceTree = "<group>"; };
+		A90BF98527E876A800579CBB /* SetGoShowOnMobileRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGoShowOnMobileRequestModel.swift; sourceTree = "<group>"; };
+		A90BF98727E8944B00579CBB /* TasksGoShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksGoShowView.swift; sourceTree = "<group>"; };
+		A90BF98927E8AFE500579CBB /* TasksGoShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksGoShowTableViewCell.swift; sourceTree = "<group>"; };
+		A90BF98A27E8AFE500579CBB /* TasksGoShowTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksGoShowTableViewCell.xib; sourceTree = "<group>"; };
+		A90BF98D27EA0D6C00579CBB /* TasksStepsDetailPaxesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksStepsDetailPaxesTableViewCell.swift; sourceTree = "<group>"; };
+		A90BF98E27EA0D6C00579CBB /* TasksStepsDetailPaxesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksStepsDetailPaxesTableViewCell.xib; sourceTree = "<group>"; };
 		A91D82D527988FCF0018C0A9 /* TasksPaxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPaxTableViewCell.swift; sourceTree = "<group>"; };
 		A91D82D627988FCF0018C0A9 /* TasksPaxTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksPaxTableViewCell.xib; sourceTree = "<group>"; };
 		A96A532C27C79A5500611475 /* SaveGuideMeetingTimeAndReportResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveGuideMeetingTimeAndReportResponseModel.swift; sourceTree = "<group>"; };
@@ -942,6 +964,9 @@
 				A97E534027DA86C900044B78 /* TasksCreateServiceVoucherView.swift */,
 				A97E533C27D9330B00044B78 /* TasksCreateServiceVoucherViewController.swift */,
 				A97E533D27D9330B00044B78 /* TasksCreateServiceVoucherViewController.xib */,
+				A90BF98727E8944B00579CBB /* TasksGoShowView.swift */,
+				A90BF97B27E8660200579CBB /* TasksGoShowViewController.swift */,
+				A90BF97C27E8660200579CBB /* TasksGoShowViewController.xib */,
 				BF44C9382640016400238035 /* ShopAppointmentView.swift */,
 				BF44C9372640016400238035 /* ShopAppointmentViewController.swift */,
 				BF44C9392640016500238035 /* ShopAppointmentViewController.xib */,
@@ -1079,6 +1104,8 @@
 				A97E533827D92FB200044B78 /* GetCompanyUsersRequestModel.swift */,
 				A97E533A27D92FC500044B78 /* IsCompanyUserValidRequestModel.swift */,
 				A97E533627D92FA000044B78 /* CreateServiceVoucherRequestModel.swift */,
+				A90BF98127E8764B00579CBB /* GetVoucherForGoShowRequestModel.swift */,
+				A90BF98527E876A800579CBB /* SetGoShowOnMobileRequestModel.swift */,
 			);
 			path = RequestModel;
 			sourceTree = "<group>";
@@ -1148,6 +1175,8 @@
 				A97E533027D92F5800044B78 /* GetCompanyUsersResponseModel.swift */,
 				A97E533227D92F7400044B78 /* IsCompanyUserValidResponseModel.swift */,
 				A97E533427D92F9000044B78 /* CreateServiceVoucherResponseModel.swift */,
+				A90BF97F27E8763500579CBB /* GetVoucherForGoShowResponseModel.swift */,
+				A90BF98327E8769800579CBB /* SetGoShowOnMobileResponseModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -1284,6 +1313,10 @@
 				A97E531D27D6856300044B78 /* TasksStepsTableViewCell.xib */,
 				A97E532C27D7865900044B78 /* TasksStepsDetailTableViewCell.swift */,
 				A97E532D27D7865900044B78 /* TasksStepsDetailTableViewCell.xib */,
+				A90BF98D27EA0D6C00579CBB /* TasksStepsDetailPaxesTableViewCell.swift */,
+				A90BF98E27EA0D6C00579CBB /* TasksStepsDetailPaxesTableViewCell.xib */,
+				A90BF98927E8AFE500579CBB /* TasksGoShowTableViewCell.swift */,
+				A90BF98A27E8AFE500579CBB /* TasksGoShowTableViewCell.xib */,
 				D9561A3F269E099C00AA75E5 /* AnnoucmentsTableViewCell.swift */,
 				D9561A40269E099C00AA75E5 /* AnnoucmentsTableViewCell.xib */,
 				D9561A43269E110A00AA75E5 /* AnnoucmentsDetailTableViewCell.swift */,
@@ -1558,6 +1591,7 @@
 				D9FD64E927381280009B6619 /* ZReportLoginViewController.xib in Resources */,
 				D97FB5A126C32CEB0099F28B /* MyTourSaleMoreDetailViewController.xib in Resources */,
 				A97E52F527CFFC4600044B78 /* TasksTourDetailViewController.xib in Resources */,
+				A90BF97E27E8660200579CBB /* TasksGoShowViewController.xib in Resources */,
 				D97FB58726C075940099F28B /* MyTourSaleDetailPageViewController.xib in Resources */,
 				BF44C887263FF80100238035 /* LaunchScreen.storyboard in Resources */,
 				BF44C95B2640018B00238035 /* MyTourSaleViewController.xib in Resources */,
@@ -1577,6 +1611,7 @@
 				D9561A46269E110A00AA75E5 /* AnnoucmentsDetailTableViewCell.xib in Resources */,
 				D931576326FCB0C0000C91AD /* ZReportTotalTableViewCell.xib in Resources */,
 				BF44C97C264001AA00238035 /* FooterCustomView.xib in Resources */,
+				A90BF98C27E8AFE500579CBB /* TasksGoShowTableViewCell.xib in Resources */,
 				D9315785270486AD000C91AD /* ZReportRefundTableViewCell.xib in Resources */,
 				BF44C92B2640015400238035 /* MainPageCustomView.xib in Resources */,
 				D9561A42269E099C00AA75E5 /* AnnoucmentsTableViewCell.xib in Resources */,
@@ -1619,6 +1654,7 @@
 				D931578127036D4C000C91AD /* ZReportPaymentTableViewCell.xib in Resources */,
 				D931575F26FB58A3000C91AD /* ZReportPriviewTableViewCell.xib in Resources */,
 				D9561A3C269DF27E00AA75E5 /* AnnoucmentsViewController.xib in Resources */,
+				A90BF99027EA0D6C00579CBB /* TasksStepsDetailPaxesTableViewCell.xib in Resources */,
 				D97FB59926C15F650099F28B /* MyTourSalesDetailPageTableViewCell.xib in Resources */,
 				BFFC581D27E3EC91001F89F0 /* GoogleService-Info-RotaEGYPT.plist in Resources */,
 				D9004070271722B800DDE088 /* DailyReportViewController.xib in Resources */,
@@ -1758,10 +1794,12 @@
 				BF44C909264000FA00238035 /* NetworkManager.swift in Sources */,
 				A9C674EA2774EF6900536F21 /* GetGuideDutiesRequestModel.swift in Sources */,
 				D931573926F4B6DD000C91AD /* GetTourSaleCancelMobileResponseModel.swift in Sources */,
+				A90BF98227E8764B00579CBB /* GetVoucherForGoShowRequestModel.swift in Sources */,
 				A9AAE54A2791820600AFBA67 /* GetTourPaxesRequestModel.swift in Sources */,
 				BF44C9D52640022F00238035 /* AddStepCustomView.swift in Sources */,
 				D97EE0292779ABCB00683E66 /* GetMaxGuideVoucherNumberRequestModel.swift in Sources */,
 				D97FB5B426C6ABC10099F28B /* MyShoppinSaleDetailViewController.swift in Sources */,
+				A90BF98F27EA0D6C00579CBB /* TasksStepsDetailPaxesTableViewCell.swift in Sources */,
 				D931578F270496B4000C91AD /* GetZreportRefundRequestModel.swift in Sources */,
 				A97E530127D62C4500044B78 /* GetStepDetail_ShopSupplierRequestModel.swift in Sources */,
 				BF44C8F4264000E900238035 /* GetGuideMarketResponseModel.swift in Sources */,
@@ -1798,7 +1836,9 @@
 				A97E531327D62EF800044B78 /* GetStepDetail_IndShopSupplierResponseModel.swift in Sources */,
 				A96A532D27C79A5600611475 /* SaveGuideMeetingTimeAndReportResponseModel.swift in Sources */,
 				D9956BFC26D7D31C006CFC6D /* GetVoucherDetailResponseModel.swift in Sources */,
+				A90BF98B27E8AFE500579CBB /* TasksGoShowTableViewCell.swift in Sources */,
 				D900407827172F1C00DDE088 /* GetDailyReportRequestModel.swift in Sources */,
+				A90BF98427E8769800579CBB /* SetGoShowOnMobileResponseModel.swift in Sources */,
 				D95C202826EFDD83007D1506 /* GetHotelSelectListByAreaRefResponseModel.swift in Sources */,
 				BF44C97D264001AA00238035 /* FooterCustomView.swift in Sources */,
 				BF44C906264000FA00238035 /* ServiceEndPoint.swift in Sources */,
@@ -1808,6 +1848,7 @@
 				D96E450B27975AC700F8DC49 /* GetApplyPromotionMobileRequestModel.swift in Sources */,
 				A9AAE55A2791832000AFBA67 /* GetIndShopPaxesResponseModel.swift in Sources */,
 				A9AAE556279182F800AFBA67 /* GetTourPaxesResponseModel.swift in Sources */,
+				A90BF98827E8944B00579CBB /* TasksGoShowView.swift in Sources */,
 				BF44C9A0264001C900238035 /* PaxPageTableViewCell.swift in Sources */,
 				D931577927033A99000C91AD /* ZReportPaymentView.swift in Sources */,
 				A9C674F6277F4A4D00536F21 /* GetInterRequestModel.swift in Sources */,
@@ -1910,6 +1951,7 @@
 				A9C674E127745CE300536F21 /* TasksHotelViewController.swift in Sources */,
 				D931573C26F8C183000C91AD /* ZReportViewController.swift in Sources */,
 				D97FB58626C075940099F28B /* MyTourSaleDetailPageViewController.swift in Sources */,
+				A90BF97D27E8660200579CBB /* TasksGoShowViewController.swift in Sources */,
 				D9FD6503273C1F7B009B6619 /* HotelsandFlightsTableViewCell.swift in Sources */,
 				BF44C9422640017600238035 /* TasksViewController.swift in Sources */,
 				A9C0344527980B37000AA4DD /* UpdateNoShowRequestModel.swift in Sources */,
@@ -1973,6 +2015,7 @@
 				A97E534127DA86C900044B78 /* TasksCreateServiceVoucherView.swift in Sources */,
 				A97E52FB27D62C0D00044B78 /* GetSteps_ArrDepH2HRequestModel.swift in Sources */,
 				D97C905F279FFC4B00A57C11 /* GetInHouseListTourSaleRequestModel.swift in Sources */,
+				A90BF98027E8763500579CBB /* GetVoucherForGoShowResponseModel.swift in Sources */,
 				D94C40672655D5FA00EBC7CD /* GetGuideInfoResponseModel.swift in Sources */,
 				D97FB5AD26C69B6B0099F28B /* GetShoppingSaleResponseModel.swift in Sources */,
 				A9AAE554279182E400AFBA67 /* GetArrAndDepPaxesResponseModel.swift in Sources */,
@@ -2012,6 +2055,7 @@
 				D93F88A92651AB1000397283 /* GetTouristInfoResponseModel.swift in Sources */,
 				A97E532827D782B800044B78 /* TasksStepsDetailViewController.swift in Sources */,
 				D97EE02B277BC2CE00683E66 /* GetSaveMobileSaleResponseModel.swift in Sources */,
+				A90BF98627E876A800579CBB /* SetGoShowOnMobileRequestModel.swift in Sources */,
 				A97E52FD27D62C1E00044B78 /* GetStepsForIndShopRequestModel.swift in Sources */,
 				D994FBCD27451851003564F3 /* ExcursionViewController.swift in Sources */,
 				A9AAE54427917C5A00AFBA67 /* GetInterPaxesRequestModel.swift in Sources */,
@@ -2207,7 +2251,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIosTRMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/akifdemirezen/Desktop/Rota/RotaIOS/Util/RotaIOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/odeon/Desktop/Rota/RotaIOS/Util/RotaIOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2235,7 +2279,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIosTRMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/akifdemirezen/Desktop/Rota/RotaIOS/Util/RotaIOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/odeon/Desktop/Rota/RotaIOS/Util/RotaIOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2414,7 +2458,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIosTRMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RotaIOSTRTest;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/akifdemirezen/Desktop/Rota/RotaIOS/Util/RotaIOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/odeon/Desktop/Rota/RotaIOS/Util/RotaIOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2549,7 +2593,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIosEgyptMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RotaIOSEgyptTest;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/akifdemirezen/Desktop/Rota/RotaIOS/Util/RotaIOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/odeon/Desktop/Rota/RotaIOS/Util/RotaIOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

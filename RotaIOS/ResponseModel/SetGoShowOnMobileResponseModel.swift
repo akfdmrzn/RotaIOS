@@ -1,16 +1,15 @@
 //
-//  CreateServiceVoucherResponseModel.swift
+//  SetGoShowOnMobileResponseModel.swift
 //  RotaIOS
 //
-//  Created by odeon on 9.03.2022.
+//  Created by odeon on 21.03.2022.
 //
 
 import Foundation
 import ObjectMapper
 
-public class CreateServiceVoucherResponseModel: Mappable{
+public class SetGoShowOnMobileResponseModel: Mappable{
    public var id : String?
-   public var record : Int?
    public var isSuccesful : Bool?
    public var resultKey : String?
    public var message : String?
@@ -22,8 +21,7 @@ public class CreateServiceVoucherResponseModel: Mappable{
     
     public func mapping(map: Map) {
 
-       id <- map["id"]
-       record <- map["Record"]
+       id <- map["$id"]
        isSuccesful <- map["IsSuccesful"]
        resultKey <- map["ResultKey"]
        message <- map["Message"]

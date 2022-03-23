@@ -77,6 +77,10 @@ class TasksViewController: BaseViewController {
         self.tasksTableView.addGestureRecognizer(longPressRecognizer)
     }
     
+    override func viewWillLayoutSubviews() {
+        self.tasksTableViewHeightConstraint.constant = self.tasksTableView.contentSize.height
+    }
+    
     @objc func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         if longPressGestureRecognizer.state == UIGestureRecognizer.State.began {
             let touchPoint = longPressGestureRecognizer.location(in: self.tasksTableView)
@@ -214,10 +218,6 @@ class TasksViewController: BaseViewController {
                print("error")
             }
         }
-    }
-    
-    override func viewWillLayoutSubviews() {
-        self.tasksTableViewHeightConstraint.constant = self.tasksTableView.contentSize.height
     }
     
     func date(){

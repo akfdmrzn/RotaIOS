@@ -204,6 +204,7 @@ class TasksStepsDetailViewController: BaseViewController {
     @IBAction func buttonTappedSendOffice(_ sender: Any) {
         let topVC = UIApplication.getTopViewController()
         let viewController = TasksCreateServiceVoucherViewController()
+        viewController.serviceType = self.serviceType
         if self.supplierType == "2"{
             viewController.stepsDetailPaxesList = self.getStepDetailPaxesList
             viewController.paxes = self.stepsDetailPaxesList

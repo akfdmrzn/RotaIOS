@@ -8,6 +8,16 @@
 import UIKit
 
 class TasksCreateServiceVoucherViewController: BaseViewController {
+    enum ServiceType: Int {
+        case EXC = 1
+        case COL = 2
+        case DEL = 3
+        case ARR = 4
+        case DEP = 5
+        case INT = 6
+        case INFO = 7
+        case SHOP = 10
+    }
     @IBOutlet weak var passwordTextField: UITextField!
     public var ids: String = ""
     public var stepId: String = ""
@@ -20,6 +30,7 @@ class TasksCreateServiceVoucherViewController: BaseViewController {
     var jsonModelPaxList: [JsonModelPaxList] = []
     var paxes: [PaxesList] = []
     var newPaxes: [PaxesListStr] = []
+    public var serviceType: Int = 0
     public var supplierType: String = "0"
     @IBOutlet weak var pickerView: PickerView!
     var pickerList: [PickerList] = []
@@ -48,8 +59,23 @@ class TasksCreateServiceVoucherViewController: BaseViewController {
     }
 
     func getCompanyUsers(){
+        var endPoint: ServiceEndPoint?
+        switch self.serviceType {
+        case ServiceType.EXC.rawValue:
+            endPoint = .GetCompanyUsers
+        case ServiceType.ARR.rawValue:
+            endPoint = .GetCompanyUsers_ArrDepH2H
+        case ServiceType.DEP.rawValue:
+            endPoint = .GetCompanyUsers_ArrDepH2H
+        case ServiceType.INT.rawValue:
+            endPoint = .GetCompanyUsers_ArrDepH2H
+        case ServiceType.SHOP.rawValue:
+            break
+        default:
+            break
+        }
         let getCompanyUsersRequestModel = GetCompanyUsersRequestModel.init(ids: self.ids, stepId: self.stepId)
-        NetworkManager.sendGetRequestArray(url:NetworkManager.BASEURL, endPoint: .GetCompanyUsers, method: .get, parameters: getCompanyUsersRequestModel.requestPathString()) { (response : [GetCompanyUsersResponseModel]) in
+        NetworkManager.sendGetRequestArray(url:NetworkManager.BASEURL, endPoint: endPoint ?? .GetCompanyUsers, method: .get, parameters: getCompanyUsersRequestModel.requestPathString()) { (response : [GetCompanyUsersResponseModel]) in
             if response.count > 0 {
                 for item in response {
                     self.pickerList.append(PickerList.init(id: item.id ?? "", name: item.username ?? ""))
@@ -67,10 +93,24 @@ class TasksCreateServiceVoucherViewController: BaseViewController {
     }
     
     func isCompanyUserValid(){
-        
+        var endPoint: ServiceEndPoint?
+        switch self.serviceType {
+        case ServiceType.EXC.rawValue:
+            endPoint = .IsCompanyUserValid
+        case ServiceType.ARR.rawValue:
+            endPoint = .IsCompanyUserValid_ArrDepH2H
+        case ServiceType.DEP.rawValue:
+            endPoint = .IsCompanyUserValid_ArrDepH2H
+        case ServiceType.INT.rawValue:
+            endPoint = .IsCompanyUserValid_ArrDepH2H
+        case ServiceType.SHOP.rawValue:
+            endPoint = .IndShopIsCompanyUserValid
+        default:
+            break
+        }
         self.pickerView.delegate = self
         let isCompanyUserValidRequestModel = IsCompanyUserValidRequestModel.init(ids: self.ids, stepId: self.stepId, username: self.pickerView.textFieldCompanyUser.text ?? "", password: self.passwordTextField.text ?? "")
-        NetworkManager.sendGetRequestTextResponse(url:NetworkManager.BASEURL, endPoint: .IsCompanyUserValid, method: .get, parameters: isCompanyUserValidRequestModel.requestPathString()) { (response : String) in
+        NetworkManager.sendGetRequestTextResponse(url:NetworkManager.BASEURL, endPoint: endPoint ?? .IsCompanyUserValid, method: .get, parameters: isCompanyUserValidRequestModel.requestPathString()) { (response : String) in
             if response == "true" {
                 self.createServiceVoucher()
             }
@@ -78,27 +118,70 @@ class TasksCreateServiceVoucherViewController: BaseViewController {
                 
             }
         }
-        
     }
     
     func createServiceVoucher(){
         var json = ""
         var endPoint: ServiceEndPoint?
-        if supplierType == "2"{
-            endPoint = .CreateServiceVoucher_ShopSupplier
+        switch self.serviceType {
+        case ServiceType.EXC.rawValue:
+            if supplierType == "2"{
+                endPoint = .CreateServiceVoucher_ShopSupplier
+                json = jsonModelPaxList[0].toJSONString() ?? ""
+            }
+            else{
+                endPoint = .CreateServiceVoucher
+                json = jsonModelList.toJSONString() ?? ""
+            }
+        case ServiceType.ARR.rawValue:
+            if supplierType == "2"{
+                endPoint = .CreateServiceVoucher_ArrDepH2H_ShopSupplier
+                json = jsonModelPaxList[0].toJSONString() ?? ""
+            }
+            else{
+                endPoint = .CreateServiceVoucher_ArrDepH2H
+                json = jsonModelList.toJSONString() ?? ""
+            }
+        case ServiceType.DEP.rawValue:
+            if supplierType == "2"{
+                endPoint = .CreateServiceVoucher_ArrDepH2H_ShopSupplier
+                json = jsonModelPaxList[0].toJSONString() ?? ""
+            }
+            else{
+                endPoint = .CreateServiceVoucher_ArrDepH2H
+                json = jsonModelList.toJSONString() ?? ""
+            }
+        case ServiceType.INT.rawValue:
+            if supplierType == "2"{
+                endPoint = .CreateServiceVoucher_ArrDepH2H_ShopSupplier
+                json = jsonModelPaxList[0].toJSONString() ?? ""
+            }
+            else{
+                endPoint = .CreateServiceVoucher_ArrDepH2H
+                json = jsonModelList.toJSONString() ?? ""
+            }
+        case ServiceType.SHOP.rawValue:
+            endPoint = .CreateServiceVoucher_IndShopSupplier
             json = jsonModelPaxList[0].toJSONString() ?? ""
+        default:
+            break
         }
-        else{
-            endPoint = .CreateServiceVoucher
-            json = jsonModelList.toJSONString() ?? ""
-        }
+        
         let createServiceVoucherRequestModel = CreateServiceVoucherRequestModel.init(ids: self.ids, stepId: self.stepId, action: "1", jsonStr: json)
         NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: endPoint ?? .CreateServiceVoucher, requestModel: createServiceVoucherRequestModel) { (response : CreateServiceVoucherResponseModel) in
             if response.isSuccesful == true {
-                UIApplication.getTopViewController()?.showAlertMsg(msg: "Created voucher number is " + String(response.record ?? 0), finished: {
-                    self.dismiss(animated: true, completion: nil)
-                    self.otiPushViewController(viewController: MainPAgeViewController())
-                })
+                if response.record == 0{
+                    UIApplication.getTopViewController()?.showAlertMsg(msg: "Voucher has been created", finished: {
+                        self.dismiss(animated: true, completion: nil)
+                        self.otiPushViewController(viewController: MainPAgeViewController())
+                    })
+                }
+                else{
+                    UIApplication.getTopViewController()?.showAlertMsg(msg: "Created voucher number is " + String(response.record ?? 0), finished: {
+                        self.dismiss(animated: true, completion: nil)
+                        self.otiPushViewController(viewController: MainPAgeViewController())
+                    })
+                }
             }
         }
     }

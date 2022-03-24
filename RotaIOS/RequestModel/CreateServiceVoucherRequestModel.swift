@@ -34,6 +34,28 @@ public class  CreateServiceVoucherRequestModel : Mappable{
     }
 }
 
+public class  CreateServiceVoucherPaxRequestModel : Mappable{
+    public var ids : String!
+    public var stepId : String!
+    public var jsonStr : String!
+    
+    public required init?(map: Map) {
+        
+    }
+    
+    public init(ids : String, stepId: String, jsonStr: String) {
+        self.ids = ids
+        self.stepId = stepId
+        self.jsonStr = jsonStr
+    }
+    
+    public func mapping(map: Map) {
+        jsonStr <- map["ids"]
+        jsonStr <- map["stepId"]
+        jsonStr <- map["jsonStr"]
+    }
+}
+
 public class JsonModelList: Mappable{
     public var action : String?
     public var realToodle : String?
@@ -134,5 +156,54 @@ public class JsonModelList: Mappable{
         realTotal <- map["RealTotal"]
         freeChild <- map["FreeChild"]
         id <- map["$id"]
+    }
+}
+
+public class JsonModelPaxList : Mappable{
+    public var _id : String = ""
+    public var ids : String = ""
+    public var stepId : String = "0"
+    public var companyId : String = "0"
+    public var tourTransferPlanArrAndDepId : String = ""
+    public var realAdult : String = "0"
+    public var realChild : String = "0"
+    public var realToodle : String = "0"
+    public var realInfant : String = "0"
+    public var realTotal : String = "0"
+    public var serviceType : String = "0"
+    public var paxesList : [PaxesListStr] = []
+
+    public required init?(map: Map) {
+        
+    }
+    
+    public init(_id : String, ids: String, stepId: String, companyId: String, tourTransferPlanArrAndDepId: String, realAdult: String, realChild: String, realToodle: String, realInfant: String, realTotal: String, serviceType: String, paxesLists: [PaxesListStr]) {
+        self._id = _id
+        self.ids = ids
+        self.stepId = stepId
+        self.companyId = companyId
+        self.tourTransferPlanArrAndDepId = tourTransferPlanArrAndDepId
+        self.realAdult = realAdult
+        self.realChild = realChild
+        self.realToodle = realToodle
+        self.realInfant = realInfant
+        self.realTotal = realTotal
+        self.serviceType = serviceType
+        self.paxesList = paxesLists
+    }
+    
+    public func mapping(map: Map) {
+        _id <- map["$id"]
+        ids <- map["Ids"]
+        stepId <- map["StepId"]
+        companyId <- map["CompanyId"]
+        tourTransferPlanArrAndDepId <- map["TourTransferPlanArrAndDepId"]
+        realAdult <- map["RealAdult"]
+        realChild <- map["RealChild"]
+        realToodle <- map["RealToodle"]
+        realInfant <- map["RealInfant"]
+        serviceType <- map["ServiceType"]
+        realTotal <- map["RealTotal"]
+        paxesList <- map["PaxList"]
     }
 }

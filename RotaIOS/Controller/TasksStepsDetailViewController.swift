@@ -41,6 +41,7 @@ class TasksStepsDetailViewController: BaseViewController {
             self.tasksTableViewHeightConstraint.constant = self.tableViewTasksStepsDetail.contentSize.height
         }
     }
+    var getStepDetailPaxesList: [GetStepDetailPaxesList] = []
     var stepsDetailPaxesList: [PaxesList] = [] {
         didSet {
             self.tableViewTasksStepsDetailPaxes.reloadData()
@@ -135,11 +136,12 @@ class TasksStepsDetailViewController: BaseViewController {
             if response._id != "" {
                 self.stepsDetailList.append(GetStepDetail.init(_id: "", ids: "", stepId: "", companyId: "", serviceId: "", isExtraService: "", extraServiceId: "", tourTransferPlanArrAndDepId: "", serviceType: "Type", realTotal: "Real Total", realAdult: "Real Adult", realChild: "Real Child", realToodle: "Real Toodle", realInfant: "Real Infant", freeAdult: "Free Adult", freeChild: "Free Child", freeToodle: "Free Toodle", freeInfant: "Free Infant", totalAdult: "Total Adult", totalChild: "Total Child", totalToodle: "Total Toodle", totalInfant: "Total Infant", realAmount: "Real Amount", freeAmount: "Free Amount", freeTotal: "Free Total", totalAmount: "Total Amount", grandTotal: "Grand Total", iD: "", action: ""))
                 self.paxesLists.append(PaxesLists.init(_id: "", oprShopPaxesID: "", oprTouristID: "", paxNameSurname: "Name Surname", operatorId: "", operatorName: "Operator", marketId: "", marketName: "Market", paxType: "Age Type", unselectable: "", isGoShow: "", userSelected: "", check: false))
-                self.stepsDetailList.append(GetStepDetail.init(_id: response._id ?? "", ids: response.ids ?? "", stepId: String(response.stepId ?? 0), companyId: String(response.companyId ?? 0), serviceId: "", isExtraService: "", extraServiceId: "", tourTransferPlanArrAndDepId: response.tourTransferPlanArrAndDepId ?? "", serviceType: "Type", realTotal: String(response.realTotal ?? 0), realAdult: String(response.realAdult ?? 0), realChild: String(response.realChild ?? 0), realToodle: String(response.realToodle ?? 0), realInfant: String(response.realInfant ?? 0), freeAdult: "", freeChild: "", freeToodle: "", freeInfant: "", totalAdult: "", totalChild: "", totalToodle: "", totalInfant: "", realAmount: "", freeAmount: "", freeTotal: "", totalAmount: "", grandTotal: "", iD: "", action: ""))
+                self.stepsDetailList.append(GetStepDetail.init(_id: response._id ?? "", ids: response.ids ?? "", stepId: String(response.stepId ?? 0), companyId: String(response.companyId ?? 0), serviceId: "", isExtraService: "", extraServiceId: "", tourTransferPlanArrAndDepId: response.tourTransferPlanArrAndDepId ?? "", serviceType: "Shop", realTotal: String(response.realTotal ?? 0), realAdult: String(response.realAdult ?? 0), realChild: String(response.realChild ?? 0), realToodle: String(response.realToodle ?? 0), realInfant: String(response.realInfant ?? 0), freeAdult: "", freeChild: "", freeToodle: "", freeInfant: "", totalAdult: "", totalChild: "", totalToodle: "", totalInfant: "", realAmount: "", freeAmount: "", freeTotal: "", totalAmount: "", grandTotal: "", iD: "", action: ""))
                 self.stepsDetailPaxesList = response.paxesList ?? []
                 for item in self.stepsDetailPaxesList {
                     self.paxesLists.append(PaxesLists.init(_id: item._id ?? "", oprShopPaxesID: String(item.oprShopPaxesID ?? 0) , oprTouristID: item.oprTouristID ?? "", paxNameSurname: item.paxNameSurname ?? "", operatorId: String(item.operatorId ?? 0) , operatorName: item.operatorName ?? "", marketId: String(item.marketId ?? 0) , marketName: item.marketName ?? "", paxType: item.paxType ?? "", unselectable: String(item.unselectable ?? false) , isGoShow: String(item.isGoShow ?? false), userSelected: item.userSelected ?? "", check: false))
                 }
+                self.getStepDetailPaxesList.append(GetStepDetailPaxesList.init(_id: response._id ?? "", ids: response.ids ?? "", stepId: response.stepId ?? 0, companyId: response.companyId ?? 0, tourTransferPlanArrAndDepId: response.tourTransferPlanArrAndDepId ?? "", realAdult: response.realAdult ?? 0, realChild: response.realChild ?? 0, realToodle: response.realToodle ?? 0, realInfant: response.realInfant ?? 0, realTotal: response.realTotal ?? 0, paxesLists: self.paxesLists))
                 self.tableViewTasksStepsDetailPaxes.reloadData()
             }else {
                print("error")
@@ -167,11 +169,12 @@ class TasksStepsDetailViewController: BaseViewController {
             if response._id != "" {
                 self.stepsDetailList.append(GetStepDetail.init(_id: "", ids: "", stepId: "", companyId: "", serviceId: "", isExtraService: "", extraServiceId: "", tourTransferPlanArrAndDepId: "", serviceType: "Type", realTotal: "Real Total", realAdult: "Real Adult", realChild: "Real Child", realToodle: "Real Toodle", realInfant: "Real Infant", freeAdult: "Free Adult", freeChild: "Free Child", freeToodle: "Free Toodle", freeInfant: "Free Infant", totalAdult: "Total Adult", totalChild: "Total Child", totalToodle: "Total Toodle", totalInfant: "Total Infant", realAmount: "Real Amount", freeAmount: "Free Amount", freeTotal: "Free Total", totalAmount: "Total Amount", grandTotal: "Grand Total", iD: "", action: ""))
                 self.paxesLists.append(PaxesLists.init(_id: "", oprShopPaxesID: "", oprTouristID: "", paxNameSurname: "Name Surname", operatorId: "", operatorName: "Operator", marketId: "", marketName: "Market", paxType: "Age Type", unselectable: "", isGoShow: "", userSelected: "", check: false))
-                self.stepsDetailList.append(GetStepDetail.init(_id: response._id ?? "", ids: response.ids ?? "", stepId: String(response.stepId ?? 0), companyId: String(response.companyId ?? 0), serviceId: "", isExtraService: "", extraServiceId: "", tourTransferPlanArrAndDepId: response.tourTransferPlanArrAndDepId ?? "", serviceType: "Type", realTotal: String(response.realTotal ?? 0), realAdult: String(response.realAdult ?? 0), realChild: String(response.realChild ?? 0), realToodle: String(response.realToodle ?? 0), realInfant: String(response.realInfant ?? 0), freeAdult: "", freeChild: "", freeToodle: "", freeInfant: "", totalAdult: "", totalChild: "", totalToodle: "", totalInfant: "", realAmount: "", freeAmount: "", freeTotal: "", totalAmount: "", grandTotal: "", iD: "", action: ""))
+                self.stepsDetailList.append(GetStepDetail.init(_id: response._id ?? "", ids: response.ids ?? "", stepId: String(response.stepId ?? 0), companyId: String(response.companyId ?? 0), serviceId: "", isExtraService: "", extraServiceId: "", tourTransferPlanArrAndDepId: response.tourTransferPlanArrAndDepId ?? "", serviceType: "Shop", realTotal: String(response.realTotal ?? 0), realAdult: String(response.realAdult ?? 0), realChild: String(response.realChild ?? 0), realToodle: String(response.realToodle ?? 0), realInfant: String(response.realInfant ?? 0), freeAdult: "", freeChild: "", freeToodle: "", freeInfant: "", totalAdult: "", totalChild: "", totalToodle: "", totalInfant: "", realAmount: "", freeAmount: "", freeTotal: "", totalAmount: "", grandTotal: "", iD: "", action: ""))
                 self.stepsDetailPaxesList = response.paxesList ?? []
                 for item in self.stepsDetailPaxesList {
                     self.paxesLists.append(PaxesLists.init(_id: item._id ?? "", oprShopPaxesID: String(item.oprShopPaxesID ?? 0) , oprTouristID: item.oprTouristID ?? "", paxNameSurname: item.paxNameSurname ?? "", operatorId: String(item.operatorId ?? 0) , operatorName: item.operatorName ?? "", marketId: String(item.marketId ?? 0) , marketName: item.marketName ?? "", paxType: item.paxType ?? "", unselectable: String(item.unselectable ?? false) , isGoShow: String(item.isGoShow ?? false), userSelected: item.userSelected ?? "", check: false))
                 }
+                self.getStepDetailPaxesList.append(GetStepDetailPaxesList.init(_id: response._id ?? "", ids: response.ids ?? "", stepId: response.stepId ?? 0, companyId: response.companyId ?? 0, tourTransferPlanArrAndDepId: response.tourTransferPlanArrAndDepId ?? "", realAdult: response.realAdult ?? 0, realChild: response.realChild ?? 0, realToodle: response.realToodle ?? 0, realInfant: response.realInfant ?? 0, realTotal: response.realTotal ?? 0, paxesLists: self.paxesLists))
                 self.tableViewTasksStepsDetailPaxes.reloadData()
             }else {
                print("error")
@@ -190,6 +193,7 @@ class TasksStepsDetailViewController: BaseViewController {
                 for item in self.stepsDetailPaxesList {
                     self.paxesLists.append(PaxesLists.init(_id: item._id ?? "", oprShopPaxesID: String(item.oprShopPaxesID ?? 0) , oprTouristID: item.oprTouristID ?? "", paxNameSurname: item.paxNameSurname ?? "", operatorId: String(item.operatorId ?? 0) , operatorName: item.operatorName ?? "", marketId: String(item.marketId ?? 0) , marketName: item.marketName ?? "", paxType: item.paxType ?? "", unselectable: String(item.unselectable ?? false) , isGoShow: String(item.isGoShow ?? false), userSelected: item.userSelected ?? "", check: false))
                 }
+                self.getStepDetailPaxesList.append(GetStepDetailPaxesList.init(_id: response._id ?? "", ids: response.ids ?? "", stepId: response.stepId ?? 0, companyId: response.companyId ?? 0, tourTransferPlanArrAndDepId: response.tourTransferPlanArrAndDepId ?? "", realAdult: response.realAdult ?? 0, realChild: response.realChild ?? 0, realToodle: response.realToodle ?? 0, realInfant: response.realInfant ?? 0, realTotal: response.realTotal ?? 0, paxesLists: self.paxesLists))
                 self.tableViewTasksStepsDetailPaxes.reloadData()
             }else {
                print("error")
@@ -200,22 +204,30 @@ class TasksStepsDetailViewController: BaseViewController {
     @IBAction func buttonTappedSendOffice(_ sender: Any) {
         let topVC = UIApplication.getTopViewController()
         let viewController = TasksCreateServiceVoucherViewController()
-        viewController.action = self.stepsDetailList.count > 0 ? (self.stepsDetailList[0].action ?? "") : ""
-        var list : [GetStepDetail] = []
-        if self.stepsDetailList.count > 0 {
-            for index in 1...self.stepsDetailList.count - 1 {
-                let indexPath = IndexPath(row: index, section: 0)
-                if let cell = self.tableViewTasksStepsDetail.cellForRow(at: indexPath) as? TasksStepsDetailTableViewCell {
-                list.append(GetStepDetail.init(_id: self.stepsDetailList[index]._id ?? "", ids: self.stepsDetailList[index].ids ?? "", stepId: self.stepsDetailList[index].stepId ?? "", companyId: self.stepsDetailList[index].companyId ?? "", serviceId: self.stepsDetailList[index].serviceId ?? "", isExtraService: self.stepsDetailList[index].isExtraService ?? "", extraServiceId: self.stepsDetailList[index].extraServiceId ?? "", tourTransferPlanArrAndDepId : self.stepsDetailList[index].tourTransferPlanArrAndDepId ?? "", serviceType: self.stepsDetailList[index].serviceType ?? "", realTotal: cell.textFieldRealTotal.text ?? "", realAdult: cell.textFieldRealAdult.text ?? "", realChild: cell.textFieldRealChild.text ?? "", realToodle: cell.textFieldRealToodle.text ?? "", realInfant: cell.textFieldRealInfant.text ?? "", freeAdult: cell.textFieldFreeAdult.text ?? "", freeChild: cell.textFieldFreeChild.text ?? "", freeToodle: cell.textFieldFreeToodle.text ?? "", freeInfant: cell.textFieldFreeInfant.text ?? "", totalAdult: cell.textFieldTotalAdult.text ?? "", totalChild: cell.textFieldTotalChild.text ?? "", totalToodle: cell.textFieldTotalToodle.text ?? "", totalInfant: cell.textFieldTotalInfant.text ?? "", realAmount: cell.textFieldRealAmount.text ?? "", freeAmount: cell.textFieldFreeAmount.text ?? "", freeTotal: cell.textFieldFreeTotal.text ?? "", totalAmount: cell.textFieldTotalAmount.text ?? "", grandTotal: cell.textFieldGrandTotal.text ?? "", iD: self.stepsDetailList[index].iD ?? "", action: self.stepsDetailList[index].action ?? ""))
-                }
-            }
-            viewController.stepsDetailList = list
+        if self.supplierType == "2"{
+            viewController.stepsDetailPaxesList = self.getStepDetailPaxesList
+            viewController.paxes = self.stepsDetailPaxesList
         }
         else{
-            viewController.stepsDetailList = []
+            viewController.action = self.stepsDetailList.count > 0 ? (self.stepsDetailList[0].action ?? "") : ""
+            var list : [GetStepDetail] = []
+            if self.stepsDetailList.count > 0 {
+                for index in 1...self.stepsDetailList.count - 1 {
+                    let indexPath = IndexPath(row: index, section: 0)
+                    if let cell = self.tableViewTasksStepsDetail.cellForRow(at: indexPath) as? TasksStepsDetailTableViewCell {
+                    list.append(GetStepDetail.init(_id: self.stepsDetailList[index]._id ?? "", ids: self.stepsDetailList[index].ids ?? "", stepId: self.stepsDetailList[index].stepId ?? "", companyId: self.stepsDetailList[index].companyId ?? "", serviceId: self.stepsDetailList[index].serviceId ?? "", isExtraService: self.stepsDetailList[index].isExtraService ?? "", extraServiceId: self.stepsDetailList[index].extraServiceId ?? "", tourTransferPlanArrAndDepId : self.stepsDetailList[index].tourTransferPlanArrAndDepId ?? "", serviceType: self.stepsDetailList[index].serviceType ?? "", realTotal: cell.textFieldRealTotal.text ?? "", realAdult: cell.textFieldRealAdult.text ?? "", realChild: cell.textFieldRealChild.text ?? "", realToodle: cell.textFieldRealToodle.text ?? "", realInfant: cell.textFieldRealInfant.text ?? "", freeAdult: cell.textFieldFreeAdult.text ?? "", freeChild: cell.textFieldFreeChild.text ?? "", freeToodle: cell.textFieldFreeToodle.text ?? "", freeInfant: cell.textFieldFreeInfant.text ?? "", totalAdult: cell.textFieldTotalAdult.text ?? "", totalChild: cell.textFieldTotalChild.text ?? "", totalToodle: cell.textFieldTotalToodle.text ?? "", totalInfant: cell.textFieldTotalInfant.text ?? "", realAmount: cell.textFieldRealAmount.text ?? "", freeAmount: cell.textFieldFreeAmount.text ?? "", freeTotal: cell.textFieldFreeTotal.text ?? "", totalAmount: cell.textFieldTotalAmount.text ?? "", grandTotal: cell.textFieldGrandTotal.text ?? "", iD: self.stepsDetailList[index].iD ?? "", action: self.stepsDetailList[index].action ?? ""))
+                    }
+                }
+                viewController.stepsDetailList = list
+            }
+            else{
+                viewController.stepsDetailList = []
+            }
         }
+        
         viewController.ids = ids
         viewController.stepId = stepId
+        viewController.supplierType = self.supplierType
         topVC?.otiPushViewController(viewController: viewController)
     }
 }
@@ -227,31 +239,41 @@ extension TasksStepsDetailViewController : TasksStepsDetailPaxesTableViewCellDel
             switch self.paxesLists[index].paxType {
             case PaxType.ADL.rawValue:
                 self.stepsDetailList[1].realAdult = String((Int(self.stepsDetailList[1].realAdult ?? "0") ?? 0) + 1)
+                self.getStepDetailPaxesList[0].realAdult = Int(self.stepsDetailList[1].realAdult ?? "0")
             case PaxType.CHD.rawValue:
                 self.stepsDetailList[1].realChild = String((Int(self.stepsDetailList[1].realChild ?? "0") ?? 0) + 1)
+                self.getStepDetailPaxesList[0].realChild = Int(self.stepsDetailList[1].realChild ?? "0")
             case PaxType.TDL.rawValue:
                 self.stepsDetailList[1].realToodle = String((Int(self.stepsDetailList[1].realToodle ?? "0") ?? 0) + 1)
+                self.getStepDetailPaxesList[0].realToodle = Int(self.stepsDetailList[1].realToodle ?? "0")
             case PaxType.INF.rawValue:
                 self.stepsDetailList[1].realInfant = String((Int(self.stepsDetailList[1].realInfant ?? "0") ?? 0) + 1)
+                self.getStepDetailPaxesList[0].realInfant = Int(self.stepsDetailList[1].realInfant ?? "0")
             default:
                 break
             }
             self.stepsDetailList[1].realTotal = String((Int(self.stepsDetailList[1].realTotal ?? "0") ?? 0) + 1)
+            self.getStepDetailPaxesList[0].realTotal = Int(self.stepsDetailList[1].realTotal ?? "0")
         }
         else{
             switch self.paxesLists[index].paxType {
             case PaxType.ADL.rawValue:
                 self.stepsDetailList[1].realAdult = (self.stepsDetailList[1].realAdult != "0") ? String((Int(self.stepsDetailList[1].realAdult ?? "0") ?? 0) - 1) : "0"
+                self.getStepDetailPaxesList[0].realAdult = Int(self.stepsDetailList[1].realAdult ?? "0")
             case PaxType.CHD.rawValue:
                 self.stepsDetailList[1].realChild = (self.stepsDetailList[1].realChild != "0") ? String((Int(self.stepsDetailList[1].realChild ?? "0") ?? 0) - 1) : "0"
+                self.getStepDetailPaxesList[0].realChild = Int(self.stepsDetailList[1].realChild ?? "0")
             case PaxType.TDL.rawValue:
                 self.stepsDetailList[1].realToodle = (self.stepsDetailList[1].realToodle != "0") ? String((Int(self.stepsDetailList[1].realToodle ?? "0") ?? 0) - 1) : "0"
+                self.getStepDetailPaxesList[0].realToodle = Int(self.stepsDetailList[1].realToodle ?? "0")
             case PaxType.INF.rawValue:
                 self.stepsDetailList[1].realInfant = (self.stepsDetailList[1].realInfant != "0") ? String((Int(self.stepsDetailList[1].realInfant ?? "0") ?? 0) - 1) : "0"
+                self.getStepDetailPaxesList[0].realInfant = Int(self.stepsDetailList[1].realInfant ?? "0")
             default:
                 break
             }
             self.stepsDetailList[1].realTotal = (self.stepsDetailList[1].realTotal != "0") ? String((Int(self.stepsDetailList[1].realTotal ?? "0") ?? 0) - 1) : "0"
+            self.getStepDetailPaxesList[0].realTotal = Int(self.stepsDetailList[1].realTotal ?? "0")
         }
         self.tableViewTasksStepsDetail.reloadData()
     }

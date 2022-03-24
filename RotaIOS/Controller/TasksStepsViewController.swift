@@ -119,7 +119,7 @@ extension TasksStepsViewController : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row != 0{
-            if !self.isSVCreatedBeforeForShopSupplier{
+            if self.stepsList[indexPath.row].isSVCreatedBeforeForShopSupplier == "false"{
                 let topVC = UIApplication.getTopViewController()
                 let viewController = TasksStepsDetailViewController()
                 viewController.ids = ids

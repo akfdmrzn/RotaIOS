@@ -74,6 +74,7 @@ public enum ServiceEndPoint: String {
     case GetStepDetail_ArrDepH2H_ShopSupplier = "/api/api/ServiceVoucherNew/GetStepDetail_ArrDepH2H_ShopSupplier"
     case IsCompanyUserValid = "/api/api/ServiceVoucherNew/IsCompanyUserValid"
     case CreateServiceVoucher = "/api/api/ServiceVoucherNew/CreateServiceVoucher"
+    case CreateServiceVoucher_ShopSupplier = "/api/api/ServiceVoucherNew/CreateServiceVoucher_ShopSupplier"
     case GetCompanyUsers = "/api/api/ServiceVoucherNew/GetCompanyUsers"
     case GetVoucherForGoShow = "/api/api/TourTransferPlan/GetVoucherForGoShow"
     case SetGoShowOnMobile = "/api/api/TourTransferPlan/SetGoShowOnMobile"

@@ -69,7 +69,7 @@ class TasksCreateServiceVoucherViewController: BaseViewController {
     func isCompanyUserValid(){
         
         self.pickerView.delegate = self
-        let isCompanyUserValidRequestModel = IsCompanyUserValidRequestModel.init(ids: self.ids, stepId: self.stepId, username: self.username, password: self.passwordTextField.text ?? "")
+        let isCompanyUserValidRequestModel = IsCompanyUserValidRequestModel.init(ids: self.ids, stepId: self.stepId, username: self.pickerView.textFieldCompanyUser.text ?? "", password: self.passwordTextField.text ?? "")
         NetworkManager.sendGetRequestTextResponse(url:NetworkManager.BASEURL, endPoint: .IsCompanyUserValid, method: .get, parameters: isCompanyUserValidRequestModel.requestPathString()) { (response : String) in
             if response == "true" {
                 self.createServiceVoucher()
@@ -104,7 +104,7 @@ class TasksCreateServiceVoucherViewController: BaseViewController {
     }
         
     @IBAction func buttonTappedLogin(_ sender: Any) {
-        if self.username != "" && self.passwordTextField.text != ""{
+        if self.pickerView.textFieldCompanyUser.text != "" && self.passwordTextField.text != ""{
             self.isCompanyUserValid()
         }
         else{

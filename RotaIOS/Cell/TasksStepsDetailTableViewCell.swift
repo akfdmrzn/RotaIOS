@@ -61,6 +61,27 @@ class TasksStepsDetailTableViewCell: BaseTableViewCell {
         self.textFieldGrandTotal.textColor = color
     }
     
+    func isEditingTextField(status: Bool){
+        self.textFieldRealAdult.isUserInteractionEnabled = status
+        self.textFieldRealChild.isUserInteractionEnabled = status
+        self.textFieldRealToodle.isUserInteractionEnabled = status
+        self.textFieldRealInfant.isUserInteractionEnabled = status
+        self.textFieldFreeAdult.isUserInteractionEnabled = status
+        self.textFieldFreeChild.isUserInteractionEnabled = status
+        self.textFieldFreeToodle.isUserInteractionEnabled = status
+        self.textFieldFreeInfant.isUserInteractionEnabled = status
+        self.textFieldTotalAdult.isUserInteractionEnabled = status
+        self.textFieldTotalChild.isUserInteractionEnabled = status
+        self.textFieldTotalToodle.isUserInteractionEnabled = status
+        self.textFieldTotalInfant.isUserInteractionEnabled = status
+        self.textFieldRealAmount.isUserInteractionEnabled = status
+        self.textFieldRealTotal.isUserInteractionEnabled = status
+        self.textFieldFreeAmount.isUserInteractionEnabled = status
+        self.textFieldFreeTotal.isUserInteractionEnabled = status
+        self.textFieldTotalAmount.isUserInteractionEnabled = status
+        self.textFieldGrandTotal.isUserInteractionEnabled = status
+    }
+    
     func setInfo(type: String, realTotal: String, realAdult: String, realChild: String, realToodle: String, realInfant: String, freeAdult: String, freeChild: String, freeToodle: String, freeInfant: String, totalAdult: String, totalChild: String, totalToodle: String, totalInfant: String, realAmount: String, freeAmount: String, freeTotal: String, totalAmount: String, grandTotal: String){
         self.labelType.text = type
         self.textFieldRealTotal.text = realTotal

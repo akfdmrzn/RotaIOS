@@ -12,7 +12,6 @@ protocol TasksPaxTableViewCellDelegate {
 }
 
 class TasksPaxTableViewCell: BaseTableViewCell {
-
     @IBOutlet weak var labelPaxName: UILabel!
     @IBOutlet weak var labelAgeGroup: UILabel!
     @IBOutlet weak var labelIncResNo: UILabel!

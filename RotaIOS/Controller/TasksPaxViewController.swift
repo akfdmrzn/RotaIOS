@@ -188,6 +188,7 @@ class TasksPaxViewController: BaseViewController {
             NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateNoShow, requestModel: updateNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
                 if response.isSuccesful == true {
                     UIApplication.getTopViewController()?.showAlertMsg(msg: response.message, finished: {
+                        self.dismiss(animated: true, completion: nil)
                     })
                 }
             }
@@ -197,6 +198,7 @@ class TasksPaxViewController: BaseViewController {
             NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateNoShow, requestModel: updateNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
                 if response.isSuccesful == true {
                     UIApplication.getTopViewController()?.showAlertMsg(msg: response.message, finished: {
+                        self.dismiss(animated: true, completion: nil)
                     })
                 }
             }
@@ -206,6 +208,7 @@ class TasksPaxViewController: BaseViewController {
             NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateNoShow, requestModel: updateNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
                 if response.isSuccesful == true {
                     UIApplication.getTopViewController()?.showAlertMsg(msg: response.message, finished: {
+                        self.dismiss(animated: true, completion: nil)
                     })
                 }
             }
@@ -215,6 +218,7 @@ class TasksPaxViewController: BaseViewController {
             NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateArrAndDepPlanNoShow, requestModel: updateArrAndDepPlanNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
                 if response.isSuccesful == true {
                     UIApplication.getTopViewController()?.showAlertMsg(msg: response.message, finished: {
+                        self.dismiss(animated: true, completion: nil)
                     })
                 }
             }
@@ -224,6 +228,7 @@ class TasksPaxViewController: BaseViewController {
             NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateArrAndDepPlanNoShow, requestModel: updateArrAndDepPlanNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
                 if response.isSuccesful == true {
                     UIApplication.getTopViewController()?.showAlertMsg(msg: response.message, finished: {
+                        self.dismiss(animated: true, completion: nil)
                     })
                 }
             }
@@ -233,6 +238,7 @@ class TasksPaxViewController: BaseViewController {
             NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateArrAndDepPlanNoShow, requestModel: updateArrAndDepPlanNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
                 if response.isSuccesful == true {
                     UIApplication.getTopViewController()?.showAlertMsg(msg: response.message, finished: {
+                        self.dismiss(animated: true, completion: nil)
                     })
                 }
             }
@@ -242,6 +248,7 @@ class TasksPaxViewController: BaseViewController {
             NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateInfoPlanNoShow, requestModel: updateInfoPlanNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
                 if response.isSuccesful == true {
                     UIApplication.getTopViewController()?.showAlertMsg(msg: response.message, finished: {
+                        self.dismiss(animated: true, completion: nil)
                     })
                 }
             }
@@ -251,6 +258,7 @@ class TasksPaxViewController: BaseViewController {
             NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .UpdateIndShopNoShow, requestModel: updateIndShopNoShowRequestModel) { (response : UpdateNoShowResponseModel) in
                 if response.isSuccesful == true {
                     UIApplication.getTopViewController()?.showAlertMsg(msg: response.message, finished: {
+                        self.dismiss(animated: true, completion: nil)
                     })
                 }
             }

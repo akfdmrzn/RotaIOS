@@ -178,14 +178,10 @@ class ExcAddCustomView : UIView {
             self.filteredExcursionList = filtered
             
             for listofArray in self.filteredExcursionList {
-                if self.buttonExtraTapped == true {
-                    self.extrasList = listofArray.extras ?? self.extrasList
-                }else{
-                    self.transfersList = listofArray.transfers ?? self.transfersList
-                }
+                self.extrasList = listofArray.extras ?? self.extrasList
+                self.transfersList = listofArray.transfers ?? self.transfersList
                 self.extrasorTranfersListTapped = true
             }
-            
             
             if self.extrasList.count > 0 {
                 for index in 0...self.extrasList.count - 1 {

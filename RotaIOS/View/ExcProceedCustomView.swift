@@ -138,6 +138,7 @@ class ExcProceedCustomView: UIView{
     var extraTransferPaxesList : [GetInHoseListResponseModel] = []
     var refundCondationLabel = ""
     var discountBalance = 0.0
+    var baseCurrency = ""
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -169,6 +170,17 @@ class ExcProceedCustomView: UIView{
        
         self.voucherNo = userDefaultsData.getMaxVoucher() ?? self.voucherNo
         self.buttonSend.isEnabled = true
+        
+        if self.tourList.count > 0 {
+            self.baseCurrency = self.tourList[0].currencyDesc ?? ""
+        }else{
+            if  ConfigManager.shared.getAppType() == .RotaTR {
+                self.baseCurrency = "EUR"
+            }else{
+                self.baseCurrency = "USD"
+            }
+        }
+        
         
         self.buttonPrintVoucher.backgroundColor = UIColor.clear
         self.buttonPrintVoucher.layer.borderWidth = 1
@@ -242,7 +254,7 @@ class ExcProceedCustomView: UIView{
         self.viewDicountCalculate.headerLAbel.text = "Discount"
         self.viewTotalAmount.headerLAbel.text = "TotalAmount"
         self.viewCurrencyConvert.headerLAbel.text = "Currency"
-        self.viewCurrencyType.mainLabel.text = "EUR"
+        self.viewCurrencyType.mainLabel.text = self.baseCurrency
         self.viewAmount.mainText.isHidden = false
         self.viewAmount.mainLabel.isHidden = true
         self.viewNotes.mainText.isHidden = false
@@ -489,7 +501,16 @@ class ExcProceedCustomView: UIView{
         roundedPaymentAmountChosenCurrency = paymentAmount ?? 0.0
         roundedPaymentAmountChosenCurrency = Double(Darwin.round(100 * roundedPaymentAmountChosenCurrency) / 100 )
         if filter.count > 0 {
-            paymentAmount = (paymentAmount ?? 0.0) * (filter[0].eUROCROSS ?? 0.0)
+            if self.baseCurrency == "EUR"{
+                paymentAmount = (paymentAmount ?? 0.0) * (filter[0].eUROCROSS ?? 0.0)
+            }else if self.baseCurrency == "USD"{
+                paymentAmount = (paymentAmount ?? 0.0) * (filter[0].uSDCROSS ?? 0.0)
+            }else if self.baseCurrency == "RUB"{
+                paymentAmount = (paymentAmount ?? 0.0) * (filter[0].rUBCROSS ?? 0.0)
+            }else{
+                paymentAmount = (paymentAmount ?? 0.0) * (filter[0].eUROCROSS ?? 0.0)
+            }
+            
         }
         roundedPaymentAmount = paymentAmount ?? 0.00
         roundedPaymentAmount = Double(Darwin.round(100 * roundedPaymentAmount) / 100 )
@@ -559,7 +580,7 @@ class ExcProceedCustomView: UIView{
     @IBAction func convertButtonTapped(_ sender: Any) {
         self.convertedCurrency = self.balanceAmount / self.valueforDivided
         let roundedValue = Double(Darwin.round(100 * self.convertedCurrency) / 100 )
-        let alert = UIAlertController.init(title: "Message", message: "Converted balance  for \(self.balanceAmount) EUR is \(roundedValue)\(self.convertedCurrencyTitle)", preferredStyle: .alert)
+        let alert = UIAlertController.init(title: "Message", message: "Converted balance  for \(self.balanceAmount) \(self.baseCurrency) is \(roundedValue)\(self.convertedCurrencyTitle)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         if let topVC = UIApplication.getTopViewController() {
             topVC.present(alert, animated: true, completion: nil)
@@ -582,7 +603,7 @@ class ExcProceedCustomView: UIView{
                 }
             }
             
-            if let index = self.currencyList.firstIndex(where: {$0.text == "EUR"} ){
+            if let index = self.currencyList.firstIndex(where: {$0.text == self.baseCurrency} ){
                     self.currencyId = self.currencyList[index].value ?? 0
                 }
             
@@ -761,7 +782,6 @@ class ExcProceedCustomView: UIView{
                     }
                     
                     if self.tourExtras.count > 0 {
-                       
                         self.extraTransferPaxesList = userDefaultsData.getPaxesList() ?? self.extraTransferPaxesList
                         for i in 0...self.tourExtras.count - 1{
                             var extrasAmount = 0.0
@@ -791,17 +811,18 @@ class ExcProceedCustomView: UIView{
                                     }
                                 }
                                 
-                                let extrasLabelType = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDExtras^FS^FO 250, \(self.addedNumber + 5)^A 0, 20 ^FD\(self.tourExtras[i].desc ?? "")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 20 ^FD \(adl)  ADL  \(chd)  CHD  \(tdl)  TDL  \(inf)  INF  \(extrasAmount)  EUR^FS"
+                                let extrasLabelType = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDExtras^FS^FO 250, \(self.addedNumber + 5)^A 0, 20 ^FD\(self.tourExtras[i].desc ?? "")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 20 ^FD \(adl)  ADL  \(chd)  CHD  \(tdl)  TDL  \(inf)  INF  \(extrasAmount)  \(self.baseCurrency)^FS"
                                 tourExtrasString.append(extrasLabelType)
-                                self.addedNumber += (i * 120)
+                              //  self.addedNumber += (i * 120)
                               /* if self.tourExtras.count == 1 {
                                     self.addedNumber += 120
                                 }*/
+                                
                             }else{
                                 extrasAmount = self.tourExtras[i].savedAmount ?? 0.0
-                                let extrasLabelType = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDExtras^FS^FO 250, \(self.addedNumber + 5)^A 0, 20 ^FD\(self.tourExtras[i].desc ?? "")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 20 ^FD \(adultCount)  ADL  \(childCount)  CHD  \(toodleCount)  TDL  \(infantCount)  INF  \(extrasAmount)  EUR^FS"
+                                let extrasLabelType = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDExtras^FS^FO 250, \(self.addedNumber + 5)^A 0, 20 ^FD\(self.tourExtras[i].desc ?? "")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 20 ^FD \(adultCount)  ADL  \(childCount)  CHD  \(toodleCount)  TDL  \(infantCount)  INF  \(extrasAmount)  \(self.baseCurrency)^FS"
                                 tourExtrasString.append(extrasLabelType)
-                                self.addedNumber += (i * 120)
+                               // self.addedNumber += (i * 120)
                                /* if self.tourExtras.count == 1 {
                                      self.addedNumber += 120
                                  }*/
@@ -810,7 +831,8 @@ class ExcProceedCustomView: UIView{
                             self.totalPricePerTour += extrasAmount
                             extrasTotalAmout += extrasAmount
                         }
-                        self.addedNumber += 120
+                            self.addedNumber += 120
+                        
                     }else{
                       //  self.addedNumber += 120
                     }
@@ -819,7 +841,10 @@ class ExcProceedCustomView: UIView{
                     if self.tourTransfers.count > 0 {
                         for i in 0...self.tourTransfers.count - 1{
                             var transfersAmount = 0.0
-                            self.addedNumber += 120
+                            if self.tourExtras.count == 0 {
+                                self.addedNumber += 120
+                            }
+                            
                             if let index = self.transfersPaxesList.firstIndex(where: {$0.extraName == self.tourTransfers[i].desc}){
                                 for j in 0...self.extraTransferPaxesList.count - 1{
                                     self.extraTransferPaxesList[j].isTapped = self.transfersPaxesList[index].CheckList?[j]
@@ -845,17 +870,17 @@ class ExcProceedCustomView: UIView{
                                     }
                                 }
                                 
-                                let transfersLabelType = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDTransfers^FS^FO 250, \(self.addedNumber + 5)^A 0, 20 ^FD\(self.tourTransfers[i].desc ?? "")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 20 ^FD \(adl)  ADL  \(chd)  CHD  \(tdl)  TDL  \(inf)  INF  \(transfersAmount)  EUR^FS"
+                                let transfersLabelType = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDTransfers^FS^FO 250, \(self.addedNumber + 5)^A 0, 20 ^FD\(self.tourTransfers[i].desc ?? "")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 20 ^FD \(adl)  ADL  \(chd)  CHD  \(tdl)  TDL  \(inf)  INF  \(transfersAmount)  \(self.baseCurrency)^FS"
                                 tourTransfersString.append(transfersLabelType)
-                                self.addedNumber += (i * 120)
+                               // self.addedNumber += (i * 120)
                                /* if self.tourTransfers.count == 1 {
                                      self.addedNumber += 120
                                  }*/
                             }else{
                                 transfersAmount = self.tourTransfers[i].savedAmount ?? 0.0
-                                let transfersLabelType = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDTransfers^FS^FO 250, \(self.addedNumber + 5)^A 0, 20 ^FD\(self.tourTransfers[i].desc ?? "")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 20 ^FD \(adultCount)  ADL  \(childCount)  CHD  \(toodleCount)  TDL  \(infantCount)  INF  \(transfersAmount)  EUR^FS"
+                                let transfersLabelType = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 20 ^FDTransfers^FS^FO 250, \(self.addedNumber + 5)^A 0, 20 ^FD\(self.tourTransfers[i].desc ?? "")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 20 ^FD \(adultCount)  ADL  \(childCount)  CHD  \(toodleCount)  TDL  \(infantCount)  INF  \(transfersAmount) \(self.baseCurrency)^FS"
                                 tourTransfersString.append(transfersLabelType)
-                                self.addedNumber += (i * 120)
+                              //  self.addedNumber += (i * 120)
                                /* if self.tourTransfers.count == 1 {
                                      self.addedNumber += 120
                                  }*/
@@ -864,7 +889,9 @@ class ExcProceedCustomView: UIView{
                             self.totalPricePerTour += transfersAmount
                             transfersTotalAmout += transfersAmount
                         }
+                        
                         self.addedNumber += 120
+                        
                     }else{
                       //  self.addedNumber += 120
                     }
@@ -873,7 +900,7 @@ class ExcProceedCustomView: UIView{
                     }
                    ///
                     tourPaxPrice = self.totalPricePerTour - extrasTotalAmout - transfersTotalAmout
-                    let tourPaxLabel = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 25 ^FDTourPax^FS^FO 250, \(self.addedNumber + 5)^A 0, 25 ^FD\("")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 25 ^FD \(adultCount)  ADL  \(childCount)  CHD  \(toodleCount)  TDL  \(infantCount)  INF  \(tourPaxPrice) EUR^FS"
+                    let tourPaxLabel = "^FO10,\(self.addedNumber)^GB540,100,0^FS^FO 20,\(self.addedNumber + 5) ^A 0, 25 ^FDTourPax^FS^FO 250, \(self.addedNumber + 5)^A 0, 25 ^FD\("")^FS^FO 20, \(self.addedNumber + 70)) ^A 0, 25 ^FD \(adultCount)  ADL  \(childCount)  CHD  \(toodleCount)  TDL  \(infantCount)  INF  \(tourPaxPrice) \(self.baseCurrency)^FS"
                     
                    
                     self.addedNumber += 120
@@ -883,7 +910,7 @@ class ExcProceedCustomView: UIView{
                     bottomListSzieNumberList.append(bottomSizeNumber)
                 
                     perTourPriceList.append(self.totalPricePerTour)
-                    self.printList.append(SendDataPrint(tourName: self.tourList[i].tourName, paxInfo: "ADL :\(adultCount),CHD: \(childCount), TDL:\(toodleCount), INF: \(infantCount)", voucher:  "", tourDate: self.tourList[i].tourDateStr, transTourist: isTransfersHave, hotelName: hotelName, date: self.currentDate, room: room, paxName: paxName, operatorName: operatorName, resNo: resNo, total:"\(0.0)EUR" , discount: "\(0.0)EUR", netTotal: "\(0.0)EUR", cash: "", card: "", guideInfoNumber: "", pickUpTime: self.tourList[i].pickUpTime, extras: tourExtrasString, transfers: tourTransfersString, tourPax: tourPaxLabel, voucherNoTop: self.voucherNo[i]))
+                    self.printList.append(SendDataPrint(tourName: self.tourList[i].tourName, paxInfo: "ADL :\(adultCount),CHD: \(childCount), TDL:\(toodleCount), INF: \(infantCount)", voucher:  "", tourDate: self.tourList[i].tourDateStr, transTourist: isTransfersHave, hotelName: hotelName, date: self.currentDate, room: room, paxName: paxName, operatorName: operatorName, resNo: resNo, total:"\(0.0)\(self.baseCurrency)" , discount: "\(0.0)\(self.baseCurrency)", netTotal: "\(0.0)\(self.baseCurrency)", cash: "", card: "", guideInfoNumber: "", pickUpTime: self.tourList[i].pickUpTime, extras: tourExtrasString, transfers: tourTransfersString, tourPax: tourPaxLabel, voucherNoTop: self.voucherNo[i]))
                 }
                 
                 // Refund Contidion
@@ -964,8 +991,8 @@ class ExcProceedCustomView: UIView{
                 for i in 0...self.printList.count - 1{
                     var vatAmount = 0.0
                     self.printList[i].total = String(Double(Darwin.round(100 * (perTourPriceList[i] - discountList[i])) / 100 ))
-                    vatAmount = Darwin.round((Double(self.printList[i].total ?? "") ?? 0.0) * 0.14) / 100
-                    self.printList[i].vatAmount = String(vatAmount)
+                    vatAmount = (Double(self.printList[i].total ?? "") ?? 0.0) * 0.14
+                    self.printList[i].vatAmount = String(Double(Darwin.round(100 * (vatAmount)) / 100 ))
                     self.printList[i].discount = String(Double(Darwin.round(100 * (discountList[i])) / 100 ))
                    
                 }
@@ -1052,24 +1079,26 @@ extension ExcProceedCustomView : UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             print("Deleted")
             let chosenCrossType = self.paymentTypeList[indexPath.row].currencyTpye
-            let baseCrossType = "EUR"
+            let baseCrossType = self.baseCurrency
             var baseCrossValue = 1.0
             var roundedSavedValue = 0.0
             
-            for i in 0...self.exchangeList.count - 1 {
-                if chosenCrossType == exchangeList[i].sHORTCODE {
-                    if baseCrossType == "EUR" {
-                        baseCrossValue = exchangeList[i].eUROCROSS ?? 1.0
-                    }else if baseCrossType == "USD" {
-                        baseCrossValue = exchangeList[i].uSDCROSS ?? 1.0
-                    }else if baseCrossType == "RUB" {
-                        baseCrossValue = exchangeList[i].rUBCROSS ?? 1.0
-                    }else {
-                        baseCrossValue = exchangeList[i].eUROCROSS ?? 1.0
+            if self.exchangeList.count > 0{
+                for i in 0...self.exchangeList.count - 1 {
+                    if chosenCrossType == exchangeList[i].sHORTCODE {
+                        if baseCrossType == "EUR" {
+                            baseCrossValue = exchangeList[i].eUROCROSS ?? 1.0
+                        }else if baseCrossType == "USD" {
+                            baseCrossValue = exchangeList[i].uSDCROSS ?? 1.0
+                        }else if baseCrossType == "RUB" {
+                            baseCrossValue = exchangeList[i].rUBCROSS ?? 1.0
+                        }else {
+                            baseCrossValue = exchangeList[i].eUROCROSS ?? 1.0
+                        }
                     }
                 }
             }
-            
+           
             self.deletedAmount = self.paymentTypeList[indexPath.row].paymentAmount ?? 0.00
             self.deletedAmount = self.deletedAmount * baseCrossValue
             let roundedDeletedValue = Double(Darwin.round(100 * self.deletedAmount) / 100 )

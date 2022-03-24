@@ -46,7 +46,11 @@ class ExcursionViewController: UIViewController {
     var totalTransfersAmount = 0
     var changeTransferNumber = 0
     var changeExcNumber = 0
-    var isExcOrTransChange = true
+    var changeExcandTransPrice = 0.0
+    var iscExcandTransPriceChanged = false
+    var tempExcandTransPrice = 0.0
+    var tempExcandTransTotalPrice = 0.0
+    var isExcOrTransChange = false
     var tourListSaved : [GetSearchTourResponseModel] = []
     var paxesListSaved : [GetInHoseListResponseModel] = []
     var ageGroup = ""
@@ -84,6 +88,8 @@ class ExcursionViewController: UIViewController {
     var transferPaxesList : [ExtraPaxes] = []
     var comperadPaxesList  : [GetInHoseListResponseModel] = []
     var paxesListIsChange = false
+    var tempExtrasList : [Extras] = []
+    var tempTransfersList : [Transfers] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -245,11 +251,13 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
             userDefaultsData.saveTransferPaxesList(transferPaxes: self.transferPaxesList)
             self.saveButtonTappet = true
             userDefaultsData.saveExtrasandTransfersTotalPrice(totalPrice: self.extraAndTransTotalPrice)
+            self.tempExtrasList = userDefaultsData.getExtrasList() ?? self.tempExtrasList
+            self.tempTransfersList = userDefaultsData.getTransfersList() ?? self.tempTransfersList
+            self.tempExcandTransTotalPrice = self.extraAndTransTotalPrice
         }
     }
     
     func continueButtonTappedDelegate(tapped: Int) {
-        
         self.buttonTappedCount = tapped
         if self.buttonTappedCount == 2 || self.buttonTappedCount == 3{
             //self.buttonTappedCount = 2
@@ -264,6 +272,15 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
         
         if self.buttonTappedCount == 3{
           //  self.buttonTappedCount = 2
+            
+            if self.tempExtrasList != userDefaultsData.getExtrasList() || self.tempTransfersList != userDefaultsData.getTransfersList() || self.tempExcandTransTotalPrice != self.extraAndTransTotalPrice {
+                self.viewFooterViewCustomView.counter = 2
+                let alert = UIAlertController.init(title: "WARNING", message: "Please Clicked Save Button", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                return
+            }
+            
             
             if self.saveButtonTappet == false && self.extraAndTransTotalPrice != 0.0 {
                 self.viewFooterViewCustomView.counter = 2
@@ -308,7 +325,6 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
                 present(alert, animated: true, completion: nil)
                 return
             }
-            
         }
         
         self.viewExcursionView.scrollView.contentOffset = CGPoint(x: 0, y: 0)
@@ -929,7 +945,7 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
                 }
             }
             
-            if let extraNumber = userDefaultsData.getTransfersList()?.count {
+            if let extraNumber = userDefaultsData.getExtrasList()?.count {
                 if  self.changeExcNumber != extraNumber {
                     self.isExcOrTransChange = true
                     self.changeExcNumber = extraNumber
@@ -938,7 +954,16 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
                 }
             }
             
-            if self.isExcOrTransChange == true || self.viewExcProceedCustomView == nil || self.isPAxesListChange == true{
+            self.tempExcandTransPrice = userDefaultsData.getExtrasandTransfersTotalPrice()
+            
+            if  self.changeExcandTransPrice != self.tempExcandTransPrice {
+                self.iscExcandTransPriceChanged = true
+                self.changeExcandTransPrice = self.tempExcandTransPrice
+                }else{
+                    self.iscExcandTransPriceChanged = false
+                }
+
+            if self.isExcOrTransChange == true || self.viewExcProceedCustomView == nil || self.isPAxesListChange == true || self.iscExcandTransPriceChanged == true{
                 
                 self.totalPrice = self.totalPriceBeforExtrasandTransfersAded + userDefaultsData.getExtrasandTransfersTotalPrice()
                 
@@ -1029,6 +1054,13 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
         
         if self.buttonTappedCount == 3{
           //  self.buttonTappedCount = 2
+            if self.tempExtrasList != userDefaultsData.getExtrasList() || self.tempTransfersList != userDefaultsData.getTransfersList() || self.tempExcandTransTotalPrice != self.extraAndTransTotalPrice {
+                self.viewAppointMentBarCutomView.selectedIndex.row = 2
+                let alert = UIAlertController.init(title: "WARNING", message: "Please Clicked Save Button", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                return
+            }
             
             if self.saveButtonTappet == false && self.extraAndTransTotalPrice != 0.0 {
                 self.viewAppointMentBarCutomView.selectedIndex.row = 2
@@ -1074,6 +1106,7 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
                 return
             }
         }
+        
         self.viewFooterViewCustomView.isHidden = false
         self.viewExcursionView.scrollView.contentOffset = CGPoint(x: 0, y: 0)
         self.viewFooterViewCustomView.viewSendVoucher.isHidden = true
@@ -1704,7 +1737,16 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
                 }
             }
             
-            if self.isExcOrTransChange == true || self.viewExcProceedCustomView == nil || self.isPAxesListChange == true{
+            self.tempExcandTransPrice = userDefaultsData.getExtrasandTransfersTotalPrice()
+            
+            if  self.changeExcandTransPrice != self.tempExcandTransPrice {
+                self.iscExcandTransPriceChanged = true
+                self.changeExcandTransPrice = self.tempExcandTransPrice
+                }else{
+                    self.iscExcandTransPriceChanged = false
+                }
+    
+            if self.isExcOrTransChange == true || self.viewExcProceedCustomView == nil || self.isPAxesListChange == true || self.iscExcandTransPriceChanged == true{
                 
                 self.totalPrice = self.totalPriceBeforExtrasandTransfersAded + userDefaultsData.getExtrasandTransfersTotalPrice()
                 // TourPromotionDiscount service

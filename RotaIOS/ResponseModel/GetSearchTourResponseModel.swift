@@ -129,7 +129,10 @@ public class GetSearchTourResponseModel : Mappable, Decodable, Encodable{
     }
 }
 
-public struct Transfers : Mappable, Decodable, Encodable{
+public struct Transfers : Mappable, Decodable, Encodable, Equatable{
+    public static func == (lhs: Transfers, rhs: Transfers) -> Bool {
+        return true
+    }
     var transfersPaxesList : [GetInHoseListResponseModel]?
     var savedAmount : Double?
     var TotalPrice : Double?
@@ -239,7 +242,10 @@ public struct Transfers : Mappable, Decodable, Encodable{
     }
 }
 
-public struct Extras : Mappable, Decodable, Encodable{
+public struct Extras : Mappable, Decodable, Encodable, Equatable{
+    public static func == (lhs: Extras, rhs: Extras) -> Bool {
+        return true
+    }
     var extrasPaxesList : [GetInHoseListResponseModel]?
     var savedAmount : Double?
     var TotalPrice : Double?

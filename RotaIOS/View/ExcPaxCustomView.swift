@@ -154,7 +154,8 @@ class ExcPaxCustomView : UIView {
                     }
                     userDefaultsData.saveTouristDetailInfoList(tour: self.touristDetailInfoList)
                     userDefaultsData.savePaxesList(tour: self.savePaxesList)
-                    
+                    self.totalPaxesCount = self.savePaxesList.count
+                    self.labelTouristAdded.text = "\(self.totalPaxesCount) Tourist Added"
                     self.tableView.reloadData()
                 }else{
                     return

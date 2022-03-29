@@ -243,7 +243,7 @@ class ProceedPageCustomView : UIView {
         self.viewPickUpTimeMainTextView.mainText.text = "\(formatter.string(for: timePicker.date) ?? "12:00")"
         self.viewMainView.endEditing(true)
         print(formatter.string(from: timePicker.date))
-        self.timeString = formatter.string(from: datePicker.date)
+        self.timeString = formatter.string(from: timePicker.date)
     }
 }
 

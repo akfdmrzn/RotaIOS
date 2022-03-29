@@ -310,7 +310,7 @@ class ExcSearchCustomView : UIView {
     
     @objc func didTapHotelMenu() {
         self.hotelMenu.show()
-        self.hotelMenu.direction = .top
+        self.hotelMenu.direction = .bottom
     }
     
     @objc func didTapPromotionMenu() {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -129,20 +129,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="InfantPrice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLF-Z6-shm">
-                                            <rect key="frame" x="705" y="10" width="120" height="21"/>
+                                            <rect key="frame" x="835" y="10" width="120" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="nvl-dO-QC7"/>
                                                 <constraint firstAttribute="width" constant="120" id="wIv-0j-rI7"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ToodlePrice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trp-cG-9Ni">
-                                            <rect key="frame" x="835" y="10" width="120" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="120" id="T4R-rp-dtR"/>
-                                                <constraint firstAttribute="height" constant="21" id="rxR-fT-FWg"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -158,24 +148,34 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ToodlePrice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trp-cG-9Ni">
+                                            <rect key="frame" x="705" y="10" width="120" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="120" id="T4R-rp-dtR"/>
+                                                <constraint firstAttribute="height" constant="21" id="rxR-fT-FWg"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="Lva-vc-Fbi" firstAttribute="leading" secondItem="tbJ-WT-LJL" secondAttribute="trailing" constant="10" id="1S4-kD-wh6"/>
-                                        <constraint firstItem="fLF-Z6-shm" firstAttribute="top" secondItem="Hgg-lX-GBe" secondAttribute="top" constant="10" id="5Uo-zZ-Qeg"/>
+                                        <constraint firstItem="trp-cG-9Ni" firstAttribute="top" secondItem="Hgg-lX-GBe" secondAttribute="top" constant="10" id="3ns-GY-wB5"/>
                                         <constraint firstItem="g6T-Zu-TqO" firstAttribute="leading" secondItem="R3Z-gW-wep" secondAttribute="trailing" constant="10" id="Cab-yt-zZ2"/>
                                         <constraint firstItem="tbJ-WT-LJL" firstAttribute="top" secondItem="Hgg-lX-GBe" secondAttribute="top" constant="10" id="Clz-BC-kNb"/>
-                                        <constraint firstItem="flq-Ps-C3X" firstAttribute="leading" secondItem="trp-cG-9Ni" secondAttribute="trailing" constant="10" id="EjO-Ua-jeA"/>
+                                        <constraint firstItem="fLF-Z6-shm" firstAttribute="leading" secondItem="trp-cG-9Ni" secondAttribute="trailing" constant="10" id="HfV-Td-EzY"/>
                                         <constraint firstItem="Lva-vc-Fbi" firstAttribute="top" secondItem="Hgg-lX-GBe" secondAttribute="top" constant="10" id="Iag-O6-dSS"/>
                                         <constraint firstAttribute="height" constant="40" id="IkD-01-EBc"/>
                                         <constraint firstItem="R3Z-gW-wep" firstAttribute="top" secondItem="Hgg-lX-GBe" secondAttribute="top" constant="10" id="O2P-fo-faT"/>
-                                        <constraint firstItem="fLF-Z6-shm" firstAttribute="leading" secondItem="UDj-GA-o7Z" secondAttribute="trailing" constant="10" id="QWL-6a-71i"/>
-                                        <constraint firstItem="trp-cG-9Ni" firstAttribute="top" secondItem="Hgg-lX-GBe" secondAttribute="top" constant="10" id="VVa-fY-srA"/>
+                                        <constraint firstItem="fLF-Z6-shm" firstAttribute="top" secondItem="Hgg-lX-GBe" secondAttribute="top" constant="10" id="STm-6D-FIS"/>
+                                        <constraint firstItem="trp-cG-9Ni" firstAttribute="leading" secondItem="UDj-GA-o7Z" secondAttribute="trailing" constant="10" id="c7e-U2-cIc"/>
                                         <constraint firstItem="UDj-GA-o7Z" firstAttribute="top" secondItem="Hgg-lX-GBe" secondAttribute="top" constant="10" id="gyR-u6-HuK"/>
                                         <constraint firstItem="g6T-Zu-TqO" firstAttribute="top" secondItem="Hgg-lX-GBe" secondAttribute="top" constant="10" id="iIe-BM-3T5"/>
+                                        <constraint firstItem="flq-Ps-C3X" firstAttribute="leading" secondItem="fLF-Z6-shm" secondAttribute="trailing" constant="10" id="ihf-dF-qie"/>
                                         <constraint firstItem="R3Z-gW-wep" firstAttribute="leading" secondItem="Hgg-lX-GBe" secondAttribute="leading" constant="55" id="k1n-5A-e6q"/>
                                         <constraint firstItem="UDj-GA-o7Z" firstAttribute="leading" secondItem="Lva-vc-Fbi" secondAttribute="trailing" constant="10" id="mLI-ki-Onw"/>
-                                        <constraint firstItem="trp-cG-9Ni" firstAttribute="leading" secondItem="fLF-Z6-shm" secondAttribute="trailing" constant="10" id="nth-HL-suT"/>
                                         <constraint firstItem="flq-Ps-C3X" firstAttribute="top" secondItem="Hgg-lX-GBe" secondAttribute="top" constant="10" id="s5f-CZ-szG"/>
                                         <constraint firstItem="tbJ-WT-LJL" firstAttribute="leading" secondItem="g6T-Zu-TqO" secondAttribute="trailing" constant="10" id="snL-0C-voF"/>
                                     </constraints>

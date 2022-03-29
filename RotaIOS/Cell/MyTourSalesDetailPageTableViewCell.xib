@@ -10,18 +10,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="232" id="KGk-i7-Jjw" customClass="MyTourSalesDetailPageTableViewCell" customModule="RotaIOS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="436" height="232"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="167" id="KGk-i7-Jjw" customClass="MyTourSalesDetailPageTableViewCell" customModule="RotaIOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="435" height="167"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="436" height="232"/>
+                <rect key="frame" x="0.0" y="0.0" width="435" height="167"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YOY-Vz-rEQ">
-                        <rect key="frame" x="10" y="20" width="416" height="162"/>
+                        <rect key="frame" x="10" y="5" width="415" height="157"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16.10.2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fog-DC-n7z">
-                                <rect key="frame" x="10" y="8" width="314" height="10"/>
+                                <rect key="frame" x="10" y="8" width="313" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="5Zp-Xc-oue"/>
                                 </constraints>
@@ -30,7 +30,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAMUKKALE 1 DAY" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxq-aB-LEL">
-                                <rect key="frame" x="5" y="23" width="406" height="10"/>
+                                <rect key="frame" x="5" y="23" width="405" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="XSM-u9-yI9"/>
                                 </constraints>
@@ -49,10 +49,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acropol Beach Hotel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVO-CQ-WRr">
-                                <rect key="frame" x="26" y="52" width="335" height="8"/>
+                                <rect key="frame" x="26" y="52" width="300" height="8"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="lfQ-88-Evu"/>
-                                    <constraint firstAttribute="width" constant="335" id="xB1-Gn-3SK"/>
+                                    <constraint firstAttribute="width" constant="300" id="xB1-Gn-3SK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="7"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -109,7 +109,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvO-3i-4Z0">
-                                <rect key="frame" x="225" y="85" width="150" height="67"/>
+                                <rect key="frame" x="225" y="85" width="150" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="qfv-es-1zo"/>
                                 </constraints>
@@ -118,7 +118,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right" translatesAutoresizingMaskIntoConstraints="NO" id="mas-5Q-COk">
-                                <rect key="frame" x="368" y="44" width="40" height="25"/>
+                                <rect key="frame" x="333" y="44" width="74" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="a5i-NQ-Yv3"/>
                                 </constraints>
@@ -157,8 +157,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="YOY-Vz-rEQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Edu-6I-K30"/>
-                    <constraint firstAttribute="bottom" secondItem="YOY-Vz-rEQ" secondAttribute="bottom" constant="50" id="OQl-Yr-Rhg"/>
-                    <constraint firstItem="YOY-Vz-rEQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="hap-fK-u3e"/>
+                    <constraint firstAttribute="bottom" secondItem="YOY-Vz-rEQ" secondAttribute="bottom" constant="5" id="OQl-Yr-Rhg"/>
+                    <constraint firstItem="YOY-Vz-rEQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="hap-fK-u3e"/>
                     <constraint firstAttribute="trailing" secondItem="YOY-Vz-rEQ" secondAttribute="trailing" constant="10" id="qrd-0Z-daF"/>
                 </constraints>
             </tableViewCellContentView>
@@ -176,7 +176,7 @@
                 <outlet property="viewContentView" destination="H2p-sc-9uM" id="tR1-xK-yGF"/>
                 <outlet property="viewDetailContentView" destination="YOY-Vz-rEQ" id="oKj-1M-Q9f"/>
             </connections>
-            <point key="canvasLocation" x="92.753623188405811" y="153.34821428571428"/>
+            <point key="canvasLocation" x="92.028985507246389" y="131.58482142857142"/>
         </tableViewCell>
     </objects>
     <resources>

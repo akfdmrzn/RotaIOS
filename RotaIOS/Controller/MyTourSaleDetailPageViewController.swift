@@ -47,7 +47,7 @@ extension MyTourSaleDetailPageViewController : UITableViewDelegate, UITableViewD
         cell.labelHotelName.text = self.tourDetailItem?.hotelName
         cell.labelReelPax.text = self.tourDetailItem?.totalPax
         cell.labelResNo.text = self.tourDetailItem?.pax_ResNo
-        cell.labelStatusName.text = self.statusName
+        cell.labelStatusName.text = self.tourDetailItem?.stateStr ?? ""
         cell.voucherNo = self.tourDetailItem?.tourVoucher ?? ""
         cell.tourSaleId = String(self.tourDetailItem?.multiSaleId ?? 0) 
         return cell

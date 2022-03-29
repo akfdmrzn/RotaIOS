@@ -20,7 +20,7 @@ class MyTourSaleMoreDetailViewController: UIViewController {
         self.viewMyTourSaleMoreDetailView.labelTime.text = self.tourDetailListInMoreDetailPage?.tourPickupTime
         self.viewMyTourSaleMoreDetailView.labelReelPax.text = self.tourDetailListInMoreDetailPage?.totalPax
         self.viewMyTourSaleMoreDetailView.labelCollectionGuide.text = self.tourDetailListInMoreDetailPage?.colGuide
-        self.viewMyTourSaleMoreDetailView.labelExcursionGuide.text = self.tourDetailListInMoreDetailPage?.excKokartGuide
+        self.viewMyTourSaleMoreDetailView.labelExcursionGuide.text = self.tourDetailListInMoreDetailPage?.excGuide
         self.viewMyTourSaleMoreDetailView.labelDeployingGuide.text = self.tourDetailListInMoreDetailPage?.delGuide
         self.viewMyTourSaleMoreDetailView.labelCancelNote.text = self.tourDetailListInMoreDetailPage?.note
         if self.tourDetailListInMoreDetailPage?.cancelDate != nil {

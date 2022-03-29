@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -74,20 +74,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHr-NT-BX5">
-                        <rect key="frame" x="705" y="10" width="120" height="21"/>
+                        <rect key="frame" x="835" y="10" width="120" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="221-9e-iH9"/>
                             <constraint firstAttribute="width" constant="120" id="4hL-sd-wAQ"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehz-KB-WCk">
-                        <rect key="frame" x="835" y="10" width="120" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="120" id="aFi-TC-ZSC"/>
-                            <constraint firstAttribute="height" constant="21" id="jFq-tm-2x7"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -103,27 +93,37 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehz-KB-WCk">
+                        <rect key="frame" x="705" y="10" width="120" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="aFi-TC-ZSC"/>
+                            <constraint firstAttribute="height" constant="21" id="jFq-tm-2x7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="XOw-Fj-H03" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="0Cq-Px-wHE"/>
-                    <constraint firstItem="yHr-NT-BX5" firstAttribute="leading" secondItem="Q31-sp-yIb" secondAttribute="trailing" constant="10" id="85E-Li-4U7"/>
+                    <constraint firstItem="yHr-NT-BX5" firstAttribute="leading" secondItem="Ehz-KB-WCk" secondAttribute="trailing" constant="10" id="8lL-tQ-1AS"/>
+                    <constraint firstItem="XOw-Fj-H03" firstAttribute="leading" secondItem="yHr-NT-BX5" secondAttribute="trailing" constant="10" id="9F9-fU-q89"/>
+                    <constraint firstItem="Ehz-KB-WCk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Cam-xX-R2E"/>
                     <constraint firstItem="1Gq-8h-6oi" firstAttribute="leading" secondItem="NWO-8I-UME" secondAttribute="trailing" constant="10" id="Edf-OZ-mCe"/>
-                    <constraint firstItem="yHr-NT-BX5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="LMd-6q-bW9"/>
+                    <constraint firstItem="yHr-NT-BX5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="KyD-bh-QYh"/>
                     <constraint firstItem="iwN-v1-Myu" firstAttribute="leading" secondItem="jlh-WR-Y9E" secondAttribute="trailing" constant="10" id="Ntv-Kr-jrT"/>
                     <constraint firstItem="jlh-WR-Y9E" firstAttribute="leading" secondItem="1Gq-8h-6oi" secondAttribute="trailing" constant="10" id="ONh-nZ-kLg"/>
                     <constraint firstItem="jlh-WR-Y9E" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="S0m-ll-EGD"/>
                     <constraint firstItem="Q31-sp-yIb" firstAttribute="leading" secondItem="iwN-v1-Myu" secondAttribute="trailing" constant="10" id="StE-a6-g5e"/>
                     <constraint firstItem="NWO-8I-UME" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Swp-Fn-lt7"/>
                     <constraint firstItem="zSh-aT-sH7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="bcZ-3f-JFF"/>
-                    <constraint firstItem="XOw-Fj-H03" firstAttribute="leading" secondItem="Ehz-KB-WCk" secondAttribute="trailing" constant="10" id="cJJ-lO-o2A"/>
                     <constraint firstItem="1Gq-8h-6oi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="h7r-cC-1IT"/>
                     <constraint firstAttribute="bottom" secondItem="NWO-8I-UME" secondAttribute="bottom" priority="252" constant="29" id="hvG-Yn-wwG"/>
                     <constraint firstItem="iwN-v1-Myu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="iFZ-eU-jTX"/>
-                    <constraint firstItem="Ehz-KB-WCk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="kZJ-iT-WeU"/>
                     <constraint firstItem="zSh-aT-sH7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="pVq-C1-hVn"/>
+                    <constraint firstItem="Ehz-KB-WCk" firstAttribute="leading" secondItem="Q31-sp-yIb" secondAttribute="trailing" constant="10" id="tEu-tx-PHQ"/>
                     <constraint firstItem="NWO-8I-UME" firstAttribute="leading" secondItem="zSh-aT-sH7" secondAttribute="trailing" constant="20" id="wd8-F9-VYa"/>
                     <constraint firstItem="Q31-sp-yIb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="xAk-Sq-90a"/>
-                    <constraint firstItem="Ehz-KB-WCk" firstAttribute="leading" secondItem="yHr-NT-BX5" secondAttribute="trailing" constant="10" id="xAk-hC-HIe"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

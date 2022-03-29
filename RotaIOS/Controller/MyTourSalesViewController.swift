@@ -21,6 +21,7 @@ class MyTourSalesViewController: UIViewController {
     var isTappedStatus = false
     var tourId = ""
     var statusId = ""
+    var statusName = ""
     var beginDate = ""
     var endDate = ""
     var saleDate = ""
@@ -262,7 +263,7 @@ class MyTourSalesViewController: UIViewController {
         NetworkManager.sendGetRequestArray(url: NetworkManager.BASEURL, endPoint:.TourGetTourDetailForMobile , method: .get, parameters: myTourSaleRequestModel.requestPathString()) { (response : [GetTourDetailForMobileResponseModel]) in
             if response.count > 0 {
                 self.tourDetailList = response
-                self.otiPushViewController(viewController: MyTourSaleDetailPageViewController(tourDetailListInDetailPage: self.tourDetailList), animated: true)
+                self.otiPushViewController(viewController: MyTourSaleDetailPageViewController(tourDetailListInDetailPage: self.tourDetailList, statusNameInDetatilPage: self.statusName), animated: true)
             }else {
                 let alert = UIAlertController(title: "Error", message: "Data has not recived", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
@@ -273,7 +274,8 @@ class MyTourSalesViewController: UIViewController {
 }
 
 extension MyTourSalesViewController : MyTourStatusViewDelegate {
-    func myTourStatusSelectedIdList(selectedStatusIdList: [String]) {
+    func myTourStatusSelectedIdList(selectedStatusIdList: [String], selectedStatusNameList : [String]) {
         self.statusId = selectedStatusIdList.joined(separator: ",")
+        self.statusName = selectedStatusNameList.joined(separator: ",")
     }
 }

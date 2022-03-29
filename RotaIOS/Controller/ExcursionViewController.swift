@@ -682,6 +682,7 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
                                 self.viewExcProceedCustomView?.voucherNo.append("")
                             }
                         }
+                            self.viewExcProceedCustomView = nil
                     }
                     ///
                 }
@@ -923,7 +924,7 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
                 // self.proceedPageCustomView?.isHidden = true
             }
             self.showToast(message: "\(self.totalPriceBeforExtrasandTransfersAded)")
-            
+     
         }else if self.buttonTappedCount == 3 {
             //  self.viewExcursionView.scrollView.contentOffset = CGPoint(x: 0, y: 0)
             self.viewFooterViewCustomView.viewSendVoucher.isHidden = true
@@ -963,7 +964,7 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
                     self.iscExcandTransPriceChanged = false
                 }
 
-            if self.isExcOrTransChange == true || self.viewExcProceedCustomView == nil || self.isPAxesListChange == true || self.iscExcandTransPriceChanged == true{
+            if self.isExcOrTransChange == true || self.viewExcProceedCustomView == nil || self.isPAxesListChange == true || self.iscExcandTransPriceChanged == true {
                 
                 self.totalPrice = self.totalPriceBeforExtrasandTransfersAded + userDefaultsData.getExtrasandTransfersTotalPrice()
                 
@@ -1467,6 +1468,7 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
                                 self.viewExcProceedCustomView?.voucherNo.append("1")
                             }
                         }
+                        self.viewExcProceedCustomView = nil
                     }
                     
                     ///

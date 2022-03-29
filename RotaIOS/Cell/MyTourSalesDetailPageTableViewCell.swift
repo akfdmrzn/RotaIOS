@@ -17,6 +17,7 @@ class MyTourSalesDetailPageTableViewCell: BaseTableViewCell {
     @IBOutlet weak var labelHotelName: UILabel!
     @IBOutlet weak var labelReelPax: UILabel!
     @IBOutlet weak var labelResNo: UILabel!
+    @IBOutlet weak var labelStatusName: UILabel!
     var viewZReportLongClickMenu : ZReportLongClickMenu?
     var clicked = false
     var voucherNo = ""

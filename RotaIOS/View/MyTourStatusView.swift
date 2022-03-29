@@ -9,7 +9,7 @@ import UIKit
 import Foundation
 
 protocol MyTourStatusViewDelegate {
-    func myTourStatusSelectedIdList(selectedStatusIdList : [String])
+    func myTourStatusSelectedIdList(selectedStatusIdList : [String], selectedStatusNameList : [String])
 }
 
 class MyTourStatusView: UIView {
@@ -17,6 +17,7 @@ class MyTourStatusView: UIView {
     @IBOutlet weak var tableView: UITableView!
     var statusList : [String] = ["Approved","Waiting Approval","Canceled","Rejected"]
     var selectedStatusIdList : [String] = []
+    var selectedStatusNameList : [String] = []
     var newStatus = ""
     var myTourStatusViewDelegate : MyTourStatusViewDelegate?
     
@@ -59,14 +60,15 @@ extension MyTourStatusView : UITableViewDelegate, UITableViewDataSource {
 }
 
 extension MyTourStatusView : MyTourStatusTableViewCellDelegate {
-
-    func myTourStatusId(selectedStatusId: String, isremove: Bool) {
+  
+    func myTourStatusId(selectedStatusId: String, selectedStatusName: String, isremove: Bool) {
             if isremove == false {
                 self.selectedStatusIdList.append(selectedStatusId)
+                self.selectedStatusNameList.append(selectedStatusName)
             }else {
                 self.selectedStatusIdList.remove(object: selectedStatusId)
             }
-        self.myTourStatusViewDelegate?.myTourStatusSelectedIdList(selectedStatusIdList: self.selectedStatusIdList)
+        self.myTourStatusViewDelegate?.myTourStatusSelectedIdList(selectedStatusIdList: self.selectedStatusIdList, selectedStatusNameList: self.selectedStatusNameList)
     }
 }
 

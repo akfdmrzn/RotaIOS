@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MyTourStatusTableViewCellDelegate {
-    func myTourStatusId(selectedStatusId : String, isremove : Bool)
+    func myTourStatusId(selectedStatusId : String, selectedStatusName : String, isremove : Bool)
 }
 
 class MyTourStatusTableViewCell: BaseTableViewCell {
@@ -36,27 +36,27 @@ extension MyTourStatusTableViewCell: CheckBoxViewDelegate {
     func checkBoxTapped(isremember: Bool) {
         if isremember == true {
             if self.labelStatusText.text == "Status" {
-                self.myTourStatusTableViewCellDelegate?.myTourStatusId(selectedStatusId: "0", isremove: false)
+                self.myTourStatusTableViewCellDelegate?.myTourStatusId(selectedStatusId: "0", selectedStatusName: "Status", isremove: false)
             }else if self.labelStatusText.text == "Approved" {
-                self.myTourStatusTableViewCellDelegate?.myTourStatusId(selectedStatusId: "94", isremove: false)
+                self.myTourStatusTableViewCellDelegate?.myTourStatusId(selectedStatusId: "94", selectedStatusName: "Approved", isremove: false)
             }else if self.labelStatusText.text == "Waiting Approval" {
-                self.myTourStatusTableViewCellDelegate?.myTourStatusId(selectedStatusId: "95", isremove: false)
+                self.myTourStatusTableViewCellDelegate?.myTourStatusId(selectedStatusId: "95", selectedStatusName: "Waiting Approval", isremove: false)
             }else if self.labelStatusText.text == "Canceled" {
-                self.myTourStatusTableViewCellDelegate?.myTourStatusId(selectedStatusId: "181", isremove: false)
+                self.myTourStatusTableViewCellDelegate?.myTourStatusId(selectedStatusId: "181", selectedStatusName: "Canceled", isremove: false)
             }else if self.labelStatusText.text == "Rejected" {
-                self.myTourStatusTableViewCellDelegate?.myTourStatusId(selectedStatusId: "165", isremove: false)
+                self.myTourStatusTableViewCellDelegate?.myTourStatusId(selectedStatusId: "165", selectedStatusName: "Rejected", isremove: false)
             }
         }else{
             if self.labelStatusText.text == "Status" {
-                self.myTourStatusTableViewCellDelegate?.myTourStatusId(selectedStatusId: "0", isremove: true)
+                self.myTourStatusTableViewCellDelegate?.myTourStatusId(selectedStatusId: "0", selectedStatusName: "Status", isremove: true)
             }else if self.labelStatusText.text == "Approved" {
-                self.myTourStatusTableViewCellDelegate?.myTourStatusId(selectedStatusId: "94", isremove: true)
+                self.myTourStatusTableViewCellDelegate?.myTourStatusId(selectedStatusId: "94", selectedStatusName: "Approved", isremove: true)
             }else if self.labelStatusText.text == "Waiting Approval" {
-                self.myTourStatusTableViewCellDelegate?.myTourStatusId(selectedStatusId: "95", isremove: true)
+                self.myTourStatusTableViewCellDelegate?.myTourStatusId(selectedStatusId: "95", selectedStatusName: "Waiting Approval", isremove: true)
             }else if self.labelStatusText.text == "Canceled" {
-                self.myTourStatusTableViewCellDelegate?.myTourStatusId(selectedStatusId: "181", isremove: true)
+                self.myTourStatusTableViewCellDelegate?.myTourStatusId(selectedStatusId: "181", selectedStatusName: "Canceled", isremove: true)
             }else if self.labelStatusText.text == "Rejected" {
-                self.myTourStatusTableViewCellDelegate?.myTourStatusId(selectedStatusId: "165", isremove: true)
+                self.myTourStatusTableViewCellDelegate?.myTourStatusId(selectedStatusId: "165", selectedStatusName: "Rejected", isremove: true)
             }
         }
     }

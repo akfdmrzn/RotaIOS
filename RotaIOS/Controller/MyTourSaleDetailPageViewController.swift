@@ -13,6 +13,7 @@ class MyTourSaleDetailPageViewController: UIViewController {
     @IBOutlet var viewMyTourSaleDetailPage: MyTourSaleDetailPageView!
     var tourDetailListInDetailPage : [GetTourDetailForMobileResponseModel] = []
     var tourDetailItem : GetTourDetailForMobileResponseModel?
+    var statusName = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.backgroundColor = UIColor.grayColor
@@ -21,8 +22,9 @@ class MyTourSaleDetailPageViewController: UIViewController {
         self.tableView.register(MyTourSalesDetailPageTableViewCell.nib, forCellReuseIdentifier: MyTourSalesDetailPageTableViewCell.identifier)
     }
     
-    init(tourDetailListInDetailPage : [GetTourDetailForMobileResponseModel] ) {
+    init(tourDetailListInDetailPage : [GetTourDetailForMobileResponseModel], statusNameInDetatilPage : String) {
         self.tourDetailListInDetailPage = tourDetailListInDetailPage
+        self.statusName = statusNameInDetatilPage
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -45,6 +47,7 @@ extension MyTourSaleDetailPageViewController : UITableViewDelegate, UITableViewD
         cell.labelHotelName.text = self.tourDetailItem?.hotelName
         cell.labelReelPax.text = self.tourDetailItem?.totalPax
         cell.labelResNo.text = self.tourDetailItem?.pax_ResNo
+        cell.labelStatusName.text = self.statusName
         cell.voucherNo = self.tourDetailItem?.tourVoucher ?? ""
         cell.tourSaleId = String(self.tourDetailItem?.multiSaleId ?? 0) 
         return cell

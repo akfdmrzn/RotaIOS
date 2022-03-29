@@ -173,7 +173,7 @@ public class GetSaveForMobileRequestList : Mappable {
     }
     
     
-    public init(iND_CHLMAXAGE : Any, iND_NOTE : Any, iND_VOUCHER : Any, iND_SHOPDATE : String, iND_GUIDEREF : Int, iND_MARKETGROUPREF : Int, iND_MARKETREF : Int, iND_AREAREF : Int, iND_HOTELREF : Int, iND_SHOPPICKUPTIME : String, strPaxes : String, strSteps : String ) {
+    public init(iND_CHLMAXAGE : Any, iND_NOTE : Any, iND_VOUCHER : Any, iND_SHOPDATE : String, iND_GUIDEREF : Int, iND_MARKETGROUPREF : Int, iND_MARKETREF : Int, iND_AREAREF : Int, iND_HOTELREF : Int, iND_SHOPPICKUPTIME : String, strPaxes : String, strSteps : String, iND_ISREPEAT : Bool ) {
         
         self.iND_SHOPDATE = iND_SHOPDATE
         self.iND_GUIDEREF = iND_GUIDEREF
@@ -187,6 +187,7 @@ public class GetSaveForMobileRequestList : Mappable {
         self.iND_VOUCHER = iND_VOUCHER
         self.iND_NOTE = iND_NOTE
         self.iND_CHLMAXAGE = iND_CHLMAXAGE
+        self.iND_ISREPEAT = iND_ISREPEAT
     }
     
 

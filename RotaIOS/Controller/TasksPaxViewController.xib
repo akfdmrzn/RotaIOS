@@ -136,10 +136,10 @@
                                             <rect key="frame" x="0.0" y="245.5" width="414" height="640.5"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qp0-Ck-YBZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="1665" height="0.0"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="2465" height="0.0"/>
                                                     <subviews>
                                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="f75-bd-fYg">
-                                                            <rect key="frame" x="0.0" y="0.0" width="1665" height="0.0"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="2465" height="0.0"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" id="Gmm-ED-60g"/>
@@ -153,7 +153,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="f75-bd-fYg" secondAttribute="bottom" id="Anz-xu-JP4"/>
                                                         <constraint firstItem="f75-bd-fYg" firstAttribute="top" secondItem="Qp0-Ck-YBZ" secondAttribute="top" id="HTm-Op-S5p"/>
                                                         <constraint firstAttribute="trailing" secondItem="f75-bd-fYg" secondAttribute="trailing" id="TlD-Md-Tgf"/>
-                                                        <constraint firstAttribute="width" constant="1665" id="WCW-UE-Dea"/>
+                                                        <constraint firstAttribute="width" constant="2465" id="WCW-UE-Dea"/>
                                                         <constraint firstAttribute="height" priority="250" id="Y0I-OF-S9F"/>
                                                         <constraint firstItem="f75-bd-fYg" firstAttribute="leading" secondItem="Qp0-Ck-YBZ" secondAttribute="leading" id="q55-Dm-2ND"/>
                                                     </constraints>
@@ -245,8 +245,8 @@
         </view>
     </objects>
     <resources>
-        <image name="bag.fill" catalog="system" width="128" height="128"/>
-        <image name="location.fill" catalog="system" width="128" height="121"/>
+        <image name="bag.fill" catalog="system" width="32" height="32"/>
+        <image name="location.fill" catalog="system" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -59,16 +59,21 @@ public class PaxList : NSObject {
     public var voucherNo : String = ""
     public var room : String = ""
     public var oprResNo : String = ""
-    public var show : String = ""
+    public var birthday : String = ""
     public var infoRep : String = ""
     public var shoppingGuideNote : String = ""
+    public var arrInfoNote : String = ""
+    public var transferGuideName : String = ""
+    public var transferGuidePhoneNumber : String = ""
+    public var favouriteExcursionDesc : String = ""
+    public var checkDatesStr : String = ""
     public var check: Bool = false
     
     public required init?(map: Map) {
 
     }
 
-    public init(index: Int, paxName: String, ageGroup: String, incResNo: String, operator_: String, voucherNo: String, room: String, oprResNo: String, noShow: String, infoRep: String, guideNote: String, check: Bool){
+    public init(index: Int, paxName: String, ageGroup: String, incResNo: String, operator_: String, voucherNo: String, room: String, oprResNo: String, birthday: String, infoRep: String, guideNote: String, arrInfoNote: String, transferGuideName: String, transferGuidePhoneNumber: String, favouriteExcursionDesc: String, checkDatesStr: String, check: Bool){
         self.index = index
         self.paxName = paxName
         self.ageGroup = ageGroup
@@ -77,9 +82,14 @@ public class PaxList : NSObject {
         self.voucherNo = voucherNo
         self.room = room
         self.oprResNo = oprResNo
-        self.show = noShow
+        self.birthday = birthday
         self.infoRep = infoRep
         self.shoppingGuideNote = guideNote
+        self.arrInfoNote = arrInfoNote
+        self.transferGuideName = transferGuideName
+        self.transferGuidePhoneNumber = transferGuidePhoneNumber
+        self.favouriteExcursionDesc = favouriteExcursionDesc
+        self.checkDatesStr = checkDatesStr
         self.check = check
     }
 

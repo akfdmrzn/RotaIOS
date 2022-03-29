@@ -19,9 +19,14 @@ class TasksPaxTableViewCell: BaseTableViewCell {
     @IBOutlet weak var labelVoucherNo: UILabel!
     @IBOutlet weak var labelRoom: UILabel!
     @IBOutlet weak var labelOprResNo: UILabel!
-    @IBOutlet weak var labelNoShow: UILabel!
+    @IBOutlet weak var labelBirthday: UILabel!
     @IBOutlet weak var labelInfoRep: UILabel!
     @IBOutlet weak var labelGuideNote: UILabel!
+    @IBOutlet weak var labelArrInfoNote: UILabel!
+    @IBOutlet weak var labelTransferGuideName: UILabel!
+    @IBOutlet weak var labelTransferGuidePhoneNumber: UILabel!
+    @IBOutlet weak var labelFavouriteExcursionDesc: UILabel!
+    @IBOutlet weak var labelCheckDatesStr: UILabel!
     @IBOutlet weak var imageViewCheck: UIImageView!
     
     var delegate : TasksPaxTableViewCellDelegate?
@@ -39,7 +44,7 @@ class TasksPaxTableViewCell: BaseTableViewCell {
         // Configure the view for the selected state
     }
     
-    func setInfo(index: Int, paxName: String, ageGroup: String, incResNo: String, operator_: String, voucherNo: String, room: String, oprResNo: String, noShow: String, infoRep: String, guideNote: String, check: Bool){
+    func setInfo(index: Int, paxName: String, ageGroup: String, incResNo: String, operator_: String, voucherNo: String, room: String, oprResNo: String, birthday: String, infoRep: String, guideNote: String, arrInfoNote: String, transferGuideName: String, transferGuidePhoneNumber: String, favouriteExcursionDesc: String, checkDatesStr: String, check: Bool){
         self.index = index
         self.labelPaxName.text = paxName
         self.labelAgeGroup.text = ageGroup
@@ -48,9 +53,14 @@ class TasksPaxTableViewCell: BaseTableViewCell {
         self.labelVoucherNo.text = voucherNo
         self.labelRoom.text = room
         self.labelOprResNo.text = oprResNo
-        self.labelNoShow.text = noShow
+        self.labelBirthday.text = birthday
         self.labelInfoRep.text = infoRep
         self.labelGuideNote.text = guideNote
+        self.labelArrInfoNote.text = arrInfoNote
+        self.labelTransferGuideName.text = transferGuideName
+        self.labelTransferGuidePhoneNumber.text = transferGuidePhoneNumber
+        self.labelFavouriteExcursionDesc.text = favouriteExcursionDesc
+        self.labelCheckDatesStr.text = checkDatesStr
         self.isTappedCheck = check
         self.imageViewCheck.image = (self.isTappedCheck == true) ? UIImage(named: "check") : UIImage(named: "square")
     }

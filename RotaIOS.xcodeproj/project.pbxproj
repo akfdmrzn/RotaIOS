@@ -371,6 +371,11 @@
 		D9A48CFF26B1408A00D28A0A /* DocumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A48CFE26B1408A00D28A0A /* DocumentsView.swift */; };
 		D9A48D0226B1895500D28A0A /* DocumentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A48D0026B1895500D28A0A /* DocumentsTableViewCell.swift */; };
 		D9A48D0326B1895500D28A0A /* DocumentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9A48D0126B1895500D28A0A /* DocumentsTableViewCell.xib */; };
+		D9B2732E27F5AFE400B447F8 /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B2732C27F5AFE400B447F8 /* BirthdayViewController.swift */; };
+		D9B2732F27F5AFE400B447F8 /* BirthdayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9B2732D27F5AFE400B447F8 /* BirthdayViewController.xib */; };
+		D9B2733127F5B00400B447F8 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B2733027F5B00400B447F8 /* BirthdayView.swift */; };
+		D9B2733427F5B91100B447F8 /* BirtDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B2733227F5B91000B447F8 /* BirtDayTableViewCell.swift */; };
+		D9B2733527F5B91100B447F8 /* BirtDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9B2733327F5B91100B447F8 /* BirtDayTableViewCell.xib */; };
 		D9DCB19D26BBEB900064A040 /* MyTourSalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB19B26BBEB900064A040 /* MyTourSalesViewController.swift */; };
 		D9DCB19E26BBEB900064A040 /* MyTourSalesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9DCB19C26BBEB900064A040 /* MyTourSalesViewController.xib */; };
 		D9DCB1A026BBECE50064A040 /* MyTourSaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB19F26BBECE50064A040 /* MyTourSaleView.swift */; };
@@ -811,6 +816,11 @@
 		D9A48CFE26B1408A00D28A0A /* DocumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsView.swift; sourceTree = "<group>"; };
 		D9A48D0026B1895500D28A0A /* DocumentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewCell.swift; sourceTree = "<group>"; };
 		D9A48D0126B1895500D28A0A /* DocumentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocumentsTableViewCell.xib; sourceTree = "<group>"; };
+		D9B2732C27F5AFE400B447F8 /* BirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
+		D9B2732D27F5AFE400B447F8 /* BirthdayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BirthdayViewController.xib; sourceTree = "<group>"; };
+		D9B2733027F5B00400B447F8 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
+		D9B2733227F5B91000B447F8 /* BirtDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirtDayTableViewCell.swift; sourceTree = "<group>"; };
+		D9B2733327F5B91100B447F8 /* BirtDayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BirtDayTableViewCell.xib; sourceTree = "<group>"; };
 		D9DCB19B26BBEB900064A040 /* MyTourSalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTourSalesViewController.swift; sourceTree = "<group>"; };
 		D9DCB19C26BBEB900064A040 /* MyTourSalesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTourSalesViewController.xib; sourceTree = "<group>"; };
 		D9DCB19F26BBECE50064A040 /* MyTourSaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTourSaleView.swift; sourceTree = "<group>"; };
@@ -1036,6 +1046,9 @@
 				D994FBCB27451851003564F3 /* ExcursionViewController.swift */,
 				D994FBCC27451851003564F3 /* ExcursionViewController.xib */,
 				D994FBCF27451862003564F3 /* ExcursionView.swift */,
+				D9B2732C27F5AFE400B447F8 /* BirthdayViewController.swift */,
+				D9B2732D27F5AFE400B447F8 /* BirthdayViewController.xib */,
+				D9B2733027F5B00400B447F8 /* BirthdayView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1355,6 +1368,8 @@
 				D97EE011276B952B00683E66 /* AddMenuPaxTableViewCell.xib */,
 				D97EE01E277519FD00683E66 /* ProceedPaxTableViewCell.swift */,
 				D97EE01F277519FD00683E66 /* ProceedPaxTableViewCell.xib */,
+				D9B2733227F5B91000B447F8 /* BirtDayTableViewCell.swift */,
+				D9B2733327F5B91100B447F8 /* BirtDayTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1592,6 +1607,7 @@
 				D97FB5A126C32CEB0099F28B /* MyTourSaleMoreDetailViewController.xib in Resources */,
 				A97E52F527CFFC4600044B78 /* TasksTourDetailViewController.xib in Resources */,
 				A90BF97E27E8660200579CBB /* TasksGoShowViewController.xib in Resources */,
+				D9B2733527F5B91100B447F8 /* BirtDayTableViewCell.xib in Resources */,
 				D97FB58726C075940099F28B /* MyTourSaleDetailPageViewController.xib in Resources */,
 				BF44C887263FF80100238035 /* LaunchScreen.storyboard in Resources */,
 				BF44C95B2640018B00238035 /* MyTourSaleViewController.xib in Resources */,
@@ -1607,6 +1623,7 @@
 				A97E52ED27CFF5DA00044B78 /* TasksListView.xib in Resources */,
 				D9FD6504273C1F7B009B6619 /* HotelsandFlightsTableViewCell.xib in Resources */,
 				D994FBCE27451851003564F3 /* ExcursionViewController.xib in Resources */,
+				D9B2732F27F5AFE400B447F8 /* BirthdayViewController.xib in Resources */,
 				BF44C9432640017600238035 /* TasksViewController.xib in Resources */,
 				D9561A46269E110A00AA75E5 /* AnnoucmentsDetailTableViewCell.xib in Resources */,
 				D931576326FCB0C0000C91AD /* ZReportTotalTableViewCell.xib in Resources */,
@@ -1837,6 +1854,7 @@
 				A96A532D27C79A5600611475 /* SaveGuideMeetingTimeAndReportResponseModel.swift in Sources */,
 				D9956BFC26D7D31C006CFC6D /* GetVoucherDetailResponseModel.swift in Sources */,
 				A90BF98B27E8AFE500579CBB /* TasksGoShowTableViewCell.swift in Sources */,
+				D9B2733427F5B91100B447F8 /* BirtDayTableViewCell.swift in Sources */,
 				D900407827172F1C00DDE088 /* GetDailyReportRequestModel.swift in Sources */,
 				A90BF98427E8769800579CBB /* SetGoShowOnMobileResponseModel.swift in Sources */,
 				D95C202826EFDD83007D1506 /* GetHotelSelectListByAreaRefResponseModel.swift in Sources */,
@@ -1859,6 +1877,7 @@
 				BF44C9C1264001F800238035 /* PresentationController.swift in Sources */,
 				BF44C9712640019F00238035 /* AppointmentBarCustomView.swift in Sources */,
 				D95C202626ECC2B1007D1506 /* SpeakingHoursView.swift in Sources */,
+				D9B2732E27F5AFE400B447F8 /* BirthdayViewController.swift in Sources */,
 				A97E530D27D62EAD00044B78 /* GetStepsForIndShopResponseModel.swift in Sources */,
 				D931575B26FB4A0F000C91AD /* GetReportDataRequestModel.swift in Sources */,
 				BF44C91C2640013B00238035 /* LoginView.swift in Sources */,
@@ -1936,6 +1955,7 @@
 				D931578B27048C38000C91AD /* ZReportRefundView.swift in Sources */,
 				A9AAE5502791829500AFBA67 /* GetInterPaxesResponseModel.swift in Sources */,
 				D931573F26F8C206000C91AD /* ZReportView.swift in Sources */,
+				D9B2733127F5B00400B447F8 /* BirthdayView.swift in Sources */,
 				D9956BFA26D7D2A3006CFC6D /* GetVoucherDetailRequestModel.swift in Sources */,
 				D9DCB19D26BBEB900064A040 /* MyTourSalesViewController.swift in Sources */,
 				A9C674FC277F4C8000536F21 /* GetHotelListForMobileResponseModel.swift in Sources */,

@@ -38,7 +38,7 @@ extension UIColor {
     class var barGrayColor :                    UIColor { return UIColor(hexString: "#191919") }
     class var darkGrayColor :                   UIColor { return UIColor(hexString: "#1C1C1D") }
     class var excursionColor:                   UIColor { return UIColor(hexString: "#FFB300") }
-    class var collectionColor:                  UIColor { return UIColor(hexString: "#1C1C1D") }
+    class var collectionColor:                  UIColor { return UIColor(hexString: "#1C26B7") }
     class var deliveryColor:                    UIColor { return UIColor(hexString: "#035D00") }
     class var arrivalColor:                     UIColor { return UIColor(hexString: "#26C455") }
     class var departureColor:                   UIColor { return UIColor(hexString: "#B71C1C") }

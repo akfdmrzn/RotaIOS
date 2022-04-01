@@ -52,13 +52,13 @@ public class PaxesList : Mappable,Decodable,Encodable {
     public var paxType : String?
     public var unselectable : Bool?
     public var isGoShow : Bool?
-    public var userSelected : String?
+    public var userSelected : Bool?
 
     public required init?(map: Map) {
         
     }
     
-    public init(_id : String, oprShopPaxesID: Int, oprTouristID: String, paxNameSurname: String, operatorId: Int, operatorName: String, marketId: Int, marketName: String, paxType: String, unselectable: Bool, isGoShow: Bool, userSelected: String) {
+    public init(_id : String, oprShopPaxesID: Int, oprTouristID: String, paxNameSurname: String, operatorId: Int, operatorName: String, marketId: Int, marketName: String, paxType: String, unselectable: Bool, isGoShow: Bool, userSelected: Bool) {
         self._id = _id
         self.oprShopPaxesID = oprShopPaxesID
         self.oprTouristID = oprTouristID

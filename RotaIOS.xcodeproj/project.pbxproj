@@ -376,6 +376,8 @@
 		D9B2733127F5B00400B447F8 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B2733027F5B00400B447F8 /* BirthdayView.swift */; };
 		D9B2733427F5B91100B447F8 /* BirtDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B2733227F5B91000B447F8 /* BirtDayTableViewCell.swift */; };
 		D9B2733527F5B91100B447F8 /* BirtDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9B2733327F5B91100B447F8 /* BirtDayTableViewCell.xib */; };
+		D9B2733727F5C52C00B447F8 /* GetBirtDaysResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B2733627F5C52C00B447F8 /* GetBirtDaysResponseModel.swift */; };
+		D9B2733927F5C66100B447F8 /* GetBirthDaysRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B2733827F5C66100B447F8 /* GetBirthDaysRequestModel.swift */; };
 		D9DCB19D26BBEB900064A040 /* MyTourSalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB19B26BBEB900064A040 /* MyTourSalesViewController.swift */; };
 		D9DCB19E26BBEB900064A040 /* MyTourSalesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9DCB19C26BBEB900064A040 /* MyTourSalesViewController.xib */; };
 		D9DCB1A026BBECE50064A040 /* MyTourSaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB19F26BBECE50064A040 /* MyTourSaleView.swift */; };
@@ -821,6 +823,8 @@
 		D9B2733027F5B00400B447F8 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
 		D9B2733227F5B91000B447F8 /* BirtDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirtDayTableViewCell.swift; sourceTree = "<group>"; };
 		D9B2733327F5B91100B447F8 /* BirtDayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BirtDayTableViewCell.xib; sourceTree = "<group>"; };
+		D9B2733627F5C52C00B447F8 /* GetBirtDaysResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBirtDaysResponseModel.swift; sourceTree = "<group>"; };
+		D9B2733827F5C66100B447F8 /* GetBirthDaysRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBirthDaysRequestModel.swift; sourceTree = "<group>"; };
 		D9DCB19B26BBEB900064A040 /* MyTourSalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTourSalesViewController.swift; sourceTree = "<group>"; };
 		D9DCB19C26BBEB900064A040 /* MyTourSalesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTourSalesViewController.xib; sourceTree = "<group>"; };
 		D9DCB19F26BBECE50064A040 /* MyTourSaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTourSaleView.swift; sourceTree = "<group>"; };
@@ -1119,6 +1123,7 @@
 				A97E533627D92FA000044B78 /* CreateServiceVoucherRequestModel.swift */,
 				A90BF98127E8764B00579CBB /* GetVoucherForGoShowRequestModel.swift */,
 				A90BF98527E876A800579CBB /* SetGoShowOnMobileRequestModel.swift */,
+				D9B2733827F5C66100B447F8 /* GetBirthDaysRequestModel.swift */,
 			);
 			path = RequestModel;
 			sourceTree = "<group>";
@@ -1190,6 +1195,7 @@
 				A97E533427D92F9000044B78 /* CreateServiceVoucherResponseModel.swift */,
 				A90BF97F27E8763500579CBB /* GetVoucherForGoShowResponseModel.swift */,
 				A90BF98327E8769800579CBB /* SetGoShowOnMobileResponseModel.swift */,
+				D9B2733627F5C52C00B447F8 /* GetBirtDaysResponseModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -1956,6 +1962,7 @@
 				A9AAE5502791829500AFBA67 /* GetInterPaxesResponseModel.swift in Sources */,
 				D931573F26F8C206000C91AD /* ZReportView.swift in Sources */,
 				D9B2733127F5B00400B447F8 /* BirthdayView.swift in Sources */,
+				D9B2733927F5C66100B447F8 /* GetBirthDaysRequestModel.swift in Sources */,
 				D9956BFA26D7D2A3006CFC6D /* GetVoucherDetailRequestModel.swift in Sources */,
 				D9DCB19D26BBEB900064A040 /* MyTourSalesViewController.swift in Sources */,
 				A9C674FC277F4C8000536F21 /* GetHotelListForMobileResponseModel.swift in Sources */,
@@ -2021,6 +2028,7 @@
 				D9004074271722E200DDE088 /* DailyReportView.swift in Sources */,
 				D900407627172AC900DDE088 /* GetDailyReportResponseModel.swift in Sources */,
 				BF44C976264001A400238035 /* BaseCollectionViewCell.swift in Sources */,
+				D9B2733727F5C52C00B447F8 /* GetBirtDaysResponseModel.swift in Sources */,
 				BF44C905264000FA00238035 /* BaseApiRequestBody.swift in Sources */,
 				D93F887B264AAA4B00397283 /* GetInHoseListResponseModel.swift in Sources */,
 				D90E39012796B8760081ECB7 /* GetPromotionRequestModel.swift in Sources */,

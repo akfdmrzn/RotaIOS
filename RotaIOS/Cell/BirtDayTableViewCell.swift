@@ -8,6 +8,7 @@
 import UIKit
 
 class BirtDayTableViewCell: BaseTableViewCell {
+    @IBOutlet weak var viewContentView: UIView!
     @IBOutlet weak var labelTouristName: UILabel!
     @IBOutlet weak var labelAgeGroup: UILabel!
     @IBOutlet weak var labelMarket: UILabel!
@@ -15,7 +16,7 @@ class BirtDayTableViewCell: BaseTableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.viewContentView.layer.cornerRadius = 10
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

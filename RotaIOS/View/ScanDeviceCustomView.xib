@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,106 +25,136 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPA-F8-CGo">
-                    <rect key="frame" x="20" y="100" width="180" height="50"/>
-                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFX-em-SAT">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGg-q4-tSv">
+                            <rect key="frame" x="107" y="412" width="200" height="50"/>
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="KKy-mN-Wgi"/>
+                                <constraint firstAttribute="height" constant="50" id="RZp-JU-ZpF"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="NEW IND.SHOP SALE">
+                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="13"/>
+                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="newIndShopSaleTapped:" destination="-1" eventType="touchUpInside" id="P57-fj-EAW"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Kt-Zc-dKu">
+                            <rect key="frame" x="107" y="344" width="200" height="50"/>
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="q2a-UI-6yT"/>
+                                <constraint firstAttribute="width" constant="200" id="wAk-0q-bFj"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="NEW EXCURSİOUN SALE">
+                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="13"/>
+                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="newExcSaleButtonTapped:" destination="-1" eventType="touchUpInside" id="T0R-hy-bGW"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYw-a0-OQz">
+                            <rect key="frame" x="107" y="275" width="200" height="50"/>
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="8et-jl-8NB"/>
+                                <constraint firstAttribute="height" constant="50" id="H2y-16-k7p"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="PRINT VOUCHER">
+                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="13"/>
+                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="printButtonTapped:" destination="-1" eventType="touchUpInside" id="7X6-f3-12s"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPA-F8-CGo">
+                            <rect key="frame" x="8" y="154" width="180" height="50"/>
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="agD-PV-zxf"/>
+                                <constraint firstAttribute="width" constant="180" id="n8W-wc-0ae"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="SCAN">
+                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="13"/>
+                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="scanButtonTapped:" destination="-1" eventType="touchUpInside" id="qdR-6N-PNO"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIn-0k-QaB">
+                            <rect key="frame" x="226" y="154" width="180" height="50"/>
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="180" id="B7x-pn-ARF"/>
+                                <constraint firstAttribute="height" constant="50" id="uD0-Qr-qjf"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="RECONNECT">
+                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="13"/>
+                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="reconnectButtonTapped:" destination="-1" eventType="touchUpInside" id="zIJ-RW-aH4"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4r-qS-2Aw">
+                            <rect key="frame" x="8" y="39" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="hQK-Ld-X8l"/>
+                                <constraint firstAttribute="height" constant="30" id="lAE-Cn-leu"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal">
+                                <imageReference key="image" image="leftarrow" symbolScale="large"/>
+                            </state>
+                            <connections>
+                                <action selector="backButton:" destination="-1" eventType="touchUpInside" id="8r5-iN-Mis"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="180" id="5a7-wr-BJH"/>
-                        <constraint firstAttribute="height" constant="50" id="rx9-8X-3Pw"/>
+                        <constraint firstItem="uIn-0k-QaB" firstAttribute="top" secondItem="BFX-em-SAT" secondAttribute="top" constant="154" id="3kL-xm-yQT"/>
+                        <constraint firstItem="uPA-F8-CGo" firstAttribute="leading" secondItem="BFX-em-SAT" secondAttribute="leading" constant="8" id="3pQ-4l-cqP"/>
+                        <constraint firstItem="f4r-qS-2Aw" firstAttribute="top" secondItem="BFX-em-SAT" secondAttribute="top" constant="39" id="5aT-tq-cUS"/>
+                        <constraint firstItem="cGg-q4-tSv" firstAttribute="leading" secondItem="BFX-em-SAT" secondAttribute="leading" constant="107" id="63D-hF-HbC"/>
+                        <constraint firstItem="8Kt-Zc-dKu" firstAttribute="top" secondItem="kYw-a0-OQz" secondAttribute="bottom" constant="19" id="E9s-DI-vNP"/>
+                        <constraint firstItem="uPA-F8-CGo" firstAttribute="top" secondItem="BFX-em-SAT" secondAttribute="top" constant="154" id="GhC-ex-9Ot"/>
+                        <constraint firstItem="cGg-q4-tSv" firstAttribute="top" secondItem="8Kt-Zc-dKu" secondAttribute="bottom" constant="18" id="Idz-Fv-W62"/>
+                        <constraint firstItem="kYw-a0-OQz" firstAttribute="leading" secondItem="BFX-em-SAT" secondAttribute="leading" constant="107" id="IgJ-vK-c5U"/>
+                        <constraint firstItem="kYw-a0-OQz" firstAttribute="top" secondItem="uIn-0k-QaB" secondAttribute="bottom" constant="71" id="MkS-15-4I9"/>
+                        <constraint firstItem="8Kt-Zc-dKu" firstAttribute="leading" secondItem="BFX-em-SAT" secondAttribute="leading" constant="107" id="OO1-kQ-ibr"/>
+                        <constraint firstItem="uIn-0k-QaB" firstAttribute="leading" secondItem="uPA-F8-CGo" secondAttribute="trailing" constant="38" id="hrl-if-F8H"/>
+                        <constraint firstItem="f4r-qS-2Aw" firstAttribute="leading" secondItem="BFX-em-SAT" secondAttribute="leading" constant="8" id="qf1-op-kA7"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="SCAN">
-                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="13"/>
-                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="scanButtonTapped:" destination="-1" eventType="touchUpInside" id="qdR-6N-PNO"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIn-0k-QaB">
-                    <rect key="frame" x="214" y="100" width="180" height="50"/>
-                    <color key="backgroundColor" systemColor="systemGreenColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="MLm-JF-DKY"/>
-                        <constraint firstAttribute="width" constant="180" id="iOf-eJ-j3t"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="RECONNECT">
-                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="13"/>
-                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="reconnectButtonTapped:" destination="-1" eventType="touchUpInside" id="zIJ-RW-aH4"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYw-a0-OQz">
-                    <rect key="frame" x="107" y="221" width="200" height="50"/>
-                    <color key="backgroundColor" systemColor="systemGreenColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="Gjf-Pg-nu8"/>
-                        <constraint firstAttribute="width" constant="200" id="O93-2W-UYI"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="PRINT VOUCHER">
-                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="13"/>
-                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="printButtonTapped:" destination="-1" eventType="touchUpInside" id="7X6-f3-12s"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Kt-Zc-dKu">
-                    <rect key="frame" x="107" y="291" width="200" height="50"/>
-                    <color key="backgroundColor" systemColor="systemGreenColor"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="200" id="5y0-Cl-ju0"/>
-                        <constraint firstAttribute="height" constant="50" id="In3-pv-NXX"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="NEW EXCURSİOUN SALE">
-                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="13"/>
-                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="newExcSaleButtonTapped:" destination="-1" eventType="touchUpInside" id="T0R-hy-bGW"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGg-q4-tSv">
-                    <rect key="frame" x="107" y="361" width="200" height="50"/>
-                    <color key="backgroundColor" systemColor="systemGreenColor"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="200" id="Ywn-0C-vOq"/>
-                        <constraint firstAttribute="height" constant="50" id="iHQ-zH-6WU"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="NEW IND.SHOP SALE">
-                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="13"/>
-                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="newIndShopSaleTapped:" destination="-1" eventType="touchUpInside" id="P57-fj-EAW"/>
-                    </connections>
-                </button>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="uIn-0k-QaB" firstAttribute="leading" secondItem="uPA-F8-CGo" secondAttribute="trailing" constant="14" id="V5g-gx-kdh"/>
-                <constraint firstItem="uPA-F8-CGo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="WRb-Cc-0Ju"/>
-                <constraint firstItem="kYw-a0-OQz" firstAttribute="top" secondItem="uPA-F8-CGo" secondAttribute="bottom" constant="71" id="g7G-oT-UZf"/>
-                <constraint firstItem="cGg-q4-tSv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="107" id="gck-mU-K22"/>
-                <constraint firstItem="cGg-q4-tSv" firstAttribute="top" secondItem="8Kt-Zc-dKu" secondAttribute="bottom" constant="20" id="ghL-8t-QQY"/>
-                <constraint firstItem="uPA-F8-CGo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="loH-c0-S7p"/>
-                <constraint firstItem="8Kt-Zc-dKu" firstAttribute="top" secondItem="kYw-a0-OQz" secondAttribute="bottom" constant="20" id="p8f-u8-899"/>
-                <constraint firstItem="uIn-0k-QaB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="pxd-GN-mUP"/>
-                <constraint firstItem="kYw-a0-OQz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="107" id="qqu-vG-Xte"/>
-                <constraint firstItem="8Kt-Zc-dKu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="107" id="sbO-Wk-lV2"/>
+                <constraint firstAttribute="trailing" secondItem="BFX-em-SAT" secondAttribute="trailing" id="3bt-n6-dl1"/>
+                <constraint firstItem="BFX-em-SAT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="745-EW-Atp"/>
+                <constraint firstItem="BFX-em-SAT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TZo-Jb-c4A"/>
+                <constraint firstAttribute="bottom" secondItem="BFX-em-SAT" secondAttribute="bottom" id="XNm-mM-gbv"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
         </view>
     </objects>
     <resources>
+        <image name="leftarrow" width="14" height="21.5"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

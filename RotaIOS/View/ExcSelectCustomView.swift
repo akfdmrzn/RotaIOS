@@ -145,11 +145,12 @@ extension ExcSelectCustomView : UITableViewDelegate, UITableViewDataSource {
         if self.isFiltered == true {
             cell.labelExcursion.text = self.filteredData[indexPath.row].tourName
             cell.labelTourdate.text = self.filteredData[indexPath.row].tourDateStr
-            if pickUpTimeList.count == 0 {
+           /* if pickUpTimeList.count == 0 {
                 cell.textPickUpTime.text = self.filteredData[indexPath.row].pickUpTime
             }else if pickUpTimeList.count > 0{
                 cell.textPickUpTime.text = self.pickUpTimeList[indexPath.row]
-            }
+            }*/
+            cell.textPickUpTime.text = self.filteredData[indexPath.row].pickUpTime
             // cell.labelSeat.text = self.excursionList[indexPath.row] // yok
             cell.labelPriceType.text = String(self.filteredData[indexPath.row].priceType ?? 0) // pricetypedesc mi yoksa pricetype mı?
             cell.labelCurrency.text = self.filteredData[indexPath.row].currencyDesc // currencyy mi yoksa currencyDesc mi?

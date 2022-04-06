@@ -17,6 +17,7 @@ class ScanDeviceCustomView : UIView {
     @IBOutlet weak var buttonNewExcSale: UIButton!
     @IBOutlet weak var buttonNewInd_Shop: UIButton!
     var deviceListCustomView : DeviceListCustomView?
+    @IBOutlet weak var buttonBack: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,6 +32,7 @@ class ScanDeviceCustomView : UIView {
     func commonInit() {
         Bundle.main.loadNibNamed(String(describing: ScanDeviceCustomView.self), owner: self, options: nil)
         self.viewMainView.addCustomContainerView(self)
+
     }
     
     @IBAction func scanButtonTapped(_ sender: Any) {
@@ -40,7 +42,7 @@ class ScanDeviceCustomView : UIView {
                /* self.tempTouristAddView?.tempPaxesList = self.sendingListofPaxes
                 self.tempTouristAddView?.changeCounterValue = self.tempValue
                 self.tempTouristAddView?.temppAddPaxesListDelegate = self*/
-                self.deviceListCustomView!.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 1200)
+                self.deviceListCustomView!.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height:  UIScreen.main.bounds.size.height)
                 topVC.view.addSubview(self.deviceListCustomView!)
             }, completion: { (finished) in
                 if finished{
@@ -48,6 +50,9 @@ class ScanDeviceCustomView : UIView {
                 }
             })
         }
+    }
+    @IBAction func backButton(_ sender: Any) {
+        self.removeFromSuperview()
     }
     
     @IBAction func reconnectButtonTapped(_ sender: Any) {

@@ -139,7 +139,8 @@ class ExcProceedCustomView: UIView{
     var refundCondationLabel = ""
     var discountBalance = 0.0
     var baseCurrency = ""
-    var sacanDeviceCustomView : ScanDeviceCustomView?
+    var scanDeviceCustomView : ScanDeviceCustomView?
+    var addManuelTouristAddCustomView : AddManuelTouristCustomView?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -570,25 +571,19 @@ class ExcProceedCustomView: UIView{
                    topVC.otiPushViewController(viewController: MainPAgeViewController())
                }
         }else if self.printList.count > 0 && self.connectedAccessories.count == 0{
-            let alert = UIAlertController.init(title: "Warning", message: "Please Connect Zebra device", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            if let topVC = UIApplication.getTopViewController() {
-                topVC.present(alert, animated: true, completion: nil)
-            }
-            
             if let topVC = UIApplication.getTopViewController() {
                 UIView.animate(withDuration: 0, animations: {
-                    self.sacanDeviceCustomView = ScanDeviceCustomView()
-                   /* self.tempTouristAddView?.tempPaxesList = self.sendingListofPaxes
-                    self.tempTouristAddView?.changeCounterValue = self.tempValue
-                    self.tempTouristAddView?.temppAddPaxesListDelegate = self*/
-                    self.sacanDeviceCustomView!.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 800)
-                    topVC.view.addSubview(self.sacanDeviceCustomView!)
+                    
+                    self.scanDeviceCustomView = ScanDeviceCustomView()
+                  //  self.addManuelTouristAddCustomView?.saveMAnuelListDelegate = self
+                    self.scanDeviceCustomView!.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 1200)
+                    topVC.view.addSubview(self.scanDeviceCustomView!)
                 }, completion: { (finished) in
                     if finished{
                         
                     }
                 })
+                
             }
         }else{
             let alert = UIAlertController.init(title: "Warning", message: "Please send data and Connect Zebra device", preferredStyle: UIAlertController.Style.alert)

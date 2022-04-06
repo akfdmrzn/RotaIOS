@@ -40,12 +40,17 @@ class DeviceListCustomView : UIView {
         self.viewRemoveOutSide.isUserInteractionEnabled = true
         self.viewRemoveOutSide.addGestureRecognizer(gestureRemove)
         
+        self.viewRemoveOutSide.backgroundColor = UIColor.clear
+        self.viewRemoveInside.layer.cornerRadius = 10
+        
+        self.tableView.backgroundColor = UIColor.grayColor
+        
         centralManager = CBCentralManager(delegate: self, queue: nil)
         
     }
     
     @objc func touchRemoveButton() {
-        self.viewRemoveOutSide.removeFromSuperview()
+        self.removeFromSuperview()
     }
 }
 

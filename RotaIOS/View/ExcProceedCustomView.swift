@@ -139,6 +139,7 @@ class ExcProceedCustomView: UIView{
     var refundCondationLabel = ""
     var discountBalance = 0.0
     var baseCurrency = ""
+    var sacanDeviceCustomView : ScanDeviceCustomView?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -292,7 +293,7 @@ class ExcProceedCustomView: UIView{
         self.viewBalanced.mainText.text = String(self.balanceAmount - self.discount)
         self.viewTouristView.mainLabel.text = self.touristList[0].text ?? self.touristList[0].name ?? ""
         self.selectedTouristName = self.touristList[0].text ?? self.touristList[0].name ?? ""
-       
+        
         // self.sendedTotalAmount = self.totalAmount
         
         if Connectivity.isConnectedToInternet {
@@ -568,6 +569,27 @@ class ExcProceedCustomView: UIView{
             if let topVC = UIApplication.getTopViewController() {
                    topVC.otiPushViewController(viewController: MainPAgeViewController())
                }
+        }else if self.printList.count > 0 && self.connectedAccessories.count == 0{
+            let alert = UIAlertController.init(title: "Warning", message: "Please Connect Zebra device", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            if let topVC = UIApplication.getTopViewController() {
+                topVC.present(alert, animated: true, completion: nil)
+            }
+            
+            if let topVC = UIApplication.getTopViewController() {
+                UIView.animate(withDuration: 0, animations: {
+                    self.sacanDeviceCustomView = ScanDeviceCustomView()
+                   /* self.tempTouristAddView?.tempPaxesList = self.sendingListofPaxes
+                    self.tempTouristAddView?.changeCounterValue = self.tempValue
+                    self.tempTouristAddView?.temppAddPaxesListDelegate = self*/
+                    self.sacanDeviceCustomView!.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 800)
+                    topVC.view.addSubview(self.sacanDeviceCustomView!)
+                }, completion: { (finished) in
+                    if finished{
+                        
+                    }
+                })
+            }
         }else{
             let alert = UIAlertController.init(title: "Warning", message: "Please send data and Connect Zebra device", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -616,7 +638,6 @@ class ExcProceedCustomView: UIView{
             var toodleCount = 0
             var infantCount = 0
             self.tourTotalAmount = 0.0
-         
             var hotelName = ""
             var room = ""
             var paxName = ""
@@ -625,13 +646,10 @@ class ExcProceedCustomView: UIView{
             var tourExtrasString = ""
             var tourTransfersString = ""
             var voucherLabelSize = ""
-            
             var bottomListSzieNumberList : [Int] = []
-    
             var discountList : [Double] = []
             var perTourPriceList : [Double] = []
             
-
             paxes = userDefaultsData.getTouristDetailInfoList() ?? paxes
             
             if paxes.count > 0 {
@@ -914,9 +932,7 @@ class ExcProceedCustomView: UIView{
                 }
                 
                 // Refund Contidion
-               
-                
-              
+
                 var refundCondition = ""
                 
                 if self.marketId == MarketIdEnums.Russia.rawValue || self.marketId == 7 || self.marketId == 13 || self.marketId == 6 || self.marketId == 8  || self.marketId == 16 {

@@ -339,6 +339,12 @@
 		D986E5E327AC0DE80032D756 /* PrintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986E5E227AC0DE80032D756 /* PrintManager.swift */; };
 		D986E5FC27AC0EEC0032D756 /* libZSDK_API.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D986E5FB27AC0EEC0032D756 /* libZSDK_API.a */; };
 		D986E5FF27AD371B0032D756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D986E5FE27AD371B0032D756 /* Assets.xcassets */; };
+		D988D05327FC68C1003B4686 /* ScanDeviceCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D988D05227FC68C1003B4686 /* ScanDeviceCustomView.swift */; };
+		D988D05527FC68CF003B4686 /* ScanDeviceCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D988D05427FC68CF003B4686 /* ScanDeviceCustomView.xib */; };
+		D988D05727FC7CAA003B4686 /* DeviceListCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D988D05627FC7CAA003B4686 /* DeviceListCustomView.swift */; };
+		D988D05927FC7CC2003B4686 /* DeviceListCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D988D05827FC7CC2003B4686 /* DeviceListCustomView.xib */; };
+		D988D05C27FC823D003B4686 /* DeviceListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D988D05A27FC823D003B4686 /* DeviceListTableViewCell.swift */; };
+		D988D05D27FC823D003B4686 /* DeviceListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D988D05B27FC823D003B4686 /* DeviceListTableViewCell.xib */; };
 		D989D66F27DB2A6300072EA6 /* SaveNotePageCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D989D66E27DB2A6300072EA6 /* SaveNotePageCustomView.swift */; };
 		D989D67127DB2A7B00072EA6 /* SaveNotePageCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D989D67027DB2A7B00072EA6 /* SaveNotePageCustomView.xib */; };
 		D989D67327DB3DF100072EA6 /* GetUpdateSaleNoteforMobileRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D989D67227DB3DF100072EA6 /* GetUpdateSaleNoteforMobileRequestModel.swift */; };
@@ -786,6 +792,12 @@
 		D986E5FB27AC0EEC0032D756 /* libZSDK_API.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libZSDK_API.a; sourceTree = "<group>"; };
 		D986E5FD27AC0FDF0032D756 /* RotaIOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RotaIOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		D986E5FE27AD371B0032D756 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D988D05227FC68C1003B4686 /* ScanDeviceCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDeviceCustomView.swift; sourceTree = "<group>"; };
+		D988D05427FC68CF003B4686 /* ScanDeviceCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanDeviceCustomView.xib; sourceTree = "<group>"; };
+		D988D05627FC7CAA003B4686 /* DeviceListCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListCustomView.swift; sourceTree = "<group>"; };
+		D988D05827FC7CC2003B4686 /* DeviceListCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceListCustomView.xib; sourceTree = "<group>"; };
+		D988D05A27FC823D003B4686 /* DeviceListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListTableViewCell.swift; sourceTree = "<group>"; };
+		D988D05B27FC823D003B4686 /* DeviceListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceListTableViewCell.xib; sourceTree = "<group>"; };
 		D989D66E27DB2A6300072EA6 /* SaveNotePageCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNotePageCustomView.swift; sourceTree = "<group>"; };
 		D989D67027DB2A7B00072EA6 /* SaveNotePageCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaveNotePageCustomView.xib; sourceTree = "<group>"; };
 		D989D67227DB3DF100072EA6 /* GetUpdateSaleNoteforMobileRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUpdateSaleNoteforMobileRequestModel.swift; sourceTree = "<group>"; };
@@ -1301,6 +1313,10 @@
 				A97E52EC27CFF5DA00044B78 /* TasksListView.xib */,
 				A97E534227DB69A500044B78 /* PickerView.swift */,
 				A97E534427DB69B800044B78 /* PickerView.xib */,
+				D988D05227FC68C1003B4686 /* ScanDeviceCustomView.swift */,
+				D988D05427FC68CF003B4686 /* ScanDeviceCustomView.xib */,
+				D988D05627FC7CAA003B4686 /* DeviceListCustomView.swift */,
+				D988D05827FC7CC2003B4686 /* DeviceListCustomView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1376,6 +1392,8 @@
 				D97EE01F277519FD00683E66 /* ProceedPaxTableViewCell.xib */,
 				D9B2733227F5B91000B447F8 /* BirtDayTableViewCell.swift */,
 				D9B2733327F5B91100B447F8 /* BirtDayTableViewCell.xib */,
+				D988D05A27FC823D003B4686 /* DeviceListTableViewCell.swift */,
+				D988D05B27FC823D003B4686 /* DeviceListTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1592,6 +1610,7 @@
 				D95C203226F0CA70007D1506 /* SpeakingHoursViewController.xib in Resources */,
 				A9C674E227745CE300536F21 /* TasksHotelViewController.xib in Resources */,
 				D9A48D0326B1895500D28A0A /* DocumentsTableViewCell.xib in Resources */,
+				D988D05927FC7CC2003B4686 /* DeviceListCustomView.xib in Resources */,
 				A97E531F27D6856300044B78 /* TasksStepsTableViewCell.xib in Resources */,
 				D97EE013276B952B00683E66 /* AddMenuPaxTableViewCell.xib in Resources */,
 				A97E52F127CFF71800044B78 /* TasksTourDetailTableViewCell.xib in Resources */,
@@ -1607,6 +1626,7 @@
 				D994FBDE27563796003564F3 /* ExcSelectCustomView.xib in Resources */,
 				D97E4F5227624D640049648A /* ExcPaxPageTableViewCell.xib in Resources */,
 				D989D67127DB2A7B00072EA6 /* SaveNotePageCustomView.xib in Resources */,
+				D988D05527FC68CF003B4686 /* ScanDeviceCustomView.xib in Resources */,
 				D97FB5A926C685E90099F28B /* MyShoppingSaleViewController.xib in Resources */,
 				BF44C93C2640016500238035 /* ShopAppointmentViewController.xib in Resources */,
 				D9FD64E927381280009B6619 /* ZReportLoginViewController.xib in Resources */,
@@ -1662,6 +1682,7 @@
 				BF44C98B264001B900238035 /* HotelPageCustomView.xib in Resources */,
 				BF44C9322640015A00238035 /* MainPageTableViewCell.xib in Resources */,
 				D94C40AA26692D4C00EBC7CD /* TaskTableViewCell.xib in Resources */,
+				D988D05D27FC823D003B4686 /* DeviceListTableViewCell.xib in Resources */,
 				D931574726FA1DBD000C91AD /* ZReportTableViewCell.xib in Resources */,
 				D94C407A265BE36400EBC7CD /* FavoriteCustomView.xib in Resources */,
 				D9DCB19E26BBEB900064A040 /* MyTourSalesViewController.xib in Resources */,
@@ -1884,6 +1905,7 @@
 				BF44C9712640019F00238035 /* AppointmentBarCustomView.swift in Sources */,
 				D95C202626ECC2B1007D1506 /* SpeakingHoursView.swift in Sources */,
 				D9B2732E27F5AFE400B447F8 /* BirthdayViewController.swift in Sources */,
+				D988D05727FC7CAA003B4686 /* DeviceListCustomView.swift in Sources */,
 				A97E530D27D62EAD00044B78 /* GetStepsForIndShopResponseModel.swift in Sources */,
 				D931575B26FB4A0F000C91AD /* GetReportDataRequestModel.swift in Sources */,
 				BF44C91C2640013B00238035 /* LoginView.swift in Sources */,
@@ -1935,6 +1957,7 @@
 				D97E4F54276725640049648A /* ExcAddCustomView.swift in Sources */,
 				A97E531E27D6856300044B78 /* TasksStepsTableViewCell.swift in Sources */,
 				BF44C87F263FF80000238035 /* ViewController.swift in Sources */,
+				D988D05327FC68C1003B4686 /* ScanDeviceCustomView.swift in Sources */,
 				D968A88326BDAC94000FB00A /* MyTourStatusView.swift in Sources */,
 				BF44C91B2640013B00238035 /* LoginViewController.swift in Sources */,
 				D95C203826F20184007D1506 /* SpeakingHoursDetailView.swift in Sources */,
@@ -2026,6 +2049,7 @@
 				D931575E26FB58A3000C91AD /* ZReportPriviewTableViewCell.swift in Sources */,
 				D994FBD8274FFBC6003564F3 /* GetTourSearchRequestModel.swift in Sources */,
 				D9004074271722E200DDE088 /* DailyReportView.swift in Sources */,
+				D988D05C27FC823D003B4686 /* DeviceListTableViewCell.swift in Sources */,
 				D900407627172AC900DDE088 /* GetDailyReportResponseModel.swift in Sources */,
 				BF44C976264001A400238035 /* BaseCollectionViewCell.swift in Sources */,
 				D9B2733727F5C52C00B447F8 /* GetBirtDaysResponseModel.swift in Sources */,

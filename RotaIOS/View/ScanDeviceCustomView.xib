@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScanDeviceCustomView" customModule="RotaIOS" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonNewExcSale" destination="8Kt-Zc-dKu" id="F1y-6K-9hZ"/>
+                <outlet property="buttonNewInd_Shop" destination="cGg-q4-tSv" id="t8J-Jc-4n2"/>
+                <outlet property="buttonPrint" destination="kYw-a0-OQz" id="Nrp-Jx-n5q"/>
+                <outlet property="buttonReconnect" destination="uIn-0k-QaB" id="fa8-M8-wGf"/>
+                <outlet property="buttonScan" destination="uPA-F8-CGo" id="pk7-Vb-h3a"/>
+                <outlet property="viewMainView" destination="iN0-l3-epB" id="f5Y-IG-7dL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPA-F8-CGo">
+                    <rect key="frame" x="20" y="100" width="180" height="50"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="180" id="5a7-wr-BJH"/>
+                        <constraint firstAttribute="height" constant="50" id="rx9-8X-3Pw"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="SCAN">
+                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="13"/>
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="scanButtonTapped:" destination="-1" eventType="touchUpInside" id="qdR-6N-PNO"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIn-0k-QaB">
+                    <rect key="frame" x="214" y="100" width="180" height="50"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="MLm-JF-DKY"/>
+                        <constraint firstAttribute="width" constant="180" id="iOf-eJ-j3t"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="RECONNECT">
+                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="13"/>
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="reconnectButtonTapped:" destination="-1" eventType="touchUpInside" id="zIJ-RW-aH4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYw-a0-OQz">
+                    <rect key="frame" x="107" y="221" width="200" height="50"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Gjf-Pg-nu8"/>
+                        <constraint firstAttribute="width" constant="200" id="O93-2W-UYI"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="PRINT VOUCHER">
+                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="13"/>
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="printButtonTapped:" destination="-1" eventType="touchUpInside" id="7X6-f3-12s"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Kt-Zc-dKu">
+                    <rect key="frame" x="107" y="291" width="200" height="50"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="5y0-Cl-ju0"/>
+                        <constraint firstAttribute="height" constant="50" id="In3-pv-NXX"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="NEW EXCURSİOUN SALE">
+                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="13"/>
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="newExcSaleButtonTapped:" destination="-1" eventType="touchUpInside" id="T0R-hy-bGW"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGg-q4-tSv">
+                    <rect key="frame" x="107" y="361" width="200" height="50"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="Ywn-0C-vOq"/>
+                        <constraint firstAttribute="height" constant="50" id="iHQ-zH-6WU"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="NEW IND.SHOP SALE">
+                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="13"/>
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="newIndShopSaleTapped:" destination="-1" eventType="touchUpInside" id="P57-fj-EAW"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="uIn-0k-QaB" firstAttribute="leading" secondItem="uPA-F8-CGo" secondAttribute="trailing" constant="14" id="V5g-gx-kdh"/>
+                <constraint firstItem="uPA-F8-CGo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="WRb-Cc-0Ju"/>
+                <constraint firstItem="kYw-a0-OQz" firstAttribute="top" secondItem="uPA-F8-CGo" secondAttribute="bottom" constant="71" id="g7G-oT-UZf"/>
+                <constraint firstItem="cGg-q4-tSv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="107" id="gck-mU-K22"/>
+                <constraint firstItem="cGg-q4-tSv" firstAttribute="top" secondItem="8Kt-Zc-dKu" secondAttribute="bottom" constant="20" id="ghL-8t-QQY"/>
+                <constraint firstItem="uPA-F8-CGo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="loH-c0-S7p"/>
+                <constraint firstItem="8Kt-Zc-dKu" firstAttribute="top" secondItem="kYw-a0-OQz" secondAttribute="bottom" constant="20" id="p8f-u8-899"/>
+                <constraint firstItem="uIn-0k-QaB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="pxd-GN-mUP"/>
+                <constraint firstItem="kYw-a0-OQz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="107" id="qqu-vG-Xte"/>
+                <constraint firstItem="8Kt-Zc-dKu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="107" id="sbO-Wk-lV2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -138,7 +138,7 @@ class TasksViewController: BaseViewController {
         let stepsAction = UIAlertAction(title: "Steps", style: .default) { _ in
             let topVC = UIApplication.getTopViewController()
             let viewController = TasksStepsViewController()
-            viewController.ids = self.getGuideDutiesList[index].ids
+            viewController.ids = (typeInt == ServiceType.ARR.rawValue || typeInt == ServiceType.DEP.rawValue || typeInt == ServiceType.INT.rawValue) ?  self.getGuideDutiesList[index].planId : self.getGuideDutiesList[index].ids
             viewController.serviceType = typeInt
             topVC?.otiPushViewController(viewController: viewController)
         }

@@ -10,19 +10,11 @@ target 'RotaIOS' do
     pod 'Alamofire', '~> 4.7'
     pod 'AlamofireObjectMapper'
     pod 'MBProgressHUD', '~> 1.1.0'
-    pod  'DropDown'
+    pod 'DropDown'
     pod 'IQKeyboardManagerSwift'
     pod 'Firebase/Analytics'
     pod 'Firebase/Messaging'
     pod 'PureLayout'
     
-  target 'RotaIOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'RotaIOSUITests' do
-    # Pods for testing
-  end
 
 end

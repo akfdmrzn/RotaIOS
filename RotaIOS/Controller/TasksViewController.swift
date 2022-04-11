@@ -162,10 +162,13 @@ class TasksViewController: BaseViewController {
         alertController.addTextField { (textField) in
             textField.placeholder = "Plate"
         }
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Glass Number"
+        }
         let continueAction = UIAlertAction(title: "Save", style: .default) { [weak alertController] _ in
             guard let textFields = alertController?.textFields else { return }
-            if let noteText = textFields[0].text, let plateText = textFields[1].text {
-                self.saveGuideMeetingTimeAndReport(workNo: workNo, guide: String(userDefaultsData.getGuideId()), typeInt: typeInt, note: noteText, isReport: "true", action: "1", plate: plateText, state: "", relatedId: relatedId, tourDate: tourDate)
+            if let noteText = textFields[0].text, let plateText = textFields[1].text, let glassText = textFields[2].text  {
+                self.saveGuideMeetingTimeAndReport(workNo: workNo, guide: String(userDefaultsData.getGuideId()), typeInt: typeInt, note: noteText, isReport: "true", action: "1", plate: plateText, state: "", relatedId: relatedId, tourDate: tourDate, glassNumber: glassText)
             }
         }
         alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {
@@ -180,7 +183,7 @@ class TasksViewController: BaseViewController {
                                relatedId: String, tourDate: String, finished: @escaping () -> Void){
         let alertController = UIAlertController(title: msg, message: nil, preferredStyle: .alert)
         let sendAction = UIAlertAction(title: "Send", style: .default) { _ in
-            self.saveGuideMeetingTimeAndReport(workNo: workNo, guide: String(userDefaultsData.getGuideId()), typeInt: typeInt, note: "", isReport: "false", action: "1", plate: "Test", state: "1", relatedId: relatedId, tourDate: tourDate)
+            self.saveGuideMeetingTimeAndReport(workNo: workNo, guide: String(userDefaultsData.getGuideId()), typeInt: typeInt, note: "", isReport: "false", action: "1", plate: "Test", state: "1", relatedId: relatedId, tourDate: tourDate, glassNumber: "")
         }
         alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {
                     (alertAction: UIAlertAction!) in
@@ -190,8 +193,8 @@ class TasksViewController: BaseViewController {
         self.present(alertController, animated: true)
     }
     
-    func saveGuideMeetingTimeAndReport(workNo : String, guide: String, typeInt: String, note: String, isReport: String, action: String, plate: String, state: String, relatedId: String, tourDate: String){
-        let saveGuideMeetingTimeAndReportRequestModel = SaveGuideMeetingTimeAndReportRequestModel.init(workNo: workNo, guide: guide, typeInt: typeInt, note: note, isReport: isReport, action: action, plate: plate, state: state, relatedId: relatedId, tourDate: tourDate.getDateFormatStr())
+    func saveGuideMeetingTimeAndReport(workNo : String, guide: String, typeInt: String, note: String, isReport: String, action: String, plate: String, state: String, relatedId: String, tourDate: String, glassNumber : String){
+        let saveGuideMeetingTimeAndReportRequestModel = SaveGuideMeetingTimeAndReportRequestModel.init(workNo: workNo, guide: guide, typeInt: typeInt, note: note, isReport: isReport, action: action, plate: plate, state: state, relatedId: relatedId, tourDate: tourDate.getDateFormatStr(), glassNumber : glassNumber, eventEntryRef : "")
         NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .SaveGuideMeetingTimeAndReport, requestModel: saveGuideMeetingTimeAndReportRequestModel) { (response : SaveGuideMeetingTimeAndReportResponseModel) in
             UIApplication.getTopViewController()?.showAlertMsg(msg: response.message, finished: {
             })

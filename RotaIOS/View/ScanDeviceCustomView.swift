@@ -32,7 +32,18 @@ class ScanDeviceCustomView : UIView {
     func commonInit() {
         Bundle.main.loadNibNamed(String(describing: ScanDeviceCustomView.self), owner: self, options: nil)
         self.viewMainView.addCustomContainerView(self)
-
+        
+        self.buttonScan.layer.cornerRadius = 10
+        self.buttonPrint.layer.cornerRadius = 10
+        self.buttonReconnect.layer.cornerRadius = 10
+        self.buttonNewExcSale.layer.cornerRadius = 10
+        self.buttonNewInd_Shop.layer.cornerRadius = 10
+        
+        self.buttonScan.backgroundColor = UIColor.greenColor
+        self.buttonPrint.backgroundColor = UIColor.greenColor
+        self.buttonReconnect.backgroundColor = UIColor.greenColor
+        self.buttonNewExcSale.backgroundColor = UIColor.greenColor
+        self.buttonNewInd_Shop.backgroundColor = UIColor.greenColor
     }
     
     @IBAction func scanButtonTapped(_ sender: Any) {

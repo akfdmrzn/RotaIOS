@@ -41,9 +41,11 @@ class DeviceListCustomView : UIView {
         self.viewRemoveOutSide.addGestureRecognizer(gestureRemove)
         
         self.viewRemoveOutSide.backgroundColor = UIColor.clear
-        self.viewRemoveInside.layer.cornerRadius = 10
+        self.viewRemoveInside.layer.cornerRadius = 5
         
         self.tableView.backgroundColor = UIColor.grayColor
+        self.viewContentView.backgroundColor = UIColor.grayColor
+        self.viewContentView.layer.cornerRadius = 10
         
         centralManager = CBCentralManager(delegate: self, queue: nil)
         

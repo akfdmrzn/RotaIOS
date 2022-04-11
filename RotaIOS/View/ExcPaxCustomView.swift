@@ -21,10 +21,12 @@ class ExcPaxCustomView : UIView {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var labelPaxes: UILabel!
+    @IBOutlet weak var buttonRefresh: UIButton!
     var excPaxPageDelegate : ExcPaxPageDelegate?
     var touristNumber = 0
     var tourButtonTapped = false
     var paxesList : [GetInHoseListResponseModel] = []
+    var firstPaxesList : [GetInHoseListResponseModel] = []
     var checkFilteredList : [Bool] = []
     var filteredData : [GetInHoseListResponseModel] = []
     var filteredList : [GetInHoseListResponseModel] = []
@@ -68,6 +70,7 @@ class ExcPaxCustomView : UIView {
     var tempList : [GetInHoseListResponseModel] = []
     //var filteredList : [GetInHoseListResponseModel] = []
     var savePaxesList : [GetInHoseListResponseModel] = []
+    var tempSavePaxesList : [GetInHoseListResponseModel] = []
     var totalPaxesCount = 0
     var manuelAddedPaxesList : [GetInHoseListResponseModel] = []
     var manuelPaxAgeGroup = ""
@@ -76,7 +79,6 @@ class ExcPaxCustomView : UIView {
     var touristDetailInfoList : [Paxes] = []
     var filteredArray : [Paxes] = []
     var paxRoom = ""
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -125,42 +127,109 @@ class ExcPaxCustomView : UIView {
         
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(sender:)))
         tableView.addGestureRecognizer(longPress)
+        
+        self.buttonRefresh.backgroundColor = UIColor.greenColor
+        self.buttonRefresh.layer.cornerRadius = 10
+        
     }
     
-    @objc private func handleLongPress(sender: UILongPressGestureRecognizer) {
-        if sender.state == .began {
-            let touchPoint = sender.location(in: tableView)
-            if let indexPath = tableView.indexPathForRow(at: touchPoint) {
-                // your code here, get the row for the indexPath or do whatever you want
-                print("longpressed")
-                
-                let filter = self.paxesList.filter{$0.ResNo == self.paxesList[indexPath.row].ResNo}
-                print(filter)
-                if filter.count > 0 {
-                    self.paxesList = filter
-                    for i in 0...self.paxesList.count - 1 {
-                        let getInTouristInfoRequestModelList = GetTouristInfoRequestModel(touristId: paxesList[i].ID ?? 0, resNo: paxesList[i].ResNo ?? "")
-                        
-                        NetworkManager.sendGetRequestArray(url:NetworkManager.BASEURL, endPoint: .GetTouristInfo, method: .get, parameters: getInTouristInfoRequestModelList.requestPathString() ) { (response : [GetTouristInfoResponseModel] ) in
-                            if response.count > 0 {
-                                self.touristDetailInfoList.append(Paxes.init(pAX_CHECKOUT_DATE: "", pAX_OPRID: response[0].oprId ?? 0, pAX_OPRNAME: response[0].operatorName ?? "", pAX_PHONE: "", hotelname: response[0].hotelName ?? "", pAX_GENDER: response[0].gender ?? "", pAX_AGEGROUP: response[0].ageGroup ?? "", pAX_NAME: response[0].name ?? "", pAX_BIRTHDAY: response[0].birthDay ?? "", pAX_RESNO: response[0].resNo ?? "", pAX_PASSPORT: response[0].passport ?? "", pAX_ROOM: response[0].room ?? "", pAX_TOURISTREF: response[0].touristIdRef ?? 0, pAX_STATUS: 1, ID: response[0].touristIdRef ?? 0 ))
-                                userDefaultsData.saveTouristDetailInfoList(tour: self.touristDetailInfoList)
-                            }else{
-                                print("error")
-                            }
-                        }
-                        self.paxesList[i].isTapped = true
-                        self.savePaxesList.append(self.paxesList[i])
+    @IBAction func refreshButtonTapped(_ sender: Any) {
+        if self.firstPaxesList.count > 0 && savePaxesList.count > 0 {
+            for i in 0...self.firstPaxesList.count - 1 {
+                for j in 0...self.savePaxesList.count - 1 {
+                    if self.firstPaxesList[i].name == self.savePaxesList[j].name && self.firstPaxesList[i].ID == self.savePaxesList[j].ID && self.firstPaxesList[i].value == self.savePaxesList[j].value && self.firstPaxesList[i].ageGroup == self.savePaxesList[j].ageGroup  {
+                        self.firstPaxesList[i] = self.savePaxesList[j]
                     }
-                    userDefaultsData.saveTouristDetailInfoList(tour: self.touristDetailInfoList)
-                    userDefaultsData.savePaxesList(tour: self.savePaxesList)
-                    self.totalPaxesCount = self.savePaxesList.count
-                    self.labelTouristAdded.text = "\(self.totalPaxesCount) Tourist Added"
-                    self.tableView.reloadData()
-                }else{
-                    return
                 }
             }
+            self.paxesList = self.firstPaxesList
+            self.tableView.reloadData()
+        }
+    }
+  
+    @objc private func handleLongPress(sender: UILongPressGestureRecognizer) {
+        if Connectivity.isConnectedToInternet == true {
+            if sender.state == .began {
+                let touchPoint = sender.location(in: tableView)
+                if let indexPath = tableView.indexPathForRow(at: touchPoint) {
+                    // your code here, get the row for the indexPath or do whatever you want
+                    print("longpressed")
+                    
+                    // add checkbox
+                    let filter = self.paxesList.filter{$0.ResNo == self.paxesList[indexPath.row].ResNo}
+                    print(filter)
+                    if filter.count > 0 {
+                        self.paxesList = filter
+                        self.tempSavePaxesList = []
+                        for i in 0...self.paxesList.count - 1 {
+                            let getInTouristInfoRequestModelList = GetTouristInfoRequestModel(touristId: paxesList[i].ID ?? 0, resNo: paxesList[i].ResNo ?? "")
+                            
+                            NetworkManager.sendGetRequestArray(url:NetworkManager.BASEURL, endPoint: .GetTouristInfo, method: .get, parameters: getInTouristInfoRequestModelList.requestPathString() ) { (response : [GetTouristInfoResponseModel] ) in
+                                if response.count > 0 {
+                                    self.touristDetailInfoList.append(Paxes.init(pAX_CHECKOUT_DATE: "", pAX_OPRID: response[0].oprId ?? 0, pAX_OPRNAME: response[0].operatorName ?? "", pAX_PHONE: "", hotelname: response[0].hotelName ?? "", pAX_GENDER: response[0].gender ?? "", pAX_AGEGROUP: response[0].ageGroup ?? "", pAX_NAME: response[0].name ?? "", pAX_BIRTHDAY: response[0].birthDay ?? "", pAX_RESNO: response[0].resNo ?? "", pAX_PASSPORT: response[0].passport ?? "", pAX_ROOM: response[0].room ?? "", pAX_TOURISTREF: response[0].touristIdRef ?? 0, pAX_STATUS: 1, ID: response[0].touristIdRef ?? 0 ))
+                                   // userDefaultsData.saveTouristDetailInfoList(tour: self.touristDetailInfoList)
+                                }else{
+                                    print("error")
+                                }
+                            }
+                            self.paxesList[i].isTapped = true
+                            self.savePaxesList.append(self.paxesList[i])
+                        }
+                        self.savePaxesList = self.savePaxesList.filterDuplicate{($0.name,$0.ID,$0.value,$0.ageGroup)}
+                        self.touristDetailInfoList = self.touristDetailInfoList.filterDuplicate{($0.pAX_NAME,$0.pAX_ID,$0.pAX_TOURISTREF)}
+                        userDefaultsData.saveTouristDetailInfoList(tour: self.touristDetailInfoList)
+                        userDefaultsData.savePaxesList(tour: self.savePaxesList)
+                        self.totalPaxesCount = self.savePaxesList.count
+                        self.labelTouristAdded.text = "\(self.totalPaxesCount) Tourist Added"
+                        self.tableView.reloadData()
+                    }else{
+                        return
+                    }
+                    ///
+                    if self.savePaxesList.count > 0 {
+                        if self.savePaxesList[0].room == nil {
+                            let alert = UIAlertController(title: "Room Number", message: "Please insert Room Number", preferredStyle: .alert)
+                            alert.addTextField {
+                                $0.placeholder = "Room Number"
+                                $0.addTarget(alert, action: #selector(alert.textDidChangeInLoginAlert), for: .editingChanged)
+                            }
+                            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+                            let flatAmountAction = UIAlertAction(title: "Submit", style: .default) { [unowned self] _ in
+                                guard let flatamount = alert.textFields?[0].text
+                                        
+                                else { return } // Should never happen
+                                
+                                if flatamount == "" {
+                                    return
+                                }
+                                
+                                self.paxRoom = "\(flatamount)"
+                                
+                                for i in 0...self.savePaxesList.count - 1 {
+                                    self.savePaxesList[i].room = self.paxRoom
+                                }
+                                
+                                for i in 0...self.touristDetailInfoList.count - 1 {
+                                    self.touristDetailInfoList[i].pAX_ROOM = self.paxRoom
+                                }
+                                
+                                userDefaultsData.saveTouristDetailInfoList(tour: self.touristDetailInfoList)
+                                userDefaultsData.savePaxesList(tour: self.savePaxesList)
+                                self.tableView.reloadData()
+                            }
+                            
+                            //  flatAmountAction.isEnabled = false
+                            alert.addAction(flatAmountAction)
+                            
+                            if let topVC = UIApplication.getTopViewController() {
+                                topVC.present(alert, animated: true, completion: nil)
+                            }
+                        }
+                    }
+                }
+            }
+        }else{
+            return
         }
     }
     
@@ -225,7 +294,6 @@ extension ExcPaxCustomView : UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
-    
 }
 
 extension ExcPaxCustomView : UISearchBarDelegate {

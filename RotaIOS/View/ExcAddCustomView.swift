@@ -233,6 +233,9 @@ class ExcAddCustomView : UIView {
             self.buttonExtraTapped = false
             self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice : self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.saveTransferList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice, extraPaxesListSaved : self.extraPaxesListSaved, transferPaxesListSaved : self.transferPaxesListSaved)
         }
+        
+        self.tableViewPax.isHidden = true
+        
         self.buttonTransfers.backgroundColor = UIColor.greenColor
         self.buttonExtras.layer.borderWidth = 1
         self.buttonExtras.backgroundColor = UIColor.clear
@@ -246,7 +249,7 @@ class ExcAddCustomView : UIView {
             self.buttonExtraTapped = true
             self.excAddCustomViewDelegate?.excurAddCustomDelegate(changeTransferNumber: self.transfersList.count, changeExtraNumber: self.saveExtrasList.count, extrasTotalPrice: self.extrasTotalPrice, transfersTotalPrice: self.transfersTotalPrice, extraButtonTapped: self.buttonExtraTapped, savedExtrasList : self.saveExtrasList , savedTransferList : self.saveTransferList, currentExtrasTotalPrice: self.currentExtrasTotalPrice, currentTransfersTotalPirce: self.currentTransfersTotalPrice, extraPaxesListSaved : self.extraPaxesListSaved, transferPaxesListSaved : self.transferPaxesListSaved)
         }
-        
+        self.tableViewPax.isHidden = false
         self.buttonExtras.backgroundColor = UIColor.greenColor
         self.buttonTransfers.layer.borderWidth = 1
         self.buttonTransfers.backgroundColor = UIColor.clear

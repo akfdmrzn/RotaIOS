@@ -24,29 +24,30 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IcM-Dw-xuM">
-                    <rect key="frame" x="0.0" y="100" width="414" height="796"/>
+                    <rect key="frame" x="0.0" y="40" width="414" height="856"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kAd-gR-z3J">
-                            <rect key="frame" x="0.0" y="85" width="414" height="711"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kAd-gR-z3J">
+                            <rect key="frame" x="0.0" y="85" width="414" height="771"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </tableView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lo3-mA-mLy">
                             <rect key="frame" x="77" y="5" width="260" height="60"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LfL-Qz-C8C">
-                                    <rect key="frame" x="50" y="24" width="160" height="12"/>
-                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <rect key="frame" x="80" y="27.5" width="100" height="5"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="160" id="FdL-B7-Qlc"/>
-                                        <constraint firstAttribute="height" constant="12" id="Hts-Ti-WtP"/>
+                                        <constraint firstAttribute="width" constant="100" id="FdL-B7-Qlc"/>
+                                        <constraint firstAttribute="height" constant="5" id="Hts-Ti-WtP"/>
                                     </constraints>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="LfL-Qz-C8C" firstAttribute="top" secondItem="lo3-mA-mLy" secondAttribute="top" constant="24" id="8uS-1a-ALz"/>
-                                <constraint firstItem="LfL-Qz-C8C" firstAttribute="leading" secondItem="lo3-mA-mLy" secondAttribute="leading" constant="50" id="avM-ms-djw"/>
+                                <constraint firstItem="LfL-Qz-C8C" firstAttribute="centerX" secondItem="lo3-mA-mLy" secondAttribute="centerX" id="54V-Ze-ECt"/>
                                 <constraint firstAttribute="height" constant="60" id="d0Y-Gz-WI8"/>
+                                <constraint firstItem="LfL-Qz-C8C" firstAttribute="centerY" secondItem="lo3-mA-mLy" secondAttribute="centerY" id="vix-tY-PaK"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -68,7 +69,7 @@
                 <constraint firstItem="IcM-Dw-xuM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5Xm-c6-QW3"/>
                 <constraint firstAttribute="bottom" secondItem="IcM-Dw-xuM" secondAttribute="bottom" id="Cgf-4n-NZs"/>
                 <constraint firstAttribute="trailing" secondItem="IcM-Dw-xuM" secondAttribute="trailing" id="DTa-z5-3PQ"/>
-                <constraint firstItem="IcM-Dw-xuM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="F1A-jK-J1i"/>
+                <constraint firstItem="IcM-Dw-xuM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="F1A-jK-J1i"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>

@@ -29,10 +29,9 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGg-q4-tSv">
-                            <rect key="frame" x="107" y="412" width="200" height="50"/>
+                            <rect key="frame" x="80" y="412" width="254" height="50"/>
                             <color key="backgroundColor" systemColor="systemGreenColor"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="200" id="KKy-mN-Wgi"/>
                                 <constraint firstAttribute="height" constant="50" id="RZp-JU-ZpF"/>
                             </constraints>
                             <state key="normal" title="Button"/>
@@ -45,11 +44,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Kt-Zc-dKu">
-                            <rect key="frame" x="107" y="344" width="200" height="50"/>
+                            <rect key="frame" x="80" y="344" width="254" height="50"/>
                             <color key="backgroundColor" systemColor="systemGreenColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="q2a-UI-6yT"/>
-                                <constraint firstAttribute="width" constant="200" id="wAk-0q-bFj"/>
                             </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="NEW EXCURSİOUN SALE">
@@ -61,10 +59,9 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYw-a0-OQz">
-                            <rect key="frame" x="107" y="275" width="200" height="50"/>
+                            <rect key="frame" x="80" y="275" width="254" height="50"/>
                             <color key="backgroundColor" systemColor="systemGreenColor"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="200" id="8et-jl-8NB"/>
                                 <constraint firstAttribute="height" constant="50" id="H2y-16-k7p"/>
                             </constraints>
                             <state key="normal" title="Button"/>
@@ -77,11 +74,11 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPA-F8-CGo">
-                            <rect key="frame" x="8" y="154" width="180" height="50"/>
+                            <rect key="frame" x="8" y="154" width="150" height="50"/>
                             <color key="backgroundColor" systemColor="systemGreenColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="agD-PV-zxf"/>
-                                <constraint firstAttribute="width" constant="180" id="n8W-wc-0ae"/>
+                                <constraint firstAttribute="width" constant="150" id="n8W-wc-0ae"/>
                             </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="SCAN">
@@ -93,10 +90,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIn-0k-QaB">
-                            <rect key="frame" x="226" y="154" width="180" height="50"/>
+                            <rect key="frame" x="254" y="154" width="150" height="50"/>
                             <color key="backgroundColor" systemColor="systemGreenColor"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="180" id="B7x-pn-ARF"/>
+                                <constraint firstAttribute="width" constant="150" id="B7x-pn-ARF"/>
                                 <constraint firstAttribute="height" constant="50" id="uD0-Qr-qjf"/>
                             </constraints>
                             <state key="normal" title="Button"/>
@@ -129,15 +126,18 @@
                         <constraint firstItem="uIn-0k-QaB" firstAttribute="top" secondItem="BFX-em-SAT" secondAttribute="top" constant="154" id="3kL-xm-yQT"/>
                         <constraint firstItem="uPA-F8-CGo" firstAttribute="leading" secondItem="BFX-em-SAT" secondAttribute="leading" constant="8" id="3pQ-4l-cqP"/>
                         <constraint firstItem="f4r-qS-2Aw" firstAttribute="top" secondItem="BFX-em-SAT" secondAttribute="top" constant="39" id="5aT-tq-cUS"/>
-                        <constraint firstItem="cGg-q4-tSv" firstAttribute="leading" secondItem="BFX-em-SAT" secondAttribute="leading" constant="107" id="63D-hF-HbC"/>
+                        <constraint firstItem="kYw-a0-OQz" firstAttribute="leading" secondItem="BFX-em-SAT" secondAttribute="leading" constant="80" id="99l-yY-tIk"/>
                         <constraint firstItem="8Kt-Zc-dKu" firstAttribute="top" secondItem="kYw-a0-OQz" secondAttribute="bottom" constant="19" id="E9s-DI-vNP"/>
+                        <constraint firstItem="8Kt-Zc-dKu" firstAttribute="leading" secondItem="BFX-em-SAT" secondAttribute="leading" constant="80" id="GCZ-x5-0gq"/>
                         <constraint firstItem="uPA-F8-CGo" firstAttribute="top" secondItem="BFX-em-SAT" secondAttribute="top" constant="154" id="GhC-ex-9Ot"/>
                         <constraint firstItem="cGg-q4-tSv" firstAttribute="top" secondItem="8Kt-Zc-dKu" secondAttribute="bottom" constant="18" id="Idz-Fv-W62"/>
-                        <constraint firstItem="kYw-a0-OQz" firstAttribute="leading" secondItem="BFX-em-SAT" secondAttribute="leading" constant="107" id="IgJ-vK-c5U"/>
                         <constraint firstItem="kYw-a0-OQz" firstAttribute="top" secondItem="uIn-0k-QaB" secondAttribute="bottom" constant="71" id="MkS-15-4I9"/>
-                        <constraint firstItem="8Kt-Zc-dKu" firstAttribute="leading" secondItem="BFX-em-SAT" secondAttribute="leading" constant="107" id="OO1-kQ-ibr"/>
-                        <constraint firstItem="uIn-0k-QaB" firstAttribute="leading" secondItem="uPA-F8-CGo" secondAttribute="trailing" constant="38" id="hrl-if-F8H"/>
+                        <constraint firstAttribute="trailing" secondItem="uIn-0k-QaB" secondAttribute="trailing" constant="10" id="ZPX-TA-V9R"/>
+                        <constraint firstAttribute="trailing" secondItem="cGg-q4-tSv" secondAttribute="trailing" constant="80" id="bsC-5A-k0f"/>
+                        <constraint firstItem="cGg-q4-tSv" firstAttribute="leading" secondItem="BFX-em-SAT" secondAttribute="leading" constant="80" id="gkI-9K-Bai"/>
+                        <constraint firstAttribute="trailing" secondItem="kYw-a0-OQz" secondAttribute="trailing" constant="80" id="osW-Go-nBo"/>
                         <constraint firstItem="f4r-qS-2Aw" firstAttribute="leading" secondItem="BFX-em-SAT" secondAttribute="leading" constant="8" id="qf1-op-kA7"/>
+                        <constraint firstAttribute="trailing" secondItem="8Kt-Zc-dKu" secondAttribute="trailing" constant="80" id="sbv-qy-ADa"/>
                     </constraints>
                 </view>
             </subviews>

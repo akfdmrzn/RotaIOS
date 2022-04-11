@@ -331,7 +331,6 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
         self.viewFooterViewCustomView.isHidden = false
         self.viewFooterViewCustomView.viewSendVoucher.isHidden = true
         
-        
         self.viewPaxCustomView?.isHidden = true
         if Connectivity.isConnectedToInternet {
             print("Connected")
@@ -1865,6 +1864,7 @@ extension ExcursionViewController : ExcSelectDelegate {
                     self.viewPaxCustomView = ExcPaxCustomView()
                     self.viewPaxCustomView?.excPaxPageDelegate = self
                     self.viewPaxCustomView?.paxesList = self.paxesList
+                    self.viewPaxCustomView?.firstPaxesList = self.viewPaxCustomView?.paxesList ?? self.paxesList
                     if self.paxesList.count > 0 {
                         for index in 0...self.paxesList.count - 1 {
                             self.paxesList[index].isTapped = false

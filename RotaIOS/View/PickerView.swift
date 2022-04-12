@@ -20,6 +20,7 @@ class PickerView : UIView {
     var list: [PickerList] = []
     var id: String = ""
     var delegate: PickerViewDelegate?
+    public var status: Bool = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,8 +35,10 @@ class PickerView : UIView {
     func commonInit() {
         Bundle.main.loadNibNamed(String(describing: PickerView.self), owner: self, options: nil)
         self.view.addCustomContainerView(self)
-        self.setPickerConfigure()
-        self.textFieldCompanyUser.text = ""
+        if status == true{
+            self.setPickerConfigure()
+            self.textFieldCompanyUser.text = ""
+        }
     }
     
     func setPickerConfigure(){
@@ -76,20 +79,25 @@ extension PickerView: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == self.pickerViewCompany {
-            self.textFieldCompanyUser.text = self.list[row].name
-            self.id = self.list[row].id
-            self.delegate?.selectCompany(id: self.list[row].id, name: self.list[row].name)
+            if self.list.count > 0{
+                self.textFieldCompanyUser.text = self.list[row].name
+                self.id = self.list[row].id
+                self.delegate?.selectCompany(id: self.list[row].id, name: self.list[row].name)
+            }
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == self.pickerViewCompany {
-            self.id = self.list[row].id
-            return self.list[row].name
+            if self.list.count > 0{
+                self.id = self.list[row].id
+                return self.list[row].name
+            }
         }
         else{
             return ""
         }
+        return ""
     }
 }
 

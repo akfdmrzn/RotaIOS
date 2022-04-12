@@ -81,6 +81,7 @@ class TasksCreateServiceVoucherViewController: BaseViewController {
                     self.pickerList.append(PickerList.init(id: item.id ?? "", name: item.username ?? ""))
                 }
                 self.pickerView.delegate = self
+                self.pickerView.status = true
                 self.pickerView.commonInit()
                 self.pickerView.setPickerConfigure()
                 self.pickerView.list = self.pickerList
@@ -199,6 +200,11 @@ class TasksCreateServiceVoucherViewController: BaseViewController {
 
 extension TasksCreateServiceVoucherViewController: PickerViewDelegate {
     func selectCompany(id: String, name: String) {
-        self.username = name
+        if self.pickerList.count > 0{
+            self.username = name
+        }
+        else{
+            self.username = ""
+        }
     }
 }

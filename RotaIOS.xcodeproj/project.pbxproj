@@ -370,6 +370,7 @@
 		D9956C0826DE2E6E006CFC6D /* GetCalculateCancelFeeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9956C0726DE2E6E006CFC6D /* GetCalculateCancelFeeResponseModel.swift */; };
 		D9956C0A26DE3584006CFC6D /* GetCalculateCancelFeeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9956C0926DE3584006CFC6D /* GetCalculateCancelFeeRequestModel.swift */; };
 		D9956C0E26DE3DAA006CFC6D /* GetPaymentTypeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9956C0D26DE3DAA006CFC6D /* GetPaymentTypeResponseModel.swift */; };
+		D99DB5E1280707DA008704DE /* ExtensionUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DB5E0280707DA008704DE /* ExtensionUILabel.swift */; };
 		D9A48CFA26B1405D00D28A0A /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A48CF826B1405D00D28A0A /* DocumentsViewController.swift */; };
 		D9A48CFB26B1405D00D28A0A /* DocumentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9A48CF926B1405D00D28A0A /* DocumentsViewController.xib */; };
 		D9A48CFF26B1408A00D28A0A /* DocumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A48CFE26B1408A00D28A0A /* DocumentsView.swift */; };
@@ -817,6 +818,7 @@
 		D9956C0D26DE3DAA006CFC6D /* GetPaymentTypeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPaymentTypeResponseModel.swift; sourceTree = "<group>"; };
 		D99DB5D128043C67008704DE /* ScanBLEZPrinterTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanBLEZPrinterTableViewController.h; sourceTree = "<group>"; };
 		D99DB5D228043CAD008704DE /* ConnectBLEZPrinterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectBLEZPrinterViewController.h; sourceTree = "<group>"; };
+		D99DB5E0280707DA008704DE /* ExtensionUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUILabel.swift; sourceTree = "<group>"; };
 		D9A48CF826B1405D00D28A0A /* DocumentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
 		D9A48CF926B1405D00D28A0A /* DocumentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocumentsViewController.xib; sourceTree = "<group>"; };
 		D9A48CFE26B1408A00D28A0A /* DocumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsView.swift; sourceTree = "<group>"; };
@@ -1226,6 +1228,7 @@
 				BF44C8E3264000E100238035 /* ExtensionUIViewController.swift */,
 				D97EE01A2771F4B200683E66 /* ExtensionUIAlertController.swift */,
 				A9C6750927877D1C00536F21 /* ExtensionString.swift */,
+				D99DB5E0280707DA008704DE /* ExtensionUILabel.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1866,6 +1869,7 @@
 				D93157712700AD55000C91AD /* ZReportLongClickMenu.swift in Sources */,
 				BF44C8FB264000F000238035 /* CreateTokenRequestModel.swift in Sources */,
 				D9561A3E269DF31A00AA75E5 /* AnnoucmentsView.swift in Sources */,
+				D99DB5E1280707DA008704DE /* ExtensionUILabel.swift in Sources */,
 				D97EE012276B952B00683E66 /* AddMenuPaxTableViewCell.swift in Sources */,
 				D94C40A926692D4C00EBC7CD /* TaskTableViewCell.swift in Sources */,
 				A9C0344927980B69000AA4DD /* UpdateArrAndDepPlanNoShowRequestModel.swift in Sources */,

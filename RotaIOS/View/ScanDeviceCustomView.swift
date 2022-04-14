@@ -16,8 +16,8 @@ class ScanDeviceCustomView : UIView {
     @IBOutlet weak var buttonPrint: UIButton!
     @IBOutlet weak var buttonNewExcSale: UIButton!
     @IBOutlet weak var buttonNewInd_Shop: UIButton!
-    var deviceListCustomView : DeviceListCustomView?
-    @IBOutlet weak var buttonBack: UIButton!
+
+    var connectedDeviceName = ""
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,32 +46,32 @@ class ScanDeviceCustomView : UIView {
         self.buttonNewInd_Shop.backgroundColor = UIColor.greenColor
     }
     
-    @IBAction func scanButtonTapped(_ sender: Any) {
-        if let topVC = UIApplication.getTopViewController() {
-            UIView.animate(withDuration: 0, animations: {
-                self.deviceListCustomView = DeviceListCustomView()
-               /* self.tempTouristAddView?.tempPaxesList = self.sendingListofPaxes
-                self.tempTouristAddView?.changeCounterValue = self.tempValue
-                self.tempTouristAddView?.temppAddPaxesListDelegate = self*/
-                self.deviceListCustomView!.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height:  UIScreen.main.bounds.size.height)
-                topVC.view.addSubview(self.deviceListCustomView!)
-            }, completion: { (finished) in
-                if finished{
-                    
+    func getNotConnectionDevices() {
+        EAAccessoryManager.shared().showBluetoothAccessoryPicker(withNameFilter: nil) { success in
+            self.connectedDeviceName = EAAccessoryManager.shared().connectedAccessories[0].name
+            if let topVC = UIApplication.getTopViewController() {
+                Toast("Connected to \(self.connectedDeviceName)").show(topVC)
+            }
                 }
-            })
-        }
     }
+    
+    @IBAction func scanButtonTapped(_ sender: Any) {
+        self.getNotConnectionDevices()
+    }
+    
     @IBAction func backButton(_ sender: Any) {
         self.removeFromSuperview()
     }
     
     @IBAction func reconnectButtonTapped(_ sender: Any) {
-        
+       
+      
+        // get devices diye func yaz kodu bu func içine yaz func bool dönecek
     }
     
     @IBAction func printButtonTapped(_ sender: Any) {
-        
+       // self.excProceedCustomView = ExcProceedCustomView()
+    
     }
     
     @IBAction func newExcSaleButtonTapped(_ sender: Any) {

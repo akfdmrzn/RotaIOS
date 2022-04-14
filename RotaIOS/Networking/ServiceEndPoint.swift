@@ -62,6 +62,7 @@ public enum ServiceEndPoint: String {
     case UpdateInfoPlanNoShow = "/api/api/TourTransferPlan/UpdateInfoPlanNoShow"
     case UpdateArrAndDepPlanNoShow = "/api/api/TourTransferPlan/UpdateArrAndDepPlanNoShow"
     case SaveGuideMeetingTimeAndReport = "/api/api/TourTransferPlan/SaveGuideMeetingTimeAndReport?userId=1&langId=1&"
+    case SendSaveGuideMeetingTimeAndReport = "/api/api/TourTransferPlan/SaveGuideMeetingTimeAndRepot"
     case GetUpdateSaleNoteforMobile = "/api/api/TourSale/UpdateSaleNoteforMobile"
     case GetTourEventDetail = "/api/api/TourTransferPlan/GetTourEventDetail"
     case GetSteps = "/api/api/ServiceVoucherNew/GetSteps"

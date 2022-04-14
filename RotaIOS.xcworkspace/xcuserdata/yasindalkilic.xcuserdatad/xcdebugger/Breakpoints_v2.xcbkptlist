@@ -1223,22 +1223,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "275BD48F-45C8-4494-A904-36CF42F93115"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RotaIOS/AppDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A30C0461-B724-41A0-BBD6-6E70B0E5E2EB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1440,8 +1424,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1856"
             endingLineNumber = "1856"
-            landmarkName = "exSelectDelegateInf(paxButtonTapped:)"
-            landmarkType = "7">
+            landmarkName = "ExcursionViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1873,6 +1857,22 @@
             startingLineNumber = "27"
             endingLineNumber = "27"
             landmarkName = "sendRequest(url:endPoint:method:requestModel:indicatorEnabled:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "654360A2-14EC-4915-9DD3-03AD40E23166"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RotaIOS/Controller/TasksViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "showAlertButton(msg:workNo:typeInt:relatedId:tourDate:finished:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -26,6 +26,7 @@ class MainPageCustomView: UIView {
     func commonInit() {
         Bundle.main.loadNibNamed(String(describing: MainPageCustomView.self), owner: self, options: nil)
         viewHeader.addCustomContainerView(self)
+        self.viewHeader.backgroundColor = UIColor.mainViewColor
         viewHeader.addLine(position: .bottom, color: .gray, width: 0.5)
     }
 }

@@ -16,6 +16,7 @@ class MainPageTableViewCell: BaseTableViewCell {
         super.awakeFromNib()
         viewMainPage.layer.cornerRadius = 10
         self.selectionStyle = .none
+        
     }
     
     override func layoutSubviews() {

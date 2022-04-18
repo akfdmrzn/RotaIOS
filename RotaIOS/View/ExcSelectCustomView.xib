@@ -29,11 +29,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLo-ax-Q0t">
-                    <rect key="frame" x="40" y="50" width="148" height="50"/>
+                    <rect key="frame" x="45" y="50" width="161" height="50"/>
                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="148" id="7u2-mn-nqP"/>
-                        <constraint firstAttribute="height" constant="50" id="cH1-15-Pue"/>
+                        <constraint firstAttribute="height" constant="50" id="9NF-io-bOV"/>
+                        <constraint firstAttribute="width" constant="161" id="Lak-d8-0hA"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="TOUR">
@@ -44,10 +44,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mmv-Gv-RXP">
-                    <rect key="frame" x="188" y="50" width="1422" height="50"/>
+                    <rect key="frame" x="206" y="50" width="1399" height="50"/>
                     <color key="backgroundColor" systemColor="systemGrayColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="s5d-eD-uSF"/>
+                        <constraint firstAttribute="height" constant="50" id="7WA-jY-V46"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="PAX">
@@ -67,11 +67,11 @@
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yr-tX-E1U">
-                    <rect key="frame" x="0.0" y="200" width="188" height="40"/>
+                    <rect key="frame" x="0.0" y="200" width="206" height="40"/>
                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Ngi-ia-Mq2"/>
-                        <constraint firstAttribute="width" constant="188" id="k6W-FP-bH4"/>
+                        <constraint firstAttribute="width" constant="206" id="k6W-FP-bH4"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Tours">
@@ -79,20 +79,6 @@
                     </state>
                     <connections>
                         <action selector="toursButtonTapped:" destination="-1" eventType="touchUpInside" id="4Wr-ny-piC"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7Z-1q-933">
-                    <rect key="frame" x="188" y="200" width="1462" height="40"/>
-                    <color key="backgroundColor" systemColor="systemGrayColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="RTb-82-sy1"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="Promotion">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="promotionButtonTapped:" destination="-1" eventType="touchUpInside" id="3i1-F9-7gP"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     Excursions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rnm-j3-Mdq">
@@ -302,31 +288,45 @@
                         <constraint firstItem="18e-JW-XgU" firstAttribute="top" secondItem="EAe-pw-CbO" secondAttribute="top" id="us0-yA-vLe"/>
                     </constraints>
                 </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7Z-1q-933">
+                    <rect key="frame" x="206" y="200" width="1444" height="40"/>
+                    <color key="backgroundColor" systemColor="systemGrayColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="rTO-hf-0pX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Promotion">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="promotionButtonTapped:" destination="-1" eventType="touchUpInside" id="3i1-F9-7gP"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="s7Z-1q-933" secondAttribute="trailing" id="4bj-cZ-ygO"/>
                 <constraint firstItem="EAe-pw-CbO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6Uh-eZ-bCs"/>
+                <constraint firstItem="JWp-sQ-Av5" firstAttribute="top" secondItem="oLo-ax-Q0t" secondAttribute="bottom" constant="20" id="71I-8c-rtS"/>
+                <constraint firstItem="s7Z-1q-933" firstAttribute="leading" secondItem="1Yr-tX-E1U" secondAttribute="trailing" id="AOn-US-PYq"/>
                 <constraint firstItem="18e-JW-XgU" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.422043" constant="155.77957800000001" id="AbN-nf-6kf"/>
                 <constraint firstItem="EAe-pw-CbO" firstAttribute="top" secondItem="Rnm-j3-Mdq" secondAttribute="bottom" id="AsU-W8-01g"/>
                 <constraint firstAttribute="trailing" secondItem="Rnm-j3-Mdq" secondAttribute="trailing" id="CF5-ea-Nhs"/>
-                <constraint firstItem="JWp-sQ-Av5" firstAttribute="top" secondItem="oLo-ax-Q0t" secondAttribute="bottom" constant="20" id="HbA-wa-qDR"/>
                 <constraint firstItem="Rnm-j3-Mdq" firstAttribute="top" secondItem="1Yr-tX-E1U" secondAttribute="bottom" id="M5G-y7-qLr"/>
-                <constraint firstItem="s7Z-1q-933" firstAttribute="leading" secondItem="1Yr-tX-E1U" secondAttribute="trailing" id="Rgr-cC-pPS"/>
                 <constraint firstAttribute="trailing" secondItem="JWp-sQ-Av5" secondAttribute="trailing" constant="45" id="VdM-LV-Ghm"/>
                 <constraint firstItem="Rnm-j3-Mdq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WHf-jf-Xc4"/>
-                <constraint firstItem="s7Z-1q-933" firstAttribute="top" secondItem="JWp-sQ-Av5" secondAttribute="bottom" constant="20" id="Xrg-rH-tXS"/>
-                <constraint firstItem="Mmv-Gv-RXP" firstAttribute="leading" secondItem="oLo-ax-Q0t" secondAttribute="trailing" id="YAp-eV-KmP"/>
-                <constraint firstItem="Mmv-Gv-RXP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="ZAM-ZH-7wm"/>
-                <constraint firstItem="oLo-ax-Q0t" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="ahO-db-Hai"/>
+                <constraint firstItem="oLo-ax-Q0t" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="45" id="WS2-MS-ftl"/>
+                <constraint firstItem="Mmv-Gv-RXP" firstAttribute="leading" secondItem="oLo-ax-Q0t" secondAttribute="trailing" id="YTH-Dr-zSh"/>
+                <constraint firstAttribute="trailing" secondItem="Mmv-Gv-RXP" secondAttribute="trailing" constant="45" id="b52-ua-TQZ"/>
                 <constraint firstItem="1Yr-tX-E1U" firstAttribute="top" secondItem="JWp-sQ-Av5" secondAttribute="bottom" constant="20" id="dqm-L9-9nt"/>
                 <constraint firstAttribute="trailing" secondItem="EAe-pw-CbO" secondAttribute="trailing" id="eDu-28-6YJ"/>
                 <constraint firstItem="1Yr-tX-E1U" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="efn-9o-zej"/>
                 <constraint firstItem="JWp-sQ-Av5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="45" id="gCj-Kj-3ua"/>
-                <constraint firstAttribute="trailing" secondItem="s7Z-1q-933" secondAttribute="trailing" id="gsC-6j-LkI"/>
                 <constraint firstAttribute="bottom" secondItem="EAe-pw-CbO" secondAttribute="bottom" id="k42-BN-qDJ"/>
-                <constraint firstAttribute="trailing" secondItem="Mmv-Gv-RXP" secondAttribute="trailing" constant="40" id="rb3-A2-TKV"/>
-                <constraint firstItem="oLo-ax-Q0t" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="udO-9F-QUU"/>
+                <constraint firstItem="Mmv-Gv-RXP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="kkr-X3-koC"/>
+                <constraint firstItem="s7Z-1q-933" firstAttribute="top" secondItem="JWp-sQ-Av5" secondAttribute="bottom" constant="20" id="klF-9r-Gku"/>
+                <constraint firstItem="oLo-ax-Q0t" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="w2M-bg-GUC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="124.6376811594203" y="87.053571428571431"/>

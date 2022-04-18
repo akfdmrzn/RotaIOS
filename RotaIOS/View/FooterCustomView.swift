@@ -47,6 +47,8 @@ class FooterCustomView: UIView {
         self.buttonView.layer.cornerRadius = 10
         self.buttonView.backgroundColor = UIColor.greenColor
         
+        self.buttonAddButton.isHidden = true
+        
         self.printButton.isHidden = true
         self.printButton.isEnabled = false
         
@@ -82,6 +84,11 @@ class FooterCustomView: UIView {
         self.viewSendVoucher.layer.cornerRadius = 10
         self.viewSendVoucher.backgroundColor = UIColor.greenColor
         self.viewSendVoucher.isHidden = true
+        
+        self.buttonView.setImage(UIImage(named: "rightarrow"), for: .normal)
+        self.buttonView.imageEdgeInsets = UIEdgeInsets.init(top: 10, left: 280, bottom: 10, right: 20)
+       
+        
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {

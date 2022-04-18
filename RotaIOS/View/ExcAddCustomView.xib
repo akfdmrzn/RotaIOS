@@ -26,11 +26,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Wt-Ad-PuT">
-                    <rect key="frame" x="40" y="50" width="148" height="50"/>
+                    <rect key="frame" x="40" y="50" width="166" height="50"/>
                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="5Ld-cF-IFw"/>
-                        <constraint firstAttribute="width" constant="148" id="XL0-p0-uZp"/>
+                        <constraint firstAttribute="width" constant="166" id="XL0-p0-uZp"/>
                     </constraints>
                     <state key="normal" title="EXTRAS">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -40,7 +40,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovO-4o-05n">
-                    <rect key="frame" x="188" y="50" width="972" height="50"/>
+                    <rect key="frame" x="206" y="50" width="954" height="50"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="RHX-Jn-hpM"/>

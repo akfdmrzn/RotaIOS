@@ -14,6 +14,10 @@ protocol TempAddPaxesListDelegate {
 }
 
 class TempTouristAddCustomView : UIView{
+    
+    var hasSetPointOrigin = false
+    var pointOrigin: CGPoint?
+    
     var addManuelTouristAddCustomView : AddManuelTouristCustomView?
     @IBOutlet var headerView: UIView!
     @IBOutlet var contentView: UIView!
@@ -60,6 +64,11 @@ class TempTouristAddCustomView : UIView{
         Bundle.main.loadNibNamed(String(describing: TempTouristAddCustomView.self), owner: self, options: nil)
         self.headerView.addCustomContainerView(self)
         
+        if !hasSetPointOrigin {
+                   hasSetPointOrigin = true
+                   pointOrigin = self.contentView.frame.origin
+               }
+        
         self.viewRemoveView.roundCorners(.allCorners, radius: 10)
         self.buttonManuelAdd.layer.cornerRadius = 10
         self.buttonManuelAdd.layer.masksToBounds = true
@@ -74,16 +83,48 @@ class TempTouristAddCustomView : UIView{
         self.tableView.dataSource = self
         self.tableView.register(PaxPageTableViewCell.nib, forCellReuseIdentifier: PaxPageTableViewCell.identifier)
         
-        let tap = UITapGestureRecognizer.init(target: self, action: #selector(removeButton))
-        self.slideIdicator.addGestureRecognizer(tap)
-        self.slideIdicator.isUserInteractionEnabled = true
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
+        self.contentView.addGestureRecognizer(panGesture)
+        self.contentView.isUserInteractionEnabled = true
         
+       let tap = UITapGestureRecognizer.init(target: self, action: #selector(removeButton))
+        self.slideIdicator.addGestureRecognizer(tap)
+        self.slideIdicator.isUserInteractionEnabled = true  
     }
     
     @objc func removeButton(){
         self.temppAddPaxesListDelegate?.tempAddList(listofpaxes: self.tempPaxesList, manuellist: self.paxnameFromaddManuelList, changeValue: self.changeCounterValue)
         self.removeFromSuperview()
     }
+    
+    @objc func panGestureRecognizerAction(sender: UIPanGestureRecognizer) {
+        
+        print("")
+            let translation = sender.translation(in: self.contentView)
+            
+            // Not allowing the user to drag the view upward
+            guard translation.y >= 0 else { return }
+            
+            // setting x as 0 because we don't want users to move the frame side ways!! Only want straight up or down
+        self.contentView.frame.origin = CGPoint(x: 0, y: self.pointOrigin!.y + translation.y)
+            
+            if sender.state == .ended {
+                let dragVelocity = sender.velocity(in: self.contentView)
+                if dragVelocity.y >= 1000 {
+                    if let topVC = UIApplication.getTopViewController() {
+                        topVC.dismiss(animated: true, completion: nil)
+                        self.temppAddPaxesListDelegate?.tempAddList(listofpaxes: self.tempPaxesList, manuellist: self.paxnameFromaddManuelList, changeValue: self.changeCounterValue)
+                        self.removeFromSuperview()
+                    }
+                    
+                } else {
+                    // Set back to original position of the view controller
+                    UIView.animate(withDuration: 0.3) {
+                        self.contentView.frame.origin = self.pointOrigin ?? CGPoint(x: 0, y: 400)
+                    }
+                }
+            }
+        }
     
     
     @IBAction func addManuelButton(_ sender: Any) {

@@ -176,7 +176,7 @@ class ExcursionViewController: UIViewController {
         self.constraintOnSelect.append(self.viewFooterViewCustomView.buttonView.leadingAnchor.constraint(equalTo: self.viewFooterViewCustomView.viewHeader.leadingAnchor, constant: 40))
         self.constraintOnSelect.append(self.viewFooterViewCustomView.buttonView.topAnchor.constraint(equalTo: self.viewFooterViewCustomView.viewHeader.topAnchor, constant: 20))
         self.constraintOnSelect.append(self.viewFooterViewCustomView.buttonView.trailingAnchor.constraint(equalTo: self.viewFooterViewCustomView.viewHeader.trailingAnchor, constant: -40))
-        self.constraintOnSelect.append(self.viewFooterViewCustomView.buttonView.bottomAnchor.constraint(equalTo: self.viewFooterViewCustomView.viewHeader.bottomAnchor, constant: -80))
+        self.constraintOnSelect.append(self.viewFooterViewCustomView.buttonView.bottomAnchor.constraint(equalTo: self.viewFooterViewCustomView.viewHeader.bottomAnchor, constant: -120))
         self.viewFooterViewCustomView.buttonView.setTitle("CONTINUE", for: .normal)
         NSLayoutConstraint.activate( self.constraintOnSelect)
     }
@@ -187,18 +187,22 @@ class ExcursionViewController: UIViewController {
         self.constraintOnPax .append(self.viewFooterViewCustomView.buttonView.leadingAnchor.constraint(equalTo: self.viewFooterViewCustomView.buttonAddButton.trailingAnchor, constant: 15))
         self.constraintOnPax .append(self.viewFooterViewCustomView.buttonView.topAnchor.constraint(equalTo: self.viewFooterViewCustomView.viewHeader.topAnchor, constant: 20))
         self.constraintOnPax .append(self.viewFooterViewCustomView.buttonView.trailingAnchor.constraint(equalTo: self.viewFooterViewCustomView.viewHeader.trailingAnchor, constant: -40))
-        self.constraintOnPax .append(self.viewFooterViewCustomView.buttonView.bottomAnchor.constraint(equalTo: self.viewFooterViewCustomView.viewHeader.bottomAnchor, constant: -80))
+        self.constraintOnPax .append(self.viewFooterViewCustomView.buttonView.bottomAnchor.constraint(equalTo: self.viewFooterViewCustomView.viewHeader.bottomAnchor, constant: -120))
         self.viewFooterViewCustomView.buttonView.setTitle("CONTINUE", for: .normal)
         NSLayoutConstraint.activate( self.constraintOnPax)
     }
     
     func constraintOnAddFunc(){
         self.viewFooterViewCustomView.viewHeader.addSubview( self.viewFooterViewCustomView.buttonView)
+        self.viewFooterViewCustomView.buttonView.setImage(nil, for: .normal)
+       // self.buttonView.setImage(UIImage(named: "rightarrow"), for: .normal)
+        self.viewFooterViewCustomView.buttonView.imageEdgeInsets = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
         self.viewFooterViewCustomView.buttonView.translatesAutoresizingMaskIntoConstraints = false
         self.viewFooterViewCustomView.buttonAddButton.translatesAutoresizingMaskIntoConstraints = false
         self.constraintonAdd .append(self.viewFooterViewCustomView.buttonView.leadingAnchor.constraint(equalTo: self.viewFooterViewCustomView.buttonSaveButton.trailingAnchor, constant: 15))
         self.constraintonAdd .append(self.viewFooterViewCustomView.buttonView.topAnchor.constraint(equalTo: self.viewFooterViewCustomView.viewHeader.topAnchor, constant: 80))
-        self.constraintonAdd .append(self.viewFooterViewCustomView.buttonView.widthAnchor.constraint(equalToConstant: 140))
+        self.constraintonAdd .append(self.viewFooterViewCustomView.buttonView.trailingAnchor.constraint(equalTo: self.viewFooterViewCustomView.viewHeader.trailingAnchor, constant: -40))
+       // self.constraintonAdd .append(self.viewFooterViewCustomView.buttonView.widthAnchor.constraint(equalToConstant: 140))
         self.constraintonAdd .append(self.viewFooterViewCustomView.buttonView.heightAnchor.constraint(equalToConstant: 50))
         self.viewFooterViewCustomView.buttonView.setTitle("CONTINUE", for: .normal)
         NSLayoutConstraint.activate( self.constraintonAdd)
@@ -281,7 +285,7 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
                 return
             }
             
-            
+           
             if self.saveButtonTappet == false && self.extraAndTransTotalPrice != 0.0 {
                 self.viewFooterViewCustomView.counter = 2
                 let alert = UIAlertController.init(title: "WARNING", message: "Please Clicked Save Button", preferredStyle: UIAlertController.Style.alert)
@@ -364,12 +368,22 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
                 //self.proceedPageCustomView?.isHidden = true
             }
         }else if self.buttonTappedCount == 1 {
-            self.viewFooterViewCustomView.buttonView.isEnabled = true
-            //  self.viewExcursionView.scrollView.contentOffset = CGPoint(x: 0, y: 0)
+            self.viewFooterViewCustomView.commonInit()
+            self.viewFooterViewCustomView.buttonView.removeFromSuperview()
             self.constraintOnSelectfunc()
+            self.viewFooterViewCustomView.buttonView.isEnabled = true
+            self.viewFooterViewCustomView.buttonView.isHidden = false
+            //  self.viewExcursionView.scrollView.contentOffset = CGPoint(x: 0, y: 0)
+           // self.constraintOnSelectfunc()
             self.viewFooterViewCustomView.buttonGetOfflineData.isHidden = true
             self.viewFooterViewCustomView.printButton.isHidden = true
             
+           /* self.viewFooterViewCustomView.buttonView.translatesAutoresizingMaskIntoConstraints = false
+            self.viewFooterViewCustomView.addConstraint(NSLayoutConstraint(item: self.viewFooterViewCustomView.buttonView ?? 1, attribute: .top, relatedBy: .equal, toItem: self.topLayoutGuide , attribute: .bottom, multiplier: 1, constant: 50))
+            self.viewFooterViewCustomView.addConstraint(NSLayoutConstraint(item: self.viewFooterViewCustomView.buttonView, attribute: .bottom, relatedBy: .equal, toItem: self.bottomLayoutGuide, attribute: .top, multiplier: 1, constant: 50))
+            self.viewFooterViewCustomView.addConstraint(NSLayoutConstraint(item: self.viewFooterViewCustomView.buttonView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 100))
+            self.viewFooterViewCustomView.addConstraint(NSLayoutConstraint(item: self.viewFooterViewCustomView.buttonView, attribute: .trailing, relatedBy: .equal, toItem: self.viewFooterViewCustomView.viewHeader, attribute: .trailingMargin, multiplier: 1, constant: 100))
+            */
             let getTourSearchRequestModel = GetTourSearchRequestModel.init(Guide: userDefaultsData.getGuideId(), Market: userDefaultsData.getMarketId(), Hotel: userDefaultsData.getHotelId(), Area: userDefaultsData.getHotelArea(), TourDateStart: self.viewExcSearchCustomView?.beginDateString ??  "", TourDateEnd: self.viewExcSearchCustomView?.endDateString ?? "", SaleDate: userDefaultsData.getSaleDate(), PromotionId: self.viewExcSearchCustomView?.promotionid ?? 0)
             
             if  self.isConnectedInternet == true {
@@ -1040,7 +1054,7 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
     
     func homePageTapped(ischosen: Int) {
         self.buttonTappedCount = ischosen
-        self.viewPaxCustomView?.isHidden = true
+       // self.viewPaxCustomView?.isHidden = true
         if self.buttonTappedCount == 2 || self.buttonTappedCount == 3{
           //  self.buttonTappedCount = 2
             if userDefaultsData.getPaxesList()?.count == 0 {
@@ -1061,7 +1075,7 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
                 present(alert, animated: true, completion: nil)
                 return
             }
-            
+     
             if self.saveButtonTappet == false && self.extraAndTransTotalPrice != 0.0 {
                 self.viewAppointMentBarCutomView.selectedIndex.row = 2
                 let alert = UIAlertController.init(title: "WARNING", message: "Please Clicked Save Button", preferredStyle: UIAlertController.Style.alert)
@@ -1151,10 +1165,14 @@ extension ExcursionViewController : HomePageTappedDelegate, ContinueButtonTapped
         }
         else if self.buttonTappedCount == 1 {
             // self.viewExcursionView.scrollView.contentOffset = CGPoint(x: 0, y: 0)
+            self.viewFooterViewCustomView.commonInit()
+            self.viewFooterViewCustomView.buttonView.removeFromSuperview()
+            self.constraintOnSelectfunc()
             self.buttonhide()
             self.viewFooterViewCustomView.buttonGetOfflineData.isHidden = true
-            self.constraintOnSelectfunc()
-            
+           // self.constraintOnSelectfunc()
+           // self.viewFooterViewCustomView.commonInit()
+            self.viewFooterViewCustomView.buttonView.isHidden = false
             let getTourSearchRequestModel = GetTourSearchRequestModel.init(Guide: userDefaultsData.getGuideId(), Market: userDefaultsData.getMarketId(), Hotel: userDefaultsData.getHotelId(), Area: userDefaultsData.getHotelArea(), TourDateStart: self.viewExcSearchCustomView?.beginDateString ??  "", TourDateEnd: self.viewExcSearchCustomView?.endDateString ?? "", SaleDate: userDefaultsData.getSaleDate(), PromotionId: self.viewExcSearchCustomView?.promotionid ?? 0)
             
             if  self.isConnectedInternet == true {
@@ -1854,10 +1872,10 @@ extension ExcursionViewController : ExcSearchDelegate {
 extension ExcursionViewController : ExcSelectDelegate {
     func exSelectDelegateInf(paxButtonTapped: Bool?) {
         if paxButtonTapped == true {
-            self.viewFooterViewCustomView.buttonView.removeFromSuperview()
-            self.constraintOnPaxFunc()
+          self.viewFooterViewCustomView.buttonView.removeFromSuperview()
+            self.constraintOnSelectfunc()
+            self.viewFooterViewCustomView.buttonView.isHidden = false
             self.viewExcSelectCustomView?.isHidden = true
-            self.viewFooterViewCustomView.buttonAddButton.isHidden = false
             // self.viewFooterViewCustomView.buttonView.isHidden = false
             if self.viewPaxCustomView == nil || self.isPAxesListChange == true{
                 UIView.animate(withDuration: 0, animations: { [self] in
@@ -1885,9 +1903,10 @@ extension ExcursionViewController : ExcSelectDelegate {
             }
             
         }else {
-            self.viewFooterViewCustomView.buttonView.removeFromSuperview()
-            self.constraintOnSelectfunc()
+           // self.viewFooterViewCustomView.buttonView.removeFromSuperview()
             //self.constraintOnSelectfunc()
+            //self.constraintOnSelectfunc()
+            self.viewFooterViewCustomView.buttonView.isHidden = false
             self.viewPaxCustomView?.isHidden = true
             if viewExcSelectCustomView == nil {
                 UIView.animate(withDuration: 0, animations: { [self] in
@@ -1911,8 +1930,9 @@ extension ExcursionViewController : ExcSelectDelegate {
 extension ExcursionViewController : ExcPaxPageDelegate {
     func excPaxInfo(tourButtonTapped: Bool?) {
         if tourButtonTapped == false {
-            self.viewFooterViewCustomView.buttonView.removeFromSuperview()
-            self.constraintOnPaxFunc()
+           /* self.viewFooterViewCustomView.buttonView.removeFromSuperview()
+            self.constraintOnPaxFunc()*/
+            self.viewFooterViewCustomView.buttonView.isHidden = false
             self.viewExcSelectCustomView?.isHidden = true
             if self.viewPaxCustomView == nil {
                 UIView.animate(withDuration: 0, animations: { [self] in
@@ -1928,9 +1948,10 @@ extension ExcursionViewController : ExcPaxPageDelegate {
                 self.viewExcSelectCustomView?.isHidden = true
             }
         }else {
-            self.viewFooterViewCustomView.buttonView.removeFromSuperview()
-            self.constraintOnSelectfunc()
+           /* self.viewFooterViewCustomView.buttonView.removeFromSuperview()
+            self.constraintOnSelectfunc()*/
             // self.constraintOnSelectfunc()
+            self.viewFooterViewCustomView.buttonView.isHidden = false
             self.viewFooterViewCustomView.buttonAddButton.isHidden = true
             self.viewFooterViewCustomView.buttonView.isHidden = false
             self.viewPaxCustomView?.isHidden = true

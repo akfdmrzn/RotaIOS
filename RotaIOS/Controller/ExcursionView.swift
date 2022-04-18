@@ -19,6 +19,8 @@ final class ExcursionView : UIView {
         self.viewAppointmentView.collectionList = ["Search","Select","Add","Proceed" ]
         self.viewHeaderDetailView.labelHeaderDetailView.text = "Excursion Sale"
         self.viewOfflineLabel.isHidden = true
+        self.viewFooterCustomView.roundCorners([.topLeft, .topRight], radius: 10)
+        self.viewFooterCustomView.clipsToBounds = true
     }
     
     func buttonAddButtonChange(){

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,7 +33,8 @@
                         <constraint firstAttribute="height" constant="50" id="xhd-Fb-5ZF"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="                        CONTINUE                       &gt;">
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="                CONTINUE                       ">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -85,11 +86,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwe-EG-Ew8">
-                    <rect key="frame" x="40" y="80" width="140" height="50"/>
+                    <rect key="frame" x="40" y="80" width="173" height="50"/>
                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="G9a-ts-ctV"/>
-                        <constraint firstAttribute="width" constant="140" id="YdQ-1M-933"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="SAVE">
@@ -139,6 +139,7 @@
                 <constraint firstAttribute="trailing" secondItem="dtg-Wp-KL4" secondAttribute="trailing" constant="30" id="jFO-I3-3gL"/>
                 <constraint firstItem="dtg-Wp-KL4" firstAttribute="top" secondItem="qpj-uy-4n7" secondAttribute="bottom" constant="20" id="l5P-9C-iqB"/>
                 <constraint firstItem="a5Z-wu-VBL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="lHf-2D-3bd"/>
+                <constraint firstAttribute="trailing" secondItem="qwe-EG-Ew8" secondAttribute="trailing" constant="210" id="s7q-tn-PH0"/>
                 <constraint firstItem="a5Z-wu-VBL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" symbolic="YES" id="vvl-5D-7I2"/>
                 <constraint firstItem="4R1-2R-r1O" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="zzD-7n-xhO"/>
             </constraints>

@@ -70,7 +70,7 @@ final class LoginViewController : BaseViewController {
                          if response.id != nil {
                              print("info recived - \(response.id ?? "")")
                              userDefaultsData.saveUserId(languageId: response.id ?? "default")
-                             userDefaultsData.saveGuideId(languageId: response.guideId!)
+                             userDefaultsData.saveGuideId(languageId: response.guideId ?? 0)
                              userDefaultsData.saveSaleDate(saleDate: dateString)
                              
                              let getGuideInfRequestModel =  GetGuideInfoRequestModel( id : userDefaultsData.getGuideId())

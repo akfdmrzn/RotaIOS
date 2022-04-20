@@ -28,10 +28,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYH-sF-yya">
-                    <rect key="frame" x="40" y="50" width="166" height="50"/>
+                    <rect key="frame" x="40" y="50" width="157.5" height="50"/>
                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="166" id="0JW-ug-8ei"/>
                         <constraint firstAttribute="height" constant="50" id="Sal-oY-ChS"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -52,7 +51,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wX-ao-7bC">
-                    <rect key="frame" x="206" y="50" width="149" height="50"/>
+                    <rect key="frame" x="197.5" y="50" width="157.5" height="50"/>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="opP-DQ-6kU"/>
@@ -120,6 +119,7 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="jHZ-4D-Sa4" secondAttribute="bottom" constant="400" id="2QE-jt-GZY"/>
                 <constraint firstItem="eM9-4q-17A" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5CA-mN-iUL"/>
+                <constraint firstItem="4wX-ao-7bC" firstAttribute="width" secondItem="JYH-sF-yya" secondAttribute="width" id="9Gy-1K-dS1"/>
                 <constraint firstAttribute="trailing" secondItem="tdp-dc-Dcb" secondAttribute="trailing" constant="40" id="BIv-4d-U8t"/>
                 <constraint firstItem="jHZ-4D-Sa4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="DBu-nV-YZM"/>
                 <constraint firstItem="4wX-ao-7bC" firstAttribute="leading" secondItem="JYH-sF-yya" secondAttribute="trailing" id="SQu-dP-M07"/>
@@ -135,10 +135,10 @@
                 <constraint firstItem="Xp7-By-X5D" firstAttribute="top" secondItem="AG9-xi-jeZ" secondAttribute="bottom" constant="10" id="ihH-lp-9UR"/>
                 <constraint firstItem="eM9-4q-17A" firstAttribute="top" secondItem="Xp7-By-X5D" secondAttribute="bottom" constant="10" id="kqK-v8-EFH"/>
                 <constraint firstItem="Xp7-By-X5D" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="45" id="qwM-KU-qjH"/>
-                <constraint firstAttribute="trailing" secondItem="4wX-ao-7bC" secondAttribute="trailing" constant="40" id="thF-95-QNC"/>
                 <constraint firstItem="JYH-sF-yya" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="wf2-s0-Dxd"/>
                 <constraint firstItem="jHZ-4D-Sa4" firstAttribute="top" secondItem="eM9-4q-17A" secondAttribute="bottom" id="xXU-MR-Ezy"/>
                 <constraint firstAttribute="trailing" secondItem="eM9-4q-17A" secondAttribute="trailing" id="zgJ-uQ-Scs"/>
+                <constraint firstItem="JYH-sF-yya" firstAttribute="width" secondItem="tdp-dc-Dcb" secondAttribute="width" multiplier="0.5" id="znw-Qu-q15"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="123.91304347826087" y="96.428571428571431"/>

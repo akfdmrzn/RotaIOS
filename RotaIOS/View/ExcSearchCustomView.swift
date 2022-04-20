@@ -93,6 +93,8 @@ class ExcSearchCustomView : UIView {
         self.searchBar.layer.cornerRadius = 10
         self.searchBar.compatibleSearchTextField.textColor = UIColor.white
         self.searchBar.compatibleSearchTextField.backgroundColor = UIColor.mainTextColor
+        self.searchBar.barTintColor = UIColor.grayColor
+        
         self.viewTourBeginDate.mainLabel.isHidden = true
         self.viewTourBeginDate.imageMainText.isHidden = true
         self.viewTourBeginDate.mainText.isHidden = false

@@ -62,6 +62,8 @@ class AddManuelTouristCustomView : UIView {
         }
         return datePicker
     }()
+    var hasSetPointOrigin = false
+    var pointOrigin: CGPoint?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -76,6 +78,12 @@ class AddManuelTouristCustomView : UIView {
     func commonInit() {
         Bundle.main.loadNibNamed(String(describing: AddManuelTouristCustomView.self), owner: self, options: nil)
         self.headerView.addCustomContainerView(self)
+        
+        if !hasSetPointOrigin {
+                   hasSetPointOrigin = true
+                   pointOrigin = self.contentView.frame.origin
+               }
+        
         // self.viewPhone.mainText.delegate = self
         self.genderMenu.dataSource = self.genderList
         self.genderMenu.backgroundColor = UIColor.grayColor
@@ -94,6 +102,7 @@ class AddManuelTouristCustomView : UIView {
             self.viewGender.mainLabel.text = title
             
         }
+        
         self.contentView.backgroundColor = UIColor.grayColor
         self.contentView.layer.cornerRadius = 10
         self.scrollView.layer.cornerRadius = 10
@@ -135,7 +144,41 @@ class AddManuelTouristCustomView : UIView {
         self.viewSlideUp.isUserInteractionEnabled = true
         self.createCurrentDatePicker()
         self.createcheckOutDatePicker()
+        
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
+        self.contentView.addGestureRecognizer(panGesture)
+        self.contentView.isUserInteractionEnabled = true
+        
     }
+    
+    @objc func panGestureRecognizerAction(sender: UIPanGestureRecognizer) {
+        
+        print("")
+            let translation = sender.translation(in: self.contentView)
+            
+            // Not allowing the user to drag the view upward
+            guard translation.y >= 0 else { return }
+            
+            // setting x as 0 because we don't want users to move the frame side ways!! Only want straight up or down
+        self.contentView.frame.origin = CGPoint(x: 0, y: self.pointOrigin!.y + translation.y)
+            
+            if sender.state == .ended {
+                let dragVelocity = sender.velocity(in: self.contentView)
+                if dragVelocity.y >= 1000 {
+                    if let topVC = UIApplication.getTopViewController() {
+                        topVC.dismiss(animated: true, completion: nil)
+                  
+                        self.removeFromSuperview()
+                    }
+                    
+                } else {
+                    // Set back to original position of the view controller
+                    UIView.animate(withDuration: 0.3) {
+                        self.contentView.frame.origin = self.pointOrigin ?? CGPoint(x: 0, y: 400)
+                    }
+                }
+            }
+        }
     
     func createCurrentDatePicker() {
         self.viewBirthDay.mainText.textAlignment = .left

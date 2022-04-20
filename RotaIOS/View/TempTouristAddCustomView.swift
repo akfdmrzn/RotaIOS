@@ -14,10 +14,6 @@ protocol TempAddPaxesListDelegate {
 }
 
 class TempTouristAddCustomView : UIView{
-    
-    var hasSetPointOrigin = false
-    var pointOrigin: CGPoint?
-    
     var addManuelTouristAddCustomView : AddManuelTouristCustomView?
     @IBOutlet var headerView: UIView!
     @IBOutlet var contentView: UIView!
@@ -49,6 +45,8 @@ class TempTouristAddCustomView : UIView{
     var temppAddPaxesListDelegate : TempAddPaxesListDelegate?
     var changeCounterValue = 0
     var lastAddedPax : Paxes?
+    var hasSetPointOrigin = false
+    var pointOrigin: CGPoint?
     
     override init(frame: CGRect) {
         super.init(frame: frame)

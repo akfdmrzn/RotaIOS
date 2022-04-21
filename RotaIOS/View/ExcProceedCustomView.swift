@@ -1115,7 +1115,7 @@ extension String {
 
 extension ExcProceedCustomView{
  
-    private func connectEaAccessory(eaAccessory : EAAccessory){
+     func connectEaAccessory(eaAccessory : EAAccessory){
         if eaAccessory.modelNumber.hasPrefix("iMZ320"){
 
             //Note: Zebra SDK requires communication in background thread

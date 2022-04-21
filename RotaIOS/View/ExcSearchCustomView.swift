@@ -89,11 +89,31 @@ class ExcSearchCustomView : UIView {
         self.viewPromotionMenu.headerLAbel.text = "Promotion"
         self.viewChecBoxView.imageCheck.isHidden = false
         
-        self.searchBar.setImage(UIImage(), for: .search, state: .normal)
+      //self.searchBar.setImage(UIImage(), for: .search, state: .normal)
         self.searchBar.layer.cornerRadius = 10
         self.searchBar.compatibleSearchTextField.textColor = UIColor.white
         self.searchBar.compatibleSearchTextField.backgroundColor = UIColor.mainTextColor
         self.searchBar.barTintColor = UIColor.grayColor
+        self.searchBar.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        self.searchBar.delegate = self
+        
+        
+        let backgroundImage = getImageWithCustomColor(color: UIColor.clear, size: CGSize(width: 300, height: 40))
+
+        self.searchBar.setSearchFieldBackgroundImage(backgroundImage, for: .normal)
+        
+        self.searchBar.layoutIfNeeded()
+        self.searchBar.layoutSubviews()
+          
+        if #available(iOS 13.0, *) {
+            self.searchBar.searchTextField.font = .systemFont(ofSize: 17.0)
+            self.searchBar.searchTextField.layer.cornerRadius = 10
+        } else {
+            self.searchBar.compatibleSearchTextField.font = .systemFont(ofSize: 17.0)
+            self.searchBar.compatibleSearchTextField.layer.cornerRadius = 10
+        }
+        
+       
         
         self.viewTourBeginDate.mainLabel.isHidden = true
         self.viewTourBeginDate.imageMainText.isHidden = true
@@ -206,11 +226,7 @@ class ExcSearchCustomView : UIView {
                     print("data has not recived")
                 }
             }
-            self.searchBar.setImage(UIImage(), for: .search, state: .normal)
-            self.searchBar.layer.cornerRadius = 10
-            self.searchBar.compatibleSearchTextField.textColor = UIColor.white
-            self.searchBar.compatibleSearchTextField.backgroundColor = UIColor.mainTextColor
-            self.searchBar.delegate = self
+            
             let gestureMarket = UITapGestureRecognizer(target: self, action: #selector(didTapMarketMenu))
             gestureMarket.numberOfTouchesRequired = 1
             let gestureHotel = UITapGestureRecognizer(target: self, action: #selector(didTapHotelMenu))
@@ -266,6 +282,16 @@ class ExcSearchCustomView : UIView {
                 topVC.present(alert, animated: true, completion: nil)
             }
         }
+    }
+    
+    func getImageWithCustomColor(color: UIColor, size: CGSize) -> UIImage {
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        color.setFill()
+        UIRectFill(rect)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return image
     }
     
     func promotionMenuCall(){

@@ -15,7 +15,7 @@ final class MainPageView : UIView, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     let imageList = ["operation","view","report"]
     let nameList = ["Operations","Views", "Reports"]
-    let mainPageList = [["Tasks","Excursion Sale","Ind. Shop Appoinment","Cancel Voucher","Send Offline Sales"],["My Tour Sale","My Shopping Sales","Birthday","Speaking Hours","Documents","Announcement"],["Z Report","Daily Sale/Refund Report","Z Report Preview"]]
+    let mainPageList = [["Tasks","Excursion Sale","Ind. Shop Appoinment","Cancel Voucher","Send Offline Sales","Online Sales"],["My Tour Sale","My Shopping Sales","Birthday","Speaking Hours","Documents","Announcement"],["Z Report","Daily Sale/Refund Report","Z Report Preview"]]
     var sectionData : [Int : [String]] = [:]
     var oflineDataList : [String] = []
     var counter = 0
@@ -184,7 +184,9 @@ final class MainPageView : UIView, UITableViewDelegate, UITableViewDataSource {
                             topVC.present(alert, animated: true, completion: nil)
                         }
                     }
-                  
+                    
+                case 5 :
+                    viewController = OnlineSalesViewController()
                 default :
                     print("selected")
                 }

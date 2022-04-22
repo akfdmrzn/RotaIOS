@@ -80,7 +80,7 @@
                     </constraints>
                 </view>
                 <searchBar contentMode="redraw" placeholder="Hotel Name Filter" translatesAutoresizingMaskIntoConstraints="NO" id="gLY-ep-NJu">
-                    <rect key="frame" x="23" y="360" width="364" height="60"/>
+                    <rect key="frame" x="30" y="360" width="347" height="60"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="kwz-s8-Nva"/>
@@ -102,12 +102,12 @@
                 <constraint firstItem="jgJ-nE-cwF" firstAttribute="top" secondItem="JWB-BK-LCD" secondAttribute="bottom" constant="10" id="KCg-p0-1Bs"/>
                 <constraint firstAttribute="trailing" secondItem="v95-SI-bqY" secondAttribute="trailing" constant="30" id="NWv-fV-jRK"/>
                 <constraint firstItem="JWB-BK-LCD" firstAttribute="top" secondItem="gLY-ep-NJu" secondAttribute="bottom" constant="20" id="O38-db-hK0"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gLY-ep-NJu" secondAttribute="trailing" constant="20" id="O3N-gP-v2y"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gLY-ep-NJu" secondAttribute="trailing" constant="30" id="O3N-gP-v2y"/>
                 <constraint firstItem="W4R-eE-fas" firstAttribute="leading" secondItem="hqt-zb-vD9" secondAttribute="trailing" constant="20" id="RYb-C4-LIj"/>
                 <constraint firstItem="v95-SI-bqY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="cOP-X4-wo9"/>
                 <constraint firstItem="hqt-zb-vD9" firstAttribute="top" secondItem="jgJ-nE-cwF" secondAttribute="bottom" constant="25" id="dfM-ua-a7K"/>
                 <constraint firstItem="PoD-U0-mcW" firstAttribute="top" secondItem="ZR0-0a-vjZ" secondAttribute="bottom" constant="10" id="niU-fF-91L"/>
-                <constraint firstItem="gLY-ep-NJu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="23" id="oQy-eB-kCh"/>
+                <constraint firstItem="gLY-ep-NJu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="oQy-eB-kCh"/>
                 <constraint firstItem="v95-SI-bqY" firstAttribute="top" secondItem="PoD-U0-mcW" secondAttribute="bottom" constant="10" id="pkb-RM-AUT"/>
                 <constraint firstItem="JWB-BK-LCD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="uOd-sz-qKp"/>
                 <constraint firstItem="ZR0-0a-vjZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="vHZ-cG-sZg"/>

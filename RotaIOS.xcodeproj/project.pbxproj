@@ -383,6 +383,9 @@
 		D9B2733527F5B91100B447F8 /* BirtDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9B2733327F5B91100B447F8 /* BirtDayTableViewCell.xib */; };
 		D9B2733727F5C52C00B447F8 /* GetBirtDaysResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B2733627F5C52C00B447F8 /* GetBirtDaysResponseModel.swift */; };
 		D9B2733927F5C66100B447F8 /* GetBirthDaysRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B2733827F5C66100B447F8 /* GetBirthDaysRequestModel.swift */; };
+		D9B97FBA2812C76F00065E1A /* OnlineSalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B97FB82812C76F00065E1A /* OnlineSalesViewController.swift */; };
+		D9B97FBB2812C76F00065E1A /* OnlineSalesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9B97FB92812C76F00065E1A /* OnlineSalesViewController.xib */; };
+		D9B97FBD2812C78300065E1A /* OnlineSalesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B97FBC2812C78300065E1A /* OnlineSalesView.swift */; };
 		D9DCB19D26BBEB900064A040 /* MyTourSalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB19B26BBEB900064A040 /* MyTourSalesViewController.swift */; };
 		D9DCB19E26BBEB900064A040 /* MyTourSalesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9DCB19C26BBEB900064A040 /* MyTourSalesViewController.xib */; };
 		D9DCB1A026BBECE50064A040 /* MyTourSaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB19F26BBECE50064A040 /* MyTourSaleView.swift */; };
@@ -831,6 +834,9 @@
 		D9B2733327F5B91100B447F8 /* BirtDayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BirtDayTableViewCell.xib; sourceTree = "<group>"; };
 		D9B2733627F5C52C00B447F8 /* GetBirtDaysResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBirtDaysResponseModel.swift; sourceTree = "<group>"; };
 		D9B2733827F5C66100B447F8 /* GetBirthDaysRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBirthDaysRequestModel.swift; sourceTree = "<group>"; };
+		D9B97FB82812C76F00065E1A /* OnlineSalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineSalesViewController.swift; sourceTree = "<group>"; };
+		D9B97FB92812C76F00065E1A /* OnlineSalesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnlineSalesViewController.xib; sourceTree = "<group>"; };
+		D9B97FBC2812C78300065E1A /* OnlineSalesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineSalesView.swift; sourceTree = "<group>"; };
 		D9DCB19B26BBEB900064A040 /* MyTourSalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTourSalesViewController.swift; sourceTree = "<group>"; };
 		D9DCB19C26BBEB900064A040 /* MyTourSalesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTourSalesViewController.xib; sourceTree = "<group>"; };
 		D9DCB19F26BBECE50064A040 /* MyTourSaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTourSaleView.swift; sourceTree = "<group>"; };
@@ -1054,6 +1060,9 @@
 				D9B2732C27F5AFE400B447F8 /* BirthdayViewController.swift */,
 				D9B2732D27F5AFE400B447F8 /* BirthdayViewController.xib */,
 				D9B2733027F5B00400B447F8 /* BirthdayView.swift */,
+				D9B97FB82812C76F00065E1A /* OnlineSalesViewController.swift */,
+				D9B97FB92812C76F00065E1A /* OnlineSalesViewController.xib */,
+				D9B97FBC2812C78300065E1A /* OnlineSalesView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1671,6 +1680,7 @@
 				D95C204026F216B8007D1506 /* SpeakingHoursTableViewCell.xib in Resources */,
 				A9C674E827745D9900536F21 /* TasksHotelTableViewCell.xib in Resources */,
 				A97E531B27D630D400044B78 /* TasksStepsViewController.xib in Resources */,
+				D9B97FBB2812C76F00065E1A /* OnlineSalesViewController.xib in Resources */,
 				BFFC581B27E3EBBC001F89F0 /* GoogleService-Info-RotaTR.plist in Resources */,
 				D93157732700ADBB000C91AD /* ZReportLongClickMenu.xib in Resources */,
 				D97FB5BB26C6B5480099F28B /* MyShopingSalesDetailTableViewCell.xib in Resources */,
@@ -1795,6 +1805,7 @@
 				D93F889A264BC9A300397283 /* GetSelectListResponseModel.swift in Sources */,
 				D931577D2703698E000C91AD /* ZReportPaymentRequestModel.swift in Sources */,
 				A97E530B27D62E9900044B78 /* GetSteps_ArrDepH2HResponseModel.swift in Sources */,
+				D9B97FBD2812C78300065E1A /* OnlineSalesView.swift in Sources */,
 				D9FD64EF273818C3009B6619 /* GetCreateZReportResponseModel.swift in Sources */,
 				BF44C9CE2640022600238035 /* StepsPageTableViewCell.swift in Sources */,
 				BFEE6A3A27E4B7D8006352E6 /* RussianRefundConditions.swift in Sources */,
@@ -2002,6 +2013,7 @@
 				A9C674F0277A241D00536F21 /* GetGuideDutiesResponseModel.swift in Sources */,
 				D95C203C26F20428007D1506 /* GetSpeakTimeForMobileRequestModel.swift in Sources */,
 				A97E52F727CFFC9500044B78 /* TasksTourDetailView.swift in Sources */,
+				D9B97FBA2812C76F00065E1A /* OnlineSalesViewController.swift in Sources */,
 				D9956C0826DE2E6E006CFC6D /* GetCalculateCancelFeeResponseModel.swift in Sources */,
 				BFFC579C27E350FA001F89F0 /* ConfigManager.swift in Sources */,
 				A9C67506278744B800536F21 /* TasksCustomView.swift in Sources */,
@@ -2153,7 +2165,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9.9;
+				CURRENT_PROJECT_VERSION = 10.1;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
 				INFOPLIST_FILE = RotaIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2341,7 +2353,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9.9;
+				CURRENT_PROJECT_VERSION = 10.1;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
 				INFOPLIST_FILE = RotaIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2370,7 +2382,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9.9;
+				CURRENT_PROJECT_VERSION = 10.1;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
 				INFOPLIST_FILE = RotaIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2545,7 +2557,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9.9;
+				CURRENT_PROJECT_VERSION = 10.1;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
 				INFOPLIST_FILE = RotaIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2679,7 +2691,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9.9;
+				CURRENT_PROJECT_VERSION = 10.1;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
 				INFOPLIST_FILE = RotaIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

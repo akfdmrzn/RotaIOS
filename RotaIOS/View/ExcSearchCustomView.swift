@@ -89,32 +89,12 @@ class ExcSearchCustomView : UIView {
         self.viewPromotionMenu.headerLAbel.text = "Promotion"
         self.viewChecBoxView.imageCheck.isHidden = false
         
-      //self.searchBar.setImage(UIImage(), for: .search, state: .normal)
+        self.searchBar.setImage(UIImage(), for: .search, state: .normal)
         self.searchBar.layer.cornerRadius = 10
         self.searchBar.compatibleSearchTextField.textColor = UIColor.white
         self.searchBar.compatibleSearchTextField.backgroundColor = UIColor.mainTextColor
-        self.searchBar.barTintColor = UIColor.grayColor
-        self.searchBar.heightAnchor.constraint(equalToConstant: 100).isActive = true
         self.searchBar.delegate = self
-        
-        
-        let backgroundImage = getImageWithCustomColor(color: UIColor.clear, size: CGSize(width: 300, height: 40))
-
-        self.searchBar.setSearchFieldBackgroundImage(backgroundImage, for: .normal)
-        
-        self.searchBar.layoutIfNeeded()
-        self.searchBar.layoutSubviews()
-          
-        if #available(iOS 13.0, *) {
-            self.searchBar.searchTextField.font = .systemFont(ofSize: 17.0)
-            self.searchBar.searchTextField.layer.cornerRadius = 10
-        } else {
-            self.searchBar.compatibleSearchTextField.font = .systemFont(ofSize: 17.0)
-            self.searchBar.compatibleSearchTextField.layer.cornerRadius = 10
-        }
-        
-       
-        
+      
         self.viewTourBeginDate.mainLabel.isHidden = true
         self.viewTourBeginDate.imageMainText.isHidden = true
         self.viewTourBeginDate.mainText.isHidden = false

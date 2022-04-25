@@ -20,6 +20,7 @@ class ScanDeviceCustomView : UIView, EAAccessoryManagerConnectionStatusDelegate 
     @IBOutlet weak var buttonPrint: UIButton!
     @IBOutlet weak var buttonNewExcSale: UIButton!
     @IBOutlet weak var buttonNewInd_Shop: UIButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     var excProceedCustomView : ExcProceedCustomView?
     var connectedDeviceName = ""
     var connectedAccessories : [EAAccessory] = []
@@ -59,11 +60,14 @@ class ScanDeviceCustomView : UIView, EAAccessoryManagerConnectionStatusDelegate 
         
         self.printList = userDefaultsData.getPrintList() ?? self.printList
         self.addedNumber = printList.last?.addedNumber ?? 1000
+        
+        self.spinner.isHidden = true
     }
     
     func getNotConnectionDevices() {
        
         EAAccessoryManager.shared().showBluetoothAccessoryPicker(withNameFilter: nil) { success in
+            self.connectedAccessories = EAAccessoryManager.shared().connectedAccessories
             if self.connectedAccessories.count > 0 {
                 self.updateConnectedAccessories()
             }else{
@@ -103,6 +107,14 @@ class ScanDeviceCustomView : UIView, EAAccessoryManagerConnectionStatusDelegate 
         
         if self.printList.count > 0 && self.connectedAccessories.count > 0{
             self.connectEaAccessory(eaAccessory: self.connectedAccessories[0])
+            self.spinner.isHidden = false
+            self.spinner.startAnimating()
+            let delay = max(0.0, 15.0)
+           
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                self.spinner.stopAnimating()
+                self.spinner.isHidden = true
+            }
             
         }else{
             let alert = UIAlertController.init(title: "Warning", message: "Please be sure connecting Zebra device", preferredStyle: UIAlertController.Style.alert)

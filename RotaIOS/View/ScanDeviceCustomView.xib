@@ -17,6 +17,7 @@
                 <outlet property="buttonPrint" destination="kYw-a0-OQz" id="Nrp-Jx-n5q"/>
                 <outlet property="buttonReconnect" destination="uIn-0k-QaB" id="fa8-M8-wGf"/>
                 <outlet property="buttonScan" destination="uPA-F8-CGo" id="pk7-Vb-h3a"/>
+                <outlet property="spinner" destination="SfU-yR-pxE" id="sVS-jc-Pc1"/>
                 <outlet property="viewMainView" destination="iN0-l3-epB" id="f5Y-IG-7dL"/>
             </connections>
         </placeholder>
@@ -121,6 +122,14 @@
                                 <action selector="backButton:" destination="-1" eventType="touchUpInside" id="8r5-iN-Mis"/>
                             </connections>
                         </button>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="SfU-yR-pxE">
+                            <rect key="frame" x="157" y="300" width="100" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="R15-KY-DBg"/>
+                                <constraint firstAttribute="width" constant="100" id="wrk-IE-XBz"/>
+                            </constraints>
+                            <color key="color" systemColor="tintColor"/>
+                        </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -129,6 +138,7 @@
                         <constraint firstItem="f4r-qS-2Aw" firstAttribute="top" secondItem="BFX-em-SAT" secondAttribute="top" constant="39" id="5aT-tq-cUS"/>
                         <constraint firstItem="kYw-a0-OQz" firstAttribute="leading" secondItem="BFX-em-SAT" secondAttribute="leading" constant="80" id="99l-yY-tIk"/>
                         <constraint firstItem="8Kt-Zc-dKu" firstAttribute="top" secondItem="kYw-a0-OQz" secondAttribute="bottom" constant="19" id="E9s-DI-vNP"/>
+                        <constraint firstItem="SfU-yR-pxE" firstAttribute="leading" secondItem="BFX-em-SAT" secondAttribute="leading" constant="157" id="EBQ-Lo-GXT"/>
                         <constraint firstItem="8Kt-Zc-dKu" firstAttribute="leading" secondItem="BFX-em-SAT" secondAttribute="leading" constant="80" id="GCZ-x5-0gq"/>
                         <constraint firstItem="uPA-F8-CGo" firstAttribute="top" secondItem="BFX-em-SAT" secondAttribute="top" constant="154" id="GhC-ex-9Ot"/>
                         <constraint firstItem="cGg-q4-tSv" firstAttribute="top" secondItem="8Kt-Zc-dKu" secondAttribute="bottom" constant="18" id="Idz-Fv-W62"/>
@@ -136,6 +146,7 @@
                         <constraint firstAttribute="trailing" secondItem="uIn-0k-QaB" secondAttribute="trailing" constant="10" id="ZPX-TA-V9R"/>
                         <constraint firstAttribute="trailing" secondItem="cGg-q4-tSv" secondAttribute="trailing" constant="80" id="bsC-5A-k0f"/>
                         <constraint firstItem="cGg-q4-tSv" firstAttribute="leading" secondItem="BFX-em-SAT" secondAttribute="leading" constant="80" id="gkI-9K-Bai"/>
+                        <constraint firstItem="SfU-yR-pxE" firstAttribute="top" secondItem="BFX-em-SAT" secondAttribute="top" constant="300" id="msr-cZ-A6M"/>
                         <constraint firstAttribute="trailing" secondItem="kYw-a0-OQz" secondAttribute="trailing" constant="80" id="osW-Go-nBo"/>
                         <constraint firstItem="f4r-qS-2Aw" firstAttribute="leading" secondItem="BFX-em-SAT" secondAttribute="leading" constant="8" id="qf1-op-kA7"/>
                         <constraint firstAttribute="trailing" secondItem="8Kt-Zc-dKu" secondAttribute="trailing" constant="80" id="sbv-qy-ADa"/>
@@ -158,6 +169,9 @@
         <image name="leftarrow" width="14" height="21.5"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

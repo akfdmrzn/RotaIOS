@@ -535,7 +535,12 @@ class ExcProceedCustomView: UIView{
         }else if self.printList.count > 0 && self.connectedAccessories.count == 0{
             if let topVC = UIApplication.getTopViewController() {
                 UIView.animate(withDuration: 0, animations: {
-                    
+                    if self.printList.count > 0 {
+                        for i in 0...self.printList.count - 1 {
+                            self.savedPrintList.append(self.printList[i])
+                        }
+                        userDefaultsData.savePrintList(printlist: self.savedPrintList)
+                    }
                     self.scanDeviceCustomView = ScanDeviceCustomView()
                   //  self.addManuelTouristAddCustomView?.saveMAnuelListDelegate = self
                     self.scanDeviceCustomView!.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 1200)

@@ -536,6 +536,7 @@ class ExcProceedCustomView: UIView{
             if let topVC = UIApplication.getTopViewController() {
                 UIView.animate(withDuration: 0, animations: {
                     if self.printList.count > 0 {
+                        self.savedPrintList = []
                         for i in 0...self.printList.count - 1 {
                             self.savedPrintList.append(self.printList[i])
                         }
@@ -1191,6 +1192,7 @@ extension ExcProceedCustomView{
    
         
         if self.printList.count > 0 {
+            self.savedPrintList = []
             for i in 0...self.printList.count - 1 {
                 self.savedPrintList.append(self.printList[i])
             }

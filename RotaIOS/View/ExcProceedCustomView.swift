@@ -157,6 +157,7 @@ class ExcProceedCustomView: UIView{
         Bundle.main.loadNibNamed(String(describing: ExcProceedCustomView.self), owner: self, options: nil)
         printManager.connectionDelegate = self
         self.updateConnectedAccessories()
+    
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(ProceedPaxTableViewCell.nib, forCellReuseIdentifier: ProceedPaxTableViewCell.identifier)

@@ -386,6 +386,9 @@
 		D9B97FBA2812C76F00065E1A /* OnlineSalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B97FB82812C76F00065E1A /* OnlineSalesViewController.swift */; };
 		D9B97FBB2812C76F00065E1A /* OnlineSalesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9B97FB92812C76F00065E1A /* OnlineSalesViewController.xib */; };
 		D9B97FBD2812C78300065E1A /* OnlineSalesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B97FBC2812C78300065E1A /* OnlineSalesView.swift */; };
+		D9B97FC02818090600065E1A /* OnlineSalesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B97FBE2818090600065E1A /* OnlineSalesDetailViewController.swift */; };
+		D9B97FC12818090600065E1A /* OnlineSalesDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9B97FBF2818090600065E1A /* OnlineSalesDetailViewController.xib */; };
+		D9B97FC52818094000065E1A /* OnlineSalesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B97FC42818094000065E1A /* OnlineSalesDetailView.swift */; };
 		D9DCB19D26BBEB900064A040 /* MyTourSalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB19B26BBEB900064A040 /* MyTourSalesViewController.swift */; };
 		D9DCB19E26BBEB900064A040 /* MyTourSalesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9DCB19C26BBEB900064A040 /* MyTourSalesViewController.xib */; };
 		D9DCB1A026BBECE50064A040 /* MyTourSaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB19F26BBECE50064A040 /* MyTourSaleView.swift */; };
@@ -837,6 +840,9 @@
 		D9B97FB82812C76F00065E1A /* OnlineSalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineSalesViewController.swift; sourceTree = "<group>"; };
 		D9B97FB92812C76F00065E1A /* OnlineSalesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnlineSalesViewController.xib; sourceTree = "<group>"; };
 		D9B97FBC2812C78300065E1A /* OnlineSalesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineSalesView.swift; sourceTree = "<group>"; };
+		D9B97FBE2818090600065E1A /* OnlineSalesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineSalesDetailViewController.swift; sourceTree = "<group>"; };
+		D9B97FBF2818090600065E1A /* OnlineSalesDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnlineSalesDetailViewController.xib; sourceTree = "<group>"; };
+		D9B97FC42818094000065E1A /* OnlineSalesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineSalesDetailView.swift; sourceTree = "<group>"; };
 		D9DCB19B26BBEB900064A040 /* MyTourSalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTourSalesViewController.swift; sourceTree = "<group>"; };
 		D9DCB19C26BBEB900064A040 /* MyTourSalesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTourSalesViewController.xib; sourceTree = "<group>"; };
 		D9DCB19F26BBECE50064A040 /* MyTourSaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTourSaleView.swift; sourceTree = "<group>"; };
@@ -1063,6 +1069,9 @@
 				D9B97FB82812C76F00065E1A /* OnlineSalesViewController.swift */,
 				D9B97FB92812C76F00065E1A /* OnlineSalesViewController.xib */,
 				D9B97FBC2812C78300065E1A /* OnlineSalesView.swift */,
+				D9B97FBE2818090600065E1A /* OnlineSalesDetailViewController.swift */,
+				D9B97FBF2818090600065E1A /* OnlineSalesDetailViewController.xib */,
+				D9B97FC42818094000065E1A /* OnlineSalesDetailView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1663,6 +1672,7 @@
 				A97E532927D782B800044B78 /* TasksStepsDetailViewController.xib in Resources */,
 				A97E532F27D7865900044B78 /* TasksStepsDetailTableViewCell.xib in Resources */,
 				BF44C9CF2640022600238035 /* StepsPageTableViewCell.xib in Resources */,
+				D9B97FC12818090600065E1A /* OnlineSalesDetailViewController.xib in Resources */,
 				D900407C271738DD00DDE088 /* DailyReportTableViewCell.xib in Resources */,
 				D97E4F4E2760B4C70049648A /* ExcPaxCustomView.xib in Resources */,
 				D93F887326471C1100397283 /* TempTouristAddCustomView.xib in Resources */,
@@ -1834,9 +1844,11 @@
 				D97EE020277519FE00683E66 /* ProceedPaxTableViewCell.swift in Sources */,
 				BF44C8E8264000E200238035 /* ExtensionUIViewController.swift in Sources */,
 				BF44C9C1264001F800238035 /* PresentationController.swift in Sources */,
+				D9B97FC02818090600065E1A /* OnlineSalesDetailViewController.swift in Sources */,
 				BF44C9712640019F00238035 /* AppointmentBarCustomView.swift in Sources */,
 				D95C202626ECC2B1007D1506 /* SpeakingHoursView.swift in Sources */,
 				D9B2732E27F5AFE400B447F8 /* BirthdayViewController.swift in Sources */,
+				D9B97FC52818094000065E1A /* OnlineSalesDetailView.swift in Sources */,
 				D988D05727FC7CAA003B4686 /* DeviceListCustomView.swift in Sources */,
 				A97E530D27D62EAD00044B78 /* GetStepsForIndShopResponseModel.swift in Sources */,
 				D931575B26FB4A0F000C91AD /* GetReportDataRequestModel.swift in Sources */,
@@ -2165,7 +2177,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
 				INFOPLIST_FILE = RotaIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2353,7 +2365,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
 				INFOPLIST_FILE = RotaIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2382,7 +2394,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
 				INFOPLIST_FILE = RotaIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2557,7 +2569,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
 				INFOPLIST_FILE = RotaIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2691,7 +2703,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
 				INFOPLIST_FILE = RotaIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

@@ -94,7 +94,9 @@ class ScanDeviceCustomView : UIView, EAAccessoryManagerConnectionStatusDelegate 
     }
     
     @IBAction func backButton(_ sender: Any) {
-        self.removeFromSuperview()
+        if let topVC = UIApplication.getTopViewController() {
+            topVC.navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func reconnectButtonTapped(_ sender: Any) {
@@ -107,9 +109,11 @@ class ScanDeviceCustomView : UIView, EAAccessoryManagerConnectionStatusDelegate 
         
         if self.printList.count > 0 && self.connectedAccessories.count > 0{
             self.connectEaAccessory(eaAccessory: self.connectedAccessories[0])
+            self.buttonColor(isEnable: false, button: self.buttonPrint)
             self.spinner.isHidden = false
             self.spinner.startAnimating()
-            let delay = max(0.0, 15.0)
+            let extraDelay = Double(self.printList.count * 10)
+            let delay = max(0.0, 5.0 + extraDelay)
            
             DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
                 self.spinner.stopAnimating()

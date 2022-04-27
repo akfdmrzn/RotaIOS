@@ -86,4 +86,5 @@ public enum ServiceEndPoint: String {
     case GetVoucherForGoShow = "/api/api/TourTransferPlan/GetVoucherForGoShow"
     case SetGoShowOnMobile = "/api/api/TourTransferPlan/SetGoShowOnMobile"
     case GetBirthDays = "/api/api/TourTransferPlan/GetBirthDays"
+    case GetPreBooking = "/api/api/ExcursionApiPreBooking/GetPreBooking"
 }

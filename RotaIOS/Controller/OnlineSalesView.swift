@@ -21,6 +21,8 @@ final class OnlineSalesView : UIView {
         
         self.buttonCheck.backgroundColor = UIColor.greenColor
         self.buttonCheck.layer.cornerRadius = 10
+        
+        
      
     }
     

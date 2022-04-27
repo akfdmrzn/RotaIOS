@@ -389,6 +389,8 @@
 		D9B97FC02818090600065E1A /* OnlineSalesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B97FBE2818090600065E1A /* OnlineSalesDetailViewController.swift */; };
 		D9B97FC12818090600065E1A /* OnlineSalesDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9B97FBF2818090600065E1A /* OnlineSalesDetailViewController.xib */; };
 		D9B97FC52818094000065E1A /* OnlineSalesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B97FC42818094000065E1A /* OnlineSalesDetailView.swift */; };
+		D9B97FC72819708000065E1A /* GetPreBookingResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B97FC62819708000065E1A /* GetPreBookingResponseModel.swift */; };
+		D9B97FC92819722700065E1A /* GetPreBookingRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B97FC82819722700065E1A /* GetPreBookingRequestModel.swift */; };
 		D9DCB19D26BBEB900064A040 /* MyTourSalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB19B26BBEB900064A040 /* MyTourSalesViewController.swift */; };
 		D9DCB19E26BBEB900064A040 /* MyTourSalesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9DCB19C26BBEB900064A040 /* MyTourSalesViewController.xib */; };
 		D9DCB1A026BBECE50064A040 /* MyTourSaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB19F26BBECE50064A040 /* MyTourSaleView.swift */; };
@@ -843,6 +845,8 @@
 		D9B97FBE2818090600065E1A /* OnlineSalesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineSalesDetailViewController.swift; sourceTree = "<group>"; };
 		D9B97FBF2818090600065E1A /* OnlineSalesDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnlineSalesDetailViewController.xib; sourceTree = "<group>"; };
 		D9B97FC42818094000065E1A /* OnlineSalesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineSalesDetailView.swift; sourceTree = "<group>"; };
+		D9B97FC62819708000065E1A /* GetPreBookingResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPreBookingResponseModel.swift; sourceTree = "<group>"; };
+		D9B97FC82819722700065E1A /* GetPreBookingRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPreBookingRequestModel.swift; sourceTree = "<group>"; };
 		D9DCB19B26BBEB900064A040 /* MyTourSalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTourSalesViewController.swift; sourceTree = "<group>"; };
 		D9DCB19C26BBEB900064A040 /* MyTourSalesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTourSalesViewController.xib; sourceTree = "<group>"; };
 		D9DCB19F26BBECE50064A040 /* MyTourSaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTourSaleView.swift; sourceTree = "<group>"; };
@@ -1143,6 +1147,7 @@
 				A90BF98127E8764B00579CBB /* GetVoucherForGoShowRequestModel.swift */,
 				A90BF98527E876A800579CBB /* SetGoShowOnMobileRequestModel.swift */,
 				D9B2733827F5C66100B447F8 /* GetBirthDaysRequestModel.swift */,
+				D9B97FC82819722700065E1A /* GetPreBookingRequestModel.swift */,
 			);
 			path = RequestModel;
 			sourceTree = "<group>";
@@ -1215,6 +1220,7 @@
 				A90BF97F27E8763500579CBB /* GetVoucherForGoShowResponseModel.swift */,
 				A90BF98327E8769800579CBB /* SetGoShowOnMobileResponseModel.swift */,
 				D9B2733627F5C52C00B447F8 /* GetBirtDaysResponseModel.swift */,
+				D9B97FC62819708000065E1A /* GetPreBookingResponseModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -1891,6 +1897,7 @@
 				BF44C92C2640015400238035 /* MainPageCustomView.swift in Sources */,
 				D93157712700AD55000C91AD /* ZReportLongClickMenu.swift in Sources */,
 				BF44C8FB264000F000238035 /* CreateTokenRequestModel.swift in Sources */,
+				D9B97FC92819722700065E1A /* GetPreBookingRequestModel.swift in Sources */,
 				D9561A3E269DF31A00AA75E5 /* AnnoucmentsView.swift in Sources */,
 				D99DB5E1280707DA008704DE /* ExtensionUILabel.swift in Sources */,
 				D97EE012276B952B00683E66 /* AddMenuPaxTableViewCell.swift in Sources */,
@@ -2054,6 +2061,7 @@
 				A97E532827D782B800044B78 /* TasksStepsDetailViewController.swift in Sources */,
 				D97EE02B277BC2CE00683E66 /* GetSaveMobileSaleResponseModel.swift in Sources */,
 				A90BF98627E876A800579CBB /* SetGoShowOnMobileRequestModel.swift in Sources */,
+				D9B97FC72819708000065E1A /* GetPreBookingResponseModel.swift in Sources */,
 				A97E52FD27D62C1E00044B78 /* GetStepsForIndShopRequestModel.swift in Sources */,
 				D994FBCD27451851003564F3 /* ExcursionViewController.swift in Sources */,
 				A9AAE54427917C5A00AFBA67 /* GetInterPaxesRequestModel.swift in Sources */,

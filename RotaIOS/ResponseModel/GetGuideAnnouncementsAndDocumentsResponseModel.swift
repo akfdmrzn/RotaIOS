@@ -42,6 +42,7 @@ struct Record : Mappable {
     var fileUrl : String?
     var sender : String?
     var sentDateTime : String?
+    
 
     init?(map: Map) {
 

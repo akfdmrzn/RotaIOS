@@ -40,7 +40,7 @@ struct PreRecord : Mappable {
     var currency : String?
     var paxes : String?
     var paxesId : String?
-    var extras : [String]?
+    var extras : [PreBookingExtras]?
     var saleStatus : String?
 
     init?(map: Map) {
@@ -59,6 +59,26 @@ struct PreRecord : Mappable {
         paxesId <- map["PaxesId"]
         extras <- map["Extras"]
         saleStatus <- map["SaleStatus"]
+    }
+
+}
+
+struct PreBookingExtras : Mappable {
+    var id : String?
+    var extraName : String?
+    var paxes : String?
+    var paxesId : String?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        id <- map["id"]
+        extraName <- map["ExtraName"]
+        paxes <- map["Paxes"]
+        paxesId <- map["PaxesId"]
     }
 
 }

@@ -42,6 +42,8 @@ override func awakeFromNib() {
     self.viewContentView.layer.cornerRadius = 10
     self.viewContentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     
+    self.tableView.backgroundColor = UIColor.tableViewColor
+    
     self.viewFooter.layer.cornerRadius = 10
     self.viewFooter.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     self.viewFooter.backgroundColor = UIColor.grayColor
@@ -56,14 +58,14 @@ override func awakeFromNib() {
     self.viewType.mainText.isHidden = true
     self.viewType.imageMainText.isHidden = false
     self.viewType.viewMainView.backgroundColor = UIColor.tableViewColor
-    self.viewType.mainLabel.isHidden = true
+    self.viewType.mainLabel.isHidden = false
     
     self.viewCurrency.layer.cornerRadius = 10
     self.viewCurrency.headerLAbel.text = "Currency"
     self.viewCurrency.mainText.isHidden = true
     self.viewCurrency.imageMainText.isHidden = true
     self.viewCurrency.viewMainView.backgroundColor = UIColor.tableViewColor
-    self.viewCurrency.mainLabel.isHidden = true
+    self.viewCurrency.mainLabel.isHidden = false
     
     self.viewAmount.layer.cornerRadius = 10
     self.viewAmount.headerLAbel.text = "Amount"
@@ -77,30 +79,32 @@ override func awakeFromNib() {
     self.viewTourist.mainText.isHidden = true
     self.viewTourist.imageMainText.isHidden = false
     self.viewTourist.viewMainView.backgroundColor = UIColor.tableViewColor
-    self.viewTourist.mainLabel.isHidden = true
+    self.viewTourist.mainLabel.isHidden = false
+    self.viewTourist.mainLabel.text = ""
     
     self.viewBalanced.layer.cornerRadius = 10
     self.viewBalanced.headerLAbel.text = "Balanced"
     self.viewBalanced.mainText.isHidden = true
     self.viewBalanced.imageMainText.isHidden = true
-    self.viewTourist.mainLabel.isHidden = true
+    self.viewBalanced.mainLabel.isHidden = false
+    self.viewBalanced.mainLabel.text = ""
     
     self.viewPaid.layer.cornerRadius = 10
     self.viewPaid.headerLAbel.text = "Paid"
     self.viewPaid.mainText.isHidden = true
     self.viewPaid.imageMainText.isHidden = true
-    self.viewPaid.mainLabel.isHidden = true
+    self.viewPaid.mainLabel.isHidden = false
+    self.viewPaid.mainLabel.text = ""
     
     self.viewTotalAmount.layer.cornerRadius = 10
     self.viewTotalAmount.headerLAbel.text = "Total Amount"
     self.viewTotalAmount.mainText.isHidden = true
     self.viewTotalAmount.imageMainText.isHidden = true
-    self.viewTotalAmount.mainLabel.isHidden = true
+    self.viewTotalAmount.mainLabel.isHidden = false
+    self.viewTotalAmount.mainLabel.text = ""
     
     self.buttonColor(isEnable: true, button: self.buttonAddPayment)
     self.buttonColor(isEnable: true, button: self.buttonPay)
-    
-
 }
 
 required init(customParamArg: String) {

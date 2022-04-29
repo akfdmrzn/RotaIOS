@@ -29,7 +29,7 @@ class OnlineSalesViewController: UIViewController {
         NetworkManager.sendGetRequest(url: NetworkManager.BASEURL, endPoint: .GetPreBooking, method: .get, parameters: requestPreBooking.requestPathString()) { (response : GetPreBookingResponseModel) in
             if response.record != nil {
                 self.preBookingDetail = response
-                self.otiPushViewController(viewController: OnlineSalesDetailViewController.init(preBookingDetailListInDetailPage: self.preBookingDetail!))
+                self.otiPushViewController(viewController: OnlineSalesDetailViewController.init(preBookingDetailListInDetailPage: self.preBookingDetail!, voucherNo: self.voucherNo))
             }else{
                 let alert = UIAlertController.init(title: "Warning", message: "Please be sure Prebooking number is correct", preferredStyle: .alert)
                 alert.addAction(UIAlertAction.init(title: "OK", style: .default, handler: nil))

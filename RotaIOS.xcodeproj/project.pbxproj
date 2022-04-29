@@ -376,6 +376,8 @@
 		D9A48CFF26B1408A00D28A0A /* DocumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A48CFE26B1408A00D28A0A /* DocumentsView.swift */; };
 		D9A48D0226B1895500D28A0A /* DocumentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A48D0026B1895500D28A0A /* DocumentsTableViewCell.swift */; };
 		D9A48D0326B1895500D28A0A /* DocumentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9A48D0126B1895500D28A0A /* DocumentsTableViewCell.xib */; };
+		D9B1FAB2281C2AC0003A4236 /* GetPayPreBookingResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1FAB1281C2AC0003A4236 /* GetPayPreBookingResponseModel.swift */; };
+		D9B1FAB4281C2ED9003A4236 /* GetPayPreBookingRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1FAB3281C2ED9003A4236 /* GetPayPreBookingRequestModel.swift */; };
 		D9B2732E27F5AFE400B447F8 /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B2732C27F5AFE400B447F8 /* BirthdayViewController.swift */; };
 		D9B2732F27F5AFE400B447F8 /* BirthdayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9B2732D27F5AFE400B447F8 /* BirthdayViewController.xib */; };
 		D9B2733127F5B00400B447F8 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B2733027F5B00400B447F8 /* BirthdayView.swift */; };
@@ -832,6 +834,8 @@
 		D9A48CFE26B1408A00D28A0A /* DocumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsView.swift; sourceTree = "<group>"; };
 		D9A48D0026B1895500D28A0A /* DocumentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewCell.swift; sourceTree = "<group>"; };
 		D9A48D0126B1895500D28A0A /* DocumentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocumentsTableViewCell.xib; sourceTree = "<group>"; };
+		D9B1FAB1281C2AC0003A4236 /* GetPayPreBookingResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPayPreBookingResponseModel.swift; sourceTree = "<group>"; };
+		D9B1FAB3281C2ED9003A4236 /* GetPayPreBookingRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPayPreBookingRequestModel.swift; sourceTree = "<group>"; };
 		D9B2732C27F5AFE400B447F8 /* BirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
 		D9B2732D27F5AFE400B447F8 /* BirthdayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BirthdayViewController.xib; sourceTree = "<group>"; };
 		D9B2733027F5B00400B447F8 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
@@ -1148,6 +1152,7 @@
 				A90BF98527E876A800579CBB /* SetGoShowOnMobileRequestModel.swift */,
 				D9B2733827F5C66100B447F8 /* GetBirthDaysRequestModel.swift */,
 				D9B97FC82819722700065E1A /* GetPreBookingRequestModel.swift */,
+				D9B1FAB3281C2ED9003A4236 /* GetPayPreBookingRequestModel.swift */,
 			);
 			path = RequestModel;
 			sourceTree = "<group>";
@@ -1221,6 +1226,7 @@
 				A90BF98327E8769800579CBB /* SetGoShowOnMobileResponseModel.swift */,
 				D9B2733627F5C52C00B447F8 /* GetBirtDaysResponseModel.swift */,
 				D9B97FC62819708000065E1A /* GetPreBookingResponseModel.swift */,
+				D9B1FAB1281C2AC0003A4236 /* GetPayPreBookingResponseModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -1886,6 +1892,7 @@
 				BF44C8F2264000E900238035 /* GetTokenResponseModel.swift in Sources */,
 				D9FD64E32737F8EA009B6619 /* GetZReportPreviewRequestModel.swift in Sources */,
 				D9561A45269E110A00AA75E5 /* AnnoucmentsDetailTableViewCell.swift in Sources */,
+				D9B1FAB4281C2ED9003A4236 /* GetPayPreBookingRequestModel.swift in Sources */,
 				D968A88126BC24F3000FB00A /* GetTourSelectListResponseModel.swift in Sources */,
 				A9AAE54627917C8000AFBA67 /* GetInfoPaxesRequestModel.swift in Sources */,
 				A97E531127D62EE400044B78 /* GetStepDetail_ShopSupplierResponseModel.swift in Sources */,
@@ -1987,6 +1994,7 @@
 				D97EE00D276ABFA600683E66 /* ExcProceedCustomView.swift in Sources */,
 				D97EE01D2773D4F200683E66 /* GetCurrencyResponeModel.swift in Sources */,
 				BF44C8E6264000E200238035 /* ExtensionUIApplication.swift in Sources */,
+				D9B1FAB2281C2AC0003A4236 /* GetPayPreBookingResponseModel.swift in Sources */,
 				A9AAE5582791830D00AFBA67 /* GetColAndDelPaxesResponseModel.swift in Sources */,
 				D931574326F8DF49000C91AD /* GetZReportRequestModel.swift in Sources */,
 				D931575426FA5E72000C91AD /* ZReportMoreDetailViewController.swift in Sources */,

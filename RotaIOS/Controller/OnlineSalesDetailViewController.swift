@@ -7,6 +7,44 @@
 
 import UIKit
 import DropDown
+import Foundation
+import ObjectMapper
+
+class SendPreBookingData : Mappable, Encodable, Decodable {
+    var countryId : Int?
+    var currencyId : Int?
+    var guideId : Int?
+    var paidBy : String?
+    var paymentAmount : Double?
+    var paymentDate : String?
+    var payments : [Payment] = []
+    var voucherNo : String?
+    
+    public init(countryId : Int,  currencyId : Int, payments : [Payment], guideId : Int, paidBy : String, paymentDate : String, paymentAmount : Double, voucherNo : String ) {
+        self.countryId = countryId
+        self.currencyId = currencyId
+        self.payments = payments
+        self.guideId = guideId
+        self.paidBy = paidBy
+        self.paymentAmount = paymentAmount
+        self.paymentDate = paymentDate
+        self.voucherNo = voucherNo
+    }
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        countryId <- map["countryId"]
+        currencyId <- map["currencyId"]
+        payments <- map["payments"]
+        guideId <- map["guideId"]
+        paidBy <- map["paidBy"]
+        paymentAmount <- map["paymentAmount"]
+        paymentDate <- map["paymentDate"]
+        voucherNo <- map["voucherNo"]
+    }
+}
 
 class OnlineSalesDetailViewController: UIViewController {
     @IBOutlet var viewOnlineSalesDetail: OnlineSalesDetailView!
@@ -14,6 +52,7 @@ class OnlineSalesDetailViewController: UIViewController {
     var preBookingDetail : GetPreBookingResponseModel?
     var date = ""
     var paxes = ""
+    var paxesIds = ""
     //Type Menu
     var typeList = ["CASH","CARD"]
     var paymentTypeList : [PaymentType] = []
@@ -23,6 +62,7 @@ class OnlineSalesDetailViewController: UIViewController {
     var touristMenu = DropDown()
     var tempTouristMenu  : [String] = []
     var selectedTouristName = ""
+    var selectedTouristId = ""
     ///
     var totalAmount = 0.0
     var totalPayment = 0.0
@@ -33,14 +73,20 @@ class OnlineSalesDetailViewController: UIViewController {
     var deletedAmount = 0.0
     var payments : [Payment] = []
     var paxesList : [String] = []
+    var paxesIdList : [String] = []
     var extraList : [PreBookingExtras] = []
     var extrasNameList : [String] = []
     var extrasNameListStringType = ""
     var extrasPaxesList : [String] = []
     var extrasPaxesListStringType = ""
+    var guideId = 0
+    var voucherNo = ""
+    var data = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.guideId = userDefaultsData.getGuideId()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -48,6 +94,9 @@ class OnlineSalesDetailViewController: UIViewController {
         
         self.paxes = self.preBookingDetail?.record?.paxes ?? ""
         self.paxesList = self.paxes.components(separatedBy: ",")
+        
+        self.paxesIds = self.preBookingDetail?.record?.paxesId ?? ""
+        self.paxesIdList = self.paxesIds.components(separatedBy: ",")
         
         self.viewOnlineSalesDetail.labelExcursion.text = self.preBookingDetail?.record?.excursionName
         self.date = self.preBookingDetail?.record?.excDate ?? ""
@@ -113,6 +162,7 @@ class OnlineSalesDetailViewController: UIViewController {
         self.touristMenu.selectionAction = { index, title in
             self.viewOnlineSalesDetail.viewTourist.mainLabel.text = title
             self.selectedTouristName = title
+            self.selectedTouristId = self.paxesList[index]
         }
     }
     
@@ -120,10 +170,10 @@ class OnlineSalesDetailViewController: UIViewController {
         self.typeMenu.show()
     }
     
-    init(preBookingDetailListInDetailPage : GetPreBookingResponseModel) {
+    init(preBookingDetailListInDetailPage : GetPreBookingResponseModel, voucherNo : String) {
         super.init(nibName: nil, bundle: nil)
         self.preBookingDetail = preBookingDetailListInDetailPage
-        
+        self.voucherNo = voucherNo
     }
     
     required init?(coder: NSCoder) {
@@ -140,7 +190,7 @@ class OnlineSalesDetailViewController: UIViewController {
         roundedPaymentAmount = paymentAmount ?? 0.00
         roundedPaymentAmount = Double(Darwin.round(100 * roundedPaymentAmount) / 100 )
         
-        if self.selectedPaymentType != "" {
+        if self.selectedPaymentType != "" && self.selectedTouristName != "" {
             
             /* self.paymentTypeList.append(PaymentType(paymentype: self.selectedPaymentType, paymentAmount: Double(self.viewAmount.mainText.text ?? "") ?? 0.00), currencyTpye : self.selectedCurrencyType)*/
             self.paymentTypeList.append(PaymentType.init(paymentype:self.selectedPaymentType, paymentAmount: roundedPaymentAmountChosenCurrency, currencyTpye:  self.selectedCurrencyType))
@@ -166,10 +216,10 @@ class OnlineSalesDetailViewController: UIViewController {
             }
             self.viewOnlineSalesDetail.viewBalanced.mainLabel.text = String(roundedBalanceValue)
             
-           
             self.viewOnlineSalesDetail.viewTotalAmount.mainText.text = self.viewOnlineSalesDetail.viewTotalAmount.mainText.text?.replacingOccurrences(of: ",", with: ".")
             
-            self.payments.append(Payment(ByDesc: "" , ById:"0", ConvertedCurrency: "", ConvertedPaymentAmount:  Int(self.totalAmount), Currency: self.selectedCurrencyType, CurrencyId: String(self.currencyId), PaymentAmount: Double(self.viewOnlineSalesDetail.viewAmount.mainText.text ?? "") ?? 0.00, PaymentType: self.selectedPaymentType, TargetAmount:0, TypeId: self.selectedPaymentType))
+            self.payments.append(Payment(ByDesc: self.selectedTouristName , ById: self.selectedTouristId, ConvertedCurrency:  self.selectedCurrencyType, ConvertedPaymentAmount:  Int(self.totalAmount), Currency: self.selectedCurrencyType, CurrencyId: String(self.currencyId), PaymentAmount: Double(self.viewOnlineSalesDetail.viewAmount.mainText.text ?? "") ?? 0.00, PaymentType: self.selectedPaymentType, TargetAmount:0, TypeId: self.selectedPaymentType))
+            self.totalPayment += Double(self.viewOnlineSalesDetail.viewAmount.mainText.text ?? "") ?? 0.0
             
         }else {
             let alert = UIAlertController.init(title: "Error", message: "Please Insert CurrencyType, Pax and PaymentType", preferredStyle: UIAlertController.Style.alert)
@@ -182,6 +232,33 @@ class OnlineSalesDetailViewController: UIViewController {
     }
     
     @IBAction func payButtonTapped(_ sender: Any) {
+        
+        let payPrebooking = SendPreBookingData(countryId: 1, currencyId: self.currencyId, payments: self.payments, guideId: self.guideId, paidBy: self.selectedTouristName, paymentDate: self.date, paymentAmount: self.totalPayment, voucherNo: self.voucherNo)
+        
+        self.data = "\(payPrebooking.toJSONString() ?? "")"
+        print(data)
+        
+        let payPreBookingRequestModel = GetPayPreBookingRequestModel.init(data: self.data)
+        
+        NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .GetPayPreBooking, requestModel: payPreBookingRequestModel ) { (response: GetPayPreBookingResponseModel) in
+            if response.isSuccesful == true {
+                
+                print(response)
+                let alert = UIAlertController(title: "SUCCSESS", message: "\(response.message ?? "")\(self.voucherNo)", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                if let topVC = UIApplication.getTopViewController() {
+                    topVC.present(alert, animated: true, completion: nil)
+                }
+               
+            }else {
+                self.buttonColor(isEnable: false, button: self.viewOnlineSalesDetail.buttonPay)
+                let alert = UIAlertController(title: "FAILED", message: response.message ?? "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                if let topVC = UIApplication.getTopViewController() {
+                    topVC.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     @objc func didTappedToristListMenu() {
@@ -222,6 +299,7 @@ extension OnlineSalesDetailViewController : UITableViewDelegate, UITableViewData
             self.viewOnlineSalesDetail.viewBalanced.mainLabel.text = String(self.balanceAmount)
             if let index = self.payments.firstIndex(where: {$0.PaymentAmount ==  self.paymentTypeList[indexPath.row].paymentAmount ?? 0.00} ){
                 self.payments.remove(at: index)
+                self.totalPayment -= self.payments[index].PaymentAmount ?? 0.0
             }
             
             self.paymentTypeList.remove(at: indexPath.row)

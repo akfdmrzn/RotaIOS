@@ -251,7 +251,6 @@ class OnlineSalesDetailViewController: UIViewController {
                 }
                
             }else {
-                self.buttonColor(isEnable: false, button: self.viewOnlineSalesDetail.buttonPay)
                 let alert = UIAlertController(title: "FAILED", message: response.message ?? "", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 if let topVC = UIApplication.getTopViewController() {

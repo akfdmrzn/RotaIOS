@@ -2193,7 +2193,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
 				INFOPLIST_FILE = RotaIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2205,11 +2205,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/RotaIOS/Util",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIosTRMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/yasindalkilic/Desktop/RotaiOS/RotaIOS/Util/RotaIOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/akifdemirezen/Desktop/Rota/RotaIOS/Util/RotaIOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2381,7 +2381,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
 				INFOPLIST_FILE = RotaIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2393,10 +2393,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/RotaIOS/Util",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIosTRMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/yasindalkilic/Desktop/RotaiOS/RotaIOS/Util/RotaIOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/akifdemirezen/Desktop/Rota/RotaIOS/Util/RotaIOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2410,7 +2410,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
 				INFOPLIST_FILE = RotaIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2422,10 +2422,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/RotaIOS/Util",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIosTRMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/yasindalkilic/Desktop/RotaiOS/RotaIOS/Util/RotaIOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/akifdemirezen/Desktop/Rota/RotaIOS/Util/RotaIOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2515,6 +2515,134 @@
 			};
 			name = Release;
 		};
+		BFA671ED2820718100D4AC4E /* RotaIOSEgyptProd */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFFC581927E3E91C001F89F0 /* ConfigRotaIOSEgypt.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RotaIOSEgyptProd;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = RotaIOSEgyptProd;
+		};
+		BFA671EE2820718100D4AC4E /* RotaIOSEgyptProd */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD6F5AC0F77BF0B44406EBCF /* Pods-RotaIOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-TRProd";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 13;
+				DEVELOPMENT_TEAM = X9CFQGNH8N;
+				INFOPLIST_FILE = RotaIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RotaIOS/Util",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIosEgyptMobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/akifdemirezen/Desktop/Rota/RotaIOS/Util/RotaIOS-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = RotaIOSEgyptProd;
+		};
+		BFA671EF2820718100D4AC4E /* RotaIOSEgyptProd */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X9CFQGNH8N;
+				INFOPLIST_FILE = RotaIOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIos.RotaIOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RotaIOS.app/RotaIOS";
+			};
+			name = RotaIOSEgyptProd;
+		};
+		BFA671F02820718100D4AC4E /* RotaIOSEgyptProd */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X9CFQGNH8N;
+				INFOPLIST_FILE = RotaIOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIos.RotaIOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RotaIOS;
+			};
+			name = RotaIOSEgyptProd;
+		};
 		BFFC57FB27E3E11E001F89F0 /* RotaIOSTRTest */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFFC581827E3E89D001F89F0 /* ConfigRotaIOSTR.xcconfig */;
@@ -2585,7 +2713,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
 				INFOPLIST_FILE = RotaIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2597,11 +2725,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/RotaIOS/Util",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIosTRMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RotaIOSTRTest;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/yasindalkilic/Desktop/RotaiOS/RotaIOS/Util/RotaIOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/akifdemirezen/Desktop/Rota/RotaIOS/Util/RotaIOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2719,7 +2847,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RotaIOS/RotaIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = X9CFQGNH8N;
 				INFOPLIST_FILE = RotaIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2731,11 +2859,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/RotaIOS/Util",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oti.rotaIosEgyptMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RotaIOSEgyptTest;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/yasindalkilic/Desktop/RotaiOS/RotaIOS/Util/RotaIOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/akifdemirezen/Desktop/Rota/RotaIOS/Util/RotaIOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2793,6 +2921,7 @@
 				BFFC57FF27E3E12C001F89F0 /* RotaIOSEgyptTest */,
 				BFFC57FB27E3E11E001F89F0 /* RotaIOSTRTest */,
 				BF44C8A0263FF80200238035 /* Release */,
+				BFA671ED2820718100D4AC4E /* RotaIOSEgyptProd */,
 				BF2B089327F7193200053B3C /* RotaIOSTRProd */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -2805,6 +2934,7 @@
 				BFFC580027E3E12C001F89F0 /* RotaIOSEgyptTest */,
 				BFFC57FC27E3E11E001F89F0 /* RotaIOSTRTest */,
 				BF44C8A3263FF80200238035 /* Release */,
+				BFA671EE2820718100D4AC4E /* RotaIOSEgyptProd */,
 				BF2B089427F7193200053B3C /* RotaIOSTRProd */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -2817,6 +2947,7 @@
 				BFFC580127E3E12C001F89F0 /* RotaIOSEgyptTest */,
 				BFFC57FD27E3E11E001F89F0 /* RotaIOSTRTest */,
 				BF44C8A6263FF80200238035 /* Release */,
+				BFA671EF2820718100D4AC4E /* RotaIOSEgyptProd */,
 				BF2B089527F7193200053B3C /* RotaIOSTRProd */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -2829,6 +2960,7 @@
 				BFFC580227E3E12C001F89F0 /* RotaIOSEgyptTest */,
 				BFFC57FE27E3E11E001F89F0 /* RotaIOSTRTest */,
 				BF44C8A9263FF80200238035 /* Release */,
+				BFA671F02820718100D4AC4E /* RotaIOSEgyptProd */,
 				BF2B089627F7193200053B3C /* RotaIOSTRProd */,
 			);
 			defaultConfigurationIsVisible = 0;

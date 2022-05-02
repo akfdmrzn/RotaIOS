@@ -6,7 +6,8 @@ target 'RotaIOS' do
   use_frameworks!
 
   # Pods for RotaIOS
-    pod 'ObjectMapper'
+
+pod 'ObjectMapper'
     pod 'Alamofire', '~> 4.7'
     pod 'AlamofireObjectMapper'
     pod 'MBProgressHUD', '~> 1.1.0'
@@ -15,6 +16,6 @@ target 'RotaIOS' do
     pod 'Firebase/Analytics'
     pod 'Firebase/Messaging'
     pod 'PureLayout'
-    
+
 
 end

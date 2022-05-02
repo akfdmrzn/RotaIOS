@@ -24,6 +24,8 @@
 	<true/>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>Uses to connect to bluetooth devices.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>App would like to use your bluetooth for communication purposes</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

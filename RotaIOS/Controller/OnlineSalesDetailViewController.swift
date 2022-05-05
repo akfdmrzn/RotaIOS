@@ -82,12 +82,26 @@ class OnlineSalesDetailViewController: UIViewController {
     var guideId = 0
     var voucherNo = ""
     var data = ""
-
+    var printList : [SendDataPrint] = []
+    var savedPrintList : [SendDataPrint] = []
+    var scanDeviceCustomView : ScanDeviceCustomView?
+    var tourName = ""
+    var marketId = 2
+    var refundCondationLabel = ""
+    var addedNumber = 1000
+    var countryId = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.guideId = userDefaultsData.getGuideId()
+        if  ConfigManager.shared.getAppType() == .RotaTR {
+            self.countryId = 1
+        }else if ConfigManager.shared.getAppType() == .RotaEgypt {
+            self.countryId = 10
+        }
         
+        
+        self.guideId = userDefaultsData.getGuideId()
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(ProceedPaxTableViewCell.nib, forCellReuseIdentifier: ProceedPaxTableViewCell.identifier)
@@ -97,9 +111,18 @@ class OnlineSalesDetailViewController: UIViewController {
         
         self.paxesIds = self.preBookingDetail?.record?.paxesId ?? ""
         self.paxesIdList = self.paxesIds.components(separatedBy: ",")
-        
+
         self.viewOnlineSalesDetail.labelExcursion.text = self.preBookingDetail?.record?.excursionName
+        self.tourName = self.preBookingDetail?.record?.excursionName ?? ""
         self.date = self.preBookingDetail?.record?.excDate ?? ""
+        self.date = String(self.date.prefix(10))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dated = dateFormatter.date(from: date)
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        let tempdate = Date()
+        let resultString = dateFormatter.string(from: dated ?? tempdate)
+        print(resultString)
         self.viewOnlineSalesDetail.labelExcursionDate.text = String(self.date.prefix(10))
         self.viewOnlineSalesDetail.labelCurrency.text = self.preBookingDetail?.record?.currency
         self.viewOnlineSalesDetail.labelAmount.text = String(self.preBookingDetail?.record?.totalExcursionAmount ?? 0.0)
@@ -107,7 +130,7 @@ class OnlineSalesDetailViewController: UIViewController {
         self.viewOnlineSalesDetail.viewAmount.mainText.text = String(self.totalAmount)
         self.viewOnlineSalesDetail.viewTotalAmount.mainLabel.text = String(self.totalAmount)
         self.viewOnlineSalesDetail.labelTourist.text = self.preBookingDetail?.record?.paxes ?? ""
-       // self.paxes = self.paxes.before(first: ",")
+        // self.paxes = self.paxes.before(first: ",")
         
         self.extraList =  self.preBookingDetail?.record?.extras ?? self.extraList
         
@@ -121,7 +144,7 @@ class OnlineSalesDetailViewController: UIViewController {
         }
         self.viewOnlineSalesDetail.labelExtra.text = self.extrasNameListStringType
         self.viewOnlineSalesDetail.labelExtraTourist.text = self.extrasPaxesListStringType
-     
+        
         self.viewOnlineSalesDetail.viewCurrency.mainLabel.text = self.preBookingDetail?.record?.currency ?? ""
         self.selectedCurrencyType = self.preBookingDetail?.record?.currency ?? ""
         self.currencyId = self.preBookingDetail?.record?.totalExcAmountCurrencyId ?? 0
@@ -147,6 +170,7 @@ class OnlineSalesDetailViewController: UIViewController {
         
         // TouristMenu
         self.viewOnlineSalesDetail.viewTourist.mainLabel.text = self.paxesList[0]
+        self.selectedTouristName = self.paxesList[0]
         self.touristMenu.dataSource = self.paxesList
         self.touristMenu.dataSource.insert("", at: 0)
         self.touristMenu.backgroundColor = UIColor.grayColor
@@ -232,29 +256,147 @@ class OnlineSalesDetailViewController: UIViewController {
     }
     
     @IBAction func payButtonTapped(_ sender: Any) {
+        var bottomListSzieNumberList : [Int] = []
+        self.addedNumber += 120
         
-        let payPrebooking = SendPreBookingData(countryId: 1, currencyId: self.currencyId, payments: self.payments, guideId: self.guideId, paidBy: self.selectedTouristName, paymentDate: self.date, paymentAmount: self.totalPayment, voucherNo: self.voucherNo)
+        let bottomSizeNumber = self.addedNumber
         
-        self.data = "\(payPrebooking.toJSONString() ?? "")"
-        print(data)
+        bottomListSzieNumberList.append(bottomSizeNumber)
         
-        let payPreBookingRequestModel = GetPayPreBookingRequestModel.init(data: self.data)
+        self.printList.append(SendDataPrint(tourName: self.tourName, paxInfo: "ADL : 0, CHD: 0, TDL: 0, INF: 0", voucher: self.voucherNo, tourDate: self.date, transTourist: "", hotelName: userDefaultsData.getHotelName() ?? "", date: userDefaultsData.getSaleDate() ?? "", room: "", paxName: self.selectedTouristName, operatorName: "Coral Travel", resNo: "", total: String(self.totalPayment), discount: "", netTotal: String(self.totalAmount), cash: "", card: "", guideInfoNumber: "", pickUpTime: "", extras: "", transfers: "", tourPax: "", voucherNoTop: self.voucherNo, paymentDetail: "", steps: "", addedNumber: 0, refundConditionLabel: "", vatAmount: ""))
         
-        NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .GetPayPreBooking, requestModel: payPreBookingRequestModel ) { (response: GetPayPreBookingResponseModel) in
-            if response.isSuccesful == true {
-                
-                print(response)
-                let alert = UIAlertController(title: "SUCCSESS", message: "\(response.message ?? "")\(self.voucherNo)", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                if let topVC = UIApplication.getTopViewController() {
-                    topVC.present(alert, animated: true, completion: nil)
+        var refundCondition = ""
+        
+        if self.marketId == MarketIdEnums.Russia.rawValue || self.marketId == 7 || self.marketId == 13 || self.marketId == 6 || self.marketId == 8  || self.marketId == 16 {
+            refundCondition = Refund_Conditions_Russian
+        }else if self.marketId == 26 {
+            refundCondition = Refund_Conditions_Ukrainan
+        }else if self.marketId == 14{
+            refundCondition = Refund_Conditions_German
+        }else if self.marketId == 11{
+            refundCondition = Refund_Conditions_Estonian
+        }else if self.marketId == 18{
+            refundCondition = Refund_Conditions_Latvian
+        }else if self.marketId == 19{
+            refundCondition = Refund_Conditions_Lithuanian
+        }else if self.marketId == 56{
+            refundCondition = Refund_Conditions_Polish
+        }else if self.marketId == 10 || self.marketId == 3 || self.marketId == 17 || self.marketId == 20 || self.marketId == 24 {
+            refundCondition = Refund_Conditions_English
+        }
+        // printList düzenlemre
+        var tourAllTotalPrice = 0.0
+        
+        var perTourPriceList : [Double] = []
+        var paxTourList : [PaxTourList] = []
+        var paxes : [Paxes] = []
+        var tourListIndata : [TourList] = []
+        var adultCount = 0
+        var childCount = 0
+        var toodleCount = 0
+        var infantCount = 0
+        var hotelName = ""
+        var room = ""
+        var paxName = ""
+        var resNo = ""
+        var operatorName = ""
+        var tourExtrasString = ""
+        var tourTransfersString = ""
+        var voucherLabelSize = ""
+        
+        var discountList : [Double] = []
+        
+        
+        perTourPriceList.append(self.totalAmount)
+        for i in 0...perTourPriceList.count - 1 {
+            perTourPriceList[i] = Double(Darwin.round(100 * perTourPriceList[i]) / 100 )
+            tourAllTotalPrice += perTourPriceList[i]
+        }
+    
+        
+        for i in 0...perTourPriceList.count - 1 {
+            var perPaymentAmount = 0.0
+            var perPaymentType = ""
+            var perPaymenytCurrency = ""
+            var lastAdded = 0
+           
+            var paymentDetailLabel = ""
+            var perPaymentMethotList : [PaymentType] = []
+            for j in 0...self.payments.count - 1{
+                perPaymentAmount =  Double(Darwin.round(100 * (self.payments[j].PaymentAmount ?? 0.0) * (perTourPriceList[i]/tourAllTotalPrice)) / 100 )
+                perPaymentType = self.payments[j].PaymentType ?? ""
+                perPaymenytCurrency = self.payments[j].Currency ?? ""
+              let  perPaymentMethot = PaymentType(paymentype: perPaymentType, paymentAmount: perPaymentAmount, currencyTpye: perPaymenytCurrency)
+                perPaymentMethotList.append(perPaymentMethot)
+            }
+            
+            for k in 0...perPaymentMethotList.count - 1{
+               let paymentDetail = "^FO 19,\(bottomListSzieNumberList[i] + 40 + (k * 40)) ^A 0, 19 ^FD\(perPaymentMethotList[k].paymentype ?? "" )^FS^FO 100,\(bottomListSzieNumberList[i] + 40 + (k * 40)) ^A 0, 19 ^FD\(perPaymentMethotList[k].paymentAmount ?? 0.0)^FS^FO 160,\(bottomListSzieNumberList[i] + 40 + (k * 40)) ^A 0, 19 ^FD\(perPaymentMethotList[k].currencyTpye ?? "")^FS"
+                paymentDetailLabel.append(paymentDetail)
+                if perPaymentMethotList.count > 1 {
+                    lastAdded += 30
                 }
-               
-            }else {
-                let alert = UIAlertController(title: "FAILED", message: response.message ?? "", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                if let topVC = UIApplication.getTopViewController() {
-                    topVC.present(alert, animated: true, completion: nil)
+            }
+            var paymentLastCombineLabel = "^FO10,\(bottomListSzieNumberList[i])^GB540,\(100 + lastAdded),0^FS^FO 20,\(bottomListSzieNumberList[i] + 10) ^A 0, 19 ^FDPayment Detail^FS"
+            paymentLastCombineLabel.append(paymentDetailLabel)
+            
+            bottomListSzieNumberList[i] += 120 + lastAdded
+            self.addedNumber += 150
+            
+            voucherLabelSize = "^FO20,\(bottomListSzieNumberList[i])^A 0, 20 ^FDYour Info Guide Number:^FS^FO20,\(bottomListSzieNumberList[i] + 22)^A 0, 20 ^FD+9005418281989^FS^FO20,\(bottomListSzieNumberList[i] + 50)^BY2^BCN,120,Y,N,N^FD\(self.voucherNo)^FS^CF0,40^FO20,\(bottomListSzieNumberList[i] + 200)^FDNotes^FS"
+            
+            self.refundCondationLabel = "^FO20,\(bottomListSzieNumberList[i] + 230)\(refundCondition)"
+            self.printList[i].refundConditionLabel = self.refundCondationLabel
+            self.printList[i].paymentDetail = paymentLastCombineLabel
+            self.printList[i].voucher = voucherLabelSize
+            self.printList[i].addedNumber = self.addedNumber
+        }
+        
+        if self.balanceAmount == 0.0 && self.printList.count > 0  {
+ 
+            let payPrebooking = SendPreBookingData(countryId: 1, currencyId: self.currencyId, payments: self.payments, guideId: self.guideId, paidBy: self.selectedTouristName, paymentDate: self.date, paymentAmount: self.totalPayment, voucherNo: self.voucherNo)
+            
+            self.data = "\(payPrebooking.toJSONString() ?? "")"
+            print(data)
+            
+            let payPreBookingRequestModel = GetPayPreBookingRequestModel.init(data: self.data)
+            
+            NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .GetPayPreBooking, requestModel: payPreBookingRequestModel ) { (response: GetPayPreBookingResponseModel) in
+                if response.isSuccesful == true {
+                    
+                    print(response)
+                    let alert = UIAlertController(title: "SUCCSESS", message: "\(response.message ?? "")\(self.voucherNo)", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action : UIAlertAction) in
+                        
+                        UIView.animate(withDuration: 0, animations: {
+                            if self.printList.count > 0 {
+                                self.savedPrintList = []
+                                for i in 0...self.printList.count - 1 {
+                                    self.savedPrintList.append(self.printList[i])
+                                }
+                                userDefaultsData.savePrintList(printlist: self.savedPrintList)
+                            }
+                            self.scanDeviceCustomView = ScanDeviceCustomView()
+                          //  self.addManuelTouristAddCustomView?.saveMAnuelListDelegate = self
+                            self.scanDeviceCustomView!.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 1200)
+                            self.viewOnlineSalesDetail.addSubview(self.scanDeviceCustomView!)
+                        }, completion: { (finished) in
+                            if finished{
+                                
+                            }
+                        })
+                        
+                    }))
+                    if let topVC = UIApplication.getTopViewController() {
+                        topVC.present(alert, animated: true, completion: nil)
+                    }
+                    
+                }else {
+                    let alert = UIAlertController(title: "FAILED", message: response.message ?? "", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    if let topVC = UIApplication.getTopViewController() {
+                        topVC.present(alert, animated: true, completion: nil)
+                    }
                 }
             }
         }
@@ -282,9 +424,9 @@ extension OnlineSalesDetailViewController : UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             print("Deleted")
-           
+            
             var roundedSavedValue = 0.0
-           
+            
             self.deletedAmount = self.paymentTypeList[indexPath.row].paymentAmount ?? 0.00
             let roundedDeletedValue = Double(Darwin.round(100 * self.deletedAmount) / 100 )
             self.savedTotalAmount -= roundedDeletedValue

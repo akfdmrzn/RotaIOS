@@ -552,7 +552,6 @@ class ExcProceedCustomView: UIView{
                         
                     }
                 })
-                
             }
         }else{
             let alert = UIAlertController.init(title: "Warning", message: "Please send data and Connect Zebra device", preferredStyle: UIAlertController.Style.alert)
@@ -918,6 +917,7 @@ class ExcProceedCustomView: UIView{
                 }
                 // printList düzenlemre
                 var tourAllTotalPrice = 0.0
+                
                 
                 for i in 0...perTourPriceList.count - 1 {
                     perTourPriceList[i] = Double(Darwin.round(100 * perTourPriceList[i]) / 100 )

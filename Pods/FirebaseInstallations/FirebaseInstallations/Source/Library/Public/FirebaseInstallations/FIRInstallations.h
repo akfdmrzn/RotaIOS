@@ -22,14 +22,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /** A notification with this name is sent each time an installation is created or deleted. */
-// clang-format off
-// clang-format12 merges the next two lines.
 FOUNDATION_EXPORT const NSNotificationName FIRInstallationIDDidChangeNotification
     NS_SWIFT_NAME(InstallationIDDidChange);
 /** `userInfo` key for the `FirebaseApp.name` in `FIRInstallationIDDidChangeNotification`. */
 FOUNDATION_EXPORT NSString *const kFIRInstallationIDDidChangeNotificationAppNameKey
     NS_SWIFT_NAME(InstallationIDDidChangeAppNameKey);
-// clang-format on
 
 /**
  * An installation ID handler block.
@@ -64,7 +61,7 @@ NS_SWIFT_NAME(Installations)
 
 /**
  * Returns a default instance of `Installations`.
- * @return An instance of `Installations` for `FirebaseApp.defaultApp().
+ * @returns An instance of `Installations` for `FirebaseApp.defaultApp().
  * @throw Throws an exception if the default app is not configured yet or required  `FirebaseApp`
  * options are missing.
  */
@@ -73,7 +70,7 @@ NS_SWIFT_NAME(Installations)
 /**
  * Returns an instance of `Installations` for an application.
  * @param application A configured `FirebaseApp` instance.
- * @return An instance of `Installations` corresponding to the passed application.
+ * @returns An instance of `Installations` corresponding to the passed application.
  * @throw Throws an exception if required `FirebaseApp` options are missing.
  */
 + (FIRInstallations *)installationsWithApp:(FIRApp *)application NS_SWIFT_NAME(installations(app:));

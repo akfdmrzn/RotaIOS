@@ -194,7 +194,13 @@ class TasksViewController: BaseViewController {
     }
     
     func saveGuideMeetingTimeAndReport(workNo : String, guide: String, typeInt: String, note: String, isReport: String, action: String, plate: String, state: String, relatedId: String, tourDate: String, glassNumber : String){
-        let saveGuideMeetingTimeAndReportRequestModel = SaveGuideMeetingTimeAndReportRequestModel.init(workNo: workNo, guide: guide, typeInt: typeInt, note: note, isReport: isReport, action: action, plate: plate, state: state, relatedId: relatedId, tourDate: tourDate.getDateFormatStr(), glassNumber : glassNumber, eventEntryRef : "")
+        var tempWorkNo = "0"
+        
+        if  workNo != "-"{
+            tempWorkNo = workNo
+        }
+        
+        let saveGuideMeetingTimeAndReportRequestModel = SaveGuideMeetingTimeAndReportRequestModel.init(workNo: tempWorkNo, guide: guide, typeInt: typeInt, note: note, isReport: isReport, action: action, plate: plate, state: state, relatedId: relatedId, tourDate: tourDate.getDateFormatStr(), glassNumber : glassNumber, eventEntryRef : "")
         NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .SendSaveGuideMeetingTimeAndReport, requestModel: saveGuideMeetingTimeAndReportRequestModel) { (response : SaveGuideMeetingTimeAndReportResponseModel) in
             UIApplication.getTopViewController()?.showAlertMsg(msg: response.message, finished: {
             })

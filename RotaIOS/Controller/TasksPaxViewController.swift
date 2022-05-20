@@ -55,24 +55,41 @@ class TasksPaxViewController: BaseViewController {
         switch self.serviceType {
         case ServiceType.EXC.rawValue:
             self.getTourPaxesService()
+            self.viewTasksPax.viewTaksType.backgroundColor = UIColor.excursionColor
+            self.viewTasksPax.labelWorkType.text = "EXC"
         case ServiceType.COL.rawValue:
             self.getColAndDelPaxesService()
+            self.viewTasksPax.viewTaksType.backgroundColor = UIColor.collectionColor
+            self.viewTasksPax.labelWorkType.text = "COL"
         case ServiceType.DEL.rawValue:
             self.getColAndDelPaxesService()
+            self.viewTasksPax.viewTaksType.backgroundColor = UIColor.deliveryColor
+            self.viewTasksPax.labelWorkType.text = "DEL"
         case ServiceType.ARR.rawValue:
             self.getArrAndDepPaxesService()
+            self.viewTasksPax.viewTaksType.backgroundColor = UIColor.arrivalColor
+            self.viewTasksPax.labelWorkType.text = "ARR"
         case ServiceType.DEP.rawValue:
-         self.getArrAndDepPaxesService()
+            self.getArrAndDepPaxesService()
+            self.viewTasksPax.viewTaksType.backgroundColor = UIColor.departureColor
+            self.viewTasksPax.labelWorkType.text = "DEP"
         case ServiceType.SHOP.rawValue:
             self.getIndShopPaxesService()
+            self.viewTasksPax.viewTaksType.backgroundColor = UIColor.indShopForMobileColor
+            self.viewTasksPax.labelWorkType.text = "SHOP"
         case ServiceType.INT.rawValue:
             self.getInterPaxesService()
+            self.viewTasksPax.viewTaksType.backgroundColor = UIColor.internColor
+            self.viewTasksPax.labelWorkType.text = "INT"
         case ServiceType.INFO.rawValue:
             self.getInfoPaxesService()
+            self.viewTasksPax.viewTaksType.backgroundColor = UIColor.infoPlanColor
+            self.viewTasksPax.labelWorkType.text = "INFO"
         default:
             break
         }
     }
+    
     
     override func viewWillLayoutSubviews() {
         self.tasksTableViewHeightConstraint.constant = self.tableViewTasksPax.contentSize.height + 40

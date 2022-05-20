@@ -18,6 +18,8 @@ final class TasksPaxView : UIView {
     @IBOutlet weak var labelExcursionName: UILabel!
     @IBOutlet weak var labelPax: UILabel!
     @IBOutlet weak var viewPaxInfo: UIView!
+    @IBOutlet weak var viewTaksType: UIView!
+    @IBOutlet weak var labelWorkType: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

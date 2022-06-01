@@ -276,6 +276,7 @@ class ExcProceedCustomView: UIView{
                     for listofArray in self.exchangeList {
                         self.exchangeListStringType.append(listofArray.sHORTCODE ?? "")
                     }
+                    self.exchangeListStringType.append("TRY")
                     self.exchangeMenu.dataSource = self.exchangeListStringType
                     self.exchangeMenu.dataSource.insert("", at: 0)
                     self.exchangeMenu.backgroundColor = UIColor.grayColor
@@ -290,6 +291,7 @@ class ExcProceedCustomView: UIView{
             for listofArray in self.exchangeList {
                 self.exchangeListStringType.append(listofArray.sHORTCODE ?? "")
             }
+            self.exchangeListStringType.append("TRY")
             self.exchangeMenu.dataSource = self.exchangeListStringType
             self.exchangeMenu.dataSource.insert("", at: 0)
             self.exchangeMenu.backgroundColor = UIColor.grayColor
@@ -408,6 +410,7 @@ class ExcProceedCustomView: UIView{
         self.currencyMenu.selectionAction = { index, title in
             self.viewCurrencyType.mainLabel.text = title
             self.selectedCurrencyType = title
+            self.baseCurrency = title
             if let index = self.currencyList.firstIndex(where: {$0.text == self.selectedCurrencyType} ){
                 self.currencyId = self.currencyList[index].value ?? 0
             }
@@ -473,7 +476,7 @@ class ExcProceedCustomView: UIView{
             }else if self.baseCurrency == "RUB"{
                 paymentAmount = (paymentAmount ?? 0.0) * (filter[0].rUBCROSS ?? 0.0)
             }else{
-                paymentAmount = (paymentAmount ?? 0.0) * (filter[0].eUROCROSS ?? 0.0)
+                paymentAmount = (paymentAmount ?? 0.0) * (filter[0].sELLRATE ?? 0.0)
             }
             
         }
@@ -563,8 +566,18 @@ class ExcProceedCustomView: UIView{
     }
     
     @IBAction func convertButtonTapped(_ sender: Any) {
+        
         self.convertedCurrency = self.balanceAmount / self.valueforDivided
-        let roundedValue = Double(Darwin.round(100 * self.convertedCurrency) / 100 )
+        
+        let tempSelectedExchange = self.exchangeList.filter{$0.sHORTCODE == self.viewCurrencyType.mainLabel.text ?? ""}
+        
+        if self.convertedCurrencyTitle == "TRY" {
+            for item in tempSelectedExchange {
+                self.convertedCurrency = (self.convertedCurrency * (item.sELLRATE ?? 0.00))
+            }
+        }
+        
+        var roundedValue = Double(Darwin.round(100 * self.convertedCurrency) / 100 )
         let alert = UIAlertController.init(title: "Message", message: "Converted balance  for \(self.balanceAmount) \(self.baseCurrency) is \(roundedValue)\(self.convertedCurrencyTitle)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         if let topVC = UIApplication.getTopViewController() {

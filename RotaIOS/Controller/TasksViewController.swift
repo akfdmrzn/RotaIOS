@@ -265,7 +265,8 @@ class TasksViewController: BaseViewController {
                 self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.collectionColor , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
                 self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             default:
-                break
+                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.collectionColor , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             }
         }
         for item in self.excursion {
@@ -280,7 +281,8 @@ class TasksViewController: BaseViewController {
                 self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.excursionColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
                 self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             default:
-                break
+                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.excursionColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             }
         }
         for item in self.delivery {
@@ -295,7 +297,8 @@ class TasksViewController: BaseViewController {
                 self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.deliveryColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
                 self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             default:
-                break
+                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.excursion, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: item.extraTotalPax, driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.deliveryColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: item.ids, typeInt: String(item.typeInt), planId: "", planIds: ""))
             }
         }
         for item in self.arrival {
@@ -310,7 +313,8 @@ class TasksViewController: BaseViewController {
                 self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.arrivalColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
                 self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: String(item.id), planIds: ""))
             default:
-                break
+                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.arrivalColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: String(item.id), planIds: ""))
             }
         }
         for item in self.departure {
@@ -325,7 +329,8 @@ class TasksViewController: BaseViewController {
                 self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.departureColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
                 self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: String(item.id), planIds: ""))
             default:
-                break
+                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: String(item.workNo), tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.departureColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: String(item.id), planIds: ""))
             }
         }
         for item in self.intern {
@@ -340,7 +345,8 @@ class TasksViewController: BaseViewController {
                 self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.internColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
                 self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: item.id, ids: "", typeInt: "", planId: "", planIds: ""))
             default:
-                break
+                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.tourDateStr, excursion: item.flightCodes + " - " + item.fromTo, transferType: item.transferType, pax: item.pax, vehicle: item.vehicle, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.internColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: item.id, ids: "", typeInt: "", planId: "", planIds: ""))
             }
         }
         for item in self.speakTime {
@@ -359,7 +365,8 @@ class TasksViewController: BaseViewController {
                 self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.dateStr, excursion: item.hotelName, transferType: item.market, pax: item.pax, vehicle: item.reelPax, meetingPointAndTime: "-", meetingTime: item.infoTime, extra: "-", driverName: "-", driverPhone: "-", color: UIColor.infoPlanColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
                 self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: "", planId: String(item.id), planIds: ""))
             default:
-                break
+                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: "-", tourDateStr: item.dateStr, excursion: item.hotelName, transferType: item.market, pax: item.pax, vehicle: item.reelPax, meetingPointAndTime: "-", meetingTime: item.infoTime, extra: "-", driverName: "-", driverPhone: "-", color: UIColor.infoPlanColor  , noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: "", planId: String(item.id), planIds: ""))
             }
         }
         for item in self.indShopForMobile {
@@ -374,7 +381,8 @@ class TasksViewController: BaseViewController {
                 self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: item.workNo, tourDateStr: item.dateStr, excursion: item.meetingPoint, transferType: "-", pax: item.pax, vehicle: item.vehiclePlate, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.indShopForMobileColor, noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
                 self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: "", planIds: item.id))
             default:
-                break
+                self.tomorrowList.append(TotalList.init(shortCode: item.shortCode, workNo: item.workNo, tourDateStr: item.dateStr, excursion: item.meetingPoint, transferType: "-", pax: item.pax, vehicle: item.vehiclePlate, meetingPointAndTime: item.meetingPointAndTime, meetingTime: item.meetingTime, extra: "-", driverName: item.driverName, driverPhone: item.driverPhone, color: UIColor.indShopForMobileColor, noteColor: (item.note != "") ? UIColor.greenColor : UIColor.noteGrayColor, note: (item.note != "") ? item.note : ""))
+                self.getGuideDutiesTomorrowList.append(GetGuideDutiesList.init(id: 0, ids: "", typeInt: String(item.typeInt), planId: "", planIds: item.id))
             }
         }
         switch flag {

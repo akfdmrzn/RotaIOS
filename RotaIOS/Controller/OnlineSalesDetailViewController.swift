@@ -439,8 +439,9 @@ extension OnlineSalesDetailViewController : UITableViewDelegate, UITableViewData
             self.balanceAmount = self.totalAmount - roundedSavedValue
             self.viewOnlineSalesDetail.viewBalanced.mainLabel.text = String(self.balanceAmount)
             if let index = self.payments.firstIndex(where: {$0.PaymentAmount ==  self.paymentTypeList[indexPath.row].paymentAmount ?? 0.00} ){
-                self.payments.remove(at: index)
                 self.totalPayment -= self.payments[index].PaymentAmount ?? 0.0
+                self.payments.remove(at: index)
+                
             }
             
             self.paymentTypeList.remove(at: indexPath.row)

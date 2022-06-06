@@ -10,7 +10,6 @@ import UIKit
 import DropDown
 import ObjectMapper
 
-
 struct SendDataPrint : Encodable, Decodable{
     var tourName : String?
     var paxInfo : String?

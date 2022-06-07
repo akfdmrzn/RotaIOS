@@ -409,7 +409,6 @@ class ExcProceedCustomView: UIView{
         self.currencyMenu.selectionAction = { index, title in
             self.viewCurrencyType.mainLabel.text = title
             self.selectedCurrencyType = title
-            self.baseCurrency = title
             if let index = self.currencyList.firstIndex(where: {$0.text == self.selectedCurrencyType} ){
                 self.currencyId = self.currencyList[index].value ?? 0
             }

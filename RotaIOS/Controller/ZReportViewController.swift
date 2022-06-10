@@ -74,9 +74,6 @@ class ZReportViewController: UIViewController {
                         print("guidelist data has not recived")
                     }
                 }
-               
-               
-                
             }else {
                 let alert = UIAlertController(title: "Error", message: "Please Check Date and ZReport No", preferredStyle:UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))

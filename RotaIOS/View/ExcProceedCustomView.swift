@@ -569,7 +569,7 @@ class ExcProceedCustomView: UIView{
         
         self.convertedCurrency = self.balanceAmount / self.valueforDivided
         
-        let tempSelectedExchange = self.exchangeList.filter{$0.sHORTCODE == self.viewCurrencyType.mainLabel.text ?? ""}
+        let tempSelectedExchange = self.exchangeList.filter{$0.sHORTCODE == self.baseCurrency}
         
         if self.convertedCurrencyTitle == "TRY" {
             for item in tempSelectedExchange {
@@ -578,7 +578,7 @@ class ExcProceedCustomView: UIView{
         }
         
         var roundedValue = Double(Darwin.round(100 * self.convertedCurrency) / 100 )
-        let alert = UIAlertController.init(title: "Message", message: "Converted balance  for \(self.balanceAmount) \(self.selectedCurrencyType) is \(roundedValue)\(self.convertedCurrencyTitle)", preferredStyle: .alert)
+        let alert = UIAlertController.init(title: "Message", message: "Converted balance  for \(self.balanceAmount) \(self.baseCurrency) is \(roundedValue)\(self.convertedCurrencyTitle)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         if let topVC = UIApplication.getTopViewController() {
             topVC.present(alert, animated: true, completion: nil)

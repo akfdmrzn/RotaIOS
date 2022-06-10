@@ -476,7 +476,9 @@ class ExcProceedCustomView: UIView{
             }else{
                 paymentAmount = (paymentAmount ?? 0.0) * (filter[0].sELLRATE ?? 0.0)
             }
-            
+        }else{
+            let filter = self.exchangeList.filter{ $0.sHORTCODE == self.baseCurrency}
+            paymentAmount = (paymentAmount ?? 0.0) / (filter[0].sELLRATE ?? 0.0)
         }
         roundedPaymentAmount = paymentAmount ?? 0.00
         roundedPaymentAmount = Double(Darwin.round(100 * roundedPaymentAmount) / 100 )
@@ -576,7 +578,7 @@ class ExcProceedCustomView: UIView{
         }
         
         var roundedValue = Double(Darwin.round(100 * self.convertedCurrency) / 100 )
-        let alert = UIAlertController.init(title: "Message", message: "Converted balance  for \(self.balanceAmount) \(self.baseCurrency) is \(roundedValue)\(self.convertedCurrencyTitle)", preferredStyle: .alert)
+        let alert = UIAlertController.init(title: "Message", message: "Converted balance  for \(self.balanceAmount) \(self.selectedCurrencyType) is \(roundedValue)\(self.convertedCurrencyTitle)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         if let topVC = UIApplication.getTopViewController() {
             topVC.present(alert, animated: true, completion: nil)
@@ -1073,6 +1075,11 @@ extension ExcProceedCustomView : UITableViewDelegate, UITableViewDataSource {
             let baseCrossType = self.baseCurrency
             var baseCrossValue = 1.0
             var roundedSavedValue = 0.0
+            
+            if chosenCrossType == "TRY" {
+                    let filter = self.exchangeList.filter{ $0.sHORTCODE == self.baseCurrency}
+                    baseCrossValue = 1 / (filter[0].sELLRATE ?? 0.0)
+            }
             
             if self.exchangeList.count > 0{
                 for i in 0...self.exchangeList.count - 1 {

@@ -90,6 +90,10 @@ class OnlineSalesDetailViewController: UIViewController {
     var refundCondationLabel = ""
     var addedNumber = 1000
     var countryId = 0
+    var transfers = ""
+    var hotel = ""
+    var room = ""
+    var recordStrinType = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,7 +115,8 @@ class OnlineSalesDetailViewController: UIViewController {
         
         self.paxesIds = self.preBookingDetail?.record?.paxesId ?? ""
         self.paxesIdList = self.paxesIds.components(separatedBy: ",")
-
+        
+        
         self.viewOnlineSalesDetail.labelExcursion.text = self.preBookingDetail?.record?.excursionName
         self.tourName = self.preBookingDetail?.record?.excursionName ?? ""
         self.date = self.preBookingDetail?.record?.excDate ?? ""
@@ -364,8 +369,9 @@ class OnlineSalesDetailViewController: UIViewController {
             NetworkManager.sendRequest(url: NetworkManager.BASEURL, endPoint: .GetPayPreBooking, requestModel: payPreBookingRequestModel ) { (response: GetPayPreBookingResponseModel) in
                 if response.isSuccesful == true {
                     
+                    
                     print(response)
-                    let alert = UIAlertController(title: "SUCCSESS", message: "\(response.message ?? "")\(self.voucherNo)", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "SUCCSESS", message: "\(response.message ?? "")Voucher No : \(self.voucherNo)", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action : UIAlertAction) in
                         
                         UIView.animate(withDuration: 0, animations: {
@@ -404,6 +410,14 @@ class OnlineSalesDetailViewController: UIViewController {
     
     @objc func didTappedToristListMenu() {
         self.touristMenu.show()
+    }
+    
+    func removeChar (str : String, result complation : (String) -> String){
+        var removeDots = str
+        removeDots =  removeDots.replacingOccurrences(of: "0!!", with: "")
+        removeDots = removeDots.replacingOccurrences(of: ";;", with: ",")
+        
+        complation(removeDots)
     }
     
 }

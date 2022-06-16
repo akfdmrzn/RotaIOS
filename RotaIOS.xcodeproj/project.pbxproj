@@ -249,6 +249,7 @@
 		D93F889F264EFF7800397283 /* GetSaveForMobileRequestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F889E264EFF7800397283 /* GetSaveForMobileRequestList.swift */; };
 		D93F88A42651AAE300397283 /* GetTouristInfoRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F88A32651AAE200397283 /* GetTouristInfoRequestModel.swift */; };
 		D93F88A92651AB1000397283 /* GetTouristInfoResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F88A82651AB1000397283 /* GetTouristInfoResponseModel.swift */; };
+		D94BF10D285BCB9700967C51 /* GetMobileRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94BF10C285BCB9700967C51 /* GetMobileRequestModel.swift */; };
 		D94C40622655D56E00EBC7CD /* GetGuideInfoRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C40612655D56E00EBC7CD /* GetGuideInfoRequestModel.swift */; };
 		D94C40672655D5FA00EBC7CD /* GetGuideInfoResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C40662655D5FA00EBC7CD /* GetGuideInfoResponseModel.swift */; };
 		D94C406C2659313000EBC7CD /* GetSaveForMobileResponseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C406B2659313000EBC7CD /* GetSaveForMobileResponseList.swift */; };
@@ -684,6 +685,7 @@
 		D93F889E264EFF7800397283 /* GetSaveForMobileRequestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSaveForMobileRequestList.swift; sourceTree = "<group>"; };
 		D93F88A32651AAE200397283 /* GetTouristInfoRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTouristInfoRequestModel.swift; sourceTree = "<group>"; };
 		D93F88A82651AB1000397283 /* GetTouristInfoResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTouristInfoResponseModel.swift; sourceTree = "<group>"; };
+		D94BF10C285BCB9700967C51 /* GetMobileRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMobileRequestModel.swift; sourceTree = "<group>"; };
 		D94C40612655D56E00EBC7CD /* GetGuideInfoRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGuideInfoRequestModel.swift; sourceTree = "<group>"; };
 		D94C40662655D5FA00EBC7CD /* GetGuideInfoResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGuideInfoResponseModel.swift; sourceTree = "<group>"; };
 		D94C406B2659313000EBC7CD /* GetSaveForMobileResponseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSaveForMobileResponseList.swift; sourceTree = "<group>"; };
@@ -1154,6 +1156,7 @@
 				D9B2733827F5C66100B447F8 /* GetBirthDaysRequestModel.swift */,
 				D9B97FC82819722700065E1A /* GetPreBookingRequestModel.swift */,
 				D9B1FAB3281C2ED9003A4236 /* GetPayPreBookingRequestModel.swift */,
+				D94BF10C285BCB9700967C51 /* GetMobileRequestModel.swift */,
 			);
 			path = RequestModel;
 			sourceTree = "<group>";
@@ -2040,6 +2043,7 @@
 				BF44C95A2640018B00238035 /* MyTourSaleViewController.swift in Sources */,
 				D931577B27036955000C91AD /* ZReportPaymentResponseModel.swift in Sources */,
 				A9C674F0277A241D00536F21 /* GetGuideDutiesResponseModel.swift in Sources */,
+				D94BF10D285BCB9700967C51 /* GetMobileRequestModel.swift in Sources */,
 				D95C203C26F20428007D1506 /* GetSpeakTimeForMobileRequestModel.swift in Sources */,
 				A97E52F727CFFC9500044B78 /* TasksTourDetailView.swift in Sources */,
 				D9B97FBA2812C76F00065E1A /* OnlineSalesViewController.swift in Sources */,
